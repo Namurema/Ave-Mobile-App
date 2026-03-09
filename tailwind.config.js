@@ -9,12 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          300: "#f0d080",
-          400: "#e6c44a",
-          500: "#c9a84c",
-          600: "#a8872e",
-        },
+        primary: "#007C7C",
+        accent: "#C2FFFF",
         navy: {
           800: "#1a1a2e",
           900: "#0f0f1e",
