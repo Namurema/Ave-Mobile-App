@@ -28,11 +28,11 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundColor": "#1a1a2e"
       },
-      "package": "com.yourname.ave"
+      "package": "com.brenda.ave"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourname.ave"
+      "bundleIdentifier": "com.brenda.ave"
     },
     "web": {
       "bundler": "metro"
