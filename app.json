@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "Ave",
+    "slug": "ave-mobile-app",
+    "scheme": "ave",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-av",
+      [
+        "expo-notifications",
+        {
+          "color": "#c9a84c"
+        }
+      ],
+      "expo-localization"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundColor": "#1a1a2e"
+      },
+      "package": "com.yourname.ave"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.ave"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
