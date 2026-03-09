@@ -1,7 +1,9 @@
 import { View, Text, ScrollView, TouchableOpacity, TextInput } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <View className="flex-1 bg-gray-50">
       <StatusBar style="dark" />
@@ -44,7 +46,10 @@ export default function HomeScreen() {
               <Text className="text-white text-lg font-bold mb-3">
                 The Sorrowful Mysteries
               </Text>
-              <TouchableOpacity className="bg-white rounded-full px-4 py-2 self-start flex-row items-center gap-1">
+              <TouchableOpacity
+                className="bg-white rounded-full px-4 py-2 self-start flex-row items-center gap-1"
+                onPress={() => router.push("/(tabs)/rosary")}
+              >
                 <Text className="text-primary font-semibold text-sm">▶ Play Now</Text>
               </TouchableOpacity>
             </View>
@@ -61,12 +66,13 @@ export default function HomeScreen() {
           </Text>
           <View className="flex-row gap-3">
             {[
-              { icon: "📅", title: "Daily Schedules", sub: "Personalise & plan" },
-              { icon: "🙏", title: "Daily Prayers", sub: "Start your day" },
+              { icon: "📅", title: "Daily Schedules", sub: "Personalise & plan", route: null },
+              { icon: "🙏", title: "Daily Prayers", sub: "Start your day", route: "/(tabs)/prayers" },
             ].map((item) => (
               <TouchableOpacity
                 key={item.title}
                 className="flex-1 bg-white rounded-2xl p-4 shadow-sm"
+                onPress={() => item.route && router.push(item.route as any)}
               >
                 <Text className="text-2xl mb-2">{item.icon}</Text>
                 <Text className="text-gray-800 font-semibold text-sm">{item.title}</Text>

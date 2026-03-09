@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Text } from "react-native";
+import { Text, Platform } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -9,39 +9,49 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: "white",
           borderTopColor: "#f0f0f0",
-          height: 60,
-          paddingBottom: 8,
+          height: Platform.OS === "ios" ? 80 : 60,
+          paddingBottom: Platform.OS === "ios" ? 20 : 8,
+          paddingTop: 8,
         },
         tabBarActiveTintColor: "#007C7C",
         tabBarInactiveTintColor: "#9CA3AF",
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>🏠</Text>,
+          tabBarIcon: ({ color }) => (
+            <Text style={{ color, fontSize: 22 }}>🏠</Text>
+          ),
         }}
       />
       <Tabs.Screen
         name="prayers"
         options={{
           title: "Prayers",
-          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>📖</Text>,
+          tabBarIcon: ({ color }) => (
+            <Text style={{ color, fontSize: 22 }}>📖</Text>
+          ),
         }}
       />
       <Tabs.Screen
         name="rosary"
         options={{
           title: "Rosary",
-          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>📿</Text>,
+          tabBarIcon: ({ color }) => (
+            <Text style={{ color, fontSize: 22 }}>📿</Text>
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 20 }}>👤</Text>,
+          tabBarIcon: ({ color }) => (
+            <Text style={{ color, fontSize: 22 }}>👤</Text>
+          ),
         }}
       />
     </Tabs>
