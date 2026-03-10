@@ -71,8 +71,8 @@ export default function HomeScreen() {
           </Text>
           <View className="flex-row gap-3">
             {[
-              { icon: "📅", title: "Daily Schedules", sub: "Personalise & plan", route: null },
-              { icon: "🙏", title: "Daily Prayers", sub: "Start your day", route: "/(tabs)/prayers" },
+              { icon: "📅", title: t('home.dailySchedules'), sub: t('home.planAndPersonalise'), route: null },
+              { icon: "🙏", title: t('home.dailyPrayers'), sub: t('home.startYourDay'), route: "/(tabs)/prayers" },
             ].map((item) => (
               <TouchableOpacity
                 key={item.title}
@@ -94,10 +94,10 @@ export default function HomeScreen() {
           </Text>
           <View className="flex-row flex-wrap gap-3">
             {[
-              { icon: "🕯️", title: "Novenas", sub: "9 days of prayer" },
-              { icon: "✝️", title: "Stations of the Cross", sub: "Meditate on the passion" },
-              { icon: "📍", title: "Stations", sub: "Sacred locations" },
-              { icon: "📿", title: "Chaplets", sub: "Meditative prayer" },
+              { icon: "🕯️", title: t('home.novenas'), sub: t('home.ninedays') },
+              { icon: "✝️", title: t('home.stationsOfCross'), sub: t('home.meditatePassion') },
+              { icon: "📍", title: t('home.stations'), sub: t('home.sacredLocations') },
+              { icon: "💿", title: t('home.chaplets'), sub: t('home.meditativePrayer') },
             ].map((item) => (
               <TouchableOpacity
                 key={item.title}

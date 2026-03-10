@@ -1,34 +1,8 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import { useTranslation } from "react-i18next";
 import Footer from "../../components/ui/Footer";
-
-const dailyRoutine = [
-  {
-    id: "morning",
-    title: "Morning Prayers",
-    subtitle: "Start your day with grace",
-    time: "6:00 AM",
-    icon: "🌅",
-    duration: "10 mins",
-  },
-  {
-    id: "midday",
-    title: "Midday Prayers",
-    subtitle: "A pause for peace & divine",
-    time: "12:00 PM",
-    icon: "☀️",
-    duration: "5 mins",
-  },
-  {
-    id: "night",
-    title: "Night Prayers",
-    subtitle: "Gratitude, rest, and...",
-    time: "9:00 PM",
-    icon: "🌙",
-    duration: "8 mins",
-  },
-];
 
 const categories = [
   { id: "novenas", title: "Novenas", icon: "🕯️", count: 12 },
@@ -40,6 +14,34 @@ const categories = [
 
 export default function PrayersScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
+
+  const dailyRoutine = [
+    {
+      id: "morning",
+      title: t('prayers.morningPrayers'),
+      subtitle: t('prayers.startYourDay'),
+      time: "6:00 AM",
+      icon: "🌅",
+      duration: "10 mins",
+    },
+    {
+      id: "midday",
+      title: t('prayers.middayPrayers'),
+      subtitle: t('prayers.pauseForPeace'),
+      time: "12:00 PM",
+      icon: "☀️",
+      duration: "5 mins",
+    },
+    {
+      id: "night",
+      title: t('prayers.nightPrayers'),
+      subtitle: t('prayers.gratitudeRest'),
+      time: "9:00 PM",
+      icon: "🌙",
+      duration: "8 mins",
+    },
+  ];
   const today = new Date();
   const dateStr = today.toLocaleDateString("en-US", {
     weekday: "long",
@@ -60,7 +62,7 @@ export default function PrayersScreen() {
           >
             <Text className="text-white">←</Text>
           </TouchableOpacity>
-          <Text className="text-white text-2xl font-bold">Daily Prayers</Text>
+          <Text className="text-white text-2xl font-bold">{t('prayers.title')}</Text>
           <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
             <Text className="text-white text-sm">↺</Text>
           </TouchableOpacity>
@@ -73,7 +75,7 @@ export default function PrayersScreen() {
         {/* Daily Routine */}
         <View className="px-6 mt-6">
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-            Daily Routine
+            {t('prayers.dailyRoutine')}
           </Text>
 
           {dailyRoutine.map((item) => (
@@ -108,7 +110,7 @@ export default function PrayersScreen() {
         {/* Prayer Categories */}
         <View className="px-6 mt-6">
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-            All Prayers
+            {t('prayers.allPrayers')}
           </Text>
 
           {categories.map((cat) => (

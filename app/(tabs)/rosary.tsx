@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity, ImageBackground } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import { useTranslation } from "react-i18next";
 import Footer from "../../components/ui/Footer";
 
 const mysteries = {
@@ -99,7 +100,61 @@ const mysteries = {
 
 export default function RosaryScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const today = new Date().getDay();
+
+  const mysteries = {
+    0: { name: t('rosary.glorious'), day: "Sunday", color: "#007C7C", emoji: "✨", mysteries: [
+      { number: 1, title: "The Resurrection", virtue: "Faith" },
+      { number: 2, title: "The Ascension", virtue: "Hope" },
+      { number: 3, title: "Descent of the Holy Spirit", virtue: "Love of God" },
+      { number: 4, title: "The Assumption", virtue: "Grace of a Happy Death" },
+      { number: 5, title: "Coronation of Mary", virtue: "Trust in Mary's Intercession" },
+    ]},
+    1: { name: t('rosary.joyful'), day: "Monday", color: "#007C7C", emoji: "🌸", mysteries: [
+      { number: 1, title: "The Annunciation", virtue: "Humility" },
+      { number: 2, title: "The Visitation", virtue: "Love of Neighbour" },
+      { number: 3, title: "The Nativity", virtue: "Poverty & Detachment" },
+      { number: 4, title: "The Presentation", virtue: "Obedience" },
+      { number: 5, title: "Finding in the Temple", virtue: "Piety" },
+    ]},
+    2: { name: t('rosary.sorrowful'), day: "Tuesday", color: "#5C2D2D", emoji: "✝️", mysteries: [
+      { number: 1, title: "The Agony in the Garden", virtue: "Contrition" },
+      { number: 2, title: "The Scourging at the Pillar", virtue: "Purity" },
+      { number: 3, title: "The Crowning with Thorns", virtue: "Courage" },
+      { number: 4, title: "Carrying of the Cross", virtue: "Patience" },
+      { number: 5, title: "The Crucifixion", virtue: "Self-denial" },
+    ]},
+    3: { name: t('rosary.glorious'), day: "Wednesday", color: "#007C7C", emoji: "✨", mysteries: [
+      { number: 1, title: "The Resurrection", virtue: "Faith" },
+      { number: 2, title: "The Ascension", virtue: "Hope" },
+      { number: 3, title: "Descent of the Holy Spirit", virtue: "Love of God" },
+      { number: 4, title: "The Assumption", virtue: "Grace of a Happy Death" },
+      { number: 5, title: "Coronation of Mary", virtue: "Trust in Mary's Intercession" },
+    ]},
+    4: { name: t('rosary.luminous'), day: "Thursday", color: "#7C6500", emoji: "💡", mysteries: [
+      { number: 1, title: "Baptism of Jesus", virtue: "Openness to the Holy Spirit" },
+      { number: 2, title: "Wedding at Cana", virtue: "To Jesus through Mary" },
+      { number: 3, title: "Proclamation of the Kingdom", virtue: "Repentance & Trust" },
+      { number: 4, title: "The Transfiguration", virtue: "Desire for Holiness" },
+      { number: 5, title: "Institution of the Eucharist", virtue: "Eucharistic Adoration" },
+    ]},
+    5: { name: t('rosary.sorrowful'), day: "Friday", color: "#5C2D2D", emoji: "✝️", mysteries: [
+      { number: 1, title: "The Agony in the Garden", virtue: "Contrition" },
+      { number: 2, title: "The Scourging at the Pillar", virtue: "Purity" },
+      { number: 3, title: "The Crowning with Thorns", virtue: "Courage" },
+      { number: 4, title: "Carrying of the Cross", virtue: "Patience" },
+      { number: 5, title: "The Crucifixion", virtue: "Self-denial" },
+    ]},
+    6: { name: t('rosary.joyful'), day: "Saturday", color: "#007C7C", emoji: "🌸", mysteries: [
+      { number: 1, title: "The Annunciation", virtue: "Humility" },
+      { number: 2, title: "The Visitation", virtue: "Love of Neighbour" },
+      { number: 3, title: "The Nativity", virtue: "Poverty & Detachment" },
+      { number: 4, title: "The Presentation", virtue: "Obedience" },
+      { number: 5, title: "Finding in the Temple", virtue: "Piety" },
+    ]},
+  };
+
   const todaysMystery = mysteries[today as keyof typeof mysteries];
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -117,7 +172,7 @@ export default function RosaryScreen() {
             <Text className="text-white">←</Text>
           </TouchableOpacity>
           <Text className="text-white/70 text-sm font-medium uppercase tracking-widest">
-            Daily Rosary
+            {t('rosary.title')}
           </Text>
           <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
             <Text className="text-white text-sm">↺</Text>
@@ -138,7 +193,7 @@ export default function RosaryScreen() {
 
         {/* Mysteries List */}
         <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-          The 5 Mysteries
+          {t('rosary.theFiveMysteries')}
         </Text>
 
         {todaysMystery.mysteries.map((mystery, index) => (
@@ -174,7 +229,7 @@ export default function RosaryScreen() {
           style={{ backgroundColor: todaysMystery.color }}
         >
           <Text className="text-white text-lg font-semibold">
-            Begin Full Session
+            {t('rosary.beginSession')}
           </Text>
         </TouchableOpacity>
 

@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import AudioPlayer from "../../components/audio/AudioPlayer";
 
 const prayerTexts: Record<string, { title: string; day: string; intro: string; prayers: { title: string; text: string }[] }> = {
   "1": {
@@ -79,28 +80,10 @@ export default function PrayerOutputScreen() {
       </View>
 
       {/* Audio Player */}
-      <View className="mx-6 mt-4 bg-gray-50 rounded-2xl p-4">
-        <View className="flex-row items-center justify-between mb-3">
-          <Text className="text-gray-400 text-xs">0:00</Text>
-          <Text className="text-gray-400 text-xs">10:00</Text>
-        </View>
-        {/* Progress Bar */}
-        <View className="h-1 bg-gray-200 rounded-full mb-4">
-          <View className="h-1 bg-primary rounded-full w-1/3" />
-        </View>
-        {/* Controls */}
-        <View className="flex-row items-center justify-center gap-8">
-          <TouchableOpacity>
-            <Text className="text-gray-400 text-2xl">⏮</Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="w-14 h-14 bg-primary rounded-full items-center justify-center">
-            <Text className="text-white text-2xl">▶</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text className="text-gray-400 text-2xl">⏭</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <AudioPlayer
+        url={undefined}
+        color="#007C7C"
+      />
 
       {/* Prayer Text */}
       <ScrollView className="flex-1 px-6 mt-6" showsVerticalScrollIndicator={false}>
