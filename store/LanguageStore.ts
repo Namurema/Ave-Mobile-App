@@ -1,8 +1,8 @@
 import { create } from 'zustand';
-import { createMMKV } from 'react-native-mmkv';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '../lib/i18n';
 
-const storage = createMMKV({ id: 'language-store' });
+const LANGUAGE_KEY = 'language';
 
 interface LanguageState {
   language: string;
@@ -13,16 +13,16 @@ interface LanguageState {
 export const useLanguageStore = create<LanguageState>((set) => ({
   language: 'en',
 
-  loadLanguage: () => {
-    const saved = storage.getString('language');
+  loadLanguage: async () => {
+    const saved = await AsyncStorage.getItem(LANGUAGE_KEY);
     if (saved) {
       i18n.changeLanguage(saved);
       set({ language: saved });
     }
   },
 
-  setLanguage: (code: string) => {
-    storage.set('language', code);
+  setLanguage: async (code: string) => {
+    await AsyncStorage.setItem(LANGUAGE_KEY, code);
     i18n.changeLanguage(code);
     set({ language: code });
   },
