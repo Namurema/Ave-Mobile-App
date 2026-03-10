@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import Footer from "../../components/ui/Footer";
 
 const dailyRoutine = [
   {
@@ -53,6 +54,12 @@ export default function PrayersScreen() {
       {/* Header */}
       <View className="bg-primary px-6 pt-14 pb-6">
         <View className="flex-row items-center justify-between">
+          <TouchableOpacity
+            onPress={() => router.back()}
+            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
+          >
+            <Text className="text-white">←</Text>
+          </TouchableOpacity>
           <Text className="text-white text-2xl font-bold">Daily Prayers</Text>
           <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
             <Text className="text-white text-sm">↺</Text>
@@ -136,6 +143,8 @@ export default function PrayersScreen() {
         </View>
 
       </ScrollView>
+
+      <Footer />
     </View>
   );
 }

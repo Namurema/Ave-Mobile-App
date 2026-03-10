@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity, TextInput } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import Footer from "../../components/ui/Footer";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -119,7 +120,7 @@ export default function HomeScreen() {
 
       </ScrollView>
 
-      {/* Tab Bar handled by Expo Router */}
+      <Footer />
     </View>
   );
 }

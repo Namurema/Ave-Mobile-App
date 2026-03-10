@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity, ImageBackground } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import Footer from "../../components/ui/Footer";
 
 const mysteries = {
   0: { // Sunday
@@ -109,6 +110,12 @@ export default function RosaryScreen() {
       {/* Header */}
       <View className="px-6 pt-14 pb-6" style={{ backgroundColor: todaysMystery.color }}>
         <View className="flex-row items-center justify-between mb-2">
+          <TouchableOpacity
+            onPress={() => router.canGoBack() ? router.back() : router.push("/(tabs)/home")}
+            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
+          >
+            <Text className="text-white">←</Text>
+          </TouchableOpacity>
           <Text className="text-white/70 text-sm font-medium uppercase tracking-widest">
             Daily Rosary
           </Text>
@@ -162,6 +169,7 @@ export default function RosaryScreen() {
 
         {/* Begin Session Button */}
         <TouchableOpacity
+          onPress={() => router.push("/prayer/session")}
           className="rounded-full py-4 items-center mt-4 mb-10"
           style={{ backgroundColor: todaysMystery.color }}
         >
@@ -171,6 +179,8 @@ export default function RosaryScreen() {
         </TouchableOpacity>
 
       </ScrollView>
+
+      <Footer />
     </View>
   );
 }
