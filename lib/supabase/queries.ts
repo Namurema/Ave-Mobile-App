@@ -10,7 +10,32 @@ export async function getCategories() {
   return data;
 }
 
-// Fetch prayers by category and language
+// Fetch all languages
+export async function getLanguages() {
+  const { data, error } = await supabase
+    .from('languages')
+    .select('*');
+  if (error) throw error;
+  return data;
+}
+
+// Fetch Rosary prayers by language
+export async function getRosaryPrayers(languageCode: string) {
+  const { data, error } = await supabase
+    .from('prayers')
+    .select(`
+      *,
+      categories!inner(slug),
+      languages!inner(code)
+    `)
+    .eq('categories.slug', 'daily-rosary')
+    .eq('languages.code', languageCode)
+    .order('sort_order');
+  if (error) throw error;
+  return data;
+}
+
+// Fetch prayers by category slug and language
 export async function getPrayersByCategory(categorySlug: string, languageCode: string) {
   const { data, error } = await supabase
     .from('prayers')
@@ -26,11 +51,13 @@ export async function getPrayersByCategory(categorySlug: string, languageCode: s
   return data;
 }
 
-// Fetch all languages
-export async function getLanguages() {
+// Fetch single prayer by id
+export async function getPrayerById(id: string) {
   const { data, error } = await supabase
-    .from('languages')
-    .select('*');
+    .from('prayers')
+    .select('*')
+    .eq('id', id)
+    .single();
   if (error) throw error;
   return data;
 }
