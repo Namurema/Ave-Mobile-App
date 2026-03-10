@@ -1,10 +1,14 @@
 import { View, Text, ScrollView, TouchableOpacity, TextInput } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import { useTranslation } from "react-i18next";
+import { useLanguageStore } from "../../store/LanguageStore";
 import Footer from "../../components/ui/Footer";
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
+  const { language } = useLanguageStore();
   return (
     <View className="flex-1 bg-gray-50">
       <StatusBar style="dark" />
@@ -14,7 +18,7 @@ export default function HomeScreen() {
         <View className="bg-primary px-6 pt-14 pb-6">
           <View className="flex-row items-center justify-between mb-4">
             <View>
-              <Text className="text-accent text-sm">Good Morning 🌅</Text>
+              <Text className="text-accent text-sm">{t('home.greeting')}</Text>
               <Text className="text-white text-2xl font-bold">Ave</Text>
             </View>
             <TouchableOpacity className="w-10 h-10 bg-white/20 rounded-full items-center justify-center">
@@ -26,7 +30,7 @@ export default function HomeScreen() {
           <View className="bg-white/20 rounded-full flex-row items-center px-4 py-3">
             <Text className="text-white/60 mr-2">🔍</Text>
             <TextInput
-              placeholder="Search prayers or scriptures..."
+              placeholder={t('home.search')}
               placeholderTextColor="rgba(255,255,255,0.6)"
               className="flex-1 text-white"
             />
@@ -36,7 +40,7 @@ export default function HomeScreen() {
         {/* Featured Daily */}
         <View className="px-6 mt-6">
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-3">
-            Featured Daily
+            {t('home.featuredDaily')}
           </Text>
           <View className="bg-primary rounded-3xl p-5 flex-row items-center justify-between">
             <View className="flex-1">
@@ -63,7 +67,7 @@ export default function HomeScreen() {
         {/* Daily Routine */}
         <View className="px-6 mt-6">
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-3">
-            Daily Routine
+            {t('home.dailyRoutine')}
           </Text>
           <View className="flex-row gap-3">
             {[
@@ -86,7 +90,7 @@ export default function HomeScreen() {
         {/* Spiritual Practice */}
         <View className="px-6 mt-6">
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-3">
-            Spiritual Practice
+            {t('home.spiritualPractice')}
           </Text>
           <View className="flex-row flex-wrap gap-3">
             {[

@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { useLanguageStore } from "../store/LanguageStore";
+import { useTranslation } from "react-i18next";
 
 const languages = [
   {
@@ -26,7 +28,14 @@ const languages = [
 
 export default function LanguageScreen() {
   const router = useRouter();
-  const [selected, setSelected] = useState("en");
+  const { t } = useTranslation();
+  const { language, setLanguage } = useLanguageStore();
+  const [selected, setSelected] = useState(language);
+
+  const handleContinue = () => {
+    setLanguage(selected);
+    router.push("/(tabs)/home");
+  };
 
   return (
     <View className="flex-1 bg-white px-6 pt-16 pb-10">
@@ -37,9 +46,9 @@ export default function LanguageScreen() {
         <View className="w-16 h-16 bg-primary rounded-2xl items-center justify-center mb-4">
           <Text className="text-3xl">🕊️</Text>
         </View>
-        <Text className="text-2xl font-bold text-gray-800">Welcome</Text>
+        <Text className="text-2xl font-bold text-gray-800">{t('language.title')}</Text>
         <Text className="text-gray-500 text-center mt-2 px-6">
-          Please select your preferred language for prayers and daily devotionals.
+          {t('language.subtitle')}
         </Text>
       </View>
 
@@ -77,10 +86,12 @@ export default function LanguageScreen() {
 
       {/* Continue Button */}
       <TouchableOpacity
-        onPress={() => router.push("/(tabs)/home")}
+        onPress={handleContinue}
         className="w-full bg-primary rounded-full py-4 items-center"
       >
-        <Text className="text-white text-lg font-semibold">Continue</Text>
+        <Text className="text-white text-lg font-semibold">
+          {t('common.continue')}
+        </Text>
       </TouchableOpacity>
     </View>
   );
