@@ -30,7 +30,7 @@ export default {
     startYourDay: "Tangira eisho ryawe",
     novenas: "Okunoovena",
     stationsOfCross: "Ebifo by'Omusaalaba",
-    stations: "Ebifo Ebitukuvu",
+    otherPrayers: "Emisabo Emindi",
     chaplets: "Okusaba Chaplet",
     ninedays: "Okusaba eizooba 9",
     meditatePassion: "Rozaho ku kwekubagiza",

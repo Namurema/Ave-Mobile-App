@@ -1,53 +1,47 @@
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { useEffect, useState } from "react";
+import { View, Text, ScrollView, TouchableOpacity, ActivityIndicator } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import Footer from "../../components/ui/Footer";
+import { useLanguageStore } from "../../store/LanguageStore";
+import { getCategories } from "../../lib/supabase/queries";
 
-const categories = [
-  { id: "novenas", title: "Novenas", icon: "🕯️", count: 12 },
-  { id: "litanies", title: "Litanies", icon: "📜", count: 8 },
-  { id: "chaplets", title: "Chaplets", icon: "📿", count: 6 },
-  { id: "stations", title: "Stations of the Cross", icon: "✝️", count: 14 },
-  { id: "afternoon", title: "Afternoon Prayers", icon: "🌤️", count: 5 },
+const categoryIcons: Record<string, string> = {
+  "daily-rosary": "📿",
+  "morning-evening": "🌅",
+  "novenas": "🕯️",
+  "chaplets": "📿",
+  "litanies": "📜",
+  "afternoon": "🌤️",
+  "stations-of-the-cross": "✝️",
+};
+
+const dailyRoutine = [
+  { id: "morning", titleKey: "prayers.morningPrayers", subKey: "prayers.startYourDay", time: "6:00 AM", icon: "🌅", duration: "10 mins", slug: "morning-evening" },
+  { id: "midday", titleKey: "prayers.middayPrayers", subKey: "prayers.pauseForPeace", time: "12:00 PM", icon: "☀️", duration: "5 mins", slug: "afternoon" },
+  { id: "night", titleKey: "prayers.nightPrayers", subKey: "prayers.gratitudeRest", time: "9:00 PM", icon: "🌙", duration: "8 mins", slug: "morning-evening" },
 ];
 
 export default function PrayersScreen() {
   const router = useRouter();
   const { t } = useTranslation();
+  const { language } = useLanguageStore();
+  const [categories, setCategories] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const dailyRoutine = [
-    {
-      id: "morning",
-      title: t('prayers.morningPrayers'),
-      subtitle: t('prayers.startYourDay'),
-      time: "6:00 AM",
-      icon: "🌅",
-      duration: "10 mins",
-    },
-    {
-      id: "midday",
-      title: t('prayers.middayPrayers'),
-      subtitle: t('prayers.pauseForPeace'),
-      time: "12:00 PM",
-      icon: "☀️",
-      duration: "5 mins",
-    },
-    {
-      id: "night",
-      title: t('prayers.nightPrayers'),
-      subtitle: t('prayers.gratitudeRest'),
-      time: "9:00 PM",
-      icon: "🌙",
-      duration: "8 mins",
-    },
-  ];
   const today = new Date();
   const dateStr = today.toLocaleDateString("en-US", {
     weekday: "long",
     month: "short",
     day: "numeric",
   });
+
+  useEffect(() => {
+    getCategories()
+      .then(setCategories)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <View className="flex-1 bg-gray-50">
@@ -56,12 +50,6 @@ export default function PrayersScreen() {
       {/* Header */}
       <View className="bg-primary px-6 pt-14 pb-6">
         <View className="flex-row items-center justify-between">
-          <TouchableOpacity
-            onPress={() => router.back()}
-            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
-          >
-            <Text className="text-white">←</Text>
-          </TouchableOpacity>
           <Text className="text-white text-2xl font-bold">{t('prayers.title')}</Text>
           <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
             <Text className="text-white text-sm">↺</Text>
@@ -77,10 +65,10 @@ export default function PrayersScreen() {
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
             {t('prayers.dailyRoutine')}
           </Text>
-
           {dailyRoutine.map((item) => (
             <TouchableOpacity
               key={item.id}
+              onPress={() => router.push(`/daily-prayer/${item.id}` as any)}
               className="bg-white rounded-2xl p-4 mb-3 flex-row items-center shadow-sm"
             >
               <View className="w-12 h-12 bg-accent rounded-2xl items-center justify-center mr-4">
@@ -88,10 +76,10 @@ export default function PrayersScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-gray-800 font-semibold text-base">
-                  {item.title}
+                  {t(item.titleKey)}
                 </Text>
                 <Text className="text-gray-400 text-sm mt-0.5">
-                  {item.subtitle}
+                  {t(item.subKey)}
                 </Text>
               </View>
               <View className="items-end gap-1">
@@ -99,6 +87,7 @@ export default function PrayersScreen() {
                 <TouchableOpacity
                   className="w-8 h-8 rounded-full items-center justify-center"
                   style={{ backgroundColor: "#007C7C" }}
+                  onPress={() => router.push(`/daily-prayer/${item.id}` as any)}
                 >
                   <Text className="text-white text-xs">▶</Text>
                 </TouchableOpacity>
@@ -107,31 +96,33 @@ export default function PrayersScreen() {
           ))}
         </View>
 
-        {/* Prayer Categories */}
+        {/* All Prayer Categories from Supabase */}
         <View className="px-6 mt-6">
           <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
             {t('prayers.allPrayers')}
           </Text>
 
-          {categories.map((cat) => (
-            <TouchableOpacity
-              key={cat.id}
-              className="bg-white rounded-2xl p-4 mb-3 flex-row items-center shadow-sm"
-            >
-              <View className="w-12 h-12 bg-accent rounded-2xl items-center justify-center mr-4">
-                <Text className="text-2xl">{cat.icon}</Text>
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-semibold text-base">
-                  {cat.title}
-                </Text>
-                <Text className="text-gray-400 text-sm mt-0.5">
-                  {cat.count} prayers
-                </Text>
-              </View>
-              <Text className="text-gray-300 text-lg">›</Text>
-            </TouchableOpacity>
-          ))}
+          {loading ? (
+            <ActivityIndicator color="#007C7C" />
+          ) : (
+            categories.map((cat) => (
+              <TouchableOpacity
+                key={cat.id}
+                onPress={() => router.push(`/prayers/${cat.slug}?lang=${language}`)}
+                className="bg-white rounded-2xl p-4 mb-3 flex-row items-center shadow-sm"
+              >
+                <View className="w-12 h-12 bg-accent rounded-2xl items-center justify-center mr-4">
+                  <Text className="text-2xl">{categoryIcons[cat.slug] ?? "🙏"}</Text>
+                </View>
+                <View className="flex-1">
+                  <Text className="text-gray-800 font-semibold text-base">
+                    {cat.name}
+                  </Text>
+                </View>
+                <Text className="text-gray-300 text-lg">›</Text>
+              </TouchableOpacity>
+            ))
+          )}
         </View>
 
         {/* Scripture Quote */}
@@ -145,8 +136,6 @@ export default function PrayersScreen() {
         </View>
 
       </ScrollView>
-
-      <Footer />
     </View>
   );
 }

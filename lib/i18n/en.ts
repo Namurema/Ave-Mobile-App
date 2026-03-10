@@ -30,7 +30,7 @@ export default {
     startYourDay: "Start your day",
     novenas: "Novenas",
     stationsOfCross: "Stations of the Cross",
-    stations: "Stations",
+    otherPrayers: "Other Prayers",
     chaplets: "Chaplets",
     ninedays: "9 days of prayer",
     meditatePassion: "Meditate on the passion",

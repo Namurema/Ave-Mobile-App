@@ -71,7 +71,7 @@ export default function HomeScreen() {
           </Text>
           <View className="flex-row gap-3">
             {[
-              { icon: "📅", title: t('home.dailySchedules'), sub: t('home.planAndPersonalise'), route: null },
+              { icon: "📅", title: t('home.dailySchedules'), sub: t('home.planAndPersonalise'), route: "/schedule" },
               { icon: "🙏", title: t('home.dailyPrayers'), sub: t('home.startYourDay'), route: "/(tabs)/prayers" },
             ].map((item) => (
               <TouchableOpacity
@@ -94,15 +94,16 @@ export default function HomeScreen() {
           </Text>
           <View className="flex-row flex-wrap gap-3">
             {[
-              { icon: "🕯️", title: t('home.novenas'), sub: t('home.ninedays') },
-              { icon: "✝️", title: t('home.stationsOfCross'), sub: t('home.meditatePassion') },
-              { icon: "📍", title: t('home.stations'), sub: t('home.sacredLocations') },
-              { icon: "💿", title: t('home.chaplets'), sub: t('home.meditativePrayer') },
+              { icon: "🕯️", title: t('home.novenas'), sub: t('home.ninedays'), route: "/novenas" },
+              { icon: "✝️", title: t('home.stationsOfCross'), sub: t('home.meditatePassion'), route: "/stations" },
+              { icon: "📍", title: t('home.otherPrayers'), sub: t('home.sacredLocations'), route: "/other-prayers" },
+              { icon: "💿", title: t('home.chaplets'), sub: t('home.meditativePrayer'), route: "/chaplets" },
             ].map((item) => (
               <TouchableOpacity
                 key={item.title}
                 className="bg-white rounded-2xl p-4 shadow-sm"
                 style={{ width: "47%" }}
+                onPress={() => router.push(item.route as any)}
               >
                 <Text className="text-2xl mb-2">{item.icon}</Text>
                 <Text className="text-gray-800 font-semibold text-sm">{item.title}</Text>
