@@ -89,3 +89,13 @@ export async function markPrayerComplete(userId: string, prayerId: string) {
   if (error) throw error;
   return data;
 }
+// Fetch audio track for a prayer
+export async function getAudioTrack(prayerId: string) {
+  const { data, error } = await supabase
+    .from('audio_tracks')
+    .select('*')
+    .eq('prayer_id', prayerId)
+    .single();
+  if (error) return null;
+  return data;
+}
