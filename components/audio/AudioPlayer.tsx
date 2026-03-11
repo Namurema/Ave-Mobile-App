@@ -18,6 +18,7 @@ export default function AudioPlayer({ url, color = "#007C7C" }: AudioPlayerProps
     useAudioStore();
 
   const isCurrentTrack = currentTrackUrl === url;
+  const progress = isCurrentTrack && duration > 0 ? position / duration : 0;
 
   const handlePlay = async () => {
     if (!url) return;
@@ -28,19 +29,16 @@ export default function AudioPlayer({ url, color = "#007C7C" }: AudioPlayerProps
     }
   };
 
-  const progress = duration > 0 ? position / duration : 0;
+  if (!url) return null;
 
   return (
-    <View className="bg-white/10 rounded-2xl p-4">
+    <View className="bg-primary rounded-2xl p-4">
       {/* Progress Bar */}
-      <View className="mb-2">
+      <View className="mb-3">
         <View className="h-1.5 bg-white/20 rounded-full">
           <View
-            className="h-1.5 rounded-full"
-            style={{
-              width: `${progress * 100}%`,
-              backgroundColor: color === "#007C7C" ? "#C2FFFF" : "white",
-            }}
+            className="h-1.5 rounded-full bg-accent"
+            style={{ width: `${progress * 100}%` }}
           />
         </View>
         <View className="flex-row justify-between mt-1">
@@ -58,17 +56,14 @@ export default function AudioPlayer({ url, color = "#007C7C" }: AudioPlayerProps
         <TouchableOpacity onPress={() => seek(Math.max(0, position - 10000))}>
           <Text className="text-white/70 text-2xl">⏮</Text>
         </TouchableOpacity>
-
         <TouchableOpacity
           onPress={handlePlay}
-          className="w-14 h-14 rounded-full items-center justify-center"
-          style={{ backgroundColor: color }}
+          className="w-14 h-14 rounded-full items-center justify-center bg-white/20"
         >
           <Text className="text-white text-xl">
             {isCurrentTrack && isPlaying ? "⏸" : "▶"}
           </Text>
         </TouchableOpacity>
-
         <TouchableOpacity onPress={() => seek(Math.min(duration, position + 10000))}>
           <Text className="text-white/70 text-2xl">⏭</Text>
         </TouchableOpacity>

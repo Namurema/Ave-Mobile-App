@@ -23,23 +23,21 @@ export const useAudioStore = create<AudioState>((set, get) => ({
   loadAndPlay: async (url: string) => {
     try {
       const { sound: existingSound } = get();
-
-      // Unload previous sound
       if (existingSound) {
         await existingSound.unloadAsync();
       }
 
-      // Set audio mode for background play
       await Audio.setAudioModeAsync({
         allowsRecordingIOS: false,
         staysActiveInBackground: true,
         playsInSilentModeIOS: true,
         shouldDuckAndroid: true,
+        playThroughEarpieceAndroid: false,
       });
 
       const { sound } = await Audio.Sound.createAsync(
         { uri: url },
-        { shouldPlay: true },
+        { shouldPlay: true, volume: 1.0 },
         (status) => {
           if (status.isLoaded) {
             set({
@@ -53,7 +51,7 @@ export const useAudioStore = create<AudioState>((set, get) => ({
 
       set({ sound, isPlaying: true, currentTrackUrl: url });
     } catch (error) {
-      console.log('Audio error:', error);
+      console.error('Audio error:', error);
     }
   },
 

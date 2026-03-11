@@ -78,7 +78,7 @@ export default function PrayerOutputScreen() {
 
       {/* Audio Player — only show if audio exists */}
       {audioTrack && (
-        <View className="mx-6 mt-4">
+        <View className=" mx-6 mt-4 ">
           <AudioPlayer
             url={audioTrack.url}
             color="#007C7C"

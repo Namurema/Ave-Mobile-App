@@ -17,7 +17,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 22 }}>🏠</Text>
+            <Text style={{ color, fontSize: 22 }}>#</Text>
           ),
         }}
       />
@@ -26,7 +26,7 @@ export default function TabLayout() {
         options={{
           title: "Prayers",
           tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 22 }}>📖</Text>
+            <Text style={{ color, fontSize: 22 }}>#</Text>
           ),
         }}
       />
@@ -35,7 +35,7 @@ export default function TabLayout() {
         options={{
           title: "Rosary",
           tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 22 }}>📿</Text>
+            <Text style={{ color, fontSize: 22 }}>#</Text>
           ),
         }}
       />

@@ -21,7 +21,8 @@
           "color": "#c9a84c"
         }
       ],
-      "expo-localization"
+      "expo-localization",
+      "expo-audio"
     ],
     "android": {
       "adaptiveIcon": {

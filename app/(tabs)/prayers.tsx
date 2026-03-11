@@ -4,7 +4,6 @@ import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { getCategories } from "../../lib/supabase/queries";
-import { fetchCategoryPrayers } from "../../lib/storage/prayerCache";
 import { useLanguageStore } from "../../store/LanguageStore";
 
 const categoryIcons: Record<string, string> = {
@@ -18,9 +17,9 @@ const categoryIcons: Record<string, string> = {
 };
 
 const dailyRoutine = [
-  { id: "morning", title: "Morning Prayers", subtitle: "Start your day with grace", icon: "🌅", slug: "morning-evening" },
-  { id: "midday", title: "Midday Prayers", subtitle: "A pause for peace & divine", icon: "☀️", slug: "afternoon" },
-  { id: "night", title: "Night Prayers", subtitle: "Gratitude, rest, and peace", icon: "🌙", slug: "morning-evening" },
+  { id: "morning", title: "Morning Prayers", subtitle: "Start your day with grace", icon: "🌅" },
+  { id: "midday", title: "Midday Prayers", subtitle: "A pause for peace & divine", icon: "☀️" },
+  { id: "night", title: "Night Prayers", subtitle: "Gratitude, rest, and peace", icon: "🌙" },
 ];
 
 export default function PrayersScreen() {
@@ -36,6 +35,7 @@ export default function PrayersScreen() {
 
   async function loadCategories() {
     try {
+      const { getCategories } = await import("../../lib/supabase/queries");
       const data = await getCategories();
       setCategories(data ?? []);
     } catch (e) {
@@ -77,7 +77,7 @@ export default function PrayersScreen() {
           {dailyRoutine.map((item) => (
             <TouchableOpacity
               key={item.id}
-              onPress={() => router.push(`/prayers/${item.slug}?lang=${language}`)}
+              onPress={() => router.push(`/daily-prayer/${item.id}`)}
               className="bg-white rounded-2xl p-4 mb-3 flex-row items-center shadow-sm"
             >
               <View className="w-12 h-12 bg-accent rounded-2xl items-center justify-center mr-4">
@@ -87,9 +87,9 @@ export default function PrayersScreen() {
                 <Text className="text-gray-800 font-semibold text-base">{item.title}</Text>
                 <Text className="text-gray-400 text-sm mt-0.5">{item.subtitle}</Text>
               </View>
-              <TouchableOpacity className="w-8 h-8 bg-primary rounded-full items-center justify-center">
+              <View className="w-8 h-8 bg-primary rounded-full items-center justify-center">
                 <Text className="text-white text-xs">▶</Text>
-              </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           ))}
         </View>

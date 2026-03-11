@@ -1,12 +1,14 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import AudioPlayer from "../../components/audio/AudioPlayer";
 
 const chapletContent: Record<string, {
   title: string;
   subtitle: string;
   icon: string;
   color: string;
+  audioUrl: string;
   sections: { heading: string; body: string }[];
 }> = {
   "1": {
@@ -14,6 +16,7 @@ const chapletContent: Record<string, {
     subtitle: "Pray on ordinary Rosary beads",
     icon: "✨",
     color: "#5C2D7C",
+    audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/divine-mercy-chaplet.mp3",
     sections: [
       {
         heading: "Opening Prayer",
@@ -82,6 +85,11 @@ export default function ChapletDetailScreen() {
         </Text>
         <Text className="text-white text-2xl font-bold mt-1">{chaplet.title}</Text>
         <Text className="text-white/70 text-sm mt-1">{chaplet.subtitle}</Text>
+
+        {/* Audio Player */}
+        <View className="mt-4">
+          <AudioPlayer url={chaplet.audioUrl} color={chaplet.color} />
+        </View>
       </View>
 
       {/* Prayer Sections */}

@@ -1,12 +1,14 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import AudioPlayer from "../../components/audio/AudioPlayer";
 
 const prayerContent: Record<string, {
   title: string;
   subtitle: string;
   icon: string;
   color: string;
+  audioUrl?: string;
   sections: { heading: string; body: string }[];
 }> = {
   guadalupe: {
@@ -14,6 +16,7 @@ const prayerContent: Record<string, {
     subtitle: "Patroness of the Americas",
     icon: "🌹",
     color: "#B91C1C",
+    audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/our-lady-of-guadalupe.mp3",
     sections: [
       {
         heading: "First Prayer",
@@ -30,6 +33,7 @@ const prayerContent: Record<string, {
     subtitle: "Our Lady of the Rosary of Fatima",
     icon: "🌸",
     color: "#4A6FA5",
+    audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/our-lady-of-fatima.mp3",
     sections: [
       {
         heading: "Novena Prayer",
@@ -46,6 +50,7 @@ const prayerContent: Record<string, {
     subtitle: "The Canticle of Mary — Luke 1:46-55",
     icon: "🌟",
     color: "#007C7C",
+    audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/magnificant.mp3",
     sections: [
       {
         heading: "The Canticle of Mary",
@@ -94,6 +99,13 @@ export default function OtherPrayerDetailScreen() {
         </Text>
         <Text className="text-white text-2xl font-bold mt-1">{prayer.title}</Text>
         <Text className="text-white/70 text-sm mt-1">{prayer.subtitle}</Text>
+
+        {/* Audio Player */}
+        {prayer.audioUrl && (
+          <View className="mt-4">
+            <AudioPlayer url={prayer.audioUrl} color={prayer.color} />
+          </View>
+        )}
       </View>
 
       {/* Prayer Sections */}

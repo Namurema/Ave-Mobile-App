@@ -13,6 +13,7 @@
     "@react-native-google-signin/google-signin": "^16.1.2",
     "@supabase/supabase-js": "^2.99.0",
     "expo": "~54.0.0",
+    "expo-audio": "~1.1.1",
     "expo-av": "~16.0.8",
     "expo-constants": "~18.0.13",
     "expo-file-system": "~19.0.21",

@@ -46,6 +46,7 @@ export default {
     sorrowful: "Ebyama by''Okunnyika",
     glorious: "Ebyama by''Ekitiibwa",
     luminous: "Ebyama by''Omusana",
+    focusVirtues: "Lowooza ku butuukirivu bw'ebyama bino",
   },
   prayers: {
     title: "Okusaba kw''Olunaku",

@@ -46,6 +46,8 @@ export default {
     sorrowful: "Sorrowful Mysteries",
     glorious: "Glorious Mysteries",
     luminous: "Luminous Mysteries",
+    focusVirtues: "Focus on the virtues of each mystery",
+    
   },
   prayers: {
     title: "Daily Prayers",

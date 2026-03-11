@@ -1,19 +1,22 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import AudioPlayer from "../../components/audio/AudioPlayer";
 
 const novenaContent: Record<string, {
   title: string;
   subtitle: string;
   icon: string;
   color: string;
+  audioUrl?: string;
   sections: { heading: string; body: string }[];
 }> = {
   "7": {
     title: "Novena to the 13 Blessed Souls",
     subtitle: "Jesus & His 12 Apostles — 13 consecutive days",
-    icon: "✝️",
+    icon: "🙏",
     color: "#5C2D7C",
+    audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/novena-13-blessed-souls.mp3",
     sections: [
       {
         heading: "Opening Prayer (Read Twice)",
@@ -70,6 +73,13 @@ export default function NovenaDetailScreen() {
         </Text>
         <Text className="text-white text-2xl font-bold mt-1">{novena.title}</Text>
         <Text className="text-white/70 text-sm mt-1">{novena.subtitle}</Text>
+
+        {/* Audio Player */}
+        {novena.audioUrl && (
+          <View className="mt-4">
+            <AudioPlayer url={novena.audioUrl} color={novena.color} />
+          </View>
+        )}
       </View>
 
       {/* Prayer Sections */}
