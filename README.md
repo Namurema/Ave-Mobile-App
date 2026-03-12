@@ -24,10 +24,6 @@ npm install --legacy-peer-deps
 npx expo start
 ```
 
-## Build
-```bash
-eas build --platform android --profile preview
-eas build --platform ios --profile preview
 
 
 ## Project Structure
