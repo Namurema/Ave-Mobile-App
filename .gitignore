@@ -39,3 +39,12 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+echo "node_modules/" >> .gitignore
+echo ".env" >> .gitignore
+echo ".env.local" >> .gitignore
+echo "*.jks" >> .gitignore
+echo "*.p8" >> .gitignore
+echo "*.p12" >> .gitignore
+echo "*.key" >> .gitignore
+echo "*.mobileprovision" >> .gitignore
