@@ -26,9 +26,13 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   signIn: async () => {
     try {
-      await signInWithGoogle();
+      const session = await signInWithGoogle();
+      if (session) {
+        set({ session, user: session.user });
+      }
     } catch (error) {
-      console.log('Sign in not available yet:', error);
+      console.error('Sign in error:', error);
+      throw error;
     }
   },
 

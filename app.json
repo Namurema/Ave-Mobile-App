@@ -22,21 +22,37 @@
         }
       ],
       "expo-localization",
-      "expo-audio"
+      "expo-audio",
+      "expo-web-browser",
+      "expo-asset"
     ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundColor": "#1a1a2e"
       },
-      "package": "com.brenda.ave"
+      "package": "com.brenda.ave",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.brenda.ave"
+      "bundleIdentifier": "com.brenda.ave",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "web": {
       "bundler": "metro"
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e94eaf46-c09a-4ddd-8eae-7f86165f341e"
+      }
+    },
+    "owner": "namuremab"
   }
 }
