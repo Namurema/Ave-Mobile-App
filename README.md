@@ -1,5 +1,5 @@
 # Ave 
-A Catholic prayer companion app for daily prayers, the Rosary, novenas, and spiritual devotion — built for Uganda.
+A Catholic prayer companion app for daily prayers, the Rosary, novenas, and spiritual devotion built for Uganda.
 
 ## Features
 -  Daily Morning, Midday & Night Prayers
