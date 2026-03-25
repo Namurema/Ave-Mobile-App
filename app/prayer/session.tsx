@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
 import { useAudioStore } from "../../store/audioStore";
 
 const mysteries = {
-  0: { name: "Glorious Mysteries", day: "SUNDAY", emoji: "✨" },
-  1: { name: "Joyful Mysteries", day: "MONDAY", emoji: "🌸" },
-  2: { name: "Sorrowful Mysteries", day: "TUESDAY", emoji: "✝️" },
-  3: { name: "Glorious Mysteries", day: "WEDNESDAY", emoji: "✨" },
-  4: { name: "Luminous Mysteries", day: "THURSDAY", emoji: "💡" },
-  5: { name: "Sorrowful Mysteries", day: "FRIDAY", emoji: "✝️" },
-  6: { name: "Joyful Mysteries", day: "SATURDAY", emoji: "🌸" },
+  0: { name: "Glorious Mysteries", day: "SUNDAY", emoji: "" },
+  1: { name: "Joyful Mysteries", day: "MONDAY", emoji: "" },
+  2: { name: "Sorrowful Mysteries", day: "TUESDAY", emoji: "" },
+  3: { name: "Glorious Mysteries", day: "WEDNESDAY", emoji: "" },
+  4: { name: "Luminous Mysteries", day: "THURSDAY", emoji: "" },
+  5: { name: "Sorrowful Mysteries", day: "FRIDAY", emoji: "" },
+  6: { name: "Joyful Mysteries", day: "SATURDAY", emoji: "" },
 };
 
 const gloriousMysteries = [

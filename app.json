@@ -34,6 +34,8 @@
       "package": "com.brenda.ave",
       "permissions": [
         "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
     },
@@ -53,6 +55,12 @@
         "projectId": "e94eaf46-c09a-4ddd-8eae-7f86165f341e"
       }
     },
-    "owner": "namuremab"
+    "owner": "namuremab",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e94eaf46-c09a-4ddd-8eae-7f86165f341e"
+    }
   }
 }

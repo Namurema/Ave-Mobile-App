@@ -5,13 +5,13 @@ import { useState } from "react";
 import Footer from "../components/ui/Footer";
 
 const PRAYER_OPTIONS = [
-  { id: "morning", icon: "🌅", label: "Morning Prayers", time: "6:00 AM", category: "Daily" },
-  { id: "midday", icon: "☀️", label: "Midday Prayers", time: "12:00 PM", category: "Daily" },
-  { id: "night", icon: "🌙", label: "Night Prayers", time: "9:00 PM", category: "Daily" },
-  { id: "rosary", icon: "📿", label: "Daily Rosary", time: "7:00 AM", category: "Devotion" },
-  { id: "novenas", icon: "🕯️", label: "Novenas", time: "8:00 AM", category: "Devotion" },
-  { id: "stations", icon: "✝️", label: "Stations of the Cross", time: "3:00 PM", category: "Devotion" },
-  { id: "chaplets", icon: "💿", label: "Chaplets", time: "5:00 PM", category: "Devotion" },
+  { id: "morning", icon: "", label: "Morning Prayers", time: "6:00 AM", category: "Daily" },
+  { id: "midday", icon: "", label: "Midday Prayers", time: "12:00 PM", category: "Daily" },
+  { id: "night", icon: "", label: "Night Prayers", time: "9:00 PM", category: "Daily" },
+  { id: "rosary", icon: "", label: "Daily Rosary", time: "7:00 AM", category: "Devotion" },
+  { id: "novenas", icon: "", label: "Novenas", time: "8:00 AM", category: "Devotion" },
+  { id: "stations", icon: "", label: "Stations of the Cross", time: "3:00 PM", category: "Devotion" },
+  { id: "chaplets", icon: "", label: "Chaplets", time: "5:00 PM", category: "Devotion" },
 ];
 
 const TIME_SLOTS = ["5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "12:00 PM", "3:00 PM", "5:00 PM", "7:00 PM", "9:00 PM"];
@@ -69,7 +69,7 @@ export default function ScheduleScreen() {
             <Text className="text-white text-2xl font-bold mt-1">{enabledCount} / {PRAYER_OPTIONS.length}</Text>
           </View>
           <View className="w-14 h-14 bg-white/20 rounded-2xl items-center justify-center">
-            <Text className="text-3xl">📅</Text>
+            <Text className="text-3xl"></Text>
           </View>
         </View>
       </View>
@@ -92,7 +92,7 @@ export default function ScheduleScreen() {
                     <Text className="text-gray-800 font-semibold text-sm">{prayer.label}</Text>
                     <TouchableOpacity onPress={() => setEditingId(editingId === prayer.id ? null : prayer.id)}>
                       <Text className="text-primary text-xs mt-0.5">
-                        ⏰ {schedule[prayer.id]?.time} {editingId === prayer.id ? "▲" : "▼"}
+                         {schedule[prayer.id]?.time} {editingId === prayer.id ? "▲" : "▼"}
                       </Text>
                     </TouchableOpacity>
                   </View>
@@ -157,7 +157,7 @@ export default function ScheduleScreen() {
                     <Text className="text-gray-800 font-semibold text-sm">{prayer.label}</Text>
                     <TouchableOpacity onPress={() => setEditingId(editingId === prayer.id ? null : prayer.id)}>
                       <Text className="text-primary text-xs mt-0.5">
-                        ⏰ {schedule[prayer.id]?.time} {editingId === prayer.id ? "▲" : "▼"}
+                         {schedule[prayer.id]?.time} {editingId === prayer.id ? "▲" : "▼"}
                       </Text>
                     </TouchableOpacity>
                   </View>

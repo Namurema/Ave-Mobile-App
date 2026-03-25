@@ -12,9 +12,9 @@ const colorMap: Record<string, string> = {
 };
 
 const iconMap: Record<string, string> = {
-  morning: "🌅",
-  midday: "☀️",
-  night: "🌙",
+  morning: "",
+  midday: "",
+  night: "",
 };
 
 const titleMap: Record<string, string> = {
@@ -44,7 +44,7 @@ export default function DailyPrayerScreen() {
   const [loading, setLoading] = useState(true);
 
   const color = colorMap[id ?? "morning"] ?? "#007C7C";
-  const icon = iconMap[id ?? "morning"] ?? "🌅";
+  const icon = iconMap[id ?? "morning"] ?? "";
   const title = titleMap[id ?? "morning"] ?? "Daily Prayers";
   const audioUrl = audioMap[id ?? "morning"];
   const slug = slugMap[id ?? "morning"];

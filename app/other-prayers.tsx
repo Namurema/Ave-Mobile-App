@@ -7,7 +7,7 @@ const categories = [
   {
     id: "marian",
     title: "Marian Prayers",
-    icon: "👑",
+    icon: "",
     color: "#4A6FA5",
     prayers: [
       { id: "m1", title: "The Angelus", duration: "3 mins" },
@@ -19,7 +19,7 @@ const categories = [
   {
     id: "traditional",
     title: "Traditional Prayers",
-    icon: "📖",
+    icon: "",
     color: "#007C7C",
     prayers: [
       { id: "t1", title: "Act of Contrition", duration: "2 mins" },
@@ -31,7 +31,7 @@ const categories = [
   {
     id: "saints",
     title: "Prayers to Saints",
-    icon: "⭐",
+    icon: "",
     color: "#7C6500",
     prayers: [
       { id: "s1", title: "St. Michael the Archangel", duration: "2 mins" },
@@ -43,7 +43,7 @@ const categories = [
   {
     id: "eucharistic",
     title: "Eucharistic Prayers",
-    icon: "🍞",
+    icon: "",
     color: "#8B4513",
     prayers: [
       { id: "e1", title: "Anima Christi", duration: "2 mins" },
@@ -55,7 +55,7 @@ const categories = [
   {
     id: "apparitions",
     title: "Marian Apparitions",
-    icon: "🌹",
+    icon: "",
     color: "#B91C1C",
     prayers: [
       { id: "guadalupe", title: "Our Lady of Guadalupe", duration: "3 mins" },

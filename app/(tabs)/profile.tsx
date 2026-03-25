@@ -7,10 +7,10 @@ import { useAuthStore } from "../../store/authStore";
 import { useLanguageStore } from "../../store/LanguageStore";
 
 const settingsItems = [
-  { id: "premium", icon: "👑", title: "Premium Subscription", badge: "Pro", arrow: true },
-  { id: "privacy", icon: "🔒", title: "Privacy & Security", arrow: true },
-  { id: "audio", icon: "🎧", title: "Audio Preferences", arrow: true },
-  { id: "support", icon: "💬", title: "Contact Support", arrow: true },
+  { id: "premium", icon: "", title: "Premium Subscription", badge: "Pro", arrow: true },
+  { id: "privacy", icon: "", title: "Privacy & Security", arrow: true },
+  { id: "audio", icon: "", title: "Audio Preferences", arrow: true },
+  { id: "support", icon: "", title: "Contact Support", arrow: true },
 ];
 
 export default function ProfileScreen() {

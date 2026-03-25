@@ -7,19 +7,19 @@ import { getCategories } from "../../lib/supabase/queries";
 import { useLanguageStore } from "../../store/LanguageStore";
 
 const categoryIcons: Record<string, string> = {
-  "daily-rosary": "📿",
-  "morning-evening": "🌅",
-  "novenas": "🕯️",
-  "chaplets": "✝️",
-  "litanies": "📜",
-  "afternoon": "☀️",
-  "other-prayers": "🙏",
+  "daily-rosary": "",
+  "morning-evening": "",
+  "novenas": "",
+  "chaplets": "",
+  "litanies": "",
+  "afternoon": "",
+  "other-prayers": "",
 };
 
 const dailyRoutine = [
-  { id: "morning", title: "Morning Prayers", subtitle: "Start your day with grace", icon: "🌅" },
-  { id: "midday", title: "Midday Prayers", subtitle: "A pause for peace & divine", icon: "☀️" },
-  { id: "night", title: "Night Prayers", subtitle: "Gratitude, rest, and peace", icon: "🌙" },
+  { id: "morning", title: "Morning Prayers", subtitle: "Start your day with grace", icon: "" },
+  { id: "midday", title: "Midday Prayers", subtitle: "A pause for peace & divine", icon: "" },
+  { id: "night", title: "Night Prayers", subtitle: "Gratitude, rest, and peace", icon: "" },
 ];
 
 export default function PrayersScreen() {

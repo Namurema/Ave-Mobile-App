@@ -14,7 +14,7 @@ const novenaContent: Record<string, {
   "7": {
     title: "Novena to the 13 Blessed Souls",
     subtitle: "Jesus & His 12 Apostles — 13 consecutive days",
-    icon: "🙏",
+    icon: "",
     color: "#5C2D7C",
     audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/novena-13-blessed-souls.mp3",
     sections: [

@@ -44,7 +44,7 @@ export default function LanguageScreen() {
       {/* Logo */}
       <View className="items-center mb-10">
         <View className="w-16 h-16 bg-primary rounded-2xl items-center justify-center mb-4">
-          <Text className="text-3xl">🕊️</Text>
+          <Text className="text-3xl"></Text>
         </View>
         <Text className="text-2xl font-bold text-gray-800">{t('language.title')}</Text>
         <Text className="text-gray-500 text-center mt-2 px-6">

@@ -6,13 +6,13 @@ import { getPrayersByCategory } from "../../lib/supabase/queries";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 
 const slugLabels: Record<string, { title: string; subtitle: string; icon: string; color: string }> = {
-  "morning-evening": { title: "Morning & Evening Prayers", subtitle: "Begin and end your day with grace", icon: "🌅", color: "#007C7C" },
-  "afternoon":        { title: "Mid-Day Prayers",           subtitle: "A pause for peace and the divine",  icon: "☀️",  color: "#7C6500" },
-  "daily-rosary":     { title: "Daily Rosary",              subtitle: "Meditate on the mysteries of Christ", icon: "📿", color: "#5C2D7C" },
-  "novenas":          { title: "Novenas",                   subtitle: "Nine days of devoted prayer",        icon: "🕯️", color: "#2D5C7C" },
-  "chaplets":         { title: "Chaplets",                  subtitle: "Meditative bead prayers",            icon: "✝️", color: "#5C2D2D" },
-  "litanies":         { title: "Litanies",                  subtitle: "Repetitive prayers of praise",       icon: "📜", color: "#2D5C2D" },
-  "other-prayers":    { title: "Other Prayers",             subtitle: "Sacred prayers from Catholic tradition", icon: "🙏", color: "#4A6FA5" },
+  "morning-evening": { title: "Morning & Evening Prayers", subtitle: "Begin and end your day with grace", icon: "", color: "#007C7C" },
+  "afternoon":        { title: "Mid-Day Prayers",           subtitle: "A pause for peace and the divine",  icon: "",  color: "#7C6500" },
+  "daily-rosary":     { title: "Daily Rosary",              subtitle: "Meditate on the mysteries of Christ", icon: "", color: "#5C2D7C" },
+  "novenas":          { title: "Novenas",                   subtitle: "Nine days of devoted prayer",        icon: "", color: "#2D5C7C" },
+  "chaplets":         { title: "Chaplets",                  subtitle: "Meditative bead prayers",            icon: "", color: "#5C2D2D" },
+  "litanies":         { title: "Litanies",                  subtitle: "Repetitive prayers of praise",       icon: "", color: "#2D5C2D" },
+  "other-prayers":    { title: "Other Prayers",             subtitle: "Sacred prayers from Catholic tradition", icon: "", color: "#4A6FA5" },
 };
 
 export default function PrayerCategoryScreen() {

@@ -5,27 +5,27 @@ import Footer from "../components/ui/Footer";
 
 const chaplets = [
   {
-    id: "1", title: "Divine Mercy Chaplet", icon: "✨", color: "#5C2D7C",
+    id: "1", title: "Divine Mercy Chaplet", icon: "", color: "#5C2D7C",
     beads: "5 decades", duration: "20 mins",
     desc: "Pray on ordinary Rosary beads. Begin with Our Father, Hail Mary, and Apostles' Creed.",
   },
   {
-    id: "2", title: "Chaplet of St. Michael", icon: "⚔️", color: "#4A6FA5",
+    id: "2", title: "Chaplet of St. Michael", icon: "", color: "#4A6FA5",
     beads: "9 salutations", duration: "15 mins",
     desc: "Honour the nine choirs of angels and seek the protection of St. Michael the Archangel.",
   },
   {
-    id: "3", title: "Chaplet of the Immaculate Heart", icon: "💙", color: "#1E88E5",
+    id: "3", title: "Chaplet of the Immaculate Heart", icon: "", color: "#1E88E5",
     beads: "3 groups", duration: "10 mins",
     desc: "A devotion to our Blessed Mother's most pure and sorrowful heart.",
   },
   {
-    id: "4", title: "Seven Sorrows Chaplet", icon: "💔", color: "#B91C1C",
+    id: "4", title: "Seven Sorrows Chaplet", icon: "", color: "#B91C1C",
     beads: "7 decades", duration: "25 mins",
     desc: "Meditate on the seven sorrows of the Blessed Virgin Mary.",
   },
   {
-    id: "5", title: "Chaplet of St. Joseph", icon: "⚒️", color: "#7C6500",
+    id: "5", title: "Chaplet of St. Joseph", icon: "", color: "#7C6500",
     beads: "3 groups", duration: "12 mins",
     desc: "Seek the intercession of St. Joseph, patron of the Universal Church.",
   },
@@ -55,7 +55,7 @@ export default function ChapletsScreen() {
 
       {/* Info Banner */}
       <View className="mx-6 mt-4 bg-accent rounded-2xl p-4 flex-row items-center gap-3">
-        <Text className="text-2xl">📿</Text>
+        <Text className="text-2xl"></Text>
         <Text className="text-primary text-sm flex-1 leading-5">
           Chaplets are shorter bead prayers focused on a particular devotion or mystery.
         </Text>
@@ -81,8 +81,8 @@ export default function ChapletsScreen() {
               <View className="flex-1">
                 <Text className="text-gray-800 font-semibold text-sm">{chaplet.title}</Text>
                 <View className="flex-row gap-3 mt-1">
-                  <Text className="text-gray-400 text-xs">📿 {chaplet.beads}</Text>
-                  <Text className="text-gray-400 text-xs">⏱ {chaplet.duration}</Text>
+                  <Text className="text-gray-400 text-xs"> {chaplet.beads}</Text>
+                  <Text className="text-gray-400 text-xs"> {chaplet.duration}</Text>
                 </View>
               </View>
               <Text className="text-gray-300 text-lg">›</Text>

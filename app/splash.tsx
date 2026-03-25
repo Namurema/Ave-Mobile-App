@@ -12,7 +12,7 @@ export default function SplashScreen() {
       {/* Logo */}
       <View className="flex-1 items-center justify-center gap-6">
         <View className="w-24 h-24 bg-white rounded-3xl items-center justify-center shadow-lg">
-          <Text className="text-5xl">🕊️</Text>
+          <Text className="text-5xl"></Text>
         </View>
         <Text className="text-white text-5xl font-bold tracking-wide">
           Ave

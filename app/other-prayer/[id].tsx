@@ -14,7 +14,7 @@ const prayerContent: Record<string, {
   guadalupe: {
     title: "Prayers to Our Lady of Guadalupe",
     subtitle: "Patroness of the Americas",
-    icon: "🌹",
+    icon: "",
     color: "#B91C1C",
     audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/our-lady-of-guadalupe.mp3",
     sections: [
@@ -31,7 +31,7 @@ const prayerContent: Record<string, {
   fatima: {
     title: "Our Lady of Fatima Novena Prayer",
     subtitle: "Our Lady of the Rosary of Fatima",
-    icon: "🌸",
+    icon: "",
     color: "#4A6FA5",
     audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/our-lady-of-fatima.mp3",
     sections: [
@@ -48,7 +48,7 @@ const prayerContent: Record<string, {
   magnificat: {
     title: "Magnificat",
     subtitle: "The Canticle of Mary — Luke 1:46-55",
-    icon: "🌟",
+    icon: "",
     color: "#007C7C",
     audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/magnificant.mp3",
     sections: [

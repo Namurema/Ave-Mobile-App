@@ -4,13 +4,13 @@ import { useRouter } from "expo-router";
 import Footer from "../components/ui/Footer";
 
 const novenas = [
-  { id: "1", title: "Novena to the Sacred Heart", days: 9, desc: "A powerful 9-day devotion to the love of Christ", icon: "❤️", color: "#B91C1C" },
-  { id: "2", title: "Novena to Our Lady of Perpetual Help", days: 9, desc: "Seek the intercession of Our Blessed Mother", icon: "👑", color: "#007C7C" },
-  { id: "3", title: "Novena to St. Joseph", days: 9, desc: "Patron of workers, families and the Universal Church", icon: "⚒️", color: "#7C6500" },
-  { id: "4", title: "Novena to the Holy Spirit", days: 9, desc: "Prepare your heart for the gifts of the Spirit", icon: "🕊️", color: "#4A6FA5" },
-  { id: "5", title: "Divine Mercy Novena", days: 9, desc: "Trust in the ocean of Divine Mercy", icon: "✨", color: "#5C2D7C" },
-  { id: "6", title: "Novena to St. Jude", days: 9, desc: "Patron saint of desperate cases and lost causes", icon: "🙏", color: "#2D5C2D" },
-  { id: "7", title: "Novena to the 13 Blessed Souls", days: 13, desc: "Jesus and His 12 Apostles — pray for 13 consecutive days", icon: "✝️", color: "#5C2D7C" },
+  { id: "1", title: "Novena to the Sacred Heart", days: 9, desc: "A powerful 9-day devotion to the love of Christ", icon: "", color: "#B91C1C" },
+  { id: "2", title: "Novena to Our Lady of Perpetual Help", days: 9, desc: "Seek the intercession of Our Blessed Mother", icon: "", color: "#007C7C" },
+  { id: "3", title: "Novena to St. Joseph", days: 9, desc: "Patron of workers, families and the Universal Church", icon: "", color: "#7C6500" },
+  { id: "4", title: "Novena to the Holy Spirit", days: 9, desc: "Prepare your heart for the gifts of the Spirit", icon: "", color: "#4A6FA5" },
+  { id: "5", title: "Divine Mercy Novena", days: 9, desc: "Trust in the ocean of Divine Mercy", icon: "", color: "#5C2D7C" },
+  { id: "6", title: "Novena to St. Jude", days: 9, desc: "Patron saint of desperate cases and lost causes", icon: "", color: "#2D5C2D" },
+  { id: "7", title: "Novena to the 13 Blessed Souls", days: 13, desc: "Jesus and His 12 Apostles — pray for 13 consecutive days", icon: "", color: "#5C2D7C" },
 ];
 
 export default function NovenasScreen() {
@@ -37,7 +37,7 @@ export default function NovenasScreen() {
 
       {/* Info Banner */}
       <View className="mx-6 mt-4 bg-accent rounded-2xl p-4 flex-row items-center gap-3">
-        <Text className="text-2xl">🕯️</Text>
+        <Text className="text-2xl"></Text>
         <Text className="text-primary text-sm flex-1 leading-5">
           A novena is a prayer said over 9 consecutive days, asking for a special grace or favour.
         </Text>
