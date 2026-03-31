@@ -4,35 +4,24 @@ import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../store/LanguageStore";
 import Footer from "../../components/ui/Footer";
-import { Audio } from 'expo-av';
 
 export default function HomeScreen() {
   const router = useRouter();
   const { t } = useTranslation();
   const { language } = useLanguageStore();
 
-  const testAudio = async () => {
-    try {
-      await Audio.setAudioModeAsync({
-        allowsRecordingIOS: false,
-        staysActiveInBackground: true,
-        playsInSilentModeIOS: true,
-        shouldDuckAndroid: true,
-        playThroughEarpieceAndroid: false,
-      });
-      const { sound } = await Audio.Sound.createAsync(
-        { uri: 'https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/our-father.mp3' },
-        { shouldPlay: true, volume: 1.0 }
-      );
-      alert('Playing!');
-    } catch (e) {
-      alert('Error: ' + JSON.stringify(e));
-    }
-  };
-
   return (
     <View className="flex-1 bg-gray-50">
       <StatusBar style="dark" />
+
+      {/* STYLE TEST - remove after testing */}
+      <View style={{backgroundColor: 'red', padding: 20}}>
+        <Text style={{color: 'white'}}>INLINE STYLE TEST</Text>
+      </View>
+      <View className="bg-blue-500 p-5">
+        <Text className="text-white">NATIVEWIND CLASS TEST</Text>
+      </View>
+
       <ScrollView showsVerticalScrollIndicator={false}>
 
         {/* Header */}
@@ -135,7 +124,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Scripture Quote */}
-        <View className="mx-6 mt-6 bg-accent rounded-3xl p-6">
+        <View className="mx-6 mt-6 mb-10 bg-accent rounded-3xl p-6">
           <Text className="text-primary text-base italic text-center leading-6">
             "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures."
           </Text>
@@ -143,14 +132,6 @@ export default function HomeScreen() {
             PSALM 23:1-2
           </Text>
         </View>
-
-        {/* TEST AUDIO BUTTON - remove after testing */}
-        <TouchableOpacity
-          onPress={testAudio}
-          className="bg-red-500 p-4 mx-6 mt-4 mb-6 rounded-xl"
-        >
-          <Text className="text-white text-center font-bold text-lg">🔊 TEST AUDIO</Text>
-        </TouchableOpacity>
 
       </ScrollView>
 
