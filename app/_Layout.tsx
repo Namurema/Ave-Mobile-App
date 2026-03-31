@@ -1,4 +1,4 @@
-import "../global.css";
+import "../generated-styles.css";
 import "../lib/i18n";
 import { useEffect } from "react";
 import { Stack } from "expo-router";
