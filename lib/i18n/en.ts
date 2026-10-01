@@ -19,7 +19,7 @@ export default {
     runyakole: "Orunyankore",
   },
   home: {
-    greeting: "Good Morning 🌅",
+    greeting: "Good Morning",
     search: "Search prayers or scriptures...",
     featuredDaily: "Featured Daily",
     dailyRoutine: "Daily Routine",
@@ -57,8 +57,8 @@ export default {
     middayPrayers: "Midday Prayers",
     nightPrayers: "Night Prayers",
     startYourDay: "Start your day with grace",
-    pauseForPeace: "A pause for peace & divine",
-    gratitudeRest: "Gratitude, rest, and...",
+    pauseForPeace: "A pause for peace & grace",
+    gratitudeRest: "Gratitude, rest, and peace",
   },
   profile: {
     title: "Profile",
@@ -69,7 +69,7 @@ export default {
     privacy: "Privacy & Security",
     audio: "Audio Preferences",
     support: "Contact Support",
-    signInToSync: "Sign in to sync →",
+    signInToSync: "Sign in to sync",
     guestUser: "Guest User",
   },
 };

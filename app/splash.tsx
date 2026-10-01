@@ -1,36 +1,74 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Card, CardTitle, CardDescription } from "../components/ui/card";
+
+const features = [
+  { title: "Daily prayers", description: "Morning, midday and night prayers" },
+  { title: "The Holy Rosary", description: "Today's mysteries, with a virtue for each" },
+  { title: "Novenas & chaplets", description: "Divine Mercy, Stations of the Cross and more" },
+];
 
 export default function SplashScreen() {
   const router = useRouter();
+  const getStarted = () => router.push("/Language");
 
   return (
-    <View className="flex-1 bg-primary items-center justify-between py-20 px-6">
-      <StatusBar style="light" />
+    <View className="flex-1 bg-background">
+      <StatusBar style="dark" />
 
-      {/* Logo */}
-      <View className="flex-1 items-center justify-center gap-6">
-        <View className="w-24 h-24 bg-white rounded-3xl items-center justify-center shadow-lg">
-          <Text className="text-5xl"></Text>
+      {/* Top bar */}
+      <View className="border-b border-border">
+        <View className="w-full max-w-5xl self-center h-16 px-4 flex-row items-center justify-between">
+          <Text className="text-xl font-bold tracking-tight text-primary">Ave</Text>
+          <Button variant="ghost" size="sm" onPress={getStarted}>
+            Open app
+          </Button>
         </View>
-        <Text className="text-white text-5xl font-bold tracking-wide">
-          Ave
-        </Text>
-        <Text className="text-accent text-center text-base opacity-80 px-8">
-          Your companion for daily prayers and spiritual devotion
-        </Text>
       </View>
 
-      {/* Get Started Button */}
-      <TouchableOpacity
-        onPress={() => router.push("/Language")}
-        className="w-full bg-white rounded-full py-4 items-center flex-row justify-center gap-2"
-      >
-        <Text className="text-primary text-lg font-semibold">
-          Get Started →
-        </Text>
-      </TouchableOpacity>
+      <ScrollView contentContainerClassName="flex-grow items-center justify-center px-4 py-12">
+        <View className="w-full max-w-md">
+          {/* Hero */}
+          <Badge>Free · No account needed</Badge>
+          <Text className="mt-6 text-4xl font-bold tracking-tight text-foreground text-center">
+            Pray every day, in your own language
+          </Text>
+          <Text className="mt-4 text-base leading-7 text-muted-foreground text-center">
+            Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and
+            Runyankore.
+          </Text>
+
+          <Button size="lg" className="mt-8 w-full" onPress={getStarted}>
+            Get started
+          </Button>
+
+          {/* What's inside */}
+          <Card className="mt-10">
+            {features.map((feature, index) => (
+              <View
+                key={feature.title}
+                className={`flex-row items-start gap-3 p-4 ${
+                  index < features.length - 1 ? "border-b border-border" : ""
+                }`}
+              >
+                <View className="mt-1.5 h-2 w-2 rounded-full bg-primary" />
+                <View className="flex-1 gap-0.5">
+                  <CardTitle className="text-sm">{feature.title}</CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </View>
+              </View>
+            ))}
+          </Card>
+        </View>
+      </ScrollView>
+
+      {/* Footer */}
+      <Text className="py-6 text-center text-xs text-muted-foreground">
+        A Catholic prayer companion, built for Uganda
+      </Text>
     </View>
   );
 }

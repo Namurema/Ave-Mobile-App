@@ -6,13 +6,14 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useAuthStore } from "../store/authStore";
 import { useLanguageStore } from "../store/LanguageStore";
+import { LOGIN_ENABLED } from "../constants/features";
 
 export default function RootLayout() {
   const loadSession = useAuthStore((state) => state.loadSession);
   const loadLanguage = useLanguageStore((state) => state.loadLanguage);
 
   useEffect(() => {
-    loadSession();
+    if (LOGIN_ENABLED) loadSession();
     loadLanguage();
   }, []);
 

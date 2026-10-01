@@ -1,25 +1,22 @@
 import { useEffect, useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity, ActivityIndicator } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { Text } from "react-native";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { getCategories } from "../../lib/supabase/queries";
 import { useLanguageStore } from "../../store/LanguageStore";
-
-const categoryIcons: Record<string, string> = {
-  "daily-rosary": "",
-  "morning-evening": "",
-  "novenas": "",
-  "chaplets": "",
-  "litanies": "",
-  "afternoon": "",
-  "other-prayers": "",
-};
+import { Card } from "../../components/ui/card";
+import {
+  Page,
+  PageHeader,
+  Section,
+  ListCard,
+  LoadingCard,
+  EmptyState,
+} from "../../components/ui/page";
 
 const dailyRoutine = [
-  { id: "morning", title: "Morning Prayers", subtitle: "Start your day with grace", icon: "" },
-  { id: "midday", title: "Midday Prayers", subtitle: "A pause for peace & divine", icon: "" },
-  { id: "night", title: "Night Prayers", subtitle: "Gratitude, rest, and peace", icon: "" },
+  { id: "morning", title: "Morning Prayers", subtitle: "Start your day with grace" },
+  { id: "midday", title: "Midday Prayers", subtitle: "A pause for peace & grace" },
+  { id: "night", title: "Night Prayers", subtitle: "Gratitude, rest, and peace" },
 ];
 
 export default function PrayersScreen() {
@@ -45,93 +42,54 @@ export default function PrayersScreen() {
     }
   }
 
-  const today = new Date();
-  const dateStr = today.toLocaleDateString("en-US", {
+  const dateStr = new Date().toLocaleDateString("en-GB", {
     weekday: "long",
-    month: "short",
     day: "numeric",
+    month: "long",
   });
 
   return (
-    <View className="flex-1 bg-gray-50">
-      <StatusBar style="light" />
+    <Page>
+      <PageHeader title={t("prayers.title")} description={dateStr} />
 
-      {/* Header */}
-      <View className="bg-primary px-6 pt-14 pb-6">
-        <View className="flex-row items-center justify-between">
-          <Text className="text-white text-2xl font-bold">{t('prayers.title')}</Text>
-          <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
-            <Text className="text-white text-sm">↺</Text>
-          </TouchableOpacity>
-        </View>
-        <Text className="text-accent text-sm mt-1">{dateStr}</Text>
-      </View>
+      <Section title={t("prayers.dailyRoutine")}>
+        <ListCard
+          items={dailyRoutine.map((item) => ({
+            key: item.id,
+            title: item.title,
+            description: item.subtitle,
+            onPress: () => router.push(`/daily-prayer/${item.id}`),
+          }))}
+        />
+      </Section>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <Section title={t("prayers.allPrayers")}>
+        {loading ? (
+          <LoadingCard label="Loading prayers…" />
+        ) : categories.length === 0 ? (
+          <EmptyState
+            title="Couldn't load prayers"
+            description="Check your connection and try again."
+          />
+        ) : (
+          <ListCard
+            items={categories.map((cat) => ({
+              key: String(cat.id),
+              title: cat.name,
+              onPress: () => router.push(`/prayers/${cat.slug}?lang=${language}`),
+            }))}
+          />
+        )}
+      </Section>
 
-        {/* Daily Routine */}
-        <View className="px-6 mt-6">
-          <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-            {t('prayers.dailyRoutine')}
-          </Text>
-          {dailyRoutine.map((item) => (
-            <TouchableOpacity
-              key={item.id}
-              onPress={() => router.push(`/daily-prayer/${item.id}`)}
-              className="bg-white rounded-2xl p-4 mb-3 flex-row items-center shadow-sm"
-            >
-              <View className="w-12 h-12 bg-accent rounded-2xl items-center justify-center mr-4">
-                <Text className="text-2xl">{item.icon}</Text>
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-semibold text-base">{item.title}</Text>
-                <Text className="text-gray-400 text-sm mt-0.5">{item.subtitle}</Text>
-              </View>
-              <View className="w-8 h-8 bg-primary rounded-full items-center justify-center">
-                <Text className="text-white text-xs">▶</Text>
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
-
-        {/* All Prayer Categories */}
-        <View className="px-6 mt-6">
-          <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-            {t('prayers.allPrayers')}
-          </Text>
-
-          {loading ? (
-            <ActivityIndicator color="#007C7C" />
-          ) : (
-            categories.map((cat) => (
-              <TouchableOpacity
-                key={cat.id}
-                onPress={() => router.push(`/prayers/${cat.slug}?lang=${language}`)}
-                className="bg-white rounded-2xl p-4 mb-3 flex-row items-center shadow-sm"
-              >
-                <View className="w-12 h-12 bg-accent rounded-2xl items-center justify-center mr-4">
-                  <Text className="text-2xl">{categoryIcons[cat.slug] ?? "🙏"}</Text>
-                </View>
-                <View className="flex-1">
-                  <Text className="text-gray-800 font-semibold text-base">{cat.name}</Text>
-                </View>
-                <Text className="text-gray-300 text-lg">›</Text>
-              </TouchableOpacity>
-            ))
-          )}
-        </View>
-
-        {/* Scripture Quote */}
-        <View className="mx-6 mt-6 mb-10 bg-accent rounded-3xl p-6">
-          <Text className="text-primary text-base italic text-center leading-6">
-            "Let all that you do be done in love."
-          </Text>
-          <Text className="text-primary/60 text-xs text-center mt-3 font-semibold">
-            1 CORINTHIANS 16:14
-          </Text>
-        </View>
-
-      </ScrollView>
-    </View>
+      <Card className="p-6 md:p-8 border-l-4 border-l-primary">
+        <Text className="text-base md:text-lg italic leading-7 text-foreground">
+          "Let all that you do be done in love."
+        </Text>
+        <Text className="mt-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          1 Corinthians 16:14
+        </Text>
+      </Card>
+    </Page>
   );
 }

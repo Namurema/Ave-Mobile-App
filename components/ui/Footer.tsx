@@ -1,44 +1,34 @@
 import { View, Text, TouchableOpacity, Platform } from "react-native";
-import { useRouter, usePathname } from "expo-router";
+import { useRouter } from "expo-router";
+import { NAV_ITEMS, useActiveSegment } from "./AppNav";
+import { cn } from "../../lib/utils";
 
-const tabs = [
-  { label: "Home", icon: "🏠", segment: "home", route: "/(tabs)/home" },
-  { label: "Schedule", icon: "📅", segment: "schedule", route: "/(tabs)/home" },
-  { label: "Prayers", icon: "📖", segment: "prayers", route: "/(tabs)/prayers" },
-  { label: "Settings", icon: "⚙️", segment: "profile", route: "/(tabs)/profile" },
-];
-
+// Bottom tab bar for phones. On wider screens TopNav takes over.
 export default function Footer() {
   const router = useRouter();
-  const pathname = usePathname();
+  const isActive = useActiveSegment();
 
   return (
     <View
-      style={{
-        backgroundColor: "white",
-        borderTopWidth: 1,
-        borderTopColor: "#f0f0f0",
-        flexDirection: "row",
-        paddingBottom: Platform.OS === "ios" ? 24 : 10,
-        paddingTop: 10,
-      }}
+      className="flex-row bg-background border-t border-border md:hidden"
+      style={{ paddingBottom: Platform.OS === "ios" ? 20 : 0 }}
     >
-      {tabs.map((tab) => {
-        const isActive = pathname.includes(tab.segment);
+      {NAV_ITEMS.map((tab) => {
+        const active = isActive(tab.segment);
         return (
           <TouchableOpacity
             key={tab.label}
             onPress={() => router.push(tab.route as any)}
-            style={{ flex: 1, alignItems: "center" }}
+            className={cn(
+              "flex-1 items-center py-4 border-t-2",
+              active ? "border-primary" : "border-transparent"
+            )}
           >
-            <Text style={{ fontSize: 22 }}>{tab.icon}</Text>
             <Text
-              style={{
-                fontSize: 11,
-                marginTop: 2,
-                color: isActive ? "#007C7C" : "#9CA3AF",
-                fontWeight: isActive ? "600" : "400",
-              }}
+              className={cn(
+                "text-sm",
+                active ? "text-primary font-semibold" : "text-muted-foreground font-medium"
+              )}
             >
               {tab.label}
             </Text>

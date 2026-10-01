@@ -1,17 +1,18 @@
-import { View, Text, ScrollView, TouchableOpacity, ActivityIndicator } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { View, Text, ActivityIndicator } from "react-native";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
-import Footer from "../../components/ui/Footer";
 import { useAuthStore } from "../../store/authStore";
 import { useLanguageStore } from "../../store/LanguageStore";
+import { LOGIN_ENABLED } from "../../constants/features";
+import { Button } from "../../components/ui/button";
+import { Card } from "../../components/ui/card";
+import { Page, PageHeader, Section } from "../../components/ui/page";
 
-const settingsItems = [
-  { id: "premium", icon: "", title: "Premium Subscription", badge: "Pro", arrow: true },
-  { id: "privacy", icon: "", title: "Privacy & Security", arrow: true },
-  { id: "audio", icon: "", title: "Audio Preferences", arrow: true },
-  { id: "support", icon: "", title: "Contact Support", arrow: true },
-];
+const languageLabels: Record<string, string> = {
+  en: "English",
+  lg: "Oluganda",
+  rny: "Orunyankore",
+};
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function ProfileScreen() {
   const [signingIn, setSigningIn] = useState(false);
 
   useEffect(() => {
-    loadSession();
+    if (LOGIN_ENABLED) loadSession();
   }, []);
 
   const handleSignIn = async () => {
@@ -34,119 +35,63 @@ export default function ProfileScreen() {
     }
   };
 
-  const handleSignOut = async () => {
-    await signOut();
-  };
-
-  const displayName = user?.user_metadata?.full_name ?? user?.email ?? 'Guest User';
   const isSignedIn = !!session;
-
-  const languageLabels: Record<string, string> = {
-    en: '🇬🇧 English',
-    lg: '🇺🇬 Oluganda',
-    rny: '🇺🇬 Orunyankore',
-  };
+  const displayName = user?.user_metadata?.full_name ?? user?.email ?? "Guest User";
 
   return (
-    <View className="flex-1 bg-gray-50">
-      <StatusBar style="light" />
+    <Page>
+      <PageHeader title="Settings" description="Personalise how you use Ave." />
 
-      {/* Header */}
-      <View className="bg-primary px-6 pt-14 pb-10">
-        <View className="flex-row items-center justify-between mb-8">
-          <View className="w-10 h-10 bg-white/20 rounded-full items-center justify-center">
-            <Text className="text-white text-lg">🕊️</Text>
-          </View>
-          <TouchableOpacity
-            onPress={() => router.push('/Language')}
-            className="bg-white/20 rounded-full px-4 py-2 flex-row items-center gap-2"
-          >
-            <Text className="text-white text-sm font-medium">
-              {languageLabels[language] ?? '🇬🇧 English'}
+      <Section title="Language">
+        <Card className="p-4 flex-row items-center gap-3">
+          <View className="flex-1 gap-0.5">
+            <Text className="text-sm font-semibold text-card-foreground">
+              {languageLabels[language] ?? "English"}
             </Text>
-          </TouchableOpacity>
-        </View>
+            <Text className="text-sm text-muted-foreground">Used for prayers and the app</Text>
+          </View>
+          <Button variant="outline" size="sm" onPress={() => router.push("/Language")}>
+            Change
+          </Button>
+        </Card>
+      </Section>
 
-        {/* Profile */}
-        <View className="items-center">
-          <View className="relative mb-3">
-            <View className="w-20 h-20 bg-white/20 rounded-full items-center justify-center">
-              <Text className="text-4xl">{isSignedIn ? '😇' : '👤'}</Text>
+      {LOGIN_ENABLED && (
+        <Section title="Account">
+          <Card className="p-4 flex-row items-center gap-3">
+            <View className="flex-1 gap-0.5">
+              <Text className="text-sm font-semibold text-card-foreground">
+                {isSignedIn ? displayName : "Guest User"}
+              </Text>
+              <Text className="text-sm text-muted-foreground">
+                {isSignedIn ? user?.email : "Sign in to sync"}
+              </Text>
             </View>
-            <View className={`absolute bottom-1 right-1 w-4 h-4 rounded-full border-2 border-primary ${isSignedIn ? 'bg-green-400' : 'bg-gray-400'}`} />
-          </View>
-          <Text className="text-white text-xl font-bold">{displayName}</Text>
+            {isSignedIn ? (
+              <Button variant="outline" size="sm" onPress={signOut}>
+                Sign out
+              </Button>
+            ) : signingIn ? (
+              <ActivityIndicator color="#007C7C" />
+            ) : (
+              <Button size="sm" onPress={handleSignIn}>
+                Sign in with Google
+              </Button>
+            )}
+          </Card>
+        </Section>
+      )}
 
-          {!isSignedIn ? (
-            <TouchableOpacity
-              onPress={handleSignIn}
-              disabled={signingIn}
-              className="mt-2 bg-white/20 rounded-full px-4 py-1 flex-row items-center gap-2"
-            >
-              {signingIn ? (
-                <ActivityIndicator size="small" color="#C2FFFF" />
-              ) : (
-                <Text className="text-accent text-sm">Sign in with Google →</Text>
-              )}
-            </TouchableOpacity>
-          ) : (
-            <Text className="text-accent text-sm mt-1">{user?.email}</Text>
-          )}
-        </View>
-      </View>
-
-      <ScrollView showsVerticalScrollIndicator={false}>
-
-        {/* Account Settings */}
-        <View className="px-6 mt-6">
-          <Text className="text-gray-800 font-bold text-base mb-3">
-            Account Settings
+      <Section title="About">
+        <Card className="p-4 gap-1">
+          <Text className="text-sm font-semibold text-card-foreground">Ave</Text>
+          <Text className="text-sm leading-6 text-muted-foreground">
+            A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and
+            chaplets, built for Uganda.
           </Text>
-          <View className="bg-white rounded-2xl overflow-hidden shadow-sm">
-            {settingsItems.map((item, index) => (
-              <TouchableOpacity
-                key={item.id}
-                className={`flex-row items-center px-4 py-4 ${
-                  index < settingsItems.length - 1 ? "border-b border-gray-100" : ""
-                }`}
-              >
-                <View className="w-9 h-9 bg-accent rounded-full items-center justify-center mr-3">
-                  <Text className="text-lg">{item.icon}</Text>
-                </View>
-                <Text className="flex-1 text-gray-800 font-medium">{item.title}</Text>
-                {item.badge && (
-                  <View className="bg-primary rounded-full px-2 py-0.5 mr-2">
-                    <Text className="text-white text-xs font-semibold">{item.badge}</Text>
-                  </View>
-                )}
-                {item.arrow && (
-                  <Text className="text-gray-300 text-lg">›</Text>
-                )}
-              </TouchableOpacity>
-            ))}
-          </View>
-        </View>
-
-        {/* Sign Out — only show if signed in */}
-        {isSignedIn && (
-          <View className="px-6 mt-4 mb-10">
-            <TouchableOpacity
-              onPress={handleSignOut}
-              className="bg-white rounded-2xl p-4 flex-row items-center shadow-sm"
-            >
-              <View className="w-9 h-9 bg-red-50 rounded-full items-center justify-center mr-3">
-                <Text className="text-lg">🚪</Text>
-              </View>
-              <Text className="text-red-400 font-medium flex-1">Sign Out</Text>
-              <Text className="text-gray-300 text-lg">›</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-
-        <View className="mb-10" />
-      </ScrollView>
-
-      <Footer />
-    </View>
+          <Text className="mt-2 text-xs text-muted-foreground">Version 1.0.0</Text>
+        </Card>
+      </Section>
+    </Page>
   );
 }

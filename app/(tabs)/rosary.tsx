@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { View, Text, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import Footer from "../../components/ui/Footer";
+import { Button } from "../../components/ui/button";
+import { Card } from "../../components/ui/card";
+import { Page, PageHeader, Section, NumberBadge } from "../../components/ui/page";
+import { cn } from "../../lib/utils";
 
 export default function RosaryScreen() {
   const router = useRouter();
@@ -67,107 +69,58 @@ export default function RosaryScreen() {
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   return (
-    <View className="flex-1 bg-gray-50">
-      <StatusBar style="light" />
+    <Page>
+      <PageHeader
+        eyebrow={`${dayNames[today]} · ${t("rosary.title")}`}
+        title={todaysMystery.name}
+        description={t("rosary.focusVirtues")}
+      />
 
-      {/* Header */}
-      <View className="px-6 pt-14 pb-6" style={{ backgroundColor: todaysMystery.color }}>
-        <View className="flex-row items-center justify-between mb-2">
-          <TouchableOpacity
-            onPress={() => router.canGoBack() ? router.back() : router.push("/(tabs)/home")}
-            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
-          >
-            <Text className="text-white">←</Text>
-          </TouchableOpacity>
-          <Text className="text-white/70 text-sm font-medium uppercase tracking-widest">
-            {t('rosary.title')}
-          </Text>
-          <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
-            <Text className="text-white text-sm">↺</Text>
-          </TouchableOpacity>
-        </View>
-        <Text className="text-accent text-sm font-medium mb-1">
-          {dayNames[today].toUpperCase()}
-        </Text>
-        <Text className="text-white text-3xl font-bold">
-          {todaysMystery.name}
-        </Text>
-        <Text className="text-white/70 text-sm mt-2">
-          {todaysMystery.emoji} {t('rosary.focusVirtues')}
-        </Text>
-      </View>
-
-      <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-6 pt-6">
-
-        {/* Mysteries List */}
-        <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-          {t('rosary.theFiveMysteries')}
-        </Text>
-
-        {todaysMystery.mysteries.map((mystery) => (
-          <TouchableOpacity
-            key={mystery.number}
-            onPress={() => setExpandedMystery(
-              expandedMystery === mystery.number ? null : mystery.number
-            )}
-            className="bg-white rounded-2xl p-4 mb-3 shadow-sm"
-          >
-            <View className="flex-row items-center">
-              <View
-                className="w-10 h-10 rounded-full items-center justify-center mr-4"
-                style={{ backgroundColor: todaysMystery.color + "20" }}
+      <Section title={t("rosary.theFiveMysteries")}>
+        <Card className="overflow-hidden">
+          {todaysMystery.mysteries.map((mystery, index) => {
+            const open = expandedMystery === mystery.number;
+            return (
+              <Pressable
+                key={mystery.number}
+                onPress={() => setExpandedMystery(open ? null : mystery.number)}
+                className={cn(
+                  "px-4 py-4 gap-3 web:hover:bg-muted/60 web:transition-colors",
+                  index < todaysMystery.mysteries.length - 1 && "border-b border-border"
+                )}
               >
-                <Text className="font-bold" style={{ color: todaysMystery.color }}>
-                  {mystery.number}
-                </Text>
-              </View>
-              <View className="flex-1">
-                <Text className="text-gray-800 font-semibold text-base">
-                  {mystery.title}
-                </Text>
-                <Text className="text-gray-400 text-sm mt-0.5">
-                  {t('rosary.virtue')}: {mystery.virtue}
-                </Text>
-              </View>
-              <Text className="text-gray-300 text-lg">
-                {expandedMystery === mystery.number ? "∨" : "›"}
-              </Text>
-            </View>
+                <View className="flex-row items-center gap-3">
+                  <NumberBadge value={mystery.number} />
+                  <View className="flex-1 gap-0.5">
+                    <Text className="text-sm font-semibold text-card-foreground">{mystery.title}</Text>
+                    <Text className="text-sm text-muted-foreground">
+                      {t("rosary.virtue")}: {mystery.virtue}
+                    </Text>
+                  </View>
+                  <Text className="w-5 text-center text-lg text-muted-foreground">{open ? "−" : "+"}</Text>
+                </View>
 
-            {/* Expanded Meditation Info */}
-            {expandedMystery === mystery.number && (
-              <View
-                className="mt-3 p-3 rounded-xl"
-                style={{ backgroundColor: todaysMystery.color + "10" }}
-              >
-                <Text
-                  className="text-xs font-semibold uppercase tracking-widest mb-2"
-                  style={{ color: todaysMystery.color }}
-                >
-                  Meditation
-                </Text>
-                <Text className="text-gray-600 text-sm leading-5">
-                  {mystery.meditation}
-                </Text>
-              </View>
-            )}
-          </TouchableOpacity>
-        ))}
+                {open && (
+                  <View className="ml-11 rounded-md bg-muted p-3 gap-1">
+                    <Text className="text-xs font-semibold uppercase tracking-widest text-primary">
+                      Meditation
+                    </Text>
+                    <Text className="text-sm leading-6 text-foreground">{mystery.meditation}</Text>
+                  </View>
+                )}
+              </Pressable>
+            );
+          })}
+        </Card>
+      </Section>
 
-        {/* Begin Session Button */}
-        <TouchableOpacity
-          onPress={() => router.push("/prayer/session")}
-          className="rounded-full py-4 items-center mt-4 mb-10"
-          style={{ backgroundColor: todaysMystery.color }}
-        >
-          <Text className="text-white text-lg font-semibold">
-            {t('rosary.beginSession')}
-          </Text>
-        </TouchableOpacity>
-
-      </ScrollView>
-
-      <Footer />
-    </View>
+      <Button
+        size="lg"
+        className="w-full md:w-auto md:self-start"
+        onPress={() => router.push("/prayer/session")}
+      >
+        {t("rosary.beginSession")}
+      </Button>
+    </Page>
   );
 }

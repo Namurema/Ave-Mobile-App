@@ -1,7 +1,5 @@
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { useRouter } from "expo-router";
-import Footer from "../components/ui/Footer";
+import { Alert } from "../components/ui/alert";
+import { Page, PageHeader, Section, ListCard } from "../components/ui/page";
 
 const stations = [
   { number: 1, title: "Jesus is condemned to death", reflection: "Pilate hands Jesus over to be crucified despite knowing He is innocent." },
@@ -21,75 +19,24 @@ const stations = [
 ];
 
 export default function StationsScreen() {
-  const router = useRouter();
-
   return (
-    <View className="flex-1 bg-gray-50">
-      <StatusBar style="light" />
+    <Page>
+      <PageHeader back title="Stations of the Cross" description="14 stations — meditate on the passion" />
 
-      {/* Header */}
-      <View className="px-6 pt-14 pb-6" style={{ backgroundColor: "#5C2D2D" }}>
-        <View className="flex-row items-center justify-between mb-3">
-          <TouchableOpacity
-            onPress={() => router.back()}
-            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
-          >
-            <Text className="text-white">←</Text>
-          </TouchableOpacity>
-          <Text className="text-white text-xl font-bold">Stations of the Cross</Text>
-          <View className="w-8 h-8" />
-        </View>
-        <Text className="text-yellow-200 text-sm mt-1">14 stations — meditate on the passion</Text>
-      </View>
+      <Alert>
+        Walk with Jesus on the path to Calvary. Pause at each station to pray and reflect.
+      </Alert>
 
-      {/* Info Banner */}
-      <View className="mx-6 mt-4 bg-red-50 rounded-2xl p-4 flex-row items-center gap-3">
-        <Text className="text-2xl">✝️</Text>
-        <Text className="text-red-900 text-sm flex-1 leading-5">
-          Walk with Jesus on the path to Calvary. Pause at each station to pray and reflect.
-        </Text>
-      </View>
-
-      <ScrollView showsVerticalScrollIndicator={false} className="flex-1 px-6 mt-4">
-        <Text className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-4">
-          The 14 Stations
-        </Text>
-
-        {stations.map((station, index) => (
-          <TouchableOpacity
-            key={station.number}
-            className="bg-white rounded-2xl p-4 mb-3 shadow-sm flex-row items-start"
-          >
-            <View
-              className="w-10 h-10 rounded-full items-center justify-center mr-4 mt-0.5"
-              style={{ backgroundColor: "#5C2D2D15" }}
-            >
-              <Text className="font-bold text-sm" style={{ color: "#5C2D2D" }}>
-                {station.number}
-              </Text>
-            </View>
-            <View className="flex-1">
-              <Text className="text-gray-800 font-semibold text-sm">
-                {station.title}
-              </Text>
-              <Text className="text-gray-400 text-xs mt-1 leading-4" numberOfLines={2}>
-                {station.reflection}
-              </Text>
-            </View>
-            <Text className="text-gray-300 text-lg ml-2">›</Text>
-          </TouchableOpacity>
-        ))}
-
-        {/* Begin Full Walk Button */}
-        <TouchableOpacity
-          className="rounded-full py-4 items-center mt-2 mb-10"
-          style={{ backgroundColor: "#5C2D2D" }}
-        >
-          <Text className="text-white text-base font-semibold">Begin Full Walk</Text>
-        </TouchableOpacity>
-      </ScrollView>
-
-      <Footer />
-    </View>
+      <Section title="The 14 Stations">
+        <ListCard
+          items={stations.map((station) => ({
+            key: String(station.number),
+            leading: station.number,
+            title: station.title,
+            description: station.reflection,
+          }))}
+        />
+      </Section>
+    </Page>
   );
 }

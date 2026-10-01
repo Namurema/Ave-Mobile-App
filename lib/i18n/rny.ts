@@ -19,7 +19,7 @@ export default {
     runyakole: "Orunyankore",
   },
   home: {
-    greeting: "Oraire ota 🌅",
+    greeting: "Oraire ota",
     search: "Noonya omusabo oba ebyandikibwe...",
     featuredDaily: "Eky''Eisho",
     dailyRoutine: "Entandiko y''Eisho",
@@ -68,7 +68,7 @@ export default {
     privacy: "Obukuumi n''Eby''Obukuumi",
     audio: "Entegeka z''Amajwi",
     support: "Noonya Obufasha",
-    signInToSync: "Injira okuwuuza →",
+    signInToSync: "Injira okuwuuza",
     guestUser: "Omushitsi",
   },
 };

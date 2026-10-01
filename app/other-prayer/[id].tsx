@@ -1,7 +1,7 @@
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { useLocalSearchParams } from "expo-router";
 import AudioPlayer from "../../components/audio/AudioPlayer";
+import { AUDIO_ENABLED } from "../../constants/features";
+import { Page, PageHeader, ReadingCard } from "../../components/ui/page";
 
 const prayerContent: Record<string, {
   title: string;
@@ -66,63 +66,23 @@ const prayerContent: Record<string, {
 
 export default function OtherPrayerDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const router = useRouter();
   const prayer = prayerContent[id ?? ""];
 
   if (!prayer) {
     return (
-      <View className="flex-1 bg-white items-center justify-center">
-        <Text className="text-gray-500">Prayer not found.</Text>
-      </View>
+      <Page width="narrow">
+        <PageHeader back title="Prayer not found" description="It may not be available yet." />
+      </Page>
     );
   }
 
   return (
-    <View className="flex-1 bg-white">
-      <StatusBar style="light" />
+    <Page width="narrow">
+      <PageHeader back eyebrow="Prayer" title={prayer.title} description={prayer.subtitle} />
 
-      {/* Header */}
-      <View className="px-6 pt-14 pb-6" style={{ backgroundColor: prayer.color }}>
-        <View className="flex-row items-center justify-between mb-4">
-          <TouchableOpacity
-            onPress={() => router.back()}
-            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
-          >
-            <Text className="text-white text-base">←</Text>
-          </TouchableOpacity>
-          <View className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
-            <Text className="text-base">{prayer.icon}</Text>
-          </View>
-        </View>
-        <Text className="text-white/70 text-xs font-semibold uppercase tracking-widest">
-          Prayer
-        </Text>
-        <Text className="text-white text-2xl font-bold mt-1">{prayer.title}</Text>
-        <Text className="text-white/70 text-sm mt-1">{prayer.subtitle}</Text>
+      {AUDIO_ENABLED && prayer.audioUrl && <AudioPlayer url={prayer.audioUrl} color={prayer.color} />}
 
-        {/* Audio Player */}
-        {prayer.audioUrl && (
-          <View className="mt-4">
-            <AudioPlayer url={prayer.audioUrl} color={prayer.color} />
-          </View>
-        )}
-      </View>
-
-      {/* Prayer Sections */}
-      <ScrollView className="flex-1 px-6 mt-4" showsVerticalScrollIndicator={false}>
-        {prayer.sections.map((section, index) => (
-          <View key={index} className="mb-6">
-            <Text
-              className="text-xs font-bold uppercase tracking-widest mb-2"
-              style={{ color: prayer.color }}
-            >
-              {section.heading}
-            </Text>
-            <Text className="text-gray-700 text-base leading-7">{section.body}</Text>
-          </View>
-        ))}
-        <View className="mb-12" />
-      </ScrollView>
-    </View>
+      <ReadingCard sections={prayer.sections} />
+    </Page>
   );
 }

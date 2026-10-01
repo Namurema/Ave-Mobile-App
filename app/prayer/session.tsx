@@ -1,8 +1,12 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import { useRouter } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { useState, useEffect } from "react";
+import { View, Text, Pressable } from "react-native";
+import { useState } from "react";
 import { useAudioStore } from "../../store/audioStore";
+import { AUDIO_ENABLED } from "../../constants/features";
+import { Button } from "../../components/ui/button";
+import { Card } from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { Page, PageHeader } from "../../components/ui/page";
+import { cn } from "../../lib/utils";
 
 const mysteries = {
   0: { name: "Glorious Mysteries", day: "SUNDAY", emoji: "" },
@@ -74,14 +78,13 @@ function formatTime(ms: number) {
 }
 
 export default function MysterySessionScreen() {
-  const router = useRouter();
   const today = new Date().getDay();
   const todaysMystery = mysteries[today as keyof typeof mysteries];
   const mysteryDetails = mysteryDetailsMap[today];
   const [currentMystery, setCurrentMystery] = useState(0);
-  const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
+  const [currentAudioIndex] = useState(0);
 
-  const { isPlaying, duration, position, loadAndPlay, togglePlayPause, seek, currentTrackUrl } = useAudioStore();
+  const { isPlaying, duration, position, loadAndPlay, togglePlayPause, currentTrackUrl } = useAudioStore();
 
   const current = mysteryDetails[currentMystery];
   const currentAudioUrl = rosaryAudioUrls[currentAudioIndex];
@@ -96,143 +99,87 @@ export default function MysterySessionScreen() {
     }
   };
 
-  const handlePrevMystery = () => {
-    setCurrentMystery(Math.max(0, currentMystery - 1));
-  };
-
-  const handleNextMystery = () => {
-    setCurrentMystery(Math.min(4, currentMystery + 1));
-  };
-
+  const isFirst = currentMystery === 0;
+  const isLast = currentMystery === mysteryDetails.length - 1;
   const ordinals = ["1st", "2nd", "3rd", "4th", "5th"];
+  const dayName = todaysMystery.day.charAt(0) + todaysMystery.day.slice(1).toLowerCase();
 
   return (
-    <View className="flex-1 bg-primary">
-      <StatusBar style="light" />
+    <Page width="narrow">
+      <PageHeader back eyebrow={`${dayName} · ${todaysMystery.name}`} title="Daily Rosary" />
 
-      {/* Header */}
-      <View className="px-6 pt-14 pb-4 flex-row items-center justify-between">
-        <View className="flex-row items-center gap-3">
-          <TouchableOpacity
-            onPress={() => router.back()}
-            className="w-8 h-8 bg-white/20 rounded-full items-center justify-center"
-          >
-            <Text className="text-white">←</Text>
-          </TouchableOpacity>
-          <Text className="text-white font-semibold text-base">Daily Rosary</Text>
+      <Card className="p-6 md:p-8 gap-5">
+        <View className="flex-row items-center justify-between">
+          <Badge className="self-start">{`${ordinals[currentMystery]} Mystery`}</Badge>
+          {AUDIO_ENABLED && (
+            <Button variant="outline" size="sm" onPress={handlePlayPause}>
+              {isCurrentTrack && isPlaying ? "Pause" : "Play"}
+            </Button>
+          )}
         </View>
-        <TouchableOpacity className="w-8 h-8 bg-white/20 rounded-full items-center justify-center">
-          <Text className="text-white text-sm">⤴</Text>
-        </TouchableOpacity>
-      </View>
 
-      {/* Mystery Card */}
-      <View className="mx-6 rounded-3xl overflow-hidden bg-white/10 mb-4">
-        <View className="h-48 bg-white/10 items-center justify-center relative">
-          <Text className="text-6xl">{todaysMystery.emoji}</Text>
+        <View className="gap-2">
+          <Text role="heading" className="text-2xl font-bold tracking-tight text-card-foreground">
+            {current.title}
+          </Text>
+          <Text className="text-base leading-7 text-muted-foreground">{current.description}</Text>
+        </View>
 
-          <View className="absolute top-3 left-3 bg-white/30 rounded-full px-3 py-1">
-            <Text className="text-white text-xs font-semibold">
-              {ordinals[currentMystery]} Mystery
-            </Text>
+        <View className="rounded-md bg-muted p-4 gap-1">
+          <Text className="text-xs font-semibold uppercase tracking-widest text-primary">Virtue</Text>
+          <Text className="text-base font-semibold text-foreground">{current.virtue}</Text>
+        </View>
+
+        {AUDIO_ENABLED && (
+          <View className="gap-1">
+            <View className="h-1 bg-muted rounded-full">
+              <View className="h-1 bg-primary rounded-full" style={{ width: `${progress * 100}%` }} />
+            </View>
+            <View className="flex-row justify-between">
+              <Text className="text-xs text-muted-foreground">
+                {isCurrentTrack ? formatTime(position) : "0:00"}
+              </Text>
+              <Text className="text-xs text-muted-foreground">
+                {isCurrentTrack ? formatTime(duration) : "--:--"}
+              </Text>
+            </View>
           </View>
+        )}
+      </Card>
 
-          <TouchableOpacity
-            className="absolute top-3 right-3 w-8 h-8 bg-white/30 rounded-lg items-center justify-center"
-          >
-            <Text className="text-white text-xs">⤢</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={handlePlayPause}
-            className="absolute bottom-3 right-3 w-12 h-12 bg-white/30 rounded-full items-center justify-center border-2 border-white/50"
-          >
-            <Text className="text-white text-lg">
-              {isCurrentTrack && isPlaying ? "⏸" : "▶"}
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View className="p-4">
-          <Text className="text-accent text-xs font-semibold">{todaysMystery.day}</Text>
-          <Text className="text-white text-xl font-bold mt-1">{current.title}</Text>
-          <Text className="text-white/70 text-sm mt-1">{current.description}</Text>
-        </View>
-      </View>
-
-      {/* Virtue Card */}
-      <View className="mx-6 bg-white/10 rounded-2xl p-4 mb-4 flex-row items-center gap-3">
-        <View className="w-10 h-10 bg-white/20 rounded-full items-center justify-center">
-          <Text className="text-lg">🕊️</Text>
-        </View>
-        <View>
-          <Text className="text-white font-semibold">{current.virtue}</Text>
-          <Text className="text-white/60 text-sm">Recommended virtue for meditation</Text>
-        </View>
-      </View>
-
-      {/* Audio Progress */}
-      <View className="mx-6 mb-4">
-        <View className="h-1 bg-white/20 rounded-full mb-2">
-          <View
-            className="h-1 bg-accent rounded-full"
-            style={{ width: `${progress * 100}%` }}
-          />
-        </View>
-        <View className="flex-row justify-between">
-          <Text className="text-white/60 text-xs">
-            {isCurrentTrack ? formatTime(position) : "0:00"}
-          </Text>
-          <Text className="text-white/60 text-xs">
-            {isCurrentTrack ? formatTime(duration) : "--:--"}
-          </Text>
-        </View>
-      </View>
-
-      {/* Controls */}
-      <View className="flex-row items-center justify-center gap-10 mb-6">
-        <TouchableOpacity onPress={handlePrevMystery}>
-          <Text className="text-white/70 text-3xl">⏮</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={handlePlayPause}
-          className="w-16 h-16 bg-white/20 rounded-full items-center justify-center border-2 border-white/40"
+      {/* Mystery navigation */}
+      <View className="flex-row items-center justify-between gap-3">
+        <Button
+          variant="outline"
+          disabled={isFirst}
+          className={cn(isFirst && "opacity-50")}
+          onPress={() => setCurrentMystery(Math.max(0, currentMystery - 1))}
         >
-          <Text className="text-white text-2xl">
-            {isCurrentTrack && isPlaying ? "⏸" : "▶"}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleNextMystery}>
-          <Text className="text-white/70 text-3xl">⏭</Text>
-        </TouchableOpacity>
-      </View>
+          Previous
+        </Button>
 
-      {/* Bottom Info Row */}
-      <View className="flex-row items-center justify-between px-6 mb-6">
-        <TouchableOpacity onPress={() => seek(Math.max(0, position - 10000))}>
-          <Text className="text-white/60 text-sm">🔊 Volume</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text className="text-white/60 text-sm">ℹ️ Meditation Info</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text className="text-white/60 text-sm">•••</Text>
-        </TouchableOpacity>
-      </View>
+        <View className="flex-row gap-2">
+          {mysteryDetails.map((_, index) => (
+            <Pressable
+              key={index}
+              aria-label={`Mystery ${index + 1}`}
+              onPress={() => setCurrentMystery(index)}
+              className={cn(
+                "h-2 rounded-full",
+                index === currentMystery ? "w-6 bg-primary" : "w-2 bg-border"
+              )}
+            />
+          ))}
+        </View>
 
-      {/* Mystery Navigation Dots */}
-      <View className="flex-row justify-center gap-2 mb-6">
-        {mysteryDetails.map((_, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => setCurrentMystery(index)}
-            className={`h-2 rounded-full ${
-              index === currentMystery ? "w-6 bg-white" : "w-2 bg-white/40"
-            }`}
-          />
-        ))}
+        <Button
+          disabled={isLast}
+          className={cn(isLast && "opacity-50")}
+          onPress={() => setCurrentMystery(Math.min(mysteryDetails.length - 1, currentMystery + 1))}
+        >
+          Next
+        </Button>
       </View>
-
-    </View>
+    </Page>
   );
 }
