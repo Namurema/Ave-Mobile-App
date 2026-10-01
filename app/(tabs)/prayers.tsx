@@ -52,7 +52,7 @@ export default function PrayersScreen() {
     <Page>
       <PageHeader title={t("prayers.title")} description={dateStr} />
 
-      <Section title={t("prayers.dailyRoutine")}>
+      <Section title={t("prayers.dailyRoutine")} count={dailyRoutine.length}>
         <ListCard
           items={dailyRoutine.map((item) => ({
             key: item.id,
@@ -63,7 +63,7 @@ export default function PrayersScreen() {
         />
       </Section>
 
-      <Section title={t("prayers.allPrayers")}>
+      <Section title={t("prayers.allPrayers")} count={loading ? undefined : categories.length}>
         {loading ? (
           <LoadingCard label="Loading prayers…" />
         ) : categories.length === 0 ? (

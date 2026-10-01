@@ -6,6 +6,7 @@ import { getPrayersByCategory } from "../../lib/supabase/queries";
 import {
   Page,
   PageHeader,
+  Section,
   ReadingCard,
   LoadingCard,
   EmptyState,
@@ -65,8 +66,16 @@ export default function DailyPrayerScreen() {
   }
 
   return (
-    <Page width="narrow">
-      <PageHeader back eyebrow="Daily Prayers" title={title} />
+    <Page>
+      <PageHeader
+        eyebrow="Daily Prayers"
+        title={title}
+        tabs={[
+          { label: "Morning", route: "/daily-prayer/morning" },
+          { label: "Midday", route: "/daily-prayer/midday" },
+          { label: "Night", route: "/daily-prayer/night" },
+        ]}
+      />
 
       {AUDIO_ENABLED && <AudioPlayer url={audioUrl} />}
 
@@ -78,9 +87,11 @@ export default function DailyPrayerScreen() {
           description="Check your connection and try again."
         />
       ) : (
-        <ReadingCard
-          sections={prayers.map((prayer) => ({ heading: prayer.title, body: prayer.body }))}
-        />
+        <Section title="Prayers" count={prayers.length}>
+          <ReadingCard
+            sections={prayers.map((prayer) => ({ heading: prayer.title, body: prayer.body }))}
+          />
+        </Section>
       )}
     </Page>
   );

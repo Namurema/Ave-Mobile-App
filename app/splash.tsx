@@ -2,7 +2,6 @@ import { View, Text, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
 import { Card, CardTitle, CardDescription } from "../components/ui/card";
 
 const features = [
@@ -32,8 +31,7 @@ export default function SplashScreen() {
       <ScrollView contentContainerClassName="flex-grow items-center justify-center px-4 py-12">
         <View className="w-full max-w-md">
           {/* Hero */}
-          <Badge>Free · No account needed</Badge>
-          <Text className="mt-6 text-4xl font-bold tracking-tight text-foreground text-center">
+          <Text className="text-4xl font-bold tracking-tight text-foreground text-center">
             Pray every day, in your own language
           </Text>
           <Text className="mt-4 text-base leading-7 text-muted-foreground text-center">

@@ -7,6 +7,7 @@ import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader } from "../../components/ui/page";
 import { cn } from "../../lib/utils";
+import { ROSARY_TABS } from "../../constants/navigation";
 
 const mysteries = {
   0: { name: "Glorious Mysteries", day: "SUNDAY", emoji: "" },
@@ -105,8 +106,12 @@ export default function MysterySessionScreen() {
   const dayName = todaysMystery.day.charAt(0) + todaysMystery.day.slice(1).toLowerCase();
 
   return (
-    <Page width="narrow">
-      <PageHeader back eyebrow={`${dayName} · ${todaysMystery.name}`} title="Daily Rosary" />
+    <Page>
+      <PageHeader
+        eyebrow={`${dayName} · ${todaysMystery.name}`}
+        title="Daily Rosary"
+        tabs={ROSARY_TABS}
+      />
 
       <Card className="p-6 md:p-8 gap-5">
         <View className="flex-row items-center justify-between">

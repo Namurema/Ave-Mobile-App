@@ -6,6 +6,7 @@ import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Page, PageHeader, Section, NumberBadge } from "../../components/ui/page";
 import { cn } from "../../lib/utils";
+import { ROSARY_TABS } from "../../constants/navigation";
 
 export default function RosaryScreen() {
   const router = useRouter();
@@ -74,9 +75,10 @@ export default function RosaryScreen() {
         eyebrow={`${dayNames[today]} · ${t("rosary.title")}`}
         title={todaysMystery.name}
         description={t("rosary.focusVirtues")}
+        tabs={ROSARY_TABS}
       />
 
-      <Section title={t("rosary.theFiveMysteries")}>
+      <Section title={t("rosary.theFiveMysteries")} count={todaysMystery.mysteries.length}>
         <Card className="overflow-hidden">
           {todaysMystery.mysteries.map((mystery, index) => {
             const open = expandedMystery === mystery.number;

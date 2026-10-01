@@ -27,7 +27,7 @@ export default function StationsScreen() {
         Walk with Jesus on the path to Calvary. Pause at each station to pray and reflect.
       </Alert>
 
-      <Section title="The 14 Stations">
+      <Section title="The Stations" count={stations.length}>
         <ListCard
           items={stations.map((station) => ({
             key: String(station.number),

@@ -1,4 +1,5 @@
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator, Platform } from "react-native";
+import { InstallCard } from "../../components/InstallCard";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useAuthStore } from "../../store/authStore";
@@ -39,7 +40,7 @@ export default function ProfileScreen() {
   const displayName = user?.user_metadata?.full_name ?? user?.email ?? "Guest User";
 
   return (
-    <Page>
+    <Page sidebar={false}>
       <PageHeader title="Settings" description="Personalise how you use Ave." />
 
       <Section title="Language">
@@ -79,6 +80,12 @@ export default function ProfileScreen() {
               </Button>
             )}
           </Card>
+        </Section>
+      )}
+
+      {Platform.OS === "web" && (
+        <Section title="App">
+          <InstallCard dismissible={false} />
         </Section>
       )}
 

@@ -69,7 +69,7 @@ export default function OtherPrayersScreen() {
       <PageHeader back title="Other Prayers" description="Sacred prayers from Catholic tradition" />
 
       {sorted.map((category) => (
-        <Section key={category.id} title={category.title}>
+        <Section key={category.id} title={category.title} count={category.prayers.length}>
           <ListCard
             items={category.prayers.map((prayer) => ({
               key: prayer.id,

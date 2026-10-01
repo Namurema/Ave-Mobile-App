@@ -21,7 +21,7 @@ export function TopNav() {
 
   return (
     <View className="hidden md:flex border-b border-border bg-background">
-      <View className="w-full max-w-5xl self-center h-16 px-6 flex-row items-center justify-between">
+      <View className="w-full max-w-6xl self-center h-16 px-6 flex-row items-center justify-between">
         <Pressable onPress={() => router.push("/(tabs)/home")}>
           <Text className="text-xl font-bold tracking-tight text-primary">Ave</Text>
         </Pressable>

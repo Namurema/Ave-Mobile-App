@@ -47,7 +47,7 @@ export default function ChapletsScreen() {
         Chaplets are shorter bead prayers focused on a particular devotion or mystery.
       </Alert>
 
-      <Section title="Available chaplets">
+      <Section title="All chaplets" count={chaplets.length}>
         <ListCard
           items={sorted.map((chaplet) => ({
             key: chaplet.id,

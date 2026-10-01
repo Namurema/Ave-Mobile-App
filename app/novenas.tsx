@@ -29,7 +29,7 @@ export default function NovenasScreen() {
         A novena is a prayer said over 9 consecutive days, asking for a special grace or favour.
       </Alert>
 
-      <Section title="Available novenas">
+      <Section title="All novenas" count={novenas.length}>
         <ListCard
           items={sorted.map((novena) => ({
             key: novena.id,

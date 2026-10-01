@@ -44,14 +44,14 @@ export default function NovenaDetailScreen() {
 
   if (!novena) {
     return (
-      <Page width="narrow">
+      <Page>
         <PageHeader back title="Novena not found" description="It may not be available yet." />
       </Page>
     );
   }
 
   return (
-    <Page width="narrow">
+    <Page>
       <PageHeader back eyebrow="Novena" title={novena.title} description={novena.subtitle} />
 
       {AUDIO_ENABLED && novena.audioUrl && <AudioPlayer url={novena.audioUrl} color={novena.color} />}

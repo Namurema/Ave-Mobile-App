@@ -47,7 +47,7 @@ export default function PrayerCategoryScreen() {
   useEffect(load, [slug, lang]);
 
   return (
-    <Page width="narrow">
+    <Page>
       <PageHeader back eyebrow="Prayers" title={meta.title} description={meta.subtitle || undefined} />
 
       {loading ? (

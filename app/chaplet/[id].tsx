@@ -56,14 +56,14 @@ export default function ChapletDetailScreen() {
 
   if (!chaplet) {
     return (
-      <Page width="narrow">
+      <Page>
         <PageHeader back title="Chaplet not found" description="It may not be available yet." />
       </Page>
     );
   }
 
   return (
-    <Page width="narrow">
+    <Page>
       <PageHeader back eyebrow="Chaplet" title={chaplet.title} description={chaplet.subtitle} />
 
       {AUDIO_ENABLED && chaplet.audioUrl && <AudioPlayer url={chaplet.audioUrl} color={chaplet.color} />}

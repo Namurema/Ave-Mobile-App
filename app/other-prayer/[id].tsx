@@ -70,14 +70,14 @@ export default function OtherPrayerDetailScreen() {
 
   if (!prayer) {
     return (
-      <Page width="narrow">
+      <Page>
         <PageHeader back title="Prayer not found" description="It may not be available yet." />
       </Page>
     );
   }
 
   return (
-    <Page width="narrow">
+    <Page>
       <PageHeader back eyebrow="Prayer" title={prayer.title} description={prayer.subtitle} />
 
       {AUDIO_ENABLED && prayer.audioUrl && <AudioPlayer url={prayer.audioUrl} color={prayer.color} />}

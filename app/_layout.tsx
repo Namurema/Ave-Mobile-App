@@ -7,6 +7,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useAuthStore } from "../store/authStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { LOGIN_ENABLED } from "../constants/features";
+import { registerServiceWorker } from "../lib/pwa";
 
 export default function RootLayout() {
   const loadSession = useAuthStore((state) => state.loadSession);
@@ -15,15 +16,16 @@ export default function RootLayout() {
   useEffect(() => {
     if (LOGIN_ENABLED) loadSession();
     loadLanguage();
+    registerServiceWorker();
   }, []);
 
   return (
     <SafeAreaProvider>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: "#007C7C" },
+          contentStyle: { backgroundColor: "#FAFAFA" },
         }}
       />
     </SafeAreaProvider>

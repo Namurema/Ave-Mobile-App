@@ -32,7 +32,7 @@ export default function PrayerOutputScreen() {
 
   if (loading) {
     return (
-      <Page width="narrow">
+      <Page>
         <LoadingCard label="Loading prayer…" />
       </Page>
     );
@@ -40,14 +40,14 @@ export default function PrayerOutputScreen() {
 
   if (!prayer) {
     return (
-      <Page width="narrow">
+      <Page>
         <PageHeader back title="Prayer not found" description="It may have been moved or removed." />
       </Page>
     );
   }
 
   return (
-    <Page width="narrow">
+    <Page>
       <PageHeader back eyebrow="Prayer" title={prayer.title} />
 
       {audioTrack && <AudioPlayer url={audioTrack.url} />}
