@@ -1,12 +1,13 @@
 import { View, Text, Pressable } from "react-native";
 import { useRouter, usePathname } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 
 export const NAV_ITEMS = [
-  { label: "Home", segment: "home", route: "/(tabs)/home" },
-  { label: "Prayers", segment: "prayers", route: "/(tabs)/prayers" },
-  { label: "Rosary", segment: "rosary", route: "/(tabs)/rosary" },
-  { label: "Settings", segment: "profile", route: "/(tabs)/profile" },
+  { labelKey: "nav.home", segment: "home", route: "/(tabs)/home" },
+  { labelKey: "nav.prayers", segment: "prayers", route: "/(tabs)/prayers" },
+  { labelKey: "nav.rosary", segment: "rosary", route: "/(tabs)/rosary" },
+  { labelKey: "nav.settings", segment: "profile", route: "/(tabs)/profile" },
 ];
 
 export function useActiveSegment() {
@@ -17,6 +18,7 @@ export function useActiveSegment() {
 // Desktop / tablet navigation. Phones use the bottom bar in Footer instead.
 export function TopNav() {
   const router = useRouter();
+  const { t } = useTranslation();
   const isActive = useActiveSegment();
 
   return (
@@ -30,7 +32,7 @@ export function TopNav() {
             const active = isActive(item.segment);
             return (
               <Pressable
-                key={item.label}
+                key={item.route}
                 onPress={() => router.push(item.route as any)}
                 className={cn(
                   "h-9 px-3 rounded-md items-center justify-center web:transition-colors",
@@ -43,7 +45,7 @@ export function TopNav() {
                     active ? "text-foreground" : "text-muted-foreground"
                   )}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Text>
               </Pressable>
             );

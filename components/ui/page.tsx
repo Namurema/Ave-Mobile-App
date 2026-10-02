@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { View, Text, ScrollView, Pressable, ActivityIndicator } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter, usePathname } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 import { TopNav } from "./AppNav";
 import Footer from "./Footer";
@@ -60,6 +61,7 @@ export function PageHeader({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const { t } = useTranslation();
   return (
     <Card className="overflow-hidden">
       <View className="p-5 md:p-6 gap-1.5">
@@ -68,7 +70,7 @@ export function PageHeader({
             onPress={() => (router.canGoBack() ? router.back() : router.replace("/(tabs)/home"))}
             className="self-start -ml-2 mb-1 h-8 px-2 rounded-md justify-center web:hover:bg-muted"
           >
-            <Text className="text-sm font-medium text-muted-foreground">← Back</Text>
+            <Text className="text-sm font-medium text-muted-foreground">← {t("common.back")}</Text>
           </Pressable>
         )}
         {eyebrow ? (
@@ -231,11 +233,12 @@ export function ReadingCard({ sections }: { sections: { heading?: string; body: 
   );
 }
 
-export function LoadingCard({ label = "Loading…" }: { label?: string }) {
+export function LoadingCard({ label }: { label?: string }) {
+  const { t } = useTranslation();
   return (
     <Card className="p-8 items-center gap-3">
       <ActivityIndicator color="#007C7C" />
-      <Text className="text-sm text-muted-foreground">{label}</Text>
+      <Text className="text-sm text-muted-foreground">{label ?? t("common.loading")}</Text>
     </Card>
   );
 }

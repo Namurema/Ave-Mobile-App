@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
-import { getPrayersByCategory } from "../../lib/supabase/queries";
+import { useTranslation } from "react-i18next";
+import { useLanguageStore } from "../../store/LanguageStore";
+import { getPrayersWithFallback } from "../../lib/supabase/queries";
+import { Alert } from "../../components/ui/alert";
 import {
   Page,
   PageHeader,
@@ -12,10 +15,10 @@ import {
   EmptyState,
 } from "../../components/ui/page";
 
-const titleMap: Record<string, string> = {
-  morning: "Morning Prayers",
-  midday: "Mid-Day Prayers",
-  night: "Night Prayers",
+const titleKeys: Record<string, string> = {
+  morning: "prayers.morningPrayers",
+  midday: "prayers.middayPrayers",
+  night: "prayers.nightPrayers",
 };
 
 // Map daily prayer id to category slug
@@ -32,30 +35,36 @@ const audioMap: Record<string, string> = {
   night: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/night-prayers.mp3",
 };
 
+// Night prayers are picked out by their English titles (`sourceTitle`), so
+// this split only works while Supabase holds these prayers in English
 const NIGHT_PRAYERS = ['Prayer of Thanksgiving (Night)', 'Act of Contrition (Night)', 'All Praise to You'];
 
 export default function DailyPrayerScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const { t } = useTranslation();
+  const { language } = useLanguageStore();
   const [prayers, setPrayers] = useState<any[]>([]);
+  const [showingEnglish, setShowingEnglish] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const title = titleMap[id ?? "morning"] ?? "Daily Prayers";
+  const title = t(titleKeys[id ?? "morning"] ?? "prayers.title");
   const audioUrl = audioMap[id ?? "morning"];
   const slug = slugMap[id ?? "morning"];
 
   useEffect(() => {
     loadPrayers();
-  }, [id]);
+  }, [id, language]);
 
   async function loadPrayers() {
     try {
-      const data = await getPrayersByCategory(slug, 'en');
+      const { prayers: data, fallback } = await getPrayersWithFallback(slug, language);
+      setShowingEnglish(fallback && data.length > 0);
       // Filter prayers relevant to morning or night
-      let filtered = data ?? [];
+      let filtered = data;
       if (id === 'morning') {
-        filtered = filtered.filter((p: any) => !NIGHT_PRAYERS.includes(p.title));
+        filtered = filtered.filter((p: any) => !NIGHT_PRAYERS.includes(p.sourceTitle));
       } else if (id === 'night') {
-        filtered = filtered.filter((p: any) => NIGHT_PRAYERS.includes(p.title));
+        filtered = filtered.filter((p: any) => NIGHT_PRAYERS.includes(p.sourceTitle));
       }
       setPrayers(filtered);
     } catch (e) {
@@ -68,26 +77,25 @@ export default function DailyPrayerScreen() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Daily Prayers"
+        eyebrow={t("prayers.title")}
         title={title}
         tabs={[
-          { label: "Morning", route: "/daily-prayer/morning" },
-          { label: "Midday", route: "/daily-prayer/midday" },
-          { label: "Night", route: "/daily-prayer/night" },
+          { label: t("prayers.morning"), route: "/daily-prayer/morning" },
+          { label: t("prayers.midday"), route: "/daily-prayer/midday" },
+          { label: t("prayers.night"), route: "/daily-prayer/night" },
         ]}
       />
 
       {AUDIO_ENABLED && <AudioPlayer url={audioUrl} />}
 
+      {showingEnglish && <Alert>{t("prayers.showingEnglish")}</Alert>}
+
       {loading ? (
-        <LoadingCard label="Loading prayers…" />
+        <LoadingCard label={t("prayers.loadingPrayers")} />
       ) : prayers.length === 0 ? (
-        <EmptyState
-          title="No prayers found"
-          description="Check your connection and try again."
-        />
+        <EmptyState title={t("prayers.loadError")} description={t("prayers.checkConnection")} />
       ) : (
-        <Section title="Prayers" count={prayers.length}>
+        <Section title={t("prayers.prayersSection")} count={prayers.length}>
           <ReadingCard
             sections={prayers.map((prayer) => ({ heading: prayer.title, body: prayer.body }))}
           />

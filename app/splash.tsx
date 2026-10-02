@@ -1,18 +1,20 @@
 import { View, Text, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { useTranslation } from "react-i18next";
 import { Button } from "../components/ui/button";
 import { Card, CardTitle, CardDescription } from "../components/ui/card";
 
-const features = [
-  { title: "Daily prayers", description: "Morning, midday and night prayers" },
-  { title: "The Holy Rosary", description: "Today's mysteries, with a virtue for each" },
-  { title: "Novenas & chaplets", description: "Divine Mercy, Stations of the Cross and more" },
-];
-
 export default function SplashScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const getStarted = () => router.push("/Language");
+
+  const features = [
+    { title: t("splash.dailyTitle"), description: t("splash.dailyDescription") },
+    { title: t("splash.rosaryTitle"), description: t("splash.rosaryDescription") },
+    { title: t("splash.devotionsTitle"), description: t("splash.devotionsDescription") },
+  ];
 
   return (
     <View className="flex-1 bg-background">
@@ -23,7 +25,7 @@ export default function SplashScreen() {
         <View className="w-full max-w-5xl self-center h-16 px-4 flex-row items-center justify-between">
           <Text className="text-xl font-bold tracking-tight text-primary">Ave</Text>
           <Button variant="ghost" size="sm" onPress={getStarted}>
-            Open app
+            {t("nav.openApp")}
           </Button>
         </View>
       </View>
@@ -32,15 +34,14 @@ export default function SplashScreen() {
         <View className="w-full max-w-md">
           {/* Hero */}
           <Text className="text-4xl font-bold tracking-tight text-foreground text-center">
-            Pray every day, in your own language
+            {t("splash.headline")}
           </Text>
           <Text className="mt-4 text-base leading-7 text-muted-foreground text-center">
-            Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and
-            Runyankore.
+            {t("splash.description")}
           </Text>
 
           <Button size="lg" className="mt-8 w-full" onPress={getStarted}>
-            Get started
+            {t("common.getStarted")}
           </Button>
 
           {/* What's inside */}
@@ -64,9 +65,7 @@ export default function SplashScreen() {
       </ScrollView>
 
       {/* Footer */}
-      <Text className="py-6 text-center text-xs text-muted-foreground">
-        A Catholic prayer companion, built for Uganda
-      </Text>
+      <Text className="py-6 text-center text-xs text-muted-foreground">{t("splash.footer")}</Text>
     </View>
   );
 }

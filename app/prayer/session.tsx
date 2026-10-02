@@ -7,59 +7,15 @@ import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader } from "../../components/ui/page";
 import { cn } from "../../lib/utils";
-import { ROSARY_TABS } from "../../constants/navigation";
+import { rosaryTabs } from "../../constants/navigation";
+import { useTranslation } from "react-i18next";
+import { useLanguageStore } from "../../store/LanguageStore";
+import { formatWeekday } from "../../lib/i18n/helpers";
+import { mysteryDetailsMap } from "../../constants/content/rosarySession";
+import { useContent } from "../../lib/i18n/content";
 
-const mysteries = {
-  0: { name: "Glorious Mysteries", day: "SUNDAY", emoji: "" },
-  1: { name: "Joyful Mysteries", day: "MONDAY", emoji: "" },
-  2: { name: "Sorrowful Mysteries", day: "TUESDAY", emoji: "" },
-  3: { name: "Glorious Mysteries", day: "WEDNESDAY", emoji: "" },
-  4: { name: "Luminous Mysteries", day: "THURSDAY", emoji: "" },
-  5: { name: "Sorrowful Mysteries", day: "FRIDAY", emoji: "" },
-  6: { name: "Joyful Mysteries", day: "SATURDAY", emoji: "" },
-};
-
-const gloriousMysteries = [
-  { number: 1, title: "The Resurrection", virtue: "Faith", description: "Focus on the glorious resurrection of Jesus Christ from the dead." },
-  { number: 2, title: "The Ascension", virtue: "Hope", description: "Focus on Jesus ascending into heaven forty days after His resurrection." },
-  { number: 3, title: "Descent of the Holy Spirit", virtue: "Love of God", description: "Focus on the Holy Spirit descending upon Mary and the Apostles." },
-  { number: 4, title: "The Assumption", virtue: "Grace of a Happy Death", description: "Focus on Mary being assumed body and soul into heavenly glory." },
-  { number: 5, title: "Coronation of Mary", virtue: "Trust in Mary's Intercession", description: "Focus on Mary being crowned Queen of Heaven and Earth." },
-];
-
-const joyfulMysteries = [
-  { number: 1, title: "The Annunciation", virtue: "Humility", description: "Focus on the Angel Gabriel announcing to Mary the Incarnation." },
-  { number: 2, title: "The Visitation", virtue: "Love of Neighbour", description: "Focus on Mary visiting her cousin Elizabeth." },
-  { number: 3, title: "The Nativity", virtue: "Poverty & Detachment", description: "Focus on the birth of Jesus Christ in Bethlehem." },
-  { number: 4, title: "The Presentation", virtue: "Obedience", description: "Focus on Mary and Joseph presenting Jesus in the Temple." },
-  { number: 5, title: "Finding in the Temple", virtue: "Piety", description: "Focus on the twelve-year-old Jesus found among the teachers." },
-];
-
-const sorrowfulMysteries = [
-  { number: 1, title: "The Agony in the Garden", virtue: "Contrition", description: "Focus on the virtue of true contrition for our sins." },
-  { number: 2, title: "The Scourging at the Pillar", virtue: "Purity", description: "Focus on the virtue of purity." },
-  { number: 3, title: "The Crowning with Thorns", virtue: "Courage", description: "Focus on the virtue of moral courage." },
-  { number: 4, title: "Carrying of the Cross", virtue: "Patience", description: "Focus on the virtue of patience." },
-  { number: 5, title: "The Crucifixion", virtue: "Self-denial", description: "Focus on the virtue of self-denial." },
-];
-
-const luminousMysteries = [
-  { number: 1, title: "Baptism of Jesus", virtue: "Openness to the Holy Spirit", description: "Focus on the baptism of Jesus in the Jordan River." },
-  { number: 2, title: "Wedding at Cana", virtue: "To Jesus through Mary", description: "Focus on Jesus performing His first miracle at Cana." },
-  { number: 3, title: "Proclamation of the Kingdom", virtue: "Repentance & Trust", description: "Focus on Jesus proclaiming the Kingdom of God." },
-  { number: 4, title: "The Transfiguration", virtue: "Desire for Holiness", description: "Focus on Jesus being transfigured on Mount Tabor." },
-  { number: 5, title: "Institution of the Eucharist", virtue: "Eucharistic Adoration", description: "Focus on Jesus instituting the Holy Eucharist." },
-];
-
-const mysteryDetailsMap: Record<number, typeof sorrowfulMysteries> = {
-  0: gloriousMysteries,
-  1: joyfulMysteries,
-  2: sorrowfulMysteries,
-  3: gloriousMysteries,
-  4: luminousMysteries,
-  5: sorrowfulMysteries,
-  6: joyfulMysteries,
-};
+// Rosary mysteries by weekday, Sunday first
+const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
 
 // Rosary prayer audio URLs in order
 const rosaryAudioUrls = [
@@ -79,8 +35,10 @@ function formatTime(ms: number) {
 }
 
 export default function MysterySessionScreen() {
+  const { t } = useTranslation();
+  const { language } = useLanguageStore();
+  const tc = useContent();
   const today = new Date().getDay();
-  const todaysMystery = mysteries[today as keyof typeof mysteries];
   const mysteryDetails = mysteryDetailsMap[today];
   const [currentMystery, setCurrentMystery] = useState(0);
   const [currentAudioIndex] = useState(0);
@@ -102,37 +60,35 @@ export default function MysterySessionScreen() {
 
   const isFirst = currentMystery === 0;
   const isLast = currentMystery === mysteryDetails.length - 1;
-  const ordinals = ["1st", "2nd", "3rd", "4th", "5th"];
-  const dayName = todaysMystery.day.charAt(0) + todaysMystery.day.slice(1).toLowerCase();
 
   return (
     <Page>
       <PageHeader
-        eyebrow={`${dayName} · ${todaysMystery.name}`}
-        title="Daily Rosary"
-        tabs={ROSARY_TABS}
+        eyebrow={`${formatWeekday(new Date(), language)} · ${t(`rosary.${MYSTERY_BY_DAY[today]}`)}`}
+        title={t("rosary.title")}
+        tabs={rosaryTabs(t)}
       />
 
       <Card className="p-6 md:p-8 gap-5">
         <View className="flex-row items-center justify-between">
-          <Badge className="self-start">{`${ordinals[currentMystery]} Mystery`}</Badge>
+          <Badge className="self-start">{`${t("rosary.mystery")} ${currentMystery + 1}`}</Badge>
           {AUDIO_ENABLED && (
             <Button variant="outline" size="sm" onPress={handlePlayPause}>
-              {isCurrentTrack && isPlaying ? "Pause" : "Play"}
+              {isCurrentTrack && isPlaying ? t("rosary.pause") : t("rosary.play")}
             </Button>
           )}
         </View>
 
         <View className="gap-2">
           <Text role="heading" className="text-2xl font-bold tracking-tight text-card-foreground">
-            {current.title}
+            {tc(current.title)}
           </Text>
-          <Text className="text-base leading-7 text-muted-foreground">{current.description}</Text>
+          <Text className="text-base leading-7 text-muted-foreground">{tc(current.description)}</Text>
         </View>
 
         <View className="rounded-md bg-muted p-4 gap-1">
-          <Text className="text-xs font-semibold uppercase tracking-widest text-primary">Virtue</Text>
-          <Text className="text-base font-semibold text-foreground">{current.virtue}</Text>
+          <Text className="text-xs font-semibold uppercase tracking-widest text-primary">{t("rosary.virtue")}</Text>
+          <Text className="text-base font-semibold text-foreground">{tc(current.virtue)}</Text>
         </View>
 
         {AUDIO_ENABLED && (
@@ -160,7 +116,7 @@ export default function MysterySessionScreen() {
           className={cn(isFirst && "opacity-50")}
           onPress={() => setCurrentMystery(Math.max(0, currentMystery - 1))}
         >
-          Previous
+          {t("rosary.previous")}
         </Button>
 
         <View className="flex-row gap-2">
@@ -182,7 +138,7 @@ export default function MysterySessionScreen() {
           className={cn(isLast && "opacity-50")}
           onPress={() => setCurrentMystery(Math.min(mysteryDetails.length - 1, currentMystery + 1))}
         >
-          Next
+          {t("rosary.next")}
         </Button>
       </View>
     </Page>

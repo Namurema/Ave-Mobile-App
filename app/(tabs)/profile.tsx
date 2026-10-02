@@ -1,6 +1,7 @@
 import { View, Text, ActivityIndicator, Platform } from "react-native";
 import { InstallCard } from "../../components/InstallCard";
 import { useRouter } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useAuthStore } from "../../store/authStore";
 import { useLanguageStore } from "../../store/LanguageStore";
@@ -17,6 +18,7 @@ const languageLabels: Record<string, string> = {
 
 export default function ProfileScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const { user, session, signIn, signOut, loadSession } = useAuthStore();
   const { language } = useLanguageStore();
   const [signingIn, setSigningIn] = useState(false);
@@ -37,46 +39,46 @@ export default function ProfileScreen() {
   };
 
   const isSignedIn = !!session;
-  const displayName = user?.user_metadata?.full_name ?? user?.email ?? "Guest User";
+  const displayName = user?.user_metadata?.full_name ?? user?.email ?? t("settings.guestUser");
 
   return (
     <Page sidebar={false}>
-      <PageHeader title="Settings" description="Personalise how you use Ave." />
+      <PageHeader title={t("settings.title")} description={t("settings.description")} />
 
-      <Section title="Language">
+      <Section title={t("settings.language")}>
         <Card className="p-4 flex-row items-center gap-3">
           <View className="flex-1 gap-0.5">
             <Text className="text-sm font-semibold text-card-foreground">
               {languageLabels[language] ?? "English"}
             </Text>
-            <Text className="text-sm text-muted-foreground">Used for prayers and the app</Text>
+            <Text className="text-sm text-muted-foreground">{t("settings.languageHint")}</Text>
           </View>
           <Button variant="outline" size="sm" onPress={() => router.push("/Language")}>
-            Change
+            {t("common.change")}
           </Button>
         </Card>
       </Section>
 
       {LOGIN_ENABLED && (
-        <Section title="Account">
+        <Section title={t("settings.account")}>
           <Card className="p-4 flex-row items-center gap-3">
             <View className="flex-1 gap-0.5">
               <Text className="text-sm font-semibold text-card-foreground">
-                {isSignedIn ? displayName : "Guest User"}
+                {isSignedIn ? displayName : t("settings.guestUser")}
               </Text>
               <Text className="text-sm text-muted-foreground">
-                {isSignedIn ? user?.email : "Sign in to sync"}
+                {isSignedIn ? user?.email : t("settings.signInToSync")}
               </Text>
             </View>
             {isSignedIn ? (
               <Button variant="outline" size="sm" onPress={signOut}>
-                Sign out
+                {t("common.signOut")}
               </Button>
             ) : signingIn ? (
               <ActivityIndicator color="#007C7C" />
             ) : (
               <Button size="sm" onPress={handleSignIn}>
-                Sign in with Google
+                {t("settings.signInWithGoogle")}
               </Button>
             )}
           </Card>
@@ -84,19 +86,18 @@ export default function ProfileScreen() {
       )}
 
       {Platform.OS === "web" && (
-        <Section title="App">
+        <Section title={t("settings.app")}>
           <InstallCard dismissible={false} />
         </Section>
       )}
 
-      <Section title="About">
+      <Section title={t("settings.about")}>
         <Card className="p-4 gap-1">
           <Text className="text-sm font-semibold text-card-foreground">Ave</Text>
           <Text className="text-sm leading-6 text-muted-foreground">
-            A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and
-            chaplets, built for Uganda.
+            {t("settings.aboutText")}
           </Text>
-          <Text className="mt-2 text-xs text-muted-foreground">Version 1.0.0</Text>
+          <Text className="mt-2 text-xs text-muted-foreground">{t("settings.version")} 1.0.0</Text>
         </Card>
       </Section>
     </Page>

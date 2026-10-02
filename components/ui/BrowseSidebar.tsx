@@ -30,7 +30,7 @@ export function BrowseSidebar() {
     <>
       <Card className="overflow-hidden">
         <Text className="px-5 py-4 text-base font-semibold text-card-foreground border-b border-border">
-          Browse prayers
+          {t("prayers.browse")}
         </Text>
         <View role="navigation" className="py-2">
           {links.map((link) => {
@@ -62,13 +62,13 @@ export function BrowseSidebar() {
       </Card>
 
       <Card className="p-5 gap-1">
-        <Text className="text-sm text-muted-foreground">Praying in</Text>
+        <Text className="text-sm text-muted-foreground">{t("home.prayingIn")}</Text>
         <View className="flex-row items-center justify-between">
           <Text className="text-sm font-semibold text-card-foreground">
             {LANGUAGE_NAMES[language] ?? "English"}
           </Text>
           <Pressable onPress={() => router.push("/Language")}>
-            <Text className="text-sm font-semibold text-primary">Change</Text>
+            <Text className="text-sm font-semibold text-primary">{t("common.change")}</Text>
           </Pressable>
         </View>
       </Card>

@@ -1,11 +1,13 @@
 import { View, Text, TouchableOpacity, Platform } from "react-native";
 import { useRouter } from "expo-router";
 import { NAV_ITEMS, useActiveSegment } from "./AppNav";
+import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 
 // Bottom tab bar for phones. On wider screens TopNav takes over.
 export default function Footer() {
   const router = useRouter();
+  const { t } = useTranslation();
   const isActive = useActiveSegment();
 
   return (
@@ -17,7 +19,7 @@ export default function Footer() {
         const active = isActive(tab.segment);
         return (
           <TouchableOpacity
-            key={tab.label}
+            key={tab.route}
             onPress={() => router.push(tab.route as any)}
             className={cn(
               "flex-1 items-center py-4 border-t-2",
@@ -26,11 +28,11 @@ export default function Footer() {
           >
             <Text
               className={cn(
-                "text-sm",
+                "px-0.5 text-[11px] text-center",
                 active ? "text-primary font-semibold" : "text-muted-foreground font-medium"
               )}
             >
-              {tab.label}
+              {t(tab.labelKey)}
             </Text>
           </TouchableOpacity>
         );

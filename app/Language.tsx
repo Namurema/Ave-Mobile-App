@@ -57,7 +57,7 @@ export default function LanguageScreen() {
             size="sm"
             onPress={() => (router.canGoBack() ? router.back() : router.replace("/splash"))}
           >
-            Back
+            {t("common.back", { lng: selected })}
           </Button>
         </View>
       </View>
@@ -65,8 +65,8 @@ export default function LanguageScreen() {
       <ScrollView contentContainerClassName="flex-grow items-center justify-center px-4 py-12">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>{t("language.title")}</CardTitle>
-            <CardDescription>{t("language.subtitle")}</CardDescription>
+            <CardTitle>{t("language.title", { lng: selected })}</CardTitle>
+            <CardDescription>{t("language.subtitle", { lng: selected })}</CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -82,7 +82,7 @@ export default function LanguageScreen() {
 
           <CardFooter>
             <Button className="flex-1" onPress={handleContinue}>
-              {t("common.continue")}
+              {t("common.continue", { lng: selected })}
             </Button>
           </CardFooter>
         </Card>

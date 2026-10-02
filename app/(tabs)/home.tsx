@@ -4,19 +4,19 @@ import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../store/LanguageStore";
-import { getPrayersByCategory } from "../../lib/supabase/queries";
+import { getPrayersWithFallback } from "../../lib/supabase/queries";
 import Footer from "../../components/ui/Footer";
 import { TopNav } from "../../components/ui/AppNav";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { InstallCard } from "../../components/InstallCard";
+import { formatDate } from "../../lib/i18n/helpers";
+import { useContent } from "../../lib/i18n/content";
+import { scripture } from "../../constants/content/scripture";
 import { cn } from "../../lib/utils";
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
-
-// App language codes → locale codes the browser knows for dates
-const DATE_LOCALES: Record<string, string> = { en: "en-GB", lg: "lg", rny: "nyn" };
 
 const LANGUAGE_NAMES: Record<string, string> = { en: "English", lg: "Oluganda", rny: "Orunyankore" };
 
@@ -81,26 +81,18 @@ export default function HomeScreen() {
   const today = new Date();
   const mysteryKey = MYSTERY_BY_DAY[today.getDay()];
   const todaysMystery = t(`rosary.${mysteryKey}`);
-  let dateLabel: string;
-  try {
-    dateLabel = today.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-    });
-  } catch {
-    dateLabel = today.toDateString();
-  }
+  const dateLabel = formatDate(today, language);
+  const tc = useContent();
 
   // A different morning/evening prayer each day
   useEffect(() => {
-    getPrayersByCategory("morning-evening", "en")
-      .then((prayers) => {
+    getPrayersWithFallback("morning-evening", language)
+      .then(({ prayers }) => {
         if (prayers?.length) setPrayerOfDay(prayers[dayOfYear(today) % prayers.length]);
       })
       .catch(() => {})
       .finally(() => setPrayerLoading(false));
-  }, []);
+  }, [language]);
 
   const dailyPrayers = [
     { title: t("prayers.morningPrayers"), route: "/daily-prayer/morning" },
@@ -116,7 +108,7 @@ export default function HomeScreen() {
   ];
 
   const todayRows: LinkRow[] = [
-    { title: "Today's mystery", value: todaysMystery.split(" ")[0], route: "/(tabs)/rosary" },
+    { title: t("home.todaysMystery"), value: todaysMystery, route: "/(tabs)/rosary" },
     { title: t("home.dailyPrayers"), value: "3", route: "/(tabs)/prayers" },
     { title: t("home.stationsOfCross"), value: "14", route: "/stations" },
   ];
@@ -139,18 +131,18 @@ export default function HomeScreen() {
                 </Text>
                 <View className="mt-2 flex-row items-center gap-1.5">
                   <Text className="text-sm text-muted-foreground">
-                    Praying in {LANGUAGE_NAMES[language] ?? "English"}
+                    {t("home.prayingIn")} {LANGUAGE_NAMES[language] ?? "English"}
                   </Text>
                   <Text className="text-sm text-muted-foreground">·</Text>
                   <Pressable onPress={() => router.push("/Language")}>
-                    <Text className="text-sm font-semibold text-primary">Change</Text>
+                    <Text className="text-sm font-semibold text-primary">{t("common.change")}</Text>
                   </Pressable>
                 </View>
               </View>
             </Card>
 
             <View className="hidden lg:flex">
-              <SidebarList title="Today" rows={todayRows} />
+              <SidebarList title={t("home.today")} rows={todayRows} />
             </View>
 
             <InstallCard />
@@ -165,7 +157,7 @@ export default function HomeScreen() {
                 className="h-12 justify-center rounded-full border border-input px-5 web:hover:bg-muted web:transition-colors"
               >
                 <Text className="text-sm font-medium text-muted-foreground">
-                  Pray today's Rosary: {todaysMystery}
+                  {t("home.prayTodaysRosary")}: {todaysMystery}
                 </Text>
               </Pressable>
               <View className="flex-row">
@@ -199,7 +191,7 @@ export default function HomeScreen() {
                   className="self-start md:self-auto bg-white web:hover:bg-white/90"
                   textClassName="text-primary"
                 >
-                  Pray now
+                  {t("home.prayNow")}
                 </Button>
               </View>
             </Card>
@@ -207,11 +199,11 @@ export default function HomeScreen() {
             {/* Prayer of the day */}
             <Card className="overflow-hidden">
               <View className="px-5 py-3 border-b border-border">
-                <Text className="text-sm font-medium text-muted-foreground">Prayer of the day</Text>
+                <Text className="text-sm font-medium text-muted-foreground">{t("home.prayerOfTheDay")}</Text>
               </View>
               <View className="p-5 gap-3">
                 {prayerLoading ? (
-                  <Text className="text-sm text-muted-foreground">Loading…</Text>
+                  <Text className="text-sm text-muted-foreground">{t("common.loading")}</Text>
                 ) : prayerOfDay ? (
                   <>
                     <Text className="text-lg font-semibold tracking-tight text-card-foreground">
@@ -224,12 +216,12 @@ export default function HomeScreen() {
                       onPress={() => router.push("/daily-prayer/morning")}
                       className="self-start"
                     >
-                      <Text className="text-sm font-semibold text-primary">Read morning prayers</Text>
+                      <Text className="text-sm font-semibold text-primary">{t("home.readMorningPrayers")}</Text>
                     </Pressable>
                   </>
                 ) : (
                   <Text className="text-sm text-muted-foreground">
-                    Connect to the internet to see today's prayer.
+                    {t("home.prayerOffline")}
                   </Text>
                 )}
               </View>
@@ -241,15 +233,15 @@ export default function HomeScreen() {
             <SidebarList
               title={t("home.spiritualPractice")}
               rows={devotions}
-              footer={{ label: "Show all prayers", route: "/(tabs)/prayers" }}
+              footer={{ label: t("home.showAllPrayers"), route: "/(tabs)/prayers" }}
             />
 
             <Card className={cn("p-5 border-l-4 border-l-primary")}>
               <Text className="text-base italic leading-7 text-card-foreground">
-                "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures."
+                {tc(scripture.home.body)}
               </Text>
               <Text className="mt-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                Psalm 23:1–2
+                {tc(scripture.home.reference)}
               </Text>
             </Card>
           </View>

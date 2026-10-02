@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import { useTranslation } from "react-i18next";
+import { categoryText } from "../../lib/i18n/helpers";
 import { fetchCategoryPrayers } from "../../lib/storage/prayerCache";
 import {
   Page,
@@ -12,6 +14,7 @@ import {
 export default function CategoryPrayersScreen() {
   const { slug, lang } = useLocalSearchParams();
   const router = useRouter();
+  const { t } = useTranslation();
   const [prayers, setPrayers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,16 +36,17 @@ export default function CategoryPrayersScreen() {
     }
   }
 
-  const title = (slug as string)?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const fallbackTitle = (slug as string)?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const title = categoryText(t, slug as string, fallbackTitle).title;
 
   return (
     <Page>
-      <PageHeader back title={title ?? "Prayers"} description={`${prayers.length} prayers`} />
+      <PageHeader back title={title ?? t("nav.prayers")} />
 
       {loading ? (
-        <LoadingCard label="Loading prayers…" />
+        <LoadingCard label={t("prayers.loadingPrayers")} />
       ) : prayers.length === 0 ? (
-        <EmptyState title="No prayers yet" description="No prayers found for this category yet." />
+        <EmptyState title={t("prayers.noPrayers")} description={t("prayers.noPrayersInCategory")} />
       ) : (
         <ListCard
           items={prayers.map((prayer) => ({

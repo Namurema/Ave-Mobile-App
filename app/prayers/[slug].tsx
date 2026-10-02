@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import { getPrayersByCategory } from "../../lib/supabase/queries";
+import { useTranslation } from "react-i18next";
+import { getPrayersWithFallback } from "../../lib/supabase/queries";
+import { categoryText } from "../../lib/i18n/helpers";
+import { Alert } from "../../components/ui/alert";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
@@ -15,32 +18,27 @@ import {
 } from "../../components/ui/page";
 import { cn } from "../../lib/utils";
 
-const slugLabels: Record<string, { title: string; subtitle: string }> = {
-  "morning-evening": { title: "Morning & Evening Prayers", subtitle: "Begin and end your day with grace" },
-  "afternoon":        { title: "Mid-Day Prayers",           subtitle: "A pause for peace and the divine" },
-  "daily-rosary":     { title: "Daily Rosary",              subtitle: "Meditate on the mysteries of Christ" },
-  "novenas":          { title: "Novenas",                   subtitle: "Nine days of devoted prayer" },
-  "chaplets":         { title: "Chaplets",                  subtitle: "Meditative bead prayers" },
-  "litanies":         { title: "Litanies",                  subtitle: "Repetitive prayers of praise" },
-  "other-prayers":    { title: "Other Prayers",             subtitle: "Sacred prayers from Catholic tradition" },
-};
-
 export default function PrayerCategoryScreen() {
   const { slug, lang } = useLocalSearchParams<{ slug: string; lang: string }>();
+  const { t } = useTranslation();
   const [prayers, setPrayers] = useState<any[]>([]);
+  const [showingEnglish, setShowingEnglish] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
 
-  const meta = slugLabels[slug ?? ""] ?? { title: slug ?? "Prayers", subtitle: "" };
+  const meta = categoryText(t, slug ?? "", slug);
 
   const load = () => {
     if (!slug) return;
     setLoading(true);
-    setError(null);
-    getPrayersByCategory(slug, lang ?? "en")
-      .then((data) => setPrayers(data ?? []))
-      .catch((e) => setError(e?.message ?? "Failed to load prayers"))
+    setError(false);
+    getPrayersWithFallback(slug, lang ?? "en")
+      .then(({ prayers, fallback }) => {
+        setPrayers(prayers);
+        setShowingEnglish(fallback && prayers.length > 0);
+      })
+      .catch(() => setError(true))
       .finally(() => setLoading(false));
   };
 
@@ -48,18 +46,25 @@ export default function PrayerCategoryScreen() {
 
   return (
     <Page>
-      <PageHeader back eyebrow="Prayers" title={meta.title} description={meta.subtitle || undefined} />
+      <PageHeader
+        back
+        eyebrow={t("nav.prayers")}
+        title={meta.title}
+        description={meta.description || undefined}
+      />
+
+      {showingEnglish && <Alert>{t("prayers.showingEnglish")}</Alert>}
 
       {loading ? (
-        <LoadingCard label="Loading prayers…" />
+        <LoadingCard label={t("prayers.loadingPrayers")} />
       ) : error ? (
-        <EmptyState title="Couldn't load prayers" description={error}>
+        <EmptyState title={t("prayers.loadError")} description={t("prayers.checkConnection")}>
           <Button variant="outline" onPress={load}>
-            Try again
+            {t("common.tryAgain")}
           </Button>
         </EmptyState>
       ) : prayers.length === 0 ? (
-        <EmptyState title="No prayers yet" description="No prayers found for this category." />
+        <EmptyState title={t("prayers.noPrayers")} description={t("prayers.noPrayersInCategory")} />
       ) : (
         <Card className="overflow-hidden">
           {prayers.map((prayer, index) => {

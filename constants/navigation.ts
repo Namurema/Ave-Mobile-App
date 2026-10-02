@@ -1,5 +1,7 @@
+import type { TFunction } from "i18next";
+
 // Tabs shown in the header of both Rosary screens
-export const ROSARY_TABS = [
-  { label: "Today's mysteries", route: "/(tabs)/rosary" },
-  { label: "Pray the Rosary", route: "/prayer/session" },
+export const rosaryTabs = (t: TFunction) => [
+  { label: t("rosary.todaysMysteriesTab"), route: "/(tabs)/rosary" },
+  { label: t("rosary.prayTab"), route: "/prayer/session" },
 ];

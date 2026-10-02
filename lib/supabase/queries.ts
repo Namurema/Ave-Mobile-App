@@ -1,4 +1,5 @@
 import { supabase } from './client';
+import { translateContent, hasContentTranslation } from '../i18n/content';
 
 // Fetch all categories
 export async function getCategories() {
@@ -49,6 +50,37 @@ export async function getPrayersByCategory(categorySlug: string, languageCode: s
     .order('sort_order');
   if (error) throw error;
   return data;
+}
+
+// Placeholder rows like "[Runyakole translation coming soon]" count as missing
+const isPlaceholder = (prayer: any) => /^\s*\[.*coming soon\]\s*$/i.test(prayer?.body ?? "");
+
+// Prayers in the chosen language. When Supabase has none in that language yet,
+// the English prayers are shown through the app's content translations.
+// `fallback` is true only if some text is still in English. Each prayer keeps
+// its English title as `sourceTitle`.
+export async function getPrayersWithFallback(categorySlug: string, languageCode: string) {
+  if (languageCode !== 'en') {
+    const localized = (await getPrayersByCategory(categorySlug, languageCode)) ?? [];
+    const usable = localized.filter((prayer: any) => !isPlaceholder(prayer));
+    if (usable.length > 0) {
+      return { prayers: usable.map((p: any) => ({ ...p, sourceTitle: p.title })), fallback: false };
+    }
+  }
+  const english = (await getPrayersByCategory(categorySlug, 'en')) ?? [];
+  if (languageCode === 'en') {
+    return { prayers: english.map((p: any) => ({ ...p, sourceTitle: p.title })), fallback: false };
+  }
+  const translated = english.map((p: any) => ({
+    ...p,
+    sourceTitle: p.title,
+    title: translateContent(p.title, languageCode),
+    body: translateContent(p.body, languageCode),
+  }));
+  const fallback = english.some(
+    (p: any) => !hasContentTranslation(p.title, languageCode) || !hasContentTranslation(p.body, languageCode)
+  );
+  return { prayers: translated, fallback };
 }
 
 // Fetch single prayer by id

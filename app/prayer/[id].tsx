@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { getPrayerById, getAudioTrack } from "../../lib/supabase/queries";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
@@ -7,6 +8,7 @@ import { Page, PageHeader, ReadingCard, LoadingCard } from "../../components/ui/
 
 export default function PrayerOutputScreen() {
   const { id } = useLocalSearchParams();
+  const { t } = useTranslation();
   const [prayer, setPrayer] = useState<any>(null);
   const [audioTrack, setAudioTrack] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -33,7 +35,7 @@ export default function PrayerOutputScreen() {
   if (loading) {
     return (
       <Page>
-        <LoadingCard label="Loading prayer…" />
+        <LoadingCard />
       </Page>
     );
   }
@@ -41,14 +43,14 @@ export default function PrayerOutputScreen() {
   if (!prayer) {
     return (
       <Page>
-        <PageHeader back title="Prayer not found" description="It may have been moved or removed." />
+        <PageHeader back title={t("prayers.notFound")} description={t("prayers.notAvailableYet")} />
       </Page>
     );
   }
 
   return (
     <Page>
-      <PageHeader back eyebrow="Prayer" title={prayer.title} />
+      <PageHeader back eyebrow={t("prayers.prayer")} title={prayer.title} />
 
       {audioTrack && <AudioPlayer url={audioTrack.url} />}
 
