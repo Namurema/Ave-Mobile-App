@@ -52,12 +52,15 @@ export function PageHeader({
   description,
   back,
   tabs,
+  actions,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   back?: boolean;
   tabs?: PageTab[];
+  // Buttons under the title, e.g. "Save to favourites"
+  actions?: ReactNode;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -80,6 +83,7 @@ export function PageHeader({
           {title}
         </Text>
         {description ? <Text className="text-base text-muted-foreground">{description}</Text> : null}
+        {actions ? <View className="mt-3 flex-row flex-wrap gap-2">{actions}</View> : null}
       </View>
 
       {tabs && (
@@ -161,8 +165,6 @@ export type ListItem = {
   leading?: string | number;
   badge?: string;
   onPress?: () => void;
-  // Shown as a muted badge on items that can't be opened yet
-  unavailableLabel?: string;
 };
 
 export function ListCard({ items }: { items: ListItem[] }) {
@@ -176,19 +178,11 @@ export function ListCard({ items }: { items: ListItem[] }) {
 }
 
 function ListRow({ item, last }: { item: ListItem; last: boolean }) {
-  const unavailable = !!item.unavailableLabel;
   const content = (
     <View className={cn("flex-row items-center gap-3 px-4 md:px-5 py-4", !last && "border-b border-border")}>
       {item.leading !== undefined ? <NumberBadge value={item.leading} /> : null}
       <View className="flex-1 gap-0.5">
-        <Text
-          className={cn(
-            "text-sm font-semibold",
-            unavailable ? "text-muted-foreground" : "text-card-foreground"
-          )}
-        >
-          {item.title}
-        </Text>
+        <Text className="text-sm font-semibold text-card-foreground">{item.title}</Text>
         {item.description ? (
           <Text
             className="text-sm leading-5 text-muted-foreground"
@@ -200,7 +194,6 @@ function ListRow({ item, last }: { item: ListItem; last: boolean }) {
         {item.meta ? <Text className="text-xs text-muted-foreground">{item.meta}</Text> : null}
       </View>
       {item.badge ? <Badge>{item.badge}</Badge> : null}
-      {unavailable ? <Badge variant="secondary">{item.unavailableLabel!}</Badge> : null}
       {item.onPress ? <Text className="text-lg text-muted-foreground">›</Text> : null}
     </View>
   );

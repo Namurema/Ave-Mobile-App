@@ -1,4 +1,4 @@
-import { Pressable, Text, type PressableProps } from "react-native";
+import { ActivityIndicator, Pressable, Text, type PressableProps } from "react-native";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
@@ -42,16 +42,33 @@ type ButtonProps = PressableProps &
   VariantProps<typeof buttonVariants> & {
     className?: string;
     textClassName?: string;
+    // Shows a spinner and ignores presses, e.g. while a form submits
+    loading?: boolean;
     children: string;
   };
 
-export function Button({ variant, size, className, textClassName, children, ...props }: ButtonProps) {
+export function Button({
+  variant,
+  size,
+  className,
+  textClassName,
+  loading,
+  disabled,
+  children,
+  ...props
+}: ButtonProps) {
+  const inactive = loading || !!disabled;
   return (
     <Pressable
       role="button"
-      className={cn(buttonVariants({ variant, size }), className)}
+      aria-disabled={inactive}
+      disabled={inactive}
+      className={cn(buttonVariants({ variant, size }), inactive && "opacity-60", className)}
       {...props}
     >
+      {loading && (
+        <ActivityIndicator size="small" color={variant === "outline" || variant === "ghost" ? "#09090B" : "#FFFFFF"} />
+      )}
       <Text className={cn(buttonTextVariants({ variant, size }), textClassName)}>{children}</Text>
     </Pressable>
   );

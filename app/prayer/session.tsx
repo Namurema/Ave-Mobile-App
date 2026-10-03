@@ -6,6 +6,8 @@ import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader } from "../../components/ui/page";
+import { FavouriteButton, PrayedCard } from "../../components/PrayerActions";
+import { itemKey } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { rosaryTabs } from "../../constants/navigation";
 import { useTranslation } from "react-i18next";
@@ -67,6 +69,7 @@ export default function MysterySessionScreen() {
         eyebrow={`${formatWeekday(new Date(), language)} · ${t(`rosary.${MYSTERY_BY_DAY[today]}`)}`}
         title={t("rosary.title")}
         tabs={rosaryTabs(t)}
+        actions={<FavouriteButton itemKey={itemKey.rosary} />}
       />
 
       <Card className="p-6 md:p-8 gap-5">
@@ -141,6 +144,8 @@ export default function MysterySessionScreen() {
           {t("rosary.next")}
         </Button>
       </View>
+
+      {isLast && <PrayedCard itemKey={itemKey.rosary} label={t("progress.finishRosary")} />}
     </Page>
   );
 }

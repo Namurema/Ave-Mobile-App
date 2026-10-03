@@ -2,9 +2,9 @@
 // Translated through the content dictionaries; see scripts/translate.mjs.
 export const chaplets = [
   {
-    id: "1", title: "Divine Mercy Chaplet",
+    id: "1", title: "Chaplet of the Divine Mercy",
     beads: "5 decades", duration: "20 mins",
-    desc: "Pray on ordinary Rosary beads. Begin with Our Father, Hail Mary, and Apostles' Creed.",
+    desc: "The Three O'clock Prayer, prayed on ordinary Rosary beads.",
   },
   {
     id: "2", title: "Chaplet of St. Michael",

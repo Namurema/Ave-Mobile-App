@@ -9,15 +9,15 @@ export const chapletContent: Record<string, {
   sections: { heading: string; body: string }[];
 }> = {
   "1": {
-    title: "Divine Mercy Chaplet",
-    subtitle: "Pray on ordinary Rosary beads",
+    title: "Chaplet of the Divine Mercy",
+    subtitle: "The Three O'clock Prayer",
     icon: "",
     color: "#5C2D7C",
     audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/divine-mercy-chaplet.mp3",
     sections: [
       {
         heading: "Opening Prayer",
-        body: "You expired Jesus,\nBut the source of life gushed forth for souls,\nand the ocean of mercy opened up for the whole world,\nO Fount of Life, unfathomable Divine Mercy,\nenvelop the whole world and empty Yourself out upon us.",
+        body: "All together pray:\n\nYou expired Jesus,\nBut the source of life gushed forth for souls,\nand the ocean of mercy opened up for the whole world\nO Fount of Life, unfathomable Divine Mercy,\nenvelop the whole world and empty Yourself out upon us.",
       },
       {
         heading: "O Blood and Water",
@@ -29,14 +29,14 @@ export const chapletContent: Record<string, {
       },
       {
         heading: "The Apostles' Creed",
-        body: "I believe in God, the Father almighty, the creator of heaven and earth and in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.\n\nHe descended into hell. On the third day He rose again from the dead. He ascended into heaven and sits at the right hand of God, the Father almighty. From thence He shall come to judge the living and the dead.\n\nI believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints, the forgiveness of sins, the resurrection of the body and life everlasting. Amen.",
+        body: "All together pray the Creed:\n\nI believe in God, the Father almighty, the creator of heaven and earth\nand in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit,\nborn of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.\nHe descended into hell. On the third day He rose again from the dead.\nHe ascended into heaven and sits at the right hand of God, the Father almighty.\nFrom thence He shall come to judge the living and the dead.\nI believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints,\nthe forgiveness of sins, the resurrection of the body and life everlasting. Amen.",
       },
       {
-        heading: "On the Large Bead (Before Each Decade)",
+        heading: "On the Large Bead Before Each Decade",
         body: "All together: Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ in atonement for our sins and those of the whole world.",
       },
       {
-        heading: "On the Ten Small Beads (Each Decade)",
+        heading: "On the Ten Small Beads of Each Decade",
         body: "Leader: For the sake of His sorrowful passion\nAll together: Have mercy on us and on the whole world.",
       },
       {

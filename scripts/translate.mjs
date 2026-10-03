@@ -95,7 +95,9 @@ async function translate(token, text, target, attempt = 0) {
   const data = await response.json();
   const translated = data.output?.translated_text;
   if (!translated) throw new Error(`No translation for "${text}"`);
-  return matchPunctuation(text, translated);
+  // House style: no em dashes (U+2014) in any language
+  const emDash = new RegExp(`\\s*${String.fromCharCode(0x2014)}\\s*`, "g");
+  return matchPunctuation(text, translated.replace(emDash, ", "));
 }
 
 async function mapPool(items, limit, fn) {
@@ -180,6 +182,12 @@ async function translateContent(token, cache) {
       if (++done % 20 === 0) console.log(`  ${done}/${pending.length}`);
     });
 
+    // Drop cached paragraphs whose English no longer exists
+    for (const paragraph of Object.keys(langCache)) {
+      if (!paragraphs.has(paragraph)) delete langCache[paragraph];
+    }
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + "\n");
+
     // Hand edits in the dictionary win over the cache on re-runs
     const file = path.join(I18N, "content", `${language.code}.json`);
     const edited = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
@@ -215,6 +223,9 @@ async function main() {
     const langCache = cache[language.code];
     const current = (key) => fixApostrophes(existing[language.code][key] ?? existing[language.code][RENAMED[key]]);
 
+    // Translations from before this run, to spot lines whose English changed
+    const previous = { ...langCache };
+
     // Ask Sunbird for every key, so the review shows a suggestion next to each line
     const pending = keys.filter((key) => langCache[key]?.en !== en[key]);
     console.log(`${language.name}: ${keys.length - pending.length} cached, ${pending.length} to translate`);
@@ -235,14 +246,16 @@ async function main() {
       const luganda = fixApostrophes(existing.lg[key] ?? existing.lg[RENAMED[key]]);
       const lugandaCopy = language.code === "rny" && !!mine && mine === luganda && mine !== english;
       const truncated = mine?.endsWith("...") && !english.endsWith("...");
-      const useMachine = !mine || truncated || lugandaCopy;
+      // English changed and the line is still Sunbird's old, unedited output
+      const stale = !!previous[key] && previous[key].en !== english && mine === previous[key].text;
+      const useMachine = !mine || truncated || lugandaCopy || stale;
       result[key] = useMachine ? suggestion : mine;
       // On re-runs, lines Sunbird wrote earlier are still unreviewed machine text
       const machineMade = useMachine || mine === suggestion;
       if (machineMade) machineCount++;
-      const reason = !mine ? "missing" : truncated ? "was cut off" : lugandaCopy ? "was Luganda" : "unreviewed";
+      const reason = !mine ? "missing" : truncated ? "was cut off" : lugandaCopy ? "was Luganda" : stale ? "English changed" : "unreviewed";
       rows.push(
-        `| \`${key}\` | ${escapeCell(english)} | ${escapeCell(mine ?? "—")} | ${escapeCell(suggestion)} | ${machineMade ? `**Sunbird** (${reason})` : "Current"} |`
+        `| \`${key}\` | ${escapeCell(english)} | ${escapeCell(mine ?? "(none)")} | ${escapeCell(suggestion)} | ${machineMade ? `**Sunbird** (${reason})` : "Current"} |`
       );
     }
 

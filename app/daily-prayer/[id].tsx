@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
 import { Alert } from "../../components/ui/alert";
+import { FavouriteButton, PrayedCard } from "../../components/PrayerActions";
+import { itemKey } from "../../lib/items";
 import {
   Page,
   PageHeader,
@@ -78,6 +80,7 @@ export default function DailyPrayerScreen() {
     <Page>
       <PageHeader
         eyebrow={t("prayers.title")}
+        actions={<FavouriteButton itemKey={itemKey.daily(id ?? "morning")} />}
         title={title}
         tabs={[
           { label: t("prayers.morning"), route: "/daily-prayer/morning" },
@@ -101,6 +104,8 @@ export default function DailyPrayerScreen() {
           />
         </Section>
       )}
+
+      {prayers.length > 0 && <PrayedCard itemKey={itemKey.daily(id ?? "morning")} />}
     </Page>
   );
 }

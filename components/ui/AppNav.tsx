@@ -2,6 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import { useRouter, usePathname } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
+import { useAuthStore } from "../../store/authStore";
 
 export const NAV_ITEMS = [
   { labelKey: "nav.home", segment: "home", route: "/(tabs)/home" },
@@ -20,6 +21,12 @@ export function TopNav() {
   const router = useRouter();
   const { t } = useTranslation();
   const isActive = useActiveSegment();
+  const isAdmin = useAuthStore((state) => state.isAdmin);
+  // The admin link is English only and shown just to the admin
+  const items = [
+    ...NAV_ITEMS.map((item) => ({ ...item, label: t(item.labelKey) })),
+    ...(isAdmin ? [{ label: "Admin", segment: "/admin", route: "/admin" }] : []),
+  ];
 
   return (
     <View className="hidden md:flex border-b border-border bg-background">
@@ -28,7 +35,7 @@ export function TopNav() {
           <Text className="text-xl font-bold tracking-tight text-primary">Ave</Text>
         </Pressable>
         <View role="navigation" className="flex-row items-center gap-1">
-          {NAV_ITEMS.map((item) => {
+          {items.map((item) => {
             const active = isActive(item.segment);
             return (
               <Pressable
@@ -45,7 +52,7 @@ export function TopNav() {
                     active ? "text-foreground" : "text-muted-foreground"
                   )}
                 >
-                  {t(item.labelKey)}
+                  {item.label}
                 </Text>
               </Pressable>
             );

@@ -441,8 +441,8 @@
       "text": "Obusabbiro bwonna"
     },
     "stations.description": {
-      "en": "14 stations — meditate on the passion",
-      "text": "Ebisulo 14 — fumiitiriza ku kwegomba"
+      "en": "14 stations to meditate on the passion",
+      "text": "Ebisulo 14 okufumiitiriza ku kwagala"
     },
     "stations.info": {
       "en": "Walk with Jesus on the path to Calvary. Pause at each station to pray and reflect.",
@@ -501,8 +501,8 @@
       "text": "Yingira ne Google"
     },
     "settings.signInToSync": {
-      "en": "Sign in to sync",
-      "text": "Yingira okusobola okukwatagana"
+      "en": "Sign in to save favourite prayers and track your progress.",
+      "text": "Yingira okukuuma essaala z'oyagala ennyo n'okulondoola enkulaakulana yo."
     },
     "settings.app": {
       "en": "App",
@@ -547,6 +547,262 @@
     "install.installed": {
       "en": "Ave is installed on this device.",
       "text": "Ave eteekeddwa ku kyuma kino."
+    },
+    "auth.signIn": {
+      "en": "Sign in",
+      "text": "Yingira"
+    },
+    "auth.signInTitle": {
+      "en": "Sign in to Ave",
+      "text": "Yingira mu Ave"
+    },
+    "auth.signInDescription": {
+      "en": "Save your favourite prayers and keep track of your progress.",
+      "text": "Kuumira essaala zo ezisinga okwagalwa era otegeere engeri gy'okulaakulanyamu."
+    },
+    "auth.signUpTitle": {
+      "en": "Create your account",
+      "text": "Kola akawunti yo"
+    },
+    "auth.createAccount": {
+      "en": "Create account",
+      "text": "Kola akawunti"
+    },
+    "auth.name": {
+      "en": "Name",
+      "text": "Erinnya"
+    },
+    "auth.email": {
+      "en": "Email",
+      "text": "Emeyiro"
+    },
+    "auth.password": {
+      "en": "Password",
+      "text": "Akasumuluzo"
+    },
+    "auth.signUpDescription": {
+      "en": "Accounts are free, and you can always pray without one.",
+      "text": "Akaawunti ziba za bwereere, era osobola okusaba nga tolina akaawunti."
+    },
+    "auth.noAccount": {
+      "en": "Don't have an account?",
+      "text": "Tolina akawunti?"
+    },
+    "auth.forgotPassword": {
+      "en": "Forgot password?",
+      "text": "Weerabidde akasumuluzo?"
+    },
+    "auth.newPassword": {
+      "en": "New password",
+      "text": "Ekisumuluzo ekipya"
+    },
+    "auth.haveAccount": {
+      "en": "Already have an account?",
+      "text": "Olinayo akawunti?"
+    },
+    "auth.resetTitle": {
+      "en": "Reset your password",
+      "text": "Teekawo obuyinza bwo"
+    },
+    "auth.sendResetLink": {
+      "en": "Send reset link",
+      "text": "Sindika akakwate k'okuddamu"
+    },
+    "auth.resetDescription": {
+      "en": "Enter your email and we will send you a link to set a new password.",
+      "text": "Yingiza email yo era tujja kukusindikira akakwate okuteekawo ekisumuluzo ekipya."
+    },
+    "auth.resetSent": {
+      "en": "If an account exists for that email, a reset link is on its way. Check your inbox.",
+      "text": "Bwe kiba nti akawunti eriwo ku email eyo, olukalala lw'okukyusa luli mu kkubo. Kebera mu inbox yo."
+    },
+    "auth.savePassword": {
+      "en": "Save password",
+      "text": "Kuumira paaswadi"
+    },
+    "auth.passwordUpdated": {
+      "en": "Your password has been updated.",
+      "text": "Akasumuluzo ko kakyusiddwa."
+    },
+    "auth.newPasswordTitle": {
+      "en": "Set a new password",
+      "text": "Teekawo akasumuluzo akapya"
+    },
+    "auth.newPasswordDescription": {
+      "en": "Choose a new password for your account.",
+      "text": "Londa akasumuluzo akapya ku akaawunti yo."
+    },
+    "auth.confirmEmailTitle": {
+      "en": "Check your email",
+      "text": "Kebera email yo"
+    },
+    "auth.backToSignIn": {
+      "en": "Back to sign in",
+      "text": "Ddamu okuyingira"
+    },
+    "auth.resetLinkInvalid": {
+      "en": "This reset link has expired or was already used. Request a new one.",
+      "text": "Akakwate kano akaddamu kakadde oba kaakozesebwa dda. Saba akapya."
+    },
+    "auth.confirmEmailDescription": {
+      "en": "We sent a confirmation link to your email. Open it to finish creating your account.",
+      "text": "Twakutumidde akakwate okukakasa ku email yo. Kiggule okumaliriza okutondawo akawunti yo."
+    },
+    "auth.continueToHome": {
+      "en": "Continue to Ave",
+      "text": "Genda mu maaso ku Ave"
+    },
+    "auth.nameRequired": {
+      "en": "Enter your name",
+      "text": "Yingiza erinnya lyo"
+    },
+    "auth.emailInvalid": {
+      "en": "Enter a valid email address",
+      "text": "Teekamu endagiriro ya email entuufu"
+    },
+    "auth.passwordTooShort": {
+      "en": "Use at least 8 characters",
+      "text": "Kozesa waakiri abantu 8"
+    },
+    "auth.passwordRequired": {
+      "en": "Enter your password",
+      "text": "Yingizaamu akasumuluzo kyo"
+    },
+    "auth.errors.invalidCredentials": {
+      "en": "Wrong email or password.",
+      "text": "Email oba akasumuluzo kakyamu."
+    },
+    "auth.errors.emailNotConfirmed": {
+      "en": "Confirm your email first. Check your inbox for the link.",
+      "text": "Okakasizza email yo okusooka. Kebera mu inbox yo olabe linki."
+    },
+    "auth.errors.weakPassword": {
+      "en": "Choose a stronger password with at least 8 characters.",
+      "text": "Londa akasumuluzo ak'amaanyi nga kalina waakiri ennukuta 8."
+    },
+    "auth.errors.alreadyRegistered": {
+      "en": "An account with this email already exists. Sign in instead.",
+      "text": "Akawunti n'ekyuma kya email kino kyamala dda okubaawo. Yingira mu kifo kyayo."
+    },
+    "auth.errors.network": {
+      "en": "Can't reach the server. Check your connection and try again.",
+      "text": "Tewali kuyunga ku server. Kebera ennyungo yo era ogezeeko nate."
+    },
+    "auth.errors.generic": {
+      "en": "Something went wrong. Please try again.",
+      "text": "Waliwo ekintu ekyagenze obubi. Nkwegayiridde gezaako nate."
+    },
+    "auth.errors.tooManyAttempts": {
+      "en": "Too many attempts. Please wait a few minutes and try again.",
+      "text": "Okugezaako kungi nnyo. Nsaba olindirire eddakiika entono ogende ogezeeko nate."
+    },
+    "progress.thisWeek": {
+      "en": "This week",
+      "text": "Wiiki eno"
+    },
+    "progress.title": {
+      "en": "Your progress",
+      "text": "Enkulaakulana yo"
+    },
+    "progress.description": {
+      "en": "The days you have prayed with Ave.",
+      "text": "Ennaku ze wabadde osaba ne Ave."
+    },
+    "progress.streak": {
+      "en": "Day streak",
+      "text": "Okukuba olunaku"
+    },
+    "progress.totalPrayers": {
+      "en": "Prayers prayed",
+      "text": "Okusaba okwasabibwa"
+    },
+    "progress.history": {
+      "en": "Recent prayers",
+      "text": "Okusaba okw'oluvannyuma"
+    },
+    "progress.markPrayed": {
+      "en": "Mark as prayed today",
+      "text": "Marka nga osabidde leero"
+    },
+    "progress.empty": {
+      "en": "Mark a prayer as prayed to start tracking your progress.",
+      "text": "Kola akabonero ku ssaala nga bw'omaze okugisaba okutandika okulondoola enkulaakulana yo."
+    },
+    "progress.undo": {
+      "en": "Undo",
+      "text": "Ddira emabega"
+    },
+    "progress.signInToKeep": {
+      "en": "Sign in to keep your progress and favourites on all your devices.",
+      "text": "Yingira okukuuma ebikolebwa byo n'ebyo by'oyagala ku buli kyuma kyo."
+    },
+    "progress.day": {
+      "en": "Day",
+      "text": "Olunaku"
+    },
+    "progress.of": {
+      "en": "of",
+      "text": "ky'ekyo"
+    },
+    "progress.prayedToday": {
+      "en": "Prayed today",
+      "text": "Nasaba leero"
+    },
+    "progress.viewProgress": {
+      "en": "View progress",
+      "text": "Laba enkulaakulana"
+    },
+    "progress.novenaNext": {
+      "en": "Next: day",
+      "text": "Okuddako: olunaku"
+    },
+    "progress.novenaTitle": {
+      "en": "Your novena",
+      "text": "Novena yo"
+    },
+    "progress.novenaStart": {
+      "en": "Pray the first day today to begin.",
+      "text": "Saba olunaku olusooka leero okutandika."
+    },
+    "progress.novenaToday": {
+      "en": "Today: day",
+      "text": "Leero: olunaku"
+    },
+    "favourites.title": {
+      "en": "Favourites",
+      "text": "Abakwata ku mutima"
+    },
+    "progress.finishRosary": {
+      "en": "Finish and mark as prayed",
+      "text": "Maliriza era okakase nti osabidde"
+    },
+    "progress.novenaComplete": {
+      "en": "Novena complete. May God bless your intentions.",
+      "text": "Novena emaliridde. Katonda akuwe omukisa mu bigendererwa byo."
+    },
+    "progress.novenaRule": {
+      "en": "Pray on consecutive days. Missing a day starts the novena again.",
+      "text": "Saba ku nnaku eziddiriŋŋana. Okubulwa olunaku kutandika novena nate."
+    },
+    "favourites.description": {
+      "en": "Prayers you have saved.",
+      "text": "Essaala ze wawonye."
+    },
+    "favourites.saved": {
+      "en": "Saved",
+      "text": "Kikuumiddwa"
+    },
+    "favourites.save": {
+      "en": "Save to favourites",
+      "text": "Kuumira ku by'oyagala"
+    },
+    "favourites.empty": {
+      "en": "Use \"Save to favourites\" on any prayer to keep it here.",
+      "text": "Kozesa \"Save to favourites\" ku ssaala yonna okugikuuma wano."
+    },
+    "favourites.viewAll": {
+      "en": "View all",
+      "text": "Laba byonna"
     }
   },
   "rny": {
@@ -991,8 +1247,8 @@
       "text": "Chapleti n'okushaba kw'obusiba bukye okurikuta amaani aha kwehayo nainga eby'amayobera."
     },
     "stations.description": {
-      "en": "14 stations — meditate on the passion",
-      "text": "Emyanya 14 — yebembeza aha rukundo"
+      "en": "14 stations to meditate on the passion",
+      "text": "Emyanya 14 y'okuteekateekaho aha rukundo"
     },
     "stations.section": {
       "en": "The Stations",
@@ -1047,8 +1303,8 @@
       "text": "Omukozesa w'omugyenyi"
     },
     "settings.signInToSync": {
-      "en": "Sign in to sync",
-      "text": "Okuta omukono okuhikaana"
+      "en": "Sign in to save favourite prayers and track your progress.",
+      "text": "Handiika kubiika okushaba kwawe n'okureeba ahu orikuhika."
     },
     "settings.app": {
       "en": "App",
@@ -1097,6 +1353,262 @@
     "install.installed": {
       "en": "Ave is installed on this device.",
       "text": "Ave etairwe aha kyoma eki."
+    },
+    "auth.signInTitle": {
+      "en": "Sign in to Ave",
+      "text": "Kuta omukono aha Ave"
+    },
+    "auth.signIn": {
+      "en": "Sign in",
+      "text": "Okuta omukono"
+    },
+    "auth.signInDescription": {
+      "en": "Save your favourite prayers and keep track of your progress.",
+      "text": "Rinda okushaba kwawe oku orikukunda kandi omanye ahu waahika."
+    },
+    "auth.createAccount": {
+      "en": "Create account",
+      "text": "Kora akawunti"
+    },
+    "auth.signUpTitle": {
+      "en": "Create your account",
+      "text": "Kora akawunti yaawe"
+    },
+    "auth.signUpDescription": {
+      "en": "Accounts are free, and you can always pray without one.",
+      "text": "Akaunti n'ezabusha, kandi noobaasa okushaba otaine akaunti."
+    },
+    "auth.name": {
+      "en": "Name",
+      "text": "Eiziina"
+    },
+    "auth.email": {
+      "en": "Email",
+      "text": "E-mayiro"
+    },
+    "auth.password": {
+      "en": "Password",
+      "text": "Akasumuruzo"
+    },
+    "auth.newPassword": {
+      "en": "New password",
+      "text": "Akasumuruzo akasya"
+    },
+    "auth.noAccount": {
+      "en": "Don't have an account?",
+      "text": "Torikubaasa kugira akawunti?"
+    },
+    "auth.haveAccount": {
+      "en": "Already have an account?",
+      "text": "Oine akawunti?"
+    },
+    "auth.resetTitle": {
+      "en": "Reset your password",
+      "text": "Garura busya akasumuruzo kaawe"
+    },
+    "auth.forgotPassword": {
+      "en": "Forgot password?",
+      "text": "Okayebwa akasumuruzo?"
+    },
+    "auth.sendResetLink": {
+      "en": "Send reset link",
+      "text": "Oheereze akakwate k'okugaruka"
+    },
+    "auth.newPasswordTitle": {
+      "en": "Set a new password",
+      "text": "Teekaho akasumuruzo akasya"
+    },
+    "auth.resetDescription": {
+      "en": "Enter your email and we will send you a link to set a new password.",
+      "text": "Taahamu e-mayiro yaawe kandi nitwija kukwohereza akakwate k'okutaho akasumuruzo akasya."
+    },
+    "auth.resetSent": {
+      "en": "If an account exists for that email, a reset link is on its way. Check your inbox.",
+      "text": "Ku haraabe hariho akawunti ahabwa e-mayiro egyo, akakwate k'okugarura busya kari omu muhanda. Reeba omu inbox yaawe."
+    },
+    "auth.savePassword": {
+      "en": "Save password",
+      "text": "Kubiika akasumuruzo"
+    },
+    "auth.newPasswordDescription": {
+      "en": "Choose a new password for your account.",
+      "text": "Toorana akasumuruzo akasya aha akaunti yaawe."
+    },
+    "auth.passwordUpdated": {
+      "en": "Your password has been updated.",
+      "text": "Akasumuruzo kaawe kahindwirwe."
+    },
+    "auth.confirmEmailTitle": {
+      "en": "Check your email",
+      "text": "Kyebera emeeri yaawe"
+    },
+    "auth.resetLinkInvalid": {
+      "en": "This reset link has expired or was already used. Request a new one.",
+      "text": "Akakwate k'okugaruka kakahwa obwire nainga kakakoresibwa. Shaba akandi."
+    },
+    "auth.backToSignIn": {
+      "en": "Back to sign in",
+      "text": "Okugaruka omu kutaahamu"
+    },
+    "auth.confirmEmailDescription": {
+      "en": "We sent a confirmation link to your email. Open it to finish creating your account.",
+      "text": "Tukakusindikira akakwate k'okwikiriza omu email yaawe. Kigwireho okuhendera okukora akaunti yaawe."
+    },
+    "auth.continueToHome": {
+      "en": "Continue to Ave",
+      "text": "Gumizamu ku Ave"
+    },
+    "auth.nameRequired": {
+      "en": "Enter your name",
+      "text": "Taahamu eiziina ryawe"
+    },
+    "auth.passwordTooShort": {
+      "en": "Use at least 8 characters",
+      "text": "Kozesa haakiri abantu 8"
+    },
+    "auth.emailInvalid": {
+      "en": "Enter a valid email address",
+      "text": "Taahamu endagiriro ya email ehikire"
+    },
+    "auth.errors.invalidCredentials": {
+      "en": "Wrong email or password.",
+      "text": "E-mayiro etahikire nainga akasumuruzo."
+    },
+    "auth.passwordRequired": {
+      "en": "Enter your password",
+      "text": "Taahya omukono gwawe"
+    },
+    "auth.errors.emailNotConfirmed": {
+      "en": "Confirm your email first. Check your inbox for the link.",
+      "text": "Banza ohamye e-mayiro yaawe. Kyebera omu inbox yaawe okureeba akakwate."
+    },
+    "auth.errors.alreadyRegistered": {
+      "en": "An account with this email already exists. Sign in instead.",
+      "text": "Akawunti erimu e-mayiro egi eriho. Taahamu omu mwanya gw'ekyo."
+    },
+    "auth.errors.weakPassword": {
+      "en": "Choose a stronger password with at least 8 characters.",
+      "text": "Toorana akasumuruzo k'amaani karimu enyuguta ezirikuhika 8."
+    },
+    "auth.errors.tooManyAttempts": {
+      "en": "Too many attempts. Please wait a few minutes and try again.",
+      "text": "Okugyezaho kwingi munonga. Nyabura we rinda edakiika nkye ogaruke ogyezeho."
+    },
+    "auth.errors.generic": {
+      "en": "Something went wrong. Please try again.",
+      "text": "Hariho ekintu ekyabaire kigwire. Nyabura we gezaho ogaruke."
+    },
+    "auth.errors.network": {
+      "en": "Can't reach the server. Check your connection and try again.",
+      "text": "Tikirikubaasa kuhika aha seva. Kyebera okukwatanisa kwawe kandi ogaruke ogyezeho."
+    },
+    "progress.title": {
+      "en": "Your progress",
+      "text": "Entunguuka yaawe"
+    },
+    "progress.thisWeek": {
+      "en": "This week",
+      "text": "Saabiiki egi"
+    },
+    "progress.streak": {
+      "en": "Day streak",
+      "text": "Okushara eizooba"
+    },
+    "progress.description": {
+      "en": "The days you have prayed with Ave.",
+      "text": "Ebiro ebi waashabire na Ave."
+    },
+    "progress.totalPrayers": {
+      "en": "Prayers prayed",
+      "text": "Okushaba okweshabiirwe"
+    },
+    "progress.history": {
+      "en": "Recent prayers",
+      "text": "Okushaba okwahwaireho"
+    },
+    "progress.markPrayed": {
+      "en": "Mark as prayed today",
+      "text": "Mark nk'orashabire eriizooba"
+    },
+    "progress.empty": {
+      "en": "Mark a prayer as prayed to start tracking your progress.",
+      "text": "Kora akamanyiso aha kushaba kwawe okutandika kukuratira entunguuka yaawe."
+    },
+    "progress.prayedToday": {
+      "en": "Prayed today",
+      "text": "Nashaba eriizooba"
+    },
+    "progress.undo": {
+      "en": "Undo",
+      "text": "Okugarura enyima"
+    },
+    "progress.viewProgress": {
+      "en": "View progress",
+      "text": "Reeba okutunguuka"
+    },
+    "progress.signInToKeep": {
+      "en": "Sign in to keep your progress and favourites on all your devices.",
+      "text": "Yambuka okurinda entunguuka yaawe n'ebirikukundwa aha byoma byawe byona."
+    },
+    "progress.of": {
+      "en": "of",
+      "text": "of"
+    },
+    "progress.day": {
+      "en": "Day",
+      "text": "Eizooba"
+    },
+    "progress.novenaTitle": {
+      "en": "Your novena",
+      "text": "Okushaba kwawe okw'ebiro mwenda"
+    },
+    "progress.novenaNext": {
+      "en": "Next: day",
+      "text": "Ekyakuratsireho: eizooba"
+    },
+    "progress.novenaStart": {
+      "en": "Pray the first day today to begin.",
+      "text": "Shaba omu izooba ry'okubanza eriizooba okutandika."
+    },
+    "progress.novenaToday": {
+      "en": "Today: day",
+      "text": "Eriizooba: eizooba"
+    },
+    "progress.novenaComplete": {
+      "en": "Novena complete. May God bless your intentions.",
+      "text": "Novena ehwaireho. Ruhanga abaase kugira ngu ekigyendererwa kyawe kikuhwe omugisha."
+    },
+    "favourites.title": {
+      "en": "Favourites",
+      "text": "Abakundwa"
+    },
+    "progress.finishRosary": {
+      "en": "Finish and mark as prayed",
+      "text": "Hendera kandi oteekye nk'orashabire"
+    },
+    "progress.novenaRule": {
+      "en": "Pray on consecutive days. Missing a day starts the novena again.",
+      "text": "Shaba aha biro ebirikukurataho. Okufeerwa eizooba nikigaruka kutandika novena."
+    },
+    "favourites.description": {
+      "en": "Prayers you have saved.",
+      "text": "Okushaba oku waabiika."
+    },
+    "favourites.save": {
+      "en": "Save to favourites",
+      "text": "Kubiika omu byokukunda"
+    },
+    "favourites.saved": {
+      "en": "Saved",
+      "text": "Kikabiika"
+    },
+    "favourites.viewAll": {
+      "en": "View all",
+      "text": "Reeba byona"
+    },
+    "favourites.empty": {
+      "en": "Use \"Save to favourites\" on any prayer to keep it here.",
+      "text": "Kozesa \"Save to favourites\" aha kushaba kwona okukubaasa kukigumya aha."
     }
   },
   "content-lg": {
@@ -1187,30 +1699,25 @@
     "Pilate hands Jesus over to be crucified despite knowing He is innocent.": "Piraato awaayo Yesu okukomererwa wadde nga yali amanyi nti talina musango.",
     "Jesus accepts the heavy cross, bearing the weight of our sins with love.": "Yesu akkiriza omusaalaba oguzitowa, ng'atikka obuzito bw'ebibi byaffe mu kwagala.",
     "Jesus meets His Mother": "Yesu asisinkana Maama we",
-    "Weakened by suffering, Jesus falls — yet rises to continue His journey for us.": "Ng'afuuse munafu olw'okubonaabona, Yesu agwa — naye ayimuka okweyongera mu lugendo lwe ku lwaffe.",
     "Jesus falls the first time": "Yesu agwa omulundi ogusooka",
     "A moment of profound sorrow as Mary sees her Son carrying the cross.": "Akaseera ak'ennaku ey'amaanyi nga Mariya alaba Omwana we ng'atwala omusaalaba.",
     "Veronica wipes the face of Jesus": "Veronica asangula amaaso ga Yesu",
     "Simon of Cyrene helps Jesus": "Simooni ow'e Kyuleene ayamba Yesu",
-    "Simon is compelled to help — reminding us to carry each other's burdens.": "Simon alina okuyamba — ng'atujjukiza okwetikka emigugu gy'abalala.",
     "An act of compassion leaves the image of Christ's face on her veil.": "Ekikolwa eky'obusaasizi kireka ekifaananyi ky'amaaso ga Kristo ku buveera bwe.",
     "Jesus falls the second time": "Yesu agwa omulundi ogw'okubiri",
     "Jesus meets the women of Jerusalem": "Yesu asisinkana abakazi b'omu Yerusaalemi",
     "Jesus consoles the weeping women, calling us to weep for our sins.": "Yesu abudaabuda abakazi abakaaba, ng'atuyita okukaabira ebibi byaffe.",
     "Jesus falls again, showing the depth of His suffering and love for us.": "Yesu addamu okugwa, ng'alaga obuzito bw'okubonaabona kwe n'okwagala kw'atulinako.",
     "Jesus falls the third time": "Yesu agwa omulundi ogwokusatu",
-    "Near Calvary, Jesus falls once more — yet His love does not waver.": "Okumpi ne Calvary, Yesu agwa omulundi omulala — naye okwagala kwe tekukendeera.",
     "Jesus is nailed to the Cross": "Yesu akomererwa ku musaalaba",
     "Jesus is stripped of His garments": "Yesu ayambuddwa engoye ze",
     "Jesus is humiliated, stripped of all dignity, for our redemption.": "Yesu aswazibwa, n'aggyibwako ekitiibwa kyonna olw'okununulibwa kwaffe.",
-    "The nails pierce His hands and feet — driven by our sins, held by His love.": "Enjala zisumattuka mu mikono ne mu bigere Bye — nga zikubiddwa ebibi byaffe, nga zikwatibwa okwagala kwe.",
     "Jesus dies on the Cross": "Yesu afiira ku musaalaba",
     "Jesus is taken down from the Cross": "Yesu atwalibwa wansi okuva ku musaalaba",
     "\"It is finished.\" The ultimate sacrifice is made for all of humanity.": "\"Kiwedde.\" Okuwaayo okusinga obulungi kukoleddwa ku lw'abantu bonna.",
     "Jesus is laid in the tomb": "Yesu ateekebwa mu ntaana",
     "Novena to the Sacred Heart": "Okusaba kwa Novena eri omutima Omutukuvu",
     "The tomb is sealed, but death does not have the final word.": "Ekituulo kiggale, naye okufa tekulina bigambo bya luvannyuma.",
-    "Mary receives the body of her Son — a mother's grief beyond words.": "Mary afuna omubiri gw'Omwana we — ennaku ya maama eteekwa okuba nga yali nnyingi.",
     "Novena to Our Lady of Perpetual Help": "Novena eri Mukama waffe ow'Obuyambi Obutaggwaawo",
     "Seek the intercession of Our Blessed Mother": "Noonya okusabira kwa Maama waffe Omugulumivu",
     "Novena to St. Joseph": "Okusaba kwa Novena eri St. Joseph",
@@ -1222,13 +1729,10 @@
     "Novena to St. Jude": "Okusaba kwa Novena eri St. Jude",
     "Trust in the ocean of Divine Mercy": "Weesige mu nnyanja y'ekisa kya Katonda",
     "Patron saint of desperate cases and lost causes": "Omutukuvu omukuza w'ebizibu eby'amaanyi n'ebyo ebitaliiko ssuubi",
-    "Divine Mercy Chaplet": "Essaala ya Divine Mercy Chaplet",
     "Novena to the 13 Blessed Souls": "Okusaba okw'ennaku kkumi n'esatu eri emyoyo 13 egyaweebwa omukisa",
-    "Jesus and His 12 Apostles — pray for 13 consecutive days": "Yesu n'abatume be 12 — basaba okumala ennaku 13 eziddiriŋŋana",
     "5 decades": "Emyaka ataano",
     "Chaplet of St. Michael": "Essaala ya St. Michael",
     "20 mins": "Dakiika 20",
-    "Pray on ordinary Rosary beads. Begin with Our Father, Hail Mary, and Apostles' Creed.": "Saba nga okozesa obusiraamu obwa bulijjo. Tandika ne Kitaffe, Hail Mary, n'okukkiriza kw'Abatume.",
     "15 mins": "Ddakiika 15",
     "9 salutations": "Okulamusa 9",
     "Honour the nine choirs of angels and seek the protection of St. Michael the Archangel.": "Weesa ekitiibwa ebibiina by'abamalayika mwenda era onoonye obukuumi bwa St. Michael Omumalayika omukulu.",
@@ -1271,25 +1775,17 @@
     "Magnificat": "Magnificat",
     "Our Lady of Fatima Novena": "Omukyala waffe ow'e Fatima Novena",
     "Opening Prayer": "Okusaba okuggulawo",
-    "Pray on ordinary Rosary beads": "Saba ng'okozesa obusiraamu obwa bulijjo",
     "O Blood and Water": "O Omusaayi n'amazzi",
     "O Blood and Water\nwhich gushed forth from the Heart of Jesus\nas a fount of mercy for us, I trust in you!": "Omusaayi n'amazzi ebyava mu mutima gwa Yesu\nng'ensulo y'ekisa eri ffe, nkukkiririzaamu!",
     "Jesus, King of Mercy, I trust in you!": "Yesu, Kabaka w'ekisa, nkukkiririzaamu!",
     "Holy God, Holy Mighty One, Holy Immortal One,\nHave Mercy on us and on the whole world.\n(Say 3 times) Amen.": "Katonda omutukuvu, ow'amaanyi, atafa,\nTusaasire naffe n'ensi yonna.\n(Kyogera emirundi esatu) Amiina.",
-    "You expired Jesus,\nBut the source of life gushed forth for souls,\nand the ocean of mercy opened up for the whole world,\nO Fount of Life, unfathomable Divine Mercy,\nenvelop the whole world and empty Yourself out upon us.": "Oyiseeko Yesu,\nNaye ensibuko y’obulamu yasanyuka ku bantu,\nera n’ennyanja y’ekisa yafulumya okusonyiwa ensi yonna,\nAi Ensibuko y’Obulamu, Ekisa kya Katonda ekitalina kikomo,\nkubikka ensi yonna era weeyanjuleko ffe.",
     "Our Father & Hail Mary": "Kitaffe n'Omukama Mary",
     "Leader: Our Father…\nAll together: Give us this day…": "Omukulembeze: Kitaffe…\nFfenna awamu: Tuwe leero…",
     "The Apostles' Creed": "Okukkiriza kw'Abatume",
     "Leader: Hail Mary…\nAll together: Holy Mary…": "Omukulembeze: Mweebale Mary…\nFfenna awamu: Mariya omutukuvu…",
-    "On the Large Bead (Before Each Decade)": "Ku Beedi Enene (Buli Luvannyuma lwa Myaka Ekkumi)",
-    "He descended into hell. On the third day He rose again from the dead. He ascended into heaven and sits at the right hand of God, the Father almighty. From thence He shall come to judge the living and the dead.": "Yakkirira mu hell. Ku lunaku olwokusatu yazuukira okuva mu bafu. Yalinnya mu ggulu era atuula ku mukono ogwa ddyo ogwa Katonda, Kitaawe omuyinza w’ebintu byonna. Okuva eyo ajja kujja okusalira abalamu n’abafu omusango.",
-    "I believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints, the forgiveness of sins, the resurrection of the body and life everlasting. Amen.": "Nzikiriza mu Mwoyo Omutukuvu, Ekkanisa Enkatolika entukuvu, Obumu bw'Abatukuvu, okusonyiyibwa ebibi, okuzuukira kw'emibiri n'obulamu obutaggwaawo. Amiina.",
-    "I believe in God, the Father almighty, the creator of heaven and earth and in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.": "Nzikiriza mu Katonda, Kitaawe omuyinza w’ebintu byonna, omutonzi w’eggulu n’ensi era ne Yesu Kristo, Omwana we omu yekka, Mukama waffe, eyatondebwa Omwoyo Omutukuvu, nazaalibwa ku Nnamwandu Maryamu, n’abonyaabonyezebwa mu mikono gya Pontius Pilate, n’akomererwa ku musaalaba, n’afa era n’aziikibwa.",
-    "On the Ten Small Beads (Each Decade)": "Ku Beedi Ekkumi Entono (Buli Kikumi)",
     "All together: Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ in atonement for our sins and those of the whole world.": "Ffenna awamu: Kitaffe ow'emirembe, nkugabira Omubiri n'Omusaayi, Omwoyo n'Obwakatonda bw'Omwana wo omwagalwa ennyo, Mukama waffe Yesu Kristo mu kutegeera ebibi byaffe n'eby'ensi yonna.",
     "Leader: For the sake of His sorrowful passion\nAll together: Have mercy on us and on the whole world.": "Omukulembeze: Olw'okulumwa kw'omutima gwe\nFfenna awamu: Tulage ekisa ggwe n'ensi yonna.",
     "Holy God, Holy Mighty One, Holy Immortal One,\nHave mercy on us and on the whole world.\n(Say three times) Amen.": "Katonda omutukuvu, Omuyinza omukulu, Oyo atafa,\nTusaasire n'ensi yonna.\n(Kyogera emirundi esatu) Amiina.",
-    "Jesus & His 12 Apostles — 13 consecutive days": "Yesu n'abatume be 12 — ennaku 13 eziddiriŋŋana",
     "Jesus, King of Mercy, I trust in you! (say 3 times)": "Yesu, Kabaka w'ekisa, nkukkiririzaamu! (kigambe emirundi esatu)",
     "Opening Prayer (Read Twice)": "Okusaba okuggulawo (Soma emirundi ebiri)",
     "Of you I ask for the sake of the blood that Jesus shed that my request be answered.": "Nkubuuza ku lw'omusaayi Yesu gwe yayiwa, okusaba kwange kuddibwemu.",
@@ -1315,7 +1811,6 @@
     "Closing": "Okuggalawo",
     "Our Lady of the Rosary of Fatima,\nPray for us.": "Mukyala waffe ow'ekikomo e Fatima,\nTusabire.",
     "The Canticle of Mary": "Oluyimba lwa Mariya",
-    "The Canticle of Mary — Luke 1:46-55": "Oluyimba lwa Maliyamu — Lukka 1:46-55",
     "He has shown mercy on those who fear him\nin every generation.": "Alaze ekisa eri abo bonna abamutya mu buli mulembe.",
     "He has shown the strength of his arm,\nhe has scattered the proud in their conceit.": "Alaze amaanyi g'omukono gwe,\nasansudde ab'amalala mu kwebuulirira kwabwe.",
     "Most Holy Virgin, who deigned to come to Fatima, to reveal the treasures of grace hidden in the recitation of the Rosary, inspire our hearts with a sincere love of this devotion, that meditating on the Mysteries of our Redemption recalled therein, we may obtain the conversion of sinners, the conversion of Russia, and (here name the other favors you are praying for), which we ask of you in this Novena, for the greater glory of God, for your own honor, and for the good of souls. Amen.": "Omutukuvu Omulongo, eyakkiriza okujja e Fatima, okulaga obugagga bw’ekisa ekisibiddwa mu kusoma Rosary, atusabe omutima ogw’okwagalira ddala okwekkiriza kuno, nga tusaba ku Mysteries of Redemption, tusobole okufuna okukyusa aboonoonyi, okukyusa Russia, n’ebirala byonna bye musaba, olw’ekitiibwa kya Katonda, ekitiibwa kyammwe, n’obulungi bw’emyoyo. Amen.",
@@ -1399,7 +1894,33 @@
     "Psalm 23:1–2": "Zabbuli 23:1–2",
     "1 Corinthians 16:14": "1 Abakkolinso 16:14",
     "\"Let all that you do be done in love.\"": "Byonna by'okola bikolebwa mu kwagala",
-    "\"The Lord is my shepherd; I shall not want. He makes me lie down in green pastures.\"": "\"Mukama ye musumba wange; sirina kye nneetaaga. Anzisa mu kisibo ekirungi.\""
+    "\"The Lord is my shepherd; I shall not want. He makes me lie down in green pastures.\"": "\"Mukama ye musumba wange; sirina kye nneetaaga. Anzisa mu kisibo ekirungi.\"",
+    "Simon is compelled to help, reminding us to carry each other's burdens.": "Simon ayambiddwa okuyamba, ng'atujjukiza buli omu okutwala obuzito bwa munne.",
+    "Near Calvary, Jesus falls once more, yet His love does not waver.": "Okumpi ne Kalivaali, Yesu agwa omulundi omulala naye okwagala kwe tekuggya.",
+    "Weakened by suffering, Jesus falls, yet rises to continue His journey for us.": "Bwe yali ng'akooye olw'okubonaabona, Yesu yagwa wansi naye n'ayimuka okutambulira awamu naffe.",
+    "The nails pierce His hands and feet, driven by our sins and held by His love.": "Enjala zisala mu mikono gye ne mu bigere bye, nga zikubiddwa ebibi byaffe era nga zinywezeddwa okwagala kwe.",
+    "Mary receives the body of her Son: a mother's grief beyond words.": "Mary afuna omulambo gw'Omwana we: ennaku ya maama eteekwa okuba nga yali nnene nnyo.",
+    "Jesus and His 12 Apostles. Pray for 13 consecutive days": "Yesu n'Abatume be 12. Musabe okumala ennaku 13 eziddiriŋŋana",
+    "The Canticle of Mary (Luke 1:46-55)": "Oluyimba lwa Maliyamu (Lukka 1:46-55)",
+    "Jesus and His 12 Apostles, over 13 consecutive days": "Yesu n'Abatume be 12, mu nnaku ezisukka mu 13 ezeegattira awamu",
+    "The Three O'clock Prayer": "Okusaba kwa Ssaawa Essatu",
+    "All together pray:": "Bonna awamu basabe:",
+    "Chaplet of the Divine Mercy": "Essaala y'ekisa kya Katonda",
+    "The Three O'clock Prayer, prayed on ordinary Rosary beads.": "Essaala ey'essaawa ssatu, esabibwa ku bikomo bya rosari ebya bulijjo.",
+    "All together pray the Creed:": "Mwenna musabire wamu okukkiriza:",
+    "On the Large Bead Before Each Decade": "Ku Kkubo Ekkulu nga Buli Mwaka Gw'ekumi Gutandika",
+    "On the Ten Small Beads of Each Decade": "Ku Beedi Ekkumi Entono ez'Obukadde Bwonna",
+    "Pray these prayers once a day for 9 days": "Saba essaala zino omulundi gumu buli lunaku okumala ennaku 9",
+    "You expired Jesus,\nBut the source of life gushed forth for souls,\nand the ocean of mercy opened up for the whole world\nO Fount of Life, unfathomable Divine Mercy,\nenvelop the whole world and empty Yourself out upon us.": "Waweddeko Yesu,\nNaye ensibuko y’obulamu yasanyuka eri emyoyo,\nn’ennyanja y’ekisa n’egulawo eri ensi yonna.\nO Fount of Life, ekisa kya Katonda ekitasobola kukomekkerezebwa,\nkubikka ensi yonna era weefumite ku ffe.",
+    "How to Pray This Novena": "Engeri y'okusaba mu Novena eno",
+    "Opening": "Okuggulawo",
+    "Pray the same prayers each day, for 9 days in a row.": "Saba essaala ze zimu buli lunaku, okumala ennaku 9 eziddiriŋŋana.",
+    "Intro Prayer": "Okusaba okw'okutandika",
+    "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.": "Mu linnya lya Kitaffe, n'ery'Omwana, n'ery'Omwoyo Omutukuvu. Amiina.",
+    "Hail Mary (three times)": "Hail Mary (emirundi esatu)",
+    "I believe in God, the Father almighty, the creator of heaven and earth\nand in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit,\nborn of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.\nHe descended into hell. On the third day He rose again from the dead.\nHe ascended into heaven and sits at the right hand of God, the Father almighty.\nFrom thence He shall come to judge the living and the dead.\nI believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints,\nthe forgiveness of sins, the resurrection of the body and life everlasting. Amen.": "Nzikiriza mu Katonda, Kitaffe omuyinza w’ebintu byonna, eyatonda eggulu n’ensi\nne mu Yesu Kristo, Omwana we yekka, Mukama waffe, eyazaalibwa Omwoyo Omutukuvu,\neyazaalibwa mu Malyamu Omugole, n’abonaabona wansi wa Pontiyo Piraato, n’akomererwa ku musaalaba, n’afa era n’aziikibwa.\nYagenda mu hell. Ku lunaku olwokusatu yazukira okuva mu bafu.\nYalinnya mu ggulu era atudde ku mukono ogwa ddyo ogwa Katonda, Kitaffe omuyinza w’ebintu byonna.\nOkuva awo ajja kujja okusalira abalamu n’abafu omusango.\nNzikiriza mu Omwoyo Omutukuvu, Ekkanisa Enkatolika entukuvu, Obumu bw’Abatukuvu,\nokuggibwa ebibi, okuzuukira kw’omubiri n’obulamu obutaggwaawo. Amiina.",
+    "Oh Mother of Perpetual Help, grant that I may ever invoke your powerful name, the protection of the living and the salvation of the dying. Purest Mary, let your name henceforth be ever on my lips. Delay not, Blessed Lady, to rescue me whenever I call on you. In my temptations, in my needs, I will never cease to call on you, ever repeating your sacred name, Mary, Mary.": "O Mukama w'Obuyambi Obutaggwaawo, mpa obusobozi okukozesa erinnya lyo ery'amaanyi, okukuuma abalamu n'okulokola abafa. Mary Omwerufu, leka erinnya lyo libeere ku mimwa gyange bulijjo. Tolekaayo, Mukyala Omugumu, okunzizaamu amaanyi buli lwe nkukoowoola. Mu kugezesebwa kwange, mu byetaago byange, sirirekera kukukoowoola, nga nziramu erinnya lyo ettukuvu, Mary, Mary.",
+    "What a consolation, what sweetness, what confidence fills my soul when I utter your sacred name or even only think of you! I thank the Lord for having given you so sweet, so powerful, so lovely a name. But I will not be content with merely uttering your name. Let my love for you prompt me ever to hail you Mother of Perpetual Help. Mother of Perpetual Help, pray for me and grant me the favor I confidently ask of you (mention request here).": "Kino kye ky’okuddamu amaanyi, obulungi, n’obukakafu ebijjula mu mutima gwange buli lwe nkola erinnya lyo ettukuvu oba nga ndowooza ku ggwe! Nsiima Mukama olw’okumpa erinnya ery’obulungi, ery’amaanyi, era ery’ekitiibwa. Naye sijja kukkiriza okukoma ku kuyita erinnya lyo lyokka. Okwagala kwange kukulemberemu okukuwa ekitiibwa ng’Omuzaala w’Obuyambi Obutaggwaawo. Omuzaala w’Obuyambi Obutaggwaawo, nsabira era onnyambe okufuna ekirabo kye nsaba gy’oli (tegeeza ekisaba kyo wano)."
   },
   "content-rny": {
     "The Ascension": "Okutemba",
@@ -1490,10 +2011,8 @@
     "Jesus falls the first time": "Yesu akagwa omurundi gw'okubanza",
     "Jesus accepts the heavy cross, bearing the weight of our sins with love.": "Yesu naikiriza omusharaba ogurikuremeera, arikutwara oburemeezi bw'ebibi byaitu n'okukunda.",
     "Jesus meets His Mother": "Yesu yaabugana nyina",
-    "Weakened by suffering, Jesus falls — yet rises to continue His journey for us.": "Ahabw'okubonabona, Yesu akagwa — kwonka yaayemerera kugumizamu n'orugyendo rwe ahabwaitu.",
     "Simon of Cyrene helps Jesus": "Simooni owa Cyrene akahwera Yesu",
     "A moment of profound sorrow as Mary sees her Son carrying the cross.": "Obwire bw'obusaasi bwingi obu Mary yaareeba Omwana we arikutwara omusharaba.",
-    "Simon is compelled to help — reminding us to carry each other's burdens.": "Simon aine kugira eki yaakora — okutwijutsya ngu buri omwe ashemereire kutwara oburemeezi bw'ondiijo.",
     "Veronica wipes the face of Jesus": "Veronica naasiimuura amaisho ga Yesu",
     "Jesus meets the women of Jerusalem": "Yesu akabugana abakazi ba Yerusaalemu",
     "Jesus consoles the weeping women, calling us to weep for our sins.": "Yesu naahuumuriza abakazi abarikurira, arikutweta kuririra ebibi byaitu.",
@@ -1502,15 +2021,12 @@
     "Jesus falls again, showing the depth of His suffering and love for us.": "Yesu akagwa omurundi ogundi, arikworeka oburemeezi bw'okubonabona kwe hamwe n'okutukunda.",
     "Jesus falls the third time": "Yesu akagwa omurundi gwa kashatu",
     "Jesus is stripped of His garments": "Yesu naajwaho ebijwaro bye",
-    "Near Calvary, Jesus falls once more — yet His love does not waver.": "Aha rubaju rwa Calvary, Yesu akagwa omurundi ogundi — kwonka rukundo ye terahindukire.",
     "Jesus dies on the Cross": "Yesu akafa aha musaraba",
     "Jesus is nailed to the Cross": "Yesu akakomererwa aha musharaba",
     "Jesus is humiliated, stripped of all dignity, for our redemption.": "Yesu naahemuka, arikuhwaho ekitiinisa kyona, ahabwa okucungurwa kwaitu.",
-    "The nails pierce His hands and feet — driven by our sins, held by His love.": "Enkondo zikacumita omu mikono ye n'ebigyere bye — ebyarugire aha bihagaro byaitu, bikakwatwa rukundo ye.",
     "Jesus is taken down from the Cross": "Yesu naasharurwa aha musalaba",
     "\"It is finished.\" The ultimate sacrifice is made for all of humanity.": "\"Kihwaire.\" Okuhayo okurikukirayo kukozirwe ahabw'abantu boona.",
     "Jesus is laid in the tomb": "Yesu akaziikwa omu kituuro",
-    "Mary receives the body of her Son — a mother's grief beyond words.": "Mary akatunga omubiri gw'omwana we — okuganya kwa maama okurikurenga ebigambo.",
     "Novena to the Sacred Heart": "Novena aha mutima ogurikwera",
     "Novena to Our Lady of Perpetual Help": "Novena aha Mukama waitu ow'obuhwezi obutahwaho",
     "A powerful 9-day devotion to the love of Christ": "Okwemariirira kw'amaani okw'eizooba 9 aha rukundo ya Kristo",
@@ -1525,14 +2041,11 @@
     "Trust in the ocean of Divine Mercy": "Okwikiriza omu nyanja y'embabazi za Ruhanga",
     "Novena to the 13 Blessed Souls": "Okushaba kw'ebiro mwenda aha myoyo 13 eyaheirwe omugisha",
     "Patron saint of desperate cases and lost causes": "Omuhwezi w'omutakatifu omu mishango y'okushoberwa hamwe n'ebintu ebirabuzire",
-    "Divine Mercy Chaplet": "Ekishabiriro ky'embabazi za Ruhanga",
-    "Jesus and His 12 Apostles — pray for 13 consecutive days": "Yesu n'entumwa ze 12 — bakashaba kumara ebiro 13 byona",
     "5 decades": "Emyaka 50",
     "20 mins": "Edakiika 20",
     "Chaplet of St. Michael": "Chapleti ya St. Michael",
     "9 salutations": "Okuramutsya 9",
     "15 mins": "Edakiika 15",
-    "Pray on ordinary Rosary beads. Begin with Our Father, Hail Mary, and Apostles' Creed.": "Shaba aha beedi za rosari ezaburiijo. Tandika na Our Father, Hail Mary, hamwe n'ekyikiriza ky'Abakwenda.",
     "3 groups": "Ebibiina 3",
     "Honour the nine choirs of angels and seek the protection of St. Michael the Archangel.": "Ha ekitiinisa ebibiina mwenda bya baamaraika kandi osherure oburinzi bwa St. Michael omumaraika mukuru.",
     "10 mins": "Edakiika 10",
@@ -1574,26 +2087,18 @@
     "Our Lady of Guadalupe": "Omukazi waitu wa Guadalupe",
     "O Blood and Water": "O Blood and Water",
     "Opening Prayer": "Okushaba kw'okwiguraho",
-    "Pray on ordinary Rosary beads": "Shaba aha bikomo bya rosari ebyaburiijo",
     "Jesus, King of Mercy, I trust in you!": "Yesu, Omugabe w'embabazi, ninyesiga omuri iwe!",
     "O Blood and Water\nwhich gushed forth from the Heart of Jesus\nas a fount of mercy for us, I trust in you!": "O eshagama hamwe n'amaizi\nagashukire kuruga omu mutima gwa Yesu\nnk'ensibuko y'embabazi ahariitwe, ninkwikiriza!",
-    "You expired Jesus,\nBut the source of life gushed forth for souls,\nand the ocean of mercy opened up for the whole world,\nO Fount of Life, unfathomable Divine Mercy,\nenvelop the whole world and empty Yourself out upon us.": "Okahwa amaani Yesu,\nKwonka oburugo bw'amagara bukashukira emyoyo,\nkandi enyanja y'embabazi ekiguruka ahabw'ensi yoona,\nO Burugo bw'amagara, embabazi z'obuhangwa ezitarikubaasa kushwijumwa,\nshwekyera ensi yoona kandi oyeyongyeremu aha itwe.",
     "Holy God, Holy Mighty One, Holy Immortal One,\nHave Mercy on us and on the whole world.\n(Say 3 times) Amen.": "Ruhanga orikwera, Ow'amaani Orikwera, Orikutahwaho,\nTwine embabazi ahariitwe hamwe n'ensi yoona.\n(Gamba emirundi 3) Amen.",
     "Our Father & Hail Mary": "Taata waitu hamwe na Hail Mary",
     "Leader: Hail Mary…\nAll together: Holy Mary…": "Omwebembezi: Hail Mary…\nBona hamwe: Holy Mary…",
     "The Apostles' Creed": "Ekirayiro ky'abakwenda",
     "Leader: Our Father…\nAll together: Give us this day…": "Omwebembezi: Tataitwe…\nBoona hamwe: Otuhe ebyetaago byaitu ebya buriizooba",
-    "On the Large Bead (Before Each Decade)": "Aha Beedi Empango (Buri myaka ikumi)",
-    "I believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints, the forgiveness of sins, the resurrection of the body and life everlasting. Amen.": "Ninyikiriza omu Mwanya Gurikwera, Ekanisa y'Abakaturiki eyerikwera, Okuhikaana kw'Abatukuvu, okusaasira ebibi, okuzooka kw'omubiri hamwe n'amagara agatarikuhwa. Amen.",
-    "I believe in God, the Father almighty, the creator of heaven and earth and in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.": "Ninyikiriza omuri Ruhanga, Ishe ow'obushoboorozi bwona, owaahangire eiguru n'ensi hamwe na Yesu Kristo, Omwana we wenka, Mukama waitu, owaateekateekirweho Omwoyo Orikwera, akazaarwa omukazi Mariamu, yaabonabona ahansi ya Pontius Pilate, akakomererwa aha musaraba, yaafa kandi yaziikwa.",
-    "He descended into hell. On the third day He rose again from the dead. He ascended into heaven and sits at the right hand of God, the Father almighty. From thence He shall come to judge the living and the dead.": "Akagwa omu hell. Aha eizooba rya kashatu akagaruka yaazooka kuruga omu bafu. Akatemba omu iguru kandi ashutami aha mukono gwa buryo ogwa Ruhanga, Isheboona ow'obushoboorozi bwona. Okuruga aho naija kwija kucwera orubanja abahuriire hamwe n'abafiire.",
-    "On the Ten Small Beads (Each Decade)": "Aha Beedi Ikumi Nkye (Buri Kicweka ky'Eikumi)",
     "All together: Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ in atonement for our sins and those of the whole world.": "Byona hamwe: Taata ow'obutwire, ninkuhayo omubiri na eshagama, omwoyo hamwe n'obwa Ruhanga bw'Omwana waawe ou orikukunda munonga, Mukama waitu Yesu Kristo omu kushashurira ebibi byaitu hamwe n'eby'ensi yoona.",
     "Leader: For the sake of His sorrowful passion\nAll together: Have mercy on us and on the whole world.": "Omwebembezi: Ahabw'okusaasira kw'omutima gwe\nTwena hamwe: Twagirire embabazi n'ensi yoona.",
     "Concluding Prayer": "Okushaba okw'okuhendera",
     "Jesus, King of Mercy, I trust in you! (say 3 times)": "Yesu, Omugabe w'embabazi, ninyesiga omuri iwe! (gamba emirundi 3)",
     "Holy God, Holy Mighty One, Holy Immortal One,\nHave mercy on us and on the whole world.\n(Say three times) Amen.": "Ruhanga orikwera, Omunyamaani orikwera, Orikutahwaho,\nTwine embabazi ahariitwe n'ensi yoona.\n(Gamba emirundi eshatu) Amen.",
-    "Jesus & His 12 Apostles — 13 consecutive days": "Yesu n'Abakwenda be 12 — ebiro 13 ebirikukurataho",
     "Prayer to Our Lord": "Okushaba kwa Mukama waitu",
     "Opening Prayer (Read Twice)": "Okushaba kw'okwiguraho (shoma emirundi ebiri)",
     "Of you I ask for the sake of the blood that Jesus shed that my request be answered.": "Nimbashaba ahabw'eshagama ya Yesu eyaasheeshe, okushaba kwangye kugarukwe.",
@@ -1614,7 +2119,6 @@
     "Say 13 Our Father's and 13 Hail Mary's for 13 consecutive days.": "Gamba Our Father 13 na Hail Mary 13 aha biro 13 ebirikukurataho.",
     "Closing": "Okukinga",
     "Our Lady of the Rosary of Fatima,\nPray for us.": "Omukama waitu w'ekishushani kya Rosary omuri Fatima,\nTushabire.",
-    "The Canticle of Mary — Luke 1:46-55": "Ekyeshongoro kya Mariamu — Luka 1:46-55",
     "The Canticle of Mary": "Ekyeshongoro kya Mariamu",
     "Most Holy Virgin, who deigned to come to Fatima, to reveal the treasures of grace hidden in the recitation of the Rosary, inspire our hearts with a sincere love of this devotion, that meditating on the Mysteries of our Redemption recalled therein, we may obtain the conversion of sinners, the conversion of Russia, and (here name the other favors you are praying for), which we ask of you in this Novena, for the greater glory of God, for your own honor, and for the good of souls. Amen.": "Omukazi Orikwera munonga, owaihireyo kwija Fatima, kushuuruura eby'obuguzi by'embabazi ebisherekirwe omu kushoma Rosari, atebekanise emitima yaitu n'okukunda okw'amazima okw'okwehayo oku, ngu okuteekateeka aha bintu ebirikwetengwa omu kuhindurwa kwaitu okurikugambwaho omuri kwo, nitubaasa kutunga okuhindurwa kw'abasiisi, okuhindurwa kwa Russia, hamwe (ahaheereze amaziina g'ebindi ebi orikushaba), ebi turikukushaba omu Novena egi, ahabw'ekitiinisa ky'amaani ekya Ruhanga, ahabw'ekitiinisa kyawe, hamwe n'oburungi bw'embeera z'abantu. Amen.",
     "He has shown mercy on those who fear him\nin every generation.": "Ayorekire embabazi aha barikumutiina\nomu buri murembe.",
@@ -1701,6 +2205,32 @@
     "Lamb of God, who takes away the sins of the world, spare us, O Lord.\r\nLamb of God, who takes away the sins of the world, graciously hear us, O Lord.\r\nLamb of God, who takes away the sins of the world, have mercy on us.": "Omwana gw'entaama ogwa Ruhanga, orikwihaho ebibi by'ensi, otuhumure, Mukama.\nOmwana gw'entaama ogwa Ruhanga, orikwihaho ebibi by'ensi, otuhurire n'embabazi, Mukama.\nOmwana gw'entaama ogwa Ruhanga, orikwihaho ebibi by'ensi, ogyende omu maisho kutugirira embabazi.",
     "Queen of Angels, pray for us.\r\nQueen of Patriarchs, pray for us.\r\nQueen of Prophets, pray for us.\r\nQueen of Apostles, pray for us.\r\nQueen of Martyrs, pray for us.\r\nQueen of Confessors, pray for us.\r\nQueen of Virgins, pray for us.\r\nQueen of all Saints, pray for us.\r\nQueen conceived without original sin, pray for us.\r\nQueen assumed into heaven, pray for us.\r\nQueen of the most holy Rosary, pray for us.\r\nQueen of families, pray for us.\r\nQueen of peace, pray for us.": "Omugabekazi w'Abamaraika, shaba ahabwaitu.\nOmugabekazi w'Abakuru b'ediini, shaba ahabwaitu.\nOmugabekazi w'Abaporofita, shaba ahabwaitu.\nOmugabekazi w'Abatume, shaba ahabwaitu.\nOmugabekazi w'Abajurizi, shaba ahabwaitu.\nOmugabekazi w'Abareeberezi, shaba ahabwaitu.\nOmugabekazi w'Abashugaine, shaba ahabwaitu.\nOmugabekazi w'Abashugaine boona, shaba ahabwaitu.\nOmugabekazi owazairwe ataine kibi ky'okubanza, shaba ahabwaitu.\nOmugabekazi owatwaire omu iguru, shaba ahabwaitu.\nOmugabekazi w'omusaraba ogurikwera munonga, shaba ahabwaitu.\nOmugabekazi w'amaka, shaba ahabwaitu.\nOmugabekazi w'obusingye, shaba ahabwaitu.",
     "Let us pray:\r\nGrant, we beseech you, O Lord God, that we your servants may enjoy perpetual health of mind and body; and by the intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow, and obtain eternal joy. Through Christ our Lord. Amen.": "Ka tushabe:\nTwakushaba, Mukama Ruhanga, ngu abahuuku baawe tubaase kugira amagara g'omutima n'omubiri agatarikuhwaho; kandi kurabira omu kuhurikiriza kwa Mariya ow'ekitiinisa, Omukazi w'obusugi obutarikuhwaho, tubaase kujunwa okusaasibwa kw'obwahati, kandi tutungye okushemererwa okutahwaho. Kurabira omuri Kristo Mukama waitu. Amen.",
-    "Mirror of justice, pray for us.\r\nSeat of wisdom, pray for us.\r\nCause of our joy, pray for us.\r\nSpiritual vessel, pray for us.\r\nVessel of honor, pray for us.\r\nSingular vessel of devotion, pray for us.\r\nMystical rose, pray for us.\r\nTower of David, pray for us.\r\nTower of ivory, pray for us.\r\nHouse of gold, pray for us.\r\nArk of the covenant, pray for us.\r\nGate of heaven, pray for us.\r\nMorning star, pray for us.\r\nHealth of the sick, pray for us.\r\nRefuge of sinners, pray for us.\r\nComfort of the afflicted, pray for us.\r\nHelp of Christians, pray for us.": "Ekirahuri ky'oburingaaniza, shaba ahabwaitu.\nEntebe y'obwengye, shaba ahabwaitu.\nEnshonga y'okushemererwa kwaitu, shaba ahabwaitu.\nEkintu ky'omwoyo, shaba ahabwaitu.\nEkintu ky'ekitiinisa, shaba ahabwaitu.\nEkintu kimwe ky'okwehayo, shaba ahabwaitu.\nRoses ey'ekihama, shaba ahabwaitu.\nOmunaara gwa Davidi, shaba ahabwaitu.\nOmunaara gw'amahembe, shaba ahabwaitu.\nEnju ya zaabu, shaba ahabwaitu.\nEkyombeko ky'endagaano, shaba ahabwaitu.\nOmuryango gw'omu iguru, shaba ahabwaitu.\nEnyonyoozi y'akasheeshe, shaba ahabwaitu.\nAmagara g'abarwaire, shaba ahabwaitu.\nObuhungiro bw'abasiisi, shaba ahabwaitu.\nOkuhuumurizibwa kw'ababonabona, shaba ahabwaitu.\nObuhwezi bw'Abakurisitaayo, shaba ahabwaitu."
+    "Mirror of justice, pray for us.\r\nSeat of wisdom, pray for us.\r\nCause of our joy, pray for us.\r\nSpiritual vessel, pray for us.\r\nVessel of honor, pray for us.\r\nSingular vessel of devotion, pray for us.\r\nMystical rose, pray for us.\r\nTower of David, pray for us.\r\nTower of ivory, pray for us.\r\nHouse of gold, pray for us.\r\nArk of the covenant, pray for us.\r\nGate of heaven, pray for us.\r\nMorning star, pray for us.\r\nHealth of the sick, pray for us.\r\nRefuge of sinners, pray for us.\r\nComfort of the afflicted, pray for us.\r\nHelp of Christians, pray for us.": "Ekirahuri ky'oburingaaniza, shaba ahabwaitu.\nEntebe y'obwengye, shaba ahabwaitu.\nEnshonga y'okushemererwa kwaitu, shaba ahabwaitu.\nEkintu ky'omwoyo, shaba ahabwaitu.\nEkintu ky'ekitiinisa, shaba ahabwaitu.\nEkintu kimwe ky'okwehayo, shaba ahabwaitu.\nRoses ey'ekihama, shaba ahabwaitu.\nOmunaara gwa Davidi, shaba ahabwaitu.\nOmunaara gw'amahembe, shaba ahabwaitu.\nEnju ya zaabu, shaba ahabwaitu.\nEkyombeko ky'endagaano, shaba ahabwaitu.\nOmuryango gw'omu iguru, shaba ahabwaitu.\nEnyonyoozi y'akasheeshe, shaba ahabwaitu.\nAmagara g'abarwaire, shaba ahabwaitu.\nObuhungiro bw'abasiisi, shaba ahabwaitu.\nOkuhuumurizibwa kw'ababonabona, shaba ahabwaitu.\nObuhwezi bw'Abakurisitaayo, shaba ahabwaitu.",
+    "Weakened by suffering, Jesus falls, yet rises to continue His journey for us.": "Ahabw'okubonabona, Yesu yaagwa kwonka yaimuka kugumizamu n'orugyendo rwe ahabwaitu.",
+    "Simon is compelled to help, reminding us to carry each other's burdens.": "Simon aine obujunaanizibwa bw'okuhwera, okutwijutsya ngu buri omwe akwiija kureeberera mugyenzi we.",
+    "Near Calvary, Jesus falls once more, yet His love does not waver.": "Aha rubaju rwa Calvary, Yesu akagwa omurundi ogundi, kwonka rukundo ye terahindukire.",
+    "The nails pierce His hands and feet, driven by our sins and held by His love.": "Enkondo zikacumita omu mikono ye n'ebigyere bye, ahabw'ebibi byaitu kandi zikagumibwa rukundo ye.",
+    "Mary receives the body of her Son: a mother's grief beyond words.": "Mary akatunga omubiri gw'omwana we: okushoberwa kwa nyina okurikukira ebigambo.",
+    "Jesus and His 12 Apostles. Pray for 13 consecutive days": "Yesu hamwe n'entumwa ze 12. Mushabe kumara ebiro 13 byona",
+    "The Canticle of Mary (Luke 1:46-55)": "Ekishushani kya Mariamu (Luka 1:46-55)",
+    "Jesus and His 12 Apostles, over 13 consecutive days": "Yesu hamwe n'entumwa ze 12, kumara ebiro 13 by'okukuratana",
+    "The Three O'clock Prayer": "Okushaba kw'eshaaha ishatu",
+    "All together pray:": "Mweshengyereze hamwe:",
+    "Chaplet of the Divine Mercy": "Chapleti y'embabazi za Ruhanga",
+    "The Three O'clock Prayer, prayed on ordinary Rosary beads.": "Okushaba kwa shaaha ishatu, okurikushabwa aha budaari ya rosari eya butoosha.",
+    "All together pray the Creed:": "Mwena hamwe mushabe ekiragiro:",
+    "On the Large Bead Before Each Decade": "Aha Beedi Empango Buri Myaka Ikumi",
+    "On the Ten Small Beads of Each Decade": "Aha bukomooko ikumi obukye bwa buri mwaka",
+    "Pray these prayers once a day for 9 days": "Shaba eshaara ezi omurundi gumwe buri izooba kumara ebiro 9",
+    "You expired Jesus,\nBut the source of life gushed forth for souls,\nand the ocean of mercy opened up for the whole world\nO Fount of Life, unfathomable Divine Mercy,\nenvelop the whole world and empty Yourself out upon us.": "Okahwaho Yesu,\nKwonka oburugo bw'amagara bukaruga omu myoyo,\nkandi enyanja y'embabazi yaigura ahabw'ensi yoona\nO Fount of Life, embabazi za Ruhanga ezitarikwetegyerezibwa,\nshwekyera ensi yoona kandi oyeyihe aha itwe.",
+    "How to Pray This Novena": "Oku orikushaba Novena Egi",
+    "Opening": "Okwiguraho",
+    "Pray the same prayers each day, for 9 days in a row.": "Shaba eshaara emwe buri izooba, kumara ebiro 9 omu runyiriri.",
+    "Intro Prayer": "Okushaba kw'okutandika",
+    "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.": "Omu iziina rya Isheboona, n'ery'Omwana, hamwe n'ery'Omwoyo Orikwera. Amiina.",
+    "I believe in God, the Father almighty, the creator of heaven and earth\nand in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit,\nborn of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.\nHe descended into hell. On the third day He rose again from the dead.\nHe ascended into heaven and sits at the right hand of God, the Father almighty.\nFrom thence He shall come to judge the living and the dead.\nI believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints,\nthe forgiveness of sins, the resurrection of the body and life everlasting. Amen.": "Ninyikiriza omuri Ruhanga, Ishe ow'obushoboorozi bwona, omuhangi w'eiguru n'ensi\nkandi omuri Yesu Kristo, Omwana we wenka, Mukama waitu, owaateekateekirwe omwoyo gurikwera,\nakazaarwa omukazi Mariya, akabonabona ahansi ya Pontius Pilate, akahanikwa aha musaraba, yaafa kandi yaaziikwa.\nAkagwa omu hell. Aha eizooba rya kashatu Akaimuka kuruga omu bafu.\nAkatemba omu iguru kandi ashutami aha mukono gwa buryo ogwa Ruhanga, Ishe ow'obushoboorozi bwona.\nOkuruga aho naija kwija kucwera abahuriire hamwe n'abafu orubanja.\nNinyikiriza omu mwoyo gurikwera, Ekanisa y'Abakaturiki eyererezi, Okugaitwa kw'Abatukuvu,\nokusaasira ebibi, okuzooka kw'omubiri hamwe n'amagara agatahwaho. Amen.",
+    "Hail Mary (three times)": "Hail Mary (emirundi eshatu)",
+    "Oh Mother of Perpetual Help, grant that I may ever invoke your powerful name, the protection of the living and the salvation of the dying. Purest Mary, let your name henceforth be ever on my lips. Delay not, Blessed Lady, to rescue me whenever I call on you. In my temptations, in my needs, I will never cease to call on you, ever repeating your sacred name, Mary, Mary.": "Oh Maama w'obuhwezi obutahwaho, mpa ngu nshemereire kushaba eiziina ryawe ery'amaani, oburinzi bw'abariho hamwe n'okujunwa kw'abarikufa. Mariya orikwera munonga, reka eiziina ryawe kuruga hati rishemereire kuba aha mimwa yangye. Otakyerererwa, Omukazi ow'omugisha, okunjuna buri murundi ogu ndikukushaba. Omu bigyezo byangye, omu byetengo byangye, tindikwija kurekyeraaho kukushaba, ndikugaruka kugaruka eiziina ryawe eririkwera, Mariya, Mariya.",
+    "What a consolation, what sweetness, what confidence fills my soul when I utter your sacred name or even only think of you! I thank the Lord for having given you so sweet, so powerful, so lovely a name. But I will not be content with merely uttering your name. Let my love for you prompt me ever to hail you Mother of Perpetual Help. Mother of Perpetual Help, pray for me and grant me the favor I confidently ask of you (mention request here).": "N'ekihuumuro ky'amaani, okushemererwa, n'obwesigye ebirikwijura omu mutima gwangye ku ndikugamba eiziina ryawe eririkwera nainga obu ndikuteekateeka ahariiwe! Ninsiima Mukama ahabw'okumpa eiziina rirungi, ery'amaani, kandi eririkukunda munonga. Kwonka tindikwija kumarwa n'okugamba eiziina ryawe kwonka. Ka rukundo yangye ahariiwe entebekanise kukuha ekitiinisa nk'omukazi w'obuhwezi obutahwaho. Omukazi w'obuhwezi obutahwaho, nsabira kandi ompa ekiconco eki ndikukushaba n'obwesigye (yoreka okushaba aha)."
   }
 }

@@ -1,9 +1,9 @@
-import { View, Text, ActivityIndicator, Platform } from "react-native";
+import { View, Text, Platform } from "react-native";
 import { InstallCard } from "../../components/InstallCard";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
-import { useAuthStore } from "../../store/authStore";
+import { useState } from "react";
+import { useAuthStore, displayName } from "../../store/authStore";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { LOGIN_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
@@ -19,27 +19,17 @@ const languageLabels: Record<string, string> = {
 export default function ProfileScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-  const { user, session, signIn, signOut, loadSession } = useAuthStore();
+  const { user, session, signOut, isAdmin } = useAuthStore();
   const { language } = useLanguageStore();
-  const [signingIn, setSigningIn] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
 
-  useEffect(() => {
-    if (LOGIN_ENABLED) loadSession();
-  }, []);
-
-  const handleSignIn = async () => {
-    try {
-      setSigningIn(true);
-      await signIn();
-    } catch (error) {
-      console.error('Sign in error:', error);
-    } finally {
-      setSigningIn(false);
-    }
+  const handleSignOut = async () => {
+    setSigningOut(true);
+    await signOut();
+    setSigningOut(false);
   };
 
   const isSignedIn = !!session;
-  const displayName = user?.user_metadata?.full_name ?? user?.email ?? t("settings.guestUser");
 
   return (
     <Page sidebar={false}>
@@ -61,26 +51,39 @@ export default function ProfileScreen() {
 
       {LOGIN_ENABLED && (
         <Section title={t("settings.account")}>
-          <Card className="p-4 flex-row items-center gap-3">
-            <View className="flex-1 gap-0.5">
-              <Text className="text-sm font-semibold text-card-foreground">
-                {isSignedIn ? displayName : t("settings.guestUser")}
-              </Text>
-              <Text className="text-sm text-muted-foreground">
-                {isSignedIn ? user?.email : t("settings.signInToSync")}
-              </Text>
-            </View>
-            {isSignedIn ? (
-              <Button variant="outline" size="sm" onPress={signOut}>
+          {isSignedIn ? (
+            <Card className="p-4 flex-row items-center gap-3">
+              <View className="flex-1 gap-0.5">
+                <Text className="text-sm font-semibold text-card-foreground">{displayName(user)}</Text>
+                <Text className="text-sm text-muted-foreground">{user?.email}</Text>
+              </View>
+              <Button variant="outline" size="sm" loading={signingOut} onPress={handleSignOut}>
                 {t("common.signOut")}
               </Button>
-            ) : signingIn ? (
-              <ActivityIndicator color="#007C7C" />
-            ) : (
-              <Button size="sm" onPress={handleSignIn}>
-                {t("settings.signInWithGoogle")}
-              </Button>
-            )}
+            </Card>
+          ) : (
+            <Card className="p-4 gap-3">
+              <Text className="text-sm leading-6 text-muted-foreground">{t("settings.signInToSync")}</Text>
+              <View className="flex-row flex-wrap gap-2">
+                <Button size="sm" onPress={() => router.push("/auth/sign-in")}>
+                  {t("auth.signIn")}
+                </Button>
+                <Button variant="outline" size="sm" onPress={() => router.push("/auth/sign-up")}>
+                  {t("auth.createAccount")}
+                </Button>
+              </View>
+            </Card>
+          )}
+        </Section>
+      )}
+
+      {isAdmin && (
+        <Section title="Admin">
+          <Card className="p-4 flex-row items-center gap-3">
+            <Text className="flex-1 text-sm text-muted-foreground">See the accounts that have signed up.</Text>
+            <Button variant="outline" size="sm" onPress={() => router.push("/admin")}>
+              View accounts
+            </Button>
           </Card>
         </Section>
       )}

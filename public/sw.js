@@ -76,8 +76,11 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Prayer data (read-only REST queries)
-  if (url.hostname.endsWith(".supabase.co") && url.pathname.startsWith("/rest/v1/")) {
+  // Public prayer data only. Account data (profiles, admin checks) is never
+  // cached, so nothing personal is left on a shared device.
+  const [, rest, version, table] = url.pathname.split("/");
+  const publicTable = rest === "rest" && version === "v1" && ["prayers", "categories", "languages"].includes(table);
+  if (url.hostname.endsWith(".supabase.co") && publicTable) {
     event.respondWith(networkFirst(request, DATA_CACHE));
   }
 });

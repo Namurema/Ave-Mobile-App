@@ -19,6 +19,7 @@ module.exports = {
         border: "#E4E4E7",
         input: "#E4E4E7",
         ring: "#007C7C",
+        destructive: { DEFAULT: "#DC2626", foreground: "#FFFFFF" },
         navy: {
           800: "#1a1a2e",
           900: "#0f0f1e",

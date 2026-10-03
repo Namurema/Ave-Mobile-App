@@ -6,6 +6,8 @@ import { useLanguageStore } from "../../store/LanguageStore";
 import { categoryText, formatDate } from "../../lib/i18n/helpers";
 import { useContent } from "../../lib/i18n/content";
 import { scripture } from "../../constants/content/scripture";
+import { useUserDataStore } from "../../store/userDataStore";
+import { describeItem } from "../../lib/items";
 import { Card } from "../../components/ui/card";
 import {
   Page,
@@ -21,6 +23,7 @@ export default function PrayersScreen() {
   const { t } = useTranslation();
   const { language } = useLanguageStore();
   const tc = useContent();
+  const favourites = useUserDataStore((state) => state.favourites);
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,6 +52,27 @@ export default function PrayersScreen() {
   return (
     <Page>
       <PageHeader title={t("prayers.title")} description={formatDate(new Date(), language)} />
+
+      {favourites.length > 0 && (
+        <Section
+          title={t("favourites.title")}
+          count={favourites.length}
+          action={{ label: t("favourites.viewAll"), onPress: () => router.push("/favourites") }}
+        >
+          <ListCard
+            items={favourites
+              .map((key) => ({ key, info: describeItem(key, t, tc) }))
+              .filter((item) => item.info)
+              .slice(0, 3)
+              .map(({ key, info }) => ({
+                key,
+                title: info!.title,
+                meta: info!.kind,
+                onPress: () => router.push(info!.route as any),
+              }))}
+          />
+        </Section>
+      )}
 
       <Section title={t("prayers.dailyRoutine")} count={dailyRoutine.length}>
         <ListCard

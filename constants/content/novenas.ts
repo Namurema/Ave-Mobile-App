@@ -7,5 +7,5 @@ export const novenas = [
   { id: "4", title: "Novena to the Holy Spirit", days: 9, desc: "Prepare your heart for the gifts of the Spirit" },
   { id: "5", title: "Divine Mercy Novena", days: 9, desc: "Trust in the ocean of Divine Mercy" },
   { id: "6", title: "Novena to St. Jude", days: 9, desc: "Patron saint of desperate cases and lost causes" },
-  { id: "7", title: "Novena to the 13 Blessed Souls", days: 13, desc: "Jesus and His 12 Apostles — pray for 13 consecutive days" },
+  { id: "7", title: "Novena to the 13 Blessed Souls", days: 13, desc: "Jesus and His 12 Apostles. Pray for 13 consecutive days" },
 ];

@@ -8,6 +8,7 @@ import { useAuthStore } from "../store/authStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { LOGIN_ENABLED } from "../constants/features";
 import { registerServiceWorker } from "../lib/pwa";
+import { startUserDataSync } from "../store/userDataStore";
 
 export default function RootLayout() {
   const loadSession = useAuthStore((state) => state.loadSession);
@@ -16,6 +17,7 @@ export default function RootLayout() {
   useEffect(() => {
     if (LOGIN_ENABLED) loadSession();
     loadLanguage();
+    startUserDataSync();
     registerServiceWorker();
   }, []);
 
