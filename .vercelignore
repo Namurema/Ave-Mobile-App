@@ -1,0 +1,7 @@
+# Never upload secrets or local build output; Vercel installs and builds itself
+.env
+.env*.local
+node_modules
+dist
+dist-test
+.expo

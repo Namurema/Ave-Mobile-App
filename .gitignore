@@ -48,3 +48,5 @@ echo "*.p8" >> .gitignore
 echo "*.p12" >> .gitignore
 echo "*.key" >> .gitignore
 echo "*.mobileprovision" >> .gitignore
+.vercel
+.env*
