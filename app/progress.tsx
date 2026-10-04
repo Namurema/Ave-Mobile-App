@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useUserDataStore } from "../store/userDataStore";
 import { useAuthStore } from "../store/authStore";
+import { useAuthDialog } from "../store/authDialogStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { useContent } from "../lib/i18n/content";
 import { formatDate } from "../lib/i18n/helpers";
@@ -95,7 +96,7 @@ export default function ProgressScreen() {
       {!session && (
         <Card className="p-4 gap-3">
           <Text className="text-sm leading-5 text-muted-foreground">{t("progress.signInToKeep")}</Text>
-          <Button size="sm" className="self-start" onPress={() => router.push("/auth/sign-in")}>
+          <Button size="sm" className="self-start" onPress={() => useAuthDialog.getState().open("signIn")}>
             {t("auth.signIn")}
           </Button>
         </Card>

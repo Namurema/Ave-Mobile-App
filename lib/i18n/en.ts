@@ -5,6 +5,7 @@ export default {
     signOut: "Sign Out",
     loading: "Loading...",
     back: "Back",
+    close: "Close",
     change: "Change",
     tryAgain: "Try again",
     days: "days",
@@ -73,6 +74,12 @@ export default {
     next: "Next",
     play: "Play",
     pause: "Pause",
+    step: "Step",
+    decade: "Decade",
+    opening: "Opening prayers",
+    closing: "Closing prayer",
+    faithHopeCharity: "For an increase in faith, hope and charity",
+    startOver: "Start over",
   },
   prayers: {
     title: "Daily Prayers",
@@ -224,6 +231,10 @@ export default {
       network: "Can't reach the server. Check your connection and try again.",
       generic: "Something went wrong. Please try again.",
     },
+  },
+  update: {
+    ready: "A new version of Ave is ready.",
+    refresh: "Refresh",
   },
   install: {
     title: "Install Ave",

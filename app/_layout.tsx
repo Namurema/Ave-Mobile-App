@@ -7,8 +7,10 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useAuthStore } from "../store/authStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { LOGIN_ENABLED } from "../constants/features";
-import { registerServiceWorker } from "../lib/pwa";
+import { registerServiceWorker, startUpdateChecks } from "../lib/pwa";
+import { UpdateBanner } from "../components/UpdateBanner";
 import { startUserDataSync } from "../store/userDataStore";
+import { AuthDialog } from "../components/auth/AuthDialog";
 
 export default function RootLayout() {
   const loadSession = useAuthStore((state) => state.loadSession);
@@ -19,6 +21,7 @@ export default function RootLayout() {
     loadLanguage();
     startUserDataSync();
     registerServiceWorker();
+    startUpdateChecks();
   }, []);
 
   return (
@@ -30,6 +33,8 @@ export default function RootLayout() {
           contentStyle: { backgroundColor: "#FAFAFA" },
         }}
       />
+      <AuthDialog />
+      <UpdateBanner />
     </SafeAreaProvider>
   );
 }

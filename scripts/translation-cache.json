@@ -803,6 +803,42 @@
     "favourites.viewAll": {
       "en": "View all",
       "text": "Laba byonna"
+    },
+    "rosary.decade": {
+      "en": "Decade",
+      "text": "Ekkumi"
+    },
+    "rosary.step": {
+      "en": "Step",
+      "text": "Ekitundu"
+    },
+    "rosary.opening": {
+      "en": "Opening prayers",
+      "text": "Okusaba okuggulawo"
+    },
+    "rosary.closing": {
+      "en": "Closing prayer",
+      "text": "Essaala ey'okuggalawo"
+    },
+    "rosary.startOver": {
+      "en": "Start over",
+      "text": "Tandika buto"
+    },
+    "rosary.faithHopeCharity": {
+      "en": "For an increase in faith, hope and charity",
+      "text": "Okwongera ku kukkiriza, essuubi n'obuyambi"
+    },
+    "common.close": {
+      "en": "Close",
+      "text": "Kiggala"
+    },
+    "update.refresh": {
+      "en": "Refresh",
+      "text": "Kuddamu okukola"
+    },
+    "update.ready": {
+      "en": "A new version of Ave is ready.",
+      "text": "Enkola empya eya Ave etuuse."
     }
   },
   "rny": {
@@ -1609,6 +1645,42 @@
     "favourites.empty": {
       "en": "Use \"Save to favourites\" on any prayer to keep it here.",
       "text": "Kozesa \"Save to favourites\" aha kushaba kwona okukubaasa kukigumya aha."
+    },
+    "rosary.step": {
+      "en": "Step",
+      "text": "Omuringo"
+    },
+    "rosary.decade": {
+      "en": "Decade",
+      "text": "Ekumi"
+    },
+    "rosary.opening": {
+      "en": "Opening prayers",
+      "text": "Okushaba kw'okwiguraho"
+    },
+    "rosary.closing": {
+      "en": "Closing prayer",
+      "text": "Okushaba kw'okuhendera"
+    },
+    "rosary.startOver": {
+      "en": "Start over",
+      "text": "Tandika ahaiguru"
+    },
+    "rosary.faithHopeCharity": {
+      "en": "For an increase in faith, hope and charity",
+      "text": "Okwongyera aha kwikiriza, okuhira amatsiko hamwe n'obuyambi"
+    },
+    "common.close": {
+      "en": "Close",
+      "text": "Kwihaho"
+    },
+    "update.refresh": {
+      "en": "Refresh",
+      "text": "Garukamu"
+    },
+    "update.ready": {
+      "en": "A new version of Ave is ready.",
+      "text": "Ekika kisya kya Ave kyeteekateekire."
     }
   },
   "content-lg": {

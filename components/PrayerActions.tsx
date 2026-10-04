@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { View, Text, Pressable } from "react-native";
-import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/authStore";
+import { useAuthDialog } from "../store/authDialogStore";
 import { useUserDataStore, usePrayedToday, useIsFavourite } from "../store/userDataStore";
 import { novenaProgress, splitLogId } from "../lib/progress";
 import { itemKey, novenaLength } from "../lib/items";
@@ -28,12 +28,11 @@ export function FavouriteButton({ itemKey: key }: { itemKey: string }) {
 }
 
 function SignInHint() {
-  const router = useRouter();
   const { t } = useTranslation();
   const session = useAuthStore((state) => state.session);
   if (session) return null;
   return (
-    <Pressable onPress={() => router.push("/auth/sign-in")}>
+    <Pressable onPress={() => useAuthDialog.getState().open("signIn")}>
       <Text className="text-sm leading-5 text-muted-foreground">
         {t("progress.signInToKeep")} <Text className="font-semibold text-primary">{t("auth.signIn")}</Text>
       </Text>

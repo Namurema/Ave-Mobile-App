@@ -1,14 +1,20 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useTranslation } from "react-i18next";
 import { Button } from "../components/ui/button";
 import { Card, CardTitle, CardDescription } from "../components/ui/card";
+import { useAuthStore } from "../store/authStore";
+import { useAuthDialog } from "../store/authDialogStore";
 
 export default function SplashScreen() {
   const router = useRouter();
   const { t } = useTranslation();
   const getStarted = () => router.push("/Language");
+  const session = useAuthStore((state) => state.session);
+  const openAuth = useAuthDialog((state) => state.open);
+  // After signing in from here, go straight into the app
+  const signIn = () => openAuth("signIn", "/(tabs)/home");
 
   const features = [
     { title: t("splash.dailyTitle"), description: t("splash.dailyDescription") },
@@ -24,9 +30,16 @@ export default function SplashScreen() {
       <View className="border-b border-border">
         <View className="w-full max-w-5xl self-center h-16 px-4 flex-row items-center justify-between">
           <Text className="text-xl font-bold tracking-tight text-primary">Ave</Text>
-          <Button variant="ghost" size="sm" onPress={getStarted}>
-            {t("nav.openApp")}
-          </Button>
+          <View className="flex-row items-center gap-2">
+            {!session && (
+              <Button variant="outline" size="sm" onPress={signIn}>
+                {t("auth.signIn")}
+              </Button>
+            )}
+            <Button variant="ghost" size="sm" onPress={getStarted}>
+              {t("nav.openApp")}
+            </Button>
+          </View>
         </View>
       </View>
 
@@ -43,6 +56,15 @@ export default function SplashScreen() {
           <Button size="lg" className="mt-8 w-full" onPress={getStarted}>
             {t("common.getStarted")}
           </Button>
+
+          {!session && (
+            <View className="mt-4 flex-row flex-wrap items-center justify-center gap-1">
+              <Text className="text-sm text-muted-foreground">{t("auth.haveAccount")}</Text>
+              <Pressable onPress={signIn}>
+                <Text className="text-sm font-semibold text-primary">{t("auth.signIn")}</Text>
+              </Pressable>
+            </View>
+          )}
 
           {/* What's inside */}
           <Card className="mt-10">

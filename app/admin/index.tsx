@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { View, Text } from "react-native";
 import { useRouter } from "expo-router";
 import { useAuthStore } from "../../store/authStore";
+import { useAuthDialog } from "../../store/authDialogStore";
 import { getProfiles, type Profile } from "../../lib/supabase/admin";
 import { Page, PageHeader, Section, ListCard, LoadingCard, EmptyState } from "../../components/ui/page";
 import { Card } from "../../components/ui/card";
@@ -83,7 +84,7 @@ export default function AdminScreen() {
           title={session ? "This page is only for the Ave admin" : "Sign in to continue"}
           description={session ? "Your account doesn't have admin access." : "The admin area needs the admin account."}
         >
-          {!session && <Button onPress={() => router.push("/auth/sign-in")}>Sign in</Button>}
+          {!session && <Button onPress={() => useAuthDialog.getState().open("signIn")}>Sign in</Button>}
         </EmptyState>
       </Page>
     );

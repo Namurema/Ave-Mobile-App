@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useAuthStore, displayName } from "../../store/authStore";
+import { useAuthDialog } from "../../store/authDialogStore";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { LOGIN_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
@@ -22,6 +23,7 @@ export default function ProfileScreen() {
   const { user, session, signOut, isAdmin } = useAuthStore();
   const { language } = useLanguageStore();
   const [signingOut, setSigningOut] = useState(false);
+  const openAuth = useAuthDialog((state) => state.open);
 
   const handleSignOut = async () => {
     setSigningOut(true);
@@ -65,10 +67,10 @@ export default function ProfileScreen() {
             <Card className="p-4 gap-3">
               <Text className="text-sm leading-6 text-muted-foreground">{t("settings.signInToSync")}</Text>
               <View className="flex-row flex-wrap gap-2">
-                <Button size="sm" onPress={() => router.push("/auth/sign-in")}>
+                <Button size="sm" onPress={() => openAuth("signIn")}>
                   {t("auth.signIn")}
                 </Button>
-                <Button variant="outline" size="sm" onPress={() => router.push("/auth/sign-up")}>
+                <Button variant="outline" size="sm" onPress={() => openAuth("signUp")}>
                   {t("auth.createAccount")}
                 </Button>
               </View>

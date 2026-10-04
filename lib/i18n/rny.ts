@@ -7,6 +7,7 @@ export default {
     signOut: "Okuruga omu mukutu",
     loading: "Kuriindiira...",
     back: "Enyima",
+    close: "Kwihaho",
     change: "Okuhindura",
     tryAgain: "Gyezaho ogaruke",
     days: "ebiro"
@@ -74,7 +75,13 @@ export default {
     previous: "Ebyabaireho enyima",
     next: "Ekindi",
     play: "Kuzaana",
-    pause: "Huumura"
+    pause: "Huumura",
+    step: "Omuringo",
+    decade: "Ekumi",
+    opening: "Okushaba kw'okwiguraho",
+    closing: "Okushaba kw'okuhendera",
+    faithHopeCharity: "Okwongyera aha kwikiriza, okuhira amatsiko hamwe n'obuyambi",
+    startOver: "Tandika ahaiguru"
   },
   prayers: {
     title: "Okusaba kw'Eisho",
@@ -226,6 +233,10 @@ export default {
       network: "Tikirikubaasa kuhika aha seva. Kyebera okukwatanisa kwawe kandi ogaruke ogyezeho.",
       generic: "Hariho ekintu ekyabaire kigwire. Nyabura we gezaho ogaruke."
     }
+  },
+  update: {
+    ready: "Ekika kisya kya Ave kyeteekateekire.",
+    refresh: "Garukamu"
   },
   install: {
     title: "Teekamu Ave",

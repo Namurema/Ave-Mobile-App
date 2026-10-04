@@ -15,6 +15,59 @@ export function registerServiceWorker() {
   else window.addEventListener("load", register, { once: true });
 }
 
+// ---- Updates ---------------------------------------------------------------
+// Each build loads a uniquely named bundle (/_expo/static/js/web/entry-<hash>.js).
+// An installed app is usually resumed rather than reloaded, and browsers only
+// check for a new service worker about once a day, so compare the running
+// bundle with the live index.html whenever the app comes back to the
+// foreground, and every 30 minutes while it is open.
+const UPDATE_CHECK_INTERVAL = 30 * 60 * 1000;
+const BUNDLE_PATTERN = /\/_expo\/static\/js\/web\/entry-[\w-]+\.js/;
+let updateReady = false;
+const updateListeners = new Set<() => void>();
+
+async function checkForUpdate() {
+  if (updateReady || !navigator.onLine) return;
+  navigator.serviceWorker?.getRegistration().then((r) => r?.update()).catch(() => {});
+  try {
+    const html = await (await fetch("/index.html", { cache: "no-store" })).text();
+    const latest = html.match(BUNDLE_PATTERN)?.[0];
+    const running = Array.from(document.scripts).map((s) => s.src).find((src) => BUNDLE_PATTERN.test(src));
+    if (latest && running && !running.endsWith(latest)) {
+      updateReady = true;
+      updateListeners.forEach((listener) => listener());
+    }
+  } catch {
+    // Offline or the server is unreachable: try again next time
+  }
+}
+
+export function startUpdateChecks() {
+  if (!isWeb || __DEV__) return;
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") checkForUpdate();
+  });
+  setInterval(checkForUpdate, UPDATE_CHECK_INTERVAL);
+  setTimeout(checkForUpdate, 10_000);
+}
+
+export function useUpdateReady() {
+  const [ready, setReady] = useState(updateReady);
+  useEffect(() => {
+    const listener = () => setReady(true);
+    updateListeners.add(listener);
+    return () => {
+      updateListeners.delete(listener);
+    };
+  }, []);
+  return ready;
+}
+
+// Reloading fetches the new index.html (network first) and its new bundle
+export function applyUpdate() {
+  window.location.reload();
+}
+
 // Chrome/Edge/Android fire `beforeinstallprompt` once the app is installable.
 // Keep the event so an Install button can show the native prompt later.
 let deferredPrompt: any = null;

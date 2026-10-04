@@ -7,6 +7,7 @@ export default {
     signOut: "Fuluma",
     loading: "Kulindirira...",
     back: "Emabega",
+    close: "Kiggala",
     change: "Okukyusa",
     tryAgain: "Gezaako nate",
     days: "ennaku"
@@ -74,7 +75,13 @@ export default {
     previous: "Eddako",
     next: "Ekiddako",
     play: "Zannya",
-    pause: "Koma awo"
+    pause: "Koma awo",
+    step: "Ekitundu",
+    decade: "Ekkumi",
+    opening: "Okusaba okuggulawo",
+    closing: "Essaala ey'okuggalawo",
+    faithHopeCharity: "Okwongera ku kukkiriza, essuubi n'obuyambi",
+    startOver: "Tandika buto"
   },
   prayers: {
     title: "Okusaba kw'Olunaku",
@@ -226,6 +233,10 @@ export default {
       network: "Tewali kuyunga ku server. Kebera ennyungo yo era ogezeeko nate.",
       generic: "Waliwo ekintu ekyagenze obubi. Nkwegayiridde gezaako nate."
     }
+  },
+  update: {
+    ready: "Enkola empya eya Ave etuuse.",
+    refresh: "Kuddamu okukola"
   },
   install: {
     title: "Teekako Ave",
