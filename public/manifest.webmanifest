@@ -8,7 +8,7 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#FAFAFA",
+  "background_color": "#01758F",
   "theme_color": "#01758F",
   "categories": ["lifestyle", "books"],
   "icons": [
