@@ -4,12 +4,13 @@ import { useTranslation } from "react-i18next";
 import { signInWithEmail, signUpWithEmail, sendPasswordReset } from "../../lib/supabase/auth";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import type { AuthView } from "../../store/authDialogStore";
+import { useRouter } from "expo-router";
+import { useAuthDialog, type AuthView } from "../../store/authDialogStore";
+import { PasswordRules, isStrongPassword } from "./PasswordRules";
 
 // Sign-in, sign-up and forgot-password forms, shared by the pop-up
 // (AuthDialog) and the /auth pages. `onSwitch` moves between the forms.
 
-const MIN_PASSWORD = 8;
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 
 export function FormError({ message }: { message: string | null }) {
@@ -29,6 +30,31 @@ function SwitchLink({ prompt, label, onPress }: { prompt?: string; label: string
         <Text className="text-sm font-semibold text-primary">{label}</Text>
       </Pressable>
     </View>
+  );
+}
+
+// "By creating an account you agree to the Terms and the Privacy Policy".
+// Closes the pop-up first so the page isn't hidden behind it.
+function LegalNotice() {
+  const { t } = useTranslation();
+  const router = useRouter();
+  const closeDialog = useAuthDialog((state) => state.close);
+  const open = (path: "/terms" | "/privacy") => {
+    closeDialog();
+    router.push(path);
+  };
+  return (
+    <Text className="text-center text-xs leading-5 text-muted-foreground">
+      {t("auth.agreeStart")}{" "}
+      <Text role="link" className="font-medium text-primary underline" onPress={() => open("/terms")}>
+        {t("legal.terms")}
+      </Text>{" "}
+      {t("auth.agreeAnd")}{" "}
+      <Text role="link" className="font-medium text-primary underline" onPress={() => open("/privacy")}>
+        {t("legal.privacy")}
+      </Text>
+      .
+    </Text>
   );
 }
 
@@ -110,7 +136,7 @@ export function SignUpForm({
     const errors = {
       name: name.trim() ? undefined : t("auth.nameRequired"),
       email: isEmail(email) ? undefined : t("auth.emailInvalid"),
-      password: password.length >= MIN_PASSWORD ? undefined : t("auth.passwordTooShort"),
+      password: isStrongPassword(password) ? undefined : t("auth.passwordInvalid"),
     };
     setFieldErrors(errors);
     setError(null);
@@ -127,21 +153,27 @@ export function SignUpForm({
       <FormError message={error} />
       <Input label={t("auth.name")} value={name} onChangeText={setName} error={fieldErrors.name} autoComplete="name" textContentType="name" returnKeyType="next" />
       <Input label={t("auth.email")} value={email} onChangeText={setEmail} error={fieldErrors.email} returnKeyType="next" {...emailProps} />
-      <Input
-        label={t("auth.password")}
-        value={password}
-        onChangeText={setPassword}
-        error={fieldErrors.password}
-        placeholder={t("auth.passwordTooShort")}
-        secureTextEntry
-        autoComplete="new-password"
-        textContentType="newPassword"
-        returnKeyType="go"
-        onSubmitEditing={submit}
-      />
+      <View className="gap-2">
+        <Input
+          label={t("auth.password")}
+          value={password}
+          onChangeText={(value) => {
+            setPassword(value);
+            setFieldErrors((errors) => ({ ...errors, password: undefined }));
+          }}
+          error={fieldErrors.password}
+          secureTextEntry
+          autoComplete="new-password"
+          textContentType="newPassword"
+          returnKeyType="go"
+          onSubmitEditing={submit}
+        />
+        <PasswordRules password={password} />
+      </View>
       <Button size="lg" loading={submitting} onPress={submit}>
         {t("auth.createAccount")}
       </Button>
+      <LegalNotice />
       <SwitchLink prompt={t("auth.haveAccount")} label={t("auth.signIn")} onPress={() => onSwitch("signIn")} />
     </View>
   );

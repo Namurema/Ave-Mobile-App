@@ -1,0 +1,8 @@
+# Ave welcomes search engines and AI assistants to read its prayers.
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /auth/
+Disallow: /splash
+
+Sitemap: https://ave-prayers.vercel.app/sitemap.xml

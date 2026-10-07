@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { View, Text, ScrollView, Pressable, ActivityIndicator } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter, usePathname } from "expo-router";
+import Head from "expo-router/head";
 import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 import { TopNav } from "./AppNav";
@@ -67,6 +68,10 @@ export function PageHeader({
   const { t } = useTranslation();
   return (
     <Card className="overflow-hidden">
+      {/* Browser tab and search result title */}
+      <Head>
+        <title>{`${title} | Ave`}</title>
+      </Head>
       <View className="p-5 md:p-6 gap-1.5">
         {back && (
           <Pressable

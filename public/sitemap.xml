@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Public pages of Ave. Add a line here when a new novena, chaplet or prayer is published. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ave-prayers.vercel.app/home</loc><priority>1.0</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/rosary</loc><priority>0.9</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/prayer/session</loc><priority>0.9</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/prayers</loc><priority>0.8</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/daily-prayer/morning</loc><priority>0.8</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/daily-prayer/midday</loc><priority>0.8</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/daily-prayer/night</loc><priority>0.8</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/novenas</loc><priority>0.7</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/novena/2</loc><priority>0.7</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/novena/7</loc><priority>0.7</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/chaplets</loc><priority>0.7</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/chaplet/1</loc><priority>0.7</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/stations</loc><priority>0.7</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/other-prayers</loc><priority>0.6</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/other-prayer/guadalupe</loc><priority>0.6</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/other-prayer/fatima</loc><priority>0.6</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/other-prayer/magnificat</loc><priority>0.6</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/privacy</loc><priority>0.2</priority></url>
+  <url><loc>https://ave-prayers.vercel.app/terms</loc><priority>0.2</priority></url>
+</urlset>

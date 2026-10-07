@@ -8,7 +8,8 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "build:css": "tailwindcss -i ./global.css -o ./generated-styles.css --content './app/**/*.{js,jsx,ts,tsx}' --content './components/**/*.{js,jsx,ts,tsx}'",
-    "postinstall": "npm run build:css"
+    "postinstall": "npm run build:css",
+    "snapshot:prayers": "node scripts/snapshot-prayers.mjs"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",

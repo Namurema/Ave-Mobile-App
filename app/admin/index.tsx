@@ -1,15 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { View, Text } from "react-native";
-import { useRouter } from "expo-router";
 import { useAuthStore } from "../../store/authStore";
-import { useAuthDialog } from "../../store/authDialogStore";
+import { AdminGate, ADMIN_TABS } from "../../components/admin/AdminGate";
 import { getProfiles, type Profile } from "../../lib/supabase/admin";
 import { Page, PageHeader, Section, ListCard, LoadingCard, EmptyState } from "../../components/ui/page";
 import { Card } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 
-// Admin area (English only; the admin is the app owner). Lists signed-up accounts.
+// Admin: accounts that have signed up
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 const formatDate = (value: string | null) =>
@@ -29,8 +28,15 @@ function Stat({ label, value }: { label: string; value: number }) {
 }
 
 export default function AdminScreen() {
-  const router = useRouter();
-  const { session, loading: authLoading, isAdmin } = useAuthStore();
+  return (
+    <AdminGate>
+      <Accounts />
+    </AdminGate>
+  );
+}
+
+function Accounts() {
+  const isAdmin = useAuthStore((state) => state.isAdmin);
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -68,31 +74,9 @@ export default function AdminScreen() {
   const newThisWeek = profiles.filter((p) => Date.now() - new Date(p.created_at).getTime() < WEEK_MS).length;
   const confirmed = profiles.filter((p) => p.email_confirmed_at).length;
 
-  if (authLoading) {
-    return (
-      <Page sidebar={false}>
-        <LoadingCard />
-      </Page>
-    );
-  }
-
-  if (!session || !isAdmin) {
-    return (
-      <Page sidebar={false}>
-        <PageHeader title="Admin" />
-        <EmptyState
-          title={session ? "This page is only for the Ave admin" : "Sign in to continue"}
-          description={session ? "Your account doesn't have admin access." : "The admin area needs the admin account."}
-        >
-          {!session && <Button onPress={() => useAuthDialog.getState().open("signIn")}>Sign in</Button>}
-        </EmptyState>
-      </Page>
-    );
-  }
-
   return (
     <Page sidebar={false}>
-      <PageHeader title="Admin" description="Accounts that have signed up to Ave." />
+      <PageHeader title="Admin" description="Accounts that have signed up to Ave." tabs={ADMIN_TABS} />
 
       {loading ? (
         <LoadingCard label="Loading accounts..." />

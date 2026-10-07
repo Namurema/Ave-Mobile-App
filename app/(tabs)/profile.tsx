@@ -129,6 +129,38 @@ export default function ProfileScreen() {
           <Text className="mt-2 text-xs text-muted-foreground">{t("settings.version")} 1.0.0</Text>
         </Card>
       </Section>
+
+      <Section title={t("settings.help")}>
+        <ListCard
+          items={[
+            {
+              key: "feedback",
+              title: t("feedback.title"),
+              description: t("feedback.hint"),
+              onPress: () => router.push("/feedback"),
+            },
+          ]}
+        />
+      </Section>
+
+      <Section title={t("settings.legal")}>
+        <ListCard
+          items={[
+            {
+              key: "privacy",
+              title: t("legal.privacy"),
+              description: t("legal.privacyHint"),
+              onPress: () => router.push("/privacy"),
+            },
+            {
+              key: "terms",
+              title: t("legal.terms"),
+              description: t("legal.termsHint"),
+              onPress: () => router.push("/terms"),
+            },
+          ]}
+        />
+      </Section>
     </Page>
   );
 }

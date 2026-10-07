@@ -4,8 +4,67 @@
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>%WEB_TITLE%</title>
-    <meta name="description" content="Daily Catholic prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore." />
+    <title>Ave: Catholic Prayers in English, Luganda and Runyankore</title>
+    <meta name="description" content="Pray the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily morning, midday and night prayers in English, Luganda and Runyankore. Free Catholic prayer app for Uganda, works offline." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Ave team" />
+
+    <!-- Social previews (WhatsApp, Facebook, X, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ave" />
+    <meta property="og:title" content="Ave: Catholic Prayers for Every Day" />
+    <meta property="og:description" content="The Holy Rosary, novenas, chaplets and daily prayers in English, Luganda and Runyankore. Free, and works offline." />
+    <meta property="og:url" content="https://ave-prayers.vercel.app/home" />
+    <meta property="og:image" content="https://ave-prayers.vercel.app/icons/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ave: Catholic prayers for every day" />
+    <meta property="og:locale" content="en_UG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ave: Catholic Prayers for Every Day" />
+    <meta name="twitter:description" content="The Holy Rosary, novenas, chaplets and daily prayers in English, Luganda and Runyankore." />
+    <meta name="twitter:image" content="https://ave-prayers.vercel.app/icons/og-image.png" />
+
+    <!-- Structured data for search engines and AI assistants -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://ave-prayers.vercel.app/#website",
+            "name": "Ave",
+            "alternateName": "Ave Catholic Prayers",
+            "url": "https://ave-prayers.vercel.app/",
+            "inLanguage": ["en", "lg", "nyn"],
+            "publisher": { "@id": "https://ave-prayers.vercel.app/#org" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ave-prayers.vercel.app/#org",
+            "name": "Ave team",
+            "url": "https://ave-prayers.vercel.app/",
+            "logo": "https://ave-prayers.vercel.app/icons/icon-512.png",
+            "email": "stelarlabs@gmail.com"
+          },
+          {
+            "@type": "WebApplication",
+            "name": "Ave",
+            "url": "https://ave-prayers.vercel.app/home",
+            "applicationCategory": "LifestyleApplication",
+            "applicationSubCategory": "Catholic prayer",
+            "operatingSystem": "Any (web browser, installable on Android and iPhone)",
+            "description": "A free Catholic prayer companion with the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily prayers in English, Luganda and Runyankore. Works offline once installed.",
+            "inLanguage": ["en", "lg", "nyn"],
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UGX" },
+            "areaServed": { "@type": "Country", "name": "Uganda" },
+            "image": "https://ave-prayers.vercel.app/icons/og-image.png",
+            "publisher": { "@id": "https://ave-prayers.vercel.app/#org" }
+          }
+        ]
+      }
+    </script>
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -48,8 +107,23 @@
   </head>
 
   <body>
+    <!-- Read by search engines and AI crawlers that don't run JavaScript -->
     <noscript>
-      You need to enable JavaScript to run this app.
+      <main>
+        <h1>Ave: Catholic Prayers in English, Luganda and Runyankore</h1>
+        <p>Ave is a free Catholic prayer app built for Uganda. Pray in English, Luganda (Oluganda) or Runyankore (Orunyankore), on your phone or computer. Install it from your browser and it works offline. No account is needed.</p>
+        <h2>What you can pray</h2>
+        <ul>
+          <li><a href="/rosary">The Holy Rosary</a>: the Joyful, Sorrowful, Glorious and Luminous Mysteries, and a <a href="/prayer/session">full guided Rosary</a> from the Apostles' Creed to the Hail Holy Queen, including the Fatima Prayer.</li>
+          <li>Daily prayers: <a href="/daily-prayer/morning">morning prayers</a>, <a href="/daily-prayer/midday">midday prayers</a> and <a href="/daily-prayer/night">night prayers</a>.</li>
+          <li><a href="/novenas">Novenas</a>: the <a href="/novena/2">Novena to Our Lady of Perpetual Help</a> and the <a href="/novena/7">Novena to the 13 Blessed Souls</a>.</li>
+          <li><a href="/chaplets">Chaplets</a>: the <a href="/chaplet/1">Chaplet of the Divine Mercy</a>.</li>
+          <li><a href="/stations">The Stations of the Cross</a>.</li>
+          <li><a href="/other-prayers">Other prayers</a>: <a href="/other-prayer/guadalupe">Our Lady of Guadalupe</a>, <a href="/other-prayer/fatima">Our Lady of Fatima</a> and the <a href="/other-prayer/magnificat">Magnificat</a>.</li>
+        </ul>
+        <p>Save favourite prayers and track the days you pray, including novena progress. <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Conditions</a></p>
+        <p>You need to enable JavaScript to use the app.</p>
+      </main>
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>

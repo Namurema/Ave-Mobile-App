@@ -677,8 +677,8 @@
       "text": "Okakasizza email yo okusooka. Kebera mu inbox yo olabe linki."
     },
     "auth.errors.weakPassword": {
-      "en": "Choose a stronger password with at least 8 characters.",
-      "text": "Londa akasumuluzo ak'amaanyi nga kalina waakiri ennukuta 8."
+      "en": "Choose a stronger password: at least 8 characters, with at least one letter and one number.",
+      "text": "Londa akasumuluzo akakakali: nga kalina waakiri ennukuta munaana, ng'alimu ennukuta emu n'omuwendo gumu."
     },
     "auth.errors.alreadyRegistered": {
       "en": "An account with this email already exists. Sign in instead.",
@@ -847,6 +847,166 @@
     "auth.notNow": {
       "en": "Not now",
       "text": "Si kati"
+    },
+    "favourites.noneYet": {
+      "en": "None saved yet",
+      "text": "Tewali kye bakuumye"
+    },
+    "home.greetingSubtitle": {
+      "en": "Let us begin our day with prayer.",
+      "text": "Ka tutandike olunaku lwaffe n'okusaba."
+    },
+    "home.greetingEvening": {
+      "en": "Good Evening",
+      "text": "Osiibye otya"
+    },
+    "home.greetingSubtitleEvening": {
+      "en": "Let us end our day with prayer.",
+      "text": "Ka tumalirize olunaku lwaffe n'okusaba."
+    },
+    "home.greetingAfternoon": {
+      "en": "Good Afternoon",
+      "text": "Osiibye otya"
+    },
+    "home.greetingSubtitleAfternoon": {
+      "en": "Pause for a moment with God.",
+      "text": "Wummula okumala akaseera ne Katonda."
+    },
+    "auth.ruleLetter": {
+      "en": "At least one letter",
+      "text": "Waakiri ennukuta emu"
+    },
+    "auth.ruleNumber": {
+      "en": "At least one number",
+      "text": "Waakiri ennamba emu"
+    },
+    "auth.passwordInvalid": {
+      "en": "Use at least 8 characters, with at least one letter and one number.",
+      "text": "Kozesa waakiri ennukuta 8, ng'emu ku zo nnukuta ate endala namba."
+    },
+    "auth.ruleLength": {
+      "en": "At least 8 characters",
+      "text": "Waakiri abantu 8"
+    },
+    "auth.passwordsDontMatch": {
+      "en": "The passwords don't match.",
+      "text": "Obusumuluzo tebuwanagana."
+    },
+    "auth.confirmPassword": {
+      "en": "Confirm new password",
+      "text": "Kakasa akasumuluzo akapya"
+    },
+    "settings.legal": {
+      "en": "Legal",
+      "text": "Amateeka"
+    },
+    "legal.privacy": {
+      "en": "Privacy Policy",
+      "text": "Enkola y'okukuuma ebyama"
+    },
+    "legal.privacyHint": {
+      "en": "What information Ave keeps and why",
+      "text": "Bubaka ki Ave bwe yakuuma era lwaki"
+    },
+    "legal.terms": {
+      "en": "Terms & Conditions",
+      "text": "Obukwakkulizo n'Embeera"
+    },
+    "legal.updated": {
+      "en": "Last updated",
+      "text": "Ekyasembayo okukolebwa"
+    },
+    "auth.agreeStart": {
+      "en": "By creating an account you agree to the",
+      "text": "Bw'okola akawunti okkiriza ku"
+    },
+    "legal.termsHint": {
+      "en": "The rules for using Ave",
+      "text": "Amateeka agakwata ku kukozesa Ave"
+    },
+    "legal.englishOnly": {
+      "en": "This page is available in English only.",
+      "text": "Olupapula luno lusangibwa mu Lungereza lwokka."
+    },
+    "auth.agreeAnd": {
+      "en": "and the",
+      "text": "Era n'ekyo"
+    },
+    "settings.help": {
+      "en": "Help and feedback",
+      "text": "Okuyamba n'okuddamu"
+    },
+    "feedback.title": {
+      "en": "Send feedback",
+      "text": "Tuwaayo ebirowoozo byo"
+    },
+    "feedback.hint": {
+      "en": "Report a problem or a translation mistake, or share an idea",
+      "text": "Laba ku buzibu oba ensobi mu kuvvuunula, oba ogabane ekirowoozo"
+    },
+    "feedback.description": {
+      "en": "Tell us what to improve, report a problem, or point out a translation mistake. You don't need an account.",
+      "text": "Tubuulira kye tulina okutereeza, otegeeze ekizibu, oba olage ensobi mu kuvvuunula. Tolina kwetaaga akawunti."
+    },
+    "feedback.suggestion": {
+      "en": "An idea or suggestion",
+      "text": "Ekiteeso oba ekirowoozo"
+    },
+    "feedback.kind": {
+      "en": "What is it about?",
+      "text": "Kiki ky'ekwatako?"
+    },
+    "feedback.translation": {
+      "en": "A translation mistake",
+      "text": "Ensobi mu kuvvuunula"
+    },
+    "feedback.message": {
+      "en": "Your message",
+      "text": "Obubaka bwo"
+    },
+    "feedback.other": {
+      "en": "Something else",
+      "text": "Ekintu ekirala"
+    },
+    "feedback.messagePlaceholder": {
+      "en": "Write your feedback here",
+      "text": "Wandiika okuddamu kwo wano"
+    },
+    "feedback.problem": {
+      "en": "Something isn't working",
+      "text": "Waliwo ekintu ekitali kukola bulungi"
+    },
+    "feedback.messageRequired": {
+      "en": "Write a message first",
+      "text": "Wandiika obubaka okusooka"
+    },
+    "feedback.email": {
+      "en": "Email (optional)",
+      "text": "E-mayiro (eky'okwewandiisa)"
+    },
+    "feedback.emailHint": {
+      "en": "Only if you would like a reply.",
+      "text": "Bwe kiba nga oyagala okufuna eky'okuddamu."
+    },
+    "feedback.translationPlaceholder": {
+      "en": "Which prayer, which language, and what should it say?",
+      "text": "Ssaala ki, lulimi ki, era kiki ky'eyinza okwogera?"
+    },
+    "feedback.send": {
+      "en": "Send feedback",
+      "text": "Tuweeyo eby'okuddamu"
+    },
+    "feedback.sent": {
+      "en": "Thank you. Your feedback has been sent.",
+      "text": "Webale. Okuddamu kwo kutumiddwa."
+    },
+    "feedback.sendAnother": {
+      "en": "Send more feedback",
+      "text": "Sindika okuddamu okw'amaanyi"
+    },
+    "feedback.failed": {
+      "en": "Couldn't send your feedback. Check your connection and try again, or email us at",
+      "text": "Tetwasobola kutuusa kuddamu kwo. Kebera enkwatagana yo era ogezeeko nate, oba otuweere ebbaluwa ku"
     }
   },
   "rny": {
@@ -1531,8 +1691,8 @@
       "text": "Akawunti erimu e-mayiro egi eriho. Taahamu omu mwanya gw'ekyo."
     },
     "auth.errors.weakPassword": {
-      "en": "Choose a stronger password with at least 8 characters.",
-      "text": "Toorana akasumuruzo k'amaani karimu enyuguta ezirikuhika 8."
+      "en": "Choose a stronger password: at least 8 characters, with at least one letter and one number.",
+      "text": "Toorana akasumuruzo k'amaani: kakye munonga obubonero 8, n'akabonero kamwe hamwe n'enamba emwe."
     },
     "auth.errors.tooManyAttempts": {
       "en": "Too many attempts. Please wait a few minutes and try again.",
@@ -1697,6 +1857,166 @@
     "auth.notNow": {
       "en": "Not now",
       "text": "Tihariho hati"
+    },
+    "home.greetingSubtitle": {
+      "en": "Let us begin our day with prayer.",
+      "text": "Reka tutandike eizooba ryaitu n'okushaba."
+    },
+    "favourites.noneYet": {
+      "en": "None saved yet",
+      "text": "Tihaine ekyahonire"
+    },
+    "home.greetingEvening": {
+      "en": "Good Evening",
+      "text": "Ekiro kirungi"
+    },
+    "home.greetingAfternoon": {
+      "en": "Good Afternoon",
+      "text": "Ekiro kirungi"
+    },
+    "home.greetingSubtitleAfternoon": {
+      "en": "Pause for a moment with God.",
+      "text": "Huumura kumara akaire na Ruhanga."
+    },
+    "home.greetingSubtitleEvening": {
+      "en": "Let us end our day with prayer.",
+      "text": "Reka turugye omu eizooba ryaitu n'okushaba."
+    },
+    "auth.ruleNumber": {
+      "en": "At least one number",
+      "text": "Haakiri omubare gumwe"
+    },
+    "auth.ruleLetter": {
+      "en": "At least one letter",
+      "text": "Haakiri ebaruha emwe"
+    },
+    "auth.ruleLength": {
+      "en": "At least 8 characters",
+      "text": "Haakiri abantu 8"
+    },
+    "auth.confirmPassword": {
+      "en": "Confirm new password",
+      "text": "Kakasa akasumuruzo akasya"
+    },
+    "auth.passwordsDontMatch": {
+      "en": "The passwords don't match.",
+      "text": "Obukwenda tiburikuhikaana."
+    },
+    "auth.passwordInvalid": {
+      "en": "Use at least 8 characters, with at least one letter and one number.",
+      "text": "Kozesa haakiri abantu 8, hamwe n'obu haraabe hariho enyuguta emwe hamwe n'enamba."
+    },
+    "settings.legal": {
+      "en": "Legal",
+      "text": "Eby'obutegyeki"
+    },
+    "legal.terms": {
+      "en": "Terms & Conditions",
+      "text": "Ebiragiro n'embeera"
+    },
+    "legal.privacy": {
+      "en": "Privacy Policy",
+      "text": "Ekiragiro ky'obukwenda"
+    },
+    "legal.privacyHint": {
+      "en": "What information Ave keeps and why",
+      "text": "Ni amakuru ki agu Ave arikubiika kandi ahabwenki"
+    },
+    "legal.termsHint": {
+      "en": "The rules for using Ave",
+      "text": "Ebiragiro by'okukoresa Ave"
+    },
+    "legal.updated": {
+      "en": "Last updated",
+      "text": "Ekyahererukireyo kuhindurwa"
+    },
+    "legal.englishOnly": {
+      "en": "This page is available in English only.",
+      "text": "Orupapura oru nirushangwa omuri Rungyereza rwonka."
+    },
+    "auth.agreeStart": {
+      "en": "By creating an account you agree to the",
+      "text": "Waakora akawunti, noikiriza ebiragiro bya"
+    },
+    "auth.agreeAnd": {
+      "en": "and the",
+      "text": "kandi"
+    },
+    "feedback.title": {
+      "en": "Send feedback",
+      "text": "Oheereze okugarukamu"
+    },
+    "settings.help": {
+      "en": "Help and feedback",
+      "text": "Obuhwezi hamwe n'okugarukamu"
+    },
+    "feedback.hint": {
+      "en": "Report a problem or a translation mistake, or share an idea",
+      "text": "Ripoota oburemeezi nainga enshobi y'okuvunuura, nainga ogabane ekiteekateeko"
+    },
+    "feedback.description": {
+      "en": "Tell us what to improve, report a problem, or point out a translation mistake. You don't need an account.",
+      "text": "Tugambire eki ky'okutunguura, oyetomboitwe aha buremeezi, nainga oyorekye enshobi y'okuvunuura. Torikwetenga akawunti."
+    },
+    "feedback.kind": {
+      "en": "What is it about?",
+      "text": "Nikigamba ahari ki?"
+    },
+    "feedback.other": {
+      "en": "Something else",
+      "text": "Ekintu ekindi"
+    },
+    "feedback.problem": {
+      "en": "Something isn't working",
+      "text": "Hariho ekintu kitari kukora"
+    },
+    "feedback.translation": {
+      "en": "A translation mistake",
+      "text": "Enshobi y'okuvunuura"
+    },
+    "feedback.suggestion": {
+      "en": "An idea or suggestion",
+      "text": "Ekiteekateeko nainga ekiteiso"
+    },
+    "feedback.messageRequired": {
+      "en": "Write a message first",
+      "text": "Handiika obutumwa omu kubanza"
+    },
+    "feedback.messagePlaceholder": {
+      "en": "Write your feedback here",
+      "text": "Handiika okugarukamu kwawe aha"
+    },
+    "feedback.message": {
+      "en": "Your message",
+      "text": "Obutumwa bwawe"
+    },
+    "feedback.translationPlaceholder": {
+      "en": "Which prayer, which language, and what should it say?",
+      "text": "Ni kushaba ki, orurimi ki, kandi niki eki kushemereire kugamba?"
+    },
+    "feedback.email": {
+      "en": "Email (optional)",
+      "text": "E-mayiro (ekirikubaasa kuba)"
+    },
+    "feedback.send": {
+      "en": "Send feedback",
+      "text": "Oheereze okugarukamu"
+    },
+    "feedback.emailHint": {
+      "en": "Only if you would like a reply.",
+      "text": "Ku oraabe nooyenda eky'okugarukamu."
+    },
+    "feedback.sent": {
+      "en": "Thank you. Your feedback has been sent.",
+      "text": "Webare. Okugarukamu kwawe kwohereziibwe."
+    },
+    "feedback.sendAnother": {
+      "en": "Send more feedback",
+      "text": "Oheereze okugarukamu okundi"
+    },
+    "feedback.failed": {
+      "en": "Couldn't send your feedback. Check your connection and try again, or email us at",
+      "text": "Tikabaasa kwohereza okugarukamu kwawe. Kyebera enkoragana yaawe kandi ogaruke ogyezeho, nainga otusindikire e-mayiro ahari"
     }
   },
   "content-lg": {

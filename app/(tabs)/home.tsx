@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { View, Text, ScrollView, Pressable } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
+import Head from "expo-router/head";
 import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
@@ -9,7 +10,7 @@ import Footer from "../../components/ui/Footer";
 import { TopNav } from "../../components/ui/AppNav";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
-import { formatDate } from "../../lib/i18n/helpers";
+import { formatDate, greetingKeys } from "../../lib/i18n/helpers";
 import { useContent } from "../../lib/i18n/content";
 import { scripture } from "../../constants/content/scripture";
 import { useAuthStore, displayName } from "../../store/authStore";
@@ -80,6 +81,13 @@ export default function HomeScreen() {
   const { language } = useLanguageStore();
   const user = useAuthStore((state) => state.user);
   const name = displayName(user);
+  // Re-check the time every minute so the greeting changes while the app is open
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const timer = setInterval(() => setNow(new Date()), 60_000);
+    return () => clearInterval(timer);
+  }, []);
+  const greeting = greetingKeys(now);
   const log = useUserDataStore((state) => state.log);
   const favourites = useUserDataStore((state) => state.favourites);
   const [prayerOfDay, setPrayerOfDay] = useState<any>(null);
@@ -115,13 +123,11 @@ export default function HomeScreen() {
   ];
 
   const daysPrayed = new Set([...log].map((id) => splitLogId(id).day));
+  const streak = currentStreak(daysPrayed);
+  const weekCount = lastSevenDays().filter((day) => daysPrayed.has(day)).length;
   const progressRows: LinkRow[] = [
-    { title: t("progress.streak"), value: String(currentStreak(daysPrayed)), route: "/progress" },
-    {
-      title: t("progress.thisWeek"),
-      value: `${lastSevenDays().filter((day) => daysPrayed.has(day)).length}/7`,
-      route: "/progress",
-    },
+    { title: t("progress.streak"), value: String(streak), route: "/progress" },
+    { title: t("progress.thisWeek"), value: `${weekCount}/7`, route: "/progress" },
   ];
 
   const favouriteRows: LinkRow[] = favourites
@@ -132,6 +138,9 @@ export default function HomeScreen() {
 
   return (
     <View className="flex-1 bg-zinc-50">
+      <Head>
+        <title>Ave: Catholic Prayers in English, Luganda and Runyankore</title>
+      </Head>
       <StatusBar style="dark" />
       <TopNav />
 
@@ -147,12 +156,21 @@ export default function HomeScreen() {
 
           {/* Left sidebar */}
           <View className="gap-4 lg:w-64">
-            <Card className="overflow-hidden">
+            {/* Phones: greeting straight on the page, not in a card */}
+            <View className="lg:hidden gap-1 pt-1">
+              <Text className="text-sm text-muted-foreground">{dateLabel}</Text>
+              <Text className="text-2xl font-bold tracking-tight text-foreground">
+                {name ? `${t(greeting.title)}, ${name}` : t(greeting.title)}
+              </Text>
+              <Text className="text-sm text-muted-foreground">{t(greeting.subtitle)}</Text>
+            </View>
+
+            <Card className="hidden lg:flex overflow-hidden">
               <View className="h-8 lg:h-14 bg-primary" />
               <View className="p-5 gap-1">
                 <Text className="text-sm text-muted-foreground">{dateLabel}</Text>
                 <Text className="text-xl font-bold tracking-tight text-card-foreground">
-                  {name ? `${t("home.greeting")}, ${name}` : t("home.greeting")}
+                  {name ? `${t(greeting.title)}, ${name}` : t(greeting.title)}
                 </Text>
                 <View className="mt-2 flex-row items-center gap-1.5">
                   <Text className="text-sm text-muted-foreground">
@@ -165,16 +183,6 @@ export default function HomeScreen() {
                 </View>
               </View>
             </Card>
-
-            {/* Phones: compact buttons; the full cards only on wide screens */}
-            <View className="flex-row gap-2 lg:hidden">
-              <Button variant="outline" className="flex-1" onPress={() => router.push("/progress")}>
-                {t("progress.title")}
-              </Button>
-              <Button variant="outline" className="flex-1" onPress={() => router.push("/favourites")}>
-                {favourites.length > 0 ? `${t("favourites.title")} (${favourites.length})` : t("favourites.title")}
-              </Button>
-            </View>
 
             <View className="hidden lg:flex">
               <SidebarList
@@ -235,7 +243,50 @@ export default function HomeScreen() {
               </View>
             </Card>
 
-            {/* Daily prayers, below the Rosary card (phones) */}
+            {/* Progress and favourites in one card, below the Rosary card (phones) */}
+            <Card className="lg:hidden overflow-hidden">
+              <Pressable
+                onPress={() => router.push("/progress")}
+                className="flex-row items-center gap-4 p-4 active:bg-muted/60"
+              >
+                <View className="h-14 w-14 items-center justify-center rounded-full border-4 border-primary/20">
+                  <Text className="text-sm font-bold text-primary">{weekCount}/7</Text>
+                </View>
+                <View className="flex-1 gap-0.5">
+                  <Text className="text-xs font-semibold uppercase tracking-widest text-primary">
+                    {t("progress.title")}
+                  </Text>
+                  <Text className="text-base font-semibold text-card-foreground">
+                    {t("progress.streak")}: {streak}
+                  </Text>
+                  <Text className="text-sm text-muted-foreground">
+                    {t("progress.thisWeek")}: {weekCount}/7
+                  </Text>
+                </View>
+                <View className="rounded-full bg-primary/10 px-3 py-2">
+                  <Text className="text-sm font-semibold text-primary">{t("progress.viewProgress")}</Text>
+                </View>
+              </Pressable>
+              <Pressable
+                onPress={() => router.push("/favourites")}
+                className="flex-row items-center gap-3 border-t border-border px-4 py-3 active:bg-muted/60"
+              >
+                <View className="flex-1 gap-0.5">
+                  <Text className="text-sm font-semibold text-card-foreground">
+                    {t("favourites.title")}
+                    {favourites.length > 0 ? ` (${favourites.length})` : ""}
+                  </Text>
+                  <Text className="text-sm text-muted-foreground" numberOfLines={1}>
+                    {favouriteRows.length > 0
+                      ? favouriteRows.map((row) => row.title).join(" · ")
+                      : t("favourites.noneYet")}
+                  </Text>
+                </View>
+                <Text className="text-lg text-muted-foreground">›</Text>
+              </Pressable>
+            </Card>
+
+            {/* Daily prayers, below the progress card (phones) */}
             <Card className="lg:hidden overflow-hidden">
               <Text className="px-4 pt-4 pb-1 text-base font-semibold text-card-foreground">
                 {t("home.dailyPrayers")}

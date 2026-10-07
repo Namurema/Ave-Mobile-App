@@ -1,55 +1,74 @@
 import { supabase } from './client';
 import { translateContent, hasContentTranslation } from '../i18n/content';
+import snapshot from '../../constants/content/prayerSnapshot.json';
+
+// Prayer text comes from Supabase, with a built-in copy as a fallback
+// (constants/content/prayerSnapshot.json, refreshed on every build by
+// scripts/snapshot-prayers.mjs). On weak or blocked connections the app waits
+// at most a few seconds for Supabase, then shows the built-in copy.
+const SUPABASE_TIMEOUT_MS = 5000;
+
+async function withFallback<T>(
+  query: PromiseLike<{ data: T | null; error: unknown }>,
+  builtIn: () => T
+): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    const timeout = new Promise<never>((_, reject) => {
+      timer = setTimeout(() => reject(new Error('Supabase timed out')), SUPABASE_TIMEOUT_MS);
+    });
+    const { data, error } = await Promise.race([query, timeout]);
+    if (error) throw error;
+    if (data) return data;
+  } catch {
+    // Unreachable, slow or failing: use the built-in copy
+  } finally {
+    clearTimeout(timer);
+  }
+  return builtIn();
+}
+
+const bySortOrder = (a: any, b: any) => (a.sort_order ?? 0) - (b.sort_order ?? 0);
+
+function builtInPrayers(categorySlug: string, languageCode: string) {
+  return (snapshot.prayers as any[])
+    .filter((p) => p.categories?.slug === categorySlug && p.languages?.code === languageCode)
+    .sort(bySortOrder);
+}
 
 // Fetch all categories
 export async function getCategories() {
-  const { data, error } = await supabase
-    .from('categories')
-    .select('*')
-    .order('sort_order');
-  if (error) throw error;
-  return data;
+  return withFallback(
+    supabase.from('categories').select('*').order('sort_order'),
+    () => [...snapshot.categories].sort(bySortOrder)
+  );
 }
 
 // Fetch all languages
 export async function getLanguages() {
-  const { data, error } = await supabase
-    .from('languages')
-    .select('*');
-  if (error) throw error;
-  return data;
+  return withFallback(supabase.from('languages').select('*'), () => snapshot.languages);
 }
 
 // Fetch Rosary prayers by language
 export async function getRosaryPrayers(languageCode: string) {
-  const { data, error } = await supabase
-    .from('prayers')
-    .select(`
-      *,
-      categories!inner(slug),
-      languages!inner(code)
-    `)
-    .eq('categories.slug', 'daily-rosary')
-    .eq('languages.code', languageCode)
-    .order('sort_order');
-  if (error) throw error;
-  return data;
+  return getPrayersByCategory('daily-rosary', languageCode);
 }
 
 // Fetch prayers by category slug and language
-export async function getPrayersByCategory(categorySlug: string, languageCode: string) {
-  const { data, error } = await supabase
-    .from('prayers')
-    .select(`
-      *,
-      categories!inner(slug),
-      languages!inner(code)
-    `)
-    .eq('categories.slug', categorySlug)
-    .eq('languages.code', languageCode)
-    .order('sort_order');
-  if (error) throw error;
-  return data;
+export async function getPrayersByCategory(categorySlug: string, languageCode: string): Promise<any[]> {
+  return withFallback(
+    supabase
+      .from('prayers')
+      .select(`
+        *,
+        categories!inner(slug),
+        languages!inner(code)
+      `)
+      .eq('categories.slug', categorySlug)
+      .eq('languages.code', languageCode)
+      .order('sort_order'),
+    () => builtInPrayers(categorySlug, languageCode)
+  );
 }
 
 // Placeholder rows like "[Runyakole translation coming soon]" count as missing

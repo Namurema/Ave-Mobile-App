@@ -1,0 +1,614 @@
+{
+ "prayers": [
+  {
+   "id": "7cf4d408-40be-409c-8c4a-e99504c31814",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Apostles' Creed",
+   "body": "I believe in God, the Father Almighty, Creator of Heaven and earth; and in Jesus Christ, His only Son, Our Lord, Who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died, and was buried. He descended into Hell; the third day He rose again from the dead; He ascended into Heaven, and sits at the right hand of God, the Father Almighty; from thence He shall come to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T19:23:38.018699+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "0d252f40-1e3e-4a7e-9830-caa18332d8f6",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "title": "Okukkiriza kw'Abatume",
+   "body": "Nkkiriza mu Katonda, Kitaffe Ayinza byonna, Omutonzi w'eggulu n'ensi; era mu Yezu Kristu, Omwana we omu, Mukama waffe, eyabatuukirira Mwoyo Omutukuvu, eyazaalibwa Bikira Mariya, eyabonaabona mu nsi ya Ponsi Pilato, eyabambibwa omusaalaba, n'okufa n'okuziikibwa. Yasisuka mu ggulu lya bakiikulu; olunaku olwokusatu n'azuukira mu bafu; n'okwambuka eggulu, n'obutula ku mukono ogwa ddyo gwa Katonda, Kitaffe Ayinza byonna; okuva eyo agenda okuleetawo omusango ku bazima n'abafu. Nkkiriza mu Mwoyo Omutukuvu, Ekanisa Entukuvu ya Katoliki, okwegatta kw'abatukuvu, okusonyiyibwa ebibi, okuzuukira kw'omubiri, n'obulamu obutaggwaawo. Amina.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T19:26:51.296734+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "lg"
+   }
+  },
+  {
+   "id": "c3cb16d0-ca40-4088-ae2d-88490246035b",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "title": "Apostles' Creed (Runyakole)",
+   "body": "[Runyakole translation coming soon]",
+   "sort_order": 1,
+   "created_at": "2026-03-10T19:27:18.560862+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "rny"
+   }
+  },
+  {
+   "id": "9645bd26-60de-4bb4-8278-33690fb5c39c",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Daily Offering",
+   "body": "O Jesus, through the Immaculate Heart of Mary, I offer you my prayers, works, joys and sufferings of this day, for all the intentions of your Sacred Heart, in union with the Holy Sacrifice of the Mass throughout the world, in reparation for sin, for the intentions of all my friends and associates, and in particular for the intentions of the Holy Father.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:47:23.700594+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "178c2c76-0978-4b77-8c0a-8f66b58159fc",
+   "category_id": "9819f05b-4730-4b34-9d93-a295c14cd755",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "The Angelus",
+   "body": "The Angel of the Lord declared to Mary:\r\nAnd she conceived of the Holy Spirit. Hail Mary...\r\n\r\nBehold the handmaid of the Lord:\r\nBe it done to me according to your word. Hail Mary...\r\n\r\nAnd the Word was made flesh:\r\nAnd dwelt among us. Hail Mary...\r\n\r\nPray for us, O holy Mother of God.\r\nThat we may be made worthy of the promise of Christ.\r\n\r\nLet us pray:\r\nPour forth, we beseech you, O Lord, your grace into our hearts that we, to whom the incarnation of Christ, your Son, was made known by the message of an angel, may by His passion and cross be brought to the glory of His resurrection, through the same Christ our Lord. Amen.\r\n\r\nO God, by the resurrection of Your Son, our Lord Jesus Christ, You have willed to make glad the whole world. Grant, we beseech You, that through His Mother, the Virgin Mary, we may lay hold of the joys of eternal life. We ask this through the same Christ our Lord. Amen.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:48:34.235542+00:00",
+   "categories": {
+    "slug": "afternoon"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "30e17db2-540c-4fc3-a11d-6d7cf8d36d76",
+   "category_id": "9819f05b-4730-4b34-9d93-a295c14cd755",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "The Angelus",
+   "body": "The Angel of the Lord declared to Mary:\r\nAnd she conceived of the Holy Spirit. Hail Mary...\r\n\r\nBehold the handmaid of the Lord:\r\nBe it done to me according to your word. Hail Mary...\r\n\r\nAnd the Word was made flesh:\r\nAnd dwelt among us. Hail Mary...\r\n\r\nPray for us, O holy Mother of God.\r\nThat we may be made worthy of the promise of Christ.\r\n\r\nLet us pray:\r\nPour forth, we beseech you, O Lord, your grace into our hearts that we, to whom the incarnation of Christ, your Son, was made known by the message of an angel, may by His passion and cross be brought to the glory of His resurrection, through the same Christ our Lord. Amen.\r\n\r\nO God, by the resurrection of Your Son, our Lord Jesus Christ, You have willed to make glad the whole world. Grant, we beseech You, that through His Mother, the Virgin Mary, we may lay hold of the joys of eternal life. We ask this through the same Christ our Lord. Amen.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:48:43.913365+00:00",
+   "categories": {
+    "slug": "afternoon"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "b75e26ba-d728-45a2-b23e-35e5755ba870",
+   "category_id": "8258ef47-c1da-4b48-8d04-c6927dc9d4c5",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Divine Mercy Chaplet (3 O'Clock Prayer)",
+   "body": "You expired Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us.\r\n\r\nO Blood and Water which gushed forth from the Heart of Jesus as a fount of mercy for us, I trust in you!\r\n\r\nHoly God, Holy Mighty One, Holy Immortal One, Have Mercy on us and on the whole world. (Say 3 times) Amen.\r\n\r\nJesus, King of Mercy, I trust in you!\r\n\r\nLeader: Our Father... All together: Give us this day...\r\nLeader: Hail Mary... All together: Holy Mary...\r\n\r\nAll together pray the Creed:\r\nI believe in God, the Father almighty, the creator of heaven and earth and in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried. He descended into hell. On the third day He rose again from the dead. He ascended into heaven and sits at the right hand of God, the Father almighty. From thence He shall come to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints, the forgiveness of sins, the resurrection of the body and life everlasting. Amen.\r\n\r\n(On the large bead before each decade)\r\nAll together: Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ in atonement for our sins and those of the whole world.\r\n\r\n(On the ten small beads of each decade)\r\nLeader: For the sake of His sorrowful passion\r\nAll together: Have mercy on us and on the whole world.\r\n\r\n(Conclude with):\r\nHoly God, Holy Mighty One, Holy Immortal One, Have mercy on us and on the whole world. (say three times) Amen.\r\nJesus, King of Mercy, I trust in you! (say 3 times)",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:49:05.005423+00:00",
+   "categories": {
+    "slug": "chaplets"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "e83a764f-5a13-408d-9eb6-7ba5b7c24e86",
+   "category_id": "8258ef47-c1da-4b48-8d04-c6927dc9d4c5",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Divine Mercy Chaplet (3 O'Clock Prayer)",
+   "body": "You expired Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us.\r\n\r\nO Blood and Water which gushed forth from the Heart of Jesus as a fount of mercy for us, I trust in you!\r\n\r\nHoly God, Holy Mighty One, Holy Immortal One, Have Mercy on us and on the whole world. (Say 3 times) Amen.\r\n\r\nJesus, King of Mercy, I trust in you!\r\n\r\nLeader: Our Father... All together: Give us this day...\r\nLeader: Hail Mary... All together: Holy Mary...\r\n\r\nAll together pray the Creed:\r\nI believe in God, the Father almighty, the creator of heaven and earth and in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried. He descended into hell. On the third day He rose again from the dead. He ascended into heaven and sits at the right hand of God, the Father almighty. From thence He shall come to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints, the forgiveness of sins, the resurrection of the body and life everlasting. Amen.\r\n\r\n(On the large bead before each decade)\r\nAll together: Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ in atonement for our sins and those of the whole world.\r\n\r\n(On the ten small beads of each decade)\r\nLeader: For the sake of His sorrowful passion\r\nAll together: Have mercy on us and on the whole world.\r\n\r\n(Conclude with):\r\nHoly God, Holy Mighty One, Holy Immortal One, Have mercy on us and on the whole world. (say three times) Amen.\r\nJesus, King of Mercy, I trust in you! (say 3 times)",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:49:31.516615+00:00",
+   "categories": {
+    "slug": "chaplets"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "55a8334a-c6dd-4537-83c3-9492b981b521",
+   "category_id": "a28bffcf-10f3-456d-bf09-327f638b258b",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Novena to the 13 Blessed Souls",
+   "body": "Note: The first line appears twice as it is to be read twice.\r\n\r\nOh my 13 Blessed souls so wise and understanding, I ask you for the Love of God that my request be answered.\r\n\r\nOh my 13 Blessed souls so wise and understanding, I ask you for the Love of God that my request be answered.\r\n\r\nOf you I ask for the sake of the blood that Jesus shed that my request be answered.\r\n\r\nMy Lord Jesus Christ that your protection wrap me with your arms. Guard me with your eyes. O God of kindness you have been my defender in life and death. I ask that you free me from the difficulties that torment me.\r\n\r\nMy 13 blessed souls so wise and understanding having received the grace I seek from you (state your request) I will be devoted to you.\r\n\r\nSay 13 Our Father's and 13 Hail Mary's for 13 consecutive days. Publish this prayer, share it with a friend and give a Mass of Thanksgiving.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:49:40.135546+00:00",
+   "categories": {
+    "slug": "novenas"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "21ae76b5-02f5-4030-be8c-0b0bda5ed820",
+   "category_id": "800ea42c-dfb2-42a2-b88d-2d57607aec73",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Prayers to Our Lady of Guadalupe",
+   "body": "Our Lady of Guadalupe, mystical rose, make intercession for the Holy Church; protect the Holy Father; help all those who invoke you in their needs.\r\n\r\nSince you are the ever Virgin Mary and Mother of the true God, obtain for us from your most holy Son Jesus the grace of keeping our faith, sweet hope in the midst of the difficulties of life, burning charity, and the precious gift of final perseverance. Amen.\r\n\r\nO most gracious Virgin of Guadalupe, in your apparitions on Mount Tepeyac, you promised to show pity and compassion to all who, loving and trusting you, seek your help and protection. Listen to our supplications and grant us consolation and relief. We are full of hope that, relying on your help, nothing can trouble or affect us. As you have remained with us through your admirable image, so now obtain for us the graces we need. Amen.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T20:50:06.989363+00:00",
+   "categories": {
+    "slug": "other-prayers"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "ab75d73a-61a9-415f-9379-8ab9b6ebf84c",
+   "category_id": "3ca15699-35ff-4dd3-a7e3-21f3fa19ffeb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Litany of the Blessed Virgin Mary",
+   "body": "Lord, have mercy. Lord, have mercy.\r\nChrist, have mercy. Christ, have mercy.\r\nLord, have mercy. Lord, have mercy.\r\nChrist, hear us. Christ, graciously hear us.\r\n\r\nGod the Father of Heaven, have mercy on us.\r\nGod the Son, Redeemer of the world, have mercy on us.\r\nGod the Holy Spirit, have mercy on us.\r\nHoly Trinity, one God, have mercy on us.\r\n\r\nHoly Mary, pray for us.\r\nHoly Mother of God, pray for us.\r\nHoly Virgin of virgins, pray for us.\r\nMother of Christ, pray for us.\r\nMother of the Church, pray for us.\r\nMother of Divine Grace, pray for us.\r\nMother most pure, pray for us.\r\nMother most chaste, pray for us.\r\nMother inviolate, pray for us.\r\nMother undefiled, pray for us.\r\nMother most amiable, pray for us.\r\nMother most admirable, pray for us.\r\nMother of good counsel, pray for us.\r\nMother of our Creator, pray for us.\r\nMother of our Savior, pray for us.\r\n\r\nVirgin most prudent, pray for us.\r\nVirgin most venerable, pray for us.\r\nVirgin most renowned, pray for us.\r\nVirgin most powerful, pray for us.\r\nVirgin most merciful, pray for us.\r\nVirgin most faithful, pray for us.\r\n\r\nMirror of justice, pray for us.\r\nSeat of wisdom, pray for us.\r\nCause of our joy, pray for us.\r\nSpiritual vessel, pray for us.\r\nVessel of honor, pray for us.\r\nSingular vessel of devotion, pray for us.\r\nMystical rose, pray for us.\r\nTower of David, pray for us.\r\nTower of ivory, pray for us.\r\nHouse of gold, pray for us.\r\nArk of the covenant, pray for us.\r\nGate of heaven, pray for us.\r\nMorning star, pray for us.\r\nHealth of the sick, pray for us.\r\nRefuge of sinners, pray for us.\r\nComfort of the afflicted, pray for us.\r\nHelp of Christians, pray for us.\r\n\r\nQueen of Angels, pray for us.\r\nQueen of Patriarchs, pray for us.\r\nQueen of Prophets, pray for us.\r\nQueen of Apostles, pray for us.\r\nQueen of Martyrs, pray for us.\r\nQueen of Confessors, pray for us.\r\nQueen of Virgins, pray for us.\r\nQueen of all Saints, pray for us.\r\nQueen conceived without original sin, pray for us.\r\nQueen assumed into heaven, pray for us.\r\nQueen of the most holy Rosary, pray for us.\r\nQueen of families, pray for us.\r\nQueen of peace, pray for us.\r\n\r\nLamb of God, who takes away the sins of the world, spare us, O Lord.\r\nLamb of God, who takes away the sins of the world, graciously hear us, O Lord.\r\nLamb of God, who takes away the sins of the world, have mercy on us.\r\n\r\nPray for us, O Holy Mother of God.\r\nThat we may be made worthy of the promises of Christ.\r\n\r\nLet us pray:\r\nGrant, we beseech you, O Lord God, that we your servants may enjoy perpetual health of mind and body; and by the intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow, and obtain eternal joy. Through Christ our Lord. Amen.",
+   "sort_order": 1,
+   "created_at": "2026-03-10T21:41:42.857584+00:00",
+   "categories": {
+    "slug": "litanies"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "ec1edab9-a904-4e53-988e-d666e21f7929",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Act of Faith",
+   "body": "My God, I believe in you and all that you have taught, because you have said it, and your word is true.",
+   "sort_order": 2,
+   "created_at": "2026-03-10T20:47:23.700594+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "bff85ffb-94c9-4e71-93da-8975cb910a57",
+   "category_id": "800ea42c-dfb2-42a2-b88d-2d57607aec73",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Our Lady of Fatima Novena Prayer",
+   "body": "Most Holy Virgin, who deigned to come to Fatima, to reveal the treasures of grace hidden in the recitation of the Rosary, inspire our hearts with a sincere love of this devotion, that meditating on the Mysteries of our Redemption recalled therein, we may obtain the conversion of sinners, the conversion of Russia, and (here name the other favors you are praying for) which we ask of you in this Novena, for the greater glory of God, for your own honor, and for the good of souls. Amen.\r\n\r\nOur Lady of the Rosary of Fatima, pray for us.",
+   "sort_order": 2,
+   "created_at": "2026-03-10T20:50:06.989363+00:00",
+   "categories": {
+    "slug": "other-prayers"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "90b6eadc-89c2-45d0-9c33-7bf7e922b4b6",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "title": "Kitaffe",
+   "body": "Kitaffe ali mu ggulu, erinnya lyo lituukiririzibwe; obwakabaka bwo bujogereze; by'oyagala bikolwe mu nsi, nga bwe bikolwa mu ggulu. Otuwe leero emmere yaffe egy'emisana; otusonyiye amabanja gaffe, nga naffe bwe tusonyira abatwewola; totutwale mu kukemebwa, naye otulokole eka okubi. Amina.",
+   "sort_order": 2,
+   "created_at": "2026-03-10T19:26:51.296734+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "lg"
+   }
+  },
+  {
+   "id": "cffe6a50-2125-4213-9a29-bc0e8c1561e5",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Our Father",
+   "body": "Our Father, Who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+   "sort_order": 2,
+   "created_at": "2026-03-10T19:23:38.018699+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "a3242a3b-39c4-450f-a38c-d2c6d55fb6a0",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "title": "Our Father (Runyakole)",
+   "body": "[Runyakole translation coming soon]",
+   "sort_order": 2,
+   "created_at": "2026-03-10T19:27:18.560862+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "rny"
+   }
+  },
+  {
+   "id": "d6ef7f28-ea91-4460-9785-5f2c473cbd07",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "title": "Hail Mary (Runyakole)",
+   "body": "[Runyakole translation coming soon]",
+   "sort_order": 3,
+   "created_at": "2026-03-10T19:27:18.560862+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "rny"
+   }
+  },
+  {
+   "id": "22718801-91ca-434a-b0f7-b09c1a705855",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "title": "Wange Mariya",
+   "body": "Wange Mariya, ojjudde ekisa, Mukama ali nawe. Ogumirizibwa mu bakazi bonna, era omwana w'olubuto lwo Yezu agumirizibwa. Mariya Omutukuvu, Nnyina wa Katonda, tusengerera ffe abaibi kati n'amangu ga kufa kwaffe. Amina.",
+   "sort_order": 3,
+   "created_at": "2026-03-10T19:26:51.296734+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "lg"
+   }
+  },
+  {
+   "id": "e4437483-5acb-4851-8085-4c2546a5310f",
+   "category_id": "800ea42c-dfb2-42a2-b88d-2d57607aec73",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Magnificat",
+   "body": "My soul proclaims the greatness of the Lord,\r\nmy spirit rejoices in God, my savior,\r\nfor he has looked with favor on his lowly servant.\r\nFrom this day all generations will call me blessed:\r\nthe Almighty has done great things for me,\r\nand holy is his Name.\r\n\r\nHe has shown mercy on those who fear him\r\nin every generation.\r\n\r\nHe has shown the strength of his arm,\r\nhe has scattered the proud in their conceit.\r\n\r\nHe has cast down the mighty from their thrones,\r\nand has lifted up the lowly.\r\n\r\nHe has filled the hungry with good things,\r\nand the rich he has sent away empty.\r\n\r\nHe has come to the help of his servant Israel\r\nfor he has remembered his promise of mercy,\r\nthe promise he made to our fathers,\r\nto Abraham and his children forever.\r\n\r\n(Luke 1:46-55)",
+   "sort_order": 3,
+   "created_at": "2026-03-10T20:50:42.146197+00:00",
+   "categories": {
+    "slug": "other-prayers"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "410e1969-72a2-47c5-9403-c997e003f12a",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Act of Hope",
+   "body": "I hope in your promise of Eternal life and I ask for your mercy and strength this day.",
+   "sort_order": 3,
+   "created_at": "2026-03-10T20:47:23.700594+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "284b5082-cad1-4f0c-b197-5067f15bd1c6",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Hail Mary",
+   "body": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
+   "sort_order": 3,
+   "created_at": "2026-03-10T19:23:38.018699+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "34178862-58e6-433d-b01f-c019e7b79760",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Glory Be",
+   "body": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+   "sort_order": 4,
+   "created_at": "2026-03-10T19:23:38.018699+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "f45b8456-9121-42e0-9d94-b0f446575bd6",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "title": "Glory Be (Runyakole)",
+   "body": "[Runyakole translation coming soon]",
+   "sort_order": 4,
+   "created_at": "2026-03-10T19:27:18.560862+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "rny"
+   }
+  },
+  {
+   "id": "cb6fe75e-e645-4147-9ce0-99c10e2c5973",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "title": "Ekitiibwa",
+   "body": "Ekitiibwa kibe kya Kitaffe, n'Omwana, n'Omwoyo Omutukuvu. Nga bwe kyali olubereberye, kati kiri, n'obulijjo buba, emirembe n'emirembe. Amina.",
+   "sort_order": 4,
+   "created_at": "2026-03-10T19:26:51.296734+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "lg"
+   }
+  },
+  {
+   "id": "4eda16a6-aa36-4f29-b698-fcd5fa8124da",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Act of Charity",
+   "body": "O My God, I love you with my whole heart and above all things, because you are infinitely good and perfect; and I love my neighbours as myself for love of you. Grant that I may love you more and more in this life, and in the next for all eternity.",
+   "sort_order": 4,
+   "created_at": "2026-03-10T20:47:23.700594+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "6901cb70-a6fc-402a-82f5-62e44d07bfdd",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "title": "Fatima Prayer (Runyakole)",
+   "body": "[Runyakole translation coming soon]",
+   "sort_order": 5,
+   "created_at": "2026-03-10T19:27:18.560862+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "rny"
+   }
+  },
+  {
+   "id": "d168b735-7a50-4eff-ac4f-e00a2ae47857",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Morning Consecration Prayers",
+   "body": "Merciful Jesus, I consecrate myself today and always to Your Most Sacred Heart.\r\n\r\nMost Sacred Heart of Jesus I implore, that I may ever love you more and more.\r\n\r\nMost Sacred Heart of Jesus, I trust in you!\r\n\r\nMost Sacred Heart of Jesus, have mercy on us!\r\n\r\nSacred Heart of Jesus, I believe in your love for me.\r\n\r\nJesus, meek and humble of heart, make my heart like your heart.",
+   "sort_order": 5,
+   "created_at": "2026-03-10T20:47:23.700594+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "595ec835-2903-49aa-af3c-9870e1b4ad01",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Fatima Prayer",
+   "body": "O my Jesus, forgive us our sins, save us from the fires of hell, lead all souls to Heaven, especially those in most need of Thy mercy. Amen.",
+   "sort_order": 5,
+   "created_at": "2026-03-10T19:23:38.018699+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "cab567a6-8c3f-4cc8-adf7-52e36392e442",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "title": "Okusaba kwa Fatima",
+   "body": "Yezu wange, ntusonyiye ebibi byaffe, otulokole ku muliro gwa Gehenna, otwalire mu ggulu mwoyo gyonna, naddala abeetaaga ekisa kyo ennyo. Amina.",
+   "sort_order": 5,
+   "created_at": "2026-03-10T19:26:51.296734+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "lg"
+   }
+  },
+  {
+   "id": "5a1605dc-1148-48e3-bf23-72ea1c516708",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Prayer of Thanksgiving (Night)",
+   "body": "O My God, I thank you for all the benefits which I have received from you this day. Give me light to see what sins I have committed, and grant me grace to be truly sorry for them.",
+   "sort_order": 6,
+   "created_at": "2026-03-10T20:47:55.905569+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "2e971b8d-23d8-4e76-81f1-d80cf2fdccee",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "title": "Hail Holy Queen (Runyakole)",
+   "body": "[Runyakole translation coming soon]",
+   "sort_order": 6,
+   "created_at": "2026-03-10T19:27:18.560862+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "rny"
+   }
+  },
+  {
+   "id": "7830a1ac-a265-46e8-a6ef-c929b7ba6306",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "title": "Kabonero wa Mariya",
+   "body": "Nkusaba Nnyina w'ekisa, obulamu bwaffe, essanyu lyaffe n'essuubi lyaffe! Gy'okukaaba ffe abaana ba Eva abazikirizibwa; gy'otumira ebikolyo byaffe, n'okukaaba n'okulira mu lusuku lw'ebirabye bino. Odda ffe amaaso g'okusaasira, era oluvannyuma lw'obuggya buno, otulage ekibala ekikuze eky'olubuto lwo Yezu. O mukisa, O mukwano, Bikira Mariya omwofu! Tusengerera ffe Nnyina w'Omutukuvu wa Katonda, tusobole ukukoppa ebisuubizo bya Kristu. Amina.",
+   "sort_order": 6,
+   "created_at": "2026-03-10T19:26:51.296734+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "lg"
+   }
+  },
+  {
+   "id": "48e44e25-f8d0-4256-a421-0156cfd2ae69",
+   "category_id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Hail Holy Queen",
+   "body": "Hail, Holy Queen, Mother of Mercy, our life, our sweetness and our hope! To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary! Pray for us, O Holy Mother of God, that we may be made worthy of the promises of Christ. Amen.",
+   "sort_order": 6,
+   "created_at": "2026-03-10T19:23:38.018699+00:00",
+   "categories": {
+    "slug": "daily-rosary"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "1449dda0-4a94-45cf-aba5-01918fb01f5d",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "Act of Contrition (Night)",
+   "body": "O my God, because you are so good, I am very sorry that I have sinned against you. With the help of your grace I will try not to sin again.",
+   "sort_order": 7,
+   "created_at": "2026-03-10T20:47:55.905569+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  },
+  {
+   "id": "9f00d122-7b0a-4ece-adfa-d7d1095c7f4d",
+   "category_id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "language_id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "title": "All Praise to You",
+   "body": "All praise to you, O God, this night for the blessings of the light.\r\nKeep us, we pray, O King of kings,\r\nBeneath your own almighty wings.\r\n\r\nForgive us, Lord, through Christ Your Son,\r\nWhatever wrong this day we've done.\r\nYour peace give to the world, O Lord,\r\nThat we might live in one accord.\r\n\r\nEnlighten us, O blessed light,\r\nAnd give us rest throughout this night.\r\nO strengthen us, that for your sake,\r\nWe all may serve you when we wake.",
+   "sort_order": 8,
+   "created_at": "2026-03-10T20:47:55.905569+00:00",
+   "categories": {
+    "slug": "morning-evening"
+   },
+   "languages": {
+    "code": "en"
+   }
+  }
+ ],
+ "categories": [
+  {
+   "id": "be204f29-80f3-48f3-a04a-d43c0ba2a42e",
+   "slug": "daily-rosary",
+   "name": "Daily Rosary Mysteries",
+   "description": null,
+   "icon": null,
+   "sort_order": 1,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "5bd323ca-3ff4-4f98-a5a5-ea44a77e38eb",
+   "slug": "morning-evening",
+   "name": "Morning & Evening Prayers",
+   "description": null,
+   "icon": null,
+   "sort_order": 2,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "a28bffcf-10f3-456d-bf09-327f638b258b",
+   "slug": "novenas",
+   "name": "Novenas",
+   "description": null,
+   "icon": null,
+   "sort_order": 3,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "8258ef47-c1da-4b48-8d04-c6927dc9d4c5",
+   "slug": "chaplets",
+   "name": "Chaplets",
+   "description": null,
+   "icon": null,
+   "sort_order": 4,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "3ca15699-35ff-4dd3-a7e3-21f3fa19ffeb",
+   "slug": "litanies",
+   "name": "Litanies",
+   "description": null,
+   "icon": null,
+   "sort_order": 5,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "9819f05b-4730-4b34-9d93-a295c14cd755",
+   "slug": "afternoon",
+   "name": "Afternoon Prayers",
+   "description": null,
+   "icon": null,
+   "sort_order": 6,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "800ea42c-dfb2-42a2-b88d-2d57607aec73",
+   "slug": "other-prayers",
+   "name": "Other Prayers",
+   "description": null,
+   "icon": null,
+   "sort_order": 7,
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  }
+ ],
+ "languages": [
+  {
+   "id": "1ada9947-384a-4d96-adb6-7912d9910ebf",
+   "code": "en",
+   "name": "English",
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "69b0839f-fc93-4412-82d9-612d45490478",
+   "code": "lg",
+   "name": "Luganda",
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  },
+  {
+   "id": "1861575d-554e-446b-9429-2a9bcdb0574a",
+   "code": "rny",
+   "name": "Runyakole",
+   "created_at": "2026-03-09T20:27:05.481626+00:00"
+  }
+ ]
+}

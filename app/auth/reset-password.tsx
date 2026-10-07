@@ -8,8 +8,7 @@ import { AuthCard, AuthLink } from "../../components/AuthCard";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import { LoadingCard, Page } from "../../components/ui/page";
-
-const MIN_PASSWORD = 8;
+import { PasswordRules, isStrongPassword } from "../../components/auth/PasswordRules";
 
 // Where the link in a password-reset email lands. Supabase reads the session
 // from the link, so the user is signed in and can choose a new password.
@@ -18,7 +17,9 @@ export default function ResetPasswordScreen() {
   const { t } = useTranslation();
   const { session, loading, finishPasswordRecovery } = useAuthStore();
   const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
   const [fieldError, setFieldError] = useState<string | null>(null);
+  const [confirmError, setConfirmError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
@@ -46,8 +47,11 @@ export default function ResetPasswordScreen() {
 
   const submit = async () => {
     setError(null);
-    if (password.length < MIN_PASSWORD) return setFieldError(t("auth.passwordTooShort"));
-    setFieldError(null);
+    const strong = isStrongPassword(password);
+    const matches = password === confirm;
+    setFieldError(strong ? null : t("auth.passwordInvalid"));
+    setConfirmError(matches ? null : t("auth.passwordsDontMatch"));
+    if (!strong || !matches) return;
 
     setSubmitting(true);
     const { errorKey } = await updatePassword(password);
@@ -74,12 +78,30 @@ export default function ResetPasswordScreen() {
         </>
       ) : (
         <>
+          <View className="gap-2">
+            <Input
+              label={t("auth.newPassword")}
+              value={password}
+              onChangeText={(value) => {
+                setPassword(value);
+                setFieldError(null);
+              }}
+              error={fieldError}
+              secureTextEntry
+              autoComplete="new-password"
+              textContentType="newPassword"
+              returnKeyType="next"
+            />
+            <PasswordRules password={password} />
+          </View>
           <Input
-            label={t("auth.newPassword")}
-            value={password}
-            onChangeText={setPassword}
-            error={fieldError}
-            placeholder={t("auth.passwordTooShort")}
+            label={t("auth.confirmPassword")}
+            value={confirm}
+            onChangeText={(value) => {
+              setConfirm(value);
+              setConfirmError(null);
+            }}
+            error={confirmError}
             secureTextEntry
             autoComplete="new-password"
             textContentType="newPassword"

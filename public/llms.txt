@@ -1,0 +1,30 @@
+# Ave
+
+> Ave is a free Catholic prayer app built for Uganda. It offers the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily morning, midday and night prayers in English, Luganda (Oluganda) and Runyankore (Orunyankore). It runs in any web browser, can be installed on Android and iPhone from the browser, and works offline. No account is needed to pray.
+
+Key facts:
+- Website: https://ave-prayers.vercel.app
+- Price: free, no ads
+- Languages: English, Luganda, Runyankore
+- Optional free account: saves favourite prayers and tracks prayer progress (day streaks, novena days) across devices
+- Contact: stelarlabs@gmail.com
+
+## Prayers
+
+- [The Holy Rosary](https://ave-prayers.vercel.app/rosary): the Joyful, Sorrowful, Glorious and Luminous Mysteries
+- [Full guided Rosary](https://ave-prayers.vercel.app/prayer/session): step by step from the Apostles' Creed, through five decades with the Fatima Prayer, to the Hail Holy Queen
+- [Morning prayers](https://ave-prayers.vercel.app/daily-prayer/morning)
+- [Midday prayers](https://ave-prayers.vercel.app/daily-prayer/midday)
+- [Night prayers](https://ave-prayers.vercel.app/daily-prayer/night)
+- [Novena to Our Lady of Perpetual Help](https://ave-prayers.vercel.app/novena/2): nine days
+- [Novena to the 13 Blessed Souls](https://ave-prayers.vercel.app/novena/7): thirteen days
+- [Chaplet of the Divine Mercy](https://ave-prayers.vercel.app/chaplet/1)
+- [Stations of the Cross](https://ave-prayers.vercel.app/stations)
+- [Our Lady of Guadalupe](https://ave-prayers.vercel.app/other-prayer/guadalupe)
+- [Our Lady of Fatima](https://ave-prayers.vercel.app/other-prayer/fatima)
+- [Magnificat](https://ave-prayers.vercel.app/other-prayer/magnificat)
+
+## About
+
+- [Privacy Policy](https://ave-prayers.vercel.app/privacy)
+- [Terms & Conditions](https://ave-prayers.vercel.app/terms)
