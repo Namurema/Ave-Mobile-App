@@ -1,15 +1,15 @@
-// Ave service worker: makes the app installable and lets prayers that have
-// been opened once work offline.
+// Ave service worker: makes the app installable and lets it open offline.
 //
 // - Pages: network first, falling back to the cached app shell when offline.
 // - App code (/_expo/static, hashed file names): cache first.
-// - Prayer text from Supabase: network first, falling back to the last copy.
+// - Supabase requests are left alone: the app has a built-in copy of the
+//   prayers (lib/supabase/queries.ts), and forwarding cross-origin requests
+//   through the worker is a known source of failures in Safari on iOS.
 // Bump CACHE_VERSION to drop everything cached by an older version.
 
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const SHELL_CACHE = `ave-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `ave-static-${CACHE_VERSION}`;
-const DATA_CACHE = `ave-data-${CACHE_VERSION}`;
 
 const SHELL_FILES = [
   "/",
@@ -25,7 +25,7 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("activate", (event) => {
-  const current = [SHELL_CACHE, STATIC_CACHE, DATA_CACHE];
+  const current = [SHELL_CACHE, STATIC_CACHE];
   event.waitUntil(
     caches
       .keys()
@@ -74,13 +74,5 @@ self.addEventListener("fetch", (event) => {
       event.respondWith(networkFirst(request, SHELL_CACHE));
     }
     return;
-  }
-
-  // Public prayer data only. Account data (profiles, admin checks) is never
-  // cached, so nothing personal is left on a shared device.
-  const [, rest, version, table] = url.pathname.split("/");
-  const publicTable = rest === "rest" && version === "v1" && ["prayers", "categories", "languages"].includes(table);
-  if (url.hostname.endsWith(".supabase.co") && publicTable) {
-    event.respondWith(networkFirst(request, DATA_CACHE));
   }
 });

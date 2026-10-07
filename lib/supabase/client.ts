@@ -15,3 +15,13 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     detectSessionInUrl: Platform.OS === 'web',
   },
 });
+// Prayer text is public: fetch it without the signed-in session, so an expired
+// login or the database's rules for signed-in accounts can't block it
+export const contentClient = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    storageKey: 'ave-content',
+    persistSession: false,
+    autoRefreshToken: false,
+    detectSessionInUrl: false,
+  },
+});

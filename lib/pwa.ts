@@ -24,6 +24,14 @@ export function registerServiceWorker() {
 const UPDATE_CHECK_INTERVAL = 30 * 60 * 1000;
 const BUNDLE_PATTERN = /\/_expo\/static\/js\/web\/entry-[\w-]+\.js/;
 let updateReady = false;
+
+// Short code for the running build (from its bundle name), shown in Settings
+// to tell which version a phone is running
+export function buildId(): string | null {
+  if (typeof document === "undefined") return null;
+  const script = Array.from(document.scripts).find((s) => BUNDLE_PATTERN.test(s.src));
+  return script?.src.match(/entry-([w]{6})/)?.[1] ?? null;
+}
 const updateListeners = new Set<() => void>();
 
 async function checkForUpdate() {

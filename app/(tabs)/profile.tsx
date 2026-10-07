@@ -1,5 +1,6 @@
 import { View, Text, Platform } from "react-native";
 import { InstallCard } from "../../components/InstallCard";
+import { buildId } from "../../lib/pwa";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -126,7 +127,7 @@ export default function ProfileScreen() {
           <Text className="text-sm leading-6 text-muted-foreground">
             {t("settings.aboutText")}
           </Text>
-          <Text className="mt-2 text-xs text-muted-foreground">{t("settings.version")} 1.0.0</Text>
+          <Text className="mt-2 text-xs text-muted-foreground">{t("settings.version")} 1.0.0{buildId() ? ` (${buildId()})` : ""}</Text>
         </Card>
       </Section>
 

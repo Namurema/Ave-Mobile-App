@@ -1,4 +1,4 @@
-import { supabase } from './client';
+import { supabase, contentClient } from './client';
 import { translateContent, hasContentTranslation } from '../i18n/content';
 import snapshot from '../../constants/content/prayerSnapshot.json';
 
@@ -19,9 +19,10 @@ async function withFallback<T>(
     });
     const { data, error } = await Promise.race([query, timeout]);
     if (error) throw error;
-    if (data) return data;
+    // An empty answer is treated as a failure when the built-in copy has rows
+    if (data && !(Array.isArray(data) && data.length === 0)) return data;
   } catch {
-    // Unreachable, slow or failing: use the built-in copy
+    // Unreachable, slow, failing or empty: use the built-in copy
   } finally {
     clearTimeout(timer);
   }
@@ -39,14 +40,14 @@ function builtInPrayers(categorySlug: string, languageCode: string) {
 // Fetch all categories
 export async function getCategories() {
   return withFallback(
-    supabase.from('categories').select('*').order('sort_order'),
+    contentClient.from('categories').select('*').order('sort_order'),
     () => [...snapshot.categories].sort(bySortOrder)
   );
 }
 
 // Fetch all languages
 export async function getLanguages() {
-  return withFallback(supabase.from('languages').select('*'), () => snapshot.languages);
+  return withFallback(contentClient.from('languages').select('*'), () => snapshot.languages);
 }
 
 // Fetch Rosary prayers by language
@@ -57,7 +58,7 @@ export async function getRosaryPrayers(languageCode: string) {
 // Fetch prayers by category slug and language
 export async function getPrayersByCategory(categorySlug: string, languageCode: string): Promise<any[]> {
   return withFallback(
-    supabase
+    contentClient
       .from('prayers')
       .select(`
         *,
