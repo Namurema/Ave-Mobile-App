@@ -839,6 +839,14 @@
     "update.ready": {
       "en": "A new version of Ave is ready.",
       "text": "Enkola empya eya Ave etuuse."
+    },
+    "settings.activity": {
+      "en": "Your activity",
+      "text": "Ekikolwa kyo"
+    },
+    "auth.notNow": {
+      "en": "Not now",
+      "text": "Si kati"
     }
   },
   "rny": {
@@ -1681,6 +1689,14 @@
     "update.ready": {
       "en": "A new version of Ave is ready.",
       "text": "Ekika kisya kya Ave kyeteekateekire."
+    },
+    "settings.activity": {
+      "en": "Your activity",
+      "text": "Omurimo gwawe"
+    },
+    "auth.notNow": {
+      "en": "Not now",
+      "text": "Tihariho hati"
     }
   },
   "content-lg": {

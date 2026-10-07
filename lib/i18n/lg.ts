@@ -152,6 +152,7 @@ export default {
   settings: {
     title: "Ebyokutegeka",
     description: "Tegeka engeri gy'okozesaamu Ave.",
+    activity: "Ekikolwa kyo",
     language: "Olulimi",
     languageHint: "Ekozesebwa mu kusaba n'okukozesa app",
     account: "Akawunti",
@@ -220,6 +221,7 @@ export default {
     confirmEmailDescription: "Twakutumidde akakwate okukakasa ku email yo. Kiggule okumaliriza okutondawo akawunti yo.",
     backToSignIn: "Ddamu okuyingira",
     continueToHome: "Genda mu maaso ku Ave",
+    notNow: "Si kati",
     nameRequired: "Yingiza erinnya lyo",
     emailInvalid: "Teekamu endagiriro ya email entuufu",
     passwordTooShort: "Kozesa waakiri abantu 8",

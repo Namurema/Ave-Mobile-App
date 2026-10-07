@@ -12,7 +12,7 @@ export const novenaContent: Record<string, {
     title: "Novena to Our Lady of Perpetual Help",
     subtitle: "Pray these prayers once a day for 9 days",
     icon: "",
-    color: "#007C7C",
+    color: "#01758F",
     sections: [
       {
         heading: "How to Pray This Novena",

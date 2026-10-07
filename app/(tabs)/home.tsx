@@ -9,7 +9,6 @@ import Footer from "../../components/ui/Footer";
 import { TopNav } from "../../components/ui/AppNav";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
-import { InstallCard } from "../../components/InstallCard";
 import { formatDate } from "../../lib/i18n/helpers";
 import { useContent } from "../../lib/i18n/content";
 import { scripture } from "../../constants/content/scripture";
@@ -138,6 +137,14 @@ export default function HomeScreen() {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="w-full max-w-6xl self-center px-4 md:px-6 pt-6 pb-12 gap-4 lg:flex-row lg:items-start lg:gap-6">
+          {/* Back, on phones only: to the previous screen, or the welcome screen */}
+          <Pressable
+            onPress={() => (router.canGoBack() ? router.back() : router.replace("/splash"))}
+            className="md:hidden self-start -ml-2 -mb-1 h-9 px-2 rounded-md justify-center active:bg-muted"
+          >
+            <Text className="text-sm font-medium text-muted-foreground">← {t("common.back")}</Text>
+          </Pressable>
+
           {/* Left sidebar */}
           <View className="gap-4 lg:w-64">
             <Card className="overflow-hidden">
@@ -159,22 +166,34 @@ export default function HomeScreen() {
               </View>
             </Card>
 
-            <SidebarList
-              title={t("progress.title")}
-              rows={progressRows}
-              footer={{ label: t("progress.viewProgress"), route: "/progress" }}
-            />
+            {/* Phones: compact buttons; the full cards only on wide screens */}
+            <View className="flex-row gap-2 lg:hidden">
+              <Button variant="outline" className="flex-1" onPress={() => router.push("/progress")}>
+                {t("progress.title")}
+              </Button>
+              <Button variant="outline" className="flex-1" onPress={() => router.push("/favourites")}>
+                {favourites.length > 0 ? `${t("favourites.title")} (${favourites.length})` : t("favourites.title")}
+              </Button>
+            </View>
 
-            <InstallCard />
+            <View className="hidden lg:flex">
+              <SidebarList
+                title={t("progress.title")}
+                rows={progressRows}
+                footer={{ label: t("progress.viewProgress"), route: "/progress" }}
+              />
+            </View>
+
           </View>
 
           {/* Center feed */}
           <View className="gap-4 lg:flex-1 min-w-0">
-            {/* Quick start, like a "start a post" box */}
-            <Card className="p-4 gap-3">
+            {/* Quick start, like a "start a post" box (wide screens; phones get
+                the daily prayers below the Rosary card instead) */}
+            <Card className="hidden lg:flex p-4 gap-3">
               <Pressable
                 onPress={() => router.push("/(tabs)/rosary")}
-                className="h-12 justify-center rounded-full border border-input px-5 web:hover:bg-muted web:transition-colors"
+                className="hidden lg:flex h-12 justify-center rounded-full border border-input px-5 web:hover:bg-muted web:transition-colors"
               >
                 <Text className="text-sm font-medium text-muted-foreground">
                   {t("home.prayTodaysRosary")}: {todaysMystery}
@@ -216,6 +235,24 @@ export default function HomeScreen() {
               </View>
             </Card>
 
+            {/* Daily prayers, below the Rosary card (phones) */}
+            <Card className="lg:hidden overflow-hidden">
+              <Text className="px-4 pt-4 pb-1 text-base font-semibold text-card-foreground">
+                {t("home.dailyPrayers")}
+              </Text>
+              <View className="flex-row px-2 pb-2">
+                {dailyPrayers.map((prayer) => (
+                  <Pressable
+                    key={prayer.route}
+                    onPress={() => router.push(prayer.route as any)}
+                    className="flex-1 items-center rounded-md px-2 py-3 active:bg-muted"
+                  >
+                    <Text className="text-sm font-semibold text-primary text-center">{prayer.title}</Text>
+                  </Pressable>
+                ))}
+              </View>
+            </Card>
+
             {/* Prayer of the day */}
             <Card className="overflow-hidden">
               <View className="px-5 py-3 border-b border-border">
@@ -251,11 +288,13 @@ export default function HomeScreen() {
           {/* Right sidebar */}
           <View className="gap-4 lg:w-80">
             {favouriteRows.length > 0 && (
-              <SidebarList
-                title={t("favourites.title")}
-                rows={favouriteRows}
-                footer={{ label: t("favourites.viewAll"), route: "/favourites" }}
-              />
+              <View className="hidden lg:flex">
+                <SidebarList
+                  title={t("favourites.title")}
+                  rows={favouriteRows}
+                  footer={{ label: t("favourites.viewAll"), route: "/favourites" }}
+                />
+              </View>
             )}
 
             <SidebarList

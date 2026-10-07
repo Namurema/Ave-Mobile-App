@@ -20,12 +20,13 @@ const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous
 
 // The Rosary prayers in Supabase ("daily-rosary"), by sort_order, which is the
 // same in every language
-type PrayerId = "creed" | "ourFather" | "hailMary" | "gloryBe" | "hailHolyQueen";
+type PrayerId = "creed" | "ourFather" | "hailMary" | "gloryBe" | "fatima" | "hailHolyQueen";
 const SORT_ORDER: Record<PrayerId, number> = {
   creed: 1,
   ourFather: 2,
   hailMary: 3,
   gloryBe: 4,
+  fatima: 5,
   hailHolyQueen: 6,
 };
 
@@ -35,7 +36,8 @@ type Step =
 
 // The whole Rosary in order:
 //   opening: Apostles' Creed, Our Father, 3 Hail Marys, Glory Be
-//   each of the 5 decades: the mystery, Our Father, 10 Hail Marys, Glory Be
+//   each of the 5 decades: the mystery, Our Father, 10 Hail Marys, Glory Be,
+//     Fatima Prayer
 //   closing: Hail Holy Queen
 const STEPS: Step[] = [
   { kind: "prayer", prayer: "creed", section: "opening" },
@@ -47,6 +49,7 @@ const STEPS: Step[] = [
     { kind: "prayer", prayer: "ourFather", section: "decade", decade },
     { kind: "prayer", prayer: "hailMary", section: "decade", decade, repeat: 10 },
     { kind: "prayer", prayer: "gloryBe", section: "decade", decade },
+    { kind: "prayer", prayer: "fatima", section: "decade", decade },
   ]),
   { kind: "prayer", prayer: "hailHolyQueen", section: "closing" },
 ];

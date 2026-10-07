@@ -9,6 +9,7 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { LOGIN_ENABLED } from "../constants/features";
 import { registerServiceWorker, startUpdateChecks } from "../lib/pwa";
 import { UpdateBanner } from "../components/UpdateBanner";
+import { InstallDialog } from "../components/InstallDialog";
 import { startUserDataSync } from "../store/userDataStore";
 import { AuthDialog } from "../components/auth/AuthDialog";
 
@@ -34,6 +35,7 @@ export default function RootLayout() {
         }}
       />
       <AuthDialog />
+      <InstallDialog />
       <UpdateBanner />
     </SafeAreaProvider>
   );

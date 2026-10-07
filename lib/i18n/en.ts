@@ -150,6 +150,7 @@ export default {
   settings: {
     title: "Settings",
     description: "Personalise how you use Ave.",
+    activity: "Your activity",
     language: "Language",
     languageHint: "Used for prayers and the app",
     account: "Account",
@@ -218,6 +219,7 @@ export default {
     confirmEmailDescription: "We sent a confirmation link to your email. Open it to finish creating your account.",
     backToSignIn: "Back to sign in",
     continueToHome: "Continue to Ave",
+    notNow: "Not now",
     nameRequired: "Enter your name",
     emailInvalid: "Enter a valid email address",
     passwordTooShort: "Use at least 8 characters",

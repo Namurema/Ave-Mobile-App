@@ -230,7 +230,7 @@ export function LoadingCard({ label }: { label?: string }) {
   const { t } = useTranslation();
   return (
     <Card className="p-8 items-center gap-3">
-      <ActivityIndicator color="#007C7C" />
+      <ActivityIndicator color="#01758F" />
       <Text className="text-sm text-muted-foreground">{label ?? t("common.loading")}</Text>
     </Card>
   );

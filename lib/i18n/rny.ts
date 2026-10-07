@@ -152,6 +152,7 @@ export default {
   settings: {
     title: "Ebyokutebekanisa",
     description: "Kora ngu okorese Ave.",
+    activity: "Omurimo gwawe",
     language: "Orurimi",
     languageHint: "Ekikozesiibwe omu kushaba hamwe n'omukutu",
     account: "Akawunti",
@@ -220,6 +221,7 @@ export default {
     confirmEmailDescription: "Tukakusindikira akakwate k'okwikiriza omu email yaawe. Kigwireho okuhendera okukora akaunti yaawe.",
     backToSignIn: "Okugaruka omu kutaahamu",
     continueToHome: "Gumizamu ku Ave",
+    notNow: "Tihariho hati",
     nameRequired: "Taahamu eiziina ryawe",
     emailInvalid: "Taahamu endagiriro ya email ehikire",
     passwordTooShort: "Kozesa haakiri abantu 8",

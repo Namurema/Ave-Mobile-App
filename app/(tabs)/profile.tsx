@@ -5,11 +5,13 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useAuthStore, displayName } from "../../store/authStore";
 import { useAuthDialog } from "../../store/authDialogStore";
+import { useUserDataStore } from "../../store/userDataStore";
+import { currentStreak, splitLogId } from "../../lib/progress";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { LOGIN_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
-import { Page, PageHeader, Section } from "../../components/ui/page";
+import { Page, PageHeader, Section, ListCard } from "../../components/ui/page";
 
 const languageLabels: Record<string, string> = {
   en: "English",
@@ -24,6 +26,9 @@ export default function ProfileScreen() {
   const { language } = useLanguageStore();
   const [signingOut, setSigningOut] = useState(false);
   const openAuth = useAuthDialog((state) => state.open);
+  const log = useUserDataStore((state) => state.log);
+  const favouriteCount = useUserDataStore((state) => state.favourites.length);
+  const streak = currentStreak(new Set([...log].map((id) => splitLogId(id).day)));
 
   const handleSignOut = async () => {
     setSigningOut(true);
@@ -36,6 +41,25 @@ export default function ProfileScreen() {
   return (
     <Page sidebar={false}>
       <PageHeader title={t("settings.title")} description={t("settings.description")} />
+
+      <Section title={t("settings.activity")}>
+        <ListCard
+          items={[
+            {
+              key: "progress",
+              title: t("progress.title"),
+              description: `${t("progress.streak")}: ${streak}`,
+              onPress: () => router.push("/progress"),
+            },
+            {
+              key: "favourites",
+              title: t("favourites.title"),
+              description: `${favouriteCount}`,
+              onPress: () => router.push("/favourites"),
+            },
+          ]}
+        />
+      </Section>
 
       <Section title={t("settings.language")}>
         <Card className="p-4 flex-row items-center gap-3">

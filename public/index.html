@@ -9,7 +9,7 @@
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#007C7C" />
+    <meta name="theme-color" content="#01758F" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -28,6 +28,15 @@
       body {
         overflow: hidden;
         background-color: #fafafa;
+      }
+      /* Glassmorphism (components/ui/glass.tsx) */
+      [data-glass="panel"] {
+        -webkit-backdrop-filter: blur(24px) saturate(160%);
+        backdrop-filter: blur(24px) saturate(160%);
+      }
+      [data-glass="backdrop"] {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
       }
       /* These styles make the root element full-height */
       #root {

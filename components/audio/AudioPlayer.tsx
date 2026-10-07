@@ -13,7 +13,7 @@ function formatTime(ms: number) {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-export default function AudioPlayer({ url, color = "#007C7C" }: AudioPlayerProps) {
+export default function AudioPlayer({ url, color = "#01758F" }: AudioPlayerProps) {
   const { isPlaying, duration, position, loadAndPlay, togglePlayPause, seek, currentTrackUrl } =
     useAudioStore();
 

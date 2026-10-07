@@ -71,7 +71,7 @@ export default function ScheduleScreen() {
               <Switch
                 value={schedule[prayer.id]?.enabled ?? false}
                 onValueChange={() => togglePrayer(prayer.id)}
-                trackColor={{ false: "#E4E4E7", true: "#007C7C" }}
+                trackColor={{ false: "#E4E4E7", true: "#01758F" }}
                 thumbColor="white"
               />
             </View>

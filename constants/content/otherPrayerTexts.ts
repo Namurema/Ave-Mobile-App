@@ -46,7 +46,7 @@ export const prayerContent: Record<string, {
     title: "Magnificat",
     subtitle: "The Canticle of Mary (Luke 1:46-55)",
     icon: "",
-    color: "#007C7C",
+    color: "#01758F",
     audioUrl: "https://mwleayefcrmtzhqymlvf.supabase.co/storage/v1/object/public/audio/en/magnificant.mp3",
     sections: [
       {

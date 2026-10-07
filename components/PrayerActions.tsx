@@ -1,8 +1,7 @@
 import { useMemo } from "react";
-import { View, Text, Pressable } from "react-native";
+import { View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
-import { useAuthStore } from "../store/authStore";
-import { useAuthDialog } from "../store/authDialogStore";
+import { withAccountPrompt } from "../lib/accountPrompt";
 import { useUserDataStore, usePrayedToday, useIsFavourite } from "../store/userDataStore";
 import { novenaProgress, splitLogId } from "../lib/progress";
 import { itemKey, novenaLength } from "../lib/items";
@@ -20,23 +19,11 @@ export function FavouriteButton({ itemKey: key }: { itemKey: string }) {
       size="sm"
       variant={saved ? "default" : "outline"}
       aria-pressed={saved}
-      onPress={() => toggleFavourite(key)}
+      // Saving asks guests to sign in first; removing never does
+      onPress={() => (saved ? toggleFavourite(key) : withAccountPrompt(() => toggleFavourite(key)))}
     >
       {saved ? t("favourites.saved") : t("favourites.save")}
     </Button>
-  );
-}
-
-function SignInHint() {
-  const { t } = useTranslation();
-  const session = useAuthStore((state) => state.session);
-  if (session) return null;
-  return (
-    <Pressable onPress={() => useAuthDialog.getState().open("signIn")}>
-      <Text className="text-sm leading-5 text-muted-foreground">
-        {t("progress.signInToKeep")} <Text className="font-semibold text-primary">{t("auth.signIn")}</Text>
-      </Text>
-    </Pressable>
   );
 }
 
@@ -55,11 +42,10 @@ export function PrayedCard({ itemKey: key, label }: { itemKey: string; label?: s
           </Button>
         </View>
       ) : (
-        <Button size="lg" onPress={() => markPrayed(key)}>
+        <Button size="lg" onPress={() => withAccountPrompt(() => markPrayed(key))}>
           {label ?? t("progress.markPrayed")}
         </Button>
       )}
-      <SignInHint />
     </Card>
   );
 }

@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
 import { Modal, View, Text, Pressable, ScrollView } from "react-native";
 import { cn } from "../../lib/utils";
+import { glassTag } from "./glass";
 
 // shadcn/ui Dialog, React Native port: a dimmed backdrop with a centered card.
 // Tapping the backdrop, "Close", Escape (web) or Back (Android) closes it.
+// `glass`: the page behind is blurred and tinted teal, and the card is frosted.
 export function Dialog({
   open,
   onClose,
@@ -12,6 +14,7 @@ export function Dialog({
   closeLabel,
   children,
   className,
+  glass,
 }: {
   open: boolean;
   onClose: () => void;
@@ -20,6 +23,7 @@ export function Dialog({
   closeLabel: string;
   children: ReactNode;
   className?: string;
+  glass?: boolean;
 }) {
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
@@ -27,16 +31,21 @@ export function Dialog({
         <Pressable
           aria-label={closeLabel}
           onPress={onClose}
-          className="absolute inset-0 bg-black/50"
+          className={cn("absolute inset-0", glass ? "bg-primary-dark/60" : "bg-black/50")}
+          {...(glass ? glassTag("backdrop") : {})}
         />
         <View
           role="dialog"
           aria-modal
           aria-label={title}
           className={cn(
-            "w-full max-w-md max-h-full rounded-xl border border-border bg-background shadow-lg",
+            "w-full max-w-md max-h-full",
+            glass
+              ? "rounded-2xl border border-white/60 bg-white/75 shadow-2xl"
+              : "rounded-xl border border-border bg-background shadow-lg",
             className
           )}
+          {...(glass ? glassTag("panel") : {})}
         >
           <ScrollView keyboardShouldPersistTaps="handled" contentContainerClassName="p-6 gap-5">
             <View className="flex-row items-start gap-3">
