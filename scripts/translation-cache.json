@@ -1007,6 +1007,198 @@
     "feedback.failed": {
       "en": "Couldn't send your feedback. Check your connection and try again, or email us at",
       "text": "Tetwasobola kutuusa kuddamu kwo. Kebera enkwatagana yo era ogezeeko nate, oba otuweere ebbaluwa ku"
+    },
+    "common.min": {
+      "en": "min",
+      "text": "min"
+    },
+    "feedback.tooMany": {
+      "en": "Thank you for all your feedback. Please wait a few minutes before sending more.",
+      "text": "Webale nnyo olw'okuddamu kwonna. Bambi linda eddakiika ntono nga tonatuma birala."
+    },
+    "auth.errors.waitBeforeResend": {
+      "en": "We just sent you an email. Please wait a minute before asking for another one.",
+      "text": "Tukusindikidde email. Nkwegayirira olindirire akaseera katono nga tonasaba endala."
+    },
+    "progress.bestStreak": {
+      "en": "Best streak",
+      "text": "Olukalala olusinga obulungi"
+    },
+    "progress.nextMilestone": {
+      "en": "Next milestone",
+      "text": "Ekigendererwa ekiddako"
+    },
+    "progress.weeklyGoal": {
+      "en": "Weekly goal: pray 5 days",
+      "text": "Ekiruubirirwa eky'omwezi: okusaba ennaku 5"
+    },
+    "progress.weeklyGoalDone": {
+      "en": "Weekly goal reached. Well done!",
+      "text": "Ekigendererwa ky'omwezi kituukiddwako. Weebale nnyo!"
+    },
+    "progress.milestoneReached": {
+      "en": "Milestone reached",
+      "text": "Ekigendererwa kituukiddwako"
+    },
+    "progress.milestoneKeepGoing": {
+      "en": "Thanks be to God. Keep going!",
+      "text": "Webale Katonda. Genda mu maaso!"
+    },
+    "progress.daysToGo": {
+      "en": "more days to go. Keep praying!",
+      "text": "Ennaku nnyingi ezisigaddeyo. Weeyongere okusaba!"
+    },
+    "share.share": {
+      "en": "Share",
+      "text": "Gabanako"
+    },
+    "share.copied": {
+      "en": "Link copied",
+      "text": "Link ekopiddwa"
+    },
+    "routine.title": {
+      "en": "Prayer routine",
+      "text": "Enkola y'okusaba"
+    },
+    "share.prayWithMe": {
+      "en": "Pray with me on Ave",
+      "text": "Saba nange ku Ave"
+    },
+    "share.copyThis": {
+      "en": "Copy this link",
+      "text": "Koppa akakubo kano"
+    },
+    "routine.prayersCount": {
+      "en": "prayers",
+      "text": "okusaba"
+    },
+    "routine.none": {
+      "en": "Not set up yet",
+      "text": "Tekinnategekebwa bulungi"
+    },
+    "routine.today": {
+      "en": "Today's routine",
+      "text": "Enteekateeka y'olunaku"
+    },
+    "routine.description": {
+      "en": "Choose the prayers you want to pray each day and week.",
+      "text": "Londa essaala z'oyagala okusaba buli lunaku ne buli wiiki."
+    },
+    "routine.prayed": {
+      "en": "prayed",
+      "text": "yasaba"
+    },
+    "routine.yourWeek": {
+      "en": "Your week",
+      "text": "Wiiki yo"
+    },
+    "routine.restDay": {
+      "en": "Nothing planned for today",
+      "text": "Tewali kintu kyategekeddwa leero"
+    },
+    "routine.everyDay": {
+      "en": "Every day",
+      "text": "Buli lunaku"
+    },
+    "routine.cancel": {
+      "en": "Cancel",
+      "text": "Kusazaamu"
+    },
+    "routine.edit": {
+      "en": "Edit",
+      "text": "Kola ku ky'okukyusa"
+    },
+    "routine.remove": {
+      "en": "Remove routine",
+      "text": "Ggyamu enkola eya bulijjo"
+    },
+    "routine.save": {
+      "en": "Save routine",
+      "text": "Okutereka ebyetaagisa bulijjo"
+    },
+    "routine.add": {
+      "en": "Add",
+      "text": "Gatta"
+    },
+    "routine.added": {
+      "en": "Added",
+      "text": "Egattiddwa"
+    },
+    "routine.suggestions": {
+      "en": "Suggested routines",
+      "text": "Enkola ezisembebwa"
+    },
+    "routine.choose": {
+      "en": "Choose prayers and days",
+      "text": "Londa essaala n'ennaku"
+    },
+    "routine.makeOwn": {
+      "en": "Make my own",
+      "text": "Nkola eyange"
+    },
+    "routine.otherSuggestions": {
+      "en": "Other suggestions",
+      "text": "Okusaba okulala"
+    },
+    "routine.use": {
+      "en": "Use this routine",
+      "text": "Kozesa enkola eno"
+    },
+    "routine.editFirst": {
+      "en": "Change it first",
+      "text": "Kikyusaako okusooka"
+    },
+    "routine.ignore": {
+      "en": "Don't suggest routines",
+      "text": "Tokubiriza nkola"
+    },
+    "routine.promptTitle": {
+      "en": "Build a prayer routine",
+      "text": "Kola enkola y'okusaba"
+    },
+    "routine.ownHint": {
+      "en": "None of these fit? Build your own routine from any prayer in Ave.",
+      "text": "Tewali ku bino ekikwatagana? Zimba enkola yo ey'okukola okuva mu kusaba kwonna mu Ave."
+    },
+    "routine.promptText": {
+      "en": "Ave can suggest daily and weekly prayers for you. Save one, change it, or skip it.",
+      "text": "Ave asobola okukuteerawo essaala z'okusaba buli lunaku oba buli wiiki. Okkiriza emu, ogikyusaamu, oba ogibuuka."
+    },
+    "routine.simpleTitle": {
+      "en": "Morning and night",
+      "text": "Enkya n'ekiro"
+    },
+    "routine.seeSuggestions": {
+      "en": "See suggestions",
+      "text": "Laba ku magezi agasembyeyo"
+    },
+    "routine.simpleDescription": {
+      "en": "Begin and end each day with prayer.",
+      "text": "Tandika era okomekkereze buli lunaku n'okusaba."
+    },
+    "routine.rosaryTitle": {
+      "en": "Daily Rosary",
+      "text": "Okusoma essaala ya Rosary buli lunaku"
+    },
+    "routine.weeklyTitle": {
+      "en": "Friday and Saturday devotions",
+      "text": "Okusaba okwa Lwakutaano ne Lwamukaaga"
+    },
+    "routine.rosaryDescription": {
+      "en": "Morning and night prayers, with the Rosary every day.",
+      "text": "Okusaba ku makya ne mu kiro, n'okusoma esapuli buli lunaku."
+    },
+    "routine.fullTitle": {
+      "en": "A full day of prayer",
+      "text": "Olunaku olujjuvu olw'okusaba"
+    },
+    "routine.weeklyDescription": {
+      "en": "The Divine Mercy Chaplet and the Stations of the Cross on Fridays, and the Magnificat for Our Lady on Saturdays.",
+      "text": "Essaala ya Divine Mercy Chaplet n'eya Stations of the Cross ku Lwokutaano, ne Magnificat eya Our Lady ku Lwomukaaga."
+    },
+    "routine.fullDescription": {
+      "en": "Morning, midday and night prayers and the Rosary every day, with the Divine Mercy Chaplet on Fridays.",
+      "text": "Okusaba okw'oku makya, okw'emisana n'okw'ekiro n'okusoma Rosari buli lunaku, n'okusaba kwa Divine Mercy Chaplet ku Lwokutaano."
     }
   },
   "rny": {
@@ -2017,6 +2209,198 @@
     "feedback.failed": {
       "en": "Couldn't send your feedback. Check your connection and try again, or email us at",
       "text": "Tikabaasa kwohereza okugarukamu kwawe. Kyebera enkoragana yaawe kandi ogaruke ogyezeho, nainga otusindikire e-mayiro ahari"
+    },
+    "common.min": {
+      "en": "min",
+      "text": "min"
+    },
+    "feedback.tooMany": {
+      "en": "Thank you for all your feedback. Please wait a few minutes before sending more.",
+      "text": "Webare okugarukamu kwawe kwona. Nyabura we rinda edakiika nkye otakasindikire endiijo."
+    },
+    "auth.errors.waitBeforeResend": {
+      "en": "We just sent you an email. Please wait a minute before asking for another one.",
+      "text": "Tukakusindikira e-mayiro. Nyabura we rinda edakiika emwe otakashaba endiijo."
+    },
+    "progress.nextMilestone": {
+      "en": "Next milestone",
+      "text": "Ekigyendererwa ekirikukurataho"
+    },
+    "progress.bestStreak": {
+      "en": "Best streak",
+      "text": "Omuhanda ogurikukirayo oburungi"
+    },
+    "progress.weeklyGoalDone": {
+      "en": "Weekly goal reached. Well done!",
+      "text": "Ekigyendererwa ky'esande kikahikirizibwa. Okozire kurungi!"
+    },
+    "progress.weeklyGoal": {
+      "en": "Weekly goal: pray 5 days",
+      "text": "Ekigyendererwa ky'omushomo: kushaba ebiro 5"
+    },
+    "share.share": {
+      "en": "Share",
+      "text": "Gabana"
+    },
+    "progress.milestoneReached": {
+      "en": "Milestone reached",
+      "text": "Ekigyendererwa kyahikiriziibwe"
+    },
+    "progress.milestoneKeepGoing": {
+      "en": "Thanks be to God. Keep going!",
+      "text": "Esiima n'eya Ruhanga. Guma noogyenda!"
+    },
+    "progress.daysToGo": {
+      "en": "more days to go. Keep praying!",
+      "text": "Hariho ebiro bingi ebirikugyenda. Guma nooshaba!"
+    },
+    "share.copyThis": {
+      "en": "Copy this link",
+      "text": "Kopa akakwate aka"
+    },
+    "routine.title": {
+      "en": "Prayer routine",
+      "text": "Omuringo gw'okushaba"
+    },
+    "share.copied": {
+      "en": "Link copied",
+      "text": "Akakwate kakahindwirwe"
+    },
+    "share.prayWithMe": {
+      "en": "Pray with me on Ave",
+      "text": "Shaba hamwe naanye aha Ave"
+    },
+    "routine.none": {
+      "en": "Not set up yet",
+      "text": "Tikakatandikirweho"
+    },
+    "routine.prayersCount": {
+      "en": "prayers",
+      "text": "Okushaba"
+    },
+    "routine.today": {
+      "en": "Today's routine",
+      "text": "Omuringo gw'okukora ogw'erizooba"
+    },
+    "routine.description": {
+      "en": "Choose the prayers you want to pray each day and week.",
+      "text": "Toorana okushaba oku orikwenda kushaba buri izooba n'esande."
+    },
+    "routine.prayed": {
+      "en": "prayed",
+      "text": "akashaba"
+    },
+    "routine.yourWeek": {
+      "en": "Your week",
+      "text": "Wiiki yaawe"
+    },
+    "routine.restDay": {
+      "en": "Nothing planned for today",
+      "text": "Tihariho eki tebekanisiibwe eriizooba"
+    },
+    "routine.everyDay": {
+      "en": "Every day",
+      "text": "Buri izooba"
+    },
+    "routine.edit": {
+      "en": "Edit",
+      "text": "Okuhindura"
+    },
+    "routine.cancel": {
+      "en": "Cancel",
+      "text": "Kushazamu"
+    },
+    "routine.save": {
+      "en": "Save routine",
+      "text": "Okubiika ebirikukorwa"
+    },
+    "routine.remove": {
+      "en": "Remove routine",
+      "text": "Yihamu emigyenzo"
+    },
+    "routine.added": {
+      "en": "Added",
+      "text": "Okwongyeraho"
+    },
+    "routine.add": {
+      "en": "Add",
+      "text": "Okwongyeraho"
+    },
+    "routine.choose": {
+      "en": "Choose prayers and days",
+      "text": "Toorana okushaba hamwe n'ebiro"
+    },
+    "routine.use": {
+      "en": "Use this routine",
+      "text": "Kozesa omuringo ogu"
+    },
+    "routine.editFirst": {
+      "en": "Change it first",
+      "text": "Gihindure omu kubanza"
+    },
+    "routine.otherSuggestions": {
+      "en": "Other suggestions",
+      "text": "Ebindi ebirikuteebwaho"
+    },
+    "routine.suggestions": {
+      "en": "Suggested routines",
+      "text": "Emiringo y'okukuratira"
+    },
+    "routine.ignore": {
+      "en": "Don't suggest routines",
+      "text": "Otakagira eki orikuteekateeka"
+    },
+    "routine.makeOwn": {
+      "en": "Make my own",
+      "text": "Kora eyangye"
+    },
+    "routine.promptTitle": {
+      "en": "Build a prayer routine",
+      "text": "Okwombeka omuringo gw'okushaba"
+    },
+    "routine.ownHint": {
+      "en": "None of these fit? Build your own routine from any prayer in Ave.",
+      "text": "Tihariho ekirikuhikaana? Yombeka omuringo gwawe kuruga omu kushaba kwona omuri Ave."
+    },
+    "routine.seeSuggestions": {
+      "en": "See suggestions",
+      "text": "Reeba ebiteiso"
+    },
+    "routine.simpleTitle": {
+      "en": "Morning and night",
+      "text": "Omukasheeshe n'ekiro"
+    },
+    "routine.simpleDescription": {
+      "en": "Begin and end each day with prayer.",
+      "text": "Buri izooba otandike kandi ohererukye n'okushaba."
+    },
+    "routine.promptText": {
+      "en": "Ave can suggest daily and weekly prayers for you. Save one, change it, or skip it.",
+      "text": "Nimbaasa kukutebeekanisiza okushaba buriizooba na buri sande. Kubiika kimwe, okihindure, nari okirekye."
+    },
+    "routine.rosaryDescription": {
+      "en": "Morning and night prayers, with the Rosary every day.",
+      "text": "Okushaba omukasheeshe n'ekiro, hamwe na rosari buri izooba."
+    },
+    "routine.weeklyTitle": {
+      "en": "Friday and Saturday devotions",
+      "text": "Okushaba kw'orwakataano n'orwamukaaga"
+    },
+    "routine.rosaryTitle": {
+      "en": "Daily Rosary",
+      "text": "Okushoma esapuri buriizooba"
+    },
+    "routine.fullTitle": {
+      "en": "A full day of prayer",
+      "text": "Eizooba ryona ery'okushaba"
+    },
+    "routine.weeklyDescription": {
+      "en": "The Divine Mercy Chaplet and the Stations of the Cross on Fridays, and the Magnificat for Our Lady on Saturdays.",
+      "text": "Chapleti y'embabazi za Ruhanga hamwe n'okutambura kw'omusharaba aha rwakataano, na Magnificat ya Our Lady aha rwamukaaga."
+    },
+    "routine.fullDescription": {
+      "en": "Morning, midday and night prayers and the Rosary every day, with the Divine Mercy Chaplet on Fridays.",
+      "text": "Okushaba omukasheeshe, omu shaaha z'ekiro n'omu kiro hamwe na Rosary buri izooba, n'okushaba kwa Divine Mercy Chaplet aha rwakataano."
     }
   },
   "content-lg": {

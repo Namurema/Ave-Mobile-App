@@ -11,6 +11,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { FormError } from "../components/auth/forms";
+import { MAX_LENGTH, rateLimit } from "../lib/limits";
 
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 
@@ -34,13 +35,21 @@ export default function FeedbackScreen() {
     setFieldErrors(errors);
     setError(null);
     if (errors.message || errors.email) return;
+    const limit = rateLimit("feedback");
+    if (limit.blocked()) return setError(t("feedback.tooMany"));
     setSending(true);
     try {
       await sendFeedback({ kind, message, email, language, userId: user?.id });
+      limit.record();
       setSent(true);
       setMessage("");
-    } catch {
-      setError(`${t("feedback.failed")} ${LEGAL_CONTACT_EMAIL}`);
+    } catch (e: any) {
+      // The database refuses floods (supabase/migrations/20261012_limits.sql)
+      setError(
+        /feedback_rate_limited/.test(e?.message ?? "")
+          ? t("feedback.tooMany")
+          : `${t("feedback.failed")} ${LEGAL_CONTACT_EMAIL}`
+      );
     } finally {
       setSending(false);
     }
@@ -83,7 +92,7 @@ export default function FeedbackScreen() {
               error={fieldErrors.message}
               placeholder={t(kind === "translation" ? "feedback.translationPlaceholder" : "feedback.messagePlaceholder")}
               multiline
-              maxLength={2000}
+              maxLength={MAX_LENGTH.feedback}
               textAlignVertical="top"
               className="h-36 py-3"
             />
@@ -96,6 +105,7 @@ export default function FeedbackScreen() {
                   setFieldErrors((errors) => ({ ...errors, email: undefined }));
                 }}
                 error={fieldErrors.email}
+                maxLength={MAX_LENGTH.feedbackEmail}
                 autoCapitalize="none"
                 autoComplete="email"
                 keyboardType="email-address"

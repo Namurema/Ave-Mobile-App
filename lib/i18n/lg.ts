@@ -10,7 +10,8 @@ export default {
     close: "Kiggala",
     change: "Okukyusa",
     tryAgain: "Gezaako nate",
-    days: "ennaku"
+    days: "ennaku",
+    min: "min"
   },
   nav: {
     home: "Eka",
@@ -188,6 +189,7 @@ export default {
     send: "Tuweeyo eby'okuddamu",
     sent: "Webale. Okuddamu kwo kutumiddwa.",
     sendAnother: "Sindika okuddamu okw'amaanyi",
+    tooMany: "Webale nnyo olw'okuddamu kwonna. Bambi linda eddakiika ntono nga tonatuma birala.",
     failed: "Tetwasobola kutuusa kuddamu kwo. Kebera enkwatagana yo era ogezeeko nate, oba otuweere ebbaluwa ku"
   },
   legal: {
@@ -202,6 +204,13 @@ export default {
     title: "Enkulaakulana yo",
     description: "Ennaku ze wabadde osaba ne Ave.",
     streak: "Okukuba olunaku",
+    bestStreak: "Olukalala olusinga obulungi",
+    weeklyGoal: "Ekiruubirirwa eky'omwezi: okusaba ennaku 5",
+    weeklyGoalDone: "Ekigendererwa ky'omwezi kituukiddwako. Weebale nnyo!",
+    nextMilestone: "Ekigendererwa ekiddako",
+    daysToGo: "Ennaku nnyingi ezisigaddeyo. Weeyongere okusaba!",
+    milestoneReached: "Ekigendererwa kituukiddwako",
+    milestoneKeepGoing: "Webale Katonda. Genda mu maaso!",
     thisWeek: "Wiiki eno",
     totalPrayers: "Okusaba okwasabibwa",
     history: "Okusaba okw'oluvannyuma",
@@ -220,6 +229,48 @@ export default {
     novenaComplete: "Novena emaliridde. Katonda akuwe omukisa mu bigendererwa byo.",
     novenaRule: "Saba ku nnaku eziddiriŋŋana. Okubulwa olunaku kutandika novena nate.",
     finishRosary: "Maliriza era okakase nti osabidde"
+  },
+  share: {
+    share: "Gabanako",
+    copied: "Link ekopiddwa",
+    copyThis: "Koppa akakubo kano",
+    prayWithMe: "Saba nange ku Ave"
+  },
+  routine: {
+    title: "Enkola y'okusaba",
+    description: "Londa essaala z'oyagala okusaba buli lunaku ne buli wiiki.",
+    none: "Tekinnategekebwa bulungi",
+    prayersCount: "okusaba",
+    today: "Enteekateeka y'olunaku",
+    prayed: "yasaba",
+    restDay: "Tewali kintu kyategekeddwa leero",
+    yourWeek: "Wiiki yo",
+    everyDay: "Buli lunaku",
+    edit: "Kola ku ky'okukyusa",
+    remove: "Ggyamu enkola eya bulijjo",
+    save: "Okutereka ebyetaagisa bulijjo",
+    cancel: "Kusazaamu",
+    choose: "Londa essaala n'ennaku",
+    add: "Gatta",
+    added: "Egattiddwa",
+    suggestions: "Enkola ezisembebwa",
+    otherSuggestions: "Okusaba okulala",
+    use: "Kozesa enkola eno",
+    editFirst: "Kikyusaako okusooka",
+    makeOwn: "Nkola eyange",
+    ownHint: "Tewali ku bino ekikwatagana? Zimba enkola yo ey'okukola okuva mu kusaba kwonna mu Ave.",
+    ignore: "Tokubiriza nkola",
+    promptTitle: "Kola enkola y'okusaba",
+    promptText: "Ave asobola okukuteerawo essaala z'okusaba buli lunaku oba buli wiiki. Okkiriza emu, ogikyusaamu, oba ogibuuka.",
+    seeSuggestions: "Laba ku magezi agasembyeyo",
+    simpleTitle: "Enkya n'ekiro",
+    simpleDescription: "Tandika era okomekkereze buli lunaku n'okusaba.",
+    rosaryTitle: "Okusoma essaala ya Rosary buli lunaku",
+    rosaryDescription: "Okusaba ku makya ne mu kiro, n'okusoma esapuli buli lunaku.",
+    weeklyTitle: "Okusaba okwa Lwakutaano ne Lwamukaaga",
+    weeklyDescription: "Essaala ya Divine Mercy Chaplet n'eya Stations of the Cross ku Lwokutaano, ne Magnificat eya Our Lady ku Lwomukaaga.",
+    fullTitle: "Olunaku olujjuvu olw'okusaba",
+    fullDescription: "Okusaba okw'oku makya, okw'emisana n'okw'ekiro n'okusoma Rosari buli lunaku, n'okusaba kwa Divine Mercy Chaplet ku Lwokutaano."
   },
   favourites: {
     title: "Abakwata ku mutima",
@@ -275,6 +326,7 @@ export default {
       alreadyRegistered: "Akawunti n'ekyuma kya email kino kyamala dda okubaawo. Yingira mu kifo kyayo.",
       weakPassword: "Londa akasumuluzo akakakali: nga kalina waakiri ennukuta munaana, ng'alimu ennukuta emu n'omuwendo gumu.",
       tooManyAttempts: "Okugezaako kungi nnyo. Nsaba olindirire eddakiika entono ogende ogezeeko nate.",
+      waitBeforeResend: "Tukusindikidde email. Nkwegayirira olindirire akaseera katono nga tonasaba endala.",
       network: "Tewali kuyunga ku server. Kebera ennyungo yo era ogezeeko nate.",
       generic: "Waliwo ekintu ekyagenze obubi. Nkwegayiridde gezaako nate."
     }

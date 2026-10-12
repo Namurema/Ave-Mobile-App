@@ -3,6 +3,22 @@
 -- see 20261004_admin_profiles.sql) can read it and mark it resolved.
 -- Run this once in the Supabase SQL Editor, after 20261004_admin_profiles.sql.
 
+-- An older "feedback" table from the original project setup has different
+-- columns. Keep it (and anything in it) as feedback_legacy and start fresh.
+do $$
+begin
+  if exists (
+    select 1 from information_schema.tables
+    where table_schema = 'public' and table_name = 'feedback'
+  ) and not exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public' and table_name = 'feedback' and column_name = 'resolved'
+  ) then
+    alter table public.feedback rename to feedback_legacy;
+    alter index if exists public.feedback_created_at_idx rename to feedback_legacy_created_at_idx;
+  end if;
+end $$;
+
 create table if not exists public.feedback (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),

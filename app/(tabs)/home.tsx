@@ -15,9 +15,12 @@ import { useContent } from "../../lib/i18n/content";
 import { scripture } from "../../constants/content/scripture";
 import { useAuthStore, displayName } from "../../store/authStore";
 import { useUserDataStore } from "../../store/userDataStore";
-import { currentStreak, lastSevenDays, splitLogId } from "../../lib/progress";
+import { currentStreak, bestStreak, lastSevenDays, splitLogId } from "../../lib/progress";
 import { describeItem } from "../../lib/items";
 import { cn } from "../../lib/utils";
+import { PhotoBackdrop } from "../../components/ui/page";
+import { images } from "../../constants/images";
+import { RoutineCard } from "../../components/RoutineCard";
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
@@ -124,9 +127,11 @@ export default function HomeScreen() {
 
   const daysPrayed = new Set([...log].map((id) => splitLogId(id).day));
   const streak = currentStreak(daysPrayed);
+  const best = bestStreak(daysPrayed);
   const weekCount = lastSevenDays().filter((day) => daysPrayed.has(day)).length;
   const progressRows: LinkRow[] = [
     { title: t("progress.streak"), value: String(streak), route: "/progress" },
+    { title: t("progress.bestStreak"), value: String(best), route: "/progress" },
     { title: t("progress.thisWeek"), value: `${weekCount}/7`, route: "/progress" },
   ];
 
@@ -145,19 +150,11 @@ export default function HomeScreen() {
       <TopNav />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="w-full max-w-6xl self-center px-4 md:px-6 pt-6 pb-12 gap-4 lg:flex-row lg:items-start lg:gap-6">
-          {/* Back, on phones only: to the previous screen, or the welcome screen */}
-          <Pressable
-            onPress={() => (router.canGoBack() ? router.back() : router.replace("/splash"))}
-            className="md:hidden self-start -ml-2 -mb-1 h-9 px-2 rounded-md justify-center active:bg-muted"
-          >
-            <Text className="text-sm font-medium text-muted-foreground">← {t("common.back")}</Text>
-          </Pressable>
-
+        <View className="w-full max-w-6xl self-center px-4 md:px-6 pt-3 md:pt-6 pb-12 gap-4 lg:flex-row lg:items-start lg:gap-6">
           {/* Left sidebar */}
           <View className="gap-4 lg:w-64">
             {/* Phones: greeting straight on the page, not in a card */}
-            <View className="lg:hidden gap-1 pt-1">
+            <View className="lg:hidden gap-1">
               <Text className="text-sm text-muted-foreground">{dateLabel}</Text>
               <Text className="text-2xl font-bold tracking-tight text-foreground">
                 {name ? `${t(greeting.title)}, ${name}` : t(greeting.title)}
@@ -221,7 +218,8 @@ export default function HomeScreen() {
             </Card>
 
             {/* Today's Rosary */}
-            <Card className="bg-primary border-primary">
+            <Card className="bg-primary border-primary overflow-hidden">
+              <PhotoBackdrop source={images.prayingHands} />
               <View className="p-6 md:p-8 gap-5 md:flex-row md:items-center md:justify-between">
                 <View className="gap-1.5 md:flex-1">
                   <Text className="text-xs font-semibold uppercase tracking-widest text-accent">
@@ -243,6 +241,8 @@ export default function HomeScreen() {
               </View>
             </Card>
 
+            <RoutineCard />
+
             {/* Progress and favourites in one card, below the Rosary card (phones) */}
             <Card className="lg:hidden overflow-hidden">
               <Pressable
@@ -260,7 +260,7 @@ export default function HomeScreen() {
                     {t("progress.streak")}: {streak}
                   </Text>
                   <Text className="text-sm text-muted-foreground">
-                    {t("progress.thisWeek")}: {weekCount}/7
+                    {t("progress.bestStreak")}: {best} · {t("progress.thisWeek")}: {weekCount}/7
                   </Text>
                 </View>
                 <View className="rounded-full bg-primary/10 px-3 py-2">

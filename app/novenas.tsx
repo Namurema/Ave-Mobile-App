@@ -4,6 +4,7 @@ import { Alert } from "../components/ui/alert";
 import { Page, PageHeader, Section, ListCard } from "../components/ui/page";
 import { availableNovenas } from "../constants/content/available";
 import { useContent } from "../lib/i18n/content";
+import { images } from "../constants/images";
 
 export default function NovenasScreen() {
   const router = useRouter();
@@ -12,9 +13,9 @@ export default function NovenasScreen() {
 
   return (
     <Page>
-      <PageHeader back title={t("home.novenas")} description={t("novenas.description")} />
+      <PageHeader back tone="primary" image={images.prayingHands} title={t("home.novenas")} description={t("novenas.description")} />
 
-      <Alert>{t("novenas.info")}</Alert>
+      <Alert tone="accent">{t("novenas.info")}</Alert>
 
       <Section title={t("novenas.all")} count={availableNovenas.length}>
         <ListCard
@@ -22,7 +23,7 @@ export default function NovenasScreen() {
             key: novena.id,
             title: tc(novena.title),
             description: tc(novena.desc),
-            meta: `${novena.days} ${t("common.days")}`,
+            tile: { value: novena.days, unit: t("common.days") },
             onPress: () => router.push(`/novena/${novena.id}`),
           }))}
         />

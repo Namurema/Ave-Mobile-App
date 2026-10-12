@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
 import { Page, PageHeader, ReadingCard } from "../../components/ui/page";
-import { FavouriteButton, PrayedCard } from "../../components/PrayerActions";
+import { FavouriteButton, PrayedCard, ShareButton } from "../../components/PrayerActions";
 import { itemKey } from "../../lib/items";
 import { chapletContent } from "../../constants/content/chapletTexts";
 import { useContent } from "../../lib/i18n/content";
@@ -29,7 +29,12 @@ export default function ChapletDetailScreen() {
         eyebrow={t("chaplets.eyebrow")}
         title={tc(chaplet.title)}
         description={tc(chaplet.subtitle)}
-        actions={<FavouriteButton itemKey={itemKey.chaplet(id!)} />}
+        actions={
+          <>
+            <FavouriteButton itemKey={itemKey.chaplet(id!)} />
+            <ShareButton />
+          </>
+        }
       />
 
       {AUDIO_ENABLED && chaplet.audioUrl && <AudioPlayer url={chaplet.audioUrl} color={chaplet.color} />}

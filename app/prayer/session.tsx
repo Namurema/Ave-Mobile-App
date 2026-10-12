@@ -5,7 +5,7 @@ import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader, LoadingCard, EmptyState } from "../../components/ui/page";
-import { FavouriteButton, PrayedCard } from "../../components/PrayerActions";
+import { FavouriteButton, PrayedCard, ShareButton } from "../../components/PrayerActions";
 import { itemKey } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { rosaryTabs } from "../../constants/navigation";
@@ -134,7 +134,12 @@ export default function RosarySessionScreen() {
       eyebrow={`${formatWeekday(new Date(), language)} · ${t(`rosary.${MYSTERY_BY_DAY[today]}`)}`}
       title={t("rosary.title")}
       tabs={rosaryTabs(t)}
-      actions={<FavouriteButton itemKey={itemKey.rosary} />}
+      actions={
+          <>
+            <FavouriteButton itemKey={itemKey.rosary} />
+            <ShareButton />
+          </>
+        }
     />
   );
 

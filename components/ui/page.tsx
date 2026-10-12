@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { View, Text, ScrollView, Pressable, ActivityIndicator } from "react-native";
+import { View, Text, ScrollView, Pressable, ActivityIndicator, Image, StyleSheet, type ImageSourcePropType } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter, usePathname } from "expo-router";
 import Head from "expo-router/head";
@@ -47,6 +47,17 @@ export function Page({
 
 export type PageTab = { label: string; route: string };
 
+// A photo filling its (relative, overflow-hidden) parent, under a teal tint
+export function PhotoBackdrop({ source }: { source: ImageSourcePropType }) {
+  return (
+    <>
+      <Image source={source} resizeMode="cover" aria-hidden style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]} />
+      {/* Web: teal fading left to right (CSS in public/index.html); elsewhere a flat tint */}
+      <View {...({ dataSet: { tint: "photo" } } as any)} className="absolute inset-0 bg-primary/75 web:bg-transparent" />
+    </>
+  );
+}
+
 export function PageHeader({
   eyebrow,
   title,
@@ -54,6 +65,8 @@ export function PageHeader({
   back,
   tabs,
   actions,
+  tone = "default",
+  image,
 }: {
   eyebrow?: string;
   title: string;
@@ -62,32 +75,40 @@ export function PageHeader({
   tabs?: PageTab[];
   // Buttons under the title, e.g. "Save to favourites"
   actions?: ReactNode;
+  // "primary": teal card with white text, for the browse pages
+  tone?: "default" | "primary";
+  // Photo behind a "primary" header, tinted teal so the text stays readable
+  image?: ImageSourcePropType;
 }) {
   const router = useRouter();
   const pathname = usePathname();
   const { t } = useTranslation();
+  const primary = tone === "primary";
   return (
-    <Card className="overflow-hidden">
+    <Card className={cn("overflow-hidden", primary && "bg-primary border-primary")}>
       {/* Browser tab and search result title */}
       <Head>
         <title>{`${title} | Ave`}</title>
       </Head>
-      <View className="p-5 md:p-6 gap-1.5">
+      {primary && image ? <PhotoBackdrop source={image} /> : null}
+      <View className={cn("p-5 md:p-6 gap-1.5", primary && image && "pt-8 md:pt-12")}>
         {back && (
           <Pressable
             onPress={() => (router.canGoBack() ? router.back() : router.replace("/(tabs)/home"))}
-            className="self-start -ml-2 mb-1 h-8 px-2 rounded-md justify-center web:hover:bg-muted"
+            className={cn("self-start -ml-2 mb-1 h-8 px-2 rounded-md justify-center", primary ? "web:hover:bg-white/10" : "web:hover:bg-muted")}
           >
-            <Text className="text-sm font-medium text-muted-foreground">← {t("common.back")}</Text>
+            <Text className={cn("text-sm font-medium", primary ? "text-white/80" : "text-muted-foreground")}>← {t("common.back")}</Text>
           </Pressable>
         )}
         {eyebrow ? (
-          <Text className="text-xs font-semibold uppercase tracking-widest text-primary">{eyebrow}</Text>
+          <Text className={cn("text-xs font-semibold uppercase tracking-widest", primary ? "text-accent" : "text-primary")}>{eyebrow}</Text>
         ) : null}
-        <Text role="heading" className="text-2xl md:text-3xl font-bold tracking-tight text-card-foreground">
+        <Text role="heading" className={cn("text-2xl md:text-3xl font-bold tracking-tight", primary ? "text-white" : "text-card-foreground")}>
           {title}
         </Text>
-        {description ? <Text className="text-base text-muted-foreground">{description}</Text> : null}
+        {description ? (
+          <Text className={cn("text-base", primary ? "text-white/85" : "text-muted-foreground")}>{description}</Text>
+        ) : null}
         {actions ? <View className="mt-3 flex-row flex-wrap gap-2">{actions}</View> : null}
       </View>
 
@@ -161,6 +182,15 @@ export function NumberBadge({ value }: { value: string | number }) {
   );
 }
 
+function ValueTile({ value, unit }: { value: string | number; unit?: string }) {
+  return (
+    <View className="h-14 w-14 rounded-lg bg-accent items-center justify-center">
+      <Text className="text-lg font-bold leading-6 text-primary">{value}</Text>
+      {unit ? <Text className="text-[11px] font-medium text-primary-dark">{unit}</Text> : null}
+    </View>
+  );
+}
+
 export type ListItem = {
   key: string;
   title: string;
@@ -168,6 +198,8 @@ export type ListItem = {
   descriptionLines?: number;
   meta?: string;
   leading?: string | number;
+  // Teal tile on the left with a number and a small unit, e.g. 9 / days
+  tile?: { value: string | number; unit?: string };
   badge?: string;
   onPress?: () => void;
 };
@@ -185,6 +217,7 @@ export function ListCard({ items }: { items: ListItem[] }) {
 function ListRow({ item, last }: { item: ListItem; last: boolean }) {
   const content = (
     <View className={cn("flex-row items-center gap-3 px-4 md:px-5 py-4", !last && "border-b border-border")}>
+      {item.tile ? <ValueTile {...item.tile} /> : null}
       {item.leading !== undefined ? <NumberBadge value={item.leading} /> : null}
       <View className="flex-1 gap-0.5">
         <Text className="text-sm font-semibold text-card-foreground">{item.title}</Text>
@@ -199,7 +232,9 @@ function ListRow({ item, last }: { item: ListItem; last: boolean }) {
         {item.meta ? <Text className="text-xs text-muted-foreground">{item.meta}</Text> : null}
       </View>
       {item.badge ? <Badge>{item.badge}</Badge> : null}
-      {item.onPress ? <Text className="text-lg text-muted-foreground">›</Text> : null}
+      {item.onPress ? (
+        <Text className={cn("text-lg", item.tile ? "text-primary" : "text-muted-foreground")}>›</Text>
+      ) : null}
     </View>
   );
 

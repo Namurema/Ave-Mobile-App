@@ -10,7 +10,8 @@ export default {
     close: "Kwihaho",
     change: "Okuhindura",
     tryAgain: "Gyezaho ogaruke",
-    days: "ebiro"
+    days: "ebiro",
+    min: "min"
   },
   nav: {
     home: "Omuka",
@@ -188,6 +189,7 @@ export default {
     send: "Oheereze okugarukamu",
     sent: "Webare. Okugarukamu kwawe kwohereziibwe.",
     sendAnother: "Oheereze okugarukamu okundi",
+    tooMany: "Webare okugarukamu kwawe kwona. Nyabura we rinda edakiika nkye otakasindikire endiijo.",
     failed: "Tikabaasa kwohereza okugarukamu kwawe. Kyebera enkoragana yaawe kandi ogaruke ogyezeho, nainga otusindikire e-mayiro ahari"
   },
   legal: {
@@ -202,6 +204,13 @@ export default {
     title: "Entunguuka yaawe",
     description: "Ebiro ebi waashabire na Ave.",
     streak: "Okushara eizooba",
+    bestStreak: "Omuhanda ogurikukirayo oburungi",
+    weeklyGoal: "Ekigyendererwa ky'omushomo: kushaba ebiro 5",
+    weeklyGoalDone: "Ekigyendererwa ky'esande kikahikirizibwa. Okozire kurungi!",
+    nextMilestone: "Ekigyendererwa ekirikukurataho",
+    daysToGo: "Hariho ebiro bingi ebirikugyenda. Guma nooshaba!",
+    milestoneReached: "Ekigyendererwa kyahikiriziibwe",
+    milestoneKeepGoing: "Esiima n'eya Ruhanga. Guma noogyenda!",
     thisWeek: "Saabiiki egi",
     totalPrayers: "Okushaba okweshabiirwe",
     history: "Okushaba okwahwaireho",
@@ -220,6 +229,48 @@ export default {
     novenaComplete: "Novena ehwaireho. Ruhanga abaase kugira ngu ekigyendererwa kyawe kikuhwe omugisha.",
     novenaRule: "Shaba aha biro ebirikukurataho. Okufeerwa eizooba nikigaruka kutandika novena.",
     finishRosary: "Hendera kandi oteekye nk'orashabire"
+  },
+  share: {
+    share: "Gabana",
+    copied: "Akakwate kakahindwirwe",
+    copyThis: "Kopa akakwate aka",
+    prayWithMe: "Shaba hamwe naanye aha Ave"
+  },
+  routine: {
+    title: "Omuringo gw'okushaba",
+    description: "Toorana okushaba oku orikwenda kushaba buri izooba n'esande.",
+    none: "Tikakatandikirweho",
+    prayersCount: "Okushaba",
+    today: "Omuringo gw'okukora ogw'erizooba",
+    prayed: "akashaba",
+    restDay: "Tihariho eki tebekanisiibwe eriizooba",
+    yourWeek: "Wiiki yaawe",
+    everyDay: "Buri izooba",
+    edit: "Okuhindura",
+    remove: "Yihamu emigyenzo",
+    save: "Okubiika ebirikukorwa",
+    cancel: "Kushazamu",
+    choose: "Toorana okushaba hamwe n'ebiro",
+    add: "Okwongyeraho",
+    added: "Okwongyeraho",
+    suggestions: "Emiringo y'okukuratira",
+    otherSuggestions: "Ebindi ebirikuteebwaho",
+    use: "Kozesa omuringo ogu",
+    editFirst: "Gihindure omu kubanza",
+    makeOwn: "Kora eyangye",
+    ownHint: "Tihariho ekirikuhikaana? Yombeka omuringo gwawe kuruga omu kushaba kwona omuri Ave.",
+    ignore: "Otakagira eki orikuteekateeka",
+    promptTitle: "Okwombeka omuringo gw'okushaba",
+    promptText: "Nimbaasa kukutebeekanisiza okushaba buriizooba na buri sande. Kubiika kimwe, okihindure, nari okirekye.",
+    seeSuggestions: "Reeba ebiteiso",
+    simpleTitle: "Omukasheeshe n'ekiro",
+    simpleDescription: "Buri izooba otandike kandi ohererukye n'okushaba.",
+    rosaryTitle: "Okushoma esapuri buriizooba",
+    rosaryDescription: "Okushaba omukasheeshe n'ekiro, hamwe na rosari buri izooba.",
+    weeklyTitle: "Okushaba kw'orwakataano n'orwamukaaga",
+    weeklyDescription: "Chapleti y'embabazi za Ruhanga hamwe n'okutambura kw'omusharaba aha rwakataano, na Magnificat ya Our Lady aha rwamukaaga.",
+    fullTitle: "Eizooba ryona ery'okushaba",
+    fullDescription: "Okushaba omukasheeshe, omu shaaha z'ekiro n'omu kiro hamwe na Rosary buri izooba, n'okushaba kwa Divine Mercy Chaplet aha rwakataano."
   },
   favourites: {
     title: "Abakundwa",
@@ -275,6 +326,7 @@ export default {
       alreadyRegistered: "Akawunti erimu e-mayiro egi eriho. Taahamu omu mwanya gw'ekyo.",
       weakPassword: "Toorana akasumuruzo k'amaani: kakye munonga obubonero 8, n'akabonero kamwe hamwe n'enamba emwe.",
       tooManyAttempts: "Okugyezaho kwingi munonga. Nyabura we rinda edakiika nkye ogaruke ogyezeho.",
+      waitBeforeResend: "Tukakusindikira e-mayiro. Nyabura we rinda edakiika emwe otakashaba endiijo.",
       network: "Tikirikubaasa kuhika aha seva. Kyebera okukwatanisa kwawe kandi ogaruke ogyezeho.",
       generic: "Hariho ekintu ekyabaire kigwire. Nyabura we gezaho ogaruke."
     }

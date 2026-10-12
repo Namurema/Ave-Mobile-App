@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import { useRouter } from "expo-router";
 import { useAuthDialog, type AuthView } from "../../store/authDialogStore";
 import { PasswordRules, isStrongPassword } from "./PasswordRules";
+import { MAX_LENGTH, cleanName, rateLimit } from "../../lib/limits";
 
 // Sign-in, sign-up and forgot-password forms, shared by the pop-up
 // (AuthDialog) and the /auth pages. `onSwitch` moves between the forms.
@@ -59,6 +60,7 @@ function LegalNotice() {
 }
 
 const emailProps = {
+  maxLength: MAX_LENGTH.email,
   autoCapitalize: "none",
   autoComplete: "email",
   keyboardType: "email-address",
@@ -83,10 +85,14 @@ export function SignInForm({ onSwitch }: { onSwitch: (view: AuthView) => void })
     setFieldErrors(errors);
     setError(null);
     if (errors.email || errors.password) return;
+    const limit = rateLimit("signIn");
+    if (limit.blocked()) return setError(t("auth.errors.tooManyAttempts"));
     setSubmitting(true);
     const { errorKey } = await signInWithEmail(email, password);
     setSubmitting(false);
-    if (errorKey) setError(t(errorKey));
+    if (!errorKey) return limit.reset();
+    if (errorKey === "auth.errors.invalidCredentials") limit.record();
+    setError(t(errorKey));
   };
 
   return (
@@ -100,6 +106,7 @@ export function SignInForm({ onSwitch }: { onSwitch: (view: AuthView) => void })
           onChangeText={setPassword}
           error={fieldErrors.password}
           secureTextEntry
+          maxLength={MAX_LENGTH.password}
           autoComplete="current-password"
           textContentType="password"
           returnKeyType="go"
@@ -134,15 +141,18 @@ export function SignUpForm({
 
   const submit = async () => {
     const errors = {
-      name: name.trim() ? undefined : t("auth.nameRequired"),
+      name: cleanName(name) ? undefined : t("auth.nameRequired"),
       email: isEmail(email) ? undefined : t("auth.emailInvalid"),
       password: isStrongPassword(password) ? undefined : t("auth.passwordInvalid"),
     };
     setFieldErrors(errors);
     setError(null);
     if (errors.name || errors.email || errors.password) return;
+    const limit = rateLimit("signUp");
+    if (limit.blocked()) return setError(t("auth.errors.tooManyAttempts"));
+    limit.record();
     setSubmitting(true);
-    const { errorKey, needsConfirmation } = await signUpWithEmail(name, email, password);
+    const { errorKey, needsConfirmation } = await signUpWithEmail(cleanName(name), email, password);
     setSubmitting(false);
     if (errorKey) setError(t(errorKey));
     else if (needsConfirmation) onNeedsConfirmation();
@@ -151,7 +161,7 @@ export function SignUpForm({
   return (
     <View className="gap-4">
       <FormError message={error} />
-      <Input label={t("auth.name")} value={name} onChangeText={setName} error={fieldErrors.name} autoComplete="name" textContentType="name" returnKeyType="next" />
+      <Input label={t("auth.name")} value={name} onChangeText={setName} error={fieldErrors.name} maxLength={MAX_LENGTH.name} autoComplete="name" textContentType="name" returnKeyType="next" />
       <Input label={t("auth.email")} value={email} onChangeText={setEmail} error={fieldErrors.email} returnKeyType="next" {...emailProps} />
       <View className="gap-2">
         <Input
@@ -163,6 +173,7 @@ export function SignUpForm({
           }}
           error={fieldErrors.password}
           secureTextEntry
+          maxLength={MAX_LENGTH.password}
           autoComplete="new-password"
           textContentType="newPassword"
           returnKeyType="go"
@@ -191,6 +202,9 @@ export function ForgotPasswordForm({ onSwitch }: { onSwitch: (view: AuthView) =>
     setError(null);
     if (!isEmail(email)) return setFieldError(t("auth.emailInvalid"));
     setFieldError(null);
+    const limit = rateLimit("passwordReset");
+    if (limit.blocked()) return setError(t("auth.errors.waitBeforeResend"));
+    limit.record();
     setSubmitting(true);
     const { errorKey } = await sendPasswordReset(email);
     setSubmitting(false);

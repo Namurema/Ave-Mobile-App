@@ -1,5 +1,7 @@
-import { useMemo } from "react";
-import { View, Text } from "react-native";
+import { useMemo, useState } from "react";
+import { View, Text, Platform, Share } from "react-native";
+import { usePathname } from "expo-router";
+import { SITE_URL } from "../constants/site";
 import { useTranslation } from "react-i18next";
 import { withAccountPrompt } from "../lib/accountPrompt";
 import { useUserDataStore, usePrayedToday, useIsFavourite } from "../store/userDataStore";
@@ -8,6 +10,45 @@ import { itemKey, novenaLength } from "../lib/items";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { cn } from "../lib/utils";
+
+// Share this prayer: the phone's share sheet (WhatsApp, SMS...) where there is
+// one, otherwise the link is copied
+export function ShareButton() {
+  const { t } = useTranslation();
+  const pathname = usePathname();
+  const [copied, setCopied] = useState(false);
+
+  const share = async () => {
+    const url = SITE_URL + pathname;
+    // The page title is set per prayer ("Morning Prayers | Ave")
+    const title = Platform.OS === "web" ? document.title.replace(/ | Ave$/, "") : "Ave";
+    const text = `${t("share.prayWithMe")}: ${title}`;
+    if (Platform.OS !== "web") {
+      Share.share({ message: `${text}
+${url}` }).catch(() => {});
+      return;
+    }
+    if (navigator.share) {
+      // Cancelling the share sheet rejects; nothing to do
+      navigator.share({ title, text, url }).catch(() => {});
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(`${text}
+${url}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      window.prompt(t("share.copyThis"), url);
+    }
+  };
+
+  return (
+    <Button size="sm" variant="outline" onPress={share}>
+      {copied ? t("share.copied") : t("share.share")}
+    </Button>
+  );
+}
 
 // "Save to favourites" / "Saved", for a page header
 export function FavouriteButton({ itemKey: key }: { itemKey: string }) {

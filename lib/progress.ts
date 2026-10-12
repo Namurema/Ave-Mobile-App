@@ -38,6 +38,30 @@ export function currentStreak(days: Set<string>) {
   return streak;
 }
 
+// Longest run of consecutive days ever prayed
+export function bestStreak(days: Set<string>) {
+  let best = 0;
+  for (const day of days) {
+    // Count only from the first day of each run
+    if (days.has(addDays(day, -1))) continue;
+    let run = 1;
+    while (days.has(addDays(day, run))) run++;
+    best = Math.max(best, run);
+  }
+  return best;
+}
+
+// Days a week the app encourages people to pray
+export const WEEKLY_GOAL = 5;
+
+// Streak milestones, celebrated on the Progress page
+export const MILESTONES = [3, 7, 14, 30, 50, 100, 200, 365];
+
+export function nextMilestone(streak: number) {
+  const target = MILESTONES.find((milestone) => milestone > streak) ?? Math.ceil((streak + 1) / 100) * 100;
+  return { target, remaining: target - streak, reached: MILESTONES.includes(streak) };
+}
+
 // The last 7 days, oldest first
 export function lastSevenDays() {
   const today = dayString();

@@ -12,6 +12,7 @@ import { registerServiceWorker, startUpdateChecks } from "../lib/pwa";
 import { UpdateBanner } from "../components/UpdateBanner";
 import { InstallDialog } from "../components/InstallDialog";
 import { startUserDataSync } from "../store/userDataStore";
+import { startRoutineSync } from "../store/routineStore";
 import { AuthDialog } from "../components/auth/AuthDialog";
 import { SITE_URL } from "../constants/site";
 
@@ -28,6 +29,7 @@ export default function RootLayout() {
     if (LOGIN_ENABLED) loadSession();
     loadLanguage();
     startUserDataSync();
+    startRoutineSync();
     registerServiceWorker();
     startUpdateChecks();
   }, []);

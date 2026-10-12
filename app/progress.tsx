@@ -9,7 +9,16 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { useContent } from "../lib/i18n/content";
 import { formatDate } from "../lib/i18n/helpers";
 import { describeItem } from "../lib/items";
-import { currentStreak, lastSevenDays, parseDay, splitLogId, dayString } from "../lib/progress";
+import {
+  currentStreak,
+  bestStreak,
+  nextMilestone,
+  WEEKLY_GOAL,
+  lastSevenDays,
+  parseDay,
+  splitLogId,
+  dayString,
+} from "../lib/progress";
 import { Page, PageHeader, Section, ListCard, EmptyState } from "../components/ui/page";
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -19,7 +28,7 @@ const HISTORY_LIMIT = 30;
 
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
-    <View className="p-1.5 w-1/3">
+    <View className="p-1.5 w-1/2 md:w-1/4">
       <Card className="p-4 md:p-5 gap-1">
         <Text className="text-2xl md:text-3xl font-bold tracking-tight text-card-foreground">{value}</Text>
         <Text className="text-xs md:text-sm text-muted-foreground">{label}</Text>
@@ -48,6 +57,10 @@ export default function ProgressScreen() {
   const week = lastSevenDays();
   const prayedThisWeek = week.filter((day) => daysPrayed.has(day)).length;
   const today = dayString();
+  const streak = currentStreak(daysPrayed);
+  const best = bestStreak(daysPrayed);
+  const milestone = nextMilestone(streak);
+  const goalDone = Math.min(prayedThisWeek, WEEKLY_GOAL);
 
   const historyItems = history
     .map((entry) => ({ entry, info: describeItem(entry.key, t, tc) }))
@@ -65,12 +78,42 @@ export default function ProgressScreen() {
       <PageHeader title={t("progress.title")} description={t("progress.description")} />
 
       <View className="flex-row flex-wrap -m-1.5">
-        <Stat label={t("progress.streak")} value={currentStreak(daysPrayed)} />
+        <Stat label={t("progress.streak")} value={streak} />
+        <Stat label={t("progress.bestStreak")} value={best} />
         <Stat label={t("progress.thisWeek")} value={`${prayedThisWeek}/7`} />
         <Stat label={t("progress.totalPrayers")} value={log.size} />
       </View>
 
+      {streak > 0 && (
+        <Card className="p-4 gap-1 border-primary/30 bg-accent/30">
+          <Text className="text-base font-semibold text-card-foreground">
+            {milestone.reached
+              ? `${t("progress.milestoneReached")}: ${streak} ${t("common.days")}`
+              : `${t("progress.nextMilestone")}: ${milestone.target} ${t("common.days")}`}
+          </Text>
+          <Text className="text-sm text-muted-foreground">
+            {milestone.reached
+              ? t("progress.milestoneKeepGoing")
+              : `${milestone.remaining} ${t("progress.daysToGo")}`}
+          </Text>
+        </Card>
+      )}
+
       <Section title={t("progress.thisWeek")}>
+        <View className="gap-2 px-4 md:px-5 pt-4">
+          <View className="flex-row justify-between">
+            <Text className="text-sm font-medium text-card-foreground">{t("progress.weeklyGoal")}</Text>
+            <Text className="text-sm font-semibold text-primary">
+              {goalDone}/{WEEKLY_GOAL} {t("common.days")}
+            </Text>
+          </View>
+          <View className="h-2 rounded-full bg-muted overflow-hidden">
+            <View className="h-2 rounded-full bg-primary" style={{ width: `${(goalDone / WEEKLY_GOAL) * 100}%` }} />
+          </View>
+          {goalDone === WEEKLY_GOAL && (
+            <Text className="text-sm text-primary">{t("progress.weeklyGoalDone")}</Text>
+          )}
+        </View>
         <View className="flex-row justify-between gap-1 p-4 md:p-5">
           {week.map((day) => {
             const prayed = daysPrayed.has(day);

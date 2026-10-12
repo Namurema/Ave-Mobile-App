@@ -9,6 +9,7 @@ import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import { LoadingCard, Page } from "../../components/ui/page";
 import { PasswordRules, isStrongPassword } from "../../components/auth/PasswordRules";
+import { MAX_LENGTH } from "../../lib/limits";
 
 // Where the link in a password-reset email lands. Supabase reads the session
 // from the link, so the user is signed in and can choose a new password.
@@ -88,6 +89,7 @@ export default function ResetPasswordScreen() {
               }}
               error={fieldError}
               secureTextEntry
+              maxLength={MAX_LENGTH.password}
               autoComplete="new-password"
               textContentType="newPassword"
               returnKeyType="next"
@@ -103,6 +105,7 @@ export default function ResetPasswordScreen() {
             }}
             error={confirmError}
             secureTextEntry
+            maxLength={MAX_LENGTH.password}
             autoComplete="new-password"
             textContentType="newPassword"
             returnKeyType="go"

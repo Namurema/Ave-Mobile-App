@@ -56,6 +56,20 @@ export function formatWeekday(date: Date, language: string) {
   }
 }
 
+// Day name for 0 = Sunday ... 6 = Saturday: short in English ("Fri"),
+// full in Luganda and Runyankore (no agreed short forms)
+export function weekdayName(day: number, language: string) {
+  const names = DATE_NAMES[language];
+  if (names) return names.days[day];
+  // 7 January 2024 was a Sunday
+  const date = new Date(2024, 0, 7 + day);
+  try {
+    return date.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", { weekday: "short" });
+  } catch {
+    return date.toDateString().split(" ")[0];
+  }
+}
+
 export function formatDate(date: Date, language: string) {
   const names = DATE_NAMES[language];
   if (names) return `${names.days[date.getDay()]}, ${date.getDate()} ${names.months[date.getMonth()]}`;

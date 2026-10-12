@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useAuthStore, displayName } from "../../store/authStore";
 import { useAuthDialog } from "../../store/authDialogStore";
 import { useUserDataStore } from "../../store/userDataStore";
+import { useRoutineStore } from "../../store/routineStore";
 import { currentStreak, splitLogId } from "../../lib/progress";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { LOGIN_ENABLED } from "../../constants/features";
@@ -29,6 +30,7 @@ export default function ProfileScreen() {
   const openAuth = useAuthDialog((state) => state.open);
   const log = useUserDataStore((state) => state.log);
   const favouriteCount = useUserDataStore((state) => state.favourites.length);
+  const routineCount = useRoutineStore((state) => state.entries.length);
   const streak = currentStreak(new Set([...log].map((id) => splitLogId(id).day)));
 
   const handleSignOut = async () => {
@@ -57,6 +59,12 @@ export default function ProfileScreen() {
               title: t("favourites.title"),
               description: `${favouriteCount}`,
               onPress: () => router.push("/favourites"),
+            },
+            {
+              key: "routine",
+              title: t("routine.title"),
+              description: routineCount ? `${routineCount} ${t("routine.prayersCount")}` : t("routine.none"),
+              onPress: () => router.push("/routine"),
             },
           ]}
         />

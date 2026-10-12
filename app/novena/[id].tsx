@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
 import { Page, PageHeader, ReadingCard } from "../../components/ui/page";
-import { FavouriteButton, PrayedCard, NovenaProgressCard } from "../../components/PrayerActions";
+import { FavouriteButton, PrayedCard, NovenaProgressCard, ShareButton } from "../../components/PrayerActions";
 import { itemKey } from "../../lib/items";
 import { novenaContent } from "../../constants/content/novenaTexts";
 import { useContent } from "../../lib/i18n/content";
@@ -29,7 +29,12 @@ export default function NovenaDetailScreen() {
         eyebrow={t("novenas.eyebrow")}
         title={tc(novena.title)}
         description={tc(novena.subtitle)}
-        actions={<FavouriteButton itemKey={itemKey.novena(id!)} />}
+        actions={
+          <>
+            <FavouriteButton itemKey={itemKey.novena(id!)} />
+            <ShareButton />
+          </>
+        }
       />
 
       <NovenaProgressCard novenaId={id!} />
