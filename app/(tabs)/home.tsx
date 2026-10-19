@@ -220,7 +220,7 @@ export default function HomeScreen() {
 
             {/* Today's Rosary */}
             <Card className="bg-primary border-primary overflow-hidden">
-              <PhotoBackdrop source={images.rosaryFern} />
+              <PhotoBackdrop source={images.rosaryHands} />
               <View className="p-6 md:p-8 gap-5 md:flex-row md:items-center md:justify-between">
                 <View className="gap-1.5 md:flex-1">
                   <Text className="text-xs font-semibold uppercase tracking-widest text-accent">
