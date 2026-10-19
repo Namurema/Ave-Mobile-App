@@ -4,6 +4,7 @@ import { useUserDataStore } from "../store/userDataStore";
 import { useContent } from "../lib/i18n/content";
 import { describeItem } from "../lib/items";
 import { Page, PageHeader, Section, ListCard, EmptyState } from "../components/ui/page";
+import { images } from "../constants/images";
 
 export default function FavouritesScreen() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function FavouritesScreen() {
 
   return (
     <Page>
-      <PageHeader title={t("favourites.title")} description={t("favourites.description")} />
+      <PageHeader tone="primary" image={images.rosaryFern} title={t("favourites.title")} description={t("favourites.description")} />
       {items.length === 0 ? (
         <EmptyState title={t("favourites.title")} description={t("favourites.empty")} />
       ) : (

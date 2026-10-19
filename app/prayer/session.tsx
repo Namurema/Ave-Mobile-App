@@ -6,6 +6,7 @@ import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader, LoadingCard, EmptyState } from "../../components/ui/page";
 import { FavouriteButton, PrayedCard, ShareButton } from "../../components/PrayerActions";
+import { ReadAloudBar } from "../../components/ReadAloud";
 import { itemKey } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { rosaryTabs } from "../../constants/navigation";
@@ -14,6 +15,7 @@ import { formatWeekday } from "../../lib/i18n/helpers";
 import { mysteryDetailsMap } from "../../constants/content/rosarySession";
 import { useContent } from "../../lib/i18n/content";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
+import { images } from "../../constants/images";
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
@@ -131,6 +133,8 @@ export default function RosarySessionScreen() {
 
   const header = (
     <PageHeader
+      tone="primary"
+      image={images.rosaryHands}
       eyebrow={`${formatWeekday(new Date(), language)} · ${t(`rosary.${MYSTERY_BY_DAY[today]}`)}`}
       title={t("rosary.title")}
       tabs={rosaryTabs(t)}
@@ -192,6 +196,13 @@ export default function RosarySessionScreen() {
       {mystery && step.kind === "mystery" ? (
         <Card className="p-6 md:p-8 gap-5">
           <Badge className="self-start">{`${t("rosary.mystery")} ${step.decade}`}</Badge>
+          <ReadAloudBar
+            key={`mystery-${stepIndex}`}
+            sections={[
+              { heading: tc(mystery.title), body: tc(mystery.description) },
+              { heading: t("rosary.virtue"), body: tc(mystery.virtue) },
+            ]}
+          />
           <View className="gap-2">
             <Text role="heading" className="text-2xl font-bold tracking-tight text-card-foreground">
               {tc(mystery.title)}
@@ -223,6 +234,7 @@ export default function RosarySessionScreen() {
               )}
             </>
           )}
+          <ReadAloudBar key={`prayer-${stepIndex}-${beads}`} sections={[{ heading: prayer.title, body: prayer.body }]} />
           <Text selectable className="text-base md:text-lg leading-8 text-foreground">
             {prayer.body}
           </Text>

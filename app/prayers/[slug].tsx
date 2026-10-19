@@ -17,6 +17,7 @@ import {
   EmptyState,
 } from "../../components/ui/page";
 import { cn } from "../../lib/utils";
+import { images } from "../../constants/images";
 
 export default function PrayerCategoryScreen() {
   const { slug, lang } = useLocalSearchParams<{ slug: string; lang: string }>();
@@ -47,6 +48,8 @@ export default function PrayerCategoryScreen() {
   return (
     <Page>
       <PageHeader
+        tone="primary"
+        image={images.prayingHands}
         back
         eyebrow={t("nav.prayers")}
         title={meta.title}

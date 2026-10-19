@@ -7,6 +7,8 @@ import { FavouriteButton, PrayedCard, NovenaProgressCard, ShareButton } from "..
 import { itemKey } from "../../lib/items";
 import { novenaContent } from "../../constants/content/novenaTexts";
 import { useContent } from "../../lib/i18n/content";
+import { novenaImage } from "../../constants/images";
+import { NovenaDatesCard } from "../../components/NovenaSeason";
 
 export default function NovenaDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -25,6 +27,8 @@ export default function NovenaDetailScreen() {
   return (
     <Page>
       <PageHeader
+        tone="primary"
+        image={novenaImage(id)}
         back
         eyebrow={t("novenas.eyebrow")}
         title={tc(novena.title)}
@@ -36,6 +40,8 @@ export default function NovenaDetailScreen() {
           </>
         }
       />
+
+      <NovenaDatesCard novenaId={id!} />
 
       <NovenaProgressCard novenaId={id!} />
 

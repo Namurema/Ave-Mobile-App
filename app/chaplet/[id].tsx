@@ -7,6 +7,7 @@ import { FavouriteButton, PrayedCard, ShareButton } from "../../components/Praye
 import { itemKey } from "../../lib/items";
 import { chapletContent } from "../../constants/content/chapletTexts";
 import { useContent } from "../../lib/i18n/content";
+import { images } from "../../constants/images";
 
 export default function ChapletDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -25,6 +26,8 @@ export default function ChapletDetailScreen() {
   return (
     <Page>
       <PageHeader
+        tone="primary"
+        image={images.rosaryWall}
         back
         eyebrow={t("chaplets.eyebrow")}
         title={tc(chaplet.title)}

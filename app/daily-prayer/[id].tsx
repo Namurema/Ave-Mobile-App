@@ -16,6 +16,7 @@ import {
   LoadingCard,
   EmptyState,
 } from "../../components/ui/page";
+import { dailyImages } from "../../constants/images";
 
 const titleKeys: Record<string, string> = {
   morning: "prayers.morningPrayers",
@@ -79,6 +80,8 @@ export default function DailyPrayerScreen() {
   return (
     <Page>
       <PageHeader
+        tone="primary"
+        image={dailyImages[id ?? "morning"]}
         eyebrow={t("prayers.title")}
         actions={
           <>

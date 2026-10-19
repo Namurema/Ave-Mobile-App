@@ -16,8 +16,19 @@ Key facts:
 - [Morning prayers](https://ave-prayers.vercel.app/daily-prayer/morning)
 - [Midday prayers](https://ave-prayers.vercel.app/daily-prayer/midday)
 - [Night prayers](https://ave-prayers.vercel.app/daily-prayer/night)
-- [Novena to Our Lady of Perpetual Help](https://ave-prayers.vercel.app/novena/2): nine days
+- [Novena to Our Lady of Perpetual Help](https://ave-prayers.vercel.app/novena/2): 18 to 26 June, with the Litany of Our Lady of Perpetual Help
+- [Novena to St. Jude](https://ave-prayers.vercel.app/novena/6): nine days, patron of difficult cases
 - [Novena to the 13 Blessed Souls](https://ave-prayers.vercel.app/novena/7): thirteen days
+- [Novena to Pope St. Leo the Great](https://ave-prayers.vercel.app/novena/8): nine days, 1 to 9 November
+- [Novena to Our Lady of Guadalupe](https://ave-prayers.vercel.app/novena/9): 3 to 11 December
+- [Novena to the Holy Name of Jesus](https://ave-prayers.vercel.app/novena/10): 25 December to 2 January
+- [Novena to Our Lady of Hope](https://ave-prayers.vercel.app/novena/11): 8 to 16 January
+- [30 Day Novena to St. Joseph](https://ave-prayers.vercel.app/novena/12): 30 days before 19 March
+- [Novena for Fertility to Conceive a Baby](https://ave-prayers.vercel.app/novena/13)
+- [Divine Mercy Novena](https://ave-prayers.vercel.app/novena/5): Good Friday to the Saturday after Easter
+- [Novena to Our Lady of Fatima](https://ave-prayers.vercel.app/novena/14): 4 to 12 May
+- [Novena to St. Dominic](https://ave-prayers.vercel.app/novena/15): 30 July to 7 August
+- [Novena to Our Lady of Sorrows](https://ave-prayers.vercel.app/novena/16): 6 to 14 September
 - [Chaplet of the Divine Mercy](https://ave-prayers.vercel.app/chaplet/1)
 - [Stations of the Cross](https://ave-prayers.vercel.app/stations)
 - [Our Lady of Guadalupe](https://ave-prayers.vercel.app/other-prayer/guadalupe)

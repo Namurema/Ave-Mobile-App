@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 import { TopNav } from "./AppNav";
 import Footer from "./Footer";
+import { ReadAloudBar } from "../ReadAloud";
+import { useReadAloud } from "../../lib/speech";
 import { Card, FlatCardContext } from "./card";
 import { Badge } from "./badge";
 import { BrowseSidebar } from "./BrowseSidebar";
@@ -113,7 +115,7 @@ export function PageHeader({
       </View>
 
       {tabs && (
-        <View role="tablist" className="flex-row px-2 md:px-3 border-t border-border">
+        <View role="tablist" className={cn("flex-row px-2 md:px-3 border-t", primary ? "border-white/20" : "border-border")}>
           {tabs.map((tab) => {
             const active = pathname === tab.route.replace("/(tabs)", "");
             return (
@@ -124,13 +126,17 @@ export function PageHeader({
                 onPress={() => !active && router.replace(tab.route as any)}
                 className={cn(
                   "px-3 md:px-4 py-3 border-b-2 web:transition-colors",
-                  active ? "border-primary" : "border-transparent web:hover:bg-muted/60"
+                  active
+                    ? primary ? "border-white" : "border-primary"
+                    : primary ? "border-transparent web:hover:bg-white/10" : "border-transparent web:hover:bg-muted/60"
                 )}
               >
                 <Text
                   className={cn(
                     "text-sm font-semibold",
-                    active ? "text-primary" : "text-muted-foreground"
+                    primary
+                      ? active ? "text-white" : "text-white/70"
+                      : active ? "text-primary" : "text-muted-foreground"
                   )}
                 >
                   {tab.label}
@@ -201,6 +207,7 @@ export type ListItem = {
   // Teal tile on the left with a number and a small unit, e.g. 9 / days
   tile?: { value: string | number; unit?: string };
   badge?: string;
+  badgeVariant?: "outline" | "secondary" | "primary";
   onPress?: () => void;
 };
 
@@ -230,8 +237,12 @@ function ListRow({ item, last }: { item: ListItem; last: boolean }) {
           </Text>
         ) : null}
         {item.meta ? <Text className="text-xs text-muted-foreground">{item.meta}</Text> : null}
+        {/* Teal status badges sit under the text, leaving the title room */}
+        {item.badge && item.badgeVariant === "primary" ? (
+          <Badge variant="primary" className="self-start mt-1">{item.badge}</Badge>
+        ) : null}
       </View>
-      {item.badge ? <Badge>{item.badge}</Badge> : null}
+      {item.badge && item.badgeVariant !== "primary" ? <Badge variant={item.badgeVariant}>{item.badge}</Badge> : null}
       {item.onPress ? (
         <Text className={cn("text-lg", item.tile ? "text-primary" : "text-muted-foreground")}>›</Text>
       ) : null}
@@ -247,11 +258,26 @@ function ListRow({ item, last }: { item: ListItem; last: boolean }) {
 }
 
 // Long-form prayer text, one card with headed sections
-export function ReadingCard({ sections }: { sections: { heading?: string; body: string }[] }) {
+export function ReadingCard({
+  sections,
+  readAloud = true,
+}: {
+  sections: { heading?: string; body: string }[];
+  // "Listen" bar at the top (English only)
+  readAloud?: boolean;
+}) {
+  const speech = useReadAloud(sections);
   return (
     <Card className="p-5 md:p-8 gap-8">
+      {readAloud && <ReadAloudBar speech={speech} />}
       {sections.map((section, index) => (
-        <View key={index} className="gap-2">
+        <View
+          key={index}
+          className={cn(
+            "gap-2 -mx-3 px-3 py-2 rounded-lg web:transition-colors",
+            speech.activeSection === index && "bg-accent/70"
+          )}
+        >
           {section.heading ? (
             <Text className="text-xs font-semibold uppercase tracking-widest text-primary">
               {section.heading}

@@ -17,6 +17,7 @@ import {
   LoadingCard,
   EmptyState,
 } from "../../components/ui/page";
+import { images } from "../../constants/images";
 
 export default function PrayersScreen() {
   const router = useRouter();
@@ -51,7 +52,7 @@ export default function PrayersScreen() {
 
   return (
     <Page>
-      <PageHeader title={t("prayers.title")} description={formatDate(new Date(), language)} />
+      <PageHeader tone="primary" image={images.handsNight} title={t("prayers.title")} description={formatDate(new Date(), language)} />
 
       {favourites.length > 0 && (
         <Section

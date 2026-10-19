@@ -70,6 +70,17 @@ export function weekdayName(day: number, language: string) {
   }
 }
 
+// "19 October", in the chosen language
+export function formatDayMonth(date: Date, language: string) {
+  const names = DATE_NAMES[language];
+  if (names) return `${date.getDate()} ${names.months[date.getMonth()]}`;
+  try {
+    return date.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", { day: "numeric", month: "long" });
+  } catch {
+    return date.toDateString().slice(4, 10);
+  }
+}
+
 export function formatDate(date: Date, language: string) {
   const names = DATE_NAMES[language];
   if (names) return `${names.days[date.getDay()]}, ${date.getDate()} ${names.months[date.getMonth()]}`;

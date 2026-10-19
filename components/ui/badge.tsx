@@ -5,6 +5,7 @@ import { cn } from "../../lib/utils";
 const variants = {
   outline: { view: "border border-border", text: "text-foreground" },
   secondary: { view: "bg-muted", text: "text-muted-foreground" },
+  primary: { view: "bg-primary", text: "text-primary-foreground" },
 };
 
 export function Badge({

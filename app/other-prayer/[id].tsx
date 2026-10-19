@@ -7,6 +7,7 @@ import { FavouriteButton, PrayedCard, ShareButton } from "../../components/Praye
 import { itemKey } from "../../lib/items";
 import { prayerContent } from "../../constants/content/otherPrayerTexts";
 import { useContent } from "../../lib/i18n/content";
+import { images } from "../../constants/images";
 
 export default function OtherPrayerDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -25,6 +26,8 @@ export default function OtherPrayerDetailScreen() {
   return (
     <Page>
       <PageHeader
+        tone="primary"
+        image={images.rosaryFern}
         back
         eyebrow={t("prayers.prayer")}
         title={tc(prayer.title)}

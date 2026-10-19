@@ -230,6 +230,38 @@ export default {
     novenaRule: "Shaba aha biro ebirikukurataho. Okufeerwa eizooba nikigaruka kutandika novena.",
     finishRosary: "Hendera kandi oteekye nk'orashabire"
   },
+  seasons: {
+    title: "Obwire bwa novena",
+    traditionally: "Okushaba omu muringo gw'obuhangwa",
+    to: "kuri",
+    feast: "Omukoro gw'okurya",
+    today: "erizooba",
+    feastToday: "Eizooba ry'okurya eriizooba",
+    starts: "Nikutandika",
+    startsIn: "Nikutandika omuri",
+    startsTomorrow: "Nikiza kutandika nyenkyakare",
+    prayToday: "Shaba novena y'erizooba",
+    open: "Igura novena",
+    stJude: "St. Jude",
+    perpetualHelp: "Omukama waitu ow'obuhwezi obutahwaho",
+    stJoseph: "St. Joseph",
+    stLeo: "Paapa St. Leo ow'omukuru",
+    guadalupe: "Omukama waitu wa Guadalupe",
+    holyName: "Eiziina rya Yesu eririkukirayo oburungi",
+    ourLadyOfHope: "Omukama waitu w'amatsiko",
+    divineMercySunday: "Sande y'embabazi za Ruhanga",
+    fatima: "Omukazi waitu wa Fatima",
+    stDominic: "St. Dominic",
+    ourLadyOfSorrows: "Omukama waitu ow'okushoberwa"
+  },
+  readAloud: {
+    listen: "Hurikiriza",
+    pause: "Huumura",
+    resume: "Garukamu",
+    stop: "Rekyera",
+    reading: "Okushoma omu iraka rihango",
+    paused: "Kuhuumura"
+  },
   share: {
     share: "Gabana",
     copied: "Akakwate kakahindwirwe",

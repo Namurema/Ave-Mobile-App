@@ -13,7 +13,7 @@ export default function ChapletsScreen() {
 
   return (
     <Page>
-      <PageHeader back tone="primary" image={images.silhouette} title={t("home.chaplets")} description={t("categories.chapletsDescription")} />
+      <PageHeader back tone="primary" image={images.rosaryWall} title={t("home.chaplets")} description={t("categories.chapletsDescription")} />
 
       <Alert tone="accent">{t("chaplets.info")}</Alert>
 

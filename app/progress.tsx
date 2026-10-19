@@ -23,6 +23,7 @@ import { Page, PageHeader, Section, ListCard, EmptyState } from "../components/u
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { cn } from "../lib/utils";
+import { images } from "../constants/images";
 
 const HISTORY_LIMIT = 30;
 
@@ -75,7 +76,7 @@ export default function ProgressScreen() {
 
   return (
     <Page>
-      <PageHeader title={t("progress.title")} description={t("progress.description")} />
+      <PageHeader tone="primary" image={images.prayingHands} title={t("progress.title")} description={t("progress.description")} />
 
       <View className="flex-row flex-wrap -m-1.5">
         <Stat label={t("progress.streak")} value={streak} />

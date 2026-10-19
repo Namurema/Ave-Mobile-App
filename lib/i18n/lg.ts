@@ -230,6 +230,38 @@ export default {
     novenaRule: "Saba ku nnaku eziddiriŋŋana. Okubulwa olunaku kutandika novena nate.",
     finishRosary: "Maliriza era okakase nti osabidde"
   },
+  seasons: {
+    title: "Ekiseera kya novena",
+    traditionally: "Mu nnono okusaba",
+    to: "okutuuka ku",
+    feast: "Ekijjulo",
+    today: "Leero",
+    feastToday: "Olunaku lw'ekijjulo leero",
+    starts: "Etandika",
+    startsIn: "Etandika mu",
+    startsTomorrow: "Kitandika enkya",
+    prayToday: "Saba novena ya leero",
+    open: "Ggula novena",
+    stJude: "St. Jude",
+    perpetualHelp: "Mukama waffe ow'obuyambi obutaggwaawo",
+    stJoseph: "Ssande Yozefu",
+    stLeo: "Papa St. Leo omukulu",
+    guadalupe: "Mukama waffe ow'e Guadalupe",
+    holyName: "Erinnya lya Yesu erisinga obutukuvu",
+    ourLadyOfHope: "Mukama waffe ow'Essuubi",
+    divineMercySunday: "Olunaku lwa Divine Mercy Sunday",
+    fatima: "Mukama waffe ow'e Fatima",
+    stDominic: "St. Dominic",
+    ourLadyOfSorrows: "Mukama waffe ow'ennaku"
+  },
+  readAloud: {
+    listen: "Wulira",
+    pause: "Komya",
+    resume: "Okuddamu okukola",
+    stop: "Komya",
+    reading: "Okusoma mu ddoboozi ery'omwanguka",
+    paused: "Kiyimiriziddwa"
+  },
   share: {
     share: "Gabanako",
     copied: "Link ekopiddwa",

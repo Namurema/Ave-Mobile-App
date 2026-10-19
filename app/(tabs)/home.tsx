@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { View, Text, ScrollView, Pressable } from "react-native";
+import { View, Text, ScrollView, Pressable, Image, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -19,8 +19,9 @@ import { currentStreak, bestStreak, lastSevenDays, splitLogId } from "../../lib/
 import { describeItem } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { PhotoBackdrop } from "../../components/ui/page";
-import { images } from "../../constants/images";
+import { images, dailyTiles } from "../../constants/images";
 import { RoutineCard } from "../../components/RoutineCard";
+import { NovenaSeasonCard } from "../../components/NovenaSeason";
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
@@ -113,9 +114,9 @@ export default function HomeScreen() {
   }, [language]);
 
   const dailyPrayers = [
-    { title: t("prayers.morningPrayers"), route: "/daily-prayer/morning" },
-    { title: t("prayers.middayPrayers"), route: "/daily-prayer/midday" },
-    { title: t("prayers.nightPrayers"), route: "/daily-prayer/night" },
+    { id: "morning", title: t("prayers.morningPrayers"), route: "/daily-prayer/morning" },
+    { id: "midday", title: t("prayers.middayPrayers"), route: "/daily-prayer/midday" },
+    { id: "night", title: t("prayers.nightPrayers"), route: "/daily-prayer/night" },
   ];
 
   const devotions: LinkRow[] = [
@@ -219,7 +220,7 @@ export default function HomeScreen() {
 
             {/* Today's Rosary */}
             <Card className="bg-primary border-primary overflow-hidden">
-              <PhotoBackdrop source={images.prayingHands} />
+              <PhotoBackdrop source={images.rosaryFern} />
               <View className="p-6 md:p-8 gap-5 md:flex-row md:items-center md:justify-between">
                 <View className="gap-1.5 md:flex-1">
                   <Text className="text-xs font-semibold uppercase tracking-widest text-accent">
@@ -240,6 +241,8 @@ export default function HomeScreen() {
                 </Button>
               </View>
             </Card>
+
+            <NovenaSeasonCard />
 
             <RoutineCard />
 
@@ -291,14 +294,24 @@ export default function HomeScreen() {
               <Text className="px-4 pt-4 pb-1 text-base font-semibold text-card-foreground">
                 {t("home.dailyPrayers")}
               </Text>
-              <View className="flex-row px-2 pb-2">
+              <View className="flex-row gap-2 px-4 pt-2 pb-4">
                 {dailyPrayers.map((prayer) => (
                   <Pressable
                     key={prayer.route}
                     onPress={() => router.push(prayer.route as any)}
-                    className="flex-1 items-center rounded-md px-2 py-3 active:bg-muted"
+                    className="flex-1 aspect-square rounded-lg overflow-hidden bg-primary active:opacity-80"
                   >
-                    <Text className="text-sm font-semibold text-primary text-center">{prayer.title}</Text>
+                    <Image
+                      source={dailyTiles[prayer.id]}
+                      resizeMode="cover"
+                      aria-hidden
+                      style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
+                    />
+                    <View className="absolute bottom-0 left-0 right-0 bg-primary/85 px-2 py-1.5">
+                      <Text className="text-xs font-semibold text-white text-center" numberOfLines={2}>
+                        {prayer.title}
+                      </Text>
+                    </View>
                   </Pressable>
                 ))}
               </View>
