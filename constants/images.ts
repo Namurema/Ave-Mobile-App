@@ -18,9 +18,9 @@ export const dailyTiles: Record<string, any> = {
 
 // Header photo for each daily prayer and novena
 export const dailyImages: Record<string, any> = {
-  morning: images.rosaryFern,
-  midday: images.rosaryWall,
-  night: images.handsNight,
+  morning: require("../assets/images/header-morning.jpg"),
+  midday: require("../assets/images/header-midday.jpg"),
+  night: require("../assets/images/header-night.jpg"),
 };
 
 const novenaImages: Record<string, any> = {
