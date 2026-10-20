@@ -76,31 +76,3 @@ export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
     </Card>
   );
 }
-
-// Home: today's routine, or a suggestion to set one up (until "Not now")
-export function RoutineCard() {
-  const router = useRouter();
-  const { t } = useTranslation();
-  const hasRoutine = useRoutineStore((state) => state.entries.length > 0);
-  const dismissed = useRoutineStore((state) => state.dismissed);
-  const dismissSuggestions = useRoutineStore((state) => state.dismissSuggestions);
-
-  if (hasRoutine) return <TodaysRoutine showEdit />;
-  if (dismissed) return null;
-  return (
-    <Card className="p-5 gap-3 border-primary/30 bg-accent/30">
-      <View className="gap-1">
-        <Text className="text-base font-semibold text-card-foreground">{t("routine.promptTitle")}</Text>
-        <Text className="text-sm leading-5 text-muted-foreground">{t("routine.promptText")}</Text>
-      </View>
-      <View className="flex-row flex-wrap gap-2">
-        <Button size="sm" onPress={() => router.push("/routine")}>
-          {t("routine.seeSuggestions")}
-        </Button>
-        <Button size="sm" variant="ghost" onPress={dismissSuggestions}>
-          {t("auth.notNow")}
-        </Button>
-      </View>
-    </Card>
-  );
-}

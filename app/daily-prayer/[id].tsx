@@ -6,7 +6,8 @@ import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
 import { Alert } from "../../components/ui/alert";
-import { FavouriteButton, PrayedCard, ShareButton } from "../../components/PrayerActions";
+import { PrayerActionBar } from "../../components/PrayerActionBar";
+import { useReadAloud } from "../../lib/speech";
 import { itemKey } from "../../lib/items";
 import {
   Page,
@@ -50,6 +51,9 @@ export default function DailyPrayerScreen() {
   const [showingEnglish, setShowingEnglish] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const sections = prayers.map((prayer) => ({ heading: prayer.title, body: prayer.body }));
+  const speech = useReadAloud(sections);
+
   const title = t(titleKeys[id ?? "morning"] ?? "prayers.title");
   const audioUrl = audioMap[id ?? "morning"];
   const slug = slugMap[id ?? "morning"];
@@ -78,17 +82,11 @@ export default function DailyPrayerScreen() {
   }
 
   return (
-    <Page>
+    <Page bottomBar={<PrayerActionBar itemKey={itemKey.daily(id ?? "morning")} speech={speech} />}>
       <PageHeader
         tone="primary"
         image={dailyImages[id ?? "morning"]}
         eyebrow={t("prayers.title")}
-        actions={
-          <>
-            <FavouriteButton itemKey={itemKey.daily(id ?? "morning")} />
-            <ShareButton />
-          </>
-        }
         title={title}
         tabs={[
           { label: t("prayers.morning"), route: "/daily-prayer/morning" },
@@ -108,12 +106,11 @@ export default function DailyPrayerScreen() {
       ) : (
         <Section title={t("prayers.prayersSection")} count={prayers.length}>
           <ReadingCard
-            sections={prayers.map((prayer) => ({ heading: prayer.title, body: prayer.body }))}
+            sections={sections}
+            speech={speech}
           />
         </Section>
       )}
-
-      {prayers.length > 0 && <PrayedCard itemKey={itemKey.daily(id ?? "morning")} />}
     </Page>
   );
 }

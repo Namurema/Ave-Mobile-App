@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useTranslation } from "react-i18next";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader, LoadingCard, EmptyState } from "../../components/ui/page";
-import { FavouriteButton, PrayedCard, ShareButton } from "../../components/PrayerActions";
-import { ReadAloudBar } from "../../components/ReadAloud";
+import { PrayerActionBar } from "../../components/PrayerActionBar";
+import { useReadAloud } from "../../lib/speech";
 import { itemKey } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { rosaryTabs } from "../../constants/navigation";
@@ -105,6 +105,27 @@ export default function RosarySessionScreen() {
   const repeat = step.kind === "prayer" ? step.repeat ?? 1 : 1;
   const isLast = stepIndex === STEPS.length - 1;
 
+  const stepMystery = step.kind === "mystery" ? mysteries[step.decade - 1] : null;
+  const stepPrayer = step.kind === "prayer" ? prayers[SORT_ORDER[step.prayer]] : null;
+  const speech = useReadAloud(
+    stepMystery
+      ? [
+          { heading: tc(stepMystery.title), body: tc(stepMystery.description) },
+          { heading: t("rosary.virtue"), body: tc(stepMystery.virtue) },
+        ]
+      : stepPrayer
+        ? [{ heading: stepPrayer.title, body: stepPrayer.body }]
+        : []
+  );
+  const firstStep = useRef(true);
+  useEffect(() => {
+    if (firstStep.current) {
+      firstStep.current = false;
+      return;
+    }
+    speech.stop();
+  }, [stepIndex, beads]);
+
   const goTo = (index: number, fromEnd = false) => {
     const target = STEPS[index];
     setStepIndex(index);
@@ -138,12 +159,6 @@ export default function RosarySessionScreen() {
       eyebrow={`${formatWeekday(new Date(), language)} · ${t(`rosary.${MYSTERY_BY_DAY[today]}`)}`}
       title={t("rosary.title")}
       tabs={rosaryTabs(t)}
-      actions={
-          <>
-            <FavouriteButton itemKey={itemKey.rosary} />
-            <ShareButton />
-          </>
-        }
     />
   );
 
@@ -169,12 +184,12 @@ export default function RosarySessionScreen() {
     );
   }
 
-  const mystery = step.kind === "mystery" ? mysteries[step.decade - 1] : null;
-  const prayer = step.kind === "prayer" ? prayers[SORT_ORDER[step.prayer]] : null;
+  const mystery = stepMystery;
+  const prayer = stepPrayer;
   const finished = isLast && beads >= repeat;
 
   return (
-    <Page>
+    <Page bottomBar={<PrayerActionBar itemKey={itemKey.rosary} speech={speech} />}>
       {header}
 
       {/* Progress through the whole Rosary */}
@@ -196,13 +211,6 @@ export default function RosarySessionScreen() {
       {mystery && step.kind === "mystery" ? (
         <Card className="p-6 md:p-8 gap-5">
           <Badge className="self-start">{`${t("rosary.mystery")} ${step.decade}`}</Badge>
-          <ReadAloudBar
-            key={`mystery-${stepIndex}`}
-            sections={[
-              { heading: tc(mystery.title), body: tc(mystery.description) },
-              { heading: t("rosary.virtue"), body: tc(mystery.virtue) },
-            ]}
-          />
           <View className="gap-2">
             <Text role="heading" className="text-2xl font-bold tracking-tight text-card-foreground">
               {tc(mystery.title)}
@@ -234,7 +242,6 @@ export default function RosarySessionScreen() {
               )}
             </>
           )}
-          <ReadAloudBar key={`prayer-${stepIndex}-${beads}`} sections={[{ heading: prayer.title, body: prayer.body }]} />
           <Text selectable className="text-base md:text-lg leading-8 text-foreground">
             {prayer.body}
           </Text>
@@ -249,12 +256,9 @@ export default function RosarySessionScreen() {
       </View>
 
       {finished && (
-        <>
-          <PrayedCard itemKey={itemKey.rosary} label={t("progress.finishRosary")} />
-          <Button variant="ghost" className="self-center" onPress={() => goTo(0)}>
-            {t("rosary.startOver")}
-          </Button>
-        </>
+        <Button variant="ghost" className="self-center" onPress={() => goTo(0)}>
+          {t("rosary.startOver")}
+        </Button>
       )}
     </Page>
   );

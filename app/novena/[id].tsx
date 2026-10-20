@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
 import { Page, PageHeader, ReadingCard } from "../../components/ui/page";
-import { FavouriteButton, PrayedCard, NovenaProgressCard, ShareButton } from "../../components/PrayerActions";
+import { NovenaProgressCard } from "../../components/PrayerActions";
+import { PrayerActionBar } from "../../components/PrayerActionBar";
+import { useReadAloud } from "../../lib/speech";
 import { itemKey } from "../../lib/items";
 import { novenaContent } from "../../constants/content/novenaTexts";
 import { useContent } from "../../lib/i18n/content";
@@ -15,6 +17,8 @@ export default function NovenaDetailScreen() {
   const { t } = useTranslation();
   const tc = useContent();
   const novena = novenaContent[id ?? ""];
+  const sections = novena ? novena.sections.map((s) => ({ heading: tc(s.heading), body: tc(s.body) })) : [];
+  const speech = useReadAloud(sections);
 
   if (!novena) {
     return (
@@ -25,7 +29,7 @@ export default function NovenaDetailScreen() {
   }
 
   return (
-    <Page>
+    <Page bottomBar={<PrayerActionBar itemKey={itemKey.novena(id!)} speech={speech} />}>
       <PageHeader
         tone="primary"
         image={novenaImage(id)}
@@ -33,12 +37,6 @@ export default function NovenaDetailScreen() {
         eyebrow={t("novenas.eyebrow")}
         title={tc(novena.title)}
         description={tc(novena.subtitle)}
-        actions={
-          <>
-            <FavouriteButton itemKey={itemKey.novena(id!)} />
-            <ShareButton />
-          </>
-        }
       />
 
       <NovenaDatesCard novenaId={id!} />
@@ -47,9 +45,7 @@ export default function NovenaDetailScreen() {
 
       {AUDIO_ENABLED && novena.audioUrl && <AudioPlayer url={novena.audioUrl} color={novena.color} />}
 
-      <ReadingCard sections={novena.sections.map((s) => ({ heading: tc(s.heading), body: tc(s.body) }))} />
-
-      <PrayedCard itemKey={itemKey.novena(id!)} />
+      <ReadingCard sections={sections} speech={speech} />
     </Page>
   );
 }

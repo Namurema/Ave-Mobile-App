@@ -1205,8 +1205,8 @@
       "text": "Okuddamu okukola"
     },
     "readAloud.listen": {
-      "en": "Listen",
-      "text": "Wulira"
+      "en": "Play audio",
+      "text": "Kuzaanya eddoboozi"
     },
     "readAloud.pause": {
       "en": "Pause",
@@ -1261,16 +1261,16 @@
       "text": "St. Jude"
     },
     "seasons.open": {
-      "en": "Open the novena",
-      "text": "Ggula novena"
+      "en": "Open",
+      "text": "Ggula"
     },
     "seasons.startsTomorrow": {
       "en": "Starts tomorrow",
       "text": "Kitandika enkya"
     },
     "seasons.prayToday": {
-      "en": "Pray today's novena",
-      "text": "Saba novena ya leero"
+      "en": "pray today",
+      "text": "saba leero"
     },
     "seasons.stJoseph": {
       "en": "St. Joseph",
@@ -1311,6 +1311,86 @@
     "seasons.ourLadyOfSorrows": {
       "en": "Our Lady of Sorrows",
       "text": "Mukama waffe ow'ennaku"
+    },
+    "actions.stop": {
+      "en": "Stop",
+      "text": "Komya"
+    },
+    "actions.play": {
+      "en": "Play",
+      "text": "Zannya"
+    },
+    "actions.pause": {
+      "en": "Pause",
+      "text": "Ssaamu akaseera"
+    },
+    "actions.resume": {
+      "en": "Resume",
+      "text": "Okuddamu okukola"
+    },
+    "actions.saved": {
+      "en": "Saved",
+      "text": "Kikuumiddwa"
+    },
+    "actions.share": {
+      "en": "Share",
+      "text": "Gabanira"
+    },
+    "actions.save": {
+      "en": "Save",
+      "text": "Okutereka"
+    },
+    "actions.routine": {
+      "en": "Routine",
+      "text": "Enteekateeka eya bulijjo"
+    },
+    "actions.prayed": {
+      "en": "Prayed",
+      "text": "Yasaba"
+    },
+    "routine.addTitle": {
+      "en": "Add to your routine",
+      "text": "Gatta ku nkola yo"
+    },
+    "routine.addDescription": {
+      "en": "Choose the days you want to pray this prayer.",
+      "text": "Londa ennaku z'oyagala okusabirako essaala eno."
+    },
+    "routine.removeOne": {
+      "en": "Remove from routine",
+      "text": "Ggya mu nkola eya bulijjo"
+    },
+    "progress.myPrayers": {
+      "en": "My prayers",
+      "text": "Essaala zange"
+    },
+    "progress.tab": {
+      "en": "Progress",
+      "text": "Okukulaakulana"
+    },
+    "seasons.startsToday": {
+      "en": "Starts today",
+      "text": "Etandika leero"
+    },
+    "seasons.continue": {
+      "en": "Continue",
+      "text": "Genda mu maaso"
+    },
+    "seasons.next": {
+      "en": "Next novena",
+      "text": "Novena eddako"
+    },
+    "seasons.begin": {
+      "en": "Begin",
+      "text": "Tandika"
+    },
+    "routine.tab": {
+      "en": "Routine",
+      "text": "Enteekateeka eya bulijjo"
+    },
+    "routine.promptShort": {
+      "en": "Get suggested daily and weekly prayers",
+      "text": "Funa okusaba okw'okukola buli lunaku n'ebiro ebiri mu wiiki"
     }
   },
   "rny": {
@@ -2519,8 +2599,8 @@
       "text": "Garukamu"
     },
     "readAloud.listen": {
-      "en": "Listen",
-      "text": "Hurikiriza"
+      "en": "Play audio",
+      "text": "Kuzaana amahurire"
     },
     "readAloud.pause": {
       "en": "Pause",
@@ -2575,12 +2655,12 @@
       "text": "St. Jude"
     },
     "seasons.open": {
-      "en": "Open the novena",
-      "text": "Igura novena"
+      "en": "Open",
+      "text": "Kwigura"
     },
     "seasons.prayToday": {
-      "en": "Pray today's novena",
-      "text": "Shaba novena y'erizooba"
+      "en": "pray today",
+      "text": "shaba eriizooba"
     },
     "seasons.startsTomorrow": {
       "en": "Starts tomorrow",
@@ -2625,6 +2705,86 @@
     "seasons.ourLadyOfSorrows": {
       "en": "Our Lady of Sorrows",
       "text": "Omukama waitu ow'okushoberwa"
+    },
+    "actions.stop": {
+      "en": "Stop",
+      "text": "Rekyera"
+    },
+    "actions.pause": {
+      "en": "Pause",
+      "text": "Huumura"
+    },
+    "actions.resume": {
+      "en": "Resume",
+      "text": "Okugarukamu"
+    },
+    "actions.play": {
+      "en": "Play",
+      "text": "Kuzaana"
+    },
+    "actions.save": {
+      "en": "Save",
+      "text": "Kubiika"
+    },
+    "actions.share": {
+      "en": "Share",
+      "text": "Gabana"
+    },
+    "actions.saved": {
+      "en": "Saved",
+      "text": "Kikabiikwa"
+    },
+    "actions.routine": {
+      "en": "Routine",
+      "text": "Omuringo gw'okukora"
+    },
+    "actions.prayed": {
+      "en": "Prayed",
+      "text": "Okushaba"
+    },
+    "routine.addTitle": {
+      "en": "Add to your routine",
+      "text": "Yongyera aha ntwaza yaawe"
+    },
+    "routine.addDescription": {
+      "en": "Choose the days you want to pray this prayer.",
+      "text": "Toorana ebiro ebi orikwenda kushabiramu okushaba oku."
+    },
+    "routine.removeOne": {
+      "en": "Remove from routine",
+      "text": "Okwiha omu ntwaza"
+    },
+    "progress.tab": {
+      "en": "Progress",
+      "text": "Entunguuka"
+    },
+    "progress.myPrayers": {
+      "en": "My prayers",
+      "text": "Okushaba kwangye"
+    },
+    "seasons.startsToday": {
+      "en": "Starts today",
+      "text": "Nikitandika eriizooba"
+    },
+    "seasons.begin": {
+      "en": "Begin",
+      "text": "Tandika"
+    },
+    "seasons.continue": {
+      "en": "Continue",
+      "text": "Gumizamu"
+    },
+    "seasons.next": {
+      "en": "Next novena",
+      "text": "Novena erikurataho"
+    },
+    "routine.tab": {
+      "en": "Routine",
+      "text": "Omuringo ogurikukuratirwa"
+    },
+    "routine.promptShort": {
+      "en": "Get suggested daily and weekly prayers",
+      "text": "Okushaba okurikuteebwaho buri izooba na buri sande"
     }
   },
   "content-lg": {
@@ -3503,12 +3663,8 @@
     "How to Pray This Novena": "Oku orikushaba Novena Egi",
     "Opening": "Okwiguraho",
     "Pray the same prayers each day, for 9 days in a row.": "Shaba eshaara emwe buri izooba, kumara ebiro 9 omu runyiriri.",
-    "Intro Prayer": "Okushaba kw'okutandika",
-    "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.": "Omu iziina rya Isheboona, n'ery'Omwana, hamwe n'ery'Omwoyo Orikwera. Amiina.",
     "I believe in God, the Father almighty, the creator of heaven and earth\nand in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit,\nborn of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried.\nHe descended into hell. On the third day He rose again from the dead.\nHe ascended into heaven and sits at the right hand of God, the Father almighty.\nFrom thence He shall come to judge the living and the dead.\nI believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints,\nthe forgiveness of sins, the resurrection of the body and life everlasting. Amen.": "Ninyikiriza omuri Ruhanga, Ishe ow'obushoboorozi bwona, omuhangi w'eiguru n'ensi\nkandi omuri Yesu Kristo, Omwana we wenka, Mukama waitu, owaateekateekirwe omwoyo gurikwera,\nakazaarwa omukazi Mariya, akabonabona ahansi ya Pontius Pilate, akahanikwa aha musaraba, yaafa kandi yaaziikwa.\nAkagwa omu hell. Aha eizooba rya kashatu Akaimuka kuruga omu bafu.\nAkatemba omu iguru kandi ashutami aha mukono gwa buryo ogwa Ruhanga, Ishe ow'obushoboorozi bwona.\nOkuruga aho naija kwija kucwera abahuriire hamwe n'abafu orubanja.\nNinyikiriza omu mwoyo gurikwera, Ekanisa y'Abakaturiki eyererezi, Okugaitwa kw'Abatukuvu,\nokusaasira ebibi, okuzooka kw'omubiri hamwe n'amagara agatahwaho. Amen.",
     "Hail Mary (three times)": "Hail Mary (emirundi eshatu)",
-    "Oh Mother of Perpetual Help, grant that I may ever invoke your powerful name, the protection of the living and the salvation of the dying. Purest Mary, let your name henceforth be ever on my lips. Delay not, Blessed Lady, to rescue me whenever I call on you. In my temptations, in my needs, I will never cease to call on you, ever repeating your sacred name, Mary, Mary.": "Oh Maama w'obuhwezi obutahwaho, mpa ngu nshemereire kushaba eiziina ryawe ery'amaani, oburinzi bw'abariho hamwe n'okujunwa kw'abarikufa. Mariya orikwera munonga, reka eiziina ryawe kuruga hati rishemereire kuba aha mimwa yangye. Otakyerererwa, Omukazi ow'omugisha, okunjuna buri murundi ogu ndikukushaba. Omu bigyezo byangye, omu byetengo byangye, tindikwija kurekyeraaho kukushaba, ndikugaruka kugaruka eiziina ryawe eririkwera, Mariya, Mariya.",
-    "What a consolation, what sweetness, what confidence fills my soul when I utter your sacred name or even only think of you! I thank the Lord for having given you so sweet, so powerful, so lovely a name. But I will not be content with merely uttering your name. Let my love for you prompt me ever to hail you Mother of Perpetual Help. Mother of Perpetual Help, pray for me and grant me the favor I confidently ask of you (mention request here).": "N'ekihuumuro ky'amaani, okushemererwa, n'obwesigye ebirikwijura omu mutima gwangye ku ndikugamba eiziina ryawe eririkwera nainga obu ndikuteekateeka ahariiwe! Ninsiima Mukama ahabw'okumpa eiziina rirungi, ery'amaani, kandi eririkukunda munonga. Kwonka tindikwija kumarwa n'okugamba eiziina ryawe kwonka. Ka rukundo yangye ahariiwe entebekanise kukuha ekitiinisa nk'omukazi w'obuhwezi obutahwaho. Omukazi w'obuhwezi obutahwaho, nsabira kandi ompa ekiconco eki ndikukushaba n'obwesigye (yoreka okushaba aha).",
     "Prayer to St. Jude": "Okushaba kwa St. Jude",
     "In the Name of the Father, and of the Son, and of the Holy Spirit. Amen.": "Omu iziina rya Ishe, n'erya Omwana, hamwe n'ery'Omwoyo Orikwera. Amiina.",
     "Pray for me, as I feel helpless and alone.": "Nshaba onshabire, ahabwokuba ndi omu kushoberwa kandi nyine enaku.",
@@ -3687,6 +3843,92 @@
     "God the Holy Ghost,\nHave mercy on us.": "Ruhanga Omwoyo Orikwera,\nTwagirire embabazi.",
     "Holy Mary,\npray for us.": "Mariya orikwera,\ntushabire.",
     "Holy Trinity, One God,\nHave mercy on us.": "Omushaija, Omukazi n'omwana, Ruhanga omwe,\nTugirire embabazi.",
-    "Holy Mother of God,\npray for us.": "Nyina Ruhanga orikwera,\ntushabire."
+    "Holy Mother of God,\npray for us.": "Nyina Ruhanga orikwera,\ntushabire.",
+    "Mother of Christ,\npray for us.": "Maama wa Kristo,\ntushabire.",
+    "Queen conceived without the stain of Original Sin,\npray for us.": "Omugabekazi akatwara enda ataine kibi ky'okubanza,\nmutushabire.",
+    "Queen of the most Holy Rosary,\npray for us.": "Omugabekazi w'omusaraba ogurikwera munonga,\ntushabe.",
+    "Holy Virgin of virgins,\npray for us.": "Omukazi orikwera w'abakazi abarikwera,\ntweshengyereze.",
+    "Our Lady of Perpetual Help,\npray for us.": "Omukazi waitu ow'obuhwezi obutahwaho,\ntweshengyereze.",
+    "That I may love God with all my heart,\nCome to my aid, O loving Mother.": "Kugira ngu nkunde Ruhanga n'omutima gwangye gwona,\nIja onyambe, Nyina w'okukunda.",
+    "O Mother of Perpetual Help,\nwhose very name inspires confidence,\nCome to my aid, O loving Mother.": "O Maama w'obuhwezi obutahwaho,\now'eiziina rye eririkureeta obwesigye,\nIja omu buhwezi bwangye, O Maama w'okukunda.",
+    "That I may in all things conform my will\nto that of thy Divine Son,\nCome to my aid, O loving Mother.": "Nimbaasa omu bintu byona kuhikaana n'ekigyendererwa\nky'omwana waawe ow'obwaruhanga,\nIja onyambe, Nyina w'okukunda.",
+    "That I may always shun sin, the only real evil,\nCome to my aid, O loving Mother.": "Nkabaasa kwanga ekibi, obubi bwonka obwabuzima,\nOyambe, Nyina w'okukunda.",
+    "That I may often and devoutly receive the Sacraments,\nCome to my aid, O loving Mother.": "Nimbaasa kuguma nintunga obujanjabi bw'okushaba,\nMama w'omukundwa, nyamba.",
+    "That I may avoid every proximate occasion of sin,\nCome to my aid, O loving Mother.": "Nimbaasa kwetantara buri kintu kyona ekirikubaasa kurugamu ekibi,\nMukazi wangye orikundwa, nkwataho.",
+    "That I may always remember my last end,\nCome to my aid, O loving Mother.": "Kugira ngu ninyijuka okuhendera kwangye okwahererukireyo,\nIja omu kumpwera, O maama w'okukunda.",
+    "That I may generously pardon my enemies,\nCome to my aid, O loving Mother.": "Kugira ngu nshoboorore abazigu bangye,\nIja omu kumpwera, O maama w'okukunda.",
+    "That I may ever remember to invoke thee,\nparticularly in time of temptation,\nCome to my aid, O loving Mother.": "Nimbaasa kwijuka kushaba,\nokukira munonga omu bwire bw'okugyezibwa,\nIja onyambe, Omuzaire w'omukundwa.",
+    "That I may always be victorious in the hour of temptation,\nCome to my aid, O loving Mother.": "Kugira ngu ngyende omu maisho okusingura omu shaaha y'okwohibwa,\nNkwataho, O Maama w'omukago.",
+    "That I may never neglect prayer,\nCome to my aid, O loving Mother.": "Kugira ngu ntakarekyera aho okushaba,\nNkwija kukuhwera, O Maama w'okukunda.",
+    "That I may be strong against my own inconstancy,\nCome to my aid, O loving Mother.": "Nimbaasa kuba ow'amaani omu butari bwesigwa bwangye,\nOyambe, Nyina w'okukunda.",
+    "That I may courageously resist the seductions of evil companions,\nCome to my aid, O loving Mother.": "Nkabaasa kugumisiriza okushendashenda kw'abanywani babi,\nIja omu maisho gangye, Owaamaama w'okukunda.",
+    "That I may not delay my conversion from day to day,\nCome to my aid, O loving Mother.": "Kugira ngu ntarekye kuhindura okuruga aha izooba kuza aha rindi,\nIja omu kumpwera, Nyina w'okukunda.",
+    "That I may arise quickly,\nshould I have the misfortune of falling into mortal sin,\nCome to my aid, O loving Mother.": "Nimbaasa kuguruka ahonaaho,\nKu ndikuba nyine oburemeezi bw'okugwa omu kibi ky'okufa,\nIja ompwere, O maama w'okukunda.",
+    "That I may ever love to serve thee,\nCome to my aid, O loving Mother.": "Nimbaasa kukunda kukuheereza,\nIja omu buhwezi bwangye, O maama w'okukunda.",
+    "That I may live and die in the friendship of God,\nCome to my aid, O loving Mother.": "Nkabaasa kutuura kandi nkafa omu mukago gwa Ruhanga,\nIja onyambe, Nyina w'okukunda.",
+    "That I may lead others to love and serve thee,\nCome to my aid, O loving Mother.": "Kugira ngu ndebembe abandi kukunda n'okuheereza iwe,\nIja omu kuhwera kwangye, Nyina w'okukunda.",
+    "That I may labor zealously to eradicate my evil habits,\nCome to my aid, O loving Mother.": "Nimbaasa kukora n'obweziriki kumaraho emicwe yangye mibi,\nOmwana w'omukazi owa rukundo, nyamba.",
+    "In all necessities of body and soul,\nCome to my aid, O loving Mother.": "Omu byetengo byona eby'omubiri hamwe n'omutima,\nNkweshengyereza, nyine maama orikukunda.",
+    "In poverty and distress,\nCome to my aid, O loving Mother.": "Omu bworo n'obusaasi,\nIja omu nyambaho, Nyina w'okukunda.",
+    "In persecution and abandonment,\nCome to my aid, O loving Mother.": "Omu kubonabona n'okunagaijurwa,\nIja omu bwire bwangye, O Maama w'omukago.",
+    "In sickness and pain,\nCome to my aid, O loving Mother.": "Omu burwaire n'obusaasi,\nIja omu buhwezi bwangye, O Maama w'okukunda.",
+    "When assailed by the evil spirits,\nCome to my aid, O loving Mother.": "Ku ndaaba ninteerwa emyoyo emibi,\nNkweshengyereza nyina wangye omukundwa.",
+    "In every danger of sin,\nCome to my aid, O loving Mother.": "Buri kabi koona akarikukwata aha kibi,\nIja onyambe, Nyina w'okugonza.",
+    "In time of war, famine and contagion,\nCome to my aid, O loving Mother.": "Omu bwire bw'orutaro, enjara hamwe n'endwara,\nIja omu buhwezi bwangye, O maama w'okukunda.",
+    "In grief and dereliction of mind,\nCome to my aid, O loving Mother.": "Omu kushoberwa n'okuhwa amaani,\nNkweshengyereza okunyamba, Nyina w'okukunda.",
+    "When death is nigh,\nCome to my aid, O loving Mother.": "Okufa ku kuraabe kuri haihi,\nIja onyambe, nyina w'okukunda.",
+    "When struggling against the inclinations of my corrupt nature,\nCome to my aid, O loving Mother.": "Ku ndikurwanisa okwenda kw'omutima gwangye ogw'obushuma,\nNkweshengyereza, Maama w'okukunda.",
+    "When tempted by the allurements of a deceitful world,\nCome to my aid, O loving Mother.": "Ku orikugyezibwa okukora ebintu by'ensi egi erimu oburyarya,\nNkweshengyereza nyine maama w'okundinda.",
+    "When tempted against the holy virtue of purity,\nCome to my aid, O loving Mother.": "Ku orikugyezibwa aha kushemeza kw'oburungi bw'okwera,\nIja omuyambe, Nyina wangye ow'okukunda.",
+    "When the loss of my senses\nshall warn me that my earthly career is at an end,\nCome to my aid, O loving Mother.": "Obu okufeerwa kw'obwengye bwangye\nkuraabe nikunyoreka ngu omurimo gwangye ogw'omu nsi guri aha muheru,\nIja onyambe, O Maama w'okukunda.",
+    "When the priest of God shall give me\nhis last absolution and his last blessing,\nCome to my aid, O loving Mother.": "Omubuurizi wa Ruhanga ku araaheze\nokunyihaho ebibi bye n'omugisha gwe,\nIja omumpwere obuhwezi, Nyina wangye ow'okukunda.",
+    "When the thought of my approaching dissolution\nshall fill me with fear and terror,\nCome to my aid, O loving Mother.": "Ku ndikuteekateeka aha kushenyuka kwangye\nkuriija kunshemeza n'obutiini hamwe n'okutiina,\nIja omu maisho gangye, O Maama w'omukundwa.",
+    "When at the decisive hour of death,\nthe evil spirit will endeavor to plunge my soul into despair,\nCome to my aid, O loving Mother.": "Ku ndikuba ndi omu shaaha y'okufa,\nomwoyo mubi nigwija kugyezaho kutuma omwoyo gwangye guhwa amaani,\nIja onyambe, Nyina wangye orikukunda.",
+    "When I shall yield my soul into the hands of its Creator,\nCome to my aid, O loving Mother.": "Ku ndaheereze omwoyo gwangye omu mikono y'Omuhangi waagwo,\nIja okunyamba, Nyina wangye ow'okukunda.",
+    "When my soul will appear before its Sovereign Judge,\nCome to my aid, O loving Mother.": "Omwoyo gwangye ku guraareebekye omu maisho ga Omucwi w'Emishango,\nIja onyambe, Nyina w'okukunda.",
+    "When the world will vanish from my sight,\nand my heart will cease to beat,\nCome to my aid, O loving Mother.": "Obu ensi eraija kuhwaho omu maisho gangye,\nkandi omutima gwangye guhwe kuteera,\nIja okunyambere, Owaanyinabukundwa.",
+    "When my friends and relations,\nsurrounding my bed, moved with compassion,\nshall invoke thy clemency on my behalf,\nCome to my aid, O loving Mother.": "Abanywani bangye hamwe n'abanywani,\nbarikwetoorora ekitanda kyangye,\nbaakoresa embabazi,\nbabaase kukushaba okunshazira,\nOyambe, Nyina w'okukunda.",
+    "Lamb of God, Who takest away the sins of the world,\nSpare us, O Lord.": "Omwana gw'entaama, orikwiha ebibi by'ensi,\nTwikirize, Mukama.",
+    "When the irrevocable sentence will be pronounced,\nCome to my aid, O loving Mother.": "Ku orikwija kugamba ekigambo ky'okusharaho,\nIja omu mbabazi zangye, Nyina w'omukundwa.",
+    "When I will be suffering in Purgatory,\nand sighing for the vision of God,\nCome to my aid, O loving Mother.": "Ku ndaabe ninyija kuba nintuntuura omu purigatori,\nkandi ndikweteekateekyera okureeba Ruhanga,\nIja onnyambe, Owaanyinaze ow'okukunda.",
+    "Lamb of God, Who takest away the sins of the world,\nGraciously hear us, O Lord.": "Omwana gw'entaama, orikwihaho ebibi by'ensi,\nMukama w'embabazi, tuhurire.",
+    "Lamb of God, Who takest away the sins of the world,\nHave mercy on us.": "Omwana wa Ruhanga, orikwihaho ebibi by'ensi,\nTugirire embabazi.",
+    "Prayer to Our Lady of Perpetual Help": "Okushaba kwaitu omukazi w'obuhwezi obutahwaho",
+    "O Mother of Perpetual Help, grant that I may ever invoke your powerful name, the protection of the living and the salvation of the dying.": "O Maama w'obuhwezi obutahwaho, mpereza ngu nshemereire kushaba eiziina ryawe ery'amaani, okurinda abahuriire hamwe n'okukiza abarikufa.",
+    "Purest Mary, let your name henceforth be ever on my lips. Delay not, Blessed Lady, to rescue me whenever I call on you.": "Purest Mary, reka eiziina ryawe kuruga hati rishemereire kuba aha mimwa yangye. Otakyerererwa, Omukazi Orikwera, okunkiza buri murundi ogu ndikukushaba.",
+    "In my temptations, in my needs, I will never cease to call on you, ever repeating your sacred name, Mary, Mary.": "Omu kwohibwa kwangye, omu byetengo byangye, tindikwija kuhwa kukushaba, ndikugarukamu eiziina ryawe ery'ekitiinisa, Mariya, Mariya.",
+    "O Almighty and merciful God, Who, in order to succor the human race, hast willed the Blessed Virgin Mary to become the Mother of Thy only-begotten Son, grant, we beseech Thee, that by her intercession we may avoid the contagion of sin and serve Thee with a pure heart, through the same Christ Our Lord.": "Owa Ruhanga ow'amaani kandi ow'embabazi, Orikwenda kuhwera abantu, okasharamu omukazi w'omugisha Mariya kuba Maama w'Omwana waawe omwe wenka, tuheereze, nitushaba ngu kurabira omu kushaba kwe, twetantare ekibi kandi tukuheereze n'omutima ogurikwera, kurabira omuri Kristo Mukama waitu.",
+    "Prayer to Our Lady of Fatima": "Okushaba kw'omukazi waitu ow'e Fatima",
+    "What a consolation, what sweetness, what confidence fills my soul when I utter your sacred name or even only think of you! I thank the Lord for having given you so sweet, so powerful, so lovely a name.": "N'eky'okuhuumuriza, n'oburungi, n'obwesigye oburikwijura omu mutima gwangye ku ndikugamba eiziina ryawe eririkwera nainga n'obu ndaabe ninteekateeka ahariiwe! Ninsiima Mukama ahabw'okukuha eiziina rirungi munonga, ery'amaani, kandi eririkushemeza.",
+    "But I will not be content with merely uttering your name. Let my love for you prompt me ever to hail you Mother of Perpetual Help. Mother of Perpetual Help, pray for me and grant me the favor I confidently ask of you": "Kwonka tindikwija kumarwa n'okugamba eiziina ryawe. Ka rukundo yangye ahabwawe entebekanise okukusiima iwe Maama w'Obuhwezi Obutahwaho. Maama w'Obuhwezi Obutahwaho, nsabira kandi ompe oburungi obu ndikushaba kuruga ahariiwe",
+    "Prayer of Reparation": "Okushaba kw'okugaruraho",
+    "which I ask of thee in this novena, for the greater Glory of God, for thine own honor and for the good of all people.": "eki ndikukushaba omu novena egi, ahabw'ekitiinisa kya Ruhanga ekirikukirayo obwingi, ahabw'ekitiinisa kyawe hamwe n'oburungi bw'abantu boona.",
+    "Prayer to St. Dominic": "Okushaba kwa St. Dominic",
+    "Our Father,\nHail Mary\nGlory Be\n(three times each)": "Taata waitu,\nHail Mary\nEkitiinisa kibe\n(emirundi eshatu buri kamwe)",
+    "Most Holy Virgin, who deigned to come to Fatima to reveal to the three little shepherds the treasures of graces hidden in the recitation of the Rosary, inspire our hearts with a sincere love of this devotion, so that by meditating on the mysteries of our redemption that are recalled in it, we may gather the fruits and obtain the conversion of sinners, the conversion of Russia and this favor which I so earnestly seek,": "Ow'omutaano Omukazi Orikwera, owahaireyo kwija Fatima kushoboororera abashaija bashatu bato abariisa eby'obugaiga by'embabazi ebisherekirwe omu kugarukamu kwa Rosary, aheereze emitima yaitu okukunda okurungi okw'okwehayo oku, kugira ngu turikuteekateeka aha by'okucungurwa kwaitu ebirikwijukwa omuri kwo, tubaase kurundaana ebijuma kandi tufune okuhinduka kw'abasiisi, okuhinduka kwa Russia hamwe n'ekigyendererwa eki ndikuronda n'amaani maingi,",
+    "O renowned champion of the faith of Christ, most holy saint Dominic, who didst renounce the honour and dignity of an earthly principality to embrace the poor, laborious, and mortified life which should distinguish a disciple of Him Who has said: If any man will come after Me, let him take up his cross and follow Me.": "Omweshongozi w'amaani ow'okwikiriza kwa Kristo, omuramuzi orikwera munonga Dominic, owaayehaireyo okurekura ekitiinisa n'obugabe bw'obutegyeki bw'ensi kugira ngu akwatanise n'abooro, abarikukora munonga, hamwe n'amagara g'okubonabonesibwa agarikushemereire kutaanisa omwegi wa We Owaagambire ati: Omuntu weena ku araabe naayenda kwija enyima yangye, areke atware omusaraba gwe kandi amukurate.",
+    "Thou, O great Saint, regardest as nothing all the afflictions thou didst endure, and all the toils thou didst undergo for the promotion of God’s holy cause; obtain, I beseech Thee, that the same ardent love which strengthened thee, may make sweet to me labours, humiliations, disgraces, or whatever other mortifications I may have to suffer for the Name of Jesus.": "Iwe, O Saint mukuru, nooreeba nk'ekitari kikuru okubonabona kwona oku waagumireho, hamwe n'okukora munonga oku waakozire ahabw'okutunguura omurimo gwa Ruhanga ogurikwera; nkweshengyereza, ngu rukundo ei yaakuhaire amaani, ekunde kushemeza emirimo yangye, okuswazibwa, okuswazibwa, nainga okubonabona okundi kwona oku ndikubaasa kubonabona ahabw'eiziina rya Yesu.",
+    "My God, I believe, I adore, I hope and I love You! I ask pardon of You for those who do not believe, do not adore, do not hope and do not love You. Most Holy Trinity, Father, Son and Holy Spirit, I adore You profoundly, and I offer You the most precious Body, Blood, Soul and Divinity of Jesus Christ, present in all the tabernacles of the world, in reparation for the outrages, sacrileges and indifference with which He Himself is offended. And, through the infinite merits of His most Sacred Heart, and the Immaculate Heart of Mary, I beg of You the conversion of poor sinners.": "Ruhanga wangye, ninyikiriza, ninkunda munonga, ninteekateeka kandi ninkukunda! Ninkushaba okusaasirwa ahabw'abo abatarikwikiriza, abatarikukunda munonga, abatarikuteekateeka kandi abatarikukunda. Ruhanga Orikwera Omurundi Gwakashatu, Taata, Omwana hamwe n'Omwoyo Orikwera, ninkukunda munonga, kandi ninkuha Omubiri ogurikukirayo oburungi, Esagama, Omwoyo hamwe n'Oburungi bwa Yesu Kristo, oburi omu myanya yoona y'ensi, omu kuhayo ahabw'okutwarwa kubi, okujumirirwa hamwe n'obutafayo obu Arikugambwaho. Kandi, kurabira omu migasho etarikuhwaho ey'omutima gwe ogurikwera munonga, hamwe n'omutima ogutarimu kibi ogwa Mariya, ninkushaba ngu ohindure abasiisi abooro.",
+    "O burning torch, who being thyself consumed with the fire of divine love, didst incessantly labour to enkindle that sacred flame in the hearts of others, look down upon me from that throne of glory where thou enjoyest the reward of all thy labours, and obtain that some sparks of that blessed fire may be lighted in my soul, to animate and encourage me under any crosses or trials with which it shall please the divine goodness to visit me.": "Otoro y'okwosya, orikuba ori iwe wenka oyokirwe omuriro gw'okukunda kwa Ruhanga, okakora butoosha kushemeza omuriro ogwo ogurikwera omu mitima y'abandi, reeba ahansi aha ntebe y'ekitiinisa ei orikushemerererwamu omugisha gw'emirimo yaawe yoona, kandi otungye ngu obucweka bw'omuriro ogwo ogurikwera bugume bukashemereire omu mutima gwangye, kugira ngu buhimbise kandi buhagarike omu mihanda yoona nainga okugyezibwa oku kirikushemeza oburungi bwa Ruhanga kubungira.",
+    "For a Spirit of Compassion": "Ahabw'omwoyo gw'embabazi",
+    "I praise and thank God for the high degree of sanctity to which He had raised thee, and the special privileges by which He has distinguished thee.": "Ninshaba kandi ninsiima Ruhanga ahabw'okukuhindura omuntu w'omugasho munonga, hamwe n'emigisha y'omutaano ei yaakuhaire.",
+    "O tender Father of the poor who, when all other resources were exhausted, didst offer thyself for their relief, obtain for me that true spirit of compassion for the suffering members of Jesus Christ, which shone forth so conspicuously in thy holy life.": "O taata w'abooro owaahaireyo, obu ebindi byona byahwaho, akahaayo ahabwabo kubahuumuriza, mpisye omwoyo gw'amazima ogw'embabazi aha bantu ba Yesu Kristo abarikubonabona, ogwabaire guriho omu magara gaawe amagororo.",
+    "May I, by charity to those whom Jesus so dearly loves, lay up for myself treasures in heaven, where thou now enjoyest that which the eye hath not seen, nor the ear heard, nor the heart of man conceived, but which God has prepared for those who love Him, and who prove themselves His Disciples by the observance of His Divine precept: love one another.": "Nimbaasa, kurabira omu kugaba aha bantu abu Yesu akunda munonga, nteekye eby'obutungi omu iguru, ahu orikushemererwa hati ebi amaisho gataraareebire, nainga okutu kutahuriire, nainga omutima gw'omuntu gutarateekateeka, kwonka eki Ruhanga atebeekanisiize abarikumukunda, kandi abarikworeka ngu nibo Beegi be barikurinda ebiragiro bye by'Obuhangwa: kukundana.",
+    "May I ever bear in mind that nothing can happen to me but by the particular dispensation of a God Who is infinitely wise, and therefore knows what is best for my welfare; infinitely powerful, and consequently able to effect it; and above all, infinitely merciful and loving, Who has laid down His life for my redemption, and continues daily to give new proofs of His love and bounty.": "Nimbaasa kuguma ninteekateeka ngu tihariho ekirikubaasa kubaho ahariinye okwihaho kurabira omu muringo gw'omutaano ogwa Ruhanga orikwetegyereza munonga, kandi ahabw'ekyo naamanya ekirikukirayo oburungi ahabw'oburungi bwangye; ow'amaani munonga, kandi ahabw'ekyo naabaasa kukikora; kandi ekirikukirayo byona, ow'embabazi n'okukunda munonga, owaataireho amagara ge ahabw'okucungurwa kwangye, kandi akagumizamu buriizooba kuheereza obuhame busya bw'okukunda kwe hamwe n'embabazi ze.",
+    "Obtain likewise the favours I request in this Novena, through thy powerful intercession.": "Kandi oshabe okushaba kwangye omu Novena egi, kurabira omu kushaba kwaawe okw'amaani.",
+    "To Our Lady, Queen of the Rosary": "Ahari Mukama waitu, Omugabekazi w'Ekirabo",
+    "I ask thee, by that gratitude with which thou shalt for all eternity be penetrated for thy Divine Benefactor, implore for me the grace to root out of my heart whatever is not agreeable in His sight, especially that evil habit by which I most frequently offend Him.": "Ninkushaba, ahabw'okusiima oku orikwija kuguma oine obwire bwona ahabwa Omuhangi waawe ow'Oburungi, nshaba ngu ompabure embabazi z'okwiha omu mutima gwangye ekintu kyona ekitarikwikirizibwa omu maisho ge, okukira munonga omuze ogwo ogubi ogu ndikukira kumushiisha.",
+    "Prayer to Our Lady of Sorrows": "Okushaba kwaitu Nyamukama ow'obusaasi",
+    "I sincerely desire from this moment to love Him with all my heart, and serve Him with all my strength, and now place myself under thy powerful protection, as a sure means of obtaining all the graces necessary to serve Him faithfully here, that I may eternally rejoice with Him hereafter. Amen.": "Ninyenda munonga kuruga omu bwire obu kukunda We n'omutima gwangye gwona, kandi ndikumuheereza n'amaani gangye goona, kandi hati nintaho oburinzi bwawe obw'amaani, nk'omuringo ogurikwesigwa gw'okutunga emigisha yoona erikwetengwa kumuheereza omu bwesigwa aha, ngu mpore okushemererwa nawe omu biro byona. Amen.",
+    "O glorious Mother of God, Queen of the most sacred Rosary, thou who didst love Dominic with the affection of a mother, and were most tenderly loved and honoured by him, look upon me, for his sake, with an eye of pity, deign to join with him in presenting these petitions to thy most Blessed Jesus.": "O nyina w'ekitiinisa, Omugabekazi w'omusaraba ogurikwera munonga, iwe owaakunzire Dominic n'okukunda kw'omukazi, kandi akakundwa munonga kandi yaheebwa ekitiinisa, ndeeba ahabwe, n'amaisho g'obusaasi, okikirize kwegaita nawe omu kushaba okushaba oku ahari Yesu waawe owahairwe omugisha.",
+    "O sorrowful Mother, I turn to you in total trust. You suffered the sharpest pains in life, watching your Son die upon the Cross, and yet you remained by Him to the end.": "Maama w'obusaasi, ninkuhindukira omu bwesigye bwona. Okabonabona obusaasi oburikukirayo omu magara gaawe, orikureeba Omwana waawe arikufa aha Musaraba, kandi okaguma ori nawe kuhisya aha muheru.",
+    "Look with favor upon me, a poor sinner, and obtain for me from your Son all the graces I need to endure the sufferings God allows me to face.": "Mpa okushemererwa, omusiisi w'obusaasi, kandi ongabire kuruga aha Mwana waawe obugabe bwona obu ndikwetenga kugumisiriza okubonabona oku Ruhanga arikunyikiriza kubonabona.",
+    "At the Cross Her Station Keeping": "Aha kisharara ky'omwanya gw'okurindiramu",
+    "On the Cross her Son was dying.\nMary stood beneath Him crying,\nSharing in His saving cross.\nAs He hangs, her soul is grieving, and a sword her heart is cleaving\nand she weeps the bitter loss.": "Aha musaraba, Omwana we akaba ariyo naafa.\nMariamu akemera ahansi ye arikurira,\nArikugabana omu musaraba gw'okukiza kwe.\nObu yaabaire ayehingirire, omwoyo gwe gukaba nigushasha, kandi ekitala kikaba nikishara omutima gwe,\nkandi akarira okufeerwa okw'obusaasi.",
+    "The Memorare": "Ekiijusyo",
+    "The First Sorrow": "Okushoberwa kw'okubanza",
+    "O Mother of Sorrows, through thy First Sorrow, the Prophecy of Holy Simeon, intercede for me with the Sacred Heart of Jesus, and grant me the favor I implore\n(mention request here…)": "O Maama w'Okushoberwa, kurabira omu Kushoberwa kwawe okw'okubanza, Okuragura kwa Simeoni Orikwera, ongambire n'omutima gwa Yesu ogurikwera, kandi ompa embabazi ezi ndikushaba",
+    "O Mother of the Word Incarnate, despise not my petitions, but in your clemency, hear and answer me. Amen.": "O Maama w'ekigambo ekirugire omu kishushani, otashisha okushaba kwangye, kureka omu busingye bwawe, mpurira kandi ongambire. Amen.",
+    "Remember, O most gracious Virgin Mary, that never was it known that anyone who fled to your protection, implored your help or sought your intercession, was left unaided. Inspired by this confidence, I fly unto you, O Virgin of Virgins, my Mother. To you do I come, before you I stand, sinful and sorrowful.": "Ijuka, O Mariamu Omukazi w'ekitiinisa, ngu tikirikamanywa ngu omuntu weena owahungiire omu burinzi bwawe, akashaba obuhwezi bwawe nainga akasherura okushaba kwawe, akasigara ataine buhwezi. Ahabw'okugira obwesigye obu, ninkwirukirira, O Mariamu w'Abakazi b'Obusugi, Maama wangye. Ninkwija ahariiwe, omu maisho gaawe ndiyo nyemereire, ndi omunyabibi kandi ndi omu kuhwa amaani."
   }
 }

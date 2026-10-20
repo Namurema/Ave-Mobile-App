@@ -13,7 +13,8 @@ import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { TodaysRoutine } from "../components/RoutineCard";
 import { images } from "../constants/images";
-import { cn } from "../lib/utils";
+import { myPrayersTabs } from "../components/MyPrayersCard";
+import { Chip } from "../components/ui/chip";
 
 // "Every day", or the chosen days in week order
 function useDaysLabel() {
@@ -21,24 +22,6 @@ function useDaysLabel() {
   const { language } = useLanguageStore();
   return (days: number[]) =>
     days.length === 7 ? t("routine.everyDay") : days.map((day) => weekdayName(day, language)).join(", ");
-}
-
-function Chip({ label, selected, onPress }: { label: string; selected: boolean; onPress: () => void }) {
-  return (
-    <Pressable
-      role="checkbox"
-      aria-checked={selected}
-      onPress={onPress}
-      className={cn(
-        "rounded-full border px-3 py-1.5",
-        selected ? "border-primary bg-primary" : "border-border bg-background web:hover:bg-muted"
-      )}
-    >
-      <Text className={cn("text-xs font-semibold", selected ? "text-primary-foreground" : "text-foreground")}>
-        {label}
-      </Text>
-    </Pressable>
-  );
 }
 
 // Pick prayers and their days
@@ -131,7 +114,7 @@ export default function RoutineScreen() {
   const { t } = useTranslation();
   const tc = useContent();
   const daysLabel = useDaysLabel();
-  const { entries, dismissed, setRoutine, clearRoutine, dismissSuggestions } = useRoutineStore();
+  const { entries, setRoutine, clearRoutine } = useRoutineStore();
   const [editing, setEditing] = useState<RoutineEntry[] | null>(null);
   const hasRoutine = entries.length > 0;
 
@@ -141,8 +124,8 @@ export default function RoutineScreen() {
         back
         tone="primary"
         image={images.prayingHands}
-        title={t("routine.title")}
-        description={t("routine.description")}
+        title={t("progress.myPrayers")}
+        tabs={myPrayersTabs(t)}
       />
 
       {editing ? (
@@ -211,11 +194,6 @@ export default function RoutineScreen() {
             <Button size="sm" variant="outline" onPress={() => setEditing([])}>
               {t("routine.makeOwn")}
             </Button>
-            {!dismissed && (
-              <Button size="sm" variant="ghost" onPress={dismissSuggestions}>
-                {t("routine.ignore")}
-              </Button>
-            )}
           </View>
         </Card>
       )}

@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import AudioPlayer from "../../components/audio/AudioPlayer";
 import { AUDIO_ENABLED } from "../../constants/features";
 import { Page, PageHeader, ReadingCard } from "../../components/ui/page";
-import { FavouriteButton, PrayedCard, ShareButton } from "../../components/PrayerActions";
+import { PrayerActionBar } from "../../components/PrayerActionBar";
+import { useReadAloud } from "../../lib/speech";
 import { itemKey } from "../../lib/items";
 import { prayerContent } from "../../constants/content/otherPrayerTexts";
 import { useContent } from "../../lib/i18n/content";
@@ -14,6 +15,8 @@ export default function OtherPrayerDetailScreen() {
   const { t } = useTranslation();
   const tc = useContent();
   const prayer = prayerContent[id ?? ""];
+  const sections = prayer ? prayer.sections.map((s) => ({ heading: tc(s.heading), body: tc(s.body) })) : [];
+  const speech = useReadAloud(sections);
 
   if (!prayer) {
     return (
@@ -24,7 +27,7 @@ export default function OtherPrayerDetailScreen() {
   }
 
   return (
-    <Page>
+    <Page bottomBar={<PrayerActionBar itemKey={itemKey.other(id!)} speech={speech} />}>
       <PageHeader
         tone="primary"
         image={images.rosaryFern}
@@ -32,19 +35,11 @@ export default function OtherPrayerDetailScreen() {
         eyebrow={t("prayers.prayer")}
         title={tc(prayer.title)}
         description={tc(prayer.subtitle)}
-        actions={
-          <>
-            <FavouriteButton itemKey={itemKey.other(id!)} />
-            <ShareButton />
-          </>
-        }
       />
 
       {AUDIO_ENABLED && prayer.audioUrl && <AudioPlayer url={prayer.audioUrl} color={prayer.color} />}
 
-      <ReadingCard sections={prayer.sections.map((s) => ({ heading: tc(s.heading), body: tc(s.body) }))} />
-
-      <PrayedCard itemKey={itemKey.other(id!)} />
+      <ReadingCard sections={sections} speech={speech} />
     </Page>
   );
 }

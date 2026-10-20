@@ -19,9 +19,12 @@ import { BrowseSidebar } from "./BrowseSidebar";
 export function Page({
   children,
   sidebar = true,
+  bottomBar,
 }: {
   children: ReactNode;
   sidebar?: boolean;
+  // Fixed above the bottom menu, e.g. a prayer's action bar
+  bottomBar?: ReactNode;
 }) {
   return (
     <View className="flex-1 bg-zinc-50">
@@ -42,6 +45,7 @@ export function Page({
           <View className="flex-1 min-w-0 gap-4 md:gap-6">{children}</View>
         </View>
       </ScrollView>
+      {bottomBar}
       <Footer />
     </View>
   );
@@ -261,15 +265,19 @@ function ListRow({ item, last }: { item: ListItem; last: boolean }) {
 export function ReadingCard({
   sections,
   readAloud = true,
+  speech: shared,
 }: {
   sections: { heading?: string; body: string }[];
-  // "Listen" bar at the top (English only)
+  // "Play audio" bar at the top (English only), unless the page passes its
+  // own reader, played from the page's action bar
   readAloud?: boolean;
+  speech?: ReturnType<typeof useReadAloud>;
 }) {
-  const speech = useReadAloud(sections);
+  const own = useReadAloud(sections);
+  const speech = shared ?? own;
   return (
     <Card className="p-5 md:p-8 gap-8">
-      {readAloud && <ReadAloudBar speech={speech} />}
+      {readAloud && !shared && <ReadAloudBar speech={speech} />}
       {sections.map((section, index) => (
         <View
           key={index}

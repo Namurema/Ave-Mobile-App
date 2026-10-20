@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable, Image, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import type { TFunction } from "i18next";
 import { useLanguageStore } from "../store/LanguageStore";
-import { usePrayedToday } from "../store/userDataStore";
+import { usePrayedToday, useUserDataStore } from "../store/userDataStore";
+import { dayString, splitLogId } from "../lib/progress";
 import { useContent } from "../lib/i18n/content";
 import { formatDayMonth } from "../lib/i18n/helpers";
 import { novenaSeason, type NovenaSeason } from "../lib/seasons";
@@ -11,8 +12,6 @@ import { itemKey } from "../lib/items";
 import { availableNovenas } from "../constants/content/available";
 import { novenaImage } from "../constants/images";
 import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-import { PhotoBackdrop } from "./ui/page";
 
 // "Day 3 of 9 today", "Starts tomorrow", "Starts in 5 days", "Feast day today", or
 // the start date
@@ -60,15 +59,35 @@ export function NovenaDatesCard({ novenaId }: { novenaId: string }) {
 
 type SeasonItem = { novena: (typeof availableNovenas)[number]; season: NovenaSeason };
 
-// Home: every novena running today; when none is, the one on its feast day
-// or starting soonest
+// Days prayed within this season's novena days, up to today
+function prayedInSeason(log: Set<string>, novenaId: string, season: NovenaSeason) {
+  const key = itemKey.novena(novenaId);
+  const from = dayString(season.start);
+  const to = dayString(season.end);
+  let count = 0;
+  for (const id of log) {
+    const entry = splitLogId(id);
+    if (entry.key === key && entry.day >= from && entry.day <= to) count++;
+  }
+  return count;
+}
+
+// Home: a slim card for the novena running now. Once started it shows how far
+// you've got; once finished (or after the feast) it moves on to the next one.
 export function NovenaSeasonCard() {
+  const log = useUserDataStore((state) => state.log);
   const items = availableNovenas
     .map((novena) => ({ novena, season: novenaSeason(novena.id) }))
-    .filter((item): item is SeasonItem => !!item.season && item.season.status !== "later")
+    .filter((item): item is SeasonItem => !!item.season)
+    .map((item) => ({ ...item, done: prayedInSeason(log, item.novena.id, item.season) }))
     .sort((a, b) => rank(a.season) - rank(b.season));
-  const running = items.filter((item) => item.season.status === "active");
-  const shown = running.length ? running : items.slice(0, 1);
+
+  const unfinished = (item: (typeof items)[number]) => item.done < item.season.length;
+  const running = items.filter((item) => item.season.status === "active" && unfinished(item));
+  const feast = items.filter((item) => item.season.status === "feast");
+  const next = items.filter((item) => item.season.status === "upcoming" || item.season.status === "later").slice(0, 1);
+  const shown = running.length ? running : feast.length ? feast : next;
+
   return (
     <>
       {shown.map((item) => (
@@ -78,37 +97,65 @@ export function NovenaSeasonCard() {
   );
 }
 
-function SeasonCard({ novena, season }: SeasonItem) {
+function SeasonCard({ novena, season, done }: SeasonItem & { done: number }) {
   const router = useRouter();
   const { t } = useTranslation();
   const tc = useContent();
   const language = useLanguageStore((state) => state.language);
   const prayedToday = usePrayedToday(itemKey.novena(novena.id));
+  const of = `${t("progress.of")} ${season.length}`;
+
+  // What to say, and what the button does
+  let eyebrow = t("seasons.title");
+  let status: string;
+  let action: string;
+  if (season.status === "active") {
+    if (done === 0) {
+      status = season.day === 1 ? t("seasons.startsToday") : `${t("progress.day")} ${season.day} ${of} ${t("seasons.today")}`;
+      action = t("seasons.begin");
+    } else if (prayedToday) {
+      status = `${t("progress.day")} ${done} ${of} · ${t("progress.prayedToday")}`;
+      action = t("seasons.open");
+    } else {
+      status = `${t("progress.day")} ${done + 1} ${of} · ${t("seasons.prayToday")}`;
+      action = t("seasons.continue");
+    }
+  } else if (season.status === "feast") {
+    status = season.feastKey ? `${t("seasons.feastToday")}: ${t(season.feastKey)}` : t("seasons.feastToday");
+    action = t("seasons.open");
+  } else {
+    eyebrow = t("seasons.next");
+    status = seasonStatus(season, t, language);
+    action = t("seasons.open");
+  }
 
   return (
-    <Card className="bg-primary border-primary overflow-hidden">
-      <PhotoBackdrop source={novenaImage(novena.id)} />
-      <View className="p-6 gap-4">
-        <View className="gap-1.5">
-          <Text className="text-xs font-semibold uppercase tracking-widest text-accent">{t("seasons.title")}</Text>
-          <Text className="text-xl font-bold tracking-tight text-white">{tc(novena.title)}</Text>
-          <Text className="text-sm text-white/85">
-            {seasonStatus(season, t, language)} · {seasonRange(season, t, language)}
+    <Card className="overflow-hidden">
+      <Pressable
+        onPress={() => router.push(`/novena/${novena.id}`)}
+        className="flex-row items-center gap-3 p-3 web:hover:bg-muted/60 active:bg-muted/60"
+      >
+        <View className="h-14 w-14 overflow-hidden rounded-lg bg-primary">
+          <Image
+            source={novenaImage(novena.id)}
+            resizeMode="cover"
+            aria-hidden
+            style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
+          />
+        </View>
+        <View className="flex-1 gap-0.5">
+          <Text className="text-[11px] font-semibold uppercase tracking-widest text-primary">{eyebrow}</Text>
+          <Text className="text-sm font-semibold text-card-foreground" numberOfLines={2}>
+            {tc(novena.title)}
+          </Text>
+          <Text className="text-xs text-muted-foreground" numberOfLines={1}>
+            {status}
           </Text>
         </View>
-        <Button
-          size="sm"
-          onPress={() => router.push(`/novena/${novena.id}`)}
-          className="self-start bg-white web:hover:bg-white/90"
-          textClassName="text-primary"
-        >
-          {season.status === "active"
-            ? prayedToday
-              ? t("progress.prayedToday")
-              : t("seasons.prayToday")
-            : t("seasons.open")}
-        </Button>
-      </View>
+        <View className="rounded-full bg-primary/10 px-3 py-1.5">
+          <Text className="text-xs font-semibold text-primary">{action}</Text>
+        </View>
+      </Pressable>
     </Card>
   );
 }

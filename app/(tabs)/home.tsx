@@ -14,13 +14,10 @@ import { formatDate, greetingKeys } from "../../lib/i18n/helpers";
 import { useContent } from "../../lib/i18n/content";
 import { scripture } from "../../constants/content/scripture";
 import { useAuthStore, displayName } from "../../store/authStore";
-import { useUserDataStore } from "../../store/userDataStore";
-import { currentStreak, bestStreak, lastSevenDays, splitLogId } from "../../lib/progress";
-import { describeItem } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { PhotoBackdrop } from "../../components/ui/page";
 import { images, dailyTiles } from "../../constants/images";
-import { RoutineCard } from "../../components/RoutineCard";
+import { MyPrayersCard } from "../../components/MyPrayersCard";
 import { NovenaSeasonCard } from "../../components/NovenaSeason";
 
 // Rosary mysteries by weekday, Sunday first
@@ -92,8 +89,6 @@ export default function HomeScreen() {
     return () => clearInterval(timer);
   }, []);
   const greeting = greetingKeys(now);
-  const log = useUserDataStore((state) => state.log);
-  const favourites = useUserDataStore((state) => state.favourites);
   const [prayerOfDay, setPrayerOfDay] = useState<any>(null);
   const [prayerLoading, setPrayerLoading] = useState(true);
 
@@ -125,22 +120,6 @@ export default function HomeScreen() {
     { title: t("home.chaplets"), description: t("home.meditativePrayer"), route: "/chaplets" },
     { title: t("home.otherPrayers"), description: t("home.sacredLocations"), route: "/other-prayers" },
   ];
-
-  const daysPrayed = new Set([...log].map((id) => splitLogId(id).day));
-  const streak = currentStreak(daysPrayed);
-  const best = bestStreak(daysPrayed);
-  const weekCount = lastSevenDays().filter((day) => daysPrayed.has(day)).length;
-  const progressRows: LinkRow[] = [
-    { title: t("progress.streak"), value: String(streak), route: "/progress" },
-    { title: t("progress.bestStreak"), value: String(best), route: "/progress" },
-    { title: t("progress.thisWeek"), value: `${weekCount}/7`, route: "/progress" },
-  ];
-
-  const favouriteRows: LinkRow[] = favourites
-    .map((key) => describeItem(key, t, tc))
-    .filter((info): info is NonNullable<typeof info> => !!info)
-    .slice(0, 4)
-    .map((info) => ({ title: info.title, description: info.kind, route: info.route }));
 
   return (
     <View className="flex-1 bg-zinc-50">
@@ -181,15 +160,6 @@ export default function HomeScreen() {
                 </View>
               </View>
             </Card>
-
-            <View className="hidden lg:flex">
-              <SidebarList
-                title={t("progress.title")}
-                rows={progressRows}
-                footer={{ label: t("progress.viewProgress"), route: "/progress" }}
-              />
-            </View>
-
           </View>
 
           {/* Center feed */}
@@ -244,52 +214,8 @@ export default function HomeScreen() {
 
             <NovenaSeasonCard />
 
-            <RoutineCard />
-
-            {/* Progress and favourites in one card, below the Rosary card (phones) */}
-            <Card className="lg:hidden overflow-hidden">
-              <Pressable
-                onPress={() => router.push("/progress")}
-                className="flex-row items-center gap-4 p-4 active:bg-muted/60"
-              >
-                <View className="h-14 w-14 items-center justify-center rounded-full border-4 border-primary/20">
-                  <Text className="text-sm font-bold text-primary">{weekCount}/7</Text>
-                </View>
-                <View className="flex-1 gap-0.5">
-                  <Text className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    {t("progress.title")}
-                  </Text>
-                  <Text className="text-base font-semibold text-card-foreground">
-                    {t("progress.streak")}: {streak}
-                  </Text>
-                  <Text className="text-sm text-muted-foreground">
-                    {t("progress.bestStreak")}: {best} · {t("progress.thisWeek")}: {weekCount}/7
-                  </Text>
-                </View>
-                <View className="rounded-full bg-primary/10 px-3 py-2">
-                  <Text className="text-sm font-semibold text-primary">{t("progress.viewProgress")}</Text>
-                </View>
-              </Pressable>
-              <Pressable
-                onPress={() => router.push("/favourites")}
-                className="flex-row items-center gap-3 border-t border-border px-4 py-3 active:bg-muted/60"
-              >
-                <View className="flex-1 gap-0.5">
-                  <Text className="text-sm font-semibold text-card-foreground">
-                    {t("favourites.title")}
-                    {favourites.length > 0 ? ` (${favourites.length})` : ""}
-                  </Text>
-                  <Text className="text-sm text-muted-foreground" numberOfLines={1}>
-                    {favouriteRows.length > 0
-                      ? favouriteRows.map((row) => row.title).join(" · ")
-                      : t("favourites.noneYet")}
-                  </Text>
-                </View>
-                <Text className="text-lg text-muted-foreground">›</Text>
-              </Pressable>
-            </Card>
-
-            {/* Daily prayers, below the progress card (phones) */}
+            <MyPrayersCard />
+            {/* Daily prayers (phones) */}
             <Card className="lg:hidden overflow-hidden">
               <Text className="px-4 pt-4 pb-1 text-base font-semibold text-card-foreground">
                 {t("home.dailyPrayers")}
@@ -351,16 +277,6 @@ export default function HomeScreen() {
 
           {/* Right sidebar */}
           <View className="gap-4 lg:w-80">
-            {favouriteRows.length > 0 && (
-              <View className="hidden lg:flex">
-                <SidebarList
-                  title={t("favourites.title")}
-                  rows={favouriteRows}
-                  footer={{ label: t("favourites.viewAll"), route: "/favourites" }}
-                />
-              </View>
-            )}
-
             <SidebarList
               title={t("home.spiritualPractice")}
               rows={devotions}
