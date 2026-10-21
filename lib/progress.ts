@@ -67,24 +67,3 @@ export function lastSevenDays() {
   const today = dayString();
   return Array.from({ length: 7 }, (_, i) => addDays(today, i - 6));
 }
-
-// A novena is prayed on consecutive days; missing a day starts it again.
-// Returns how far the current run has got, and whether today is done.
-export function novenaProgress(daysPrayed: Set<string>, length: number) {
-  const today = dayString();
-  const prayedToday = daysPrayed.has(today);
-  let cursor = prayedToday ? today : addDays(today, -1);
-  let run = 0;
-  while (daysPrayed.has(cursor)) {
-    run++;
-    cursor = addDays(cursor, -1);
-  }
-  const cycleFinished = run > 0 && run % length === 0;
-  // Finished today: show it complete. Finished on an earlier day: the next
-  // day starts a new novena.
-  if (cycleFinished && prayedToday) {
-    return { daysDone: length, length, prayedToday, completed: true, nextDay: 1 };
-  }
-  const daysDone = cycleFinished ? 0 : run % length;
-  return { daysDone, length, prayedToday, completed: false, nextDay: daysDone + 1 };
-}

@@ -5,7 +5,9 @@ import { Platform } from "react-native";
 // no Luganda or Runyankore voices, so the app offers this in English only.
 
 export type SpeechSection = { heading?: string; body: string };
-type Chunk = { text: string; section: number };
+// A piece read in one go, and where it sits: a section's heading, or the
+// characters start..end of its body (for highlighting while it's read)
+export type Chunk = { text: string; section: number; part: "heading" | "body"; start: number; end: number };
 
 export const canSpeak = () =>
   Platform.OS === "web" &&
@@ -17,34 +19,62 @@ export const canSpeak = () =>
 // restarts from the current piece
 const MAX_CHUNK = 220;
 
-function toChunks(sections: SpeechSection[]): Chunk[] {
+// Each line of a body is read separately; long lines are split into
+// sentences (very long sentences at commas) and regrouped up to MAX_CHUNK.
+// Offsets point into the original text, so its layout is kept when highlighting.
+// (No lookbehind in these patterns: older iPhones lack it.)
+function bodyChunks(body: string, section: number): Chunk[] {
   const chunks: Chunk[] = [];
-  sections.forEach((section, index) => {
-    const parts = [section.heading, ...section.body.split(/\n+/)].filter(
-      (part): part is string => !!part && !!part.trim()
-    );
-    for (const part of parts) {
-      if (part.length <= MAX_CHUNK) {
-        chunks.push({ text: part.trim(), section: index });
+  const push = (start: number, end: number) => {
+    const raw = body.slice(start, end);
+    const text = raw.trim();
+    if (!text) return;
+    const lead = raw.length - raw.trimStart().length;
+    chunks.push({ text, section, part: "body", start: start + lead, end: start + lead + text.length });
+  };
+
+  const lines = /[^\n]+/g;
+  for (let line = lines.exec(body); line; line = lines.exec(body)) {
+    const offset = line.index;
+    const text = line[0];
+    if (text.length <= MAX_CHUNK) {
+      push(offset, offset + text.length);
+      continue;
+    }
+    const pieces: [number, number][] = [];
+    const sentences = /[^.!?;:]+[.!?;:]*\s*/g;
+    for (let s = sentences.exec(text); s; s = sentences.exec(text)) {
+      if (s[0].length <= MAX_CHUNK) {
+        pieces.push([s.index, s.index + s[0].length]);
         continue;
       }
-      // Split long paragraphs into sentences, and very long sentences at commas
-      // (no lookbehind: older iPhones lack it)
-      const sentences = (part.match(/[^.!?;:]+[.!?;:]*\s*/g) ?? [part]).flatMap((sentence) =>
-        sentence.length > MAX_CHUNK ? sentence.match(/[^,]+,?\s*/g) ?? [sentence] : [sentence]
-      );
-      let current = "";
-      for (const sentence of sentences) {
-        if (current && (current + sentence).length > MAX_CHUNK) {
-          chunks.push({ text: current.trim(), section: index });
-          current = "";
-        }
-        current += sentence;
+      const clauses = /[^,]+,?\s*/g;
+      for (let c = clauses.exec(s[0]); c; c = clauses.exec(s[0])) {
+        pieces.push([s.index + c.index, s.index + c.index + c[0].length]);
       }
-      if (current.trim()) chunks.push({ text: current.trim(), section: index });
     }
-  });
+    let groupStart = -1;
+    let groupEnd = -1;
+    for (const [start, end] of pieces) {
+      if (groupStart >= 0 && end - groupStart > MAX_CHUNK) {
+        push(offset + groupStart, offset + groupEnd);
+        groupStart = -1;
+      }
+      if (groupStart < 0) groupStart = start;
+      groupEnd = end;
+    }
+    if (groupStart >= 0) push(offset + groupStart, offset + groupEnd);
+  }
   return chunks;
+}
+
+export function toChunks(sections: SpeechSection[]): Chunk[] {
+  return sections.flatMap((section, index) => [
+    ...(section.heading?.trim()
+      ? [{ text: section.heading.trim(), section: index, part: "heading" as const, start: 0, end: 0 }]
+      : []),
+    ...bodyChunks(section.body, index),
+  ]);
 }
 
 // A clear English voice on the device, preferring British English and
@@ -138,8 +168,9 @@ export function useReadAloud(sections: SpeechSection[]) {
   return {
     available: canSpeak(),
     state,
-    // Index of the section being read, for highlighting
+    // Index of the section being read, and the exact piece, for highlighting
     activeSection: state === "idle" ? null : chunks.current[position]?.section ?? null,
+    activeChunk: state === "idle" ? null : chunks.current[position] ?? null,
     play: () => speakFrom(state === "paused" ? positionRef.current : 0),
     pause: () => halt("paused"),
     stop: stopSelf,

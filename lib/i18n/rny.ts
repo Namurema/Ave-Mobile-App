@@ -232,6 +232,28 @@ export default {
     novenaRule: "Shaba aha biro ebirikukurataho. Okufeerwa eizooba nikigaruka kutandika novena.",
     finishRosary: "Hendera kandi oteekye nk'orashabire"
   },
+  novena: {
+    started: "Kikatandika",
+    complete: "Okuhikiiriza",
+    daysPrayed: "ebiro byashabirwe",
+    notStarted: "Tikakatandika",
+    prayedDay: "Oshabire eizooba",
+    comeBack: "Garuka nyenkyakare ahabw'ekiro",
+    todayIsDay: "Eriizooba n'ekiro",
+    markWhenDone: "Kora aha kicweka ahansi waaherize.",
+    missed: "ebiro ebirabireho kuhisya hati.",
+    missedOne: "Eizooba rikaburaho kuhisya hati.",
+    keepGoing: "Gumizamu nookora: noobaasa kuhendera novena.",
+    beginsOn: "Novena egi neetandika aha",
+    startToday: "Okushaba eizooba rya 1 eriizooba kutandika.",
+    ended: "Ebiro bya novena ebi bihoire. Nibigaruka omwaka ogurikukurataho.",
+    state: {
+      prayed: "akashaba",
+      missed: "kareebwa",
+      today: "eriizooba",
+      future: "ekirikwija kubaho"
+    }
+  },
   seasons: {
     title: "Obwire bwa novena",
     traditionally: "Okushaba omu muringo gw'obuhangwa",
@@ -260,6 +282,38 @@ export default {
     stDominic: "St. Dominic",
     ourLadyOfSorrows: "Omukama waitu ow'okushoberwa"
   },
+  billing: {
+    title: "Okushaba okwehandikisa",
+    description: "Buri kushaba, omu Rungyereza, Oruganda hamwe n'Orunyankore, n'obutumwa oburikuhurirwa, okugabana hamwe n'okwijusya.",
+    subscription: "Okwihayo",
+    includes: "Enteekateeka yaawe erimu buri kushaba omu ndimi zoona ishatu, okuhurikiriza, okuguma nookora, okugabana hamwe n'okwijusya.",
+    signInFirst: "Kora akaunti ya busha kutandika okugyezibwa kw'ebiro 7.",
+    trialUntil: "Okugyezibwa kwawe okw'obusingye nikugyenda kuhisya",
+    trialEnded: "Okugyezibwa kwawe okw'obusingye kuhweireho. Toorana enteekateeka kuguma nooshaba na Ave.",
+    paidUntil: "Enteekateeka yaawe neekora kuhisya",
+    inUganda: "Omu Uganda (UGX)",
+    outsideUganda: "Aheeru ya Uganda (USD)",
+    monthly: "Buri kwezi",
+    yearly: "Buri mwaka",
+    perMonth: "Buri kwezi nibashashura",
+    twoMonthsFree: "Emyezi ebiri eya busha",
+    best: "Omutindo ogurikukirayo",
+    pay: "Shashura",
+    createAccount: "Kora akawunti okugumizamu",
+    methodsUganda: "Shashura orikukoresa MTN nainga Airtel mobayiro mane, nari kaadi. Okushashura nikukorwa kurungi PesaPal.",
+    methodsAbroad: "Shashura n'ekadi ya Visa nainga Mastercard. Okushashura nikukorwa omu muringo gw'oburinzi kuruga omuri PesaPal.",
+    startFailed: "Tikabaasa kutandika okushashura. Kyebera okukwatanisa kwawe kandi ogaruke ogyezeho.",
+    checking: "Okuhamya okushashura kwawe...",
+    thankYou: "Webare!",
+    activated: "Enteekateeka yaawe eriho.",
+    notPaid: "Okushashura tikuhwaire",
+    notPaidText: "Okushashura tikurabiremu, nahabwekyo tihaine ekyashashwirwe. Noobaasa kugaruka ogyezeho.",
+    checkLater: "Titurabaasa kuhamya okushashura kwawe. Ku haraabe hariho esente ezatwairwe, enteekateeka yaawe neija kutandika omu bwire butari bwa hare. Twahikaho waaba otarikukimanya.",
+    startPraying: "Tandika kushaba",
+    tryAgain: "Okugaruka aha nteekateeka",
+    extend: "Yongyera aha nteekateeka yaawe",
+    choosePlan: "Toorana enteekateeka"
+  },
   actions: {
     play: "Kuzaana",
     pause: "Huumura",
@@ -269,7 +323,8 @@ export default {
     saved: "Kikabiikwa",
     routine: "Omuringo gw'okukora",
     share: "Gabana",
-    prayed: "Okushaba"
+    prayed: "Okushaba",
+    markPrayed: "Mark akashaba"
   },
   readAloud: {
     listen: "Kuzaana amahurire",

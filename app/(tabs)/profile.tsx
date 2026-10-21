@@ -8,6 +8,8 @@ import { useAuthStore, displayName } from "../../store/authStore";
 import { useAuthDialog } from "../../store/authDialogStore";
 import { useUserDataStore } from "../../store/userDataStore";
 import { useRoutineStore } from "../../store/routineStore";
+import { useAccessStore } from "../../store/accessStore";
+import { formatDayMonth } from "../../lib/i18n/helpers";
 import { currentStreak, splitLogId } from "../../lib/progress";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { LOGIN_ENABLED } from "../../constants/features";
@@ -31,6 +33,7 @@ export default function ProfileScreen() {
   const log = useUserDataStore((state) => state.log);
   const favouriteCount = useUserDataStore((state) => state.favourites.length);
   const routineCount = useRoutineStore((state) => state.entries.length);
+  const access = useAccessStore((state) => state.access);
   const streak = currentStreak(new Set([...log].map((id) => splitLogId(id).day)));
 
   const handleSignOut = async () => {
@@ -118,6 +121,24 @@ export default function ProfileScreen() {
             <Text className="flex-1 text-sm text-muted-foreground">See the accounts that have signed up.</Text>
             <Button variant="outline" size="sm" onPress={() => router.push("/admin")}>
               View accounts
+            </Button>
+          </Card>
+        </Section>
+      )}
+
+      {/* Only once the server has answered (payments may not be set up yet) */}
+      {isSignedIn && access && (
+        <Section title={t("billing.subscription")}>
+          <Card className="p-4 gap-3">
+            <Text className="text-sm leading-5 text-card-foreground">
+              {access?.paidUntil && access.paidUntil > new Date()
+                ? `${t("billing.paidUntil")} ${formatDayMonth(access.paidUntil, language)} ${access.paidUntil.getFullYear()}`
+                : access?.trialEndsAt && access.trialEndsAt > new Date()
+                  ? `${t("billing.trialUntil")} ${formatDayMonth(access.trialEndsAt, language)}`
+                  : t("billing.trialEnded")}
+            </Text>
+            <Button size="sm" className="self-start" onPress={() => router.push("/subscribe")}>
+              {access?.paidUntil && access.paidUntil > new Date() ? t("billing.extend") : t("billing.choosePlan")}
             </Button>
           </Card>
         </Section>

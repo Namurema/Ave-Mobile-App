@@ -1391,6 +1391,202 @@
     "routine.promptShort": {
       "en": "Get suggested daily and weekly prayers",
       "text": "Funa okusaba okw'okukola buli lunaku n'ebiro ebiri mu wiiki"
+    },
+    "billing.subscription": {
+      "en": "Subscription",
+      "text": "Okwewandiisa"
+    },
+    "billing.title": {
+      "en": "Ave subscription",
+      "text": "Okusaba okuwandiisa"
+    },
+    "billing.includes": {
+      "en": "Your plan includes every prayer in all three languages, audio, streaks, sharing and reminders.",
+      "text": "Enteekateeka yo erimu buli ssaala mu nnimi zonna essatu, eddoboozi, okukwatagana n'okujjukizibwa."
+    },
+    "billing.description": {
+      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+      "text": "Buli ssaala mu Lungereza, Oluganda n'Olunyankole, nga mulimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa."
+    },
+    "billing.trialUntil": {
+      "en": "Your free trial runs until",
+      "text": "Okugezesebwa kwo okw'obwereere kukola okutuusa"
+    },
+    "billing.signInFirst": {
+      "en": "Create a free account to start your 7-day free trial.",
+      "text": "Kola akawunta ey'obwereere okutandika okugezesebwa kw'ennaku omusanvu."
+    },
+    "billing.trialEnded": {
+      "en": "Your free trial has ended. Choose a plan to keep praying with Ave.",
+      "text": "Okugezesebwa kwo okw'obwereere kuwedde. Londa entegeka okusigala ng'osaba ne Ave."
+    },
+    "billing.paidUntil": {
+      "en": "Your plan is active until",
+      "text": "Enteekateeka yo ekola okutuusa"
+    },
+    "billing.inUganda": {
+      "en": "In Uganda (UGX)",
+      "text": "Mu Uganda (UGX)"
+    },
+    "billing.outsideUganda": {
+      "en": "Outside Uganda (USD)",
+      "text": "Ebweru wa Uganda (USD)"
+    },
+    "billing.monthly": {
+      "en": "Monthly",
+      "text": "Buli mwezi"
+    },
+    "billing.yearly": {
+      "en": "Yearly",
+      "text": "Buli mwaka"
+    },
+    "billing.perMonth": {
+      "en": "Billed every month",
+      "text": "Buli mwezi basasula"
+    },
+    "billing.best": {
+      "en": "Best value",
+      "text": "Omutindo ogusinga obulungi"
+    },
+    "billing.twoMonthsFree": {
+      "en": "Two months free",
+      "text": "Emyezi ebiri egy'obwereere"
+    },
+    "billing.pay": {
+      "en": "Pay",
+      "text": "Sasula"
+    },
+    "billing.createAccount": {
+      "en": "Create an account to continue",
+      "text": "Kola akawunti okweyongerayo"
+    },
+    "billing.methodsUganda": {
+      "en": "Pay with MTN or Airtel mobile money, or a card. Payments are handled securely by PesaPal.",
+      "text": "Sasula ne MTN oba Airtel mobile money, oba kaadi. Okusasula kukolebwa mu ngeri etaliimu bulabe PesaPal."
+    },
+    "billing.methodsAbroad": {
+      "en": "Pay with Visa or Mastercard. Payments are handled securely by PesaPal.",
+      "text": "Sasula ne Visa oba Mastercard. Okusasula kukolebwa mu ngeri ey'obukuumi nga PesaPal bw'ekola."
+    },
+    "billing.checking": {
+      "en": "Confirming your payment...",
+      "text": "Okukakasa okusasula kwo..."
+    },
+    "billing.startFailed": {
+      "en": "Couldn't start the payment. Check your connection and try again.",
+      "text": "Teyasobola kutandika kusasula. Kebera enkolagana yo era ogezeeko nate."
+    },
+    "billing.thankYou": {
+      "en": "Thank you!",
+      "text": "Webale nnyo!"
+    },
+    "billing.activated": {
+      "en": "Your plan is active.",
+      "text": "Enteekateeka yo eri mu nkola."
+    },
+    "billing.startPraying": {
+      "en": "Start praying",
+      "text": "Tandika okusaba"
+    },
+    "billing.notPaid": {
+      "en": "Payment not completed",
+      "text": "Okusasula tekunnaggwa"
+    },
+    "billing.notPaidText": {
+      "en": "The payment didn't go through, so nothing was charged. You can try again.",
+      "text": "Okusasula tekwagenda bulungi, n’olwekyo tewali kyasasulwa. Osobola okugezaako nate."
+    },
+    "billing.tryAgain": {
+      "en": "Back to plans",
+      "text": "Okudda ku nteekateeka"
+    },
+    "billing.choosePlan": {
+      "en": "Choose a plan",
+      "text": "Londa enteekateeka"
+    },
+    "billing.extend": {
+      "en": "Extend your plan",
+      "text": "Yongera ku nteekateeka yo"
+    },
+    "billing.checkLater": {
+      "en": "We couldn't confirm your payment yet. If money was taken, your plan will be activated shortly. Contact us if it isn't.",
+      "text": "Tetunnaba kumanya oba okusasula kwakoleddwa. Singa ssente zaatwaliddwa, enteekateeka yo ejja kutandika mu bbanga ttono. Tukwatagane naffe singa tekikoleddwa."
+    },
+    "novena.started": {
+      "en": "Started",
+      "text": "Yatandika"
+    },
+    "novena.notStarted": {
+      "en": "Not started",
+      "text": "Tekinnatandika"
+    },
+    "novena.complete": {
+      "en": "Complete",
+      "text": "Okumaliriza"
+    },
+    "novena.daysPrayed": {
+      "en": "days prayed",
+      "text": "ennaku ezisabiddwa"
+    },
+    "novena.prayedDay": {
+      "en": "You've prayed day",
+      "text": "Omusabidde olunaku"
+    },
+    "novena.todayIsDay": {
+      "en": "Today is day",
+      "text": "Olwa leero lwe lunaku"
+    },
+    "novena.comeBack": {
+      "en": "Come back tomorrow for day",
+      "text": "Komawo enkya okukola olunaku"
+    },
+    "novena.beginsOn": {
+      "en": "This novena begins on",
+      "text": "Novena eno etandika ku"
+    },
+    "novena.markWhenDone": {
+      "en": "Tap Prayed below when you finish.",
+      "text": "Bw'omala okukola, wandiika wansi."
+    },
+    "novena.missed": {
+      "en": "days missed so far.",
+      "text": "ennaku ezibuzeewo okutuuka kati."
+    },
+    "novena.keepGoing": {
+      "en": "Keep going: you can still finish the novena.",
+      "text": "Weeyongereyo: osobola okumaliriza novena."
+    },
+    "novena.state.prayed": {
+      "en": "prayed",
+      "text": "yasaba"
+    },
+    "novena.state.missed": {
+      "en": "missed",
+      "text": "yayita ku kintu"
+    },
+    "novena.startToday": {
+      "en": "Pray day 1 today to begin.",
+      "text": "Okusaba olunaku olw'okubiri leero lutandike."
+    },
+    "novena.ended": {
+      "en": "This novena's days are over. It comes round again next year.",
+      "text": "Ennaku z'ekikungo kino zimaze okuggwaako. Kijja kuddamu omwaka ogujja."
+    },
+    "novena.state.today": {
+      "en": "today",
+      "text": "leero"
+    },
+    "novena.state.future": {
+      "en": "still to come",
+      "text": "ekyali okujja"
+    },
+    "actions.markPrayed": {
+      "en": "Mark prayed",
+      "text": "Mark yasaba"
+    },
+    "novena.missedOne": {
+      "en": "day missed so far.",
+      "text": "Tewali lunaku luyise."
     }
   },
   "rny": {
@@ -2785,6 +2981,202 @@
     "routine.promptShort": {
       "en": "Get suggested daily and weekly prayers",
       "text": "Okushaba okurikuteebwaho buri izooba na buri sande"
+    },
+    "billing.subscription": {
+      "en": "Subscription",
+      "text": "Okwihayo"
+    },
+    "billing.title": {
+      "en": "Ave subscription",
+      "text": "Okushaba okwehandikisa"
+    },
+    "billing.includes": {
+      "en": "Your plan includes every prayer in all three languages, audio, streaks, sharing and reminders.",
+      "text": "Enteekateeka yaawe erimu buri kushaba omu ndimi zoona ishatu, okuhurikiriza, okuguma nookora, okugabana hamwe n'okwijusya."
+    },
+    "billing.signInFirst": {
+      "en": "Create a free account to start your 7-day free trial.",
+      "text": "Kora akaunti ya busha kutandika okugyezibwa kw'ebiro 7."
+    },
+    "billing.paidUntil": {
+      "en": "Your plan is active until",
+      "text": "Enteekateeka yaawe neekora kuhisya"
+    },
+    "billing.trialEnded": {
+      "en": "Your free trial has ended. Choose a plan to keep praying with Ave.",
+      "text": "Okugyezibwa kwawe okw'obusingye kuhweireho. Toorana enteekateeka kuguma nooshaba na Ave."
+    },
+    "billing.inUganda": {
+      "en": "In Uganda (UGX)",
+      "text": "Omu Uganda (UGX)"
+    },
+    "billing.outsideUganda": {
+      "en": "Outside Uganda (USD)",
+      "text": "Aheeru ya Uganda (USD)"
+    },
+    "billing.monthly": {
+      "en": "Monthly",
+      "text": "Buri kwezi"
+    },
+    "billing.yearly": {
+      "en": "Yearly",
+      "text": "Buri mwaka"
+    },
+    "billing.perMonth": {
+      "en": "Billed every month",
+      "text": "Buri kwezi nibashashura"
+    },
+    "billing.twoMonthsFree": {
+      "en": "Two months free",
+      "text": "Emyezi ebiri eya busha"
+    },
+    "billing.pay": {
+      "en": "Pay",
+      "text": "Shashura"
+    },
+    "billing.best": {
+      "en": "Best value",
+      "text": "Omutindo ogurikukirayo"
+    },
+    "billing.createAccount": {
+      "en": "Create an account to continue",
+      "text": "Kora akawunti okugumizamu"
+    },
+    "billing.methodsUganda": {
+      "en": "Pay with MTN or Airtel mobile money, or a card. Payments are handled securely by PesaPal.",
+      "text": "Shashura orikukoresa MTN nainga Airtel mobayiro mane, nari kaadi. Okushashura nikukorwa kurungi PesaPal."
+    },
+    "billing.methodsAbroad": {
+      "en": "Pay with Visa or Mastercard. Payments are handled securely by PesaPal.",
+      "text": "Shashura n'ekadi ya Visa nainga Mastercard. Okushashura nikukorwa omu muringo gw'oburinzi kuruga omuri PesaPal."
+    },
+    "billing.startFailed": {
+      "en": "Couldn't start the payment. Check your connection and try again.",
+      "text": "Tikabaasa kutandika okushashura. Kyebera okukwatanisa kwawe kandi ogaruke ogyezeho."
+    },
+    "billing.checking": {
+      "en": "Confirming your payment...",
+      "text": "Okuhamya okushashura kwawe..."
+    },
+    "billing.thankYou": {
+      "en": "Thank you!",
+      "text": "Webare!"
+    },
+    "billing.activated": {
+      "en": "Your plan is active.",
+      "text": "Enteekateeka yaawe eriho."
+    },
+    "billing.notPaid": {
+      "en": "Payment not completed",
+      "text": "Okushashura tikuhwaire"
+    },
+    "billing.notPaidText": {
+      "en": "The payment didn't go through, so nothing was charged. You can try again.",
+      "text": "Okushashura tikurabiremu, nahabwekyo tihaine ekyashashwirwe. Noobaasa kugaruka ogyezeho."
+    },
+    "billing.startPraying": {
+      "en": "Start praying",
+      "text": "Tandika kushaba"
+    },
+    "billing.trialUntil": {
+      "en": "Your free trial runs until",
+      "text": "Okugyezibwa kwawe okw'obusingye nikugyenda kuhisya"
+    },
+    "billing.tryAgain": {
+      "en": "Back to plans",
+      "text": "Okugaruka aha nteekateeka"
+    },
+    "billing.description": {
+      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+      "text": "Buri kushaba, omu Rungyereza, Oruganda hamwe n'Orunyankore, n'obutumwa oburikuhurirwa, okugabana hamwe n'okwijusya."
+    },
+    "billing.extend": {
+      "en": "Extend your plan",
+      "text": "Yongyera aha nteekateeka yaawe"
+    },
+    "billing.choosePlan": {
+      "en": "Choose a plan",
+      "text": "Toorana enteekateeka"
+    },
+    "billing.checkLater": {
+      "en": "We couldn't confirm your payment yet. If money was taken, your plan will be activated shortly. Contact us if it isn't.",
+      "text": "Titurabaasa kuhamya okushashura kwawe. Ku haraabe hariho esente ezatwairwe, enteekateeka yaawe neija kutandika omu bwire butari bwa hare. Twahikaho waaba otarikukimanya."
+    },
+    "novena.complete": {
+      "en": "Complete",
+      "text": "Okuhikiiriza"
+    },
+    "novena.daysPrayed": {
+      "en": "days prayed",
+      "text": "ebiro byashabirwe"
+    },
+    "novena.started": {
+      "en": "Started",
+      "text": "Kikatandika"
+    },
+    "novena.notStarted": {
+      "en": "Not started",
+      "text": "Tikakatandika"
+    },
+    "novena.prayedDay": {
+      "en": "You've prayed day",
+      "text": "Oshabire eizooba"
+    },
+    "novena.comeBack": {
+      "en": "Come back tomorrow for day",
+      "text": "Garuka nyenkyakare ahabw'ekiro"
+    },
+    "novena.todayIsDay": {
+      "en": "Today is day",
+      "text": "Eriizooba n'ekiro"
+    },
+    "novena.markWhenDone": {
+      "en": "Tap Prayed below when you finish.",
+      "text": "Kora aha kicweka ahansi waaherize."
+    },
+    "novena.missed": {
+      "en": "days missed so far.",
+      "text": "ebiro ebirabireho kuhisya hati."
+    },
+    "novena.beginsOn": {
+      "en": "This novena begins on",
+      "text": "Novena egi neetandika aha"
+    },
+    "novena.keepGoing": {
+      "en": "Keep going: you can still finish the novena.",
+      "text": "Gumizamu nookora: noobaasa kuhendera novena."
+    },
+    "novena.startToday": {
+      "en": "Pray day 1 today to begin.",
+      "text": "Okushaba eizooba rya 1 eriizooba kutandika."
+    },
+    "novena.state.prayed": {
+      "en": "prayed",
+      "text": "akashaba"
+    },
+    "novena.state.missed": {
+      "en": "missed",
+      "text": "kareebwa"
+    },
+    "novena.state.today": {
+      "en": "today",
+      "text": "eriizooba"
+    },
+    "novena.ended": {
+      "en": "This novena's days are over. It comes round again next year.",
+      "text": "Ebiro bya novena ebi bihoire. Nibigaruka omwaka ogurikukurataho."
+    },
+    "actions.markPrayed": {
+      "en": "Mark prayed",
+      "text": "Mark akashaba"
+    },
+    "novena.state.future": {
+      "en": "still to come",
+      "text": "ekirikwija kubaho"
+    },
+    "novena.missedOne": {
+      "en": "day missed so far.",
+      "text": "Eizooba rikaburaho kuhisya hati."
     }
   },
   "content-lg": {

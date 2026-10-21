@@ -9,6 +9,7 @@ import { TopNav } from "./AppNav";
 import Footer from "./Footer";
 import { ReadAloudBar } from "../ReadAloud";
 import { useReadAloud } from "../../lib/speech";
+import { SpokenText } from "./spoken-text";
 import { Card, FlatCardContext } from "./card";
 import { Badge } from "./badge";
 import { BrowseSidebar } from "./BrowseSidebar";
@@ -278,24 +279,29 @@ export function ReadingCard({
   return (
     <Card className="p-5 md:p-8 gap-8">
       {readAloud && !shared && <ReadAloudBar speech={speech} />}
-      {sections.map((section, index) => (
-        <View
-          key={index}
-          className={cn(
-            "gap-2 -mx-3 px-3 py-2 rounded-lg web:transition-colors",
-            speech.activeSection === index && "bg-accent/70"
-          )}
-        >
-          {section.heading ? (
-            <Text className="text-xs font-semibold uppercase tracking-widest text-primary">
-              {section.heading}
-            </Text>
-          ) : null}
-          <Text selectable className="text-base md:text-lg leading-8 text-foreground">
-            {section.body}
-          </Text>
-        </View>
-      ))}
+      {sections.map((section, index) => {
+        // While reading aloud: a soft tint on the section, and the sentence
+        // being read highlighted within it
+        const chunk = speech.activeChunk?.section === index ? speech.activeChunk : null;
+        return (
+          <View
+            key={index}
+            className={cn("gap-2 -mx-3 px-3 py-2 rounded-lg web:transition-colors", chunk && "bg-accent/25")}
+          >
+            {section.heading ? (
+              <Text
+                className={cn(
+                  "self-start rounded text-xs font-semibold uppercase tracking-widest text-primary",
+                  chunk?.part === "heading" && "bg-accent"
+                )}
+              >
+                {section.heading}
+              </Text>
+            ) : null}
+            <SpokenText text={section.body} chunk={chunk} className="text-base md:text-lg leading-8 text-foreground" />
+          </View>
+        );
+      })}
     </Card>
   );
 }

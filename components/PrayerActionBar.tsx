@@ -1,6 +1,6 @@
 import { useState, type ComponentProps } from "react";
 import { View, Text, Pressable } from "react-native";
-import Feather from "@expo/vector-icons/Feather";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../store/LanguageStore";
 import { useUserDataStore, usePrayedToday, useIsFavourite } from "../store/userDataStore";
@@ -18,15 +18,18 @@ import { cn } from "../lib/utils";
 const PRIMARY = "#01758F";
 const MUTED = "#52525B";
 
-type IconName = ComponentProps<typeof Feather>["name"];
+type IconName = ComponentProps<typeof Ionicons>["name"];
 
+// Outline icon normally, the filled one (and teal) while on, e.g. a saved heart
 function Action({
   icon,
+  activeIcon,
   label,
   active = false,
   onPress,
 }: {
   icon: IconName;
+  activeIcon?: IconName;
   label: string;
   active?: boolean;
   onPress: () => void;
@@ -42,7 +45,7 @@ function Action({
         active ? "bg-primary/10" : "web:hover:bg-muted active:bg-muted"
       )}
     >
-      <Feather name={icon} size={20} color={active ? PRIMARY : MUTED} />
+      <Ionicons name={active && activeIcon ? activeIcon : icon} size={22} color={active ? PRIMARY : MUTED} />
       <Text
         numberOfLines={1}
         className={cn("text-[11px]", active ? "font-semibold text-primary" : "font-medium text-muted-foreground")}
@@ -134,25 +137,31 @@ export function PrayerActionBar({
             <Action icon="pause" label={t("actions.pause")} active onPress={speech!.pause} />
           ) : (
             <Action
-              icon="play"
+              icon="play-outline"
+              activeIcon="play"
               label={speech!.state === "paused" ? t("actions.resume") : t("actions.play")}
               active={speech!.state === "paused"}
               onPress={speech!.play}
             />
           ))}
-        {canPlay && speech!.state !== "idle" && <Action icon="square" label={t("actions.stop")} onPress={speech!.stop} />}
+        {canPlay && speech!.state !== "idle" && <Action icon="stop-outline" label={t("actions.stop")} onPress={speech!.stop} />}
         <Action
-          icon="heart"
+          icon="heart-outline"
+          activeIcon="heart"
           label={saved ? t("actions.saved") : t("actions.save")}
           active={saved}
           // Saving asks guests to sign in first; removing never does
           onPress={() => (saved ? toggleFavourite(key) : withAccountPrompt(() => toggleFavourite(key)))}
         />
-        <Action icon="calendar" label={t("actions.routine")} active={inRoutine} onPress={() => setRoutineOpen(true)} />
-        <Action icon="share-2" label={copied ? t("share.copied") : t("actions.share")} onPress={share} />
+        <Action icon="calendar-outline" activeIcon="calendar" label={t("actions.routine")} active={inRoutine} onPress={() => setRoutineOpen(true)} />
+        {/* While audio plays, Stop takes Share's place, so the bar keeps five buttons */}
+        {!(canPlay && speech!.state !== "idle") && (
+          <Action icon="share-social-outline" label={copied ? t("share.copied") : t("actions.share")} onPress={share} />
+        )}
         <Action
-          icon="check-circle"
-          label={t("actions.prayed")}
+          icon="checkmark-circle-outline"
+          activeIcon="checkmark-circle"
+          label={prayed ? t("actions.prayed") : t("actions.markPrayed")}
           active={prayed}
           onPress={() => (prayed ? unmarkPrayed(key) : withAccountPrompt(() => markPrayed(key)))}
         />

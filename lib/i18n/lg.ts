@@ -232,6 +232,28 @@ export default {
     novenaRule: "Saba ku nnaku eziddiriŋŋana. Okubulwa olunaku kutandika novena nate.",
     finishRosary: "Maliriza era okakase nti osabidde"
   },
+  novena: {
+    started: "Yatandika",
+    complete: "Okumaliriza",
+    daysPrayed: "ennaku ezisabiddwa",
+    notStarted: "Tekinnatandika",
+    prayedDay: "Omusabidde olunaku",
+    comeBack: "Komawo enkya okukola olunaku",
+    todayIsDay: "Olwa leero lwe lunaku",
+    markWhenDone: "Bw'omala okukola, wandiika wansi.",
+    missed: "ennaku ezibuzeewo okutuuka kati.",
+    missedOne: "Tewali lunaku luyise.",
+    keepGoing: "Weeyongereyo: osobola okumaliriza novena.",
+    beginsOn: "Novena eno etandika ku",
+    startToday: "Okusaba olunaku olw'okubiri leero lutandike.",
+    ended: "Ennaku z'ekikungo kino zimaze okuggwaako. Kijja kuddamu omwaka ogujja.",
+    state: {
+      prayed: "yasaba",
+      missed: "yayita ku kintu",
+      today: "leero",
+      future: "ekyali okujja"
+    }
+  },
   seasons: {
     title: "Ekiseera kya novena",
     traditionally: "Mu nnono okusaba",
@@ -260,6 +282,38 @@ export default {
     stDominic: "St. Dominic",
     ourLadyOfSorrows: "Mukama waffe ow'ennaku"
   },
+  billing: {
+    title: "Okusaba okuwandiisa",
+    description: "Buli ssaala mu Lungereza, Oluganda n'Olunyankole, nga mulimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa.",
+    subscription: "Okwewandiisa",
+    includes: "Enteekateeka yo erimu buli ssaala mu nnimi zonna essatu, eddoboozi, okukwatagana n'okujjukizibwa.",
+    signInFirst: "Kola akawunta ey'obwereere okutandika okugezesebwa kw'ennaku omusanvu.",
+    trialUntil: "Okugezesebwa kwo okw'obwereere kukola okutuusa",
+    trialEnded: "Okugezesebwa kwo okw'obwereere kuwedde. Londa entegeka okusigala ng'osaba ne Ave.",
+    paidUntil: "Enteekateeka yo ekola okutuusa",
+    inUganda: "Mu Uganda (UGX)",
+    outsideUganda: "Ebweru wa Uganda (USD)",
+    monthly: "Buli mwezi",
+    yearly: "Buli mwaka",
+    perMonth: "Buli mwezi basasula",
+    twoMonthsFree: "Emyezi ebiri egy'obwereere",
+    best: "Omutindo ogusinga obulungi",
+    pay: "Sasula",
+    createAccount: "Kola akawunti okweyongerayo",
+    methodsUganda: "Sasula ne MTN oba Airtel mobile money, oba kaadi. Okusasula kukolebwa mu ngeri etaliimu bulabe PesaPal.",
+    methodsAbroad: "Sasula ne Visa oba Mastercard. Okusasula kukolebwa mu ngeri ey'obukuumi nga PesaPal bw'ekola.",
+    startFailed: "Teyasobola kutandika kusasula. Kebera enkolagana yo era ogezeeko nate.",
+    checking: "Okukakasa okusasula kwo...",
+    thankYou: "Webale nnyo!",
+    activated: "Enteekateeka yo eri mu nkola.",
+    notPaid: "Okusasula tekunnaggwa",
+    notPaidText: "Okusasula tekwagenda bulungi, n’olwekyo tewali kyasasulwa. Osobola okugezaako nate.",
+    checkLater: "Tetunnaba kumanya oba okusasula kwakoleddwa. Singa ssente zaatwaliddwa, enteekateeka yo ejja kutandika mu bbanga ttono. Tukwatagane naffe singa tekikoleddwa.",
+    startPraying: "Tandika okusaba",
+    tryAgain: "Okudda ku nteekateeka",
+    extend: "Yongera ku nteekateeka yo",
+    choosePlan: "Londa enteekateeka"
+  },
   actions: {
     play: "Zannya",
     pause: "Ssaamu akaseera",
@@ -269,7 +323,8 @@ export default {
     saved: "Kikuumiddwa",
     routine: "Enteekateeka eya bulijjo",
     share: "Gabanira",
-    prayed: "Yasaba"
+    prayed: "Yasaba",
+    markPrayed: "Mark yasaba"
   },
   readAloud: {
     listen: "Kuzaanya eddoboozi",

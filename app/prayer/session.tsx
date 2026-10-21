@@ -7,6 +7,7 @@ import { Badge } from "../../components/ui/badge";
 import { Page, PageHeader, LoadingCard, EmptyState } from "../../components/ui/page";
 import { PrayerActionBar } from "../../components/PrayerActionBar";
 import { useReadAloud } from "../../lib/speech";
+import { SpokenText } from "../../components/ui/spoken-text";
 import { itemKey } from "../../lib/items";
 import { cn } from "../../lib/utils";
 import { rosaryTabs } from "../../constants/navigation";
@@ -215,11 +216,19 @@ export default function RosarySessionScreen() {
             <Text role="heading" className="text-2xl font-bold tracking-tight text-card-foreground">
               {tc(mystery.title)}
             </Text>
-            <Text className="text-base leading-7 text-muted-foreground">{tc(mystery.description)}</Text>
+            <SpokenText
+              text={tc(mystery.description)}
+              chunk={speech.activeChunk?.section === 0 ? speech.activeChunk : null}
+              className="text-base leading-7 text-muted-foreground"
+            />
           </View>
           <View className="rounded-md bg-muted p-4 gap-1">
             <Text className="text-xs font-semibold uppercase tracking-widest text-primary">{t("rosary.virtue")}</Text>
-            <Text className="text-base font-semibold text-foreground">{tc(mystery.virtue)}</Text>
+            <SpokenText
+              text={tc(mystery.virtue)}
+              chunk={speech.activeChunk?.section === 1 ? speech.activeChunk : null}
+              className="text-base font-semibold text-foreground"
+            />
           </View>
         </Card>
       ) : prayer && step.kind === "prayer" ? (
@@ -242,9 +251,11 @@ export default function RosarySessionScreen() {
               )}
             </>
           )}
-          <Text selectable className="text-base md:text-lg leading-8 text-foreground">
-            {prayer.body}
-          </Text>
+          <SpokenText
+            text={prayer.body}
+            chunk={speech.activeChunk?.section === 0 ? speech.activeChunk : null}
+            className="text-base md:text-lg leading-8 text-foreground"
+          />
         </Card>
       ) : null}
 

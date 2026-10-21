@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import type { TFunction } from "i18next";
 import { useLanguageStore } from "../store/LanguageStore";
 import { usePrayedToday, useUserDataStore } from "../store/userDataStore";
-import { dayString, splitLogId } from "../lib/progress";
+import { novenaTrack } from "../lib/novenaTrack";
 import { useContent } from "../lib/i18n/content";
 import { formatDayMonth } from "../lib/i18n/helpers";
 import { novenaSeason, type NovenaSeason } from "../lib/seasons";
@@ -59,19 +59,6 @@ export function NovenaDatesCard({ novenaId }: { novenaId: string }) {
 
 type SeasonItem = { novena: (typeof availableNovenas)[number]; season: NovenaSeason };
 
-// Days prayed within this season's novena days, up to today
-function prayedInSeason(log: Set<string>, novenaId: string, season: NovenaSeason) {
-  const key = itemKey.novena(novenaId);
-  const from = dayString(season.start);
-  const to = dayString(season.end);
-  let count = 0;
-  for (const id of log) {
-    const entry = splitLogId(id);
-    if (entry.key === key && entry.day >= from && entry.day <= to) count++;
-  }
-  return count;
-}
-
 // Home: a slim card for the novena running now. Once started it shows how far
 // you've got; once finished (or after the feast) it moves on to the next one.
 export function NovenaSeasonCard() {
@@ -79,7 +66,7 @@ export function NovenaSeasonCard() {
   const items = availableNovenas
     .map((novena) => ({ novena, season: novenaSeason(novena.id) }))
     .filter((item): item is SeasonItem => !!item.season)
-    .map((item) => ({ ...item, done: prayedInSeason(log, item.novena.id, item.season) }))
+    .map((item) => ({ ...item, done: novenaTrack(item.novena.id, log).prayedCount }))
     .sort((a, b) => rank(a.season) - rank(b.season));
 
   const unfinished = (item: (typeof items)[number]) => item.done < item.season.length;
@@ -110,14 +97,15 @@ function SeasonCard({ novena, season, done }: SeasonItem & { done: number }) {
   let status: string;
   let action: string;
   if (season.status === "active") {
-    if (done === 0) {
-      status = season.day === 1 ? t("seasons.startsToday") : `${t("progress.day")} ${season.day} ${of} ${t("seasons.today")}`;
-      action = t("seasons.begin");
-    } else if (prayedToday) {
-      status = `${t("progress.day")} ${done} ${of} · ${t("progress.prayedToday")}`;
+    const day = `${t("progress.day")} ${season.day} ${of}`;
+    if (prayedToday) {
+      status = `${day} · ${t("progress.prayedToday")}`;
       action = t("seasons.open");
+    } else if (done === 0) {
+      status = season.day === 1 ? t("seasons.startsToday") : `${day} ${t("seasons.today")}`;
+      action = t("seasons.begin");
     } else {
-      status = `${t("progress.day")} ${done + 1} ${of} · ${t("seasons.prayToday")}`;
+      status = `${day} · ${t("seasons.prayToday")}`;
       action = t("seasons.continue");
     }
   } else if (season.status === "feast") {

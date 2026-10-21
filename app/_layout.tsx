@@ -13,6 +13,7 @@ import { UpdateBanner } from "../components/UpdateBanner";
 import { InstallDialog } from "../components/InstallDialog";
 import { startUserDataSync } from "../store/userDataStore";
 import { startRoutineSync } from "../store/routineStore";
+import { startAccessSync } from "../store/accessStore";
 import { AuthDialog } from "../components/auth/AuthDialog";
 import { SITE_URL } from "../constants/site";
 
@@ -30,6 +31,7 @@ export default function RootLayout() {
     loadLanguage();
     startUserDataSync();
     startRoutineSync();
+    startAccessSync();
     registerServiceWorker();
     startUpdateChecks();
   }, []);

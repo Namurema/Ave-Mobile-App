@@ -7,6 +7,7 @@ import { useContent } from "../lib/i18n/content";
 import { describeItem } from "../lib/items";
 import { entriesForDay } from "../lib/routines";
 import { dayString, logId } from "../lib/progress";
+import { novenaTrack } from "../lib/novenaTrack";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
@@ -23,7 +24,16 @@ export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
   const items = entriesForDay(entries)
     .map((entry) => ({ key: entry.key, info: describeItem(entry.key, t, tc) }))
     .filter((item) => item.info)
-    .map((item) => ({ ...item, done: log.has(logId(today, item.key)) }));
+    .map((item) => {
+      const novenaId = item.key.startsWith("novena:") ? item.key.slice("novena:".length) : null;
+      const track = novenaId ? novenaTrack(novenaId, log) : null;
+      return {
+        ...item,
+        done: log.has(logId(today, item.key)),
+        // "Day 4 of 9" for a novena that's running
+        detail: track?.todayNumber ? `${t("progress.day")} ${track.todayNumber} ${t("progress.of")} ${track.length}` : null,
+      };
+    });
   const done = items.filter((item) => item.done).length;
 
   return (
@@ -62,14 +72,21 @@ export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
               item.done ? "border-primary bg-primary" : "border-primary/40"
             )}
           />
-          <Text
-            className={cn(
-              "flex-1 text-sm font-medium",
-              item.done ? "text-muted-foreground line-through" : "text-card-foreground"
-            )}
-          >
-            {item.info!.title}
-          </Text>
+          <View className="flex-1 gap-0.5">
+            <Text
+              className={cn(
+                "text-sm font-medium",
+                item.done ? "text-muted-foreground line-through" : "text-card-foreground"
+              )}
+            >
+              {item.info!.title}
+            </Text>
+            {item.detail || item.done ? (
+              <Text className={cn("text-xs", item.done ? "font-semibold text-primary" : "text-muted-foreground")}>
+                {[item.detail, item.done ? t("progress.prayedToday") : null].filter(Boolean).join(" · ")}
+              </Text>
+            ) : null}
+          </View>
           <Text className="text-lg text-primary">›</Text>
         </Pressable>
       ))}

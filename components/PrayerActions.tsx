@@ -5,8 +5,10 @@ import { SITE_URL } from "../constants/site";
 import { useTranslation } from "react-i18next";
 import { withAccountPrompt } from "../lib/accountPrompt";
 import { useUserDataStore, usePrayedToday, useIsFavourite } from "../store/userDataStore";
-import { novenaProgress, splitLogId } from "../lib/progress";
-import { itemKey, novenaLength } from "../lib/items";
+import { parseDay } from "../lib/progress";
+import { novenaTrack } from "../lib/novenaTrack";
+import { formatDayMonth } from "../lib/i18n/helpers";
+import { useLanguageStore } from "../store/LanguageStore";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { cn } from "../lib/utils";
@@ -97,42 +99,100 @@ export function PrayedCard({ itemKey: key, label }: { itemKey: string; label?: s
   );
 }
 
-// "Day 3 of 9" for a novena, with a bar of days
+// Where you are in a novena, counted from the day it started: a dot per day
+// (prayed, missed, today, still to come) and what to do today
 export function NovenaProgressCard({ novenaId }: { novenaId: string }) {
   const { t } = useTranslation();
-  const key = itemKey.novena(novenaId);
+  const language = useLanguageStore((state) => state.language);
   const log = useUserDataStore((state) => state.log);
-  const progress = useMemo(() => {
-    const days = new Set([...log].map(splitLogId).filter((e) => e.key === key).map((e) => e.day));
-    return novenaProgress(days, novenaLength(novenaId));
-  }, [log, key, novenaId]);
+  const track = useMemo(() => novenaTrack(novenaId, log), [novenaId, log]);
+  const of = `${t("progress.of")} ${track.length}`;
+  const date = (day: string) => formatDayMonth(parseDay(day), language);
 
-  const status = progress.completed
-    ? t("progress.novenaComplete")
-    : progress.daysDone === 0
-      ? t("progress.novenaStart")
-      : progress.prayedToday
-        ? `${t("progress.novenaNext")} ${progress.nextDay}`
-        : `${t("progress.novenaToday")} ${progress.nextDay}`;
+  const badge =
+    track.status === "active"
+      ? `${t("progress.day")} ${track.todayNumber} ${of}`
+      : track.status === "upcoming"
+        ? `${t("seasons.starts")} ${date(track.start!)}`
+        : track.status === "finished"
+          ? track.prayedCount === track.length
+            ? t("novena.complete")
+            : `${track.prayedCount} ${of} ${t("novena.daysPrayed")}`
+          : t("novena.notStarted");
+
+  const lines: string[] = [];
+  if (track.status === "active") {
+    lines.push(
+      track.prayedToday
+        ? `${t("novena.prayedDay")} ${track.todayNumber}.${
+            track.todayNumber! < track.length ? ` ${t("novena.comeBack")} ${track.todayNumber! + 1}.` : ""
+          }`
+        : `${t("novena.todayIsDay")} ${track.todayNumber} ${of}. ${t("novena.markWhenDone")}`
+    );
+    if (track.missedCount > 0) {
+      lines.push(
+        `${track.missedCount} ${t(track.missedCount === 1 ? "novena.missedOne" : "novena.missed")} ${track.seasonal ? t("novena.keepGoing") : ""}`.trim()
+      );
+    }
+  } else if (track.status === "upcoming") {
+    lines.push(`${t("novena.beginsOn")} ${date(track.start!)}.`);
+  } else if (track.status === "notStarted") {
+    lines.push(t("novena.startToday"));
+  } else {
+    lines.push(track.prayedCount === track.length ? t("progress.novenaComplete") : t("novena.ended"));
+  }
 
   return (
     <Card className="p-5 gap-3">
       <View className="flex-row items-baseline justify-between gap-3">
-        <Text className="text-base font-semibold text-card-foreground">{t("progress.novenaTitle")}</Text>
-        <Text className="text-sm font-semibold text-primary">
-          {t("progress.day")} {progress.daysDone} {t("progress.of")} {progress.length}
-        </Text>
+        <View className="flex-1 gap-0.5">
+          <Text className="text-base font-semibold text-card-foreground">{t("progress.novenaTitle")}</Text>
+          {track.start && track.status !== "upcoming" ? (
+            <Text className="text-xs text-muted-foreground">
+              {t("novena.started")} {date(track.start)}
+            </Text>
+          ) : null}
+        </View>
+        <Text className="text-sm font-semibold text-primary">{badge}</Text>
       </View>
-      <View className="flex-row gap-1" aria-hidden>
-        {Array.from({ length: progress.length }, (_, i) => (
+
+      <View className="flex-row flex-wrap gap-1.5">
+        {track.days.map((day) => (
           <View
-            key={i}
-            className={cn("h-2 flex-1 rounded-full", i < progress.daysDone ? "bg-primary" : "bg-muted")}
-          />
+            key={day.date}
+            aria-label={`${t("progress.day")} ${day.number}: ${t(`novena.state.${day.state}`)}`}
+            className={cn(
+              "h-8 w-8 items-center justify-center rounded-full",
+              day.state === "prayed" && "bg-primary",
+              day.state === "today" && "border-2 border-primary bg-background",
+              day.state === "missed" && "border border-destructive/30 bg-destructive/5",
+              day.state === "future" && "bg-muted"
+            )}
+          >
+            <Text
+              className={cn(
+                "text-xs font-semibold",
+                day.state === "prayed"
+                  ? "text-primary-foreground"
+                  : day.state === "today"
+                    ? "text-primary"
+                    : day.state === "missed"
+                      ? "text-destructive/70"
+                      : "text-muted-foreground"
+              )}
+            >
+              {day.number}
+            </Text>
+          </View>
         ))}
       </View>
-      <Text className="text-sm text-foreground">{status}</Text>
-      <Text className="text-xs leading-5 text-muted-foreground">{t("progress.novenaRule")}</Text>
+
+      {lines.map((line) => (
+        <Text key={line} className="text-sm leading-5 text-foreground">
+          {line}
+        </Text>
+      ))}
+      {!track.seasonal && <Text className="text-xs leading-5 text-muted-foreground">{t("progress.novenaRule")}</Text>}
     </Card>
   );
 }
