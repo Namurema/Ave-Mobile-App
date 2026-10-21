@@ -6,6 +6,7 @@ import { Page, PageHeader, Section, LoadingCard, EmptyState } from "../../compon
 import { Card } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
+import { languageInfo } from "../../constants/languages";
 
 // Admin: feedback sent from the app, unresolved first
 const kindLabels: Record<FeedbackKind, string> = {
@@ -15,7 +16,6 @@ const kindLabels: Record<FeedbackKind, string> = {
   other: "Other",
 };
 
-const languageLabels: Record<string, string> = { en: "English", lg: "Luganda", rny: "Runyankore" };
 
 const formatDate = (value: string) =>
   new Date(value).toLocaleDateString("en-GB", {
@@ -41,7 +41,7 @@ function FeedbackCard({ item, onToggle }: { item: Feedback; onToggle: () => Prom
   const [saving, setSaving] = useState(false);
   const details = [
     formatDate(item.created_at),
-    item.language ? languageLabels[item.language] ?? item.language : null,
+    item.language ? languageInfo(item.language).englishName : null,
     item.user_id ? "Signed in" : "Guest",
   ].filter(Boolean);
 

@@ -1,8 +1,24 @@
 // Prayer routines: which prayers to pray on which days of the week.
 // Entries use the same item keys as progress and favourites (lib/items.ts).
-// Days are 0 = Sunday ... 6 = Saturday.
+// Days are 0 = Sunday ... 6 = Saturday. `time` ("HH:MM", the person's own
+// time) is when to send a reminder, if reminders are on.
 
-export type RoutineEntry = { key: string; days: number[] };
+export type RoutineEntry = { key: string; days: number[]; time?: string };
+
+// Reminder times to choose from, and the usual time for each kind of prayer
+export const REMINDER_TIMES = ["05:30", "06:00", "06:30", "07:00", "08:00", "12:00", "13:00", "15:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+
+export function defaultTime(key: string) {
+  if (key === "daily:morning") return "06:30";
+  if (key === "daily:midday") return "12:00";
+  if (key === "daily:night") return "21:00";
+  if (key === "rosary") return "19:00";
+  // The Hour of Mercy
+  if (key === "chaplet:1" || key === "stations") return "15:00";
+  return "20:00";
+}
+
+const isTime = (value: unknown): value is string => typeof value === "string" && /^([01]d|2[0-3]):[0-5]d$/.test(value);
 
 export const EVERY_DAY = [0, 1, 2, 3, 4, 5, 6];
 const FRIDAY = 5;
@@ -98,6 +114,7 @@ export function cleanEntries(entries: RoutineEntry[]): RoutineEntry[] {
     .map((entry) => ({
       key: entry.key,
       days: [...new Set(entry.days.filter((d) => Number.isInteger(d) && d >= 0 && d <= 6))].sort(),
+      time: isTime(entry.time) ? entry.time : defaultTime(entry.key),
     }))
     .filter((entry) => entry.days.length > 0 && !seen.has(entry.key) && seen.add(entry.key));
 }

@@ -6,8 +6,8 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { useUserDataStore, usePrayedToday, useIsFavourite } from "../store/userDataStore";
 import { useRoutineStore } from "../store/routineStore";
 import { withAccountPrompt } from "../lib/accountPrompt";
-import { weekdayName } from "../lib/i18n/helpers";
-import { EVERY_DAY } from "../lib/routines";
+import { weekdayName, formatTime } from "../lib/i18n/helpers";
+import { EVERY_DAY, REMINDER_TIMES, defaultTime } from "../lib/routines";
 import type { useReadAloud } from "../lib/speech";
 import { useSharePrayer } from "./PrayerActions";
 import { Dialog } from "./ui/dialog";
@@ -63,6 +63,7 @@ function RoutineDialog({ itemKey: key, open, onClose }: { itemKey: string; open:
   const { entries, setRoutine } = useRoutineStore();
   const current = entries.find((entry) => entry.key === key);
   const [days, setDays] = useState<number[]>(current?.days ?? EVERY_DAY);
+  const [time, setTime] = useState(current?.time ?? defaultTime(key));
 
   const toggle = (day: number) =>
     setDays((selected) =>
@@ -70,7 +71,7 @@ function RoutineDialog({ itemKey: key, open, onClose }: { itemKey: string; open:
     );
 
   const save = () => {
-    setRoutine(current ? entries.map((entry) => (entry.key === key ? { key, days } : entry)) : [...entries, { key, days }]);
+    setRoutine(current ? entries.map((entry) => (entry.key === key ? { key, days, time } : entry)) : [...entries, { key, days, time }]);
     onClose();
   };
 
@@ -87,6 +88,14 @@ function RoutineDialog({ itemKey: key, open, onClose }: { itemKey: string; open:
               onPress={() => toggle(day)}
             />
           ))}
+        </View>
+        <View className="gap-2">
+          <Text className="text-xs font-semibold text-muted-foreground">{t("reminders.remindAt")}</Text>
+          <View className="flex-row flex-wrap gap-2">
+            {REMINDER_TIMES.map((option) => (
+              <Chip key={option} label={formatTime(option, language)} selected={time === option} onPress={() => setTime(option)} />
+            ))}
+          </View>
         </View>
         <View className="flex-row flex-wrap gap-2">
           <Button disabled={days.length === 0} onPress={save}>
@@ -111,7 +120,7 @@ function RoutineDialog({ itemKey: key, open, onClose }: { itemKey: string; open:
 
 // Fixed bar at the bottom of a prayer page: play audio, save, add to routine,
 // share and mark as prayed. Play appears only where audio is available (the
-// device voice reads English; recorded audio can replace it later).
+// phone's voice for the app's language; recorded audio can replace it later).
 export function PrayerActionBar({
   itemKey: key,
   speech,
@@ -120,14 +129,13 @@ export function PrayerActionBar({
   speech?: ReturnType<typeof useReadAloud>;
 }) {
   const { t } = useTranslation();
-  const language = useLanguageStore((state) => state.language);
   const saved = useIsFavourite(key);
   const prayed = usePrayedToday(key);
   const inRoutine = useRoutineStore((state) => state.entries.some((entry) => entry.key === key));
   const { toggleFavourite, markPrayed, unmarkPrayed } = useUserDataStore();
   const { share, copied } = useSharePrayer();
   const [routineOpen, setRoutineOpen] = useState(false);
-  const canPlay = !!speech && speech.available && language === "en";
+  const canPlay = !!speech && speech.available;
 
   return (
     <View className="border-t border-border bg-background">

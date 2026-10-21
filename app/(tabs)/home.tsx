@@ -19,11 +19,11 @@ import { PhotoBackdrop } from "../../components/ui/page";
 import { images, dailyTiles } from "../../constants/images";
 import { MyPrayersCard } from "../../components/MyPrayersCard";
 import { NovenaSeasonCard } from "../../components/NovenaSeason";
+import { languageInfo } from "../../constants/languages";
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
 
-const LANGUAGE_NAMES: Record<string, string> = { en: "English", lg: "Oluganda", rny: "Orunyankore" };
 
 type LinkRow = { title: string; description?: string; value?: string; route: string };
 
@@ -151,7 +151,7 @@ export default function HomeScreen() {
                 </Text>
                 <View className="mt-2 flex-row items-center gap-1.5">
                   <Text className="text-sm text-muted-foreground">
-                    {t("home.prayingIn")} {LANGUAGE_NAMES[language] ?? "English"}
+                    {t("home.prayingIn")} {languageInfo(language).name}
                   </Text>
                   <Text className="text-sm text-muted-foreground">·</Text>
                   <Pressable onPress={() => router.push("/Language")}>

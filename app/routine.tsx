@@ -5,13 +5,14 @@ import { useTranslation } from "react-i18next";
 import { useRoutineStore } from "../store/routineStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { useContent } from "../lib/i18n/content";
-import { weekdayName } from "../lib/i18n/helpers";
+import { weekdayName, formatTime } from "../lib/i18n/helpers";
 import { describeItem } from "../lib/items";
-import { SUGGESTIONS, ROUTINE_ITEMS, EVERY_DAY, type RoutineEntry } from "../lib/routines";
+import { SUGGESTIONS, ROUTINE_ITEMS, EVERY_DAY, REMINDER_TIMES, defaultTime, type RoutineEntry } from "../lib/routines";
 import { Page, PageHeader, Section, ListCard } from "../components/ui/page";
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { TodaysRoutine } from "../components/RoutineCard";
+import { RemindersCard } from "../components/RemindersCard";
 import { images } from "../constants/images";
 import { myPrayersTabs } from "../components/MyPrayersCard";
 import { Chip } from "../components/ui/chip";
@@ -33,6 +34,9 @@ function Editor({ initial, onDone }: { initial: RoutineEntry[]; onDone: () => vo
   const [draft, setDraft] = useState<RoutineEntry[]>(initial);
 
   const daysOf = (key: string) => draft.find((entry) => entry.key === key)?.days;
+  const timeOf = (key: string) => draft.find((entry) => entry.key === key)?.time ?? defaultTime(key);
+  const setTime = (key: string, time: string) =>
+    setDraft((current) => current.map((entry) => (entry.key === key ? { ...entry, time } : entry)));
   const update = (key: string, days: number[] | null) =>
     setDraft((current) => {
       const others = current.filter((entry) => entry.key !== key);
@@ -40,7 +44,7 @@ function Editor({ initial, onDone }: { initial: RoutineEntry[]; onDone: () => vo
       // Keep the prayer's place in the routine when changing its days
       const index = current.findIndex((entry) => entry.key === key);
       const next = [...others];
-      next.splice(index === -1 ? next.length : index, 0, { key, days });
+      next.splice(index === -1 ? next.length : index, 0, { key, days, time: current[index]?.time ?? defaultTime(key) });
       return next;
     });
 
@@ -87,6 +91,21 @@ function Editor({ initial, onDone }: { initial: RoutineEntry[]; onDone: () => vo
                     ))}
                   </View>
                 )}
+                {days && (
+                  <View className="gap-2">
+                    <Text className="text-xs font-semibold text-muted-foreground">{t("reminders.remindAt")}</Text>
+                    <View className="flex-row flex-wrap gap-2">
+                      {REMINDER_TIMES.map((time) => (
+                        <Chip
+                          key={time}
+                          label={formatTime(time, language)}
+                          selected={timeOf(key) === time}
+                          onPress={() => setTime(key, time)}
+                        />
+                      ))}
+                    </View>
+                  </View>
+                )}
               </View>
             );
           })}
@@ -114,6 +133,7 @@ export default function RoutineScreen() {
   const { t } = useTranslation();
   const tc = useContent();
   const daysLabel = useDaysLabel();
+  const { language } = useLanguageStore();
   const { entries, setRoutine, clearRoutine } = useRoutineStore();
   const [editing, setEditing] = useState<RoutineEntry[] | null>(null);
   const hasRoutine = entries.length > 0;
@@ -133,6 +153,7 @@ export default function RoutineScreen() {
       ) : hasRoutine ? (
         <>
           <TodaysRoutine />
+          <RemindersCard />
           <Section title={t("routine.yourWeek")} count={entries.length}>
             <ListCard
               items={entries
@@ -141,7 +162,7 @@ export default function RoutineScreen() {
                 .map(({ entry, info }) => ({
                   key: entry.key,
                   title: info!.title,
-                  description: daysLabel(entry.days),
+                  description: `${daysLabel(entry.days)} · ${formatTime(entry.time ?? defaultTime(entry.key), language)}`,
                   onPress: () => router.push(info!.route as any),
                 }))}
             />

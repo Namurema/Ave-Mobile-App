@@ -16,12 +16,7 @@ import { LOGIN_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Page, PageHeader, Section, ListCard } from "../../components/ui/page";
-
-const languageLabels: Record<string, string> = {
-  en: "English",
-  lg: "Oluganda",
-  rny: "Orunyankore",
-};
+import { languageInfo } from "../../constants/languages";
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -77,7 +72,7 @@ export default function ProfileScreen() {
         <Card className="p-4 flex-row items-center gap-3">
           <View className="flex-1 gap-0.5">
             <Text className="text-sm font-semibold text-card-foreground">
-              {languageLabels[language] ?? "English"}
+              {languageInfo(language).name}
             </Text>
             <Text className="text-sm text-muted-foreground">{t("settings.languageHint")}</Text>
           </View>

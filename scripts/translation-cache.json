@@ -4322,5 +4322,1637 @@
     "O Mother of Sorrows, through thy First Sorrow, the Prophecy of Holy Simeon, intercede for me with the Sacred Heart of Jesus, and grant me the favor I implore\n(mention request here…)": "O Maama w'Okushoberwa, kurabira omu Kushoberwa kwawe okw'okubanza, Okuragura kwa Simeoni Orikwera, ongambire n'omutima gwa Yesu ogurikwera, kandi ompa embabazi ezi ndikushaba",
     "O Mother of the Word Incarnate, despise not my petitions, but in your clemency, hear and answer me. Amen.": "O Maama w'ekigambo ekirugire omu kishushani, otashisha okushaba kwangye, kureka omu busingye bwawe, mpurira kandi ongambire. Amen.",
     "Remember, O most gracious Virgin Mary, that never was it known that anyone who fled to your protection, implored your help or sought your intercession, was left unaided. Inspired by this confidence, I fly unto you, O Virgin of Virgins, my Mother. To you do I come, before you I stand, sinful and sorrowful.": "Ijuka, O Mariamu Omukazi w'ekitiinisa, ngu tikirikamanywa ngu omuntu weena owahungiire omu burinzi bwawe, akashaba obuhwezi bwawe nainga akasherura okushaba kwawe, akasigara ataine buhwezi. Ahabw'okugira obwesigye obu, ninkwirukirira, O Mariamu w'Abakazi b'Obusugi, Maama wangye. Ninkwija ahariiwe, omu maisho gaawe ndiyo nyemereire, ndi omunyabibi kandi ndi omu kuhwa amaani."
+  },
+  "sw": {
+    "common.loading": {
+      "en": "Loading...",
+      "text": "Kupakia..."
+    },
+    "common.getStarted": {
+      "en": "Get Started",
+      "text": "Anza"
+    },
+    "common.continue": {
+      "en": "Continue",
+      "text": "Endelea"
+    },
+    "common.signOut": {
+      "en": "Sign Out",
+      "text": "Toa Nje"
+    },
+    "common.close": {
+      "en": "Close",
+      "text": "Funga"
+    },
+    "common.back": {
+      "en": "Back",
+      "text": "Nyuma"
+    },
+    "common.change": {
+      "en": "Change",
+      "text": "Badilisha"
+    },
+    "common.tryAgain": {
+      "en": "Try again",
+      "text": "Jaribu tena"
+    },
+    "common.days": {
+      "en": "days",
+      "text": "siku"
+    },
+    "common.min": {
+      "en": "min",
+      "text": "min"
+    },
+    "nav.prayers": {
+      "en": "Prayers",
+      "text": "Sala"
+    },
+    "nav.home": {
+      "en": "Home",
+      "text": "Nyumbani"
+    },
+    "nav.rosary": {
+      "en": "Rosary",
+      "text": "Sarafu"
+    },
+    "nav.openApp": {
+      "en": "Open app",
+      "text": "Fungua programu"
+    },
+    "nav.settings": {
+      "en": "Settings",
+      "text": "Mipangilio"
+    },
+    "splash.tagline": {
+      "en": "Your companion for daily prayers and spiritual devotion",
+      "text": "Mwenzako kwa ajili ya sala za kila siku na ujitoaji wa kiroho"
+    },
+    "splash.dailyTitle": {
+      "en": "Daily prayers",
+      "text": "Sala za kila siku"
+    },
+    "splash.dailyDescription": {
+      "en": "Morning, midday and night prayers",
+      "text": "Sala za asubuhi, adhuhuri na usiku"
+    },
+    "splash.headline": {
+      "en": "Pray every day, in your own language",
+      "text": "Sali kila siku, katika lugha yako mwenyewe"
+    },
+    "splash.description": {
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
+      "text": "Sala za kila siku, Rozari Takatifu, novena na chapleti katika Kiingereza, Luganda na Runyankore."
+    },
+    "splash.devotionsTitle": {
+      "en": "Novenas & chaplets",
+      "text": "Novenas na tasbihi"
+    },
+    "splash.rosaryDescription": {
+      "en": "Today's mysteries, with a virtue for each",
+      "text": "Fumbo la leo, na sifa kwa kila moja"
+    },
+    "splash.rosaryTitle": {
+      "en": "The Holy Rosary",
+      "text": "Tasbihi Takatifu ya Rozari"
+    },
+    "splash.devotionsDescription": {
+      "en": "Divine Mercy, Stations of the Cross and more",
+      "text": "Rehema ya Kimungu, Vituo vya Msalaba na zaidi"
+    },
+    "language.title": {
+      "en": "Welcome",
+      "text": "Karibu"
+    },
+    "home.greeting": {
+      "en": "Good Morning",
+      "text": "Habari za asubuhi njema"
+    },
+    "splash.footer": {
+      "en": "A Catholic prayer companion, built for Uganda",
+      "text": "Mshirika wa sala ya Kikatoliki, uliotengenezwa kwa ajili ya Uganda"
+    },
+    "language.subtitle": {
+      "en": "Please select your preferred language for prayers and daily devotionals.",
+      "text": "Tafadhali chagua lugha unayopendelea kwa ajili ya sala na ibada za kila siku."
+    },
+    "home.greetingAfternoon": {
+      "en": "Good Afternoon",
+      "text": "Habari za mchana"
+    },
+    "home.greetingSubtitle": {
+      "en": "Let us begin our day with prayer.",
+      "text": "Acha tuanze siku yetu kwa sala."
+    },
+    "home.greetingEvening": {
+      "en": "Good Evening",
+      "text": "Habari za jioni nzuri"
+    },
+    "home.greetingSubtitleAfternoon": {
+      "en": "Pause for a moment with God.",
+      "text": "Pumzika kwa muda kidogo na Mungu."
+    },
+    "home.greetingSubtitleEvening": {
+      "en": "Let us end our day with prayer.",
+      "text": "Acha tumalize siku yetu kwa sala."
+    },
+    "home.featuredDaily": {
+      "en": "Featured Daily",
+      "text": "Inayojulikana Kila Siku"
+    },
+    "home.dailyPrayers": {
+      "en": "Daily Prayers",
+      "text": "Sala za Kila Siku"
+    },
+    "home.spiritualPractice": {
+      "en": "Spiritual Practice",
+      "text": "Mazoezi ya Kiroho"
+    },
+    "home.novenas": {
+      "en": "Novenas",
+      "text": "Novenas"
+    },
+    "home.otherPrayers": {
+      "en": "Other Prayers",
+      "text": "Sala Nyingine"
+    },
+    "home.chaplets": {
+      "en": "Chaplets",
+      "text": "Sarafu za sala"
+    },
+    "home.stationsOfCross": {
+      "en": "Stations of the Cross",
+      "text": "Vituo vya Msalaba"
+    },
+    "home.ninedays": {
+      "en": "9 days of prayer",
+      "text": "Siku 9 za sala"
+    },
+    "home.sacredLocations": {
+      "en": "Sacred locations",
+      "text": "Maeneo matakatifu"
+    },
+    "home.meditativePrayer": {
+      "en": "Meditative prayer",
+      "text": "Sala ya kutafakari"
+    },
+    "home.meditatePassion": {
+      "en": "Meditate on the passion",
+      "text": "Tafakari kuhusu shauku"
+    },
+    "home.today": {
+      "en": "Today",
+      "text": "Leo"
+    },
+    "home.todaysMystery": {
+      "en": "Today's mystery",
+      "text": "Fumbo la leo"
+    },
+    "home.prayTodaysRosary": {
+      "en": "Pray today's Rosary",
+      "text": "Sali Rozari ya leo"
+    },
+    "home.prayingIn": {
+      "en": "Praying in",
+      "text": "Kusali ndani"
+    },
+    "home.prayNow": {
+      "en": "Pray now",
+      "text": "Sali sasa"
+    },
+    "home.prayerOfTheDay": {
+      "en": "Prayer of the day",
+      "text": "Sala ya siku"
+    },
+    "home.readMorningPrayers": {
+      "en": "Read morning prayers",
+      "text": "Soma sala za asubuhi"
+    },
+    "home.prayerOffline": {
+      "en": "Connect to the internet to see today's prayer.",
+      "text": "Unganisha kwenye intaneti ili uone sala ya leo."
+    },
+    "home.showAllPrayers": {
+      "en": "Show all prayers",
+      "text": "Onyesha sala zote"
+    },
+    "rosary.beginSession": {
+      "en": "Begin Full Session",
+      "text": "Anza kikao kamili"
+    },
+    "rosary.theFiveMysteries": {
+      "en": "The 5 Mysteries",
+      "text": "Mistari 5 ya Siri"
+    },
+    "rosary.title": {
+      "en": "Daily Rosary",
+      "text": "Rozari ya kila siku"
+    },
+    "rosary.virtue": {
+      "en": "Virtue",
+      "text": "Wema"
+    },
+    "rosary.sorrowful": {
+      "en": "Sorrowful Mysteries",
+      "text": "Fumbo la Huzuni"
+    },
+    "rosary.joyful": {
+      "en": "Joyful Mysteries",
+      "text": "Fumbo Lenye Furaha"
+    },
+    "rosary.glorious": {
+      "en": "Glorious Mysteries",
+      "text": "Fumbo Tukufu"
+    },
+    "rosary.luminous": {
+      "en": "Luminous Mysteries",
+      "text": "Fumbo Lenye Mng'ao"
+    },
+    "rosary.prayTab": {
+      "en": "Pray the Rosary",
+      "text": "Sali Rozari"
+    },
+    "rosary.todaysMysteriesTab": {
+      "en": "Today's mysteries",
+      "text": "Fumbo la leo"
+    },
+    "rosary.focusVirtues": {
+      "en": "Focus on the virtues of each mystery",
+      "text": "Kazia fikira sifa nzuri za kila fumbo"
+    },
+    "rosary.previous": {
+      "en": "Previous",
+      "text": "Iliyopita"
+    },
+    "rosary.mystery": {
+      "en": "Mystery",
+      "text": "Fumbo"
+    },
+    "rosary.meditation": {
+      "en": "Meditation",
+      "text": "Kutafakari"
+    },
+    "rosary.pause": {
+      "en": "Pause",
+      "text": "Simamisha"
+    },
+    "rosary.play": {
+      "en": "Play",
+      "text": "Cheza"
+    },
+    "rosary.next": {
+      "en": "Next",
+      "text": "Ifuatayo"
+    },
+    "rosary.opening": {
+      "en": "Opening prayers",
+      "text": "Sala za kufungua"
+    },
+    "rosary.closing": {
+      "en": "Closing prayer",
+      "text": "Sala ya kumaliza"
+    },
+    "rosary.step": {
+      "en": "Step",
+      "text": "Hatua"
+    },
+    "rosary.decade": {
+      "en": "Decade",
+      "text": "Miongo"
+    },
+    "rosary.startOver": {
+      "en": "Start over",
+      "text": "Anza tena"
+    },
+    "prayers.title": {
+      "en": "Daily Prayers",
+      "text": "Sala za Kila Siku"
+    },
+    "prayers.dailyRoutine": {
+      "en": "Daily Routine",
+      "text": "Mazoea ya Kila Siku"
+    },
+    "rosary.faithHopeCharity": {
+      "en": "For an increase in faith, hope and charity",
+      "text": "Kwa ajili ya kuongeza imani, matumaini na hisani"
+    },
+    "prayers.allPrayers": {
+      "en": "All Prayers",
+      "text": "Sala Zote"
+    },
+    "prayers.nightPrayers": {
+      "en": "Night Prayers",
+      "text": "Sala za Usiku"
+    },
+    "prayers.morningPrayers": {
+      "en": "Morning Prayers",
+      "text": "Sala za asubuhi"
+    },
+    "prayers.middayPrayers": {
+      "en": "Midday Prayers",
+      "text": "Sala za Mchana"
+    },
+    "prayers.startYourDay": {
+      "en": "Start your day with grace",
+      "text": "Anza siku yako kwa neema"
+    },
+    "prayers.morning": {
+      "en": "Morning",
+      "text": "Asubuhi"
+    },
+    "prayers.gratitudeRest": {
+      "en": "Gratitude, rest, and peace",
+      "text": "Shukrani, mapumziko na amani"
+    },
+    "prayers.pauseForPeace": {
+      "en": "A pause for peace & grace",
+      "text": "Mapumziko kwa ajili ya amani na neema"
+    },
+    "prayers.prayer": {
+      "en": "Prayer",
+      "text": "Sala"
+    },
+    "prayers.prayersSection": {
+      "en": "Prayers",
+      "text": "Sala"
+    },
+    "prayers.night": {
+      "en": "Night",
+      "text": "Usiku"
+    },
+    "prayers.midday": {
+      "en": "Midday",
+      "text": "Mchana wa mchana"
+    },
+    "prayers.loadingPrayers": {
+      "en": "Loading prayers...",
+      "text": "Kupakia sala..."
+    },
+    "prayers.loadError": {
+      "en": "Couldn't load prayers",
+      "text": "Hakuweza kupakia sala"
+    },
+    "prayers.browse": {
+      "en": "Browse prayers",
+      "text": "Tafuta sala"
+    },
+    "prayers.checkConnection": {
+      "en": "Check your connection and try again.",
+      "text": "Kagua uunganisho wako na ujaribu tena."
+    },
+    "prayers.noPrayers": {
+      "en": "No prayers yet",
+      "text": "Hakuna sala bado"
+    },
+    "prayers.notFound": {
+      "en": "Prayer not found",
+      "text": "Sala haijapatikana"
+    },
+    "prayers.notAvailableYet": {
+      "en": "It may not be available yet.",
+      "text": "Huenda haijapatikana bado."
+    },
+    "prayers.noPrayersInCategory": {
+      "en": "No prayers found for this category.",
+      "text": "Hakuna sala zilizopatikana kwa jamii hii."
+    },
+    "categories.morningEvening": {
+      "en": "Morning & Evening Prayers",
+      "text": "Sala za Asubuhi na Jioni"
+    },
+    "categories.afternoon": {
+      "en": "Midday Prayers",
+      "text": "Sala za Mchana"
+    },
+    "categories.morningEveningDescription": {
+      "en": "Begin and end your day with grace",
+      "text": "Anza na kumaliza siku yako kwa neema"
+    },
+    "prayers.showingEnglish": {
+      "en": "These prayers are not yet available in your language, so they are shown in English.",
+      "text": "Sala hizi bado hazipatikani katika lugha yako, kwa hivyo zinaonyeshwa katika Kiingereza."
+    },
+    "categories.dailyRosary": {
+      "en": "Daily Rosary Mysteries",
+      "text": "Fumbo la Rozari ya Kila Siku"
+    },
+    "categories.dailyRosaryDescription": {
+      "en": "Meditate on the mysteries of Christ",
+      "text": "Tafakari kuhusu mafumbo ya Kristo"
+    },
+    "categories.afternoonDescription": {
+      "en": "A pause for peace and the divine",
+      "text": "Pumziko kwa ajili ya amani na uungu"
+    },
+    "categories.novenas": {
+      "en": "Novenas",
+      "text": "Novenas"
+    },
+    "categories.chaplets": {
+      "en": "Chaplets",
+      "text": "Sarafu za dini"
+    },
+    "categories.novenasDescription": {
+      "en": "Nine days of devoted prayer",
+      "text": "Siku tisa za sala ya kujitoa"
+    },
+    "categories.chapletsDescription": {
+      "en": "Meditative bead prayers",
+      "text": "Sala za tasbihi zenye kutafakari"
+    },
+    "categories.otherPrayers": {
+      "en": "Other Prayers",
+      "text": "Sala Nyingine"
+    },
+    "categories.litaniesDescription": {
+      "en": "Repetitive prayers of praise",
+      "text": "Sala za kurudia za sifa"
+    },
+    "categories.otherPrayersDescription": {
+      "en": "Sacred prayers from Catholic tradition",
+      "text": "Sala takatifu kutoka katika utamaduni wa Kikatoliki"
+    },
+    "categories.litanies": {
+      "en": "Litanies",
+      "text": "Litanies ni sala za kiroho zenye kurudia-rudia"
+    },
+    "novenas.all": {
+      "en": "All novenas",
+      "text": "Novena zote"
+    },
+    "novenas.eyebrow": {
+      "en": "Novena",
+      "text": "Novena ni sala ya siku tisa"
+    },
+    "novenas.description": {
+      "en": "9 days of devoted prayer",
+      "text": "Siku 9 za sala ya kujitoa"
+    },
+    "novenas.info": {
+      "en": "A novena is a prayer said over 9 consecutive days, asking for a special grace or favour.",
+      "text": "Novena ni sala inayosemwa kwa siku 9 mfululizo, ikitoa ombi la neema au baraka maalum."
+    },
+    "chaplets.eyebrow": {
+      "en": "Chaplet",
+      "text": "Sala ya shanga"
+    },
+    "novenas.notFound": {
+      "en": "Novena not found",
+      "text": "Novena haikupatikana"
+    },
+    "chaplets.all": {
+      "en": "All chaplets",
+      "text": "Kila shanga"
+    },
+    "chaplets.info": {
+      "en": "Chaplets are shorter bead prayers focused on a particular devotion or mystery.",
+      "text": "Zawadi ni sala fupi za tasbihi zinazolenga ujitoaji maalum au siri."
+    },
+    "stations.section": {
+      "en": "The Stations",
+      "text": "Vituo"
+    },
+    "chaplets.notFound": {
+      "en": "Chaplet not found",
+      "text": "Sarafu haikupatikana"
+    },
+    "stations.description": {
+      "en": "14 stations to meditate on the passion",
+      "text": "Vituo 14 vya kutafakari kuhusu shauku"
+    },
+    "stations.info": {
+      "en": "Walk with Jesus on the path to Calvary. Pause at each station to pray and reflect.",
+      "text": "Tembea na Yesu kwenye njia ya Calvary. Simama katika kila kituo ili kusali na kutafakari."
+    },
+    "otherPrayers.traditional": {
+      "en": "Traditional Prayers",
+      "text": "Sala za Kitamaduni"
+    },
+    "otherPrayers.saints": {
+      "en": "Prayers to Saints",
+      "text": "Sala kwa Watakatifu"
+    },
+    "otherPrayers.marian": {
+      "en": "Marian Prayers",
+      "text": "Sala za Marian"
+    },
+    "otherPrayers.eucharistic": {
+      "en": "Eucharistic Prayers",
+      "text": "Sala za Ekaristi"
+    },
+    "otherPrayers.apparitions": {
+      "en": "Marian Apparitions",
+      "text": "Mionekano ya Bikira Maria"
+    },
+    "settings.title": {
+      "en": "Settings",
+      "text": "Mipangilio"
+    },
+    "settings.activity": {
+      "en": "Your activity",
+      "text": "Shughuli yako"
+    },
+    "settings.description": {
+      "en": "Personalise how you use Ave.",
+      "text": "Binafsisha jinsi unavyotumia Ave."
+    },
+    "settings.language": {
+      "en": "Language",
+      "text": "Lugha"
+    },
+    "settings.account": {
+      "en": "Account",
+      "text": "Akaunti"
+    },
+    "settings.languageHint": {
+      "en": "Used for prayers and the app",
+      "text": "Inatumika kwa sala na programu ya simu"
+    },
+    "settings.guestUser": {
+      "en": "Guest User",
+      "text": "Mtumiaji Mgeni"
+    },
+    "settings.app": {
+      "en": "App",
+      "text": "Programu ya simu"
+    },
+    "settings.signInToSync": {
+      "en": "Sign in to save favourite prayers and track your progress.",
+      "text": "Ingia ili uhifadhi sala unazozipenda na ufuatilie maendeleo yako."
+    },
+    "settings.about": {
+      "en": "About",
+      "text": "Karibu"
+    },
+    "settings.version": {
+      "en": "Version",
+      "text": "Toleo"
+    },
+    "settings.legal": {
+      "en": "Legal",
+      "text": "Kisheria"
+    },
+    "settings.aboutText": {
+      "en": "A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
+      "text": "Mwenzako wa sala za Kikatoliki kwa sala za kila siku, Tasbihi Takatifu, novena na tasbihi, iliyoundwa kwa ajili ya Uganda."
+    },
+    "feedback.title": {
+      "en": "Send feedback",
+      "text": "Tuma maoni"
+    },
+    "settings.help": {
+      "en": "Help and feedback",
+      "text": "Msaada na maoni"
+    },
+    "feedback.hint": {
+      "en": "Report a problem or a translation mistake, or share an idea",
+      "text": "Ripoti tatizo au kosa la tafsiri, au shiriki wazo"
+    },
+    "feedback.suggestion": {
+      "en": "An idea or suggestion",
+      "text": "Wazo au pendekezo"
+    },
+    "feedback.kind": {
+      "en": "What is it about?",
+      "text": "Inahusu nini?"
+    },
+    "feedback.translation": {
+      "en": "A translation mistake",
+      "text": "Kosa la tafsiri"
+    },
+    "feedback.description": {
+      "en": "Tell us what to improve, report a problem, or point out a translation mistake. You don't need an account.",
+      "text": "Tuambie ni nini cha kuboresha, ripoti tatizo, au onyesha makosa ya tafsiri. Huhitaji akaunti."
+    },
+    "feedback.other": {
+      "en": "Something else",
+      "text": "Jambo lingine"
+    },
+    "feedback.message": {
+      "en": "Your message",
+      "text": "Ujumbe wako"
+    },
+    "feedback.problem": {
+      "en": "Something isn't working",
+      "text": "Kitu fulani hakifanyi kazi"
+    },
+    "feedback.messagePlaceholder": {
+      "en": "Write your feedback here",
+      "text": "Andika maoni yako hapa"
+    },
+    "feedback.messageRequired": {
+      "en": "Write a message first",
+      "text": "Andika ujumbe kwanza"
+    },
+    "feedback.email": {
+      "en": "Email (optional)",
+      "text": "Barua pepe (hiari)"
+    },
+    "feedback.emailHint": {
+      "en": "Only if you would like a reply.",
+      "text": "Ni kama tu ungependa kupata jibu."
+    },
+    "feedback.translationPlaceholder": {
+      "en": "Which prayer, which language, and what should it say?",
+      "text": "Ni sala gani, lugha gani, na inapaswa kusema nini?"
+    },
+    "feedback.send": {
+      "en": "Send feedback",
+      "text": "Tuma maoni"
+    },
+    "feedback.sendAnother": {
+      "en": "Send more feedback",
+      "text": "Tuma maoni zaidi"
+    },
+    "feedback.sent": {
+      "en": "Thank you. Your feedback has been sent.",
+      "text": "Asante. Maoni yako yamepelekwa."
+    },
+    "feedback.tooMany": {
+      "en": "Thank you for all your feedback. Please wait a few minutes before sending more.",
+      "text": "Asante kwa maoni yako yote. Tafadhali subiri dakika chache kabla ya kutuma zaidi."
+    },
+    "legal.privacy": {
+      "en": "Privacy Policy",
+      "text": "Sera ya Faragha"
+    },
+    "legal.terms": {
+      "en": "Terms & Conditions",
+      "text": "Masharti na Masharti"
+    },
+    "legal.privacyHint": {
+      "en": "What information Ave keeps and why",
+      "text": "Ni taarifa gani Ave anahifadhi na kwa nini"
+    },
+    "feedback.failed": {
+      "en": "Couldn't send your feedback. Check your connection and try again, or email us at",
+      "text": "Hakuweza kutuma maoni yako. Hakikisha unganisho lako na ujaribu tena, au ututumie barua pepe kwa"
+    },
+    "progress.title": {
+      "en": "Your progress",
+      "text": "Maendeleo yako"
+    },
+    "legal.updated": {
+      "en": "Last updated",
+      "text": "Imesasishwa mwisho"
+    },
+    "legal.termsHint": {
+      "en": "The rules for using Ave",
+      "text": "Kanuni za kutumia Ave"
+    },
+    "legal.englishOnly": {
+      "en": "This page is available in English only.",
+      "text": "Ukurasa huu unapatikana kwa Kiingereza pekee."
+    },
+    "progress.streak": {
+      "en": "Day streak",
+      "text": "Mstari wa siku"
+    },
+    "progress.tab": {
+      "en": "Progress",
+      "text": "Maendeleo"
+    },
+    "progress.myPrayers": {
+      "en": "My prayers",
+      "text": "Sala zangu"
+    },
+    "progress.description": {
+      "en": "The days you have prayed with Ave.",
+      "text": "Siku ambazo umesali na Ave."
+    },
+    "progress.bestStreak": {
+      "en": "Best streak",
+      "text": "Mfululizo bora zaidi"
+    },
+    "progress.nextMilestone": {
+      "en": "Next milestone",
+      "text": "Hatua inayofuata ya mafanikio"
+    },
+    "progress.weeklyGoalDone": {
+      "en": "Weekly goal reached. Well done!",
+      "text": "Lengo la kila wiki limetimia. Umefanya vizuri!"
+    },
+    "progress.weeklyGoal": {
+      "en": "Weekly goal: pray 5 days",
+      "text": "Lengo la kila wiki: kusali siku 5"
+    },
+    "progress.thisWeek": {
+      "en": "This week",
+      "text": "Wiki hii"
+    },
+    "progress.milestoneReached": {
+      "en": "Milestone reached",
+      "text": "Hatua muhimu imefikiwa"
+    },
+    "progress.milestoneKeepGoing": {
+      "en": "Thanks be to God. Keep going!",
+      "text": "Asante kwa Mungu. Endelea!"
+    },
+    "progress.daysToGo": {
+      "en": "more days to go. Keep praying!",
+      "text": "bado kuna siku nyingi za kwenda. Endelea kusali!"
+    },
+    "progress.totalPrayers": {
+      "en": "Prayers prayed",
+      "text": "Sala zilizosaliwa"
+    },
+    "progress.history": {
+      "en": "Recent prayers",
+      "text": "Sala za hivi karibuni"
+    },
+    "progress.markPrayed": {
+      "en": "Mark as prayed today",
+      "text": "Alama kama ilisaliwa leo"
+    },
+    "progress.empty": {
+      "en": "Mark a prayer as prayed to start tracking your progress.",
+      "text": "Alama sala kama ilivyosaliwa ili kuanza kufuatilia maendeleo yako."
+    },
+    "progress.prayedToday": {
+      "en": "Prayed today",
+      "text": "Alisali leo"
+    },
+    "progress.undo": {
+      "en": "Undo",
+      "text": "Futa"
+    },
+    "progress.of": {
+      "en": "of",
+      "text": "ya"
+    },
+    "progress.day": {
+      "en": "Day",
+      "text": "Siku"
+    },
+    "progress.viewProgress": {
+      "en": "View progress",
+      "text": "Angalia maendeleo"
+    },
+    "progress.signInToKeep": {
+      "en": "Sign in to keep your progress and favourites on all your devices.",
+      "text": "Ingia ili kuweka maendeleo yako na vipendwa kwenye vifaa vyote."
+    },
+    "progress.novenaTitle": {
+      "en": "Your novena",
+      "text": "Novena yako"
+    },
+    "progress.novenaStart": {
+      "en": "Pray the first day today to begin.",
+      "text": "Sali siku ya kwanza leo ili uanze."
+    },
+    "progress.novenaNext": {
+      "en": "Next: day",
+      "text": "Ifuatayo: siku"
+    },
+    "progress.novenaToday": {
+      "en": "Today: day",
+      "text": "Leo: siku"
+    },
+    "novena.started": {
+      "en": "Started",
+      "text": "Imeanza"
+    },
+    "progress.finishRosary": {
+      "en": "Finish and mark as prayed",
+      "text": "Kamilisha na alama kama iliyosaliwa"
+    },
+    "progress.novenaComplete": {
+      "en": "Novena complete. May God bless your intentions.",
+      "text": "Novena imekamilika. Mungu akubariki makusudi yako."
+    },
+    "progress.novenaRule": {
+      "en": "Pray on consecutive days. Missing a day starts the novena again.",
+      "text": "Sali kwa siku zinazofuatana. Kukosa siku moja kunafanya novena ianze tena."
+    },
+    "novena.complete": {
+      "en": "Complete",
+      "text": "Kamilifu"
+    },
+    "novena.notStarted": {
+      "en": "Not started",
+      "text": "Hajajaanza"
+    },
+    "novena.daysPrayed": {
+      "en": "days prayed",
+      "text": "siku zilizosaliwa"
+    },
+    "novena.prayedDay": {
+      "en": "You've prayed day",
+      "text": "Umewahi kusali mchana"
+    },
+    "novena.todayIsDay": {
+      "en": "Today is day",
+      "text": "Leo ni siku"
+    },
+    "novena.comeBack": {
+      "en": "Come back tomorrow for day",
+      "text": "Rudi kesho kwa siku"
+    },
+    "novena.missed": {
+      "en": "days missed so far.",
+      "text": "siku zilizokosekana hadi sasa."
+    },
+    "novena.markWhenDone": {
+      "en": "Tap Prayed below when you finish.",
+      "text": "Bonyeza Tap Prayed chini unapomaliza."
+    },
+    "novena.missedOne": {
+      "en": "day missed so far.",
+      "text": "siku iliyopita hadi sasa."
+    },
+    "novena.beginsOn": {
+      "en": "This novena begins on",
+      "text": "Novena hii inaanza tarehe"
+    },
+    "novena.keepGoing": {
+      "en": "Keep going: you can still finish the novena.",
+      "text": "Endelea: bado unaweza kumaliza novena."
+    },
+    "novena.startToday": {
+      "en": "Pray day 1 today to begin.",
+      "text": "Sali siku ya kwanza leo ili uanze."
+    },
+    "novena.state.prayed": {
+      "en": "prayed",
+      "text": "alisali"
+    },
+    "novena.state.missed": {
+      "en": "missed",
+      "text": "kukosa"
+    },
+    "novena.state.today": {
+      "en": "today",
+      "text": "leo"
+    },
+    "novena.ended": {
+      "en": "This novena's days are over. It comes round again next year.",
+      "text": "Siku za novena hii zimeisha. Inarudi tena mwaka ujao."
+    },
+    "novena.state.future": {
+      "en": "still to come",
+      "text": "bado haijaja"
+    },
+    "seasons.to": {
+      "en": "to",
+      "text": "ni"
+    },
+    "seasons.title": {
+      "en": "Novena season",
+      "text": "Msimu wa novena"
+    },
+    "seasons.traditionally": {
+      "en": "Traditionally prayed",
+      "text": "Kwa jadi ilisaliwa"
+    },
+    "seasons.today": {
+      "en": "today",
+      "text": "Leo"
+    },
+    "seasons.feast": {
+      "en": "Feast",
+      "text": "Sherehe"
+    },
+    "seasons.starts": {
+      "en": "Starts",
+      "text": "Anza"
+    },
+    "seasons.feastToday": {
+      "en": "Feast day today",
+      "text": "Leo ni siku ya karamu"
+    },
+    "seasons.startsToday": {
+      "en": "Starts today",
+      "text": "Anza leo"
+    },
+    "seasons.startsTomorrow": {
+      "en": "Starts tomorrow",
+      "text": "Inaanza kesho"
+    },
+    "seasons.prayToday": {
+      "en": "pray today",
+      "text": "sali leo"
+    },
+    "seasons.startsIn": {
+      "en": "Starts in",
+      "text": "Inaanza katika"
+    },
+    "seasons.open": {
+      "en": "Open",
+      "text": "Fungua"
+    },
+    "seasons.continue": {
+      "en": "Continue",
+      "text": "Endelea"
+    },
+    "seasons.begin": {
+      "en": "Begin",
+      "text": "Anza"
+    },
+    "seasons.next": {
+      "en": "Next novena",
+      "text": "Novena inayofuata"
+    },
+    "seasons.stJude": {
+      "en": "St. Jude",
+      "text": "Mtakatifu Jude"
+    },
+    "seasons.stJoseph": {
+      "en": "St. Joseph",
+      "text": "Mtakatifu Yosefu"
+    },
+    "seasons.perpetualHelp": {
+      "en": "Our Lady of Perpetual Help",
+      "text": "Bibi Yetu wa Msaada wa Kudumu"
+    },
+    "seasons.stLeo": {
+      "en": "Pope St. Leo the Great",
+      "text": "Papa Mtakatifu. Leo Mkuu"
+    },
+    "seasons.ourLadyOfHope": {
+      "en": "Our Lady of Hope",
+      "text": "Bibi Yetu wa Matumaini"
+    },
+    "seasons.guadalupe": {
+      "en": "Our Lady of Guadalupe",
+      "text": "Bibi Yetu wa Guadalupe"
+    },
+    "seasons.divineMercySunday": {
+      "en": "Divine Mercy Sunday",
+      "text": "Jumapili ya Rehema ya Kimungu"
+    },
+    "seasons.holyName": {
+      "en": "the Most Holy Name of Jesus",
+      "text": "Jina Takatifu Zaidi la Yesu"
+    },
+    "seasons.stDominic": {
+      "en": "St. Dominic",
+      "text": "Mtakatifu Dominic"
+    },
+    "billing.title": {
+      "en": "Ave subscription",
+      "text": "Nataka kujiandikisha"
+    },
+    "seasons.ourLadyOfSorrows": {
+      "en": "Our Lady of Sorrows",
+      "text": "Bibi Yetu wa Maumivu"
+    },
+    "seasons.fatima": {
+      "en": "Our Lady of Fatima",
+      "text": "Bibi Yetu wa Fatima"
+    },
+    "billing.subscription": {
+      "en": "Subscription",
+      "text": "Uandikishaji"
+    },
+    "billing.signInFirst": {
+      "en": "Create a free account to start your 7-day free trial.",
+      "text": "Jiandikishe kwa akaunti ya bure ili kuanza jaribio lako la siku 7 bila malipo."
+    },
+    "billing.includes": {
+      "en": "Your plan includes every prayer in all three languages, audio, streaks, sharing and reminders.",
+      "text": "Mpango wako unajumuisha kila sala katika lugha zote tatu, sauti, mfululizo, kushiriki na vikumbusho."
+    },
+    "billing.description": {
+      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+      "text": "Kila sala, kwa Kiingereza, Luganda na Runyankore, pamoja na sauti, mfuatano, kushiriki na vikumbusho."
+    },
+    "billing.trialUntil": {
+      "en": "Your free trial runs until",
+      "text": "Jaribio lako la bure linakwenda hadi"
+    },
+    "billing.inUganda": {
+      "en": "In Uganda (UGX)",
+      "text": "Nchini Uganda (UGX)"
+    },
+    "billing.paidUntil": {
+      "en": "Your plan is active until",
+      "text": "Mpango wako unafanya kazi hadi"
+    },
+    "billing.trialEnded": {
+      "en": "Your free trial has ended. Choose a plan to keep praying with Ave.",
+      "text": "Jaribio lako la bure limeisha. Chagua mpango wa kuendelea kusali na Ave."
+    },
+    "billing.outsideUganda": {
+      "en": "Outside Uganda (USD)",
+      "text": "Nje ya Uganda (USD)"
+    },
+    "billing.monthly": {
+      "en": "Monthly",
+      "text": "Kila mwezi"
+    },
+    "billing.yearly": {
+      "en": "Yearly",
+      "text": "Kila mwaka"
+    },
+    "billing.perMonth": {
+      "en": "Billed every month",
+      "text": "Inalipwa kila mwezi"
+    },
+    "billing.twoMonthsFree": {
+      "en": "Two months free",
+      "text": "Miezi miwili bure"
+    },
+    "billing.pay": {
+      "en": "Pay",
+      "text": "Lipa"
+    },
+    "billing.best": {
+      "en": "Best value",
+      "text": "Thamani bora"
+    },
+    "billing.createAccount": {
+      "en": "Create an account to continue",
+      "text": "Unda akaunti ili kuendelea"
+    },
+    "billing.methodsUganda": {
+      "en": "Pay with MTN or Airtel mobile money, or a card. Payments are handled securely by PesaPal.",
+      "text": "Lipa kwa kutumia simu ya mkononi ya MTN au Airtel, au kadi. Malipo yanashughulikiwa salama na PesaPal."
+    },
+    "billing.thankYou": {
+      "en": "Thank you!",
+      "text": "Asante!"
+    },
+    "billing.checking": {
+      "en": "Confirming your payment...",
+      "text": "Kuthibitisha malipo yako..."
+    },
+    "billing.methodsAbroad": {
+      "en": "Pay with Visa or Mastercard. Payments are handled securely by PesaPal.",
+      "text": "Lipa kwa Visa au Mastercard. Malipo yanashughulikiwa salama na PesaPal."
+    },
+    "billing.startFailed": {
+      "en": "Couldn't start the payment. Check your connection and try again.",
+      "text": "Hakuweza kuanza malipo. Angalia muunganisho wako na ujaribu tena."
+    },
+    "billing.activated": {
+      "en": "Your plan is active.",
+      "text": "Mpango wako uko hai."
+    },
+    "billing.notPaid": {
+      "en": "Payment not completed",
+      "text": "Malipo hayajakamilika"
+    },
+    "billing.notPaidText": {
+      "en": "The payment didn't go through, so nothing was charged. You can try again.",
+      "text": "Malipo hayakufaulu, hivyo hakuna kitu kilichotozwa. Unaweza kujaribu tena."
+    },
+    "billing.startPraying": {
+      "en": "Start praying",
+      "text": "Anza kusali"
+    },
+    "billing.tryAgain": {
+      "en": "Back to plans",
+      "text": "Kurudi kwenye mipango"
+    },
+    "billing.checkLater": {
+      "en": "We couldn't confirm your payment yet. If money was taken, your plan will be activated shortly. Contact us if it isn't.",
+      "text": "Hatujaweza kuthibitisha malipo yako bado. Ikiwa pesa zilichukuliwa, mpango wako utaamilishwa hivi karibuni. Wasiliana nasi ikiwa haikuwezekana."
+    },
+    "actions.play": {
+      "en": "Play",
+      "text": "Cheza"
+    },
+    "actions.pause": {
+      "en": "Pause",
+      "text": "Simamisha"
+    },
+    "billing.choosePlan": {
+      "en": "Choose a plan",
+      "text": "Chagua mpango"
+    },
+    "billing.extend": {
+      "en": "Extend your plan",
+      "text": "Panua mpango wako"
+    },
+    "actions.stop": {
+      "en": "Stop",
+      "text": "Simama"
+    },
+    "actions.saved": {
+      "en": "Saved",
+      "text": "Imehifadhiwa"
+    },
+    "actions.save": {
+      "en": "Save",
+      "text": "Hifadhi"
+    },
+    "actions.resume": {
+      "en": "Resume",
+      "text": "Wasilisha tena"
+    },
+    "actions.routine": {
+      "en": "Routine",
+      "text": "Ratiba ya kawaida"
+    },
+    "actions.share": {
+      "en": "Share",
+      "text": "Shiriki"
+    },
+    "actions.markPrayed": {
+      "en": "Mark prayed",
+      "text": "Mark alisali"
+    },
+    "actions.prayed": {
+      "en": "Prayed",
+      "text": "Alisali"
+    },
+    "readAloud.listen": {
+      "en": "Play audio",
+      "text": "Cheza sauti"
+    },
+    "readAloud.pause": {
+      "en": "Pause",
+      "text": "Simamisha"
+    },
+    "readAloud.stop": {
+      "en": "Stop",
+      "text": "Simama"
+    },
+    "readAloud.resume": {
+      "en": "Resume",
+      "text": "Wasifu wa kazi"
+    },
+    "readAloud.reading": {
+      "en": "Reading aloud",
+      "text": "Kusoma kwa sauti"
+    },
+    "share.share": {
+      "en": "Share",
+      "text": "Shiriki"
+    },
+    "readAloud.paused": {
+      "en": "Paused",
+      "text": "Imesimamishwa"
+    },
+    "share.copied": {
+      "en": "Link copied",
+      "text": "Kiungo kimekopwa"
+    },
+    "routine.tab": {
+      "en": "Routine",
+      "text": "Rutiba"
+    },
+    "routine.title": {
+      "en": "Prayer routine",
+      "text": "Mazoea ya kusali"
+    },
+    "share.copyThis": {
+      "en": "Copy this link",
+      "text": "Nakili kiungo hiki"
+    },
+    "share.prayWithMe": {
+      "en": "Pray with me on Ave",
+      "text": "Sali pamoja nami kwenye Ave"
+    },
+    "routine.none": {
+      "en": "Not set up yet",
+      "text": "Hajawekwa bado"
+    },
+    "routine.prayersCount": {
+      "en": "prayers",
+      "text": "maombi"
+    },
+    "routine.description": {
+      "en": "Choose the prayers you want to pray each day and week.",
+      "text": "Chagua sala unazotaka kusali kila siku na wiki."
+    },
+    "routine.promptShort": {
+      "en": "Get suggested daily and weekly prayers",
+      "text": "Pata maombi yanayopendekezwa kila siku na kila wiki"
+    },
+    "routine.today": {
+      "en": "Today's routine",
+      "text": "Mazoea ya leo"
+    },
+    "routine.prayed": {
+      "en": "prayed",
+      "text": "alisali"
+    },
+    "routine.restDay": {
+      "en": "Nothing planned for today",
+      "text": "Hakuna mipango yoyote kwa leo"
+    },
+    "routine.yourWeek": {
+      "en": "Your week",
+      "text": "Wiki yako"
+    },
+    "routine.edit": {
+      "en": "Edit",
+      "text": "Hariri"
+    },
+    "routine.everyDay": {
+      "en": "Every day",
+      "text": "Kila siku"
+    },
+    "routine.cancel": {
+      "en": "Cancel",
+      "text": "Futa"
+    },
+    "routine.remove": {
+      "en": "Remove routine",
+      "text": "Ondoa kawaida"
+    },
+    "routine.save": {
+      "en": "Save routine",
+      "text": "Hifadhi ya kawaida"
+    },
+    "routine.addTitle": {
+      "en": "Add to your routine",
+      "text": "Ongeza kwenye ratiba yako"
+    },
+    "routine.add": {
+      "en": "Add",
+      "text": "Ongeza"
+    },
+    "routine.addDescription": {
+      "en": "Choose the days you want to pray this prayer.",
+      "text": "Chagua siku unazotaka kusali sala hii."
+    },
+    "routine.added": {
+      "en": "Added",
+      "text": "Imeongezwa"
+    },
+    "routine.suggestions": {
+      "en": "Suggested routines",
+      "text": "Mikakati iliyopendekezwa"
+    },
+    "routine.removeOne": {
+      "en": "Remove from routine",
+      "text": "Ondoa kutoka kwa kawaida"
+    },
+    "routine.choose": {
+      "en": "Choose prayers and days",
+      "text": "Chagua sala na siku"
+    },
+    "routine.otherSuggestions": {
+      "en": "Other suggestions",
+      "text": "Mapendekezo mengine"
+    },
+    "routine.editFirst": {
+      "en": "Change it first",
+      "text": "Badilisha kwanza"
+    },
+    "routine.makeOwn": {
+      "en": "Make my own",
+      "text": "Fanya yangu mwenyewe"
+    },
+    "routine.use": {
+      "en": "Use this routine",
+      "text": "Tumia utaratibu huu"
+    },
+    "routine.ownHint": {
+      "en": "None of these fit? Build your own routine from any prayer in Ave.",
+      "text": "Hakuna yoyote kati ya haya inayofaa? Jenga utaratibu wako mwenyewe kutoka kwa sala yoyote katika Ave."
+    },
+    "routine.promptTitle": {
+      "en": "Build a prayer routine",
+      "text": "Jenga utaratibu wa kusali"
+    },
+    "routine.promptText": {
+      "en": "Ave can suggest daily and weekly prayers for you. Save one, change it, or skip it.",
+      "text": "Ave anaweza kupendekeza sala za kila siku na kila wiki kwa ajili yako. Hifadhi moja, ibadilishe, au uruke."
+    },
+    "routine.simpleTitle": {
+      "en": "Morning and night",
+      "text": "Asubuhi na usiku"
+    },
+    "routine.seeSuggestions": {
+      "en": "See suggestions",
+      "text": "Tazama mapendekezo"
+    },
+    "routine.ignore": {
+      "en": "Don't suggest routines",
+      "text": "Usipendekeze utaratibu"
+    },
+    "routine.simpleDescription": {
+      "en": "Begin and end each day with prayer.",
+      "text": "Anza na kumaliza siku kwa sala."
+    },
+    "routine.rosaryTitle": {
+      "en": "Daily Rosary",
+      "text": "Sala ya Rozari ya kila siku"
+    },
+    "routine.weeklyTitle": {
+      "en": "Friday and Saturday devotions",
+      "text": "Sala za Ijumaa na Jumamosi"
+    },
+    "routine.rosaryDescription": {
+      "en": "Morning and night prayers, with the Rosary every day.",
+      "text": "Sala za asubuhi na usiku, pamoja na Tasbihi kila siku."
+    },
+    "routine.weeklyDescription": {
+      "en": "The Divine Mercy Chaplet and the Stations of the Cross on Fridays, and the Magnificat for Our Lady on Saturdays.",
+      "text": "Sala ya Huruma ya Kimungu na Vituo vya Msalaba kila Ijumaa, na Magnificat kwa Mama Yetu kila Jumamosi."
+    },
+    "routine.fullTitle": {
+      "en": "A full day of prayer",
+      "text": "Siku kamili ya sala"
+    },
+    "favourites.title": {
+      "en": "Favourites",
+      "text": "Wapendwa"
+    },
+    "favourites.description": {
+      "en": "Prayers you have saved.",
+      "text": "Sala ambazo umehifadhi."
+    },
+    "favourites.saved": {
+      "en": "Saved",
+      "text": "Imehifadhiwa"
+    },
+    "routine.fullDescription": {
+      "en": "Morning, midday and night prayers and the Rosary every day, with the Divine Mercy Chaplet on Fridays.",
+      "text": "Sala za asubuhi, adhuhuri na usiku pamoja na Tasbihi kila siku, na Tasbihi ya Rehema ya Mungu siku za Ijumaa."
+    },
+    "favourites.save": {
+      "en": "Save to favourites",
+      "text": "Hifadhi kwenye vipendwa"
+    },
+    "favourites.viewAll": {
+      "en": "View all",
+      "text": "Angalia yote"
+    },
+    "favourites.noneYet": {
+      "en": "None saved yet",
+      "text": "Hakuna yeyote aliyehifadhiwa bado"
+    },
+    "auth.signIn": {
+      "en": "Sign in",
+      "text": "Ingia ndani"
+    },
+    "favourites.empty": {
+      "en": "Use \"Save to favourites\" on any prayer to keep it here.",
+      "text": "Tumia \"Hifadhi kwenye vipendwa\" kwa sala yoyote ili kuweka hapa."
+    },
+    "auth.signInTitle": {
+      "en": "Sign in to Ave",
+      "text": "Ingia kwenye Ave"
+    },
+    "auth.createAccount": {
+      "en": "Create account",
+      "text": "Unda akaunti"
+    },
+    "auth.signInDescription": {
+      "en": "Save your favourite prayers and keep track of your progress.",
+      "text": "Hifadhi sala zako unazozipenda na uweke rekodi ya maendeleo yako."
+    },
+    "auth.signUpTitle": {
+      "en": "Create your account",
+      "text": "Unda akaunti yako"
+    },
+    "auth.name": {
+      "en": "Name",
+      "text": "Jina"
+    },
+    "auth.signUpDescription": {
+      "en": "Accounts are free, and you can always pray without one.",
+      "text": "Akaunti ni bure, na unaweza kusali wakati wote bila akaunti."
+    },
+    "auth.email": {
+      "en": "Email",
+      "text": "Barua pepe"
+    },
+    "auth.password": {
+      "en": "Password",
+      "text": "Nywila"
+    },
+    "auth.newPassword": {
+      "en": "New password",
+      "text": "Nywila mpya"
+    },
+    "auth.forgotPassword": {
+      "en": "Forgot password?",
+      "text": "Umesahau nenosiri?"
+    },
+    "auth.haveAccount": {
+      "en": "Already have an account?",
+      "text": "Tayari una akaunti?"
+    },
+    "auth.noAccount": {
+      "en": "Don't have an account?",
+      "text": "Huna akaunti?"
+    },
+    "auth.resetTitle": {
+      "en": "Reset your password",
+      "text": "Tengeneza upya nywila yako"
+    },
+    "auth.resetDescription": {
+      "en": "Enter your email and we will send you a link to set a new password.",
+      "text": "Ingiza barua pepe yako na tutakutumia kiungo cha kuweka nenosiri jipya."
+    },
+    "auth.newPasswordTitle": {
+      "en": "Set a new password",
+      "text": "Weka nywila mpya"
+    },
+    "auth.sendResetLink": {
+      "en": "Send reset link",
+      "text": "Tuma kiungo cha kurejesha tena"
+    },
+    "auth.newPasswordDescription": {
+      "en": "Choose a new password for your account.",
+      "text": "Chagua nywila mpya kwa akaunti yako."
+    },
+    "auth.resetSent": {
+      "en": "If an account exists for that email, a reset link is on its way. Check your inbox.",
+      "text": "Ikiwa akaunti ipo kwa barua pepe hiyo, kiungo cha kurejesha kitakuwa njiani. Kagua sanduku lako la barua."
+    },
+    "auth.savePassword": {
+      "en": "Save password",
+      "text": "Hifadhi nenosiri"
+    },
+    "auth.passwordUpdated": {
+      "en": "Your password has been updated.",
+      "text": "Nywila yako imebadilishwa."
+    },
+    "auth.confirmEmailTitle": {
+      "en": "Check your email",
+      "text": "Kagua barua pepe yako"
+    },
+    "auth.backToSignIn": {
+      "en": "Back to sign in",
+      "text": "Rudi kwenye kujiandikisha"
+    },
+    "auth.resetLinkInvalid": {
+      "en": "This reset link has expired or was already used. Request a new one.",
+      "text": "Kiungo hiki cha kurejesha kimemalizika muda wake au tayari kilitumika. Tafadhali omba kiungo kipya."
+    },
+    "auth.confirmEmailDescription": {
+      "en": "We sent a confirmation link to your email. Open it to finish creating your account.",
+      "text": "Tumekutumia kiungo cha uthibitisho kwenye barua pepe yako. Ifungue ili uweze kumaliza kuunda akaunti yako."
+    },
+    "auth.notNow": {
+      "en": "Not now",
+      "text": "Si sasa"
+    },
+    "auth.continueToHome": {
+      "en": "Continue to Ave",
+      "text": "Endelea hadi Ave"
+    },
+    "auth.nameRequired": {
+      "en": "Enter your name",
+      "text": "Ingiza jina lako"
+    },
+    "auth.emailInvalid": {
+      "en": "Enter a valid email address",
+      "text": "Ingiza anwani halali ya barua pepe"
+    },
+    "auth.passwordRequired": {
+      "en": "Enter your password",
+      "text": "Ingiza nenosiri lako"
+    },
+    "auth.ruleLetter": {
+      "en": "At least one letter",
+      "text": "Angalau herufi moja"
+    },
+    "auth.ruleLength": {
+      "en": "At least 8 characters",
+      "text": "Angalau wahusika 8"
+    },
+    "auth.passwordInvalid": {
+      "en": "Use at least 8 characters, with at least one letter and one number.",
+      "text": "Tumia angalau herufi 8, na angalau herufi moja na nambari moja."
+    },
+    "auth.confirmPassword": {
+      "en": "Confirm new password",
+      "text": "Thibitisha nenosiri jipya"
+    },
+    "auth.passwordsDontMatch": {
+      "en": "The passwords don't match.",
+      "text": "Nywila hazilingani."
+    },
+    "auth.ruleNumber": {
+      "en": "At least one number",
+      "text": "Angalau nambari moja"
+    },
+    "auth.agreeStart": {
+      "en": "By creating an account you agree to the",
+      "text": "Kwa kuunda akaunti unakubali kwa"
+    },
+    "auth.agreeAnd": {
+      "en": "and the",
+      "text": "na the"
+    },
+    "auth.errors.invalidCredentials": {
+      "en": "Wrong email or password.",
+      "text": "Barua pepe au nenosiri lisilo sahihi."
+    },
+    "auth.errors.emailNotConfirmed": {
+      "en": "Confirm your email first. Check your inbox for the link.",
+      "text": "Thibitisha barua pepe yako kwanza. Angalia sanduku lako la barua kwa kiungo."
+    },
+    "auth.errors.alreadyRegistered": {
+      "en": "An account with this email already exists. Sign in instead.",
+      "text": "Akaunti na barua pepe hii tayari ipo. Ingia badala yake."
+    },
+    "auth.errors.waitBeforeResend": {
+      "en": "We just sent you an email. Please wait a minute before asking for another one.",
+      "text": "Tumekutumia barua pepe tu. Tafadhali subiri dakika moja kabla ya kuuliza nyingine."
+    },
+    "auth.errors.tooManyAttempts": {
+      "en": "Too many attempts. Please wait a few minutes and try again.",
+      "text": "Jaribio nyingi sana. Tafadhali ngoja dakika chache na ujaribu tena."
+    },
+    "auth.errors.weakPassword": {
+      "en": "Choose a stronger password: at least 8 characters, with at least one letter and one number.",
+      "text": "Chagua nenosiri imara: angalau herufi 8, ikiwa na angalau herufi moja na nambari moja."
+    },
+    "update.refresh": {
+      "en": "Refresh",
+      "text": "Fanya upya"
+    },
+    "update.ready": {
+      "en": "A new version of Ave is ready.",
+      "text": "Toleo jipya la Ave limekamilika."
+    },
+    "auth.errors.generic": {
+      "en": "Something went wrong. Please try again.",
+      "text": "Kuna kitu kilikwenda vibaya. Tafadhali jaribu tena."
+    },
+    "auth.errors.network": {
+      "en": "Can't reach the server. Check your connection and try again.",
+      "text": "Haiwezi kufikia seva. Angalia muunganisho wako na ujaribu tena."
+    },
+    "install.title": {
+      "en": "Install Ave",
+      "text": "Sakinisha Ave"
+    },
+    "install.install": {
+      "en": "Install",
+      "text": "Sakinisha"
+    },
+    "install.promptDescription": {
+      "en": "Add Ave to your home screen to open it like an app, even without internet.",
+      "text": "Ongeza Ave kwenye skrini ya nyumbani ili kuifungua kama programu, hata bila intaneti."
+    },
+    "install.iosDescription": {
+      "en": "In Safari, tap the Share button, then choose “Add to Home Screen”.",
+      "text": "Katika Safari, bonyeza kitufe cha Kugawana, kisha chagua \"Ongeza kwenye Ukurasa wa Nyumbani\"."
+    },
+    "install.androidDescription": {
+      "en": "Open your browser menu and choose “Install app” or “Add to Home screen”.",
+      "text": "Fungua menyu ya kivinjari chako na uchague “Sakinisha programu” au “Ongeza kwenye skrini ya nyumbani”."
+    },
+    "install.notNow": {
+      "en": "Not now",
+      "text": "Si sasa"
+    },
+    "install.installed": {
+      "en": "Ave is installed on this device.",
+      "text": "Ave imewekwa kwenye kifaa hiki."
+    }
+  },
+  "content-sw": {
+    "The Resurrection": "Ufufuo",
+    "Faith": "Imani",
+    "The Ascension": "Ukwezi wa Kupanda",
+    "Meditate on the glorious resurrection of Jesus Christ from the dead, and how He conquered sin and death.": "Tafakari juu ya ufufuo mtukufu wa Yesu Kristo kutoka kwa wafu, na jinsi alivyoshinda dhambi na kifo.",
+    "Hope": "Matumaini",
+    "Descent of the Holy Spirit": "Kushuka kwa Roho Mtakatifu",
+    "Meditate on Jesus ascending into heaven forty days after His resurrection, promising to return.": "Tafakari kuhusu Yesu akipanda mbinguni siku arobaini baada ya kufufuka kwake, akiwaahidi kurudi.",
+    "Love of God": "Upendo kwa Mungu",
+    "The Assumption": "Kuchukuliwa kwa Bikira Maria",
+    "Meditate on the Holy Spirit descending upon Mary and the Apostles at Pentecost.": "Tafakari juu ya Roho Mtakatifu akishuka kwa Maria na Mitume katika Pentekoste.",
+    "Coronation of Mary": "Kutawazwa kwa Mary",
+    "Grace of a Happy Death": "Neema ya Kifo cha Furaha",
+    "Trust in Mary's Intercession": "Tumaini katika Uwakili wa Maria",
+    "Meditate on the Blessed Virgin Mary being assumed body and soul into heavenly glory.": "Tafakari kuhusu Bikira Maria Mtakatifu akichukuliwa mwili na nafsi katika utukufu wa kimbingu.",
+    "The Annunciation": "Tangazo la Kuzaliwa kwa Yesu",
+    "Humility": "Unyenyekevu",
+    "Meditate on the Blessed Virgin Mary being crowned Queen of Heaven and Earth.": "Tafakari kuhusu Bikira Maria Mtakatifu akiwa amevikwa taji ya Mfalme wa Mbingu na Dunia.",
+    "Meditate on the Angel Gabriel announcing to Mary that she would conceive and bear the Son of God.": "Tafakari kuhusu Malaika Gabriel akimwambia Maria kwamba atachukua mimba na kuzaa Mwana wa Mungu.",
+    "The Visitation": "Utembelezi wa Kisheria",
+    "Love of Neighbour": "Upendo kwa Jirani",
+    "Poverty & Detachment": "Umaskini na Kutengwa",
+    "The Nativity": "Uzaliwa wa Yesu",
+    "Meditate on Mary visiting her cousin Elizabeth, who was pregnant with John the Baptist.": "Tafakari kuhusu Mary akimtembelea binamu yake Elizabeth, ambaye alikuwa mjamzito wa Yohana Mbatizaji.",
+    "Meditate on the birth of Jesus Christ in a humble stable in Bethlehem.": "Tafakari juu ya kuzaliwa kwa Yesu Kristo katika zizi la chini huko Bethlehemu.",
+    "The Presentation": "Uwasilishaji",
+    "Obedience": "Utii",
+    "Piety": "Uadilifu",
+    "Finding in the Temple": "Kupata katika Hekalu",
+    "Meditate on Mary and Joseph presenting the infant Jesus in the Temple in Jerusalem.": "Tafakari kuhusu Maria na Yosefu wakimleta mtoto Yesu katika Hekalu la Yerusalemu.",
+    "Meditate on the twelve-year-old Jesus being found in the Temple, sitting among the teachers.": "Tafakari kuhusu Yesu mwenye umri wa miaka kumi na mbili akikutwa katika hekalu, akiwa ameketi kati ya walimu.",
+    "The Agony in the Garden": "Maumivu katika Bustani",
+    "Contrition": "Toba",
+    "Purity": "Usafi",
+    "Meditate on Jesus praying in the Garden of Gethsemane on the eve of His crucifixion.": "Tafakari Yesu akisali katika Bustani ya Gethsemane usiku wa kabla ya msalaba wake.",
+    "The Scourging at the Pillar": "Kupigwa kwa nguvu kwenye nguzo",
+    "Meditate on Jesus being tied to a pillar and scourged by Roman soldiers.": "Tafakari juu ya Yesu akiwa amefungwa kwenye nguzo na kupigwa mijeledi na askari wa Roma.",
+    "The Crowning with Thorns": "Kutawazwa kwa Miiba",
+    "Courage": "Ujasiri",
+    "Meditate on Jesus being crowned with thorns and mocked as King of the Jews.": "Tafakari kuhusu Yesu akivalishwa taji la miiba na kudhihakiwa kama Mfalme wa Wayahudi.",
+    "Carrying of the Cross": "Kubeba Msalaba",
+    "Patience": "Subira",
+    "Meditate on Jesus carrying His cross through the streets of Jerusalem to Calvary.": "Tafakari Yesu akiwa amebeba msalaba wake kupitia mitaa ya Yerusalemu hadi Kalvari.",
+    "Self-denial": "Kujikana mwenyewe",
+    "The Crucifixion": "Msalaba wa Kuteswa",
+    "Meditate on the glorious resurrection of Jesus Christ from the dead.": "Tafakari juu ya ufufuo mtukufu wa Yesu Kristo kutoka kwa wafu.",
+    "Meditate on Jesus being nailed to the cross and dying for our sins.": "Tafakari juu ya Yesu akiwa amepigiliwa misumari kwenye msalaba na akafa kwa ajili ya dhambi zetu.",
+    "Baptism of Jesus": "Ubatizo wa Yesu",
+    "Openness to the Holy Spirit": "Kufunguka kwa Roho Mtakatifu",
+    "Meditate on Jesus ascending into heaven forty days after His resurrection.": "Tafakari kuhusu Yesu akipanda mbinguni siku arobaini baada ya ufufuo wake.",
+    "Wedding at Cana": "Arusi huko Kana",
+    "Meditate on the baptism of Jesus in the Jordan River by John the Baptist.": "Tafakari juu ya ubatizo wa Yesu katika Mto Yordani na Yohana Mbatizaji.",
+    "Repentance & Trust": "Toba na Imani"
   }
 }

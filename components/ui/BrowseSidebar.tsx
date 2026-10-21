@@ -6,8 +6,8 @@ import { cn } from "../../lib/utils";
 import { Card } from "./card";
 import { useUserDataStore } from "../../store/userDataStore";
 import { availableNovenas, availableChaplets, otherPrayersCount } from "../../constants/content/available";
+import { languageInfo } from "../../constants/languages";
 
-const LANGUAGE_NAMES: Record<string, string> = { en: "English", lg: "Oluganda", rny: "Orunyankore" };
 
 // Desktop sidebar listing every prayer section, like a "Manage my network" card
 export function BrowseSidebar() {
@@ -92,7 +92,7 @@ export function BrowseSidebar() {
         <Text className="text-sm text-muted-foreground">{t("home.prayingIn")}</Text>
         <View className="flex-row items-center justify-between">
           <Text className="text-sm font-semibold text-card-foreground">
-            {LANGUAGE_NAMES[language] ?? "English"}
+            {languageInfo(language).name}
           </Text>
           <Pressable onPress={() => router.push("/Language")}>
             <Text className="text-sm font-semibold text-primary">{t("common.change")}</Text>

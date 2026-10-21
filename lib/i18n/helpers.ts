@@ -1,4 +1,5 @@
 import type { TFunction } from "i18next";
+import { languageInfo } from "../../constants/languages";
 
 // Prayer category slugs (from Supabase) → keys under `categories` in the
 // translation files, so category names follow the chosen language.
@@ -30,8 +31,6 @@ export function greetingKeys(date: Date = new Date()) {
   return { title: "home.greetingEvening", subtitle: "home.greetingSubtitleEvening" };
 }
 
-// App language codes → locale codes browsers know for dates
-const DATE_LOCALES: Record<string, string> = { en: "en-GB", lg: "lg", rny: "nyn" };
 
 // Most browsers ship no date names for Luganda or Runyankore, so use the CLDR
 // names directly (Sunday first, January first). Needs native-speaker review.
@@ -50,7 +49,7 @@ export function formatWeekday(date: Date, language: string) {
   const names = DATE_NAMES[language];
   if (names) return names.days[date.getDay()];
   try {
-    return date.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", { weekday: "long" });
+    return date.toLocaleDateString(languageInfo(language).dateLocale, { weekday: "long" });
   } catch {
     return date.toDateString().split(" ")[0];
   }
@@ -64,18 +63,34 @@ export function weekdayName(day: number, language: string) {
   // 7 January 2024 was a Sunday
   const date = new Date(2024, 0, 7 + day);
   try {
-    return date.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", { weekday: "short" });
+    return date.toLocaleDateString(languageInfo(language).dateLocale, { weekday: "short" });
   } catch {
     return date.toDateString().split(" ")[0];
   }
 }
 
 // "19 October", in the chosen language
+// "06:30" → "6:30 am" (or the language's own style)
+export function formatTime(time: string, language: string) {
+  const [hours, minutes] = time.split(":").map(Number);
+  const date = new Date(2024, 0, 1, hours, minutes);
+  try {
+    // English in the 12-hour style used in Uganda ("6:30 am")
+    return date.toLocaleTimeString(languageInfo(language).dateLocale, {
+      hour: "numeric",
+      minute: "2-digit",
+      ...(language === "en" ? { hour12: true } : {}),
+    });
+  } catch {
+    return time;
+  }
+}
+
 export function formatDayMonth(date: Date, language: string) {
   const names = DATE_NAMES[language];
   if (names) return `${date.getDate()} ${names.months[date.getMonth()]}`;
   try {
-    return date.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", { day: "numeric", month: "long" });
+    return date.toLocaleDateString(languageInfo(language).dateLocale, { day: "numeric", month: "long" });
   } catch {
     return date.toDateString().slice(4, 10);
   }
@@ -85,7 +100,7 @@ export function formatDate(date: Date, language: string) {
   const names = DATE_NAMES[language];
   if (names) return `${names.days[date.getDay()]}, ${date.getDate()} ${names.months[date.getMonth()]}`;
   try {
-    return date.toLocaleDateString(DATE_LOCALES[language] ?? "en-GB", {
+    return date.toLocaleDateString(languageInfo(language).dateLocale, {
       weekday: "long",
       day: "numeric",
       month: "long",

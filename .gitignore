@@ -50,3 +50,9 @@ echo "*.key" >> .gitignore
 echo "*.mobileprovision" >> .gitignore
 .vercel
 .env*
+
+# Supabase CLI cache
+supabase/.temp/
+
+# Local SQL that holds secrets
+*.local.sql

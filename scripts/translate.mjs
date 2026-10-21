@@ -22,10 +22,16 @@ const I18N = path.join(ROOT, "lib", "i18n");
 const CACHE_FILE = path.join(ROOT, "scripts", "translation-cache.json");
 const REVIEW_FILE = path.join(ROOT, "translations-review.md");
 
+// Ugandan and other African languages come from Sunbird; languages it
+// doesn't have (Spanish, Italian) from DeepL, which needs DEEPL_API_KEY
 const LANGUAGES = [
   { code: "lg", sunbird: "lug", name: "Luganda" },
   { code: "rny", sunbird: "nyn", name: "Runyankore" },
+  { code: "sw", sunbird: "swa", name: "Swahili" },
+  { code: "es", deepl: "ES", name: "Spanish" },
+  { code: "it", deepl: "IT", name: "Italian" },
 ];
+const providerName = (language) => (language.deepl ? "DeepL" : "Sunbird");
 
 // Keys that moved; their old translations are reused
 const RENAMED = {
@@ -35,12 +41,18 @@ const RENAMED = {
 
 const CONCURRENCY = 4;
 
+// API keys from .env.local (never printed): SUNBIRD_API_TOKEN, and
+// DEEPL_API_KEY for the DeepL languages
 function readToken() {
   const env = fs.readFileSync(path.join(ROOT, ".env.local"), "utf8");
-  const token = env.match(/^\s*SUNBIRD_API_TOKEN\s*=\s*(.+)\s*$/m)?.[1]?.trim();
-  if (!token) throw new Error("SUNBIRD_API_TOKEN not found in .env.local");
-  return token;
+  const value = (name) => env.match(new RegExp(`^\\s*${name}\\s*=\\s*(.+)\\s*$`, "m"))?.[1]?.trim().replace(/^["']|["']$/g, "");
+  const sunbird = value("SUNBIRD_API_TOKEN");
+  if (!sunbird) throw new Error("SUNBIRD_API_TOKEN not found in .env.local");
+  return { sunbird, deepl: value("DEEPL_API_KEY") };
 }
+
+// Languages whose service has no key are skipped (and keep their files)
+const canTranslate = (keys, language) => (language.deepl ? !!keys.deepl : true);
 
 async function load(file) {
   return (await import(pathToFileURL(path.join(I18N, file)).href)).default;
@@ -80,7 +92,36 @@ function matchPunctuation(english, translated) {
   return text;
 }
 
-async function translate(token, text, target, attempt = 0) {
+async function translate(keys, text, language) {
+  const translated = language.deepl
+    ? await deepl(keys.deepl, text, language.deepl)
+    : await sunbird(keys.sunbird, text, language.sunbird);
+  // House style: no em dashes (U+2014) in any language
+  const emDash = new RegExp(`\\s*${String.fromCharCode(0x2014)}\\s*`, "g");
+  return matchPunctuation(text, translated.replace(emDash, ", "));
+}
+
+// DeepL: free keys end in ":fx" and use the free endpoint. Formal register,
+// as suits prayer; line breaks kept.
+async function deepl(key, text, target, attempt = 0) {
+  const host = key.endsWith(":fx") ? "https://api-free.deepl.com" : "https://api.deepl.com";
+  const response = await fetch(`${host}/v2/translate`, {
+    method: "POST",
+    headers: { Authorization: `DeepL-Auth-Key ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ text: [text], source_lang: "EN", target_lang: target, formality: "prefer_more", preserve_formatting: true }),
+  });
+  if ([429, 503].includes(response.status) && attempt < 5) {
+    await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
+    return deepl(key, text, target, attempt + 1);
+  }
+  if (response.status === 456) throw new Error("DeepL: this month's free characters are used up");
+  if (!response.ok) throw new Error(`DeepL ${response.status}: ${await response.text()}`);
+  const translated = (await response.json()).translations?.[0]?.text;
+  if (!translated) throw new Error(`No translation for "${text}"`);
+  return translated;
+}
+
+async function sunbird(token, text, target, attempt = 0) {
   const response = await fetch("https://api.sunbird.ai/tasks/translate", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -89,15 +130,30 @@ async function translate(token, text, target, attempt = 0) {
   // Back off on rate limits and cold starts
   if ([429, 502, 503].includes(response.status) && attempt < 5) {
     await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
-    return translate(token, text, target, attempt + 1);
+    return sunbird(token, text, target, attempt + 1);
   }
   if (!response.ok) throw new Error(`Sunbird ${response.status}: ${await response.text()}`);
   const data = await response.json();
   const translated = data.output?.translated_text;
   if (!translated) throw new Error(`No translation for "${text}"`);
-  // House style: no em dashes (U+2014) in any language
-  const emDash = new RegExp(`\\s*${String.fromCharCode(0x2014)}\\s*`, "g");
-  return matchPunctuation(text, translated.replace(emDash, ", "));
+  return translated;
+}
+
+// Saves the cache at most every few seconds (and always when forced),
+// retrying when Windows briefly locks the file
+let lastSave = 0;
+function saveCache(cache, force = false) {
+  if (!force && Date.now() - lastSave < 5000) return;
+  for (let attempt = 0; ; attempt++) {
+    try {
+      fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + "\n");
+      lastSave = Date.now();
+      return;
+    } catch (error) {
+      if (attempt >= 5) throw error;
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 500);
+    }
+  }
 }
 
 async function mapPool(items, limit, fn) {
@@ -170,6 +226,10 @@ async function translateContent(token, cache) {
 
   const sections = [];
   for (const language of LANGUAGES) {
+    if (!canTranslate(token, language)) {
+      console.log(`${language.name} content: skipped (add DEEPL_API_KEY to .env.local)`);
+      continue;
+    }
     const cacheKey = `content-${language.code}`;
     cache[cacheKey] ??= {};
     const langCache = cache[cacheKey];
@@ -177,8 +237,8 @@ async function translateContent(token, cache) {
     console.log(`${language.name} content: ${all.length - pending.length} cached, ${pending.length} to translate`);
     let done = 0;
     await mapPool(pending, CONCURRENCY, async (paragraph) => {
-      langCache[paragraph] = await translate(token, paragraph, language.sunbird);
-      fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + "\n");
+      langCache[paragraph] = await translate(token, paragraph, language);
+      saveCache(cache);
       if (++done % 20 === 0) console.log(`  ${done}/${pending.length}`);
     });
 
@@ -186,7 +246,7 @@ async function translateContent(token, cache) {
     for (const paragraph of Object.keys(langCache)) {
       if (!paragraphs.has(paragraph)) delete langCache[paragraph];
     }
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + "\n");
+    saveCache(cache, true);
 
     // Hand edits in the dictionary win over the cache on re-runs
     const file = path.join(I18N, "content", `${language.code}.json`);
@@ -198,7 +258,7 @@ async function translateContent(token, cache) {
 
     sections.push(
       `## ${language.name} prayer content (\`lib/i18n/content/${language.code}.json\`)\n\n` +
-        `All ${all.length} paragraphs are machine translated by Sunbird. Prayers such as the Our Father, ` +
+        `All ${all.length} paragraphs are machine translated by ${providerName(language)}. Prayers such as the Our Father, ` +
         `Hail Mary and Creed have official Church translations; prefer that wording over these.\n\n` +
         `| English | ${language.name} |\n|---|---|\n` +
         all.map((p) => `| ${escapeCell(p)} | ${escapeCell(dictionary[p])} |`).join("\n")
@@ -210,15 +270,21 @@ async function translateContent(token, cache) {
 async function main() {
   const token = readToken();
   const en = flatten(await load("en.ts"));
-  const existing = {
-    lg: flatten(await load("lg.ts")),
-    rny: flatten(await load("rny.ts")),
-  };
+  // Each language's current file; a new language starts empty
+  const existing = {};
+  for (const language of LANGUAGES) {
+    const file = path.join(I18N, `${language.code}.ts`);
+    existing[language.code] = fs.existsSync(file) ? flatten(await load(`${language.code}.ts`)) : {};
+  }
   const cache = fs.existsSync(CACHE_FILE) ? JSON.parse(fs.readFileSync(CACHE_FILE, "utf8")) : {};
   const keys = Object.keys(en);
   const review = [];
 
   for (const language of LANGUAGES) {
+    if (!canTranslate(token, language)) {
+      console.log(`${language.name}: skipped (add DEEPL_API_KEY to .env.local)`);
+      continue;
+    }
     cache[language.code] ??= {};
     const langCache = cache[language.code];
     const current = (key) => fixApostrophes(existing[language.code][key] ?? existing[language.code][RENAMED[key]]);
@@ -231,10 +297,11 @@ async function main() {
     console.log(`${language.name}: ${keys.length - pending.length} cached, ${pending.length} to translate`);
     let done = 0;
     await mapPool(pending, CONCURRENCY, async (key) => {
-      langCache[key] = { en: en[key], text: await translate(token, en[key], language.sunbird) };
-      fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + "\n");
+      langCache[key] = { en: en[key], text: await translate(token, en[key], language) };
+      saveCache(cache);
       if (++done % 10 === 0) console.log(`  ${done}/${pending.length}`);
     });
+    saveCache(cache, true);
 
     const result = {};
     const rows = [];

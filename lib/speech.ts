@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Platform } from "react-native";
+import { useLanguageStore } from "../store/LanguageStore";
+import { languageInfo } from "../constants/languages";
 
-// Read aloud with the device's own English voice (Web Speech API). Phones have
-// no Luganda or Runyankore voices, so the app offers this in English only.
+// Read aloud with the device's own voice (Web Speech API), in the app's
+// language where the phone has a voice for it (constants/languages.ts: `speech`).
+// Phones have no Luganda or Runyankore voices, so those have no Play button.
 
 export type SpeechSection = { heading?: string; body: string };
 // A piece read in one go, and where it sits: a section's heading, or the
@@ -77,16 +80,28 @@ export function toChunks(sections: SpeechSection[]): Chunk[] {
   ]);
 }
 
-// A clear English voice on the device, preferring British English and
-// voices that work offline
-function englishVoice() {
+// A voice on the device for a language ("en", "sw"...), preferring voices
+// that work offline, and British English for English
+function voiceFor(lang: string) {
   const voices = window.speechSynthesis.getVoices();
+  const matches = voices.filter((v) => new RegExp(`^${lang}([-_]|$)`, "i").test(v.lang));
   return (
-    voices.find((v) => /^en[-_]GB/i.test(v.lang) && v.localService) ??
-    voices.find((v) => /^en/i.test(v.lang) && v.localService) ??
-    voices.find((v) => /^en/i.test(v.lang)) ??
+    (lang === "en" ? matches.find((v) => /^en[-_]GB/i.test(v.lang) && v.localService) : undefined) ??
+    matches.find((v) => v.localService) ??
+    matches[0] ??
     null
   );
+}
+
+// Browsers load their voice list after the page; re-check when it arrives
+function useVoicesReady() {
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    if (!canSpeak()) return;
+    const update = () => setTick((tick) => tick + 1);
+    window.speechSynthesis.addEventListener?.("voiceschanged", update);
+    return () => window.speechSynthesis.removeEventListener?.("voiceschanged", update);
+  }, []);
 }
 
 // Only one text reads at a time: starting another stops the previous one
@@ -95,6 +110,9 @@ let speaker: { current: () => void } | null = null;
 export type ReadAloudState = "idle" | "playing" | "paused";
 
 export function useReadAloud(sections: SpeechSection[]) {
+  const language = useLanguageStore((store) => store.language);
+  const speechLang = languageInfo(language).speech;
+  useVoicesReady();
   const [state, setState] = useState<ReadAloudState>("idle");
   const [position, setPosition] = useState(0);
   const chunks = useRef<Chunk[]>([]);
@@ -117,7 +135,8 @@ export function useReadAloud(sections: SpeechSection[]) {
     const thisRun = ++run.current;
     window.speechSynthesis.cancel();
     chunks.current = toChunks(sections);
-    const voice = englishVoice();
+    const lang = speechLang ?? "en";
+    const voice = voiceFor(lang);
 
     const say = (index: number) => {
       if (thisRun !== run.current) return;
@@ -130,7 +149,7 @@ export function useReadAloud(sections: SpeechSection[]) {
       positionRef.current = index;
       setPosition(index);
       const utterance = new SpeechSynthesisUtterance(chunks.current[index].text);
-      utterance.lang = voice?.lang ?? "en-GB";
+      utterance.lang = voice?.lang ?? (lang === "en" ? "en-GB" : lang);
       if (voice) utterance.voice = voice;
       utterance.rate = 0.95;
       utterance.onend = () => say(index + 1);
@@ -166,7 +185,8 @@ export function useReadAloud(sections: SpeechSection[]) {
   );
 
   return {
-    available: canSpeak(),
+    // English always (every phone reads it); other languages need a voice
+    available: canSpeak() && !!speechLang && (speechLang === "en" || !!voiceFor(speechLang)),
     state,
     // Index of the section being read, and the exact piece, for highlighting
     activeSection: state === "idle" ? null : chunks.current[position]?.section ?? null,

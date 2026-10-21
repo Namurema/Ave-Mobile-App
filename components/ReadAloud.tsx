@@ -1,11 +1,10 @@
 import { View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
-import { useLanguageStore } from "../store/LanguageStore";
 import { useReadAloud, type SpeechSection } from "../lib/speech";
 import { Button } from "./ui/button";
 
-// Listen / Pause / Resume / Stop. Shown in English only, on devices that can
-// speak. Reads `sections`, or drives a shared `speech` reader so the text it
+// Listen / Pause / Resume / Stop. Shown where the phone has a voice for the
+// app's language. Reads `sections`, or drives a shared `speech` reader so the text it
 // reads can highlight the section in progress.
 export function ReadAloudBar({
   sections,
@@ -18,8 +17,7 @@ export function ReadAloudBar({
   const own = useReadAloud(sections ?? []);
   const reader = speech ?? own;
   const { t } = useTranslation();
-  const language = useLanguageStore((state) => state.language);
-  if (language !== "en" || !reader.available) return null;
+  if (!reader.available) return null;
 
   return (
     <View className="flex-row flex-wrap items-center gap-2">

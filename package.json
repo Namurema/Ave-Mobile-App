@@ -10,7 +10,7 @@
     "build:css": "tailwindcss -i ./global.css -o ./generated-styles.css --content './app/**/*.{js,jsx,ts,tsx}' --content './components/**/*.{js,jsx,ts,tsx}'",
     "postinstall": "npm run build:css",
     "snapshot:prayers": "node scripts/snapshot-prayers.mjs",
-    "deploy:payments": "npx supabase functions deploy pesapal-checkout pesapal-status --project-ref mwleayefcrmtzhqymlvf && npx supabase functions deploy pesapal-ipn --no-verify-jwt --project-ref mwleayefcrmtzhqymlvf"
+    "deploy:functions": "npx supabase functions deploy pesapal-checkout pesapal-status send-test-reminder --project-ref mwleayefcrmtzhqymlvf && npx supabase functions deploy pesapal-ipn send-reminders --no-verify-jwt --project-ref mwleayefcrmtzhqymlvf"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",

@@ -5,7 +5,9 @@ import { useRoutineStore } from "../store/routineStore";
 import { useUserDataStore } from "../store/userDataStore";
 import { useContent } from "../lib/i18n/content";
 import { describeItem } from "../lib/items";
-import { entriesForDay } from "../lib/routines";
+import { entriesForDay, defaultTime } from "../lib/routines";
+import { formatTime } from "../lib/i18n/helpers";
+import { useLanguageStore } from "../store/LanguageStore";
 import { dayString, logId } from "../lib/progress";
 import { novenaTrack } from "../lib/novenaTrack";
 import { Card } from "./ui/card";
@@ -16,13 +18,14 @@ import { cn } from "../lib/utils";
 export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
   const router = useRouter();
   const { t } = useTranslation();
+  const language = useLanguageStore((state) => state.language);
   const tc = useContent();
   const entries = useRoutineStore((state) => state.entries);
   const log = useUserDataStore((state) => state.log);
   const today = dayString();
 
   const items = entriesForDay(entries)
-    .map((entry) => ({ key: entry.key, info: describeItem(entry.key, t, tc) }))
+    .map((entry) => ({ key: entry.key, time: entry.time ?? defaultTime(entry.key), info: describeItem(entry.key, t, tc) }))
     .filter((item) => item.info)
     .map((item) => {
       const novenaId = item.key.startsWith("novena:") ? item.key.slice("novena:".length) : null;
@@ -30,8 +33,13 @@ export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
       return {
         ...item,
         done: log.has(logId(today, item.key)),
-        // "Day 4 of 9" for a novena that's running
-        detail: track?.todayNumber ? `${t("progress.day")} ${track.todayNumber} ${t("progress.of")} ${track.length}` : null,
+        // The reminder time, and "Day 4 of 9" for a novena that's running
+        detail: [
+          formatTime(item.time, language),
+          track?.todayNumber ? `${t("progress.day")} ${track.todayNumber} ${t("progress.of")} ${track.length}` : null,
+        ]
+          .filter(Boolean)
+          .join(" · "),
       };
     });
   const done = items.filter((item) => item.done).length;

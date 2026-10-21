@@ -14,24 +14,9 @@ import {
   CardFooter,
 } from "../components/ui/card";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
+import { LANGUAGES } from "../constants/languages";
 
-const languages = [
-  {
-    code: "en",
-    name: "English",
-    description: "International liturgical standard",
-  },
-  {
-    code: "lg",
-    name: "Oluganda",
-    description: "Luganda",
-  },
-  {
-    code: "rny",
-    name: "Orunyankore",
-    description: "Runyankore",
-  },
-];
+const languages = LANGUAGES;
 
 export default function LanguageScreen() {
   const router = useRouter();

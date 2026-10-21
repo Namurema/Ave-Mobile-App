@@ -16,9 +16,8 @@ import { startRoutineSync } from "../store/routineStore";
 import { startAccessSync } from "../store/accessStore";
 import { AuthDialog } from "../components/auth/AuthDialog";
 import { SITE_URL } from "../constants/site";
+import { languageInfo } from "../constants/languages";
 
-// Runyankore's ISO 639 code is "nyn"; the app calls it "rny"
-const htmlLang: Record<string, string> = { en: "en", lg: "lg", rny: "nyn" };
 
 export default function RootLayout() {
   const loadSession = useAuthStore((state) => state.loadSession);
@@ -40,7 +39,7 @@ export default function RootLayout() {
   // root layout sits outside any screen, where expo-router's <Head> renders nothing.
   useEffect(() => {
     if (Platform.OS !== "web") return;
-    document.documentElement.lang = htmlLang[language] ?? "en";
+    document.documentElement.lang = languageInfo(language).htmlLang;
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement("link");
