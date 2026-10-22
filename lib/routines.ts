@@ -18,7 +18,7 @@ export function defaultTime(key: string) {
   return "20:00";
 }
 
-const isTime = (value: unknown): value is string => typeof value === "string" && /^([01]d|2[0-3]):[0-5]d$/.test(value);
+const isTime = (value: unknown): value is string => typeof value === "string" && /^([01]\d|2[0-3]):[0-5]\d$/.test(value);
 
 export const EVERY_DAY = [0, 1, 2, 3, 4, 5, 6];
 const FRIDAY = 5;
