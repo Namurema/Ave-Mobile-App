@@ -232,6 +232,23 @@ export default {
     novenaRule: "Shaba aha biro ebirikukurataho. Okufeerwa eizooba nikigaruka kutandika novena.",
     finishRosary: "Hendera kandi oteekye nk'orashabire"
   },
+  reminders: {
+    title: "Eby'okwijutsya",
+    heading: "Obwire bw'okushaba",
+    remindAt: "Ninyijusya ahari",
+    off: "Tunga okurabura ku obwire bw'okushaba buri omu nteekateeka yaawe.",
+    on: "Okwijutsya kuriho aha simu egi. Noija kutunga kimwe buri bwire bw'okushaba.",
+    turnOn: "Yihaho okwijusya",
+    turnOff: "Kwihaho",
+    test: "Oheereze okukyebera",
+    testBody: "Okwijutsya kuriyo nikukora. Ruhanga ahe omugisha okushaba kwawe.",
+    testSent: "Okukyebera kwohereziibwe. Kishemereire kuhika omu sikonda nkye.",
+    denied: "Okurabura kuzibirwe ahabwa Ave. Kibikirize omu ntebekanisa za esimu yaawe, reero ogaruke aha.",
+    installFirst: "Aha iPhone, okwijutsya nikukora ku Ave eri aha sikuriini yaawe ey'omuka: kanda Share, reero oyongyere aha sikuriini y'omuka, kandi ogure Ave kuruga aho.",
+    unsupported: "Burausa egi terikubaasa kworeka ebirikwijutsya. Kozesa Chrome aha Android, nainga oteho Ave aha iPhone yaawe.",
+    signIn: "Yingira okutunga ebijusyo by'emigyenzo yaawe.",
+    failed: "Hariho ekintu ekyabaire kigwire. Kyebera okukwatanisa kwawe ogaruke ogyezeho."
+  },
   novena: {
     started: "Kikatandika",
     complete: "Okuhikiiriza",

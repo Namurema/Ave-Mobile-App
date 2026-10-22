@@ -46,6 +46,24 @@ export const LANGUAGES: LanguageInfo[] = [
     htmlLang: "nyn",
     dateLocale: "nyn",
   },
+  {
+    code: "es",
+    name: "Español",
+    englishName: "Spanish",
+    description: "Spanish",
+    htmlLang: "es",
+    dateLocale: "es-ES",
+    speech: "es",
+  },
+  {
+    code: "it",
+    name: "Italiano",
+    englishName: "Italian",
+    description: "Italian",
+    htmlLang: "it",
+    dateLocale: "it-IT",
+    speech: "it",
+  },
 ];
 
 export const languageInfo = (code: string) => LANGUAGES.find((language) => language.code === code) ?? LANGUAGES[0];

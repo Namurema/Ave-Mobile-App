@@ -232,6 +232,23 @@ export default {
     novenaRule: "Saba ku nnaku eziddiriŋŋana. Okubulwa olunaku kutandika novena nate.",
     finishRosary: "Maliriza era okakase nti osabidde"
   },
+  reminders: {
+    title: "Okujjukiza",
+    heading: "Ekiseera ky'okusaba",
+    remindAt: "Nzijukiza ku",
+    off: "Funa okutegeezebwa buli lwe kituuka ekiseera eky'okusaba mu nteekateeka yo.",
+    on: "Obujjukizo buli ku ssimu eno. Ojja kufuna ekimu buli kiseera ky'okusaba.",
+    turnOn: "Kozesa okujjukiza",
+    turnOff: "Ggyako",
+    test: "Sindika okugezesa",
+    testBody: "Okujjukizibwa kukola. Katonda akuwe omukisa mu kusaba kwo.",
+    testSent: "Okukebera kutumiddwa. Kigenda okutuuka mu sekonda ntono.",
+    denied: "Okulabula kuziyiziddwa ku Ave. Bakkirize mu nteekateeka ya essimu yo, olwo okomewo wano.",
+    installFirst: "Ku iPhone, okujjukizibwa kukola nga Ave ali ku sikuliini yo ey'awaka: kozesa Share, olwo oyongere ku sikuliini y'awaka, era ogule Ave okuva awo.",
+    unsupported: "Akasunsuzi kano tekayinza kulaga byakujjukiza. Kozesa Chrome ku Android, oba teekako Ave ku iPhone yo.",
+    signIn: "Yingira okufuna obujjukizo ku by'okukola bulijjo.",
+    failed: "Waliwo ekintu ekyagenze obubi. Kebera ennyungirizo yo era ogezeeko nate."
+  },
   novena: {
     started: "Yatandika",
     complete: "Okumaliriza",

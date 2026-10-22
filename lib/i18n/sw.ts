@@ -232,6 +232,23 @@ export default {
     novenaRule: "Sali kwa siku zinazofuatana. Kukosa siku moja kunafanya novena ianze tena.",
     finishRosary: "Kamilisha na alama kama iliyosaliwa"
   },
+  reminders: {
+    title: "Vikumbusho",
+    heading: "Wakati wa kusali",
+    remindAt: "Nikumbushe saa",
+    off: "Pata taarifa wakati wa sala kila siku katika ratiba yako.",
+    on: "Vikumbusho vipo kwa simu hii. Utapata moja kila wakati wa sala.",
+    turnOn: "Washa vikumbusho",
+    turnOff: "Zima",
+    test: "Tuma jaribio",
+    testBody: "Vikumbusho vinafanya kazi. Mungu abariki sala yako.",
+    testSent: "Jaribio limesafirishwa. Linapaswa kufika katika sekunde chache.",
+    denied: "Taarifa zimezuiliwa kwa Ave. Ziruhusu katika mipangilio ya simu yako, kisha rudi hapa.",
+    installFirst: "Kwenye iPhone, vikumbusho vinatumika mara Ave inapoonekana kwenye skrini yako ya Nyumbani: bonyeza Share, kisha Ongeza kwenye Skrini ya Nyumbani, na fungua Ave kutoka hapo.",
+    unsupported: "Kipangaji hiki cha mtandao hakina uwezo wa kuonyesha vikumbusho. Tumia Chrome kwenye Android, au pakua Ave kwenye iPhone yako.",
+    signIn: "Ingia ili kupata vikumbusho vya shughuli zako za kawaida.",
+    failed: "Kuna kitu kilikwenda vibaya. Angalia muunganisho wako na ujaribu tena."
+  },
   novena: {
     started: "Imeanza",
     complete: "Kamilifu",

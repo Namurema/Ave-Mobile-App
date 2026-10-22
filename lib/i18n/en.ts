@@ -263,7 +263,7 @@ export default {
     prayedDay: "You've prayed day",
     comeBack: "Come back tomorrow for day",
     todayIsDay: "Today is day",
-    markWhenDone: "Tap Prayed below when you finish.",
+    markWhenDone: "Tap Mark prayed below when you finish.",
     missed: "days missed so far.",
     missedOne: "day missed so far.",
     keepGoing: "Keep going: you can still finish the novena.",

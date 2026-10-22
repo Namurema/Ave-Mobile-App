@@ -92,27 +92,28 @@ function matchPunctuation(english, translated) {
   return text;
 }
 
-async function translate(keys, text, language) {
+// `formality`: "prefer_more" (polite) for app text; prayers use "prefer_less",
+// since God is addressed as tú / Te, never usted / Lei
+async function translate(keys, text, language, formality = "prefer_more") {
   const translated = language.deepl
-    ? await deepl(keys.deepl, text, language.deepl)
+    ? await deepl(keys.deepl, text, language.deepl, formality)
     : await sunbird(keys.sunbird, text, language.sunbird);
   // House style: no em dashes (U+2014) in any language
   const emDash = new RegExp(`\\s*${String.fromCharCode(0x2014)}\\s*`, "g");
   return matchPunctuation(text, translated.replace(emDash, ", "));
 }
 
-// DeepL: free keys end in ":fx" and use the free endpoint. Formal register,
-// as suits prayer; line breaks kept.
-async function deepl(key, text, target, attempt = 0) {
+// DeepL: free keys end in ":fx" and use the free endpoint. Line breaks kept.
+async function deepl(key, text, target, formality, attempt = 0) {
   const host = key.endsWith(":fx") ? "https://api-free.deepl.com" : "https://api.deepl.com";
   const response = await fetch(`${host}/v2/translate`, {
     method: "POST",
     headers: { Authorization: `DeepL-Auth-Key ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ text: [text], source_lang: "EN", target_lang: target, formality: "prefer_more", preserve_formatting: true }),
+    body: JSON.stringify({ text: [text], source_lang: "EN", target_lang: target, formality, preserve_formatting: true }),
   });
   if ([429, 503].includes(response.status) && attempt < 5) {
     await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
-    return deepl(key, text, target, attempt + 1);
+    return deepl(key, text, target, formality, attempt + 1);
   }
   if (response.status === 456) throw new Error("DeepL: this month's free characters are used up");
   if (!response.ok) throw new Error(`DeepL ${response.status}: ${await response.text()}`);
@@ -238,7 +239,7 @@ async function translateContent(token, cache) {
     let done = 0;
     try {
       await mapPool(pending, CONCURRENCY, async (paragraph) => {
-        langCache[paragraph] = await translate(token, paragraph, language);
+        langCache[paragraph] = await translate(token, paragraph, language, "prefer_less");
         saveCache(cache);
         if (++done % 20 === 0) console.log(`  ${done}/${pending.length}`);
       });
@@ -341,7 +342,7 @@ async function main() {
     }
 
     fs.writeFileSync(path.join(I18N, `${language.code}.ts`), toTypeScript(result, language.name));
-    console.log(`${language.name}: wrote ${keys.length} lines (${machineCount} from Sunbird)`);
+    console.log(`${language.name}: wrote ${keys.length} lines (${machineCount} from ${providerName(language)})`);
     review.push(
       `## ${language.name} (\`lib/i18n/${language.code}.ts\`)\n\n` +
         `${machineCount} of ${keys.length} lines come from Sunbird and need checking. ` +
