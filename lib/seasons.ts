@@ -34,8 +34,6 @@ const NOVENA_SEASONS: Record<string, Season> = {
   "15": { feast: [8, 8], feastKey: "seasons.stDominic" },
   // 6 to 14 September
   "16": { feast: [9, 15], feastKey: "seasons.ourLadyOfSorrows" },
-  // 6 to 14 March
-  "13": { feast: [3, 15] },
   // Good Friday to the Saturday after Easter, before Divine Mercy Sunday
   "5": { feast: { daysAfterEaster: 7 }, feastKey: "seasons.divineMercySunday" },
 };

@@ -1,20 +1,32 @@
+import { useEffect } from "react";
 import { View, Text, ScrollView, Pressable } from "react-native";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useTranslation } from "react-i18next";
 import { Button } from "../components/ui/button";
 import { Card, CardTitle, CardDescription } from "../components/ui/card";
 import { useAuthStore } from "../store/authStore";
 import { useAuthDialog } from "../store/authDialogStore";
+import { useLanguageStore } from "../store/LanguageStore";
+import { languageInfo } from "../constants/languages";
 
 export default function SplashScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-  const getStarted = () => router.push("/Language");
+  const language = useLanguageStore((state) => state.language);
   const session = useAuthStore((state) => state.session);
+  const loading = useAuthStore((state) => state.loading);
   const openAuth = useAuthDialog((state) => state.open);
-  // After signing in from here, go straight into the app
-  const signIn = () => openAuth("signIn", "/(tabs)/home");
+  // Where the person was going before signing in (e.g. a shared prayer)
+  const { next } = useLocalSearchParams<{ next?: string }>();
+  const destination = next && next.startsWith("/") && !next.startsWith("/splash") ? next : "/(tabs)/home";
+  const signIn = () => openAuth("signIn", destination);
+  const createAccount = () => openAuth("signUp", destination);
+
+  // Ave needs an account: signed in, go straight in
+  useEffect(() => {
+    if (!loading && session) router.replace(destination as any);
+  }, [loading, session]);
 
   const features = [
     { title: t("splash.dailyTitle"), description: t("splash.dailyDescription") },
@@ -36,9 +48,6 @@ export default function SplashScreen() {
                 {t("auth.signIn")}
               </Button>
             )}
-            <Button variant="ghost" size="sm" onPress={getStarted}>
-              {t("nav.openApp")}
-            </Button>
           </View>
         </View>
       </View>
@@ -53,18 +62,23 @@ export default function SplashScreen() {
             {t("splash.description")}
           </Text>
 
-          <Button size="lg" className="mt-8 w-full" onPress={getStarted}>
-            {t("common.getStarted")}
+          <Button size="lg" className="mt-8 w-full" onPress={createAccount}>
+            {t("auth.createAccount")}
           </Button>
+          <Button size="lg" variant="outline" className="mt-3 w-full" onPress={signIn}>
+            {t("auth.signIn")}
+          </Button>
+          <Text className="mt-3 text-center text-sm text-muted-foreground">{t("splash.accountNote")}</Text>
 
-          {!session && (
-            <View className="mt-4 flex-row flex-wrap items-center justify-center gap-1">
-              <Text className="text-sm text-muted-foreground">{t("auth.haveAccount")}</Text>
-              <Pressable onPress={signIn}>
-                <Text className="text-sm font-semibold text-primary">{t("auth.signIn")}</Text>
-              </Pressable>
-            </View>
-          )}
+          {/* Choose the language before signing up */}
+          <View className="mt-4 flex-row flex-wrap items-center justify-center gap-1">
+            <Text className="text-sm text-muted-foreground">
+              {t("settings.language")}: {languageInfo(language).name}
+            </Text>
+            <Pressable onPress={() => router.push("/Language")}>
+              <Text className="text-sm font-semibold text-primary">{t("common.change")}</Text>
+            </Pressable>
+          </View>
 
           {/* What's inside */}
           <Card className="mt-10">

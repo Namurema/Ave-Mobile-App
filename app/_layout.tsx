@@ -15,6 +15,7 @@ import { startUserDataSync } from "../store/userDataStore";
 import { startRoutineSync } from "../store/routineStore";
 import { startAccessSync } from "../store/accessStore";
 import { AuthDialog } from "../components/auth/AuthDialog";
+import { AuthGate } from "../components/AuthGate";
 import { SITE_URL } from "../constants/site";
 import { languageInfo } from "../constants/languages";
 
@@ -58,6 +59,7 @@ export default function RootLayout() {
           contentStyle: { backgroundColor: "#FAFAFA" },
         }}
       />
+      <AuthGate />
       <AuthDialog />
       <InstallDialog />
       <UpdateBanner />

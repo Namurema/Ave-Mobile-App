@@ -15,6 +15,7 @@ import {
 } from "../components/ui/card";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { LANGUAGES } from "../constants/languages";
+import { useAuthStore } from "../store/authStore";
 
 const languages = LANGUAGES;
 
@@ -24,9 +25,10 @@ export default function LanguageScreen() {
   const { language, setLanguage } = useLanguageStore();
   const [selected, setSelected] = useState(language);
 
+  const session = useAuthStore((state) => state.session);
   const handleContinue = () => {
     setLanguage(selected);
-    router.push("/(tabs)/home");
+    router.replace(session ? "/(tabs)/home" : "/splash");
   };
 
   return (

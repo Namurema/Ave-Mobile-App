@@ -236,11 +236,18 @@ async function translateContent(token, cache) {
     const pending = all.filter((p) => !(p in langCache));
     console.log(`${language.name} content: ${all.length - pending.length} cached, ${pending.length} to translate`);
     let done = 0;
-    await mapPool(pending, CONCURRENCY, async (paragraph) => {
-      langCache[paragraph] = await translate(token, paragraph, language);
-      saveCache(cache);
-      if (++done % 20 === 0) console.log(`  ${done}/${pending.length}`);
-    });
+    try {
+      await mapPool(pending, CONCURRENCY, async (paragraph) => {
+        langCache[paragraph] = await translate(token, paragraph, language);
+        saveCache(cache);
+        if (++done % 20 === 0) console.log(`  ${done}/${pending.length}`);
+      });
+    } catch (error) {
+      // e.g. a daily limit: keep what was done and carry on with other languages
+      saveCache(cache, true);
+      console.log(`${language.name} content: stopped (${String(error.message).slice(0, 120)}). Run again later to finish.`);
+      continue;
+    }
 
     // Drop cached paragraphs whose English no longer exists
     for (const paragraph of Object.keys(langCache)) {
@@ -296,11 +303,18 @@ async function main() {
     const pending = keys.filter((key) => langCache[key]?.en !== en[key]);
     console.log(`${language.name}: ${keys.length - pending.length} cached, ${pending.length} to translate`);
     let done = 0;
-    await mapPool(pending, CONCURRENCY, async (key) => {
-      langCache[key] = { en: en[key], text: await translate(token, en[key], language) };
-      saveCache(cache);
-      if (++done % 10 === 0) console.log(`  ${done}/${pending.length}`);
-    });
+    try {
+      await mapPool(pending, CONCURRENCY, async (key) => {
+        langCache[key] = { en: en[key], text: await translate(token, en[key], language) };
+        saveCache(cache);
+        if (++done % 10 === 0) console.log(`  ${done}/${pending.length}`);
+      });
+    } catch (error) {
+      // e.g. a daily limit: keep what was done and carry on with other languages
+      saveCache(cache, true);
+      console.log(`${language.name}: stopped (${String(error.message).slice(0, 120)}). Run again later to finish.`);
+      continue;
+    }
     saveCache(cache, true);
 
     const result = {};

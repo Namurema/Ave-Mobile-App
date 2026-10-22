@@ -1,4 +1,4 @@
-import { View, Text, Platform } from "react-native";
+import { View, Text, Platform, Pressable } from "react-native";
 import { InstallCard } from "../../components/InstallCard";
 import { buildId } from "../../lib/pwa";
 import { useRouter } from "expo-router";
@@ -16,6 +16,9 @@ import { LOGIN_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Page, PageHeader, Section, ListCard } from "../../components/ui/page";
+import { Dialog } from "../../components/ui/dialog";
+import { FormError } from "../../components/auth/forms";
+import { deleteAccount } from "../../lib/supabase/account";
 import { languageInfo } from "../../constants/languages";
 
 export default function ProfileScreen() {
@@ -30,6 +33,24 @@ export default function ProfileScreen() {
   const routineCount = useRoutineStore((state) => state.entries.length);
   const access = useAccessStore((state) => state.access);
   const streak = currentStreak(new Set([...log].map((id) => splitLogId(id).day)));
+
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
+  const handleDelete = async () => {
+    if (!user) return;
+    setDeleting(true);
+    setDeleteError(null);
+    try {
+      await deleteAccount(user.id);
+      setConfirmDelete(false);
+      router.replace("/splash");
+    } catch {
+      setDeleteError(t("account.deleteFailed"));
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   const handleSignOut = async () => {
     setSigningOut(true);
@@ -94,6 +115,11 @@ export default function ProfileScreen() {
                 {t("common.signOut")}
               </Button>
             </Card>
+          ) : null}
+          {isSignedIn ? (
+            <Pressable onPress={() => setConfirmDelete(true)} className="self-start rounded-md px-1 py-2">
+              <Text className="text-sm font-medium text-destructive">{t("account.delete")}</Text>
+            </Pressable>
           ) : (
             <Card className="p-4 gap-3">
               <Text className="text-sm leading-6 text-muted-foreground">{t("settings.signInToSync")}</Text>
@@ -186,6 +212,25 @@ export default function ProfileScreen() {
           ]}
         />
       </Section>
+      <Dialog
+        open={confirmDelete}
+        onClose={() => !deleting && setConfirmDelete(false)}
+        title={t("account.deleteTitle")}
+        description={t("account.deleteText")}
+        closeLabel={t("routine.cancel")}
+      >
+        <View className="gap-3">
+          <FormError message={deleteError} />
+          <View className="flex-row flex-wrap gap-2">
+            <Button className="bg-destructive web:hover:bg-destructive/90" loading={deleting} onPress={handleDelete}>
+              {t("account.deleteConfirm")}
+            </Button>
+            <Button variant="outline" disabled={deleting} onPress={() => setConfirmDelete(false)}>
+              {t("routine.cancel")}
+            </Button>
+          </View>
+        </View>
+      </Dialog>
     </Page>
   );
 }

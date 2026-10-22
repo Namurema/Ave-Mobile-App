@@ -29,6 +29,7 @@ export default {
     devotionsTitle: "Novenas & chaplets",
     devotionsDescription: "Divine Mercy, Stations of the Cross and more",
     footer: "A Catholic prayer companion, built for Uganda",
+    accountNote: "Create your account to start praying with Ave.",
   },
   language: {
     title: "Welcome",
@@ -229,6 +230,13 @@ export default {
     novenaComplete: "Novena complete. May God bless your intentions.",
     novenaRule: "Pray on consecutive days. Missing a day starts the novena again.",
     finishRosary: "Finish and mark as prayed",
+  },
+  account: {
+    delete: "Delete my account",
+    deleteTitle: "Delete your account?",
+    deleteText: "This permanently deletes your account, your progress, favourites, prayer routine, reminders and feedback. It can't be undone.",
+    deleteConfirm: "Delete for good",
+    deleteFailed: "Couldn't delete your account. Check your connection and try again.",
   },
   reminders: {
     title: "Reminders",

@@ -1,0 +1,12 @@
+# Response headers on Cloudflare Pages (the same as vercel.json's)
+
+# The service worker must always be checked for updates
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json
+
+# App code has a content hash in its name, so it can be cached for good
+/_expo/static/*
+  Cache-Control: public, max-age=31536000, immutable
