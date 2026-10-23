@@ -16,7 +16,7 @@ const secrets = {
   PESAPAL_CONSUMER_SECRET: env.PESAPAL_CONSUMER_SECRET,
   PESAPAL_ENV: env.PESAPAL_ENV,
   PESAPAL_IPN_ID: env.PESAPAL_IPN_ID,
-  SITE_URL: env.SITE_URL || "https://ave-prayers.vercel.app",
+  SITE_URL: env.SITE_URL || "https://aveprayers.com",
 };
 
 const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "ave-")), "secrets.env");

@@ -5,7 +5,7 @@
 //   PESAPAL_CONSUMER_KEY, PESAPAL_CONSUMER_SECRET  from the PesaPal dashboard
 //   PESAPAL_ENV        "sandbox" (default) or "live"
 //   PESAPAL_IPN_ID     from `node scripts/pesapal-register-ipn.mjs`
-//   SITE_URL           where PesaPal sends people back, e.g. https://ave-prayers.vercel.app
+//   SITE_URL           where PesaPal sends people back, e.g. https://aveprayers.com
 import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
 
 const BASE =

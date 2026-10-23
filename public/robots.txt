@@ -5,4 +5,4 @@ Disallow: /admin
 Disallow: /auth/
 Disallow: /splash
 
-Sitemap: https://ave-prayers.vercel.app/sitemap.xml
+Sitemap: https://aveprayers.com/sitemap.xml

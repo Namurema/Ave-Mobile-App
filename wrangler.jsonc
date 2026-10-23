@@ -6,6 +6,13 @@
 {
   "name": "ave-prayers",
   "compatibility_date": "2026-10-01",
+  // Only aveprayers.com serves the app (no *.workers.dev address)
+  "workers_dev": false,
+  // aveprayers.com and www (Cloudflare creates the DNS records and certificate)
+  "routes": [
+    { "pattern": "aveprayers.com", "custom_domain": true },
+    { "pattern": "www.aveprayers.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
