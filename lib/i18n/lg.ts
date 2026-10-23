@@ -23,14 +23,15 @@ export default {
   splash: {
     tagline: "Mukuumi wo mu kusaba buli lunaku n'okunyweza omwoyo",
     headline: "Saba buli lunaku mu lulimi lwo",
-    description: "Okusaba buli lunaku, okukozesa essapuli entukuvu, novena ne chaplet mu Lungereza, Oluganda n'Olunyankole.",
+    description: "Okusaba buli lunaku, Okusoma Essapuli Entukuvu, novena ne chapleti mu Lungereza, Oluganda, Runyankole, Swahili, Spanish n'Oluyitale.",
     dailyTitle: "Okusaba okwa buli lunaku",
     dailyDescription: "Okusaba kw'enkya, ez'emisana n'ekiro",
     rosaryTitle: "Essaala ya Rosari Entukuvu",
     rosaryDescription: "Ebyama by'olunaku, nga buli kimu kirina obulungi bwakyo",
     devotionsTitle: "Novenas ne chaplet",
     devotionsDescription: "Ekisa kya Katonda, Stations of the Cross n'ebirala",
-    footer: "Omukwano gw'okusaba ogwa Katulika, oguzimbiddwa Uganda"
+    footer: "Omukwano gw'okusaba ogwa Katulika, oguzimbiddwa Uganda",
+    accountNote: "Ennaku 7 ez'obwereere, olwo UGX 7,000 buli mwezi mu Uganda oba USD 3.99 ebweru wa Uganda."
   },
   language: {
     title: "Tukuwerekeza",
@@ -166,7 +167,7 @@ export default {
     signInToSync: "Yingira okuwuuza",
     app: "App",
     about: "Ku bikwata ku",
-    aboutText: "Omukwano gw'okusaba ogwa kikatuliki ogw'obwereere ogw'okusaba okwa buli lunaku, ekkolero ery'ekitiibwa erya rozaaliya, novena ne chapleti, ebizimbiddwa mu Uganda.",
+    aboutText: "Okusaba okw'Abakatuliki okukozesebwa mu kusaba okwa buli lunaku, omusaalaba omutukuvu, novena ne chaplet, byakolebwa Uganda.",
     version: "Enkola",
     legal: "Amateeka",
     help: "Okuyamba n'okuddamu"
@@ -232,6 +233,13 @@ export default {
     novenaRule: "Saba ku nnaku eziddiriŋŋana. Okubulwa olunaku kutandika novena nate.",
     finishRosary: "Maliriza era okakase nti osabidde"
   },
+  account: {
+    delete: "Sangula akawunti yange",
+    deleteTitle: "Okusazaamu akawunti yo?",
+    deleteText: "Kino kizikiriza ddala akawunti yo, okukulaakulana kwo, ebintu by'oyagala, enkola y'okusaba, ebyokujjukizibwa n'ebiwandiiko. Tekisobola kukyusibwa.",
+    deleteConfirm: "Kusangula ddala",
+    deleteFailed: "Teyasobola kuggyawo akawunti yo. Kebera enkolagana yo era ogezeeko nate."
+  },
   reminders: {
     title: "Okujjukiza",
     heading: "Ekiseera ky'okusaba",
@@ -257,7 +265,7 @@ export default {
     prayedDay: "Omusabidde olunaku",
     comeBack: "Komawo enkya okukola olunaku",
     todayIsDay: "Olwa leero lwe lunaku",
-    markWhenDone: "Bw'omala okukola, wandiika wansi.",
+    markWhenDone: "Tap Mark yasaba wansi bw'omaliriza.",
     missed: "ennaku ezibuzeewo okutuuka kati.",
     missedOne: "Tewali lunaku luyise.",
     keepGoing: "Weeyongereyo: osobola okumaliriza novena.",
@@ -307,6 +315,11 @@ export default {
     signInFirst: "Kola akawunta ey'obwereere okutandika okugezesebwa kw'ennaku omusanvu.",
     trialUntil: "Okugezesebwa kwo okw'obwereere kukola okutuusa",
     trialEnded: "Okugezesebwa kwo okw'obwereere kuwedde. Londa entegeka okusigala ng'osaba ne Ave.",
+    trialEndsIn: "Okugezesebwa kwo okw'obwereere kukoma mu",
+    trialLastDay: "Okugezesebwa kwo okw'obwereere kukoma leero",
+    planEndsIn: "Enteekateeka yo ekoma ku",
+    planLastDay: "Enteekateeka yo ekoma leero",
+    granted: "Olina obuyinza okufuna Ave okuva mu ttiimu ya Ave.",
     paidUntil: "Enteekateeka yo ekola okutuusa",
     inUganda: "Mu Uganda (UGX)",
     outsideUganda: "Ebweru wa Uganda (USD)",
@@ -413,7 +426,7 @@ export default {
     signInDescription: "Kuumira essaala zo ezisinga okwagalwa era otegeere engeri gy'okulaakulanyamu.",
     createAccount: "Kola akawunti",
     signUpTitle: "Kola akawunti yo",
-    signUpDescription: "Akaawunti ziba za bwereere, era osobola okusaba nga tolina akaawunti.",
+    signUpDescription: "Kola akawunti yo otandike okugezesebwa kwa nnaku musanvu okw'obwereere.",
     name: "Erinnya",
     email: "Emeyiro",
     password: "Akasumuluzo",

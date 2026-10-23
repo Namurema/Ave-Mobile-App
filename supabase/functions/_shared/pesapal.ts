@@ -32,7 +32,11 @@ async function pesapal(path: string, init: RequestInit & { token?: string } = {}
     },
   });
   const body = await response.json().catch(() => ({}));
-  if (!response.ok || body?.error) {
+  // PesaPal always sends an `error` object; it only means an error when it has
+  // a code or message. "payment_details_not_found" just means not paid yet.
+  const error = body?.error;
+  const failed = !!(error && (error.code || error.message)) && error.code !== "payment_details_not_found";
+  if (!response.ok || failed) {
     throw new Error(`PesaPal ${path}: ${response.status} ${JSON.stringify(body?.error ?? body)}`);
   }
   return body;
@@ -92,7 +96,9 @@ export async function syncPayment(admin: SupabaseClient, orderTrackingId: string
     { method: "GET", token }
   );
 
-  let status = STATUS[result.status_code as number] ?? "pending";
+  // Not paid yet (the person is still on PesaPal's page, or left it) stays pending
+  let status =
+    result.error?.code === "payment_details_not_found" ? "pending" : STATUS[result.status_code as number] ?? "pending";
   // Only count it if PesaPal took the amount and currency we asked for
   const paidInFull =
     String(result.currency).toUpperCase() === payment.currency && Number(result.amount) >= Number(payment.amount);

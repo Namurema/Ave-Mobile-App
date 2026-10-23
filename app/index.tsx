@@ -1,5 +1,2 @@
-import { Redirect } from "expo-router";
-
-export default function Index() {
-  return <Redirect href="/splash" />;
-}
+// The welcome page, at the site's main address (aveprayers.com)
+export { default } from "./splash";

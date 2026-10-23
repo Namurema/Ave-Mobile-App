@@ -47,6 +47,15 @@ export const LANGUAGES: LanguageInfo[] = [
     dateLocale: "nyn",
   },
   {
+    code: "sw",
+    name: "Kiswahili",
+    englishName: "Swahili",
+    description: "Swahili",
+    htmlLang: "sw",
+    dateLocale: "sw",
+    speech: "sw",
+  },
+  {
     code: "es",
     name: "Español",
     englishName: "Spanish",

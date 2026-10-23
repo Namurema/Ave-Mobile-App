@@ -5,6 +5,7 @@ import lg from './lg';
 import rny from './rny';
 import es from './es';
 import it from './it';
+import sw from './sw';
 
 const resources = {
   en: { translation: en },
@@ -12,6 +13,7 @@ const resources = {
   rny: { translation: rny },
   es: { translation: es },
   it: { translation: it },
+  sw: { translation: sw },
 };
 
 i18n

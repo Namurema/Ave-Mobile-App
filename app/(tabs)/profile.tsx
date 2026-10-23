@@ -152,7 +152,9 @@ export default function ProfileScreen() {
         <Section title={t("billing.subscription")}>
           <Card className="p-4 gap-3">
             <Text className="text-sm leading-5 text-card-foreground">
-              {access?.paidUntil && access.paidUntil > new Date()
+              {access.granted
+                ? t("billing.granted")
+                : access?.paidUntil && access.paidUntil > new Date()
                 ? `${t("billing.paidUntil")} ${formatDayMonth(access.paidUntil, language)} ${access.paidUntil.getFullYear()}`
                 : access?.trialEndsAt && access.trialEndsAt > new Date()
                   ? `${t("billing.trialUntil")} ${formatDayMonth(access.trialEndsAt, language)}`

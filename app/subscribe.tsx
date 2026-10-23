@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { View, Text, Pressable } from "react-native";
+import { useEffect, useState } from "react";
+import { View, Text, Pressable, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/authStore";
 import { useAuthDialog } from "../store/authDialogStore";
@@ -24,11 +24,21 @@ export default function SubscribeScreen() {
   const [currency, setCurrency] = useState<Currency>(guessCurrency());
   const [plan, setPlan] = useState<Plan>("yearly");
   const [paying, setPaying] = useState(false);
+  // Coming back from PesaPal with the browser's Back button restores this page
+  // as it was (busy button); reset it
+  useEffect(() => {
+    if (Platform.OS !== "web") return;
+    const reset = () => setPaying(false);
+    window.addEventListener("pageshow", reset);
+    return () => window.removeEventListener("pageshow", reset);
+  }, []);
   const [error, setError] = useState<string | null>(null);
 
   const status = !session
     ? t("billing.signInFirst")
-    : access?.paidUntil && access.paidUntil > new Date()
+    : access?.granted
+      ? t("billing.granted")
+      : access?.paidUntil && access.paidUntil > new Date()
       ? `${t("billing.paidUntil")} ${formatDayMonth(access.paidUntil, language)} ${access.paidUntil.getFullYear()}`
       : access?.trialEndsAt && access.trialEndsAt > new Date()
         ? `${t("billing.trialUntil")} ${formatDayMonth(access.trialEndsAt, language)}`

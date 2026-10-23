@@ -61,8 +61,8 @@
       "text": "Saba buli lunaku mu lulimi lwo"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
-      "text": "Okusaba buli lunaku, okukozesa essapuli entukuvu, novena ne chaplet mu Lungereza, Oluganda n'Olunyankole."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
+      "text": "Okusaba buli lunaku, Okusoma Essapuli Entukuvu, novena ne chapleti mu Lungereza, Oluganda, Runyankole, Swahili, Spanish n'Oluyitale."
     },
     "splash.tagline": {
       "en": "Your companion for daily prayers and spiritual devotion",
@@ -513,8 +513,8 @@
       "text": "Ku bikwata ku"
     },
     "settings.aboutText": {
-      "en": "A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
-      "text": "Omukwano gw'okusaba ogwa kikatuliki ogw'obwereere ogw'okusaba okwa buli lunaku, ekkolero ery'ekitiibwa erya rozaaliya, novena ne chapleti, ebizimbiddwa mu Uganda."
+      "en": "A Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
+      "text": "Okusaba okw'Abakatuliki okukozesebwa mu kusaba okwa buli lunaku, omusaalaba omutukuvu, novena ne chaplet, byakolebwa Uganda."
     },
     "settings.version": {
       "en": "Version",
@@ -581,8 +581,8 @@
       "text": "Akasumuluzo"
     },
     "auth.signUpDescription": {
-      "en": "Accounts are free, and you can always pray without one.",
-      "text": "Akaawunti ziba za bwereere, era osobola okusaba nga tolina akaawunti."
+      "en": "Create your account to start your 7-day free trial.",
+      "text": "Kola akawunti yo otandike okugezesebwa kwa nnaku musanvu okw'obwereere."
     },
     "auth.noAccount": {
       "en": "Don't have an account?",
@@ -1545,8 +1545,8 @@
       "text": "Novena eno etandika ku"
     },
     "novena.markWhenDone": {
-      "en": "Tap Prayed below when you finish.",
-      "text": "Bw'omala okukola, wandiika wansi."
+      "en": "Tap Mark prayed below when you finish.",
+      "text": "Tap Mark yasaba wansi bw'omaliriza."
     },
     "novena.missed": {
       "en": "days missed so far.",
@@ -1647,6 +1647,50 @@
     "reminders.failed": {
       "en": "Something went wrong. Check your connection and try again.",
       "text": "Waliwo ekintu ekyagenze obubi. Kebera ennyungirizo yo era ogezeeko nate."
+    },
+    "account.delete": {
+      "en": "Delete my account",
+      "text": "Sangula akawunti yange"
+    },
+    "splash.accountNote": {
+      "en": "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
+      "text": "Ennaku 7 ez'obwereere, olwo UGX 7,000 buli mwezi mu Uganda oba USD 3.99 ebweru wa Uganda."
+    },
+    "account.deleteConfirm": {
+      "en": "Delete for good",
+      "text": "Kusangula ddala"
+    },
+    "account.deleteTitle": {
+      "en": "Delete your account?",
+      "text": "Okusazaamu akawunti yo?"
+    },
+    "account.deleteText": {
+      "en": "This permanently deletes your account, your progress, favourites, prayer routine, reminders and feedback. It can't be undone.",
+      "text": "Kino kizikiriza ddala akawunti yo, okukulaakulana kwo, ebintu by'oyagala, enkola y'okusaba, ebyokujjukizibwa n'ebiwandiiko. Tekisobola kukyusibwa."
+    },
+    "account.deleteFailed": {
+      "en": "Couldn't delete your account. Check your connection and try again.",
+      "text": "Teyasobola kuggyawo akawunti yo. Kebera enkolagana yo era ogezeeko nate."
+    },
+    "billing.trialEndsIn": {
+      "en": "Your free trial ends in",
+      "text": "Okugezesebwa kwo okw'obwereere kukoma mu"
+    },
+    "billing.planEndsIn": {
+      "en": "Your plan ends in",
+      "text": "Enteekateeka yo ekoma ku"
+    },
+    "billing.trialLastDay": {
+      "en": "Your free trial ends today",
+      "text": "Okugezesebwa kwo okw'obwereere kukoma leero"
+    },
+    "billing.planLastDay": {
+      "en": "Your plan ends today",
+      "text": "Enteekateeka yo ekoma leero"
+    },
+    "billing.granted": {
+      "en": "You have free access to Ave from the Ave team.",
+      "text": "Olina obuyinza okufuna Ave okuva mu ttiimu ya Ave."
     }
   },
   "rny": {
@@ -1707,8 +1751,8 @@
       "text": "Shaba buri izooba, omu rurimi rwawe"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
-      "text": "Okushaba buriizooba, okushaba kwa rozaari, novena hamwe n'okushaba kw'ebikondo omu Rungyereza, Oruganda hamwe n'Orunyankore."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
+      "text": "Okushaba buriizooba, akasari k'ekitiinisa, novena hamwe n'ebikomo omu Rungyereza, Oruganda, Runyankole, Swahili, Spanish hamwe na Italian."
     },
     "nav.rosary": {
       "en": "Rosary",
@@ -2171,8 +2215,8 @@
       "text": "Teekamu Ave"
     },
     "settings.aboutText": {
-      "en": "A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
-      "text": "Omukago gw'okushaba ogw'abakaturiki ogurikubaasa kukoresibwa omu kushaba buriizooba, Orusariya orurikwera, novena hamwe n'ebikomo by'okushaba, bikombekirwe Uganda."
+      "en": "A Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
+      "text": "Okushaba kw'Abakaturiki okw'okushaba buriizooba, omusaraba gurikwera, novena hamwe n'ebishare, bikozirwe Uganda."
     },
     "install.promptDescription": {
       "en": "Add Ave to your home screen to open it like an app, even without internet.",
@@ -2219,8 +2263,8 @@
       "text": "Kora akawunti yaawe"
     },
     "auth.signUpDescription": {
-      "en": "Accounts are free, and you can always pray without one.",
-      "text": "Akaunti n'ezabusha, kandi noobaasa okushaba otaine akaunti."
+      "en": "Create your account to start your 7-day free trial.",
+      "text": "Kora akaunti yaawe kutandika okugyezibwa kwa bwereere okw'ebiro 7."
     },
     "auth.name": {
       "en": "Name",
@@ -3191,8 +3235,8 @@
       "text": "Eriizooba n'ekiro"
     },
     "novena.markWhenDone": {
-      "en": "Tap Prayed below when you finish.",
-      "text": "Kora aha kicweka ahansi waaherize."
+      "en": "Tap Mark prayed below when you finish.",
+      "text": "Tap Mark akashaba ahansi waawe ku oraahweze."
     },
     "novena.missed": {
       "en": "days missed so far.",
@@ -3297,6 +3341,50 @@
     "reminders.failed": {
       "en": "Something went wrong. Check your connection and try again.",
       "text": "Hariho ekintu ekyabaire kigwire. Kyebera okukwatanisa kwawe ogaruke ogyezeho."
+    },
+    "account.delete": {
+      "en": "Delete my account",
+      "text": "Shangura akawunti yangye"
+    },
+    "splash.accountNote": {
+      "en": "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
+      "text": "Ebiro 7 bya busha, reero UGX 7,000 buri kwezi omu Uganda nainga USD 3.99 aheeru y'eihanga."
+    },
+    "account.deleteTitle": {
+      "en": "Delete your account?",
+      "text": "Okwihaho akawunti yaawe?"
+    },
+    "account.deleteConfirm": {
+      "en": "Delete for good",
+      "text": "Kwihaho ebyo byona"
+    },
+    "account.deleteFailed": {
+      "en": "Couldn't delete your account. Check your connection and try again.",
+      "text": "Tikabaasa kushazamu akawunti yaawe. Kyebera okukwatanisa kwawe ogaruke ogyezeho."
+    },
+    "account.deleteText": {
+      "en": "This permanently deletes your account, your progress, favourites, prayer routine, reminders and feedback. It can't be undone.",
+      "text": "Eki nikishazamu eakaunti yaawe, okutunguuka kwaawe, ebirikukundwa, entebekanisa y'okushaba, okwijutsya hamwe n'okugarukamu. Tikirabasa kugarurwaho."
+    },
+    "billing.planEndsIn": {
+      "en": "Your plan ends in",
+      "text": "Enteekateeka yaawe neehendera omuri"
+    },
+    "billing.planLastDay": {
+      "en": "Your plan ends today",
+      "text": "Enteekateeka yaawe neehendera eriizooba"
+    },
+    "billing.trialEndsIn": {
+      "en": "Your free trial ends in",
+      "text": "Okugyezibwa kwawe okw'obwereere nikuhendera omuri"
+    },
+    "billing.trialLastDay": {
+      "en": "Your free trial ends today",
+      "text": "Okugyezibwa kwawe okw'obwereere nikuhendera eriizooba"
+    },
+    "billing.granted": {
+      "en": "You have free access to Ave from the Ave team.",
+      "text": "Oine obugabe bw'okuhika ahari Ave kuruga aha tiimu ya Ave."
     }
   },
   "content-lg": {
@@ -4521,8 +4609,8 @@
       "text": "Sali kila siku, katika lugha yako mwenyewe"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
-      "text": "Sala za kila siku, Rozari Takatifu, novena na chapleti katika Kiingereza, Luganda na Runyankore."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
+      "text": "Sala za kila siku, Tasbihi Takatifu, novena na tasbihi katika Kiingereza, Luganda, Runyankore, Kiswahili, Kihispania na Kiitaliano."
     },
     "splash.devotionsTitle": {
       "en": "Novenas & chaplets",
@@ -5013,8 +5101,8 @@
       "text": "Kisheria"
     },
     "settings.aboutText": {
-      "en": "A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
-      "text": "Mwenzako wa sala za Kikatoliki kwa sala za kila siku, Tasbihi Takatifu, novena na tasbihi, iliyoundwa kwa ajili ya Uganda."
+      "en": "A Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
+      "text": "Mwenzako wa sala ya Kikatoliki kwa sala za kila siku, Tasbihi Takatifu, novena na tasbihi, zilizotengenezwa Uganda."
     },
     "feedback.title": {
       "en": "Send feedback",
@@ -5273,8 +5361,8 @@
       "text": "siku zilizokosekana hadi sasa."
     },
     "novena.markWhenDone": {
-      "en": "Tap Prayed below when you finish.",
-      "text": "Bonyeza Tap Prayed chini unapomaliza."
+      "en": "Tap Mark prayed below when you finish.",
+      "text": "Tap Mark alisali chini baada ya kumaliza."
     },
     "novena.missedOne": {
       "en": "day missed so far.",
@@ -5825,8 +5913,8 @@
       "text": "Jina"
     },
     "auth.signUpDescription": {
-      "en": "Accounts are free, and you can always pray without one.",
-      "text": "Akaunti ni bure, na unaweza kusali wakati wote bila akaunti."
+      "en": "Create your account to start your 7-day free trial.",
+      "text": "Jiandikishe ili kuanza majaribio yako ya bure ya siku 7."
     },
     "auth.email": {
       "en": "Email",
@@ -6079,6 +6167,50 @@
     "reminders.unsupported": {
       "en": "This browser can't show reminders. Use Chrome on Android, or install Ave on your iPhone.",
       "text": "Kipangaji hiki cha mtandao hakina uwezo wa kuonyesha vikumbusho. Tumia Chrome kwenye Android, au pakua Ave kwenye iPhone yako."
+    },
+    "account.delete": {
+      "en": "Delete my account",
+      "text": "Futa akaunti yangu"
+    },
+    "splash.accountNote": {
+      "en": "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
+      "text": "Siku 7 za bure, kisha UGX 7,000 kwa mwezi nchini Uganda au dola za Marekani 3.99 ng'ambo."
+    },
+    "account.deleteTitle": {
+      "en": "Delete your account?",
+      "text": "Futa akaunti yako?"
+    },
+    "account.deleteConfirm": {
+      "en": "Delete for good",
+      "text": "Futa kabisa"
+    },
+    "account.deleteFailed": {
+      "en": "Couldn't delete your account. Check your connection and try again.",
+      "text": "Hakuweza kufuta akaunti yako. Hakikisha unganisho lako na ujaribu tena."
+    },
+    "account.deleteText": {
+      "en": "This permanently deletes your account, your progress, favourites, prayer routine, reminders and feedback. It can't be undone.",
+      "text": "Hii inafuta kabisa akaunti yako, maendeleo yako, vipendwa vyako, ratiba ya sala, vikumbusha na maoni. Haiwezi kufanywa upya."
+    },
+    "billing.planLastDay": {
+      "en": "Your plan ends today",
+      "text": "Mpango wako unamalizika leo"
+    },
+    "billing.planEndsIn": {
+      "en": "Your plan ends in",
+      "text": "Mpango wako unamalizika katika"
+    },
+    "billing.trialLastDay": {
+      "en": "Your free trial ends today",
+      "text": "Jaribio lako la bure linamalizika leo"
+    },
+    "billing.trialEndsIn": {
+      "en": "Your free trial ends in",
+      "text": "Jaribio lako la bure linamalizika tarehe"
+    },
+    "billing.granted": {
+      "en": "You have free access to Ave from the Ave team.",
+      "text": "Una ufikiaji wa bure kwa Ave kutoka kwa timu ya Ave."
     }
   },
   "content-sw": {
@@ -6586,7 +6718,72 @@
     "Our Father": "Baba Yetu",
     "Glory Be": "Utukufu Uwe",
     "Our Father, Who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.": "Baba yetu, uliye mbinguni, jina lako litukuzwe; Ufalme wako uje; mapenzi yako yatimizwe duniani kama ilivyo mbinguni. Utupe leo mkate wetu wa kila siku; na utusamehe dhambi zetu kama sisi tunavyowasamehe waliotukosea; na usituingize katika jaribu, bali utukomboe kutoka kwa uovu. Amina.",
-    "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.": "Utukufu kwa Baba, na kwa Mwana, na kwa Roho Mtakatifu. Kama ilivyokuwa mwanzo, ndivyo ilivyo sasa, na itakuwa hivyo milele, ulimwengu bila mwisho. Amina."
+    "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.": "Utukufu kwa Baba, na kwa Mwana, na kwa Roho Mtakatifu. Kama ilivyokuwa mwanzo, ndivyo ilivyo sasa, na itakuwa hivyo milele, ulimwengu bila mwisho. Amina.",
+    "Fatima Prayer": "Sala ya Fatima",
+    "O my Jesus, forgive us our sins, save us from the fires of hell, lead all souls to Heaven, especially those in most need of Thy mercy. Amen.": "Ee Yesu wangu, tusamehe dhambi zetu, tuokoe kutoka kwenye moto wa helo, iongoze nafsi zote kuelekea mbinguni, hasa wale wanaohitaji rehema yako zaidi. Amina.",
+    "Hail Holy Queen": "Shangilia Malkia Mtakatifu",
+    "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.": "Hail Mary, uliyekamilika kwa neema, Bwana yuko nawe. Umebarikiwa kati ya wanawake wote, na imebarikiwa pia tunda la tumbo lako, Yesu. Bikira Maria Mtakatifu, Mama wa Mungu, tuombeeni sisi watenda dhambi, sasa na wakati wa kifo chetu. Amina.",
+    "Daily Offering": "Toleo la Kila Siku",
+    "My God, I believe in you and all that you have taught, because you have said it, and your word is true.": "Mungu wangu, ninaamini katika wewe na yote ambayo umefundisha, kwa sababu umesema hivyo, na neno lako ni la kweli.",
+    "I believe in God, the Father Almighty, Creator of Heaven and earth; and in Jesus Christ, His only Son, Our Lord, Who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died, and was buried. He descended into Hell; the third day He rose again from the dead; He ascended into Heaven, and sits at the right hand of God, the Father Almighty; from thence He shall come to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.": "Naamini katika Mungu, Baba Mweza Yote, Muumba wa Mbingu na dunia; na katika Yesu Kristo, Mwana Wake pekee, Bwana wetu, Aliyezaliwa kwa Roho Mtakatifu, akazaliwa na Bikira Maria, akateseka chini ya Pontio Pilato, akasulubiwa, akafa, na akazikwa. Alishuka kwenye Helo; siku ya tatu akafufuka tena kutoka kwa wafu; alipanda mbinguni, na anaketi mkono wa kuume wa Mungu, Baba Mweza Yote; kutoka hapo atakuja kuhukumu walio hai na wafu. Naamini katika Roho Mtakatifu, Kanisa Katoliki takatifu, umoja wa watakatifu, msamaha wa dhambi, ufufuo wa mwili, na uzima wa milele. Amina.",
+    "O Jesus, through the Immaculate Heart of Mary, I offer you my prayers, works, joys and sufferings of this day, for all the intentions of your Sacred Heart, in union with the Holy Sacrifice of the Mass throughout the world, in reparation for sin, for the intentions of all my friends and associates, and in particular for the intentions of the Holy Father.": "Ee Yesu, kupitia Moyo Mtakatifu wa Bikira Maria, nakupa sala zangu, matendo yangu, furaha na mateso ya leo, kwa ajili ya makusudi yote ya Moyo Wako Mtakatifu, katika umoja na Dhabihu Takatifu ya Misa duniani kote, kwa ajili ya toba ya dhambi, kwa ajili ya makusudi ya marafiki na washirika wangu wote, na hasa kwa ajili ya makusudi ya Baba Mtakatifu.",
+    "I hope in your promise of Eternal life and I ask for your mercy and strength this day.": "Natumai katika ahadi yako ya uhai wa milele na ninaomba rehema na nguvu zako siku hii.",
+    "Act of Charity": "Kitendo cha Hisani",
+    "Hail, Holy Queen, Mother of Mercy, our life, our sweetness and our hope! To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary! Pray for us, O Holy Mother of God, that we may be made worthy of the promises of Christ. Amen.": "Hail, Malkia Mtakatifu, Mama wa Rehema, maisha yetu, utamu wetu na tumaini letu! Kwako tunalia, watoto maskini waliotengwa wa Hawa; kwako tunatuma vilio vyetu, tukihuzunika na kulia katika bonde hili la machozi. Geuka basi, mtetezi mwenye neema, macho yako ya rehema yatuelekee, na baada ya uhamisho wetu huu, tuonyeshe tunda lililobarikiwa la tumbo lako, Yesu. Ewe mama mwema, Ewe mpendwa, Ewe Bikira Maria mtakatifu! Tuombeeni, Mama Mtakatifu wa Mungu, ili tutakaseke kwa ahadi za Kristo. Amina.",
+    "Morning Consecration Prayers": "Sala za Kuheshimu Asubuhi",
+    "O My God, I love you with my whole heart and above all things, because you are infinitely good and perfect; and I love my neighbours as myself for love of you. Grant that I may love you more and more in this life, and in the next for all eternity.": "Ee Mungu wangu, nakupenda kwa moyo wangu wote na zaidi ya vitu vyote, kwa sababu wewe ni mwema na mkamilifu bila mipaka; na ninawapenda majirani wangu kama mimi mwenyewe kwa kukupenda. Nipe ili nipende wewe zaidi na zaidi katika maisha haya, na katika yale yanayokuja milele yote.",
+    "Most Sacred Heart of Jesus, I trust in you!": "Moyo Mtakatifu Zaidi wa Yesu, ninakuamini!",
+    "Most Sacred Heart of Jesus, have mercy on us!": "Mtakatifu wa Moyo Mtakatifu wa Yesu, tuonyeshe rehema!",
+    "Most Sacred Heart of Jesus I implore, that I may ever love you more and more.": "Moyo Mtakatifu Zaidi wa Yesu Ninakuomba, ili niweze kukupenda zaidi na zaidi.",
+    "Merciful Jesus, I consecrate myself today and always to Your Most Sacred Heart.": "Yesu mwenye rehema, leo ninajitoa kwako na daima kwa moyo wako Mtakatifu Zaidi.",
+    "Prayer of Thanksgiving (Night)": "Sala ya Shukrani (Usiku)",
+    "Sacred Heart of Jesus, I believe in your love for me.": "Moyo Mtakatifu wa Yesu, ninaamini katika upendo wako kwangu.",
+    "Jesus, meek and humble of heart, make my heart like your heart.": "Yesu, mnyenyekevu na mnyofu wa moyo, fanya moyo wangu uwe kama moyo wako.",
+    "Act of Contrition (Night)": "Kitendo cha Utubio (Usiku)",
+    "O My God, I thank you for all the benefits which I have received from you this day. Give me light to see what sins I have committed, and grant me grace to be truly sorry for them.": "Ee Mungu wangu, nakushukuru kwa faida zote ambazo nimepokea kutoka kwako leo. Nipe mwanga wa kuona dhambi nilizotenda, na unipe neema ya kusikitika kikweli kuhusu hizo.",
+    "All Praise to You": "Sifa zote kwako",
+    "O my God, because you are so good, I am very sorry that I have sinned against you. With the help of your grace I will try not to sin again.": "Ee Mungu wangu, kwa sababu wewe ni mwema sana, ninaomba msamaha kwamba nimetenda dhambi dhidi yako. Kwa msaada wa neema yako nitajaribu kutotenda dhambi tena.",
+    "The Angel of the Lord declared to Mary:\r\nAnd she conceived of the Holy Spirit. Hail Mary...": "Malaika wa Bwana alitangaza kwa Maria:\nNaye akapata mimba kutokana na Roho Mtakatifu. Salamu Maria...",
+    "Forgive us, Lord, through Christ Your Son,\r\nWhatever wrong this day we've done.\r\nYour peace give to the world, O Lord,\r\nThat we might live in one accord.": "Tusamehe, Bwana, kupitia Kristo Mwana Wako,\nKosa lolote ambalo tumefanya leo.\nAmani Yako ipatie ulimwengu, Ee Bwana,\nIli tuishi kwa umoja mmoja.",
+    "Enlighten us, O blessed light,\r\nAnd give us rest throughout this night.\r\nO strengthen us, that for your sake,\r\nWe all may serve you when we wake.": "Tuangazie, Ee mwanga uliobarikiwa,\nNa utupatie pumziko usiku huu wote.\nEe tuimarishe, ili kwa ajili yako,\nSisi sote tukutumikie tunapoamka.",
+    "All praise to you, O God, this night for the blessings of the light.\r\nKeep us, we pray, O King of kings,\r\nBeneath your own almighty wings.": "Sifa zote kwako, Ee Mungu, usiku huu kwa baraka za mwanga.\nTuwekeze, tunasali, Ee Mfalme wa wafalme,\nChini ya mabawa yako mwenyewe mwenye nguvu zote.",
+    "Behold the handmaid of the Lord:\r\nBe it done to me according to your word. Hail Mary...": "Tazama mjakazi wa Bwana:\nNa ifanyike kwangu kulingana na neno lako. Salamu Maria...",
+    "And the Word was made flesh:\r\nAnd dwelt among us. Hail Mary...": "Na Neno akafanywa mwili:\nAkakaa kati yetu. Salamu Maria...",
+    "Divine Mercy Chaplet (3 O'Clock Prayer)": "Zawadi ya Rehema ya Kimungu (Sala ya Saa Tisa)",
+    "Pray for us, O holy Mother of God.\r\nThat we may be made worthy of the promise of Christ.": "Tuombeeni, Mama Mtakatifu wa Mungu.\nIli tuweze kustahili ahadi ya Kristo.",
+    "O God, by the resurrection of Your Son, our Lord Jesus Christ, You have willed to make glad the whole world. Grant, we beseech You, that through His Mother, the Virgin Mary, we may lay hold of the joys of eternal life. We ask this through the same Christ our Lord. Amen.": "Ee Mungu, kwa ufufuo wa Mwana Wako, Bwana wetu Yesu Kristo, umetamani kufurahisha ulimwengu wote. Tupa sisi, tunakuomba, kwamba kupitia Mama Yake, Bikira Maria, tuweze kushika furaha ya maisha ya milele. Tunawaomba haya kupitia Kristo yuleyule Bwana wetu. Amina.",
+    "Let us pray:\r\nPour forth, we beseech you, O Lord, your grace into our hearts that we, to whom the incarnation of Christ, your Son, was made known by the message of an angel, may by His passion and cross be brought to the glory of His resurrection, through the same Christ our Lord. Amen.": "Acheni tusali:\nTwakuomba, Ee Bwana, utupe neema yako mioyoni mwetu ili sisi, ambao tulijulishwa kuhusu kuzaliwa kwa Kristo, Mwana wako, kupitia ujumbe wa malaika, tuweze kupata utukufu wa ufufuo Wake kupitia mateso na msalaba Wake, kupitia Kristo huyo aliye Bwana wetu. Amina.",
+    "O Blood and Water which gushed forth from the Heart of Jesus as a fount of mercy for us, I trust in you!": "Damu na maji yaliyotiririka kutoka katika moyo wa Yesu kama chemchemi ya rehema kwa ajili yetu, ninaamini kwako!",
+    "You expired Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us.": "Uliisha muda wako Yesu, lakini chanzo cha uhai kilimwagika kwa nafsi, na bahari ya rehema ilifunguka kwa ulimwengu mzima. Ee Chemchemi ya Uhai, Rehema Takatifu isiyo na kikomo, funika ulimwengu mzima na ujaze mioyo yetu.",
+    "Leader: Our Father... All together: Give us this day...\r\nLeader: Hail Mary... All together: Holy Mary...": "Kiongozi: Baba Yetu... Wote pamoja: Utupe leo...\nKiongozi: Hail Mary... Wote pamoja: Mariamu Mtakatifu...",
+    "Holy God, Holy Mighty One, Holy Immortal One, Have Mercy on us and on the whole world. (Say 3 times) Amen.": "Mungu Mtakatifu, Mwenye Nguvu Mtakatifu, Asiye na Kifo Mtakatifu, Tuonyeshe Rehema sisi na ulimwengu wote. (Sema mara 3) Amina.",
+    "(On the ten small beads of each decade)\r\nLeader: For the sake of His sorrowful passion\r\nAll together: Have mercy on us and on the whole world.": "(Kwenye vito kumi vidogo vya kila mwongo)\nKiongozi: Kwa ajili ya hisia zake za majonzi\nWote pamoja: Tuonyeshe rehema sisi na ulimwengu mzima.",
+    "(On the large bead before each decade)\r\nAll together: Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your dearly beloved Son, Our Lord Jesus Christ in atonement for our sins and those of the whole world.": "(Kwenye shanga kubwa kabla ya kila mwongo)\nPamoja: Baba wa Milele, nakupa Mwili na Damu, Nafsi na Utakatifu wa Mwana wako mpendwa sana, Bwana wetu Yesu Kristo katika upatanisho kwa dhambi zetu na zile za ulimwengu mzima.",
+    "(Conclude with):\r\nHoly God, Holy Mighty One, Holy Immortal One, Have mercy on us and on the whole world. (say three times) Amen.\r\nJesus, King of Mercy, I trust in you! (say 3 times)": "(Kamilisha na):\nMungu Mtakatifu, Mwenye Nguvu Mtakatifu, Asiye Kufa Mtakatifu, Utuhurumie sisi na ulimwengu wote. (sema mara tatu) Amina.\nYesu, Mfalme wa Rehema, Nakutegemea! (sema mara 3)",
+    "Note: The first line appears twice as it is to be read twice.": "Kumbuka: Mstari wa kwanza unaonekana mara mbili kwa sababu unapaswa kusomwa mara mbili.",
+    "Say 13 Our Father's and 13 Hail Mary's for 13 consecutive days. Publish this prayer, share it with a friend and give a Mass of Thanksgiving.": "Sema Baba Yetu mara 13 na Hail Mary mara 13 kwa siku 13 mfululizo. Chapisha sala hii, ishirikishe na rafiki na toa Misa ya Shukrani.",
+    "All together pray the Creed:\r\nI believe in God, the Father almighty, the creator of heaven and earth and in Jesus Christ, His only Son, Our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried. He descended into hell. On the third day He rose again from the dead. He ascended into heaven and sits at the right hand of God, the Father almighty. From thence He shall come to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the Communion of Saints, the forgiveness of sins, the resurrection of the body and life everlasting. Amen.": "Sote pamoja tusali Imani:\nNaamini katika Mungu, Baba mweza yote, muumba wa mbingu na dunia na katika Yesu Kristo, Mwana Wake pekee, Bwana wetu, ambaye alitwikwa mimba na Roho Mtakatifu, akazaliwa na Bikira Maria, aliteseka chini ya Pontio Pilato, alisulibiwa, akafa na kuzikwa. Aliteremka hadi kuzimu. Siku ya tatu Akafufuka tena kutoka kwa wafu. Alikwea mbinguni na kuketi mkono wa kuume wa Mungu, Baba mweza yote. Kutoka hapo Atakuja kuhukumu walio hai na wafu. Naamini katika Roho Mtakatifu, Kanisa Takatifu Katoliki, Umoja wa Watakatifu, msamaha wa dhambi, ufufuo wa mwili na uzima wa milele. Amina.",
+    "Our Lady of Guadalupe, mystical rose, make intercession for the Holy Church; protect the Holy Father; help all those who invoke you in their needs.": "Bibi Yetu wa Guadalupe, ua la kifumbo, omba kwa ajili ya Kanisa Takatifu; linda Baba Mtakatifu; wasaidie wote wanaokuita katika mahitaji yao.",
+    "Our Lady of the Rosary of Fatima, pray for us.": "Bibi Yetu wa Tasbihi ya Fatima, tuombelee.",
+    "He has shown mercy on those who fear him\r\nin every generation.": "Ameonyesha rehema kwa wale wanaomwogopa\nkatika kila kizazi.",
+    "My soul proclaims the greatness of the Lord,\r\nmy spirit rejoices in God, my savior,\r\nfor he has looked with favor on his lowly servant.\r\nFrom this day all generations will call me blessed:\r\nthe Almighty has done great things for me,\r\nand holy is his Name.": "Nafsi yangu inatangaza ukuu wa Bwana,\nroho yangu inashangilia katika Mungu, mwokozi wangu,\nkwa kuwa ametazama kwa upendeleo mtumishi wake mnyonge.\nKuanzia siku hii vizazi vyote vitaniita mwenye baraka:\nMweza Yote amefanya mambo makubwa kwangu,\nna jina lake ni takatifu.",
+    "O most gracious Virgin of Guadalupe, in your apparitions on Mount Tepeyac, you promised to show pity and compassion to all who, loving and trusting you, seek your help and protection. Listen to our supplications and grant us consolation and relief. We are full of hope that, relying on your help, nothing can trouble or affect us. As you have remained with us through your admirable image, so now obtain for us the graces we need. Amen.": "Ee Bikira Mtakatifu wa Guadalupe mwenye neema, katika maono yako kwenye Mlima Tepeyac, uliahidi kuonyesha huruma na rehema kwa wote ambao, wakikupenda na kukutumaini, wanatafuta msaada na ulinzi wako. Sikiliza dua zetu na utupatie faraja na kitulizo. Tuna matumaini makubwa kwamba, tukitegemea msaada wako, hakuna kinachoweza kutusumbua au kutuathiri. Kama vile ulivyobaki nasi kupitia taswira yako nzuri, basi sasa tupatie neema tunazohitaji. Amina.",
+    "He has shown the strength of his arm,\r\nhe has scattered the proud in their conceit.": "Ameonyesha nguvu ya mkono wake,\namevuruga wenye kiburi katika majivuno yao.",
+    "Most Holy Virgin, who deigned to come to Fatima, to reveal the treasures of grace hidden in the recitation of the Rosary, inspire our hearts with a sincere love of this devotion, that meditating on the Mysteries of our Redemption recalled therein, we may obtain the conversion of sinners, the conversion of Russia, and (here name the other favors you are praying for) which we ask of you in this Novena, for the greater glory of God, for your own honor, and for the good of souls. Amen.": "Bikira Mtakatifu Zaidi, uliyekubali kuja Fatima, kufunua hazina za neema zilizofichwa katika kusoma Tasbihi, utupe moyo wetu upendo wa dhati kwa ujitoaji huu, ili kutafakari kuhusu Siri za Ukombozi wetu zilizoonyeshwa humo, tuweze kupata mabadiliko ya watenda dhambi, mabadiliko ya Urusi, na (hapa taja baraka nyingine unazosali) ambazo tunakuomba katika Novena hii, kwa utukufu mkubwa wa Mungu, kwa heshima yako mwenyewe, na kwa mema ya nafsi. Amina.",
+    "He has cast down the mighty from their thrones,\r\nand has lifted up the lowly.": "Amewashusha wakuu kutoka kwenye viti vyao vya enzi,\nna amewainua walio dhaifu.",
+    "He has filled the hungry with good things,\r\nand the rich he has sent away empty.": "Amewashibisha walio na njaa kwa vitu vizuri,\nna tajiri amemwacha akiwa hana chochote.",
+    "Litany of the Blessed Virgin Mary": "Litany ya Bikira Maria Mtakatifu",
+    "(Luke 1:46-55)": "(Luka 1:46-55)",
+    "Lord, have mercy. Lord, have mercy.\r\nChrist, have mercy. Christ, have mercy.\r\nLord, have mercy. Lord, have mercy.\r\nChrist, hear us. Christ, graciously hear us.": "Bwana, onyesha rehema. Bwana, onyesha rehema.\nKristo, onyesha rehema. Kristo, tusikilize kwa neema.",
+    "He has come to the help of his servant Israel\r\nfor he has remembered his promise of mercy,\r\nthe promise he made to our fathers,\r\nto Abraham and his children forever.": "Amekuja kumsaidia mtumishi wake Israeli\nkwa kuwa amekumbuka ahadi yake ya rehema,\nahadi aliyowapa baba zetu,\nAbrahamu na watoto wake milele.",
+    "God the Father of Heaven, have mercy on us.\r\nGod the Son, Redeemer of the world, have mercy on us.\r\nGod the Holy Spirit, have mercy on us.\r\nHoly Trinity, one God, have mercy on us.": "Mungu Baba wa Mbinguni, tuonyeshe rehema.\nMungu Mwana, Mkombozi wa ulimwengu, tuonyeshe rehema.\nMungu Roho Mtakatifu, tuonyeshe rehema.\nUtatu Mtakatifu, Mungu mmoja, tuonyeshe rehema.",
+    "Holy Mary, pray for us.\r\nHoly Mother of God, pray for us.\r\nHoly Virgin of virgins, pray for us.\r\nMother of Christ, pray for us.\r\nMother of the Church, pray for us.\r\nMother of Divine Grace, pray for us.\r\nMother most pure, pray for us.\r\nMother most chaste, pray for us.\r\nMother inviolate, pray for us.\r\nMother undefiled, pray for us.\r\nMother most amiable, pray for us.\r\nMother most admirable, pray for us.\r\nMother of good counsel, pray for us.\r\nMother of our Creator, pray for us.\r\nMother of our Savior, pray for us.": "Mariamu Mtakatifu, tuombelee.\nMama Mtakatifu wa Mungu, tuombelee.\nBikira Mtakatifu wa mabikira, tuombelee.\nMama wa Kristo, tuombelee.\nMama wa Kanisa, tuombelee.\nMama wa Neema ya Kimungu, tuombelee.\nMama safi kabisa, tuombelee.\nMama mwenye maadili, tuombelee.\nMama asiye na doa, tuombelee.\nMama anayependwa sana, tuombelee.\nMama anayestahili kuthaminiwa, tuombelee.\nMama wa ushauri mzuri, tuombelee.\nMama wa Muumba wetu, tuombelee.\nMama wa Mwokozi wetu, tuombelee.",
+    "Virgin most prudent, pray for us.\r\nVirgin most venerable, pray for us.\r\nVirgin most renowned, pray for us.\r\nVirgin most powerful, pray for us.\r\nVirgin most merciful, pray for us.\r\nVirgin most faithful, pray for us.": "Bikira mwenye busara zaidi, tusali.\nBikira mtakatifu zaidi, tusali.\nBikira maarufu zaidi, tusali.\nBikira mwenye nguvu zaidi, tusali.\nBikira mwenye rehema zaidi, tusali.\nBikira mwaminifu zaidi, tusali.",
+    "Pray for us, O Holy Mother of God.\r\nThat we may be made worthy of the promises of Christ.": "Tuombeeni, Ee Mama Mtakatifu wa Mungu.\nIli tuweze kufanya kustahili ahadi za Kristo.",
+    "Queen of Angels, pray for us.\r\nQueen of Patriarchs, pray for us.\r\nQueen of Prophets, pray for us.\r\nQueen of Apostles, pray for us.\r\nQueen of Martyrs, pray for us.\r\nQueen of Confessors, pray for us.\r\nQueen of Virgins, pray for us.\r\nQueen of all Saints, pray for us.\r\nQueen conceived without original sin, pray for us.\r\nQueen assumed into heaven, pray for us.\r\nQueen of the most holy Rosary, pray for us.\r\nQueen of families, pray for us.\r\nQueen of peace, pray for us.": "Malkia wa Malaika, tusaliie.\nMalkia wa Mababa wa Kanisa, tusaliie.\nMalkia wa Manabii, tusaliie.\nMalkia wa Mitume, tusaliie.\nMalkia wa Mashahidi, tusaliie.\nMalkia wa Waungama, tusaliie.\nMalkia wa Mabikira, tusaliie.\nMalkia wa Watakatifu wote, tusaliie.\nMalkia aliyebeba mimba bila dhambi ya asili, tusaliie.\nMalkia aliyechukuliwa mbinguni, tusaliie.\nMalkia wa Rozari takatifu sana, tusaliie.\nMalkia wa familia, tusaliie.\nMalkia wa amani, tusaliie.",
+    "Lamb of God, who takes away the sins of the world, spare us, O Lord.\r\nLamb of God, who takes away the sins of the world, graciously hear us, O Lord.\r\nLamb of God, who takes away the sins of the world, have mercy on us.": "Mwana-Kondoo wa Mungu, anayechukua dhambi za ulimwengu, tuonee huruma, Ee Bwana.\nMwana-Kondoo wa Mungu, anayechukua dhambi za ulimwengu, tusikilize kwa neema, Ee Bwana.\nMwana-Kondoo wa Mungu, anayechukua dhambi za ulimwengu, tuhurumie.",
+    "Mirror of justice, pray for us.\r\nSeat of wisdom, pray for us.\r\nCause of our joy, pray for us.\r\nSpiritual vessel, pray for us.\r\nVessel of honor, pray for us.\r\nSingular vessel of devotion, pray for us.\r\nMystical rose, pray for us.\r\nTower of David, pray for us.\r\nTower of ivory, pray for us.\r\nHouse of gold, pray for us.\r\nArk of the covenant, pray for us.\r\nGate of heaven, pray for us.\r\nMorning star, pray for us.\r\nHealth of the sick, pray for us.\r\nRefuge of sinners, pray for us.\r\nComfort of the afflicted, pray for us.\r\nHelp of Christians, pray for us.": "Kioo cha haki, tuombeeni.\nKitovu cha hekima, tuombeeni.\nChanzo cha furaha yetu, tuombeeni.\nChombo cha kiroho, tuombeeni.\nChombo cha heshima, tuombeeni.\nChombo pekee cha ujitoaji, tuombeeni.\nRose ya kifumbo, tuombeeni.\nMnara wa Daudi, tuombeeni.\nMnara wa pembe za ndovu, tuombeeni.\nNyumba ya dhahabu, tuombeeni.\nSanduku la agano, tuombeeni.\nLango la mbinguni, tuombeeni.\nNyenyezi ya asubuhi, tuombeeni.\nAfya ya wagonjwa, tuombeeni.\nMakao ya watenda dhambi, tuombeeni.\nFaraja kwa walioathirika, tuombeeni.\nMsaada wa Wakristo, tuombeeni.",
+    "Let us pray:\r\nGrant, we beseech you, O Lord God, that we your servants may enjoy perpetual health of mind and body; and by the intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow, and obtain eternal joy. Through Christ our Lord. Amen.": "Acheni tusali:\nTupa, tunakuomba, Ee Bwana Mungu, kwamba sisi watumishi wako tufurahie afya ya kudumu ya akili na mwili; na kwa msaada wa Bikira Maria Mtakatifu, daima Bikira, tuokolewe kutoka huzuni ya sasa, na tupate furaha ya milele. Kupitia Kristo Bwana wetu. Amina."
   },
   "es": {
     "common.signOut": {
@@ -6666,8 +6863,8 @@
       "text": "Oraciones de la mañana, del mediodía y de la noche"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
-      "text": "Oraciones diarias, el Santo Rosario, novenas y coronillas en inglés, luganda y runyankore."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
+      "text": "Oraciones diarias, el Santo Rosario, novenas y coronillas en inglés, luganda, runyankore, suajili, español e italiano."
     },
     "splash.rosaryTitle": {
       "en": "The Holy Rosary",
@@ -6694,8 +6891,8 @@
       "text": "Bienvenidos"
     },
     "splash.accountNote": {
-      "en": "Create your account to start praying with Ave.",
-      "text": "Cree su cuenta para empezar a rezar con Ave."
+      "en": "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
+      "text": "7 días gratis; a partir de entonces, 7.000 UGX al mes en Uganda o 3,99 USD en el extranjero."
     },
     "home.greeting": {
       "en": "Good Morning",
@@ -7162,8 +7359,8 @@
       "text": "Versión"
     },
     "settings.aboutText": {
-      "en": "A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
-      "text": "Una guía de oración católica gratuita para las oraciones diarias, el Santo Rosario, las novenas y las coronillas, diseñada para Uganda."
+      "en": "A Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
+      "text": "Una guía de oración católica para las oraciones diarias, el Santo Rosario, las novenas y las coronillas, diseñada para Uganda."
     },
     "settings.help": {
       "en": "Help and feedback",
@@ -8050,8 +8247,8 @@
       "text": "Nombre"
     },
     "auth.signUpDescription": {
-      "en": "Accounts are free, and you can always pray without one.",
-      "text": "Las cuentas son gratuitas, y siempre puede rezar sin necesidad de tener una."
+      "en": "Create your account to start your 7-day free trial.",
+      "text": "Cree su cuenta para comenzar su periodo de prueba gratuito de 7 días."
     },
     "auth.password": {
       "en": "Password",
@@ -8248,6 +8445,26 @@
     "install.notNow": {
       "en": "Not now",
       "text": "Ahora no"
+    },
+    "billing.trialEndsIn": {
+      "en": "Your free trial ends in",
+      "text": "Su periodo de prueba gratuito finaliza en"
+    },
+    "billing.trialLastDay": {
+      "en": "Your free trial ends today",
+      "text": "Su periodo de prueba gratuito finaliza hoy"
+    },
+    "billing.planEndsIn": {
+      "en": "Your plan ends in",
+      "text": "Su plan finaliza en"
+    },
+    "billing.planLastDay": {
+      "en": "Your plan ends today",
+      "text": "Su plan finaliza hoy"
+    },
+    "billing.granted": {
+      "en": "You have free access to Ave from the Ave team.",
+      "text": "El equipo de Ave le ofrece acceso gratuito a Ave."
     }
   },
   "it": {
@@ -8332,8 +8549,8 @@
       "text": "Preghiere del mattino, di mezzogiorno e della sera"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
-      "text": "Preghiere quotidiane, il Santo Rosario, novene e coroncine in inglese, luganda e runyankore."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
+      "text": "Preghiere quotidiane, il Santo Rosario, novene e coroncine in inglese, luganda, runyankore, swahili, spagnolo e italiano."
     },
     "splash.rosaryTitle": {
       "en": "The Holy Rosary",
@@ -8348,8 +8565,8 @@
       "text": "Una guida alla preghiera cattolica, realizzata per l’Uganda"
     },
     "splash.accountNote": {
-      "en": "Create your account to start praying with Ave.",
-      "text": "Crei il Suo account per iniziare a pregare con Ave."
+      "en": "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
+      "text": "7 giorni gratuiti, poi 7.000 UGX al mese in Uganda o 3,99 USD all’estero."
     },
     "language.title": {
       "en": "Welcome",
@@ -8824,8 +9041,8 @@
       "text": "Inviare un feedback"
     },
     "settings.aboutText": {
-      "en": "A free Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
-      "text": "Una guida cattolica gratuita alle preghiere quotidiane, al Santo Rosario, alle novene e alle coroncine, realizzata per l’Uganda."
+      "en": "A Catholic prayer companion for daily prayers, the Holy Rosary, novenas and chaplets, built for Uganda.",
+      "text": "Una guida alla preghiera cattolica per le preghiere quotidiane, il Santo Rosario, le novene e le coroncine, realizzata per l’Uganda."
     },
     "settings.legal": {
       "en": "Legal",
@@ -9704,8 +9921,8 @@
       "text": "Crei il Suo account"
     },
     "auth.signUpDescription": {
-      "en": "Accounts are free, and you can always pray without one.",
-      "text": "L'iscrizione è gratuita e potete sempre pregare anche senza un account."
+      "en": "Create your account to start your 7-day free trial.",
+      "text": "Crei il Suo account per iniziare il periodo di prova gratuito di 7 giorni."
     },
     "routine.add": {
       "en": "Add",
@@ -9910,6 +10127,26 @@
     "auth.errors.invalidCredentials": {
       "en": "Wrong email or password.",
       "text": "Indirizzo e-mail o password errati."
+    },
+    "billing.trialEndsIn": {
+      "en": "Your free trial ends in",
+      "text": "Il Suo periodo di prova gratuito scade tra"
+    },
+    "billing.trialLastDay": {
+      "en": "Your free trial ends today",
+      "text": "Il Suo periodo di prova gratuito termina oggi"
+    },
+    "billing.planEndsIn": {
+      "en": "Your plan ends in",
+      "text": "Il Suo piano scade tra"
+    },
+    "billing.planLastDay": {
+      "en": "Your plan ends today",
+      "text": "Il Suo abbonamento scade oggi"
+    },
+    "billing.granted": {
+      "en": "You have free access to Ave from the Ave team.",
+      "text": "Il team di Ave Le offre l'accesso gratuito ad Ave."
     }
   },
   "content-es": {

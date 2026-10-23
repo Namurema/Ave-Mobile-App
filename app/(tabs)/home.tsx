@@ -19,6 +19,7 @@ import { PhotoBackdrop } from "../../components/ui/page";
 import { images, dailyTiles } from "../../constants/images";
 import { MyPrayersCard } from "../../components/MyPrayersCard";
 import { NovenaSeasonCard } from "../../components/NovenaSeason";
+import { TrialNotice } from "../../components/AccessGate";
 import { languageInfo } from "../../constants/languages";
 
 // Rosary mysteries by weekday, Sunday first
@@ -211,6 +212,8 @@ export default function HomeScreen() {
                 </Button>
               </View>
             </Card>
+
+            <TrialNotice />
 
             <NovenaSeasonCard />
 

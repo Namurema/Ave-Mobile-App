@@ -23,14 +23,15 @@ export default {
   splash: {
     tagline: "Omufura wawe omu kusaba buri eisho n'okusingura omwoyo",
     headline: "Shaba buri izooba, omu rurimi rwawe",
-    description: "Okushaba buriizooba, okushaba kwa rozaari, novena hamwe n'okushaba kw'ebikondo omu Rungyereza, Oruganda hamwe n'Orunyankore.",
+    description: "Okushaba buriizooba, akasari k'ekitiinisa, novena hamwe n'ebikomo omu Rungyereza, Oruganda, Runyankole, Swahili, Spanish hamwe na Italian.",
     dailyTitle: "Okushaba buriizooba",
     dailyDescription: "Okushaba kw'akasheeshe, omu ihangwe hamwe n'ekiro",
     rosaryTitle: "Ekitabo ky'okushaba ekirikwera",
     rosaryDescription: "Eby'okutangaaza ebya eriizooba, n'omugasho gwabyo",
     devotionsTitle: "Novenas hamwe na chaplets",
     devotionsDescription: "Obusaasi bwa Ruhanga, emyanya ya Cross hamwe n'ebindi",
-    footer: "Okushaba kw'abakaturiki, okwombekirwe Uganda"
+    footer: "Okushaba kw'abakaturiki, okwombekirwe Uganda",
+    accountNote: "Ebiro 7 bya busha, reero UGX 7,000 buri kwezi omu Uganda nainga USD 3.99 aheeru y'eihanga."
   },
   language: {
     title: "Tukuragirire",
@@ -166,7 +167,7 @@ export default {
     signInToSync: "Injira okuwuuza",
     app: "App",
     about: "Aha bikwatiraine",
-    aboutText: "Omukago gw'okushaba ogw'abakaturiki ogurikubaasa kukoresibwa omu kushaba buriizooba, Orusariya orurikwera, novena hamwe n'ebikomo by'okushaba, bikombekirwe Uganda.",
+    aboutText: "Okushaba kw'Abakaturiki okw'okushaba buriizooba, omusaraba gurikwera, novena hamwe n'ebishare, bikozirwe Uganda.",
     version: "Omuringo",
     legal: "Eby'obutegyeki",
     help: "Obuhwezi hamwe n'okugarukamu"
@@ -232,6 +233,13 @@ export default {
     novenaRule: "Shaba aha biro ebirikukurataho. Okufeerwa eizooba nikigaruka kutandika novena.",
     finishRosary: "Hendera kandi oteekye nk'orashabire"
   },
+  account: {
+    delete: "Shangura akawunti yangye",
+    deleteTitle: "Okwihaho akawunti yaawe?",
+    deleteText: "Eki nikishazamu eakaunti yaawe, okutunguuka kwaawe, ebirikukundwa, entebekanisa y'okushaba, okwijutsya hamwe n'okugarukamu. Tikirabasa kugarurwaho.",
+    deleteConfirm: "Kwihaho ebyo byona",
+    deleteFailed: "Tikabaasa kushazamu akawunti yaawe. Kyebera okukwatanisa kwawe ogaruke ogyezeho."
+  },
   reminders: {
     title: "Eby'okwijutsya",
     heading: "Obwire bw'okushaba",
@@ -257,7 +265,7 @@ export default {
     prayedDay: "Oshabire eizooba",
     comeBack: "Garuka nyenkyakare ahabw'ekiro",
     todayIsDay: "Eriizooba n'ekiro",
-    markWhenDone: "Kora aha kicweka ahansi waaherize.",
+    markWhenDone: "Tap Mark akashaba ahansi waawe ku oraahweze.",
     missed: "ebiro ebirabireho kuhisya hati.",
     missedOne: "Eizooba rikaburaho kuhisya hati.",
     keepGoing: "Gumizamu nookora: noobaasa kuhendera novena.",
@@ -307,6 +315,11 @@ export default {
     signInFirst: "Kora akaunti ya busha kutandika okugyezibwa kw'ebiro 7.",
     trialUntil: "Okugyezibwa kwawe okw'obusingye nikugyenda kuhisya",
     trialEnded: "Okugyezibwa kwawe okw'obusingye kuhweireho. Toorana enteekateeka kuguma nooshaba na Ave.",
+    trialEndsIn: "Okugyezibwa kwawe okw'obwereere nikuhendera omuri",
+    trialLastDay: "Okugyezibwa kwawe okw'obwereere nikuhendera eriizooba",
+    planEndsIn: "Enteekateeka yaawe neehendera omuri",
+    planLastDay: "Enteekateeka yaawe neehendera eriizooba",
+    granted: "Oine obugabe bw'okuhika ahari Ave kuruga aha tiimu ya Ave.",
     paidUntil: "Enteekateeka yaawe neekora kuhisya",
     inUganda: "Omu Uganda (UGX)",
     outsideUganda: "Aheeru ya Uganda (USD)",
@@ -413,7 +426,7 @@ export default {
     signInDescription: "Rinda okushaba kwawe oku orikukunda kandi omanye ahu waahika.",
     createAccount: "Kora akawunti",
     signUpTitle: "Kora akawunti yaawe",
-    signUpDescription: "Akaunti n'ezabusha, kandi noobaasa okushaba otaine akaunti.",
+    signUpDescription: "Kora akaunti yaawe kutandika okugyezibwa kwa bwereere okw'ebiro 7.",
     name: "Eiziina",
     email: "E-mayiro",
     password: "Akasumuruzo",

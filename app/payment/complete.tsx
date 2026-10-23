@@ -47,7 +47,8 @@ export default function PaymentCompleteScreen() {
         }
         await new Promise((resolve) => setTimeout(resolve, CHECK_EVERY_MS));
       }
-      // Still pending: PesaPal will confirm later, and the account updates then
+      // Still pending: PesaPal confirms later and the account updates then; say so
+      if (!cancelled) setStatus("error");
     })();
     return () => {
       cancelled = true;

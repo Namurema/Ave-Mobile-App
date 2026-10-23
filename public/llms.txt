@@ -1,12 +1,13 @@
 # Ave
 
-> Ave is a free Catholic prayer app built for Uganda. It offers the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily morning, midday and night prayers in English, Luganda (Oluganda) and Runyankore (Orunyankore). It runs in any web browser, can be installed on Android and iPhone from the browser, and works offline. No account is needed to pray.
+> Ave is a Catholic prayer app built for Uganda. It offers the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily morning, midday and night prayers in English, Luganda (Oluganda), Runyankore (Orunyankore), Swahili, Spanish and Italian, with read aloud, prayer routines and reminders. It runs in any web browser, can be installed on Android and iPhone from the browser, and works offline.
 
 Key facts:
 - Website: https://aveprayers.com
-- Price: free, no ads
-- Languages: English, Luganda, Runyankore
-- Optional free account: saves favourite prayers and tracks prayer progress (day streaks, novena days) across devices
+- Price: 7-day free trial, then UGX 7,000 a month or UGX 70,000 a year in Uganda, USD 3.99 a month or USD 29.99 a year elsewhere. No ads. Plans do not renew automatically.
+- Payment: mobile money or card, through PesaPal
+- Languages: English, Luganda, Runyankore, Swahili, Spanish, Italian
+- An account is needed; it saves favourite prayers, routines and prayer progress (day streaks, novena days) across devices
 - Contact: stelarlabs@gmail.com
 
 ## Prayers

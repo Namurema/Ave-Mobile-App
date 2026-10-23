@@ -16,6 +16,7 @@ import { startRoutineSync } from "../store/routineStore";
 import { startAccessSync } from "../store/accessStore";
 import { AuthDialog } from "../components/auth/AuthDialog";
 import { AuthGate } from "../components/AuthGate";
+import { AccessGate } from "../components/AccessGate";
 import { SITE_URL } from "../constants/site";
 import { languageInfo } from "../constants/languages";
 
@@ -47,7 +48,8 @@ export default function RootLayout() {
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = SITE_URL + pathname;
+    // The welcome page has one address for search engines
+    canonical.href = SITE_URL + (pathname === "/splash" ? "/" : pathname);
   }, [language, pathname]);
 
   return (
@@ -60,6 +62,7 @@ export default function RootLayout() {
         }}
       />
       <AuthGate />
+      <AccessGate />
       <AuthDialog />
       <InstallDialog />
       <UpdateBanner />

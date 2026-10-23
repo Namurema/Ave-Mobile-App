@@ -1,7 +1,7 @@
 // Copies the PesaPal settings from .env.local to the Supabase payment
 // functions' secrets, without printing them. Needs `npx supabase login` once.
 //
-//   node scripts/set-payment-secrets.mjs
+//   node scripts/set-payment-secrets.mjs [--live] [--ipn-id=...]
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

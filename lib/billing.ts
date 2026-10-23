@@ -27,6 +27,8 @@ export type Access = {
   trialEndsAt: Date | null;
   paidUntil: Date | null;
   plan: Plan | null;
+  // Free access from the Ave team (pre-launch users, testers)
+  granted: boolean;
   hasAccess: boolean;
 };
 
@@ -37,6 +39,7 @@ export async function fetchAccess(): Promise<Access | null> {
     trialEndsAt: data.trial_ends_at ? new Date(data.trial_ends_at) : null,
     paidUntil: data.paid_until ? new Date(data.paid_until) : null,
     plan: data.plan ?? null,
+    granted: !!data.granted,
     hasAccess: !!data.has_access,
   };
 }

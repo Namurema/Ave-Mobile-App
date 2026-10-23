@@ -2,7 +2,7 @@
 // environment) and prints its IPN id. Add the id to .env.local as
 // PESAPAL_IPN_ID, then run scripts/set-payment-secrets.mjs.
 //
-//   node scripts/pesapal-register-ipn.mjs
+//   node scripts/pesapal-register-ipn.mjs [--live]
 import { IPN_URL, pesapalBase, readEnv } from "./payments-env.mjs";
 
 const env = readEnv();

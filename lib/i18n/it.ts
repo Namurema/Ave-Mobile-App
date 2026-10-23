@@ -23,7 +23,7 @@ export default {
   splash: {
     tagline: "Il Suo compagno nelle preghiere quotidiane e nella devozione spirituale",
     headline: "Pregate ogni giorno, nella vostra lingua",
-    description: "Preghiere quotidiane, il Santo Rosario, novene e coroncine in inglese, luganda e runyankore.",
+    description: "Preghiere quotidiane, il Santo Rosario, novene e coroncine in inglese, luganda, runyankore, swahili, spagnolo e italiano.",
     dailyTitle: "Preghiere quotidiane",
     dailyDescription: "Preghiere del mattino, di mezzogiorno e della sera",
     rosaryTitle: "Il Santo Rosario",
@@ -31,7 +31,7 @@ export default {
     devotionsTitle: "Novene e coroncine",
     devotionsDescription: "La Divina Misericordia, la Via Crucis e altro ancora",
     footer: "Una guida alla preghiera cattolica, realizzata per l’Uganda",
-    accountNote: "Crei il Suo account per iniziare a pregare con Ave."
+    accountNote: "7 giorni gratuiti, poi 7.000 UGX al mese in Uganda o 3,99 USD all’estero."
   },
   language: {
     title: "Benvenuti",
@@ -167,7 +167,7 @@ export default {
     signInToSync: "Acceda per salvare le preghiere preferite e tenere traccia dei propri progressi.",
     app: "App",
     about: "Informazioni su",
-    aboutText: "Una guida cattolica gratuita alle preghiere quotidiane, al Santo Rosario, alle novene e alle coroncine, realizzata per l’Uganda.",
+    aboutText: "Una guida alla preghiera cattolica per le preghiere quotidiane, il Santo Rosario, le novene e le coroncine, realizzata per l’Uganda.",
     version: "Versione",
     legal: "Note legali",
     help: "Assistenza e feedback"
@@ -315,6 +315,11 @@ export default {
     signInFirst: "Crei un account gratuito per iniziare il Suo periodo di prova gratuito di 7 giorni.",
     trialUntil: "Il Suo periodo di prova gratuito è valido fino al",
     trialEnded: "Il Suo periodo di prova gratuito è terminato. Scegli un piano per continuare a pregare con Ave.",
+    trialEndsIn: "Il Suo periodo di prova gratuito scade tra",
+    trialLastDay: "Il Suo periodo di prova gratuito termina oggi",
+    planEndsIn: "Il Suo piano scade tra",
+    planLastDay: "Il Suo abbonamento scade oggi",
+    granted: "Il team di Ave Le offre l'accesso gratuito ad Ave.",
     paidUntil: "Il Suo piano è attivo fino al",
     inUganda: "In Uganda (UGX)",
     outsideUganda: "Al di fuori dell’Uganda (USD)",
@@ -421,7 +426,7 @@ export default {
     signInDescription: "Salvate le vostre preghiere preferite e tenete traccia dei vostri progressi.",
     createAccount: "Crea un account",
     signUpTitle: "Crei il Suo account",
-    signUpDescription: "L'iscrizione è gratuita e potete sempre pregare anche senza un account.",
+    signUpDescription: "Crei il Suo account per iniziare il periodo di prova gratuito di 7 giorni.",
     name: "Nome",
     email: "E-mail",
     password: "Password",

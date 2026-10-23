@@ -31,6 +31,11 @@ export function startAccessSync() {
   started = true;
   let userId = useAuthStore.getState().user?.id ?? null;
   useAccessStore.getState().refresh();
+  if (typeof document !== "undefined") {
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") useAccessStore.getState().refresh();
+    });
+  }
   useAuthStore.subscribe((state) => {
     const next = state.user?.id ?? null;
     if (next === userId) return;

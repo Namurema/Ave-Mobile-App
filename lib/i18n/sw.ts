@@ -23,14 +23,15 @@ export default {
   splash: {
     tagline: "Mwenzako kwa ajili ya sala za kila siku na ujitoaji wa kiroho",
     headline: "Sali kila siku, katika lugha yako mwenyewe",
-    description: "Sala za kila siku, Rozari Takatifu, novena na chapleti katika Kiingereza, Luganda na Runyankore.",
+    description: "Sala za kila siku, Tasbihi Takatifu, novena na tasbihi katika Kiingereza, Luganda, Runyankore, Kiswahili, Kihispania na Kiitaliano.",
     dailyTitle: "Sala za kila siku",
     dailyDescription: "Sala za asubuhi, adhuhuri na usiku",
     rosaryTitle: "Tasbihi Takatifu ya Rozari",
     rosaryDescription: "Fumbo la leo, na sifa kwa kila moja",
     devotionsTitle: "Novenas na tasbihi",
     devotionsDescription: "Rehema ya Kimungu, Vituo vya Msalaba na zaidi",
-    footer: "Mshirika wa sala ya Kikatoliki, uliotengenezwa kwa ajili ya Uganda"
+    footer: "Mshirika wa sala ya Kikatoliki, uliotengenezwa kwa ajili ya Uganda",
+    accountNote: "Siku 7 za bure, kisha UGX 7,000 kwa mwezi nchini Uganda au dola za Marekani 3.99 ng'ambo."
   },
   language: {
     title: "Karibu",
@@ -166,7 +167,7 @@ export default {
     signInToSync: "Ingia ili uhifadhi sala unazozipenda na ufuatilie maendeleo yako.",
     app: "Programu ya simu",
     about: "Karibu",
-    aboutText: "Mwenzako wa sala za Kikatoliki kwa sala za kila siku, Tasbihi Takatifu, novena na tasbihi, iliyoundwa kwa ajili ya Uganda.",
+    aboutText: "Mwenzako wa sala ya Kikatoliki kwa sala za kila siku, Tasbihi Takatifu, novena na tasbihi, zilizotengenezwa Uganda.",
     version: "Toleo",
     legal: "Kisheria",
     help: "Msaada na maoni"
@@ -232,6 +233,13 @@ export default {
     novenaRule: "Sali kwa siku zinazofuatana. Kukosa siku moja kunafanya novena ianze tena.",
     finishRosary: "Kamilisha na alama kama iliyosaliwa"
   },
+  account: {
+    delete: "Futa akaunti yangu",
+    deleteTitle: "Futa akaunti yako?",
+    deleteText: "Hii inafuta kabisa akaunti yako, maendeleo yako, vipendwa vyako, ratiba ya sala, vikumbusha na maoni. Haiwezi kufanywa upya.",
+    deleteConfirm: "Futa kabisa",
+    deleteFailed: "Hakuweza kufuta akaunti yako. Hakikisha unganisho lako na ujaribu tena."
+  },
   reminders: {
     title: "Vikumbusho",
     heading: "Wakati wa kusali",
@@ -257,7 +265,7 @@ export default {
     prayedDay: "Umewahi kusali mchana",
     comeBack: "Rudi kesho kwa siku",
     todayIsDay: "Leo ni siku",
-    markWhenDone: "Bonyeza Tap Prayed chini unapomaliza.",
+    markWhenDone: "Tap Mark alisali chini baada ya kumaliza.",
     missed: "siku zilizokosekana hadi sasa.",
     missedOne: "siku iliyopita hadi sasa.",
     keepGoing: "Endelea: bado unaweza kumaliza novena.",
@@ -307,6 +315,11 @@ export default {
     signInFirst: "Jiandikishe kwa akaunti ya bure ili kuanza jaribio lako la siku 7 bila malipo.",
     trialUntil: "Jaribio lako la bure linakwenda hadi",
     trialEnded: "Jaribio lako la bure limeisha. Chagua mpango wa kuendelea kusali na Ave.",
+    trialEndsIn: "Jaribio lako la bure linamalizika tarehe",
+    trialLastDay: "Jaribio lako la bure linamalizika leo",
+    planEndsIn: "Mpango wako unamalizika katika",
+    planLastDay: "Mpango wako unamalizika leo",
+    granted: "Una ufikiaji wa bure kwa Ave kutoka kwa timu ya Ave.",
     paidUntil: "Mpango wako unafanya kazi hadi",
     inUganda: "Nchini Uganda (UGX)",
     outsideUganda: "Nje ya Uganda (USD)",
@@ -413,7 +426,7 @@ export default {
     signInDescription: "Hifadhi sala zako unazozipenda na uweke rekodi ya maendeleo yako.",
     createAccount: "Unda akaunti",
     signUpTitle: "Unda akaunti yako",
-    signUpDescription: "Akaunti ni bure, na unaweza kusali wakati wote bila akaunti.",
+    signUpDescription: "Jiandikishe ili kuanza majaribio yako ya bure ya siku 7.",
     name: "Jina",
     email: "Barua pepe",
     password: "Nywila",
