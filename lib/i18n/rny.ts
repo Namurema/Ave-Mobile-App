@@ -30,7 +30,7 @@ export default {
     rosaryDescription: "Eby'okutangaaza ebya eriizooba, n'omugasho gwabyo",
     devotionsTitle: "Novenas hamwe na chaplets",
     devotionsDescription: "Obusaasi bwa Ruhanga, emyanya ya Cross hamwe n'ebindi",
-    footer: "Okushaba kw'abakaturiki, okwombekirwe Uganda",
+    footer: "Okushaba kw'abakaturiki",
     accountNote: "Ebiro 7 bya busha, reero UGX 7,000 buri kwezi omu Uganda nainga USD 3.99 aheeru y'eihanga.",
     accountNoteFree: "Kora akawunti yaawe okutandika kushaba na Ave."
   },

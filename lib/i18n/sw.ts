@@ -30,7 +30,7 @@ export default {
     rosaryDescription: "Fumbo la leo, na sifa kwa kila moja",
     devotionsTitle: "Novenas na tasbihi",
     devotionsDescription: "Rehema ya Kimungu, Vituo vya Msalaba na zaidi",
-    footer: "Mshirika wa sala ya Kikatoliki, uliotengenezwa kwa ajili ya Uganda",
+    footer: "Mshirika wa sala ya Kikatoliki",
     accountNote: "Siku 7 za bure, kisha UGX 7,000 kwa mwezi nchini Uganda au dola za Marekani 3.99 ng'ambo.",
     accountNoteFree: "Unda akaunti yako ili uanze kusali na Ave."
   },

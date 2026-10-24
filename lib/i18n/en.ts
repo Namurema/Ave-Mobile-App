@@ -28,7 +28,7 @@ export default {
     rosaryDescription: "Today's mysteries, with a virtue for each",
     devotionsTitle: "Novenas & chaplets",
     devotionsDescription: "Divine Mercy, Stations of the Cross and more",
-    footer: "A Catholic prayer companion, built for Uganda",
+    footer: "A Catholic prayer companion",
     accountNote: "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
     accountNoteFree: "Create your account to start praying with Ave.",
   },

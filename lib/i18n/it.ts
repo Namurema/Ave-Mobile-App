@@ -30,7 +30,7 @@ export default {
     rosaryDescription: "I misteri di oggi, con una virtù per ciascuno",
     devotionsTitle: "Novene e coroncine",
     devotionsDescription: "La Divina Misericordia, la Via Crucis e altro ancora",
-    footer: "Una guida alla preghiera cattolica, realizzata per l’Uganda",
+    footer: "Una guida alla preghiera cattolica",
     accountNote: "7 giorni gratuiti, poi 7.000 UGX al mese in Uganda o 3,99 USD all’estero.",
     accountNoteFree: "Crei il Suo account per iniziare a pregare con Ave."
   },

@@ -30,7 +30,7 @@ export default {
     rosaryDescription: "Ebyama by'olunaku, nga buli kimu kirina obulungi bwakyo",
     devotionsTitle: "Novenas ne chaplet",
     devotionsDescription: "Ekisa kya Katonda, Stations of the Cross n'ebirala",
-    footer: "Omukwano gw'okusaba ogwa Katulika, oguzimbiddwa Uganda",
+    footer: "Omukwano gw'okusaba ogwa Katulika",
     accountNote: "Ennaku 7 ez'obwereere, olwo UGX 7,000 buli mwezi mu Uganda oba USD 3.99 ebweru wa Uganda.",
     accountNoteFree: "Tondawo akawunti yo okutandika okusaba ne Ave."
   },
