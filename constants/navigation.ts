@@ -11,5 +11,4 @@ export const AUTH_ROUTES = {
   signIn: "/auth/sign-in",
   signUp: "/auth/sign-up",
   forgot: "/auth/forgot-password",
-  confirmEmail: "/auth/sign-up",
 } as const;

@@ -6,6 +6,7 @@ import { useAuthStore } from "../store/authStore";
 import { useAccessStore } from "../store/accessStore";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
+import { PAYMENTS_ENABLED } from "../constants/features";
 
 // Pages that stay open when the free trial has ended without a plan: choosing
 // and paying for a plan, account settings, help and the legal pages
@@ -19,7 +20,7 @@ export function AccessGate() {
   const pathname = usePathname();
   const session = useAuthStore((state) => state.session);
   const access = useAccessStore((state) => state.access);
-  const locked = !!session && !!access && !access.hasAccess && !isOpen(pathname);
+  const locked = PAYMENTS_ENABLED && !!session && !!access && !access.hasAccess && !isOpen(pathname);
 
   useEffect(() => {
     if (locked) router.replace("/subscribe");
@@ -36,7 +37,7 @@ export function TrialNotice() {
   const router = useRouter();
   const { t } = useTranslation();
   const access = useAccessStore((state) => state.access);
-  if (!access || access.granted) return null;
+  if (!PAYMENTS_ENABLED || !access || access.granted) return null;
   const paid = !!access.paidUntil && access.paidUntil > new Date();
   const ends = paid ? access.paidUntil : access.trialEndsAt;
   if (!ends) return null;

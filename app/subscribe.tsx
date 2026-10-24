@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Redirect } from "expo-router";
+import { PAYMENTS_ENABLED } from "../constants/features";
 import { View, Text, Pressable, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/authStore";
@@ -15,8 +17,13 @@ import { FormError } from "../components/auth/forms";
 import { images } from "../constants/images";
 import { cn } from "../lib/utils";
 
-// Choose a plan and pay with PesaPal (mobile money or card)
+// Choose a plan and pay with PesaPal (mobile money or card). While payments
+// are off (constants/features.ts) this page leads home.
 export default function SubscribeScreen() {
+  return PAYMENTS_ENABLED ? <Plans /> : <Redirect href="/(tabs)/home" />;
+}
+
+function Plans() {
   const { t } = useTranslation();
   const language = useLanguageStore((state) => state.language);
   const session = useAuthStore((state) => state.session);

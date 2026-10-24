@@ -12,7 +12,7 @@ import { useAccessStore } from "../../store/accessStore";
 import { formatDayMonth } from "../../lib/i18n/helpers";
 import { currentStreak, splitLogId } from "../../lib/progress";
 import { useLanguageStore } from "../../store/LanguageStore";
-import { LOGIN_ENABLED } from "../../constants/features";
+import { LOGIN_ENABLED, PAYMENTS_ENABLED } from "../../constants/features";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { Page, PageHeader, Section, ListCard } from "../../components/ui/page";
@@ -20,6 +20,8 @@ import { Dialog } from "../../components/ui/dialog";
 import { FormError } from "../../components/auth/forms";
 import { deleteAccount } from "../../lib/supabase/account";
 import { languageInfo } from "../../constants/languages";
+import { DonateCard } from "../../components/Popups";
+import { DONATIONS_ENABLED } from "../../constants/donate";
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -148,7 +150,7 @@ export default function ProfileScreen() {
       )}
 
       {/* Only once the server has answered (payments may not be set up yet) */}
-      {isSignedIn && access && (
+      {PAYMENTS_ENABLED && isSignedIn && access && (
         <Section title={t("billing.subscription")}>
           <Card className="p-4 gap-3">
             <Text className="text-sm leading-5 text-card-foreground">
@@ -170,6 +172,12 @@ export default function ProfileScreen() {
       {Platform.OS === "web" && (
         <Section title={t("settings.app")}>
           <InstallCard dismissible={false} />
+        </Section>
+      )}
+
+      {DONATIONS_ENABLED && (
+        <Section title={t("donate.settingsTitle")}>
+          <DonateCard />
         </Section>
       )}
 

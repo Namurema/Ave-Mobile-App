@@ -605,12 +605,12 @@
       "text": "Teekawo obuyinza bwo"
     },
     "auth.sendResetLink": {
-      "en": "Send reset link",
-      "text": "Sindika akakwate k'okuddamu"
+      "en": "Send code",
+      "text": "Sindika koodi"
     },
     "auth.resetDescription": {
-      "en": "Enter your email and we will send you a link to set a new password.",
-      "text": "Yingiza email yo era tujja kukusindikira akakwate okuteekawo ekisumuluzo ekipya."
+      "en": "Enter your email and we will send you a code to set a new password.",
+      "text": "Yingiza email yo era tujja kukusindikira ennamba okukuyamba okuteekawo ekisumuluzo ekipya."
     },
     "auth.resetSent": {
       "en": "If an account exists for that email, a reset link is on its way. Check your inbox.",
@@ -673,8 +673,8 @@
       "text": "Email oba akasumuluzo kakyamu."
     },
     "auth.errors.emailNotConfirmed": {
-      "en": "Confirm your email first. Check your inbox for the link.",
-      "text": "Okakasizza email yo okusooka. Kebera mu inbox yo olabe linki."
+      "en": "Confirm your email first. Check your inbox for the code.",
+      "text": "Sooka okakase email yo. Kebera mu inbox yo olabe koodi."
     },
     "auth.errors.weakPassword": {
       "en": "Choose a stronger password: at least 8 characters, with at least one letter and one number.",
@@ -917,8 +917,8 @@
       "text": "Ekyasembayo okukolebwa"
     },
     "auth.agreeStart": {
-      "en": "By creating an account you agree to the",
-      "text": "Bw'okola akawunti okkiriza ku"
+      "en": "I agree to the",
+      "text": "Nzikiriza ku"
     },
     "legal.termsHint": {
       "en": "The rules for using Ave",
@@ -1691,6 +1691,166 @@
     "billing.granted": {
       "en": "You have free access to Ave from the Ave team.",
       "text": "Olina obuyinza okufuna Ave okuva mu ttiimu ya Ave."
+    },
+    "auth.signUpDescriptionFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Kola akawunti yo okutandika okusaba ne Ave."
+    },
+    "splash.accountNoteFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Tondawo akawunti yo okutandika okusaba ne Ave."
+    },
+    "auth.agreeRequired": {
+      "en": "Please tick the box to agree before creating your account.",
+      "text": "Bambi tteeka akabonero mu kasanduuko okukkiriza nga tonatandika akawunti yo."
+    },
+    "auth.hidePassword": {
+      "en": "Hide password",
+      "text": "Kweka akasumuluzo"
+    },
+    "auth.code": {
+      "en": "Code from the email",
+      "text": "Koodi okuva mu email"
+    },
+    "auth.codeSentSignUp": {
+      "en": "Enter the code we emailed to",
+      "text": "Yingiza ennamba gye twakutumira ku email"
+    },
+    "auth.codeInvalid": {
+      "en": "Enter the code from the email (6 digits).",
+      "text": "Teekamu ennamba okuva mu bubaka bwa email (ennamba mukaaga)."
+    },
+    "auth.codeResent": {
+      "en": "A new code is on its way.",
+      "text": "Koodi empya eri mu kugenda."
+    },
+    "auth.showPassword": {
+      "en": "Show password",
+      "text": "Laga akasumuluzo"
+    },
+    "auth.resendCode": {
+      "en": "Send a new code",
+      "text": "Sindika ennamba empya"
+    },
+    "auth.agreeLabel": {
+      "en": "I agree to the Terms & Conditions and the Privacy Policy",
+      "text": "Nzikiriza ebikwata ku mateeka n'obukwakulizo era n'okukuuma ebyama byange"
+    },
+    "auth.changeEmail": {
+      "en": "Use a different email",
+      "text": "Kozesa email ey'enjawulo"
+    },
+    "auth.verify": {
+      "en": "Continue",
+      "text": "Genda mu maaso"
+    },
+    "auth.codeSentReset": {
+      "en": "If an account exists, we emailed a code to",
+      "text": "Singa akawunti eba eriwo, twasindika koodi ku"
+    },
+    "install.popupTitle": {
+      "en": "Add Ave to your phone",
+      "text": "Gatta Ave ku ssimu yo"
+    },
+    "auth.errors.invalidCode": {
+      "en": "That code is wrong or has expired. Check the latest email or send a new code.",
+      "text": "Koodi eyo nkyamu oba eweddeko. Kebera email esembayo oba ssa koodi empya."
+    },
+    "install.iosStep1": {
+      "en": "Tap the Share button at the bottom of Safari (in Chrome, at the top)",
+      "text": "Kwata akabuto ka Share wansi mu Safari (mu Chrome, ku ntikko)"
+    },
+    "install.popupDescription": {
+      "en": "Open Ave from your home screen like an app, with a tap, even without internet.",
+      "text": "Okuggulawo Ave okuva ku sikuliini y'ekka y'omuntu ng'okozesa app, nga wekutteko n'obutaba na yintaneeti."
+    },
+    "install.iosStep3": {
+      "en": "Tap “Add”. Ave is now on your home screen.",
+      "text": "Kuba ku \"Add\". Kati Ave ali ku sikuliini yo ey'awaka."
+    },
+    "install.iosStep2": {
+      "en": "Scroll down and tap “Add to Home Screen”",
+      "text": "Ssindika wansi era okube “Okwongerako ku Screen y’awaka”"
+    },
+    "install.androidStep1": {
+      "en": "Tap the menu button (three dots) at the top of Chrome",
+      "text": "Kuba ku buton ya menu (obuton obusatu) waggulu mu Chrome"
+    },
+    "install.androidStep2": {
+      "en": "Tap “Install app” or “Add to Home screen”",
+      "text": "Koona ku \"Ssaako app\" oba \"Gatta ku kisenge ky'awaka\""
+    },
+    "install.iosNote": {
+      "en": "Reminders on iPhone only work when Ave is opened from the home screen.",
+      "text": "Okujjukizibwa ku iPhone kukola nga Ave eyingiddwamu okuva ku sikuliini y'awaka."
+    },
+    "install.gotIt": {
+      "en": "Got it",
+      "text": "Nkitegedde"
+    },
+    "donate.title": {
+      "en": "Help keep Ave running",
+      "text": "Yamba okukuuma Ave nga egenda mu maaso"
+    },
+    "donate.settingsTitle": {
+      "en": "Support Ave",
+      "text": "Obuyambi obw'okuddamu"
+    },
+    "donate.codeLabel": {
+      "en": "Airtel Money merchant code",
+      "text": "Koodi ya Airtel Money ey'okukolera bizineesi"
+    },
+    "donate.text": {
+      "en": "Ave is made by a small team. Your gift, of any amount, helps pay for the servers, translations and new prayers, so Ave can keep serving people in prayer.",
+      "text": "Ave ekolebwa ttiimu entono. Ekirabo kyo, eky'omuwendo gwonna, kiyamba okusasula ku byuma ebikola, okuvvuunula n'okusaba okupya, nga kino kisobozesa Ave okweyongera okuweereza abantu mu kusaba."
+    },
+    "donate.copy": {
+      "en": "Copy code",
+      "text": "Koppa ennamba"
+    },
+    "donate.copied": {
+      "en": "Copied",
+      "text": "Koppiddwa"
+    },
+    "donate.step1": {
+      "en": "Dial *185# on your Airtel line",
+      "text": "Kuba *185# ku layini yo eya Airtel"
+    },
+    "donate.step3": {
+      "en": "Enter the merchant code",
+      "text": "Yingiza ennamba ya musuubuzi"
+    },
+    "donate.step2": {
+      "en": "Choose “Payments”, then “Merchant payments”",
+      "text": "Londa \"Okusasula\", olwo \"okusasula kw'omusuubuzi\""
+    },
+    "donate.step4": {
+      "en": "Enter the amount you would like to give",
+      "text": "Yingiza omuwendo gw'oyagala okuwa"
+    },
+    "donate.done": {
+      "en": "Thank you",
+      "text": "Webale nnyo"
+    },
+    "donate.later": {
+      "en": "Maybe later",
+      "text": "Oboolyawo oluvannyuma"
+    },
+    "donate.step5": {
+      "en": "Check the name, then enter your PIN to confirm",
+      "text": "Kebera erinnya, olwo oyingize PIN yo okukakasa"
+    },
+    "donate.laterTitle": {
+      "en": "No problem",
+      "text": "Tewali buzibu"
+    },
+    "donate.laterText": {
+      "en": "You can give any time from Settings, under “Support Ave”. Thank you for praying with us.",
+      "text": "Osobola okuwaayo ekiseera kyonna okuva mu Settings, wansi wa \"Support Ave\". Webale nnyo okusaba naffe."
+    },
+    "install.androidStep3": {
+      "en": "Tap “Install”. Ave is now on your home screen.",
+      "text": "Kuba ku \"Install\". Kati Ave eri ku sikuliini yo ey'awaka."
     }
   },
   "rny": {
@@ -2299,16 +2459,16 @@
       "text": "Okayebwa akasumuruzo?"
     },
     "auth.sendResetLink": {
-      "en": "Send reset link",
-      "text": "Oheereze akakwate k'okugaruka"
+      "en": "Send code",
+      "text": "Oheereze kode"
     },
     "auth.newPasswordTitle": {
       "en": "Set a new password",
       "text": "Teekaho akasumuruzo akasya"
     },
     "auth.resetDescription": {
-      "en": "Enter your email and we will send you a link to set a new password.",
-      "text": "Taahamu e-mayiro yaawe kandi nitwija kukwohereza akakwate k'okutaho akasumuruzo akasya."
+      "en": "Enter your email and we will send you a code to set a new password.",
+      "text": "Taahamu e-mayiro yaawe kandi nitwija kukwohereza akakodyo k'okutaho enamba ensya."
     },
     "auth.resetSent": {
       "en": "If an account exists for that email, a reset link is on its way. Check your inbox.",
@@ -2367,8 +2527,8 @@
       "text": "Taahya omukono gwawe"
     },
     "auth.errors.emailNotConfirmed": {
-      "en": "Confirm your email first. Check your inbox for the link.",
-      "text": "Banza ohamye e-mayiro yaawe. Kyebera omu inbox yaawe okureeba akakwate."
+      "en": "Confirm your email first. Check your inbox for the code.",
+      "text": "Banza okakase e-mayiro yaawe. Reeba omu inbox yaawe okureeba koodi."
     },
     "auth.errors.alreadyRegistered": {
       "en": "An account with this email already exists. Sign in instead.",
@@ -2619,8 +2779,8 @@
       "text": "Orupapura oru nirushangwa omuri Rungyereza rwonka."
     },
     "auth.agreeStart": {
-      "en": "By creating an account you agree to the",
-      "text": "Waakora akawunti, noikiriza ebiragiro bya"
+      "en": "I agree to the",
+      "text": "Ninyikiriza aha"
     },
     "auth.agreeAnd": {
       "en": "and the",
@@ -3385,6 +3545,166 @@
     "billing.granted": {
       "en": "You have free access to Ave from the Ave team.",
       "text": "Oine obugabe bw'okuhika ahari Ave kuruga aha tiimu ya Ave."
+    },
+    "auth.signUpDescriptionFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Kora akawunti yaawe kutandika kushaba na Ave."
+    },
+    "splash.accountNoteFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Kora akawunti yaawe okutandika kushaba na Ave."
+    },
+    "auth.agreeRequired": {
+      "en": "Please tick the box to agree before creating your account.",
+      "text": "Nyabura we yorobya akabokisi kwikiriza otakakozire akaunti yaawe."
+    },
+    "auth.agreeLabel": {
+      "en": "I agree to the Terms & Conditions and the Privacy Policy",
+      "text": "Ninyikiriza ebiragiro n'ebirikukuratirwa hamwe n'ebirikukwata aha by'obuntu"
+    },
+    "auth.showPassword": {
+      "en": "Show password",
+      "text": "Yoreka akasumuruzo"
+    },
+    "auth.hidePassword": {
+      "en": "Hide password",
+      "text": "Kushereka akasumuruzo"
+    },
+    "auth.code": {
+      "en": "Code from the email",
+      "text": "Koodi kuruga omu baruha"
+    },
+    "auth.codeInvalid": {
+      "en": "Enter the code from the email (6 digits).",
+      "text": "Taahamu enamba kuruga omu baruha y'obutumwa (enamba 6)."
+    },
+    "auth.codeSentSignUp": {
+      "en": "Enter the code we emailed to",
+      "text": "Taahamu enamba ei twakohereza omu"
+    },
+    "auth.codeResent": {
+      "en": "A new code is on its way.",
+      "text": "Ekiragiro kisya kiri omu muhanda."
+    },
+    "auth.verify": {
+      "en": "Continue",
+      "text": "Gumizamu"
+    },
+    "auth.resendCode": {
+      "en": "Send a new code",
+      "text": "Oheereze kode ensya"
+    },
+    "auth.codeSentReset": {
+      "en": "If an account exists, we emailed a code to",
+      "text": "Ku haraabe hariho akawunti, tukasindikira koodi aha"
+    },
+    "auth.changeEmail": {
+      "en": "Use a different email",
+      "text": "Kozesa e-mayiro etari emwe"
+    },
+    "install.popupTitle": {
+      "en": "Add Ave to your phone",
+      "text": "Oyongyeremu Ave aha simu yaawe"
+    },
+    "auth.errors.invalidCode": {
+      "en": "That code is wrong or has expired. Check the latest email or send a new code.",
+      "text": "Koodi egyo terahikire nainga ehweireho. Kyebera e-mayiro erikukirayo obwahati nainga oheereze koodi ensya."
+    },
+    "install.iosStep1": {
+      "en": "Tap the Share button at the bottom of Safari (in Chrome, at the top)",
+      "text": "Kwata akabuto k'okugabana ahansi ya Safari (omu Chrome, ahaiguru)"
+    },
+    "install.popupDescription": {
+      "en": "Open Ave from your home screen like an app, with a tap, even without internet.",
+      "text": "Okwiguraho Ave kuruga aha sikuriini y'omuka yaawe nk'akapuro, orikukwataho, nobu waakuba otaine intaneeti."
+    },
+    "install.iosStep2": {
+      "en": "Scroll down and tap “Add to Home Screen”",
+      "text": "Gyenda ahansi kandi okwate “Okwongyeraho aha sikuriini y’omuka”"
+    },
+    "install.iosStep3": {
+      "en": "Tap “Add”. Ave is now on your home screen.",
+      "text": "Kwata “Okwongyeraho”. Ave hati eri aha sikuriini yaawe ey'omuka."
+    },
+    "install.iosNote": {
+      "en": "Reminders on iPhone only work when Ave is opened from the home screen.",
+      "text": "Okwijutsya aha iPhone nikukora ku Ave yaaba eyigwire kuruga omu sikuriini y'omuka."
+    },
+    "install.androidStep1": {
+      "en": "Tap the menu button (three dots) at the top of Chrome",
+      "text": "Kwata akabuto ka menu (obubonero bushatu) ahaiguru ya Chrome"
+    },
+    "install.androidStep2": {
+      "en": "Tap “Install app” or “Add to Home screen”",
+      "text": "Kwata ahari “Okutaho app” nainga “Okwongyerayo aha sikuriini y’omuka”"
+    },
+    "install.gotIt": {
+      "en": "Got it",
+      "text": "Nkagiteekateeka"
+    },
+    "donate.title": {
+      "en": "Help keep Ave running",
+      "text": "Hwera kuguma Ave neetambura"
+    },
+    "install.androidStep3": {
+      "en": "Tap “Install”. Ave is now on your home screen.",
+      "text": "Kanda aha “Okutaho”. Ave hati eri aha sikuriini yaawe ey'omuka."
+    },
+    "donate.settingsTitle": {
+      "en": "Support Ave",
+      "text": "Obuhwezi bwa Ave"
+    },
+    "donate.copy": {
+      "en": "Copy code",
+      "text": "Kopa kode"
+    },
+    "donate.codeLabel": {
+      "en": "Airtel Money merchant code",
+      "text": "Koodi y'okuguza eya Airtel Money"
+    },
+    "donate.text": {
+      "en": "Ave is made by a small team. Your gift, of any amount, helps pay for the servers, translations and new prayers, so Ave can keep serving people in prayer.",
+      "text": "Ave neekorwa tiimu nkye. Ekiconco kyawe, ky'omuhendo gwona, nikihwera omu kushashurira abakora aha intaneeti, okuvunuura hamwe n'okushaba okusya, kugira ngu Ave egumizemu neehereza abantu omu kushaba."
+    },
+    "donate.copied": {
+      "en": "Copied",
+      "text": "Kopire"
+    },
+    "donate.step1": {
+      "en": "Dial *185# on your Airtel line",
+      "text": "Kubira *185# aha layini yaawe eya Airtel"
+    },
+    "donate.step2": {
+      "en": "Choose “Payments”, then “Merchant payments”",
+      "text": "Toorana \"Okushashura\", reero \"Okushashura kw'omushuubuzi\""
+    },
+    "donate.step3": {
+      "en": "Enter the merchant code",
+      "text": "Taahamu enamba y'omushuubuzi"
+    },
+    "donate.step4": {
+      "en": "Enter the amount you would like to give",
+      "text": "Taahamu omuhendo ogu orikwenda kuheereza"
+    },
+    "donate.done": {
+      "en": "Thank you",
+      "text": "Webare"
+    },
+    "donate.later": {
+      "en": "Maybe later",
+      "text": "Obundi bwanyima"
+    },
+    "donate.step5": {
+      "en": "Check the name, then enter your PIN to confirm",
+      "text": "Kyebera eiziina, reero otaamu PIN yaawe okuhamya"
+    },
+    "donate.laterTitle": {
+      "en": "No problem",
+      "text": "Tihariho kizibu"
+    },
+    "donate.laterText": {
+      "en": "You can give any time from Settings, under “Support Ave”. Thank you for praying with us.",
+      "text": "Noobaasa kuheereza obwire bwona kuruga omu by'okutereeza, ahansi ya \"Support Ave\". Yebare okushaba hamwe naitwe."
     }
   },
   "content-lg": {
@@ -5945,16 +6265,16 @@
       "text": "Tengeneza upya nywila yako"
     },
     "auth.resetDescription": {
-      "en": "Enter your email and we will send you a link to set a new password.",
-      "text": "Ingiza barua pepe yako na tutakutumia kiungo cha kuweka nenosiri jipya."
+      "en": "Enter your email and we will send you a code to set a new password.",
+      "text": "Ingiza barua pepe yako na tutakutumia nambari ya kuweka nywila mpya."
     },
     "auth.newPasswordTitle": {
       "en": "Set a new password",
       "text": "Weka nywila mpya"
     },
     "auth.sendResetLink": {
-      "en": "Send reset link",
-      "text": "Tuma kiungo cha kurejesha tena"
+      "en": "Send code",
+      "text": "Tuma nambari"
     },
     "auth.newPasswordDescription": {
       "en": "Choose a new password for your account.",
@@ -6033,8 +6353,8 @@
       "text": "Angalau nambari moja"
     },
     "auth.agreeStart": {
-      "en": "By creating an account you agree to the",
-      "text": "Kwa kuunda akaunti unakubali kwa"
+      "en": "I agree to the",
+      "text": "Ninakubali kwa masharti ya"
     },
     "auth.agreeAnd": {
       "en": "and the",
@@ -6045,8 +6365,8 @@
       "text": "Barua pepe au nenosiri lisilo sahihi."
     },
     "auth.errors.emailNotConfirmed": {
-      "en": "Confirm your email first. Check your inbox for the link.",
-      "text": "Thibitisha barua pepe yako kwanza. Angalia sanduku lako la barua kwa kiungo."
+      "en": "Confirm your email first. Check your inbox for the code.",
+      "text": "Thibitisha barua pepe yako kwanza. Kagua sanduku lako la barua kwa nambari hiyo."
     },
     "auth.errors.alreadyRegistered": {
       "en": "An account with this email already exists. Sign in instead.",
@@ -6211,6 +6531,166 @@
     "billing.granted": {
       "en": "You have free access to Ave from the Ave team.",
       "text": "Una ufikiaji wa bure kwa Ave kutoka kwa timu ya Ave."
+    },
+    "auth.signUpDescriptionFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Jiunge na akaunti yako ili uanze kusali na Ave."
+    },
+    "splash.accountNoteFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Unda akaunti yako ili uanze kusali na Ave."
+    },
+    "auth.showPassword": {
+      "en": "Show password",
+      "text": "Onyesha nenosiri"
+    },
+    "auth.agreeLabel": {
+      "en": "I agree to the Terms & Conditions and the Privacy Policy",
+      "text": "Ninakubali Masharti & Hali na Sera ya Faragha"
+    },
+    "auth.agreeRequired": {
+      "en": "Please tick the box to agree before creating your account.",
+      "text": "Tafadhali weka alama kwenye kisanduku ili kukubali kabla ya kuunda akaunti yako."
+    },
+    "auth.hidePassword": {
+      "en": "Hide password",
+      "text": "Ficha nywila"
+    },
+    "auth.code": {
+      "en": "Code from the email",
+      "text": "Kodi kutoka kwa barua pepe"
+    },
+    "auth.codeInvalid": {
+      "en": "Enter the code from the email (6 digits).",
+      "text": "Ingiza nambari kutoka kwa barua pepe (nambari 6)."
+    },
+    "auth.codeSentSignUp": {
+      "en": "Enter the code we emailed to",
+      "text": "Ingiza nambari tuliyotuma kwa barua pepe kwa"
+    },
+    "auth.codeSentReset": {
+      "en": "If an account exists, we emailed a code to",
+      "text": "Ikiwa akaunti ipo, tulituma nambari kwa barua pepe kwa"
+    },
+    "auth.codeResent": {
+      "en": "A new code is on its way.",
+      "text": "Kodi mpya iko njiani."
+    },
+    "auth.verify": {
+      "en": "Continue",
+      "text": "Endelea"
+    },
+    "auth.resendCode": {
+      "en": "Send a new code",
+      "text": "Tuma nambari mpya"
+    },
+    "auth.changeEmail": {
+      "en": "Use a different email",
+      "text": "Tumia barua pepe tofauti"
+    },
+    "install.popupTitle": {
+      "en": "Add Ave to your phone",
+      "text": "Ongeza Ave kwenye simu yako"
+    },
+    "auth.errors.invalidCode": {
+      "en": "That code is wrong or has expired. Check the latest email or send a new code.",
+      "text": "Kodi hiyo ni mbaya au imeisha muda wake. Angalia barua pepe ya hivi karibuni au tuma kodi mpya."
+    },
+    "install.popupDescription": {
+      "en": "Open Ave from your home screen like an app, with a tap, even without internet.",
+      "text": "Fungua Ave kutoka kwenye skrini ya nyumbani yako kama programu, kwa kubonyeza, hata bila intaneti."
+    },
+    "install.iosStep1": {
+      "en": "Tap the Share button at the bottom of Safari (in Chrome, at the top)",
+      "text": "Gusa kitufe cha Kushiriki chini ya Safari (kwenye Chrome, juu)"
+    },
+    "install.iosStep2": {
+      "en": "Scroll down and tap “Add to Home Screen”",
+      "text": "Punguza chini na bonyeza “Ongeza kwenye Ukurasa wa Nyumbani”"
+    },
+    "install.iosStep3": {
+      "en": "Tap “Add”. Ave is now on your home screen.",
+      "text": "Bonyeza \"Ongeza\". Ave sasa iko kwenye skrini yako ya nyumbani."
+    },
+    "install.iosNote": {
+      "en": "Reminders on iPhone only work when Ave is opened from the home screen.",
+      "text": "Vikumbusho kwenye iPhone vinaweza kufanya kazi tu wakati Ave imefunguliwa kutoka kwenye skrini ya nyumbani."
+    },
+    "install.androidStep1": {
+      "en": "Tap the menu button (three dots) at the top of Chrome",
+      "text": "Bonyeza kitufe cha menyu (madoa matatu) juu ya Chrome"
+    },
+    "install.androidStep2": {
+      "en": "Tap “Install app” or “Add to Home screen”",
+      "text": "Bofya \"Sakinisha programu\" au \"Ongeza kwenye skrini ya nyumbani\""
+    },
+    "install.androidStep3": {
+      "en": "Tap “Install”. Ave is now on your home screen.",
+      "text": "Bofya \"Install\". Ave sasa iko kwenye skrini yako ya nyumbani."
+    },
+    "install.gotIt": {
+      "en": "Got it",
+      "text": "Nimeelewa"
+    },
+    "donate.title": {
+      "en": "Help keep Ave running",
+      "text": "Saidia kuendeleza Ave ikifanya kazi"
+    },
+    "donate.settingsTitle": {
+      "en": "Support Ave",
+      "text": "Msaada wa Ave"
+    },
+    "donate.codeLabel": {
+      "en": "Airtel Money merchant code",
+      "text": "Nambari ya muuzaji wa Airtel Money"
+    },
+    "donate.copy": {
+      "en": "Copy code",
+      "text": "Nakili nambari"
+    },
+    "donate.copied": {
+      "en": "Copied",
+      "text": "Imenakiliwa"
+    },
+    "donate.text": {
+      "en": "Ave is made by a small team. Your gift, of any amount, helps pay for the servers, translations and new prayers, so Ave can keep serving people in prayer.",
+      "text": "Ave imeundwa na timu ndogo. Zawadi yako, ya kiasi chochote, husaidia kulipia seva, tafsiri na sala mpya, ili Ave iweze kuendelea kuwatumikia watu katika sala."
+    },
+    "donate.step1": {
+      "en": "Dial *185# on your Airtel line",
+      "text": "Piga *185# kwenye laini yako ya Airtel"
+    },
+    "donate.step3": {
+      "en": "Enter the merchant code",
+      "text": "Ingiza nambari ya mfanyabiashara"
+    },
+    "donate.step2": {
+      "en": "Choose “Payments”, then “Merchant payments”",
+      "text": "Chagua \"Malipo\", kisha \"Malipo ya wafanyabiashara\""
+    },
+    "donate.step4": {
+      "en": "Enter the amount you would like to give",
+      "text": "Ingiza kiasi ambacho ungependa kutoa"
+    },
+    "donate.step5": {
+      "en": "Check the name, then enter your PIN to confirm",
+      "text": "Angalia jina, kisha ingiza PIN yako ili kuthibitisha"
+    },
+    "donate.done": {
+      "en": "Thank you",
+      "text": "Asante"
+    },
+    "donate.laterTitle": {
+      "en": "No problem",
+      "text": "Hakuna shida"
+    },
+    "donate.later": {
+      "en": "Maybe later",
+      "text": "Labda baadaye"
+    },
+    "donate.laterText": {
+      "en": "You can give any time from Settings, under “Support Ave”. Thank you for praying with us.",
+      "text": "Unaweza kutoa wakati wowote kutoka kwa Mipangilio, chini ya \"Msaada Ave\". Asante kwa kusali pamoja nasi."
     }
   },
   "content-sw": {
@@ -8279,12 +8759,12 @@
       "text": "Restablezca su contraseña"
     },
     "auth.sendResetLink": {
-      "en": "Send reset link",
-      "text": "Enviar enlace de restablecimiento"
+      "en": "Send code",
+      "text": "Enviar código"
     },
     "auth.resetDescription": {
-      "en": "Enter your email and we will send you a link to set a new password.",
-      "text": "Introduzca su dirección de correo electrónico y le enviaremos un enlace para que establezca una nueva contraseña."
+      "en": "Enter your email and we will send you a code to set a new password.",
+      "text": "Introduzca su dirección de correo electrónico y le enviaremos un código para establecer una nueva contraseña."
     },
     "auth.newPasswordTitle": {
       "en": "Set a new password",
@@ -8363,8 +8843,8 @@
       "text": "Al menos 8 caracteres"
     },
     "auth.agreeStart": {
-      "en": "By creating an account you agree to the",
-      "text": "Al crear una cuenta, acepta las"
+      "en": "I agree to the",
+      "text": "Acepto las"
     },
     "auth.agreeAnd": {
       "en": "and the",
@@ -8383,8 +8863,8 @@
       "text": "El correo electrónico o la contraseña son incorrectos."
     },
     "auth.errors.emailNotConfirmed": {
-      "en": "Confirm your email first. Check your inbox for the link.",
-      "text": "Confirme primero su correo electrónico. Compruebe si ha recibido el enlace en su bandeja de entrada."
+      "en": "Confirm your email first. Check your inbox for the code.",
+      "text": "Confirme primero su correo electrónico. Compruebe si ha recibido el código en su bandeja de entrada."
     },
     "auth.errors.alreadyRegistered": {
       "en": "An account with this email already exists. Sign in instead.",
@@ -8465,6 +8945,166 @@
     "billing.granted": {
       "en": "You have free access to Ave from the Ave team.",
       "text": "El equipo de Ave le ofrece acceso gratuito a Ave."
+    },
+    "auth.signUpDescriptionFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Cree su cuenta para empezar a rezar con Ave."
+    },
+    "splash.accountNoteFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Cree su cuenta para empezar a rezar con Ave."
+    },
+    "auth.showPassword": {
+      "en": "Show password",
+      "text": "Mostrar contraseña"
+    },
+    "auth.agreeLabel": {
+      "en": "I agree to the Terms & Conditions and the Privacy Policy",
+      "text": "Acepto los Términos y condiciones y la Política de privacidad"
+    },
+    "auth.agreeRequired": {
+      "en": "Please tick the box to agree before creating your account.",
+      "text": "Marque la casilla para aceptar las condiciones antes de crear su cuenta."
+    },
+    "auth.code": {
+      "en": "Code from the email",
+      "text": "Código del correo electrónico"
+    },
+    "auth.hidePassword": {
+      "en": "Hide password",
+      "text": "Ocultar contraseña"
+    },
+    "auth.codeSentSignUp": {
+      "en": "Enter the code we emailed to",
+      "text": "Introduzca el código que le hemos enviado por correo electrónico a"
+    },
+    "auth.codeInvalid": {
+      "en": "Enter the code from the email (6 digits).",
+      "text": "Introduzca el código que figura en el correo electrónico (6 dígitos)."
+    },
+    "auth.resendCode": {
+      "en": "Send a new code",
+      "text": "Enviar un nuevo código"
+    },
+    "auth.verify": {
+      "en": "Continue",
+      "text": "Continuar"
+    },
+    "auth.codeResent": {
+      "en": "A new code is on its way.",
+      "text": "Se está preparando un nuevo código."
+    },
+    "auth.codeSentReset": {
+      "en": "If an account exists, we emailed a code to",
+      "text": "Si existe una cuenta, le hemos enviado un código por correo electrónico a"
+    },
+    "auth.changeEmail": {
+      "en": "Use a different email",
+      "text": "Utilice una dirección de correo electrónico diferente"
+    },
+    "install.popupTitle": {
+      "en": "Add Ave to your phone",
+      "text": "Añada «Ave» a su teléfono"
+    },
+    "auth.errors.invalidCode": {
+      "en": "That code is wrong or has expired. Check the latest email or send a new code.",
+      "text": "Ese código es incorrecto o ha caducado. Compruebe el último correo electrónico o solicite un nuevo código."
+    },
+    "install.popupDescription": {
+      "en": "Open Ave from your home screen like an app, with a tap, even without internet.",
+      "text": "Abra Ave desde su pantalla de inicio como si fuera una aplicación, con un simple toque, incluso sin conexión a Internet."
+    },
+    "install.iosStep1": {
+      "en": "Tap the Share button at the bottom of Safari (in Chrome, at the top)",
+      "text": "Pulse el botón «Compartir» situado en la parte inferior de Safari (en Chrome, en la parte superior)"
+    },
+    "install.iosStep2": {
+      "en": "Scroll down and tap “Add to Home Screen”",
+      "text": "Desplácese hacia abajo y pulse «Añadir a la pantalla de inicio»"
+    },
+    "install.iosStep3": {
+      "en": "Tap “Add”. Ave is now on your home screen.",
+      "text": "Pulse «Añadir». Ahora Ave aparece en su pantalla de inicio."
+    },
+    "install.iosNote": {
+      "en": "Reminders on iPhone only work when Ave is opened from the home screen.",
+      "text": "Los recordatorios en el iPhone solo funcionan cuando se abre Ave desde la pantalla de inicio."
+    },
+    "install.androidStep2": {
+      "en": "Tap “Install app” or “Add to Home screen”",
+      "text": "Pulse «Instalar aplicación» o «Añadir a la pantalla de inicio»"
+    },
+    "install.androidStep1": {
+      "en": "Tap the menu button (three dots) at the top of Chrome",
+      "text": "Pulse el botón de menú (los tres puntos) situado en la parte superior de Chrome"
+    },
+    "install.androidStep3": {
+      "en": "Tap “Install”. Ave is now on your home screen.",
+      "text": "Pulse «Instalar». Ave ya aparece en su pantalla de inicio."
+    },
+    "install.gotIt": {
+      "en": "Got it",
+      "text": "Entendido"
+    },
+    "donate.title": {
+      "en": "Help keep Ave running",
+      "text": "Ayúdenos a mantener Ave en funcionamiento"
+    },
+    "donate.settingsTitle": {
+      "en": "Support Ave",
+      "text": "Avenida Support"
+    },
+    "donate.text": {
+      "en": "Ave is made by a small team. Your gift, of any amount, helps pay for the servers, translations and new prayers, so Ave can keep serving people in prayer.",
+      "text": "Ave está gestionada por un pequeño equipo. Su donación, sea cual sea su importe, contribuye a sufragar los gastos de los servidores, las traducciones y las nuevas oraciones, para que Ave pueda seguir prestando su servicio a las personas a través de la oración."
+    },
+    "donate.copy": {
+      "en": "Copy code",
+      "text": "Copiar código"
+    },
+    "donate.codeLabel": {
+      "en": "Airtel Money merchant code",
+      "text": "Código de comerciante de Airtel Money"
+    },
+    "donate.step3": {
+      "en": "Enter the merchant code",
+      "text": "Introduzca el código de comerciante"
+    },
+    "donate.step1": {
+      "en": "Dial *185# on your Airtel line",
+      "text": "Marque *185# en su línea de Airtel"
+    },
+    "donate.step2": {
+      "en": "Choose “Payments”, then “Merchant payments”",
+      "text": "Seleccione «Pagos» y, a continuación, «Pagos de comerciantes»"
+    },
+    "donate.done": {
+      "en": "Thank you",
+      "text": "Gracias"
+    },
+    "donate.step4": {
+      "en": "Enter the amount you would like to give",
+      "text": "Introduzca la cantidad que desee donar"
+    },
+    "donate.step5": {
+      "en": "Check the name, then enter your PIN to confirm",
+      "text": "Compruebe el nombre y, a continuación, introduzca su PIN para confirmar"
+    },
+    "donate.copied": {
+      "en": "Copied",
+      "text": "Copiado"
+    },
+    "donate.later": {
+      "en": "Maybe later",
+      "text": "Quizás más tarde"
+    },
+    "donate.laterTitle": {
+      "en": "No problem",
+      "text": "No hay problema"
+    },
+    "donate.laterText": {
+      "en": "You can give any time from Settings, under “Support Ave”. Thank you for praying with us.",
+      "text": "Puede realizar su donación en cualquier momento desde «Configuración», en la sección «Support Ave». Gracias por rezar con nosotros."
     }
   },
   "it": {
@@ -9953,8 +10593,8 @@
       "text": "Ha già un account?"
     },
     "auth.resetDescription": {
-      "en": "Enter your email and we will send you a link to set a new password.",
-      "text": "Inserisca il Suo indirizzo e-mail e Le invieremo un link per impostare una nuova password."
+      "en": "Enter your email and we will send you a code to set a new password.",
+      "text": "Inserisca il Suo indirizzo e-mail e Le invieremo un codice per impostare una nuova password."
     },
     "auth.newPassword": {
       "en": "New password",
@@ -9977,8 +10617,8 @@
       "text": "Scelga una nuova password per il Suo account."
     },
     "auth.sendResetLink": {
-      "en": "Send reset link",
-      "text": "Inviare il link di reimpostazione"
+      "en": "Send code",
+      "text": "Inviare il codice"
     },
     "auth.savePassword": {
       "en": "Save password",
@@ -10045,16 +10685,16 @@
       "text": "Confermi la nuova password"
     },
     "auth.agreeStart": {
-      "en": "By creating an account you agree to the",
-      "text": "Creando un account, Lei accetta i"
+      "en": "I agree to the",
+      "text": "Accetto le"
     },
     "auth.agreeAnd": {
       "en": "and the",
       "text": "e il"
     },
     "auth.errors.emailNotConfirmed": {
-      "en": "Confirm your email first. Check your inbox for the link.",
-      "text": "Confermi innanzitutto il Suo indirizzo e-mail. Controlli la Sua casella di posta in arrivo per trovare il link."
+      "en": "Confirm your email first. Check your inbox for the code.",
+      "text": "Confermi innanzitutto il Suo indirizzo e-mail. Controlli la Sua casella di posta in arrivo per trovare il codice."
     },
     "auth.errors.alreadyRegistered": {
       "en": "An account with this email already exists. Sign in instead.",
@@ -10147,6 +10787,166 @@
     "billing.granted": {
       "en": "You have free access to Ave from the Ave team.",
       "text": "Il team di Ave Le offre l'accesso gratuito ad Ave."
+    },
+    "auth.signUpDescriptionFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Crei il Suo account per iniziare a pregare con Ave."
+    },
+    "splash.accountNoteFree": {
+      "en": "Create your account to start praying with Ave.",
+      "text": "Crei il Suo account per iniziare a pregare con Ave."
+    },
+    "auth.agreeLabel": {
+      "en": "I agree to the Terms & Conditions and the Privacy Policy",
+      "text": "Accetto i Termini e le Condizioni e l'Informativa sulla privacy"
+    },
+    "auth.agreeRequired": {
+      "en": "Please tick the box to agree before creating your account.",
+      "text": "La preghiamo di spuntare la casella per esprimere il proprio consenso prima di creare il proprio account."
+    },
+    "auth.showPassword": {
+      "en": "Show password",
+      "text": "Mostra la password"
+    },
+    "auth.hidePassword": {
+      "en": "Hide password",
+      "text": "Nascondi la password"
+    },
+    "auth.code": {
+      "en": "Code from the email",
+      "text": "Codice tratto dall'e-mail"
+    },
+    "auth.codeInvalid": {
+      "en": "Enter the code from the email (6 digits).",
+      "text": "Inserisca il codice riportato nell'e-mail (6 cifre)."
+    },
+    "auth.codeSentSignUp": {
+      "en": "Enter the code we emailed to",
+      "text": "Inserisca il codice che Le abbiamo inviato via e-mail all'indirizzo"
+    },
+    "auth.codeSentReset": {
+      "en": "If an account exists, we emailed a code to",
+      "text": "Se esiste un account, Le abbiamo inviato un codice via e-mail all’indirizzo"
+    },
+    "auth.codeResent": {
+      "en": "A new code is on its way.",
+      "text": "È in arrivo un nuovo codice."
+    },
+    "auth.resendCode": {
+      "en": "Send a new code",
+      "text": "Inviare un nuovo codice"
+    },
+    "auth.verify": {
+      "en": "Continue",
+      "text": "Continua"
+    },
+    "auth.changeEmail": {
+      "en": "Use a different email",
+      "text": "Utilizzi un indirizzo e-mail diverso"
+    },
+    "install.popupTitle": {
+      "en": "Add Ave to your phone",
+      "text": "Aggiunga Ave al Suo telefono"
+    },
+    "auth.errors.invalidCode": {
+      "en": "That code is wrong or has expired. Check the latest email or send a new code.",
+      "text": "Quel codice è errato o è scaduto. Controlli l'ultima e-mail ricevuta oppure richieda un nuovo codice."
+    },
+    "install.popupDescription": {
+      "en": "Open Ave from your home screen like an app, with a tap, even without internet.",
+      "text": "Apra Ave dalla schermata iniziale come se fosse un'app, con un semplice tocco, anche senza connessione a Internet."
+    },
+    "install.iosStep2": {
+      "en": "Scroll down and tap “Add to Home Screen”",
+      "text": "Scorra verso il basso e tocchi “Aggiungi alla schermata Home”"
+    },
+    "install.iosStep1": {
+      "en": "Tap the Share button at the bottom of Safari (in Chrome, at the top)",
+      "text": "Tocchi il pulsante \"Condividi\" nella parte inferiore di Safari (in Chrome, nella parte superiore)"
+    },
+    "install.iosStep3": {
+      "en": "Tap “Add”. Ave is now on your home screen.",
+      "text": "Toccate “Aggiungi”. Ave è ora presente sulla vostra schermata iniziale."
+    },
+    "install.androidStep1": {
+      "en": "Tap the menu button (three dots) at the top of Chrome",
+      "text": "Tocchi il pulsante del menu (i tre puntini) nella parte superiore di Chrome"
+    },
+    "install.androidStep2": {
+      "en": "Tap “Install app” or “Add to Home screen”",
+      "text": "Toccate “Installa app” o “Aggiungi alla schermata Home”"
+    },
+    "install.androidStep3": {
+      "en": "Tap “Install”. Ave is now on your home screen.",
+      "text": "Toccate “Installa”. Ave è ora presente sulla vostra schermata iniziale."
+    },
+    "install.gotIt": {
+      "en": "Got it",
+      "text": "Ho capito"
+    },
+    "install.iosNote": {
+      "en": "Reminders on iPhone only work when Ave is opened from the home screen.",
+      "text": "I promemoria su iPhone funzionano solo quando si apre Ave dalla schermata iniziale."
+    },
+    "donate.title": {
+      "en": "Help keep Ave running",
+      "text": "Aiutateci a mantenere attivo Ave"
+    },
+    "donate.settingsTitle": {
+      "en": "Support Ave",
+      "text": "Support Ave"
+    },
+    "donate.text": {
+      "en": "Ave is made by a small team. Your gift, of any amount, helps pay for the servers, translations and new prayers, so Ave can keep serving people in prayer.",
+      "text": "Ave è realizzato da un piccolo team. La vostra donazione, di qualsiasi importo, contribuisce a coprire i costi dei server, delle traduzioni e delle nuove preghiere, affinché Ave possa continuare ad accompagnare le persone nella preghiera."
+    },
+    "donate.copy": {
+      "en": "Copy code",
+      "text": "Copiare il codice"
+    },
+    "donate.codeLabel": {
+      "en": "Airtel Money merchant code",
+      "text": "Codice commerciante Airtel Money"
+    },
+    "donate.copied": {
+      "en": "Copied",
+      "text": "Copiato"
+    },
+    "donate.step1": {
+      "en": "Dial *185# on your Airtel line",
+      "text": "Componi *185# dalla Sua linea Airtel"
+    },
+    "donate.step2": {
+      "en": "Choose “Payments”, then “Merchant payments”",
+      "text": "Selezioni “Pagamenti”, quindi “Pagamenti dei commercianti”"
+    },
+    "donate.step3": {
+      "en": "Enter the merchant code",
+      "text": "Inserisca il codice commerciante"
+    },
+    "donate.step4": {
+      "en": "Enter the amount you would like to give",
+      "text": "Inserisca l'importo che desidera donare"
+    },
+    "donate.done": {
+      "en": "Thank you",
+      "text": "Grazie"
+    },
+    "donate.step5": {
+      "en": "Check the name, then enter your PIN to confirm",
+      "text": "Verifichi il nome, quindi inserisca il PIN per confermare"
+    },
+    "donate.later": {
+      "en": "Maybe later",
+      "text": "Magari più tardi"
+    },
+    "donate.laterTitle": {
+      "en": "No problem",
+      "text": "Nessun problema"
+    },
+    "donate.laterText": {
+      "en": "You can give any time from Settings, under “Support Ave”. Thank you for praying with us.",
+      "text": "Potete effettuare una donazione in qualsiasi momento dalla sezione “Impostazioni”, alla voce “Support Ave”. Grazie per pregare insieme a noi."
     }
   },
   "content-es": {

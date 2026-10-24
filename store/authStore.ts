@@ -32,8 +32,12 @@ export const useAuthStore = create<AuthState>((set) => ({
     if (!subscribed) {
       subscribed = true;
       supabase.auth.onAuthStateChange((event, session) => {
-        set({ session, user: session?.user ?? null, loading: false });
-        if (event === 'PASSWORD_RECOVERY') set({ recoveringPassword: true });
+        set({
+          session,
+          user: session?.user ?? null,
+          loading: false,
+          ...(event === 'PASSWORD_RECOVERY' ? { recoveringPassword: true } : {}),
+        });
         // Supabase calls must not run inside this callback, so defer the check
         setTimeout(() => refreshAdmin(!!session), 0);
       });

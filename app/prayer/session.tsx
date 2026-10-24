@@ -108,6 +108,9 @@ export default function RosarySessionScreen() {
 
   const stepMystery = step.kind === "mystery" ? mysteries[step.decade - 1] : null;
   const stepPrayer = step.kind === "prayer" ? prayers[SORT_ORDER[step.prayer]] : null;
+  // Play reads the whole Rosary: at the end of each prayer it moves to the
+  // next bead or prayer and carries on (see the effect below)
+  const continuing = useRef(false);
   const speech = useReadAloud(
     stepMystery
       ? [
@@ -116,7 +119,14 @@ export default function RosarySessionScreen() {
         ]
       : stepPrayer
         ? [{ heading: stepPrayer.title, body: stepPrayer.body }]
-        : []
+        : [],
+    {
+      onEnd: () => {
+        if (isLast && beads >= repeat) return;
+        continuing.current = true;
+        next();
+      },
+    }
   );
   const firstStep = useRef(true);
   useEffect(() => {
@@ -124,7 +134,11 @@ export default function RosarySessionScreen() {
       firstStep.current = false;
       return;
     }
-    speech.stop();
+    // Moved on while listening (by itself or with Next/Previous): read the new
+    // prayer. Otherwise make sure nothing from the last one is still reading.
+    if (continuing.current || speech.state === "playing") speech.play();
+    else speech.stop();
+    continuing.current = false;
   }, [stepIndex, beads]);
 
   const goTo = (index: number, fromEnd = false) => {

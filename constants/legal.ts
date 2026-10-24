@@ -13,11 +13,11 @@ export const privacyPolicy = [
   },
   {
     heading: "Information we keep",
-    body: "You need an account to use Ave. We keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nYour subscription: the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
+    body: "You need an account to use Ave. We keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan (once plans are introduced): the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
   },
   {
-    heading: "Payments",
-    body: "Payments are handled by PesaPal, a licensed payment provider. Your card number, mobile money PIN and other payment details are entered on PesaPal's page and are never seen or stored by Ave. PesaPal tells us whether a payment succeeded, and the reference, amount and method. PesaPal's own privacy policy applies to the information you give them.",
+    heading: "Payments and donations",
+    body: "Ave is free for now. When paid plans are introduced, payments will be handled by PesaPal, a licensed payment provider. Your card number, mobile money PIN and other payment details are entered on PesaPal's page and are never seen or stored by Ave. PesaPal tells us whether a payment succeeded, and the reference, amount and method.\n\nDonations are made through Airtel Money, outside the app. Airtel shows us what it shows any merchant, such as the amount, the phone number and the name on the Airtel account, and we use it only for our own records and to thank you. Airtel's and PesaPal's own privacy policies apply to the information you give them.",
   },
   {
     heading: "Reminders",
@@ -37,7 +37,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Information on your device",
-    body: "Ave saves your settings, your progress and favourites, and copies of prayers you have opened, on your device. This lets the app work offline. You can remove it at any time by clearing the site data in your browser or uninstalling the app.",
+    body: "Ave saves your settings, your progress and favourites, copies of prayers you have opened, and on which days you opened Ave (so it asks for a donation or shows tips at the right time, at most once a month), on your device. This lets the app work offline. You can remove it at any time by clearing the site data in your browser or uninstalling the app.",
   },
   {
     heading: "How long we keep it",
@@ -68,31 +68,27 @@ export const privacyPolicy = [
 export const termsAndConditions = [
   {
     heading: "Agreement",
-    body: "By using Ave you agree to these terms. If you do not agree, please do not use the app.",
+    body: "When you create an account you tick a box to agree to these terms and the Privacy Policy. By using Ave you agree to them. If you do not agree, please do not use the app.",
   },
   {
     heading: "The service",
     body: "Ave offers Catholic prayers, the Rosary, novenas and chaplets for personal devotion, in several languages, with read aloud, progress tracking, routines and reminders. We may add, change or remove features and content at any time.",
   },
   {
-    heading: "Free trial and plans",
-    body: "Every new account gets 7 days of free access. After the trial, a plan is needed to keep using Ave:\nIn Uganda: UGX 7,000 a month or UGX 70,000 a year.\nOutside Uganda: USD 3.99 a month or USD 29.99 a year.\nPrices include any taxes we are required to charge. Your plan starts when the payment is confirmed and lasts for the month or year you paid for. If you pay again before it ends, the new period is added to the end of the current one.",
+    heading: "Price",
+    body: "Ave is free to use for now. We plan to introduce paid plans later. Before we do, we will tell you in the app, and every account will get a 7-day free trial. Nothing is ever charged unless you choose a plan and pay for it yourself.",
   },
   {
-    heading: "No automatic renewal",
-    body: "Plans do not renew automatically and we never charge you without your action. When a plan ends, you can choose to pay again to continue. We will show you in the app when your plan is about to end.",
-  },
-  {
-    heading: "Payments",
-    body: "Payments are made through PesaPal by card or mobile money. PesaPal's terms also apply to your payment. Your bank or mobile money provider may charge its own fees.",
+    heading: "Paid plans, when introduced",
+    body: "The planned prices are UGX 7,000 a month or UGX 70,000 a year in Uganda, and USD 3.99 a month or USD 29.99 a year elsewhere, including any taxes we must charge. A plan lasts for the month or year you paid for and does not renew automatically: when it ends, you choose whether to pay again. Paying before a plan ends adds the new period to the end of it. Payments are made through PesaPal by card or mobile money, and PesaPal's terms also apply. A price change never affects a plan you have already paid for.",
   },
   {
     heading: "Refunds",
     body: `If you were charged by mistake, charged twice, or paid but did not get access, email ${LEGAL_CONTACT_EMAIL} within 14 days with your payment reference and we will put it right or refund you. Otherwise, because you can try Ave free for 7 days first, payments for a plan that has started are not refunded. Nothing in these terms limits rights you have under the law.`,
   },
   {
-    heading: "Changes to prices",
-    body: "We may change prices in the future. A new price applies only to payments made after the change, never to a plan you have already paid for.",
+    heading: "Donations",
+    body: `You can choose to support Ave with a donation through Airtel Money. Donations are voluntary gifts to help keep Ave running. They do not buy any feature, access or service, and Ave works the same whether or not you give. Donations are not refunded, except one made by mistake (for example the wrong amount): email ${LEGAL_CONTACT_EMAIL} within 14 days with the transaction details.`,
   },
   {
     heading: "Prayer texts and translations",
@@ -112,11 +108,11 @@ export const termsAndConditions = [
   },
   {
     heading: "No warranty",
-    body: "Ave is provided as it is, without guarantees that it will always be available or free of errors. To the extent the law allows, we are not responsible for any loss arising from using the app, and our total responsibility is limited to what you paid us in the last 12 months.",
+    body: "Ave is provided as it is, without guarantees that it will always be available or free of errors. To the extent the law allows, we are not responsible for any loss arising from using the app, and our total responsibility is limited to what you paid us for a plan in the last 12 months.",
   },
   {
     heading: "Ending your use",
-    body: "You can stop using Ave at any time and delete your account in Settings. Deleting your account ends any plan you have, and the remaining time is not refunded. We may suspend accounts that break these terms.",
+    body: "You can stop using Ave at any time and delete your account in Settings. Deleting your account ends any paid plan you have, and the remaining time is not refunded. We may suspend accounts that break these terms.",
   },
   {
     heading: "Law",

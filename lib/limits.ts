@@ -29,6 +29,8 @@ export const RATE_LIMITS = {
   signUp: { max: 3, windowMs: 10 * MINUTE },
   // Matches Supabase's 60 seconds between emails to the same person
   passwordReset: { max: 1, windowMs: MINUTE },
+  // Wrong codes from the email
+  verifyCode: { max: 5, windowMs: 5 * MINUTE },
   feedback: { max: 3, windowMs: 10 * MINUTE },
 } satisfies Record<string, Rule>;
 

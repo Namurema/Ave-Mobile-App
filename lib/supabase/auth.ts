@@ -15,6 +15,7 @@ function errorKey(error: { message?: string; code?: string } | null): string | n
   if (error.code === 'user_already_exists' || message.includes('already registered')) return 'auth.errors.alreadyRegistered';
   if (error.code === 'weak_password' || message.includes('password should')) return 'auth.errors.weakPassword';
   if (message.includes('rate limit') || error.code === 'over_email_send_rate_limit') return 'auth.errors.tooManyAttempts';
+  if (error.code === 'otp_expired' || error.code === 'otp_disabled' || message.includes('token')) return 'auth.errors.invalidCode';
   if (message.includes('fetch') || message.includes('network')) return 'auth.errors.network';
   return 'auth.errors.generic';
 }
@@ -48,6 +49,23 @@ export async function signUpWithEmail(name: string, email: string, password: str
 export async function sendPasswordReset(email: string) {
   const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
     redirectTo: redirectTo('/auth/reset-password'),
+  });
+  return { errorKey: errorKey(error) };
+}
+
+// The code in a confirmation or reset email, typed into the app. On iPhone a
+// link in an email always opens Safari, never the installed app, so the code
+// lets people finish where they started. Signs the person in.
+export async function verifyEmailCode(email: string, code: string, type: 'signup' | 'recovery') {
+  const { error } = await supabase.auth.verifyOtp({ email: email.trim(), token: code.trim(), type });
+  return { errorKey: errorKey(error) };
+}
+
+export async function resendConfirmation(email: string) {
+  const { error } = await supabase.auth.resend({
+    type: 'signup',
+    email: email.trim(),
+    options: { emailRedirectTo: redirectTo('/home') },
   });
   return { errorKey: errorKey(error) };
 }

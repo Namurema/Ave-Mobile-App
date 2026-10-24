@@ -109,7 +109,9 @@ let speaker: { current: () => void } | null = null;
 
 export type ReadAloudState = "idle" | "playing" | "paused";
 
-export function useReadAloud(sections: SpeechSection[]) {
+// `onEnd` runs when the whole text has been read (not on pause or stop), e.g.
+// to go on to the next prayer of the Rosary
+export function useReadAloud(sections: SpeechSection[], { onEnd }: { onEnd?: () => void } = {}) {
   const language = useLanguageStore((store) => store.language);
   const speechLang = languageInfo(language).speech;
   useVoicesReady();
@@ -121,6 +123,8 @@ export function useReadAloud(sections: SpeechSection[]) {
   const positionRef = useRef(0);
   // Latest stop function, so other readers can stop this one
   const stopRef = useRef<() => void>(() => {});
+  const onEndRef = useRef(onEnd);
+  onEndRef.current = onEnd;
 
   const halt = (next: ReadAloudState) => {
     run.current++;
@@ -144,6 +148,7 @@ export function useReadAloud(sections: SpeechSection[]) {
         positionRef.current = 0;
         setPosition(0);
         setState("idle");
+        onEndRef.current?.();
         return;
       }
       positionRef.current = index;

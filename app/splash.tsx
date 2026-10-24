@@ -9,6 +9,7 @@ import { useAuthStore } from "../store/authStore";
 import { useAuthDialog } from "../store/authDialogStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { languageInfo } from "../constants/languages";
+import { PAYMENTS_ENABLED } from "../constants/features";
 
 export default function SplashScreen() {
   const router = useRouter();
@@ -68,7 +69,7 @@ export default function SplashScreen() {
           <Button size="lg" variant="outline" className="mt-3 w-full" onPress={signIn}>
             {t("auth.signIn")}
           </Button>
-          <Text className="mt-3 text-center text-sm text-muted-foreground">{t("splash.accountNote")}</Text>
+          <Text className="mt-3 text-center text-sm text-muted-foreground">{t(PAYMENTS_ENABLED ? "splash.accountNote" : "splash.accountNoteFree")}</Text>
 
           {/* Choose the language before signing up */}
           <View className="mt-4 flex-row flex-wrap items-center justify-center gap-1">

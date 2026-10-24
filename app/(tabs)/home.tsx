@@ -20,6 +20,7 @@ import { images, dailyTiles } from "../../constants/images";
 import { MyPrayersCard } from "../../components/MyPrayersCard";
 import { NovenaSeasonCard } from "../../components/NovenaSeason";
 import { TrialNotice } from "../../components/AccessGate";
+import { HomePopups } from "../../components/Popups";
 import { languageInfo } from "../../constants/languages";
 
 // Rosary mysteries by weekday, Sunday first
@@ -214,6 +215,7 @@ export default function HomeScreen() {
             </Card>
 
             <TrialNotice />
+            <HomePopups />
 
             <NovenaSeasonCard />
 

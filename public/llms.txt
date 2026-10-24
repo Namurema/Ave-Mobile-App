@@ -4,8 +4,7 @@
 
 Key facts:
 - Website: https://aveprayers.com
-- Price: 7-day free trial, then UGX 7,000 a month or UGX 70,000 a year in Uganda, USD 3.99 a month or USD 29.99 a year elsewhere. No ads. Plans do not renew automatically.
-- Payment: mobile money or card, through PesaPal
+- Price: free for now, no ads. Paid plans are planned later (7-day free trial, then UGX 7,000 a month in Uganda or USD 3.99 elsewhere, no automatic renewal). Donations through Airtel Money are welcome.
 - Languages: English, Luganda, Runyankore, Swahili, Spanish, Italian
 - An account is needed; it saves favourite prayers, routines and prayer progress (day streaks, novena days) across devices
 - Contact: stelarlabs@gmail.com

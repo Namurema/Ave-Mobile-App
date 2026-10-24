@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 // The sign-in pop-up (components/auth/AuthDialog.tsx), opened from anywhere
-export type AuthView = 'signIn' | 'signUp' | 'forgot' | 'confirmEmail';
+export type AuthView = 'signIn' | 'signUp' | 'forgot';
 
 interface AuthDialogState {
   view: AuthView | null;

@@ -1,40 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../../store/authStore";
-import { AuthCard, AuthLink } from "../../components/AuthCard";
+import { AuthCard } from "../../components/AuthCard";
 import { SignUpForm } from "../../components/auth/forms";
 import { AUTH_ROUTES } from "../../constants/navigation";
+import { PAYMENTS_ENABLED } from "../../constants/features";
 
 export default function SignUpScreen() {
   const router = useRouter();
   const { t } = useTranslation();
   const session = useAuthStore((state) => state.session);
-  const [awaitingConfirmation, setAwaitingConfirmation] = useState(false);
 
-  // Signed in straight away (no email confirmation required)
+  // Signed in: straight away, or after entering the code from the email
   useEffect(() => {
     if (session) router.replace("/(tabs)/home");
   }, [session]);
 
-  if (awaitingConfirmation) {
-    return (
-      <AuthCard
-        title={t("auth.confirmEmailTitle")}
-        description={t("auth.confirmEmailDescription")}
-        footer={<AuthLink label={t("auth.backToSignIn")} href="/auth/sign-in" />}
-      >
-        {null}
-      </AuthCard>
-    );
-  }
-
   return (
-    <AuthCard title={t("auth.signUpTitle")} description={t("auth.signUpDescription")}>
-      <SignUpForm
-        onSwitch={(view) => router.replace(AUTH_ROUTES[view] as any)}
-        onNeedsConfirmation={() => setAwaitingConfirmation(true)}
-      />
+    <AuthCard title={t("auth.signUpTitle")} description={t(PAYMENTS_ENABLED ? "auth.signUpDescription" : "auth.signUpDescriptionFree")}>
+      <SignUpForm onSwitch={(view) => router.replace(AUTH_ROUTES[view] as any)} />
     </AuthCard>
   );
 }
