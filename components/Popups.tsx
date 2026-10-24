@@ -147,10 +147,10 @@ export function DonateSteps() {
         )}
       </View>
       <Step number={1} text={t("donate.step1")} />
-      <Step number={2} text={t("donate.step2")} />
-      <Step number={3} text={`${t("donate.step3")} ${DONATE.airtelCode}`} />
-      <Step number={4} text={t("donate.step4")} />
-      <Step number={5} text={DONATE.airtelName ? `${t("donate.step5")} (${DONATE.airtelName})` : t("donate.step5")} />
+      <Step number={2} text={`${t("donate.step2")} ${DONATE.airtelCode}`} />
+      <Step number={3} text={t("donate.step3")} />
+      <Step number={4} text={`${t("donate.step4")} “${DONATE.airtelName}”`} />
+      <Step number={5} text={t("donate.step5")} />
     </View>
   );
 }

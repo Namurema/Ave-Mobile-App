@@ -1813,20 +1813,20 @@
       "text": "Koppiddwa"
     },
     "donate.step1": {
-      "en": "Dial *185# on your Airtel line",
-      "text": "Kuba *185# ku layini yo eya Airtel"
+      "en": "Dial *185*9# on your Airtel line",
+      "text": "Kuba *185*9# ku layini yo eya Airtel"
     },
     "donate.step3": {
-      "en": "Enter the merchant code",
-      "text": "Yingiza ennamba ya musuubuzi"
-    },
-    "donate.step2": {
-      "en": "Choose “Payments”, then “Merchant payments”",
-      "text": "Londa \"Okusasula\", olwo \"okusasula kw'omusuubuzi\""
-    },
-    "donate.step4": {
       "en": "Enter the amount you would like to give",
       "text": "Yingiza omuwendo gw'oyagala okuwa"
+    },
+    "donate.step2": {
+      "en": "Enter the merchant code",
+      "text": "Yingiza ennamba y'omusuubuzi"
+    },
+    "donate.step4": {
+      "en": "Check that the name says",
+      "text": "Kakasa nti erinnya likyogera"
     },
     "donate.done": {
       "en": "Thank you",
@@ -1837,8 +1837,8 @@
       "text": "Oboolyawo oluvannyuma"
     },
     "donate.step5": {
-      "en": "Check the name, then enter your PIN to confirm",
-      "text": "Kebera erinnya, olwo oyingize PIN yo okukakasa"
+      "en": "Enter your Airtel Money PIN to confirm",
+      "text": "Yingiza PIN yo eya Airtel Money okukakasa"
     },
     "donate.laterTitle": {
       "en": "No problem",
@@ -3671,20 +3671,20 @@
       "text": "Kopire"
     },
     "donate.step1": {
-      "en": "Dial *185# on your Airtel line",
-      "text": "Kubira *185# aha layini yaawe eya Airtel"
+      "en": "Dial *185*9# on your Airtel line",
+      "text": "Kuba *185*9# aha layini yaawe eya Airtel"
     },
     "donate.step2": {
-      "en": "Choose “Payments”, then “Merchant payments”",
-      "text": "Toorana \"Okushashura\", reero \"Okushashura kw'omushuubuzi\""
+      "en": "Enter the merchant code",
+      "text": "Taahamu kode y'omushuubuzi"
     },
     "donate.step3": {
-      "en": "Enter the merchant code",
-      "text": "Taahamu enamba y'omushuubuzi"
+      "en": "Enter the amount you would like to give",
+      "text": "Taahamu omuhendo ogu orikwenda kuha"
     },
     "donate.step4": {
-      "en": "Enter the amount you would like to give",
-      "text": "Taahamu omuhendo ogu orikwenda kuheereza"
+      "en": "Check that the name says",
+      "text": "Kyebera ngu eiziina nirigamba"
     },
     "donate.done": {
       "en": "Thank you",
@@ -3695,8 +3695,8 @@
       "text": "Obundi bwanyima"
     },
     "donate.step5": {
-      "en": "Check the name, then enter your PIN to confirm",
-      "text": "Kyebera eiziina, reero otaamu PIN yaawe okuhamya"
+      "en": "Enter your Airtel Money PIN to confirm",
+      "text": "Taahamu PIN yaawe eya Airtel Money okuhakana"
     },
     "donate.laterTitle": {
       "en": "No problem",
@@ -6657,24 +6657,24 @@
       "text": "Ave imeundwa na timu ndogo. Zawadi yako, ya kiasi chochote, husaidia kulipia seva, tafsiri na sala mpya, ili Ave iweze kuendelea kuwatumikia watu katika sala."
     },
     "donate.step1": {
-      "en": "Dial *185# on your Airtel line",
-      "text": "Piga *185# kwenye laini yako ya Airtel"
+      "en": "Dial *185*9# on your Airtel line",
+      "text": "Piga *185*9# kwenye laini yako ya Airtel"
     },
     "donate.step3": {
-      "en": "Enter the merchant code",
-      "text": "Ingiza nambari ya mfanyabiashara"
-    },
-    "donate.step2": {
-      "en": "Choose “Payments”, then “Merchant payments”",
-      "text": "Chagua \"Malipo\", kisha \"Malipo ya wafanyabiashara\""
-    },
-    "donate.step4": {
       "en": "Enter the amount you would like to give",
       "text": "Ingiza kiasi ambacho ungependa kutoa"
     },
+    "donate.step2": {
+      "en": "Enter the merchant code",
+      "text": "Ingiza nambari ya muuzaji"
+    },
+    "donate.step4": {
+      "en": "Check that the name says",
+      "text": "Angalia kwamba jina linasema"
+    },
     "donate.step5": {
-      "en": "Check the name, then enter your PIN to confirm",
-      "text": "Angalia jina, kisha ingiza PIN yako ili kuthibitisha"
+      "en": "Enter your Airtel Money PIN to confirm",
+      "text": "Ingiza PIN yako ya Airtel Money ili kuthibitisha"
     },
     "donate.done": {
       "en": "Thank you",
@@ -9067,28 +9067,28 @@
       "text": "Código de comerciante de Airtel Money"
     },
     "donate.step3": {
-      "en": "Enter the merchant code",
-      "text": "Introduzca el código de comerciante"
+      "en": "Enter the amount you would like to give",
+      "text": "Introduzca la cantidad que desee donar"
     },
     "donate.step1": {
-      "en": "Dial *185# on your Airtel line",
-      "text": "Marque *185# en su línea de Airtel"
+      "en": "Dial *185*9# on your Airtel line",
+      "text": "Marque *185*9# en su línea de Airtel"
     },
     "donate.step2": {
-      "en": "Choose “Payments”, then “Merchant payments”",
-      "text": "Seleccione «Pagos» y, a continuación, «Pagos de comerciantes»"
+      "en": "Enter the merchant code",
+      "text": "Introduzca el código de comerciante"
     },
     "donate.done": {
       "en": "Thank you",
       "text": "Gracias"
     },
     "donate.step4": {
-      "en": "Enter the amount you would like to give",
-      "text": "Introduzca la cantidad que desee donar"
+      "en": "Check that the name says",
+      "text": "Compruebe que el nombre indique"
     },
     "donate.step5": {
-      "en": "Check the name, then enter your PIN to confirm",
-      "text": "Compruebe el nombre y, a continuación, introduzca su PIN para confirmar"
+      "en": "Enter your Airtel Money PIN to confirm",
+      "text": "Introduzca su PIN de Airtel Money para confirmar"
     },
     "donate.copied": {
       "en": "Copied",
@@ -10913,28 +10913,28 @@
       "text": "Copiato"
     },
     "donate.step1": {
-      "en": "Dial *185# on your Airtel line",
-      "text": "Componi *185# dalla Sua linea Airtel"
+      "en": "Dial *185*9# on your Airtel line",
+      "text": "Componi *185*9# dalla Sua linea Airtel"
     },
     "donate.step2": {
-      "en": "Choose “Payments”, then “Merchant payments”",
-      "text": "Selezioni “Pagamenti”, quindi “Pagamenti dei commercianti”"
-    },
-    "donate.step3": {
       "en": "Enter the merchant code",
       "text": "Inserisca il codice commerciante"
     },
-    "donate.step4": {
+    "donate.step3": {
       "en": "Enter the amount you would like to give",
       "text": "Inserisca l'importo che desidera donare"
+    },
+    "donate.step4": {
+      "en": "Check that the name says",
+      "text": "Verifichi che il nome indichi"
     },
     "donate.done": {
       "en": "Thank you",
       "text": "Grazie"
     },
     "donate.step5": {
-      "en": "Check the name, then enter your PIN to confirm",
-      "text": "Verifichi il nome, quindi inserisca il PIN per confermare"
+      "en": "Enter your Airtel Money PIN to confirm",
+      "text": "Inserisca il PIN di Airtel Money per confermare"
     },
     "donate.later": {
       "en": "Maybe later",
