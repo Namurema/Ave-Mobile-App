@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
 import Footer from "../../components/ui/Footer";
-import { TopNav } from "../../components/ui/AppNav";
+import { TopNav, SettingsButton } from "../../components/ui/AppNav";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { formatDate, greetingKeys } from "../../lib/i18n/helpers";
@@ -136,12 +136,15 @@ export default function HomeScreen() {
           {/* Left sidebar */}
           <View className="gap-4 lg:w-64">
             {/* Phones: greeting straight on the page, not in a card */}
-            <View className="lg:hidden gap-1">
-              <Text className="text-sm text-muted-foreground">{dateLabel}</Text>
-              <Text className="text-2xl font-bold tracking-tight text-foreground">
-                {name ? `${t(greeting.title)}, ${name}` : t(greeting.title)}
-              </Text>
-              <Text className="text-sm text-muted-foreground">{t(greeting.subtitle)}</Text>
+            <View className="lg:hidden flex-row items-start gap-3">
+              <View className="flex-1 gap-1">
+                <Text className="text-sm text-muted-foreground">{dateLabel}</Text>
+                <Text className="text-2xl font-bold tracking-tight text-foreground">
+                  {name ? `${t(greeting.title)}, ${name}` : t(greeting.title)}
+                </Text>
+                <Text className="text-sm text-muted-foreground">{t(greeting.subtitle)}</Text>
+              </View>
+              <SettingsButton />
             </View>
 
             <Card className="hidden lg:flex overflow-hidden">

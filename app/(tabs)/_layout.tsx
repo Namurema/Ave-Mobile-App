@@ -40,14 +40,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="foryou"
         options={{
-          title: "Profile",
+          title: "For You",
           tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 22 }}>👤</Text>
+            <Text style={{ color, fontSize: 22 }}>#</Text>
           ),
         }}
       />
+      {/* Settings: opened from the gear button, not a tab */}
+      <Tabs.Screen name="profile" options={{ title: "Settings", href: null }} />
     </Tabs>
   );
 }

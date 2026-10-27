@@ -21,6 +21,7 @@ import { FormError } from "../../components/auth/forms";
 import { deleteAccount } from "../../lib/supabase/account";
 import { languageInfo } from "../../constants/languages";
 import { DonateCard } from "../../components/Popups";
+import { isPrayerKey } from "../../lib/items";
 import { DONATIONS_ENABLED } from "../../constants/donate";
 
 export default function ProfileScreen() {
@@ -31,7 +32,7 @@ export default function ProfileScreen() {
   const [signingOut, setSigningOut] = useState(false);
   const openAuth = useAuthDialog((state) => state.open);
   const log = useUserDataStore((state) => state.log);
-  const favouriteCount = useUserDataStore((state) => state.favourites.length);
+  const favouriteCount = useUserDataStore((state) => state.favourites.filter(isPrayerKey).length);
   const routineCount = useRoutineStore((state) => state.entries.length);
   const access = useAccessStore((state) => state.access);
   const streak = currentStreak(new Set([...log].map((id) => splitLogId(id).day)));
@@ -64,7 +65,7 @@ export default function ProfileScreen() {
 
   return (
     <Page sidebar={false}>
-      <PageHeader title={t("settings.title")} description={t("settings.description")} />
+      <PageHeader back title={t("settings.title")} description={t("settings.description")} />
 
       <Section title={t("settings.activity")}>
         <ListCard

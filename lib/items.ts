@@ -28,6 +28,9 @@ const DAILY_TITLES: Record<string, string> = {
 export type ItemInfo = { title: string; route: string; kind: string };
 
 // `tc` translates prayer content (see lib/i18n/content.ts)
+// Favourite prayers only (For You cards are saved in the same list as "foryou:...")
+export const isPrayerKey = (key: string) => !key.startsWith("foryou:");
+
 export function describeItem(key: string, t: TFunction, tc: (text: string) => string): ItemInfo | null {
   const [kind, id] = key.split(":");
   switch (kind) {

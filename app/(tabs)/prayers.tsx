@@ -7,7 +7,7 @@ import { categoryText, formatDate } from "../../lib/i18n/helpers";
 import { useContent } from "../../lib/i18n/content";
 import { scripture } from "../../constants/content/scripture";
 import { useUserDataStore } from "../../store/userDataStore";
-import { describeItem } from "../../lib/items";
+import { describeItem, isPrayerKey } from "../../lib/items";
 import { Card } from "../../components/ui/card";
 import {
   Page,
@@ -24,7 +24,7 @@ export default function PrayersScreen() {
   const { t } = useTranslation();
   const { language } = useLanguageStore();
   const tc = useContent();
-  const favourites = useUserDataStore((state) => state.favourites);
+  const favourites = useUserDataStore((state) => state.favourites).filter(isPrayerKey);
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 

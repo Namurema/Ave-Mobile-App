@@ -5,7 +5,7 @@ import type { TFunction } from "i18next";
 import { useUserDataStore } from "../store/userDataStore";
 import { useRoutineStore } from "../store/routineStore";
 import { useContent } from "../lib/i18n/content";
-import { describeItem } from "../lib/items";
+import { describeItem, isPrayerKey } from "../lib/items";
 import { entriesForDay } from "../lib/routines";
 import { currentStreak, bestStreak, lastSevenDays, splitLogId, dayString, logId } from "../lib/progress";
 import type { PageTab } from "./ui/page";
@@ -45,7 +45,7 @@ export function MyPrayersCard() {
   const { t } = useTranslation();
   const tc = useContent();
   const log = useUserDataStore((state) => state.log);
-  const favourites = useUserDataStore((state) => state.favourites);
+  const favourites = useUserDataStore((state) => state.favourites).filter(isPrayerKey);
   const entries = useRoutineStore((state) => state.entries);
 
   const daysPrayed = new Set([...log].map((id) => splitLogId(id).day));

@@ -5,6 +5,7 @@ import { useLanguageStore } from "../../store/LanguageStore";
 import { cn } from "../../lib/utils";
 import { Card } from "./card";
 import { useUserDataStore } from "../../store/userDataStore";
+import { isPrayerKey } from "../../lib/items";
 import { availableNovenas, availableChaplets, otherPrayersCount } from "../../constants/content/available";
 import { languageInfo } from "../../constants/languages";
 
@@ -15,7 +16,7 @@ export function BrowseSidebar() {
   const pathname = usePathname();
   const { t } = useTranslation();
   const { language } = useLanguageStore();
-  const favouriteCount = useUserDataStore((state) => state.favourites.length);
+  const favouriteCount = useUserDataStore((state) => state.favourites.filter(isPrayerKey).length);
 
   // `match` prefixes also highlight the section's detail pages
   const links = [

@@ -1,4 +1,5 @@
 import { View, Text, Pressable } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter, usePathname } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
@@ -8,7 +9,7 @@ export const NAV_ITEMS = [
   { labelKey: "nav.home", segment: "home", route: "/(tabs)/home" },
   { labelKey: "nav.prayers", segment: "prayers", route: "/(tabs)/prayers" },
   { labelKey: "nav.rosary", segment: "rosary", route: "/(tabs)/rosary" },
-  { labelKey: "nav.settings", segment: "profile", route: "/(tabs)/profile" },
+  { labelKey: "nav.foryou", segment: "foryou", route: "/(tabs)/foryou" },
 ];
 
 export function useActiveSegment() {
@@ -57,8 +58,33 @@ export function TopNav() {
               </Pressable>
             );
           })}
+          <Pressable
+            onPress={() => router.push("/(tabs)/profile")}
+            aria-label={t("nav.settings")}
+            className={cn(
+              "ml-1 h-9 w-9 rounded-md items-center justify-center web:transition-colors",
+              isActive("profile") ? "bg-muted" : "web:hover:bg-muted"
+            )}
+          >
+            <Ionicons name="settings-outline" size={20} color="#52525B" />
+          </Pressable>
         </View>
       </View>
     </View>
+  );
+}
+
+// Settings for phones (the bottom bar has no Settings tab): a gear button
+export function SettingsButton({ light }: { light?: boolean }) {
+  const router = useRouter();
+  const { t } = useTranslation();
+  return (
+    <Pressable
+      onPress={() => router.push("/(tabs)/profile")}
+      aria-label={t("nav.settings")}
+      className={cn("md:hidden h-10 w-10 items-center justify-center rounded-full", light ? "bg-black/30" : "bg-background border border-border")}
+    >
+      <Ionicons name="settings-outline" size={20} color={light ? "#fff" : "#3F3F46"} />
+    </Pressable>
   );
 }

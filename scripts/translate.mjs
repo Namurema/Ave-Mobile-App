@@ -365,7 +365,13 @@ async function main() {
   console.log(`Review file: ${path.relative(ROOT, REVIEW_FILE)}`);
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+// Shared with scripts/build-foryou.mjs
+export { LANGUAGES, CACHE_FILE, CONCURRENCY, readToken, canTranslate, translate, saveCache, mapPool };
+
+// Run directly (not when imported)
+if (process.argv[1] && fileURLToPath(import.meta.url).toLowerCase() === path.resolve(process.argv[1]).toLowerCase()) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}

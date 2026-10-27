@@ -70,7 +70,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin === self.location.origin) {
     if (url.pathname.startsWith("/_expo/static/")) {
       event.respondWith(cacheFirst(request, STATIC_CACHE));
-    } else if (url.pathname.startsWith("/icons/") || url.pathname === "/manifest.webmanifest") {
+    } else if (url.pathname.startsWith("/icons/") || url.pathname.startsWith("/foryou/") || url.pathname === "/manifest.webmanifest") {
       event.respondWith(networkFirst(request, SHELL_CACHE));
     }
     return;
