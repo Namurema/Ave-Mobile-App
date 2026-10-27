@@ -41,3 +41,9 @@ export const mysteryDetailsMap: Record<number, typeof sorrowfulMysteries> = {
   5: sorrowfulMysteries,
   6: joyfulMysteries,
 };
+
+// Opens and closes the guided Rosary
+export const signOfTheCross = {
+  title: "The Sign of the Cross",
+  body: "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
+};

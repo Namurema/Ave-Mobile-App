@@ -13,7 +13,7 @@ import { cn } from "../../lib/utils";
 import { rosaryTabs } from "../../constants/navigation";
 import { useLanguageStore } from "../../store/LanguageStore";
 import { formatWeekday } from "../../lib/i18n/helpers";
-import { mysteryDetailsMap } from "../../constants/content/rosarySession";
+import { mysteryDetailsMap, signOfTheCross } from "../../constants/content/rosarySession";
 import { useContent } from "../../lib/i18n/content";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
 import { images } from "../../constants/images";
@@ -35,14 +35,16 @@ const SORT_ORDER: Record<PrayerId, number> = {
 
 type Step =
   | { kind: "prayer"; prayer: PrayerId; section: "opening" | "decade" | "closing"; decade?: number; repeat?: number }
-  | { kind: "mystery"; decade: number };
+  | { kind: "mystery"; decade: number }
+  | { kind: "sign"; section: "opening" | "closing" };
 
 // The whole Rosary in order:
-//   opening: Apostles' Creed, Our Father, 3 Hail Marys, Glory Be
+//   opening: Sign of the Cross, Apostles' Creed, Our Father, 3 Hail Marys, Glory Be
 //   each of the 5 decades: the mystery, Our Father, 10 Hail Marys, Glory Be,
 //     Fatima Prayer
-//   closing: Hail Holy Queen
+//   closing: Hail Holy Queen, Sign of the Cross
 const STEPS: Step[] = [
+  { kind: "sign", section: "opening" },
   { kind: "prayer", prayer: "creed", section: "opening" },
   { kind: "prayer", prayer: "ourFather", section: "opening" },
   { kind: "prayer", prayer: "hailMary", section: "opening", repeat: 3 },
@@ -55,6 +57,7 @@ const STEPS: Step[] = [
     { kind: "prayer", prayer: "fatima", section: "decade", decade },
   ]),
   { kind: "prayer", prayer: "hailHolyQueen", section: "closing" },
+  { kind: "sign", section: "closing" },
 ];
 
 // One bead per Hail Mary; tap a bead to jump to it
@@ -107,7 +110,12 @@ export default function RosarySessionScreen() {
   const isLast = stepIndex === STEPS.length - 1;
 
   const stepMystery = step.kind === "mystery" ? mysteries[step.decade - 1] : null;
-  const stepPrayer = step.kind === "prayer" ? prayers[SORT_ORDER[step.prayer]] : null;
+  const stepPrayer =
+    step.kind === "prayer"
+      ? prayers[SORT_ORDER[step.prayer]]
+      : step.kind === "sign"
+        ? { title: tc(signOfTheCross.title), body: tc(signOfTheCross.body) }
+        : null;
   // Play reads the whole Rosary: at the end of each prayer it moves to the
   // next bead or prayer and carries on (see the effect below)
   const continuing = useRef(false);
@@ -245,7 +253,7 @@ export default function RosarySessionScreen() {
             />
           </View>
         </Card>
-      ) : prayer && step.kind === "prayer" ? (
+      ) : prayer && step.kind !== "mystery" ? (
         <Card className="p-6 md:p-8 gap-4">
           <View className="flex-row items-baseline justify-between gap-3">
             <Text role="heading" className="flex-1 text-xl font-bold tracking-tight text-card-foreground">
