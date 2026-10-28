@@ -466,7 +466,7 @@ export default {
     showPassword: "Laga akasumuluzo",
     hidePassword: "Kweka akasumuluzo",
     code: "Koodi okuva mu email",
-    codeInvalid: "Teekamu ennamba okuva mu bubaka bwa email (ennamba mukaaga).",
+    codeInvalid: "Teekamu ennamba okuva mu bubaka bwa email.",
     codeSentSignUp: "Yingiza ennamba gye twakutumira ku email",
     codeSentReset: "Singa akawunti eba eriwo, twasindika koodi ku",
     codeResent: "Koodi empya eri mu kugenda.",

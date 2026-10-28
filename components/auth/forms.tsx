@@ -150,7 +150,7 @@ export function EmailCodeForm({
         autoComplete="one-time-code"
         textContentType="oneTimeCode"
         maxLength={10}
-        placeholder="123456"
+        placeholder="12345678"
         className="text-center text-xl tracking-[0.3em]"
         returnKeyType="go"
         onSubmitEditing={submit}

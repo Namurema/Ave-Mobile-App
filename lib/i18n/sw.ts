@@ -466,7 +466,7 @@ export default {
     showPassword: "Onyesha nenosiri",
     hidePassword: "Ficha nywila",
     code: "Kodi kutoka kwa barua pepe",
-    codeInvalid: "Ingiza nambari kutoka kwa barua pepe (nambari 6).",
+    codeInvalid: "Ingiza nambari kutoka kwa barua pepe.",
     codeSentSignUp: "Ingiza nambari tuliyotuma kwa barua pepe kwa",
     codeSentReset: "Ikiwa akaunti ipo, tulituma nambari kwa barua pepe kwa",
     codeResent: "Kodi mpya iko njiani.",

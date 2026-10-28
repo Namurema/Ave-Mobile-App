@@ -466,7 +466,7 @@ export default {
     showPassword: "Yoreka akasumuruzo",
     hidePassword: "Kushereka akasumuruzo",
     code: "Koodi kuruga omu baruha",
-    codeInvalid: "Taahamu enamba kuruga omu baruha y'obutumwa (enamba 6).",
+    codeInvalid: "Taahamu enamba kuruga omu baruha y'obutumwa.",
     codeSentSignUp: "Taahamu enamba ei twakohereza omu",
     codeSentReset: "Ku haraabe hariho akawunti, tukasindikira koodi aha",
     codeResent: "Ekiragiro kisya kiri omu muhanda.",

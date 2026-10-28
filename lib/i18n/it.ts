@@ -466,7 +466,7 @@ export default {
     showPassword: "Mostra la password",
     hidePassword: "Nascondi la password",
     code: "Codice tratto dall'e-mail",
-    codeInvalid: "Inserisca il codice riportato nell'e-mail (6 cifre).",
+    codeInvalid: "Inserisca il codice riportato nell'e-mail.",
     codeSentSignUp: "Inserisca il codice che Le abbiamo inviato via e-mail all'indirizzo",
     codeSentReset: "Se esiste un account, Le abbiamo inviato un codice via e-mail all’indirizzo",
     codeResent: "È in arrivo un nuovo codice.",
