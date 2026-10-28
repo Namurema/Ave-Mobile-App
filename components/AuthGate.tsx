@@ -26,8 +26,14 @@ export function AuthGate() {
 
   if (!blocked) return null;
   return (
-    <View style={StyleSheet.absoluteFill} className="items-center justify-center bg-primary">
+    <View style={StyleSheet.absoluteFill} role="status" aria-label="Loading Ave" className="items-center justify-center gap-6 bg-primary">
       <Text className="text-5xl font-bold tracking-tight text-white">Ave</Text>
+      {/* Pulsing dots (CSS in public/index.html) */}
+      <View {...({ dataSet: { aveDots: "" } } as any)} aria-hidden>
+        <View />
+        <View />
+        <View />
+      </View>
     </View>
   );
 }
