@@ -1405,8 +1405,8 @@
       "text": "Enteekateeka yo erimu buli ssaala mu nnimi zonna essatu, eddoboozi, okukwatagana n'okujjukizibwa."
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
-      "text": "Buli ssaala mu Lungereza, Oluganda n'Olunyankole, nga mulimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa."
+      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
+      "text": "Buli ssaala mu Lungereza, Oluganda, Runyankole, Oluswayiri, Olusipanisi n'Oluyitale, nga zirimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa."
     },
     "billing.trialUntil": {
       "en": "Your free trial runs until",
@@ -1717,8 +1717,8 @@
       "text": "Yingiza ennamba gye twakutumira ku email"
     },
     "auth.codeInvalid": {
-      "en": "Enter the code from the email (6 digits).",
-      "text": "Teekamu ennamba okuva mu bubaka bwa email (ennamba mukaaga)."
+      "en": "Enter the code from the email.",
+      "text": "Teekamu ennamba okuva mu email."
     },
     "auth.codeResent": {
       "en": "A new code is on its way.",
@@ -3527,8 +3527,8 @@
       "text": "Okugaruka aha nteekateeka"
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
-      "text": "Buri kushaba, omu Rungyereza, Oruganda hamwe n'Orunyankore, n'obutumwa oburikuhurirwa, okugabana hamwe n'okwijusya."
+      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
+      "text": "Buri kushaba, omu Rungyereza, Luganda, Runyankore, Swahili, Spanish na Italian, n'obuhwezi bw'amahurire, okugabana hamwe n'okwijusya."
     },
     "billing.extend": {
       "en": "Extend your plan",
@@ -3751,8 +3751,8 @@
       "text": "Koodi kuruga omu baruha"
     },
     "auth.codeInvalid": {
-      "en": "Enter the code from the email (6 digits).",
-      "text": "Taahamu enamba kuruga omu baruha y'obutumwa (enamba 6)."
+      "en": "Enter the code from the email.",
+      "text": "Taahamu enamba kuruga omu email."
     },
     "auth.codeSentSignUp": {
       "en": "Enter the code we emailed to",
@@ -6197,8 +6197,8 @@
       "text": "Mpango wako unajumuisha kila sala katika lugha zote tatu, sauti, mfululizo, kushiriki na vikumbusho."
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
-      "text": "Kila sala, kwa Kiingereza, Luganda na Runyankore, pamoja na sauti, mfuatano, kushiriki na vikumbusho."
+      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
+      "text": "Kila sala, katika Kiingereza, Luganda, Runyankore, Kiswahili, Kihispania na Kiitaliano, pamoja na sauti, alama, kushiriki na vikumbusho."
     },
     "billing.trialUntil": {
       "en": "Your free trial runs until",
@@ -6917,8 +6917,8 @@
       "text": "Kodi kutoka kwa barua pepe"
     },
     "auth.codeInvalid": {
-      "en": "Enter the code from the email (6 digits).",
-      "text": "Ingiza nambari kutoka kwa barua pepe (nambari 6)."
+      "en": "Enter the code from the email.",
+      "text": "Ingiza nambari kutoka kwa barua pepe."
     },
     "auth.codeSentSignUp": {
       "en": "Enter the code we emailed to",
@@ -8865,8 +8865,8 @@
       "text": "Suscripción"
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
-      "text": "Todas las oraciones, en inglés, luganda y runyankore, con audio, rachas, opciones para compartir y recordatorios."
+      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
+      "text": "Todas las oraciones, en inglés, luganda, runyankore, suajili, español e italiano, con audio, rachas, opciones para compartir y recordatorios."
     },
     "billing.signInFirst": {
       "en": "Create a free account to start your 7-day free trial.",
@@ -9513,8 +9513,8 @@
       "text": "Introduzca el código que le hemos enviado por correo electrónico a"
     },
     "auth.codeInvalid": {
-      "en": "Enter the code from the email (6 digits).",
-      "text": "Introduzca el código que figura en el correo electrónico (6 dígitos)."
+      "en": "Enter the code from the email.",
+      "text": "Introduzca el código que figura en el correo electrónico."
     },
     "auth.resendCode": {
       "en": "Send a new code",
@@ -10883,8 +10883,8 @@
       "text": "Abbonamento"
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
-      "text": "Ogni preghiera, in inglese, luganda e runyankore, con audio, statistiche, condivisione e promemoria."
+      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
+      "text": "Ogni preghiera, in inglese, luganda, runyankore, swahili, spagnolo e italiano, con audio, statistiche, condivisione e promemoria."
     },
     "billing.signInFirst": {
       "en": "Create a free account to start your 7-day free trial.",
@@ -11527,8 +11527,8 @@
       "text": "Codice tratto dall'e-mail"
     },
     "auth.codeInvalid": {
-      "en": "Enter the code from the email (6 digits).",
-      "text": "Inserisca il codice riportato nell'e-mail (6 cifre)."
+      "en": "Enter the code from the email.",
+      "text": "Inserisca il codice riportato nell'e-mail."
     },
     "auth.codeSentSignUp": {
       "en": "Enter the code we emailed to",
@@ -15954,5 +15954,6 @@
     "The fear of the Lord is the crown of wisdom, making peace and perfect health to flourish.": "Il timore del Signore è la corona della saggezza, che fa fiorire la pace e la salute perfetta.",
     "These are the things that you shall do: speak every man the truth with his neighbour. Execute the judgement of truth and peace in your gates.": "Ecco cosa dovete fare: che ognuno dica la verità al proprio prossimo. Rispettate la giustizia e la pace nelle vostre città.",
     "He makes peace in your borders. He fills you with the finest of the wheat.": "Lui porta la pace nei tuoi confini. Ti riempie del grano più pregiato."
-  }
+  },
+  "foryou-sw": {}
 }

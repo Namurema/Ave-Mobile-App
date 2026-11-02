@@ -311,7 +311,7 @@ export default {
   },
   billing: {
     title: "Abbonamento a Ave",
-    description: "Ogni preghiera, in inglese, luganda e runyankore, con audio, statistiche, condivisione e promemoria.",
+    description: "Ogni preghiera, in inglese, luganda, runyankore, swahili, spagnolo e italiano, con audio, statistiche, condivisione e promemoria.",
     subscription: "Abbonamento",
     includes: "Il Suo abbonamento include tutte le preghiere in tutte e tre le lingue, i file audio, le serie di preghiere consecutive, la condivisione e i promemoria.",
     signInFirst: "Crei un account gratuito per iniziare il Suo periodo di prova gratuito di 7 giorni.",

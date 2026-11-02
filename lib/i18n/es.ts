@@ -311,7 +311,7 @@ export default {
   },
   billing: {
     title: "Suscripción a Ave",
-    description: "Todas las oraciones, en inglés, luganda y runyankore, con audio, rachas, opciones para compartir y recordatorios.",
+    description: "Todas las oraciones, en inglés, luganda, runyankore, suajili, español e italiano, con audio, rachas, opciones para compartir y recordatorios.",
     subscription: "Suscripción",
     includes: "Su plan incluye todas las oraciones en los tres idiomas, audio, rachas, opciones para compartir y recordatorios.",
     signInFirst: "Cree una cuenta gratuita para comenzar su periodo de prueba gratuito de 7 días.",

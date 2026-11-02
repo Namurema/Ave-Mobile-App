@@ -311,7 +311,7 @@ export default {
   },
   billing: {
     title: "Okusaba okuwandiisa",
-    description: "Buli ssaala mu Lungereza, Oluganda n'Olunyankole, nga mulimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa.",
+    description: "Buli ssaala mu Lungereza, Oluganda, Runyankole, Oluswayiri, Olusipanisi n'Oluyitale, nga zirimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa.",
     subscription: "Okwewandiisa",
     includes: "Enteekateeka yo erimu buli ssaala mu nnimi zonna essatu, eddoboozi, okukwatagana n'okujjukizibwa.",
     signInFirst: "Kola akawunta ey'obwereere okutandika okugezesebwa kw'ennaku omusanvu.",

@@ -309,7 +309,7 @@ export default {
   },
   billing: {
     title: "Ave subscription",
-    description: "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+    description: "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
     subscription: "Subscription",
     includes: "Your plan includes every prayer in all three languages, audio, streaks, sharing and reminders.",
     signInFirst: "Create a free account to start your 7-day free trial.",

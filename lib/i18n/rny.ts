@@ -311,7 +311,7 @@ export default {
   },
   billing: {
     title: "Okushaba okwehandikisa",
-    description: "Buri kushaba, omu Rungyereza, Oruganda hamwe n'Orunyankore, n'obutumwa oburikuhurirwa, okugabana hamwe n'okwijusya.",
+    description: "Buri kushaba, omu Rungyereza, Luganda, Runyankore, Swahili, Spanish na Italian, n'obuhwezi bw'amahurire, okugabana hamwe n'okwijusya.",
     subscription: "Okwihayo",
     includes: "Enteekateeka yaawe erimu buri kushaba omu ndimi zoona ishatu, okuhurikiriza, okuguma nookora, okugabana hamwe n'okwijusya.",
     signInFirst: "Kora akaunti ya busha kutandika okugyezibwa kw'ebiro 7.",

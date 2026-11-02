@@ -311,7 +311,7 @@ export default {
   },
   billing: {
     title: "Nataka kujiandikisha",
-    description: "Kila sala, kwa Kiingereza, Luganda na Runyankore, pamoja na sauti, mfuatano, kushiriki na vikumbusho.",
+    description: "Kila sala, katika Kiingereza, Luganda, Runyankore, Kiswahili, Kihispania na Kiitaliano, pamoja na sauti, alama, kushiriki na vikumbusho.",
     subscription: "Uandikishaji",
     includes: "Mpango wako unajumuisha kila sala katika lugha zote tatu, sauti, mfululizo, kushiriki na vikumbusho.",
     signInFirst: "Jiandikishe kwa akaunti ya bure ili kuanza jaribio lako la siku 7 bila malipo.",
