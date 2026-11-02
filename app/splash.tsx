@@ -10,7 +10,7 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { LANGUAGES } from "../constants/languages";
 import { PAYMENTS_ENABLED } from "../constants/features";
 import { images, dailyTiles, dailyImages } from "../constants/images";
-import { CONTACT_EMAIL } from "../constants/site";
+import { CONTACT_EMAIL, TIKTOK_URL } from "../constants/site";
 import { formatDate } from "../lib/i18n/helpers";
 import { cn } from "../lib/utils";
 
@@ -191,6 +191,9 @@ export default function SplashScreen() {
               <Text className="text-sm font-bold text-zinc-900">{t("splash.connect")}:</Text>
               <Pressable role="link" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} className="py-1">
                 <Text className="text-sm text-zinc-800 web:hover:underline">{t("splash.contactUs")}</Text>
+              </Pressable>
+              <Pressable role="link" onPress={() => Linking.openURL(TIKTOK_URL)} className="py-1">
+                <Text className="text-sm text-zinc-800 web:hover:underline">TikTok</Text>
               </Pressable>
             </View>
           </View>

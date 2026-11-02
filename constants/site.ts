@@ -4,3 +4,4 @@ export const SITE_URL = "https://aveprayers.com";
 
 // Shown on the landing page
 export const CONTACT_EMAIL = "aveprayers5@gmail.com";
+export const TIKTOK_URL = "https://www.tiktok.com/@avecatholicprayer";
