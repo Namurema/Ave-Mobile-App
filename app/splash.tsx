@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { View, Text, ScrollView, Pressable, Image, StyleSheet, useWindowDimensions } from "react-native";
+import { View, Text, ScrollView, Pressable, Image, Linking, StyleSheet, useWindowDimensions } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useTranslation } from "react-i18next";
@@ -9,6 +9,7 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { LANGUAGES } from "../constants/languages";
 import { PAYMENTS_ENABLED } from "../constants/features";
 import { images, dailyTiles, dailyImages } from "../constants/images";
+import { CONTACT_EMAIL } from "../constants/site";
 import { formatDate } from "../lib/i18n/helpers";
 import { cn } from "../lib/utils";
 
@@ -170,6 +171,9 @@ export default function SplashScreen() {
 
         <View className="w-full max-w-6xl self-center px-5 pb-6 pt-3 flex-row flex-wrap items-center justify-center gap-x-4 gap-y-1">
           <Text className="text-xs text-zinc-600">{t("splash.footer")}</Text>
+          <Pressable role="link" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)}>
+            <Text className="text-xs font-medium text-zinc-800 underline">{CONTACT_EMAIL}</Text>
+          </Pressable>
           <Pressable onPress={() => router.push("/privacy")}>
             <Text className="text-xs font-medium text-zinc-800 underline">{t("legal.privacy")}</Text>
           </Pressable>
