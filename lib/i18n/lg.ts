@@ -33,7 +33,12 @@ export default {
     devotionsDescription: "Ekisa kya Katonda, Stations of the Cross n'ebirala",
     footer: "Omukwano gw'okusaba ogwa Katulika",
     accountNote: "Ennaku 7 ez'obwereere, olwo UGX 7,000 buli mwezi mu Uganda oba USD 3.99 ebweru wa Uganda.",
-    accountNoteFree: "Tondawo akawunti yo okutandika okusaba ne Ave."
+    accountNoteFree: "Tondawo akawunti yo okutandika okusaba ne Ave.",
+    catholicPrayers: "Okusaba kw'Abakatuliki leero",
+    startPraying: "Tandika okusaba",
+    insideTitle: "Buli kimu ky'oyagala okusaba",
+    forYouDescription: "Ennyiriri za Bayibuli n'ebigambo ebizimba ku ngeri gy'owulira",
+    beginTitle: "Tandika leero"
   },
   language: {
     title: "Tukuwerekeza",

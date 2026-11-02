@@ -33,7 +33,12 @@ export default {
     devotionsDescription: "La Divina Misericordia, el Vía Crucis y mucho más",
     footer: "Una guía de oración católica",
     accountNote: "7 días gratis; a partir de entonces, 7.000 UGX al mes en Uganda o 3,99 USD en el extranjero.",
-    accountNoteFree: "Cree su cuenta para empezar a rezar con Ave."
+    accountNoteFree: "Cree su cuenta para empezar a rezar con Ave.",
+    catholicPrayers: "Oraciones católicas para hoy",
+    startPraying: "Empiece a rezar",
+    insideTitle: "Todo lo que necesita para rezar",
+    forYouDescription: "Versículos bíblicos y palabras de ánimo para lo que está sintiendo",
+    beginTitle: "Empiece hoy mismo"
   },
   language: {
     title: "Bienvenidos",

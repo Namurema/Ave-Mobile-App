@@ -33,7 +33,12 @@ export default {
     devotionsDescription: "Obusaasi bwa Ruhanga, emyanya ya Cross hamwe n'ebindi",
     footer: "Okushaba kw'abakaturiki",
     accountNote: "Ebiro 7 bya busha, reero UGX 7,000 buri kwezi omu Uganda nainga USD 3.99 aheeru y'eihanga.",
-    accountNoteFree: "Kora akawunti yaawe okutandika kushaba na Ave."
+    accountNoteFree: "Kora akawunti yaawe okutandika kushaba na Ave.",
+    catholicPrayers: "Okushaba kw'abakaturiki okwa eriizooba",
+    startPraying: "Tandika kushaba",
+    insideTitle: "Buri kimwe eki orikwetenga kushaba",
+    forYouDescription: "Ebyahandiikirwe bya baiburi hamwe n'ebigambo ebirikugaruramu amaani aha ku orikuhurira",
+    beginTitle: "Tandika eriizooba"
   },
   language: {
     title: "Tukuragirire",

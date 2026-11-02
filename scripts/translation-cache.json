@@ -2027,6 +2027,26 @@
     "foryou.moods.thankful": {
       "en": "Happy and thankful",
       "text": "Musanyufu era musanyufu"
+    },
+    "splash.startPraying": {
+      "en": "Start praying",
+      "text": "Tandika okusaba"
+    },
+    "splash.catholicPrayers": {
+      "en": "Catholic prayers for today",
+      "text": "Okusaba kw'Abakatuliki leero"
+    },
+    "splash.insideTitle": {
+      "en": "Everything you need to pray",
+      "text": "Buli kimu ky'oyagala okusaba"
+    },
+    "splash.forYouDescription": {
+      "en": "Bible verses and uplifting words for how you feel",
+      "text": "Ennyiriri za Bayibuli n'ebigambo ebizimba ku ngeri gy'owulira"
+    },
+    "splash.beginTitle": {
+      "en": "Begin today",
+      "text": "Tandika leero"
     }
   },
   "rny": {
@@ -4057,6 +4077,26 @@
     "foryou.moods.peaceful": {
       "en": "Peaceful",
       "text": "Obusingye"
+    },
+    "splash.startPraying": {
+      "en": "Start praying",
+      "text": "Tandika kushaba"
+    },
+    "splash.insideTitle": {
+      "en": "Everything you need to pray",
+      "text": "Buri kimwe eki orikwetenga kushaba"
+    },
+    "splash.catholicPrayers": {
+      "en": "Catholic prayers for today",
+      "text": "Okushaba kw'abakaturiki okwa eriizooba"
+    },
+    "splash.forYouDescription": {
+      "en": "Bible verses and uplifting words for how you feel",
+      "text": "Ebyahandiikirwe bya baiburi hamwe n'ebigambo ebirikugaruramu amaani aha ku orikuhurira"
+    },
+    "splash.beginTitle": {
+      "en": "Begin today",
+      "text": "Tandika eriizooba"
     }
   },
   "content-lg": {
@@ -7223,6 +7263,26 @@
     "foryou.moods.thankful": {
       "en": "Happy and thankful",
       "text": "Mwenye furaha na mwenye shukrani"
+    },
+    "splash.startPraying": {
+      "en": "Start praying",
+      "text": "Anza kusali"
+    },
+    "splash.forYouDescription": {
+      "en": "Bible verses and uplifting words for how you feel",
+      "text": "Mistari ya Biblia na maneno yanayotia moyo kuhusu jinsi unavyohisi"
+    },
+    "splash.catholicPrayers": {
+      "en": "Catholic prayers for today",
+      "text": "Sala za Kikatoliki kwa leo"
+    },
+    "splash.insideTitle": {
+      "en": "Everything you need to pray",
+      "text": "Kila kitu unachohitaji kusali"
+    },
+    "splash.beginTitle": {
+      "en": "Begin today",
+      "text": "Anza leo"
     }
   },
   "content-sw": {
@@ -9815,6 +9875,26 @@
     "foryou.moods.peaceful": {
       "en": "Peaceful",
       "text": "Tranquilo"
+    },
+    "splash.catholicPrayers": {
+      "en": "Catholic prayers for today",
+      "text": "Oraciones católicas para hoy"
+    },
+    "splash.startPraying": {
+      "en": "Start praying",
+      "text": "Empiece a rezar"
+    },
+    "splash.insideTitle": {
+      "en": "Everything you need to pray",
+      "text": "Todo lo que necesita para rezar"
+    },
+    "splash.forYouDescription": {
+      "en": "Bible verses and uplifting words for how you feel",
+      "text": "Versículos bíblicos y palabras de ánimo para lo que está sintiendo"
+    },
+    "splash.beginTitle": {
+      "en": "Begin today",
+      "text": "Empiece hoy mismo"
     }
   },
   "it": {
@@ -11833,6 +11913,26 @@
     "foryou.moods.peaceful": {
       "en": "Peaceful",
       "text": "Tranquillo"
+    },
+    "splash.startPraying": {
+      "en": "Start praying",
+      "text": "Cominciate a pregare"
+    },
+    "splash.catholicPrayers": {
+      "en": "Catholic prayers for today",
+      "text": "Preghiere cattoliche per oggi"
+    },
+    "splash.insideTitle": {
+      "en": "Everything you need to pray",
+      "text": "Tutto ciò di cui ha bisogno per pregare"
+    },
+    "splash.forYouDescription": {
+      "en": "Bible verses and uplifting words for how you feel",
+      "text": "Versetti biblici e parole di incoraggiamento adatti al Suo stato d’animo"
+    },
+    "splash.beginTitle": {
+      "en": "Begin today",
+      "text": "Inizi oggi stesso"
     }
   },
   "content-es": {

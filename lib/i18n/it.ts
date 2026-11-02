@@ -33,7 +33,12 @@ export default {
     devotionsDescription: "La Divina Misericordia, la Via Crucis e altro ancora",
     footer: "Una guida alla preghiera cattolica",
     accountNote: "7 giorni gratuiti, poi 7.000 UGX al mese in Uganda o 3,99 USD all’estero.",
-    accountNoteFree: "Crei il Suo account per iniziare a pregare con Ave."
+    accountNoteFree: "Crei il Suo account per iniziare a pregare con Ave.",
+    catholicPrayers: "Preghiere cattoliche per oggi",
+    startPraying: "Inizi a pregare",
+    insideTitle: "Tutto ciò di cui ha bisogno per pregare",
+    forYouDescription: "Versetti biblici e parole di incoraggiamento adatti al Suo stato d’animo",
+    beginTitle: "Inizi oggi stesso"
   },
   language: {
     title: "Benvenuti",

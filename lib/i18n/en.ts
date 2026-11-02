@@ -32,6 +32,11 @@ export default {
     footer: "A Catholic prayer companion",
     accountNote: "7 days free, then UGX 7,000 a month in Uganda or USD 3.99 abroad.",
     accountNoteFree: "Create your account to start praying with Ave.",
+    catholicPrayers: "Catholic prayers for today",
+    startPraying: "Start praying",
+    insideTitle: "Everything you need to pray",
+    forYouDescription: "Bible verses and uplifting words for how you feel",
+    beginTitle: "Begin today",
   },
   language: {
     title: "Welcome",

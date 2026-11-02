@@ -33,7 +33,12 @@ export default {
     devotionsDescription: "Rehema ya Kimungu, Vituo vya Msalaba na zaidi",
     footer: "Mshirika wa sala ya Kikatoliki",
     accountNote: "Siku 7 za bure, kisha UGX 7,000 kwa mwezi nchini Uganda au dola za Marekani 3.99 ng'ambo.",
-    accountNoteFree: "Unda akaunti yako ili uanze kusali na Ave."
+    accountNoteFree: "Unda akaunti yako ili uanze kusali na Ave.",
+    catholicPrayers: "Sala za Kikatoliki kwa leo",
+    startPraying: "Anza kusali",
+    insideTitle: "Kila kitu unachohitaji kusali",
+    forYouDescription: "Mistari ya Biblia na maneno yanayotia moyo kuhusu jinsi unavyohisi",
+    beginTitle: "Anza leo"
   },
   language: {
     title: "Karibu",
