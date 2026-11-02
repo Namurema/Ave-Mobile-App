@@ -41,7 +41,7 @@ export default function SplashScreen() {
   const tiles = [
     { title: t("splash.dailyTitle"), text: t("splash.dailyDescription"), image: dailyTiles.morning, route: "/(tabs)/prayers" },
     { title: t("splash.rosaryTitle"), text: t("splash.rosaryDescription"), image: images.rosaryHands, route: "/(tabs)/rosary" },
-    { title: t("splash.devotionsTitle"), text: t("splash.devotionsDescription"), image: images.silhouette, route: "/novenas" },
+    { title: t("splash.devotionsTitle"), text: t("splash.devotionsDescription"), image: images.novenasTile, route: "/novenas" },
     { title: t("nav.foryou"), text: t("splash.forYouDescription"), image: images.prayingHands, route: "/(tabs)/foryou" },
   ];
   const dock = [
