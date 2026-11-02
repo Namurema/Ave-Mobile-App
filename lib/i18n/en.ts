@@ -37,6 +37,7 @@ export default {
     insideTitle: "Everything you need to pray",
     forYouDescription: "Bible verses and uplifting words for how you feel",
     beginTitle: "Begin today",
+    contactUs: "Contact us",
   },
   language: {
     title: "Welcome",

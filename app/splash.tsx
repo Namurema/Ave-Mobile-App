@@ -51,6 +51,12 @@ export default function SplashScreen() {
     { label: t("nav.foryou"), route: "/(tabs)/foryou" },
   ];
 
+  const footerLinks = [
+    { label: t("splash.contactUs"), onPress: () => Linking.openURL(`mailto:${CONTACT_EMAIL}`) },
+    { label: t("legal.privacy"), onPress: () => router.push("/privacy") },
+    { label: t("legal.terms"), onPress: () => router.push("/terms") },
+  ];
+
   return (
     <View className="flex-1 bg-[#E8E8E8]">
       <StatusBar style="dark" />
@@ -169,17 +175,23 @@ export default function SplashScreen() {
           <Text className="mt-3 text-center text-sm text-white/85">{accountNote}</Text>
         </View>
 
-        <View className="w-full max-w-6xl self-center px-5 pb-6 pt-3 flex-row flex-wrap items-center justify-center gap-x-4 gap-y-1">
-          <Text className="text-xs text-zinc-600">{t("splash.footer")}</Text>
-          <Pressable role="link" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)}>
-            <Text className="text-xs font-medium text-zinc-800 underline">{CONTACT_EMAIL}</Text>
-          </Pressable>
-          <Pressable onPress={() => router.push("/privacy")}>
-            <Text className="text-xs font-medium text-zinc-800 underline">{t("legal.privacy")}</Text>
-          </Pressable>
-          <Pressable onPress={() => router.push("/terms")}>
-            <Text className="text-xs font-medium text-zinc-800 underline">{t("legal.terms")}</Text>
-          </Pressable>
+        <View role="contentinfo" className="w-full max-w-6xl self-center px-5 md:px-8 pt-6 pb-8 gap-4 md:flex-row md:items-center md:justify-between">
+          <View className="gap-0.5">
+            <Text className="text-xl font-black tracking-tight text-zinc-900">
+              Ave<Text className="text-primary">.</Text>
+            </Text>
+            <Text className="text-sm text-zinc-600">{t("splash.footer")}</Text>
+          </View>
+          <View className="gap-2 md:items-end">
+            <View role="navigation" className="flex-row flex-wrap gap-x-5 gap-y-1">
+              {footerLinks.map((link) => (
+                <Pressable key={link.label} role="link" onPress={link.onPress} className="py-1">
+                  <Text className="text-sm font-medium text-zinc-800 web:hover:underline">{link.label}</Text>
+                </Pressable>
+              ))}
+            </View>
+            <Text className="text-xs text-zinc-500">© {new Date().getFullYear()} Ave</Text>
+          </View>
         </View>
       </ScrollView>
     </View>
