@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { View, Text, ScrollView, Pressable, Image, Linking, StyleSheet, useWindowDimensions } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useTranslation } from "react-i18next";
@@ -19,6 +20,7 @@ export default function SplashScreen() {
   const router = useRouter();
   const { t } = useTranslation();
   const { width, height } = useWindowDimensions();
+  const scroll = useRef<ScrollView>(null);
   const language = useLanguageStore((state) => state.language);
   const setLanguage = useLanguageStore((state) => state.setLanguage);
   const session = useAuthStore((state) => state.session);
@@ -51,16 +53,33 @@ export default function SplashScreen() {
     { label: t("nav.foryou"), route: "/(tabs)/foryou" },
   ];
 
-  const footerLinks = [
-    { label: t("splash.contactUs"), onPress: () => Linking.openURL(`mailto:${CONTACT_EMAIL}`) },
-    { label: t("legal.privacy"), onPress: () => router.push("/privacy") },
-    { label: t("legal.terms"), onPress: () => router.push("/terms") },
-  ];
+  // Shown over the photo and again in the footer
+  const floatingMenu = (
+    <View className="flex-row items-stretch gap-1.5 rounded-2xl bg-zinc-900/95 p-1.5">
+      <View className="w-12 items-center justify-center rounded-xl bg-zinc-800">
+        <Text className="text-lg font-black text-white">A.</Text>
+      </View>
+      <View className="hidden md:flex flex-row gap-1.5 rounded-xl bg-zinc-700/70 p-1.5">
+        {dock.map((item) => (
+          <Pressable
+            key={item.route}
+            onPress={() => createAccount(item.route)}
+            className="h-11 px-4 justify-center rounded-lg border border-white/15 web:hover:bg-white/10"
+          >
+            <Text className="text-sm font-medium text-zinc-100">{item.label}</Text>
+          </Pressable>
+        ))}
+      </View>
+      <Pressable onPress={() => createAccount()} className="min-h-[56px] px-5 justify-center rounded-xl bg-white web:hover:bg-zinc-200">
+        <Text className="text-sm font-bold text-zinc-900">{t("splash.startPraying")}</Text>
+      </Pressable>
+    </View>
+  );
 
   return (
     <View className="flex-1 bg-[#E8E8E8]">
       <StatusBar style="dark" />
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scroll} showsVerticalScrollIndicator={false}>
         {/* Screen 1: the name and the languages, with the dark panel rising below */}
         <View style={{ minHeight: height }}>
           <View className="w-full max-w-6xl self-center px-4 md:px-8 h-16 md:h-20 flex-row items-center justify-between gap-3">
@@ -118,25 +137,7 @@ export default function SplashScreen() {
           {/* The top of the dark panel, with the floating menu */}
           <View className="mt-5 mx-2 md:mx-4 flex-1 min-h-[190px] overflow-hidden rounded-t-3xl bg-black justify-end items-center p-3 md:p-6">
             <Image source={width < 768 ? dailyTiles.midday : dailyImages.midday} resizeMode="cover" aria-hidden style={[StyleSheet.absoluteFill, { width: "100%", height: "100%", opacity: 0.7 }]} />
-            <View className="flex-row items-stretch gap-1.5 rounded-2xl bg-zinc-900/95 p-1.5">
-              <View className="w-12 items-center justify-center rounded-xl bg-zinc-800">
-                <Text className="text-lg font-black text-white">A.</Text>
-              </View>
-              <View className="hidden md:flex flex-row gap-1.5 rounded-xl bg-zinc-700/70 p-1.5">
-                {dock.map((item) => (
-                  <Pressable
-                    key={item.route}
-                    onPress={() => createAccount(item.route)}
-                    className="h-11 px-4 justify-center rounded-lg border border-white/15 web:hover:bg-white/10"
-                  >
-                    <Text className="text-sm font-medium text-zinc-100">{item.label}</Text>
-                  </Pressable>
-                ))}
-              </View>
-              <Pressable onPress={() => createAccount()} className="min-h-[56px] px-5 justify-center rounded-xl bg-white web:hover:bg-zinc-200">
-                <Text className="text-sm font-bold text-zinc-900">{t("splash.startPraying")}</Text>
-              </Pressable>
-            </View>
+            {floatingMenu}
           </View>
         </View>
 
@@ -175,23 +176,37 @@ export default function SplashScreen() {
           <Text className="mt-3 text-center text-sm text-white/85">{accountNote}</Text>
         </View>
 
-        <View role="contentinfo" className="w-full max-w-6xl self-center px-5 md:px-8 pt-6 pb-8 gap-4 md:flex-row md:items-center md:justify-between">
-          <View className="gap-0.5">
-            <Text className="text-xl font-black tracking-tight text-zinc-900">
-              Ave<Text className="text-primary">.</Text>
-            </Text>
-            <Text className="text-sm text-zinc-600">{t("splash.footer")}</Text>
-          </View>
-          <View className="gap-2 md:items-end">
-            <View role="navigation" className="flex-row flex-wrap gap-x-5 gap-y-1">
-              {footerLinks.map((link) => (
-                <Pressable key={link.label} role="link" onPress={link.onPress} className="py-1">
-                  <Text className="text-sm font-medium text-zinc-800 web:hover:underline">{link.label}</Text>
-                </Pressable>
-              ))}
+        <View role="contentinfo" className="w-full max-w-6xl self-center px-5 md:px-8 pt-5 pb-6 gap-4">
+          <View className="border-t border-dotted border-zinc-400" />
+          <View className="flex-row flex-wrap items-center justify-between gap-x-6 gap-y-1">
+            <View className="flex-row flex-wrap gap-x-5 gap-y-1">
+              <Pressable role="link" onPress={() => router.push("/privacy")} className="py-1">
+                <Text className="text-sm text-zinc-800 web:hover:underline">{t("legal.privacy")}</Text>
+              </Pressable>
+              <Pressable role="link" onPress={() => router.push("/terms")} className="py-1">
+                <Text className="text-sm text-zinc-800 web:hover:underline">{t("legal.terms")}</Text>
+              </Pressable>
             </View>
-            <Text className="text-xs text-zinc-500">© {new Date().getFullYear()} Ave</Text>
+            <View className="flex-row flex-wrap items-center gap-x-4">
+              <Text className="text-sm font-bold text-zinc-900">{t("splash.connect")}:</Text>
+              <Pressable role="link" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} className="py-1">
+                <Text className="text-sm text-zinc-800 web:hover:underline">{t("splash.contactUs")}</Text>
+              </Pressable>
+            </View>
           </View>
+          <View className="flex-row items-center justify-center">
+            <Pressable
+              onPress={() => scroll.current?.scrollTo({ y: 0, animated: true })}
+              aria-label={t("splash.backToTop")}
+              className="absolute left-0 h-[56px] w-[56px] items-center justify-center rounded-xl bg-zinc-900 web:hover:bg-zinc-700"
+            >
+              <Ionicons name="arrow-up" size={22} color="#fff" />
+            </Pressable>
+            {floatingMenu}
+          </View>
+          <Text className="text-center text-xs text-zinc-500">
+            {t("splash.footer")} · © {new Date().getFullYear()} Ave
+          </Text>
         </View>
       </ScrollView>
     </View>

@@ -38,6 +38,8 @@ export default {
     forYouDescription: "Bible verses and uplifting words for how you feel",
     beginTitle: "Begin today",
     contactUs: "Contact us",
+    connect: "Connect",
+    backToTop: "Back to top",
   },
   language: {
     title: "Welcome",
