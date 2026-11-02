@@ -38,7 +38,8 @@ export default {
     startPraying: "Anza kusali",
     insideTitle: "Kila kitu unachohitaji kusali",
     forYouDescription: "Mistari ya Biblia na maneno yanayotia moyo kuhusu jinsi unavyohisi",
-    beginTitle: "Anza leo"
+    beginTitle: "Anza leo",
+    contactUs: "Wasiliana nasi"
   },
   language: {
     title: "Karibu",

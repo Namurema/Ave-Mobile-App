@@ -38,7 +38,8 @@ export default {
     startPraying: "Inizi a pregare",
     insideTitle: "Tutto ciò di cui ha bisogno per pregare",
     forYouDescription: "Versetti biblici e parole di incoraggiamento adatti al Suo stato d’animo",
-    beginTitle: "Inizi oggi stesso"
+    beginTitle: "Inizi oggi stesso",
+    contactUs: "Contattateci"
   },
   language: {
     title: "Benvenuti",

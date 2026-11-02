@@ -38,7 +38,8 @@ export default {
     startPraying: "Tandika kushaba",
     insideTitle: "Buri kimwe eki orikwetenga kushaba",
     forYouDescription: "Ebyahandiikirwe bya baiburi hamwe n'ebigambo ebirikugaruramu amaani aha ku orikuhurira",
-    beginTitle: "Tandika eriizooba"
+    beginTitle: "Tandika eriizooba",
+    contactUs: "Tuhikaanaho"
   },
   language: {
     title: "Tukuragirire",

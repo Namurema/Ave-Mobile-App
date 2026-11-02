@@ -2047,6 +2047,10 @@
     "splash.beginTitle": {
       "en": "Begin today",
       "text": "Tandika leero"
+    },
+    "splash.contactUs": {
+      "en": "Contact us",
+      "text": "Tukwatagane naffe"
     }
   },
   "rny": {
@@ -4097,6 +4101,10 @@
     "splash.beginTitle": {
       "en": "Begin today",
       "text": "Tandika eriizooba"
+    },
+    "splash.contactUs": {
+      "en": "Contact us",
+      "text": "Tuhikaanaho"
     }
   },
   "content-lg": {
@@ -7283,6 +7291,10 @@
     "splash.beginTitle": {
       "en": "Begin today",
       "text": "Anza leo"
+    },
+    "splash.contactUs": {
+      "en": "Contact us",
+      "text": "Wasiliana nasi"
     }
   },
   "content-sw": {
@@ -9895,6 +9907,10 @@
     "splash.beginTitle": {
       "en": "Begin today",
       "text": "Empiece hoy mismo"
+    },
+    "splash.contactUs": {
+      "en": "Contact us",
+      "text": "Póngase en contacto con nosotros"
     }
   },
   "it": {
@@ -11933,6 +11949,10 @@
     "splash.beginTitle": {
       "en": "Begin today",
       "text": "Inizi oggi stesso"
+    },
+    "splash.contactUs": {
+      "en": "Contact us",
+      "text": "Contattateci"
     }
   },
   "content-es": {

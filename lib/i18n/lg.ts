@@ -38,7 +38,8 @@ export default {
     startPraying: "Tandika okusaba",
     insideTitle: "Buli kimu ky'oyagala okusaba",
     forYouDescription: "Ennyiriri za Bayibuli n'ebigambo ebizimba ku ngeri gy'owulira",
-    beginTitle: "Tandika leero"
+    beginTitle: "Tandika leero",
+    contactUs: "Tukwatagane naffe"
   },
   language: {
     title: "Tukuwerekeza",
