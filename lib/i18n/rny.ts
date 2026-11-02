@@ -39,7 +39,9 @@ export default {
     insideTitle: "Buri kimwe eki orikwetenga kushaba",
     forYouDescription: "Ebyahandiikirwe bya baiburi hamwe n'ebigambo ebirikugaruramu amaani aha ku orikuhurira",
     beginTitle: "Tandika eriizooba",
-    contactUs: "Tuhikaanaho"
+    contactUs: "Tuhikaanaho",
+    connect: "Kwatanisa",
+    backToTop: "Okugaruka ahaiguru"
   },
   language: {
     title: "Tukuragirire",

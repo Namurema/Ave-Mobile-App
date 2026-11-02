@@ -39,7 +39,9 @@ export default {
     insideTitle: "Buli kimu ky'oyagala okusaba",
     forYouDescription: "Ennyiriri za Bayibuli n'ebigambo ebizimba ku ngeri gy'owulira",
     beginTitle: "Tandika leero",
-    contactUs: "Tukwatagane naffe"
+    contactUs: "Tukwatagane naffe",
+    connect: "Kwatagana",
+    backToTop: "Okuddayo ku ntikko"
   },
   language: {
     title: "Tukuwerekeza",

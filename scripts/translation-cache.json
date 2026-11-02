@@ -2051,6 +2051,14 @@
     "splash.contactUs": {
       "en": "Contact us",
       "text": "Tukwatagane naffe"
+    },
+    "splash.connect": {
+      "en": "Connect",
+      "text": "Kwatagana"
+    },
+    "splash.backToTop": {
+      "en": "Back to top",
+      "text": "Okuddayo ku ntikko"
     }
   },
   "rny": {
@@ -4105,6 +4113,14 @@
     "splash.contactUs": {
       "en": "Contact us",
       "text": "Tuhikaanaho"
+    },
+    "splash.connect": {
+      "en": "Connect",
+      "text": "Kwatanisa"
+    },
+    "splash.backToTop": {
+      "en": "Back to top",
+      "text": "Okugaruka ahaiguru"
     }
   },
   "content-lg": {
@@ -7295,6 +7311,14 @@
     "splash.contactUs": {
       "en": "Contact us",
       "text": "Wasiliana nasi"
+    },
+    "splash.connect": {
+      "en": "Connect",
+      "text": "Unganisha"
+    },
+    "splash.backToTop": {
+      "en": "Back to top",
+      "text": "Rudi juu"
     }
   },
   "content-sw": {
@@ -9911,6 +9935,14 @@
     "splash.contactUs": {
       "en": "Contact us",
       "text": "Póngase en contacto con nosotros"
+    },
+    "splash.backToTop": {
+      "en": "Back to top",
+      "text": "Volver al inicio"
+    },
+    "splash.connect": {
+      "en": "Connect",
+      "text": "Conectarse"
     }
   },
   "it": {
@@ -11953,6 +11985,14 @@
     "splash.contactUs": {
       "en": "Contact us",
       "text": "Contattateci"
+    },
+    "splash.connect": {
+      "en": "Connect",
+      "text": "Connettersi"
+    },
+    "splash.backToTop": {
+      "en": "Back to top",
+      "text": "Torna all'inizio"
     }
   },
   "content-es": {

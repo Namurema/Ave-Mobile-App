@@ -39,7 +39,9 @@ export default {
     insideTitle: "Kila kitu unachohitaji kusali",
     forYouDescription: "Mistari ya Biblia na maneno yanayotia moyo kuhusu jinsi unavyohisi",
     beginTitle: "Anza leo",
-    contactUs: "Wasiliana nasi"
+    contactUs: "Wasiliana nasi",
+    connect: "Unganisha",
+    backToTop: "Rudi juu"
   },
   language: {
     title: "Karibu",
