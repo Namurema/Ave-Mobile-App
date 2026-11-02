@@ -134,7 +134,7 @@ export default function SplashScreen() {
           </View>
 
           {/* The top of the dark panel, with the floating menu */}
-          <View className="mt-5 mx-2 md:mx-4 flex-1 min-h-[190px] overflow-hidden rounded-t-3xl bg-black justify-end items-center p-3 md:p-6">
+          <View className="mt-5 mx-2 md:mx-4 flex-1 min-h-[160px] overflow-hidden rounded-t-3xl bg-black justify-end items-center p-3 md:p-6">
             <Image source={width < 768 ? dailyTiles.midday : dailyImages.midday} resizeMode="cover" aria-hidden style={[StyleSheet.absoluteFill, { width: "100%", height: "100%", opacity: 0.7 }]} />
             {floatingMenu}
           </View>
@@ -148,7 +148,7 @@ export default function SplashScreen() {
             </Text>
             <View className="flex-row flex-wrap -m-1.5">
               {tiles.map((tile) => (
-                <View key={tile.route} className="w-1/2 lg:w-1/4 p-1.5">
+                <View key={tile.route} className="w-1/2 md:w-1/4 p-1.5">
                   <Pressable onPress={() => createAccount(tile.route)} className="aspect-square overflow-hidden rounded-2xl justify-end p-3 md:p-4 bg-zinc-800">
                     <Image source={tile.image} resizeMode="cover" aria-hidden style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]} />
                     <View className="absolute inset-0 bg-black/45" />
@@ -186,7 +186,7 @@ export default function SplashScreen() {
                 <Text className="text-sm text-zinc-800 web:hover:underline">{t("legal.terms")}</Text>
               </Pressable>
             </View>
-            <View className="flex-row flex-wrap items-center gap-x-4">
+            <View className="max-w-full flex-row flex-wrap items-center gap-x-4">
               <Text className="text-sm font-bold text-zinc-900">{t("splash.connect")}:</Text>
               <Pressable role="link" onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)} className="py-1">
                 <Text className="text-sm text-zinc-800 web:hover:underline">{t("splash.contactUs")}</Text>

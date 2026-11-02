@@ -39,7 +39,7 @@ export default {
     insideTitle: "Todo lo que necesita para rezar",
     forYouDescription: "Versículos bíblicos y palabras de ánimo para lo que está sintiendo",
     beginTitle: "Empiece hoy mismo",
-    contactUs: "Póngase en contacto con nosotros",
+    contactUs: "Contacto",
     connect: "Conectarse",
     backToTop: "Volver al inicio"
   },

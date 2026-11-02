@@ -39,7 +39,7 @@ export default {
     insideTitle: "Tutto ciò di cui ha bisogno per pregare",
     forYouDescription: "Versetti biblici e parole di incoraggiamento adatti al Suo stato d’animo",
     beginTitle: "Inizi oggi stesso",
-    contactUs: "Contattateci",
+    contactUs: "Contatti",
     connect: "Connettersi",
     backToTop: "Torna all'inizio"
   },
