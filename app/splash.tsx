@@ -53,7 +53,6 @@ export default function SplashScreen() {
     { label: t("nav.foryou"), route: "/(tabs)/foryou" },
   ];
 
-  // Shown over the photo and again in the footer
   const floatingMenu = (
     <View className="flex-row items-stretch gap-1.5 rounded-2xl bg-zinc-900/95 p-1.5">
       <View className="w-12 items-center justify-center rounded-xl bg-zinc-800">
@@ -197,19 +196,18 @@ export default function SplashScreen() {
               </Pressable>
             </View>
           </View>
-          <View className="flex-row items-center justify-center">
+          <View className="flex-row items-center justify-between gap-4">
+            <Text className="flex-1 text-xs text-zinc-500">
+              {t("splash.footer")} · © {new Date().getFullYear()} Ave
+            </Text>
             <Pressable
               onPress={() => scroll.current?.scrollTo({ y: 0, animated: true })}
               aria-label={t("splash.backToTop")}
-              className="absolute left-0 h-[56px] w-[56px] items-center justify-center rounded-xl bg-zinc-900 web:hover:bg-zinc-700"
+              className="h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 web:hover:bg-zinc-700"
             >
-              <Ionicons name="arrow-up" size={22} color="#fff" />
+              <Ionicons name="arrow-up" size={20} color="#fff" />
             </Pressable>
-            {floatingMenu}
           </View>
-          <Text className="text-center text-xs text-zinc-500">
-            {t("splash.footer")} · © {new Date().getFullYear()} Ave
-          </Text>
         </View>
       </ScrollView>
     </View>
