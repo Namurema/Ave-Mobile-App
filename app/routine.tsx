@@ -13,7 +13,7 @@ import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { TodaysRoutine } from "../components/RoutineCard";
 import { RemindersCard } from "../components/RemindersCard";
-import { images } from "../constants/images";
+import { art } from "../constants/images";
 import { myPrayersTabs } from "../components/MyPrayersCard";
 import { Chip } from "../components/ui/chip";
 
@@ -143,7 +143,7 @@ export default function RoutineScreen() {
       <PageHeader
         back
         tone="primary"
-        image={images.prayingHands}
+        image={art.groupPrayer}
         title={t("progress.myPrayers")}
         tabs={myPrayersTabs(t)}
       />

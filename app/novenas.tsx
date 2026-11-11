@@ -7,7 +7,7 @@ import { Alert } from "../components/ui/alert";
 import { Page, PageHeader, Section, ListCard } from "../components/ui/page";
 import { availableNovenas } from "../constants/content/available";
 import { useContent } from "../lib/i18n/content";
-import { images } from "../constants/images";
+import { art } from "../constants/images";
 
 const seasonOrder = (season: NovenaSeason | null) =>
   !season ? 1000 : season.status === "active" ? 0 : season.status === "feast" ? 1 : 2 + season.daysUntil;
@@ -20,7 +20,7 @@ export default function NovenasScreen() {
 
   return (
     <Page>
-      <PageHeader back tone="primary" image={images.prayingHands} title={t("home.novenas")} description={t("novenas.description")} />
+      <PageHeader back tone="primary" image={art.stJude} title={t("home.novenas")} description={t("novenas.description")} />
 
       <Alert tone="accent">{t("novenas.info")}</Alert>
 

@@ -8,7 +8,7 @@ import { useReadAloud } from "../../lib/speech";
 import { itemKey } from "../../lib/items";
 import { prayerContent } from "../../constants/content/otherPrayerTexts";
 import { useContent } from "../../lib/i18n/content";
-import { images } from "../../constants/images";
+import { art } from "../../constants/images";
 
 export default function OtherPrayerDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -30,7 +30,7 @@ export default function OtherPrayerDetailScreen() {
     <Page bottomBar={<PrayerActionBar itemKey={itemKey.other(id!)} speech={speech} />}>
       <PageHeader
         tone="primary"
-        image={images.rosaryFern}
+        image={art.maryChild}
         back
         eyebrow={t("prayers.prayer")}
         title={tc(prayer.title)}

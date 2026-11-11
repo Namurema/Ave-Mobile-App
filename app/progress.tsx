@@ -23,7 +23,7 @@ import { Page, PageHeader, Section, ListCard, EmptyState } from "../components/u
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { cn } from "../lib/utils";
-import { images } from "../constants/images";
+import { art } from "../constants/images";
 import { myPrayersTabs } from "../components/MyPrayersCard";
 
 const HISTORY_LIMIT = 30;
@@ -77,7 +77,7 @@ export default function ProgressScreen() {
 
   return (
     <Page>
-      <PageHeader back tone="primary" image={images.prayingHands} title={t("progress.myPrayers")} tabs={myPrayersTabs(t)} />
+      <PageHeader back tone="primary" image={art.groupPrayer} title={t("progress.myPrayers")} tabs={myPrayersTabs(t)} />
 
       <View className="flex-row flex-wrap -m-1.5">
         <Stat label={t("progress.streak")} value={streak} />

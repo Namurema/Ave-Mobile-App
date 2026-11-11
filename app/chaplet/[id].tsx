@@ -8,7 +8,7 @@ import { useReadAloud } from "../../lib/speech";
 import { itemKey } from "../../lib/items";
 import { chapletContent } from "../../constants/content/chapletTexts";
 import { useContent } from "../../lib/i18n/content";
-import { images } from "../../constants/images";
+import { art } from "../../constants/images";
 
 export default function ChapletDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -30,7 +30,7 @@ export default function ChapletDetailScreen() {
     <Page bottomBar={<PrayerActionBar itemKey={itemKey.chaplet(id!)} speech={speech} />}>
       <PageHeader
         tone="primary"
-        image={images.rosaryWall}
+        image={art.divineMercy}
         back
         eyebrow={t("chaplets.eyebrow")}
         title={tc(chaplet.title)}

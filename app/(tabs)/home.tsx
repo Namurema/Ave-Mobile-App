@@ -16,7 +16,7 @@ import { scripture } from "../../constants/content/scripture";
 import { useAuthStore, displayName } from "../../store/authStore";
 import { cn } from "../../lib/utils";
 import { PhotoBackdrop } from "../../components/ui/page";
-import { images, dailyTiles } from "../../constants/images";
+import { dailyTiles, art } from "../../constants/images";
 import { MyPrayersCard } from "../../components/MyPrayersCard";
 import { NovenaSeasonCard } from "../../components/NovenaSeason";
 import { TrialNotice } from "../../components/AccessGate";
@@ -195,7 +195,7 @@ export default function HomeScreen() {
 
             {/* Today's Rosary */}
             <Card className="bg-primary border-primary overflow-hidden">
-              <PhotoBackdrop source={images.rosaryHands} />
+              <PhotoBackdrop source={art.rosary} />
               <View className="p-6 md:p-8 gap-5 md:flex-row md:items-center md:justify-between">
                 <View className="gap-1.5 md:flex-1">
                   <Text className="text-xs font-semibold uppercase tracking-widest text-accent-light">

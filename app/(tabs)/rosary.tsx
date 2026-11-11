@@ -11,7 +11,7 @@ import { useLanguageStore } from "../../store/LanguageStore";
 import { formatWeekday } from "../../lib/i18n/helpers";
 import { ROSARY_BY_DAY } from "../../constants/content/rosary";
 import { useContent } from "../../lib/i18n/content";
-import { images } from "../../constants/images";
+import { art } from "../../constants/images";
 
 export default function RosaryScreen() {
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function RosaryScreen() {
     <Page>
       <PageHeader
         tone="primary"
-        image={images.rosaryHands}
+        image={art.rosary}
         eyebrow={`${formatWeekday(new Date(), language)} · ${t("rosary.title")}`}
         title={todaysMystery.name}
         description={t("rosary.focusVirtues")}

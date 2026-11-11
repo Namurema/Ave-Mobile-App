@@ -16,7 +16,7 @@ import { formatWeekday } from "../../lib/i18n/helpers";
 import { mysteryDetailsMap, signOfTheCross } from "../../constants/content/rosarySession";
 import { useContent } from "../../lib/i18n/content";
 import { getPrayersWithFallback } from "../../lib/supabase/queries";
-import { images } from "../../constants/images";
+import { art } from "../../constants/images";
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
@@ -178,7 +178,7 @@ export default function RosarySessionScreen() {
   const header = (
     <PageHeader
       tone="primary"
-      image={images.rosaryHands}
+      image={art.rosary}
       eyebrow={`${formatWeekday(new Date(), language)} · ${t(`rosary.${MYSTERY_BY_DAY[today]}`)}`}
       title={t("rosary.title")}
       tabs={rosaryTabs(t)}

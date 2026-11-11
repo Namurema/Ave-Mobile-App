@@ -197,7 +197,7 @@ function ValueTile({ value, unit }: { value: string | number; unit?: string }) {
   return (
     <View className="h-14 w-14 rounded-lg bg-accent items-center justify-center">
       <Text className="text-lg font-bold leading-6 text-primary-light">{value}</Text>
-      {unit ? <Text className="text-[11px] font-medium text-primary-dark">{unit}</Text> : null}
+      {unit ? <Text className="text-[11px] font-medium text-accent-light/80">{unit}</Text> : null}
     </View>
   );
 }

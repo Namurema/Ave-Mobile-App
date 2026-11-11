@@ -8,7 +8,7 @@ import { useAuthStore } from "../store/authStore";
 import { useAuthDialog } from "../store/authDialogStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { LANGUAGES } from "../constants/languages";
-import { images, dailyTiles } from "../constants/images";
+import { images, dailyTiles, art } from "../constants/images";
 import { CONTACT_EMAIL, TIKTOK_URL } from "../constants/site";
 import { InstallDialog } from "../components/Popups";
 import { describeItem } from "../lib/items";
@@ -45,9 +45,9 @@ export default function SplashScreen() {
 
   const tiles = [
     { title: t("splash.dailyTitle"), text: t("splash.dailyDescription"), image: dailyTiles.morning, route: "/(tabs)/prayers" },
-    { title: t("splash.rosaryTitle"), text: t("splash.rosaryDescription"), image: images.rosaryHands, route: "/(tabs)/rosary" },
-    { title: t("splash.devotionsTitle"), text: t("splash.devotionsDescription"), image: images.novenasTile, route: "/novenas" },
-    { title: t("nav.foryou"), text: t("splash.forYouDescription"), image: images.prayingHands, route: "/(tabs)/foryou" },
+    { title: t("splash.rosaryTitle"), text: t("splash.rosaryDescription"), image: art.rosary, route: "/(tabs)/rosary" },
+    { title: t("splash.devotionsTitle"), text: t("splash.devotionsDescription"), image: art.stJude, route: "/novenas" },
+    { title: t("nav.foryou"), text: t("splash.forYouDescription"), image: art.forYou, route: "/(tabs)/foryou" },
   ];
 
   // Footer: real prayers by name, so people and search engines can go straight to them

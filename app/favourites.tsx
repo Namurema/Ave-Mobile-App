@@ -4,7 +4,7 @@ import { useUserDataStore } from "../store/userDataStore";
 import { useContent } from "../lib/i18n/content";
 import { describeItem } from "../lib/items";
 import { Page, PageHeader, Section, ListCard, EmptyState } from "../components/ui/page";
-import { images } from "../constants/images";
+import { art } from "../constants/images";
 import { myPrayersTabs } from "../components/MyPrayersCard";
 
 export default function FavouritesScreen() {
@@ -25,7 +25,7 @@ export default function FavouritesScreen() {
 
   return (
     <Page>
-      <PageHeader back tone="primary" image={images.prayingHands} title={t("progress.myPrayers")} tabs={myPrayersTabs(t)} />
+      <PageHeader back tone="primary" image={art.groupPrayer} title={t("progress.myPrayers")} tabs={myPrayersTabs(t)} />
       {items.length === 0 ? (
         <EmptyState title={t("favourites.title")} description={t("favourites.empty")} />
       ) : (

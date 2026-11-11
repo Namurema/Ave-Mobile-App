@@ -4,7 +4,7 @@ import { Alert } from "../components/ui/alert";
 import { Page, PageHeader, Section, ListCard } from "../components/ui/page";
 import { availableChaplets } from "../constants/content/available";
 import { useContent } from "../lib/i18n/content";
-import { images } from "../constants/images";
+import { art } from "../constants/images";
 
 export default function ChapletsScreen() {
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function ChapletsScreen() {
 
   return (
     <Page>
-      <PageHeader back tone="primary" image={images.rosaryWall} title={t("home.chaplets")} description={t("categories.chapletsDescription")} />
+      <PageHeader back tone="primary" image={art.divineMercy} title={t("home.chaplets")} description={t("categories.chapletsDescription")} />
 
       <Alert tone="accent">{t("chaplets.info")}</Alert>
 
