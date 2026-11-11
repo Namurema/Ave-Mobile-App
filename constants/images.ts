@@ -8,6 +8,7 @@ export const images = {
   rosaryWall: require("../assets/images/rosary-wall.jpg"),
   handsNight: require("../assets/images/hands-night.jpg"),
   novenasTile: require("../assets/images/tile-novenas.jpg"),
+  heroSunrise: require("../assets/images/hero-sunrise.jpg"),
 };
 
 // Square tiles for Morning, Midday and Night

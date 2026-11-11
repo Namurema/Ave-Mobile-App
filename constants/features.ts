@@ -11,3 +11,8 @@ export const PAYMENTS_ENABLED = false;
 
 // Optional email/password accounts. Ave stays free and usable without one.
 export const LOGIN_ENABLED = true;
+
+// true: every page except the landing, sign-in and legal pages needs an
+// account. false: anyone can browse and pray; an account keeps progress,
+// favourites and routines on all devices.
+export const ACCOUNT_REQUIRED = false;

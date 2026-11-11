@@ -4,7 +4,7 @@
 
 export const LEGAL_OPERATOR = "the Ave team";
 export const LEGAL_CONTACT_EMAIL = "stelarlabs@gmail.com";
-export const LEGAL_UPDATED = "24 October 2026";
+export const LEGAL_UPDATED = "12 November 2026";
 
 export const privacyPolicy = [
   {
@@ -13,7 +13,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Information we keep",
-    body: "You need an account to use Ave. We keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan (once plans are introduced): the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
+    body: "You can pray with Ave without an account. Your settings, progress and favourites are then kept only on your device. If you create an account, we keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan (once plans are introduced): the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
   },
   {
     heading: "Payments and donations",
@@ -96,7 +96,7 @@ export const termsAndConditions = [
   },
   {
     heading: "Your account",
-    body: "You need an account to use Ave. Give accurate information, keep your password private, and use the account only for yourself; a plan is for one person. You are responsible for activity on your account.",
+    body: "Accounts are optional; they keep your progress on all your devices. If you create one, give accurate information, keep your password private, and use the account only for yourself; a plan is for one person. You are responsible for activity on your account.",
   },
   {
     heading: "Acceptable use",

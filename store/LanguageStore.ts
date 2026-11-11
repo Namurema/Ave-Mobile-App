@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '../lib/i18n';
+import { LANGUAGES } from '../constants/languages';
 
 const LANGUAGE_KEY = 'language';
 
@@ -15,7 +16,7 @@ export const useLanguageStore = create<LanguageState>((set) => ({
 
   loadLanguage: async () => {
     const saved = await AsyncStorage.getItem(LANGUAGE_KEY);
-    if (saved) {
+    if (saved && LANGUAGES.some((language) => language.code === saved)) {
       i18n.changeLanguage(saved);
       set({ language: saved });
     }

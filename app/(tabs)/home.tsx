@@ -126,7 +126,7 @@ export default function HomeScreen() {
   return (
     <View className="flex-1 bg-zinc-50">
       <Head>
-        <title>Ave: Catholic Prayers in English, Luganda, Runyankore, Swahili, Spanish and Italian</title>
+        <title>Ave: Catholic Prayers in English, Luganda and Runyankore</title>
       </Head>
       <StatusBar style="dark" />
       <TopNav />

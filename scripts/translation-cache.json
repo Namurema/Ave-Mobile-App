@@ -61,8 +61,8 @@
       "text": "Saba buli lunaku mu lulimi lwo"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
-      "text": "Okusaba buli lunaku, Okusoma Essapuli Entukuvu, novena ne chapleti mu Lungereza, Oluganda, Runyankole, Swahili, Spanish n'Oluyitale."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
+      "text": "Okusaba buli lunaku, ekitabo ky'okusabiramu ekya Rosary, novenas ne chaplets mu Lungereza, Oluganda n'Olunyankole."
     },
     "splash.tagline": {
       "en": "Your companion for daily prayers and spiritual devotion",
@@ -1405,8 +1405,8 @@
       "text": "Enteekateeka yo erimu buli ssaala mu nnimi zonna essatu, eddoboozi, okukwatagana n'okujjukizibwa."
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
-      "text": "Buli ssaala mu Lungereza, Oluganda, Runyankole, Oluswayiri, Olusipanisi n'Oluyitale, nga zirimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa."
+      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+      "text": "Buli ssaala mu Lungereza, Oluganda ne Runyankole n'eddoboozi, okukuba akabonero, okugabana n'okujjukizibwa."
     },
     "billing.trialUntil": {
       "en": "Your free trial runs until",
@@ -1693,12 +1693,12 @@
       "text": "Olina obuyinza okufuna Ave okuva mu ttiimu ya Ave."
     },
     "auth.signUpDescriptionFree": {
-      "en": "Create your account to start praying with Ave.",
-      "text": "Kola akawunti yo okutandika okusaba ne Ave."
+      "en": "Keep your prayers, progress and routines on all your devices.",
+      "text": "Okusaba kwo, okukulaakulana n'emirimu gyo bikole ku byuma byo byonna."
     },
     "splash.accountNoteFree": {
-      "en": "Create your account to start praying with Ave.",
-      "text": "Tondawo akawunti yo okutandika okusaba ne Ave."
+      "en": "No account needed. Create one to keep your progress on all your devices.",
+      "text": "Tewali akawunti ekyetaagisa. Kola emu okukuuma enkulaakulana yo ku byuma byo byonna."
     },
     "auth.agreeRequired": {
       "en": "Please tick the box to agree before creating your account.",
@@ -2059,6 +2059,26 @@
     "splash.backToTop": {
       "en": "Back to top",
       "text": "Okuddayo ku ntikko"
+    },
+    "splash.chooseLanguage": {
+      "en": "Choose your language",
+      "text": "Londa olulimi lwo"
+    },
+    "splash.createFreeAccount": {
+      "en": "Create a free account",
+      "text": "Kola akawunti ey'obwereere"
+    },
+    "splash.agreeByUsing": {
+      "en": "By using Ave you agree to our",
+      "text": "Bw'okozesa Ave okkiriza enkola yaffe"
+    },
+    "splash.footerPray": {
+      "en": "Pray",
+      "text": "Saba"
+    },
+    "splash.getApp": {
+      "en": "Get the app",
+      "text": "Funa app"
     }
   },
   "rny": {
@@ -2119,8 +2139,8 @@
       "text": "Shaba buri izooba, omu rurimi rwawe"
     },
     "splash.description": {
-      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda, Runyankore, Swahili, Spanish and Italian.",
-      "text": "Okushaba buriizooba, akasari k'ekitiinisa, novena hamwe n'ebikomo omu Rungyereza, Oruganda, Runyankole, Swahili, Spanish hamwe na Italian."
+      "en": "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
+      "text": "Okushaba buriizooba, akasari k'omukama, novena hamwe n'ebikomo omu Rungyereza, Oruganda na Runyankore."
     },
     "nav.rosary": {
       "en": "Rosary",
@@ -3559,8 +3579,8 @@
       "text": "Okugaruka aha nteekateeka"
     },
     "billing.description": {
-      "en": "Every prayer, in English, Luganda, Runyankore, Swahili, Spanish and Italian, with audio, streaks, sharing and reminders.",
-      "text": "Buri kushaba, omu Rungyereza, Luganda, Runyankore, Swahili, Spanish na Italian, n'obuhwezi bw'amahurire, okugabana hamwe n'okwijusya."
+      "en": "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+      "text": "Buri kushaba, omu Rungyereza, Luganda na Runyankore, n'okuhurikiriza, okugabana hamwe n'okwijutsya."
     },
     "billing.extend": {
       "en": "Extend your plan",
@@ -3755,12 +3775,12 @@
       "text": "Oine obugabe bw'okuhika ahari Ave kuruga aha tiimu ya Ave."
     },
     "auth.signUpDescriptionFree": {
-      "en": "Create your account to start praying with Ave.",
-      "text": "Kora akawunti yaawe kutandika kushaba na Ave."
+      "en": "Keep your prayers, progress and routines on all your devices.",
+      "text": "Guma omu kushaba kwawe, okutunguuka n'emirimo yaawe aha byoma byawe byona."
     },
     "splash.accountNoteFree": {
-      "en": "Create your account to start praying with Ave.",
-      "text": "Kora akawunti yaawe okutandika kushaba na Ave."
+      "en": "No account needed. Create one to keep your progress on all your devices.",
+      "text": "Tihariho akawunti erikwetengwa. Kora emwe okurinda entunguuka yaawe aha byoma byawe byona."
     },
     "auth.agreeRequired": {
       "en": "Please tick the box to agree before creating your account.",
@@ -4121,6 +4141,26 @@
     "splash.backToTop": {
       "en": "Back to top",
       "text": "Okugaruka ahaiguru"
+    },
+    "splash.createFreeAccount": {
+      "en": "Create a free account",
+      "text": "Kora akawunti ya busha"
+    },
+    "splash.agreeByUsing": {
+      "en": "By using Ave you agree to our",
+      "text": "Waakoresa Ave noikiriza ebiragiro byaitu"
+    },
+    "splash.getApp": {
+      "en": "Get the app",
+      "text": "Tunga app"
+    },
+    "splash.footerPray": {
+      "en": "Pray",
+      "text": "Shaba"
+    },
+    "splash.chooseLanguage": {
+      "en": "Choose your language",
+      "text": "Toorana orurimi rwawe"
     }
   },
   "content-lg": {

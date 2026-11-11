@@ -24,7 +24,7 @@ export default {
   splash: {
     tagline: "Mukuumi wo mu kusaba buli lunaku n'okunyweza omwoyo",
     headline: "Saba buli lunaku mu lulimi lwo",
-    description: "Okusaba buli lunaku, Okusoma Essapuli Entukuvu, novena ne chapleti mu Lungereza, Oluganda, Runyankole, Swahili, Spanish n'Oluyitale.",
+    description: "Okusaba buli lunaku, ekitabo ky'okusabiramu ekya Rosary, novenas ne chaplets mu Lungereza, Oluganda n'Olunyankole.",
     dailyTitle: "Okusaba okwa buli lunaku",
     dailyDescription: "Okusaba kw'enkya, ez'emisana n'ekiro",
     rosaryTitle: "Essaala ya Rosari Entukuvu",
@@ -33,7 +33,7 @@ export default {
     devotionsDescription: "Ekisa kya Katonda, Stations of the Cross n'ebirala",
     footer: "Omukwano gw'okusaba ogwa Katulika",
     accountNote: "Ennaku 7 ez'obwereere, olwo UGX 7,000 buli mwezi mu Uganda oba USD 3.99 ebweru wa Uganda.",
-    accountNoteFree: "Tondawo akawunti yo okutandika okusaba ne Ave.",
+    accountNoteFree: "Tewali akawunti ekyetaagisa. Kola emu okukuuma enkulaakulana yo ku byuma byo byonna.",
     catholicPrayers: "Okusaba kw'Abakatuliki leero",
     startPraying: "Tandika okusaba",
     insideTitle: "Buli kimu ky'oyagala okusaba",
@@ -41,7 +41,12 @@ export default {
     beginTitle: "Tandika leero",
     contactUs: "Tukwatagane naffe",
     connect: "Kwatagana",
-    backToTop: "Okuddayo ku ntikko"
+    backToTop: "Okuddayo ku ntikko",
+    createFreeAccount: "Kola akawunti ey'obwereere",
+    chooseLanguage: "Londa olulimi lwo",
+    agreeByUsing: "Bw'okozesa Ave okkiriza enkola yaffe",
+    footerPray: "Saba",
+    getApp: "Funa app"
   },
   language: {
     title: "Tukuwerekeza",
@@ -319,7 +324,7 @@ export default {
   },
   billing: {
     title: "Okusaba okuwandiisa",
-    description: "Buli ssaala mu Lungereza, Oluganda, Runyankole, Oluswayiri, Olusipanisi n'Oluyitale, nga zirimu amaloboozi, okukubaganya ebirowoozo n'okujjukizibwa.",
+    description: "Buli ssaala mu Lungereza, Oluganda ne Runyankole n'eddoboozi, okukuba akabonero, okugabana n'okujjukizibwa.",
     subscription: "Okwewandiisa",
     includes: "Enteekateeka yo erimu buli ssaala mu nnimi zonna essatu, eddoboozi, okukwatagana n'okujjukizibwa.",
     signInFirst: "Kola akawunta ey'obwereere okutandika okugezesebwa kw'ennaku omusanvu.",
@@ -437,7 +442,7 @@ export default {
     createAccount: "Kola akawunti",
     signUpTitle: "Kola akawunti yo",
     signUpDescription: "Kola akawunti yo otandike okugezesebwa kwa nnaku musanvu okw'obwereere.",
-    signUpDescriptionFree: "Kola akawunti yo okutandika okusaba ne Ave.",
+    signUpDescriptionFree: "Okusaba kwo, okukulaakulana n'emirimu gyo bikole ku byuma byo byonna.",
     name: "Erinnya",
     email: "Emeyiro",
     password: "Akasumuluzo",

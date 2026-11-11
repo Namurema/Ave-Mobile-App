@@ -83,7 +83,7 @@ function Step({ number, text, icon }: { number: number; text: string; icon?: key
   );
 }
 
-function InstallDialog({ onClose }: { onClose: () => void }) {
+export function InstallDialog({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation();
   const { isIOS, canPrompt, promptInstall } = useInstallPrompt();
 

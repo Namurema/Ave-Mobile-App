@@ -27,10 +27,11 @@ const REVIEW_FILE = path.join(ROOT, "translations-review.md");
 const LANGUAGES = [
   { code: "lg", sunbird: "lug", name: "Luganda" },
   { code: "rny", sunbird: "nyn", name: "Runyankore" },
-  { code: "sw", sunbird: "swa", name: "Swahili" },
-  { code: "es", deepl: "ES", name: "Spanish" },
-  { code: "it", deepl: "IT", name: "Italian" },
 ];
+// Paused (their files are kept): add back to LANGUAGES to update them
+// { code: "sw", sunbird: "swa", name: "Swahili" },
+// { code: "es", deepl: "ES", name: "Spanish" },
+// { code: "it", deepl: "IT", name: "Italian" },
 const providerName = (language) => (language.deepl ? "DeepL" : "Sunbird");
 
 // Keys that moved; their old translations are reused

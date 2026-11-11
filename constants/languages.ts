@@ -46,33 +46,8 @@ export const LANGUAGES: LanguageInfo[] = [
     htmlLang: "nyn",
     dateLocale: "nyn",
   },
-  {
-    code: "sw",
-    name: "Kiswahili",
-    englishName: "Swahili",
-    description: "Swahili",
-    htmlLang: "sw",
-    dateLocale: "sw",
-    speech: "sw",
-  },
-  {
-    code: "es",
-    name: "Español",
-    englishName: "Spanish",
-    description: "Spanish",
-    htmlLang: "es",
-    dateLocale: "es-ES",
-    speech: "es",
-  },
-  {
-    code: "it",
-    name: "Italiano",
-    englishName: "Italian",
-    description: "Italian",
-    htmlLang: "it",
-    dateLocale: "it-IT",
-    speech: "it",
-  },
+  // Swahili, Spanish and Italian are paused; their translation files are kept
+  // (lib/i18n/sw.ts, es.ts, it.ts and content/*.json)
 ];
 
 export const languageInfo = (code: string) => LANGUAGES.find((language) => language.code === code) ?? LANGUAGES[0];

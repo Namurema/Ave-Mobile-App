@@ -24,7 +24,7 @@ export default {
   splash: {
     tagline: "Omufura wawe omu kusaba buri eisho n'okusingura omwoyo",
     headline: "Shaba buri izooba, omu rurimi rwawe",
-    description: "Okushaba buriizooba, akasari k'ekitiinisa, novena hamwe n'ebikomo omu Rungyereza, Oruganda, Runyankole, Swahili, Spanish hamwe na Italian.",
+    description: "Okushaba buriizooba, akasari k'omukama, novena hamwe n'ebikomo omu Rungyereza, Oruganda na Runyankore.",
     dailyTitle: "Okushaba buriizooba",
     dailyDescription: "Okushaba kw'akasheeshe, omu ihangwe hamwe n'ekiro",
     rosaryTitle: "Ekitabo ky'okushaba ekirikwera",
@@ -33,7 +33,7 @@ export default {
     devotionsDescription: "Obusaasi bwa Ruhanga, emyanya ya Cross hamwe n'ebindi",
     footer: "Okushaba kw'abakaturiki",
     accountNote: "Ebiro 7 bya busha, reero UGX 7,000 buri kwezi omu Uganda nainga USD 3.99 aheeru y'eihanga.",
-    accountNoteFree: "Kora akawunti yaawe okutandika kushaba na Ave.",
+    accountNoteFree: "Tihariho akawunti erikwetengwa. Kora emwe okurinda entunguuka yaawe aha byoma byawe byona.",
     catholicPrayers: "Okushaba kw'abakaturiki okwa eriizooba",
     startPraying: "Tandika kushaba",
     insideTitle: "Buri kimwe eki orikwetenga kushaba",
@@ -41,7 +41,12 @@ export default {
     beginTitle: "Tandika eriizooba",
     contactUs: "Tuhikaanaho",
     connect: "Kwatanisa",
-    backToTop: "Okugaruka ahaiguru"
+    backToTop: "Okugaruka ahaiguru",
+    createFreeAccount: "Kora akawunti ya busha",
+    chooseLanguage: "Toorana orurimi rwawe",
+    agreeByUsing: "Waakoresa Ave noikiriza ebiragiro byaitu",
+    footerPray: "Shaba",
+    getApp: "Tunga app"
   },
   language: {
     title: "Tukuragirire",
@@ -319,7 +324,7 @@ export default {
   },
   billing: {
     title: "Okushaba okwehandikisa",
-    description: "Buri kushaba, omu Rungyereza, Luganda, Runyankore, Swahili, Spanish na Italian, n'obuhwezi bw'amahurire, okugabana hamwe n'okwijusya.",
+    description: "Buri kushaba, omu Rungyereza, Luganda na Runyankore, n'okuhurikiriza, okugabana hamwe n'okwijutsya.",
     subscription: "Okwihayo",
     includes: "Enteekateeka yaawe erimu buri kushaba omu ndimi zoona ishatu, okuhurikiriza, okuguma nookora, okugabana hamwe n'okwijusya.",
     signInFirst: "Kora akaunti ya busha kutandika okugyezibwa kw'ebiro 7.",
@@ -437,7 +442,7 @@ export default {
     createAccount: "Kora akawunti",
     signUpTitle: "Kora akawunti yaawe",
     signUpDescription: "Kora akaunti yaawe kutandika okugyezibwa kwa bwereere okw'ebiro 7.",
-    signUpDescriptionFree: "Kora akawunti yaawe kutandika kushaba na Ave.",
+    signUpDescriptionFree: "Guma omu kushaba kwawe, okutunguuka n'emirimo yaawe aha byoma byawe byona.",
     name: "Eiziina",
     email: "E-mayiro",
     password: "Akasumuruzo",
