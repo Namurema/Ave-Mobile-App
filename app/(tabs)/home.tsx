@@ -60,7 +60,7 @@ function SidebarList({
             ) : null}
           </View>
           {row.value ? (
-            <Text className="text-sm font-semibold text-primary">{row.value}</Text>
+            <Text className="text-sm font-semibold text-primary-light">{row.value}</Text>
           ) : (
             <Text className="text-lg text-muted-foreground">›</Text>
           )}
@@ -124,11 +124,11 @@ export default function HomeScreen() {
   ];
 
   return (
-    <View className="flex-1 bg-zinc-50">
+    <View className="flex-1 bg-background">
       <Head>
         <title>Ave: Catholic Prayers in English, Luganda and Runyankore</title>
       </Head>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <TopNav />
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -160,7 +160,7 @@ export default function HomeScreen() {
                   </Text>
                   <Text className="text-sm text-muted-foreground">·</Text>
                   <Pressable onPress={() => router.push("/Language")}>
-                    <Text className="text-sm font-semibold text-primary">{t("common.change")}</Text>
+                    <Text className="text-sm font-semibold text-primary-light">{t("common.change")}</Text>
                   </Pressable>
                 </View>
               </View>
@@ -198,7 +198,7 @@ export default function HomeScreen() {
               <PhotoBackdrop source={images.rosaryHands} />
               <View className="p-6 md:p-8 gap-5 md:flex-row md:items-center md:justify-between">
                 <View className="gap-1.5 md:flex-1">
-                  <Text className="text-xs font-semibold uppercase tracking-widest text-accent">
+                  <Text className="text-xs font-semibold uppercase tracking-widest text-accent-light">
                     {t("home.featuredDaily")} · {t("rosary.title")}
                   </Text>
                   <Text className="text-2xl md:text-3xl font-bold tracking-tight text-white">
@@ -271,7 +271,7 @@ export default function HomeScreen() {
                       onPress={() => router.push("/daily-prayer/morning")}
                       className="self-start"
                     >
-                      <Text className="text-sm font-semibold text-primary">{t("home.readMorningPrayers")}</Text>
+                      <Text className="text-sm font-semibold text-primary-light">{t("home.readMorningPrayers")}</Text>
                     </Pressable>
                   </>
                 ) : (

@@ -19,6 +19,7 @@ export default {
     rosary: "Rosari",
     settings: "Ebyokutebeekanisa",
     foryou: "Ahabwawe",
+    me: "Me",
     openApp: "Kwigura app"
   },
   splash: {
@@ -521,6 +522,22 @@ export default {
     androidStep2: "Kwata ahari “Okutaho app” nainga “Okwongyerayo aha sikuriini y’omuka”",
     androidStep3: "Kanda aha “Okutaho”. Ave hati eri aha sikuriini yaawe ey'omuka.",
     gotIt: "Nkagiteekateeka"
+  },
+  me: {
+    guest: "Mukama wange",
+    guestTitle: "Guma aha ntunguuka yaawe",
+    guestText: "Kora akaunti ya busha okuguma oine obuhango bwawe, engyenderwaho hamwe n'okushaba kwawe okubiikiire aha byoma byawe byona.",
+    streak: "Omurongo",
+    streakEmpty: "Shaba eriizooba kandi otandike okwombeka omucwe!",
+    streakToday: "Okashaba eriizooba. Guma nookikora!",
+    routine: "Omuringo gw'okukora",
+    edit: "Kuhindura",
+    routineEmpty: "Toorana okushaba kwa buri izooba ry'esande kandi otungye okwijusibwa.",
+    setUp: "Tebeekanisa omuringo gwangye",
+    recent: "Omu bwire bukye enyima akashaba",
+    recentEmpty: "Okushaba oku orikworeka nk'okushabirwe nikureebeka aha.",
+    saved: "Okushaba okwahonokire",
+    savedEmpty: "Kwata aha kubiika okushaba kwona okukugumya aha."
   },
   foryou: {
     title: "Ahabwawe",

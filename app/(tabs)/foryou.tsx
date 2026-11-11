@@ -63,7 +63,7 @@ export default function ForYouScreen() {
   };
 
   return (
-    <View className="flex-1 bg-zinc-950 md:bg-zinc-50">
+    <View className="flex-1 bg-zinc-950 md:bg-background">
       <Head>
         <title>{`${t("foryou.title")} | Ave`}</title>
       </Head>
@@ -425,13 +425,13 @@ function SavedCards({ onClose }: { onClose: () => void }) {
   }, [language, ids.join(",")]);
 
   return (
-    <View className="flex-1 bg-zinc-50">
+    <View className="flex-1 bg-background">
       <View className="flex-row items-center justify-between gap-3 border-b border-border bg-background px-4 py-3">
         <Text role="heading" className="text-lg font-bold text-foreground">
           {t("foryou.savedTitle")}
         </Text>
         <Pressable onPress={onClose} aria-label={t("common.close")} className="h-9 w-9 items-center justify-center rounded-full web:hover:bg-muted">
-          <Ionicons name="close" size={22} color="#18181B" />
+          <Ionicons name="close" size={22} color="#FAFAFA" />
         </Pressable>
       </View>
       <ScrollView contentContainerClassName="p-4 gap-3">
@@ -439,14 +439,14 @@ function SavedCards({ onClose }: { onClose: () => void }) {
         {cards?.map((card) => (
           <View key={card.id} className="rounded-xl border border-border bg-card p-4 gap-2">
             <Text className="font-serif text-base leading-7 text-card-foreground">{card.text}</Text>
-            {card.ref ? <Text className="text-sm font-semibold text-primary">{card.ref}</Text> : null}
+            {card.ref ? <Text className="text-sm font-semibold text-primary-light">{card.ref}</Text> : null}
             <View className="flex-row gap-4 pt-1">
               <Pressable onPress={() => shareCard(card)} className="flex-row items-center gap-1.5">
-                <Ionicons name="share-social-outline" size={16} color="#01758F" />
-                <Text className="text-sm font-medium text-primary">{t("foryou.share")}</Text>
+                <Ionicons name="share-social-outline" size={16} color="#5FC4DB" />
+                <Text className="text-sm font-medium text-primary-light">{t("foryou.share")}</Text>
               </Pressable>
               <Pressable onPress={() => toggleFavourite(savedKey(card.id))} className="flex-row items-center gap-1.5">
-                <Ionicons name="bookmark" size={16} color="#71717A" />
+                <Ionicons name="bookmark" size={16} color="#A3A3A3" />
                 <Text className="text-sm font-medium text-muted-foreground">{t("foryou.unsave")}</Text>
               </Pressable>
             </View>

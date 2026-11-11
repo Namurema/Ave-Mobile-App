@@ -64,7 +64,7 @@ export default function RosaryScreen() {
 
                 {open && (
                   <View className="ml-11 rounded-md bg-muted p-3 gap-1">
-                    <Text className="text-xs font-semibold uppercase tracking-widest text-primary">
+                    <Text className="text-xs font-semibold uppercase tracking-widest text-primary-light">
                       {t("rosary.meditation")}
                     </Text>
                     <Text className="text-sm leading-6 text-foreground">{tc(mystery.meditation)}</Text>

@@ -33,12 +33,12 @@ export default function LanguageScreen() {
 
   return (
     <View className="flex-1 bg-background">
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
 
       {/* Top bar */}
       <View className="border-b border-border">
         <View className="w-full max-w-5xl self-center h-16 px-4 flex-row items-center justify-between">
-          <Text className="text-xl font-bold tracking-tight text-primary">Ave</Text>
+          <Text className="text-xl font-bold tracking-tight text-primary-light">Ave</Text>
           <Button
             variant="ghost"
             size="sm"

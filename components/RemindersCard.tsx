@@ -60,7 +60,7 @@ export function RemindersCard() {
       <View className="gap-1">
         <Text className="text-base font-semibold text-card-foreground">{t("reminders.title")}</Text>
         <Text className="text-sm leading-5 text-muted-foreground">{text}</Text>
-        {note ? <Text className="text-sm font-medium text-primary">{note}</Text> : null}
+        {note ? <Text className="text-sm font-medium text-primary-light">{note}</Text> : null}
       </View>
       {!session ? (
         <Button size="sm" className="self-start" onPress={() => useAuthDialog.getState().open("signIn", "/routine")}>

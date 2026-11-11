@@ -48,8 +48,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* Settings: opened from the gear button, not a tab */}
-      <Tabs.Screen name="profile" options={{ title: "Settings", href: null }} />
+            <Tabs.Screen name="profile" options={{ title: "Me" }} />
     </Tabs>
   );
 }

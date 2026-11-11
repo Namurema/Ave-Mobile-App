@@ -51,7 +51,7 @@ export function BrowseSidebar() {
                 <Text
                   className={cn(
                     "text-sm",
-                    active ? "font-semibold text-primary" : "font-medium text-foreground"
+                    active ? "font-semibold text-primary-light" : "font-medium text-foreground"
                   )}
                 >
                   {link.label}
@@ -80,7 +80,7 @@ export function BrowseSidebar() {
                 active ? "border-primary bg-primary/5" : "border-transparent web:hover:bg-muted/60"
               )}
             >
-              <Text className={cn("text-sm", active ? "font-semibold text-primary" : "font-medium text-foreground")}>
+              <Text className={cn("text-sm", active ? "font-semibold text-primary-light" : "font-medium text-foreground")}>
                 {link.label}
               </Text>
               {link.count ? <Text className="text-sm text-muted-foreground">{link.count}</Text> : null}
@@ -96,7 +96,7 @@ export function BrowseSidebar() {
             {languageInfo(language).name}
           </Text>
           <Pressable onPress={() => router.push("/Language")}>
-            <Text className="text-sm font-semibold text-primary">{t("common.change")}</Text>
+            <Text className="text-sm font-semibold text-primary-light">{t("common.change")}</Text>
           </Pressable>
         </View>
       </Card>

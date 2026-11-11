@@ -29,7 +29,7 @@ function SwitchLink({ prompt, label, onPress }: { prompt?: string; label: string
     <View className="flex-row flex-wrap items-center justify-center gap-1">
       {prompt ? <Text className="text-sm text-muted-foreground">{prompt}</Text> : null}
       <Pressable onPress={onPress}>
-        <Text className="text-sm font-semibold text-primary">{label}</Text>
+        <Text className="text-sm font-semibold text-primary-light">{label}</Text>
       </Pressable>
     </View>
   );
@@ -49,15 +49,15 @@ function AgreeToTerms({ checked, onChange, error }: { checked: boolean; onChange
     <View className="gap-1.5">
       <View className="flex-row items-start gap-2.5">
         <Pressable role="checkbox" aria-checked={checked} aria-label={t("auth.agreeLabel")} onPress={() => onChange(!checked)} hitSlop={6}>
-          <Ionicons name={checked ? "checkbox" : "square-outline"} size={22} color={error ? "#DC2626" : "#01758F"} />
+          <Ionicons name={checked ? "checkbox" : "square-outline"} size={22} color={error ? "#DC2626" : "#5FC4DB"} />
         </Pressable>
         <Text className="flex-1 text-sm leading-5 text-muted-foreground" onPress={() => onChange(!checked)}>
           {t("auth.agreeStart")}{" "}
-          <Text role="link" className="font-medium text-primary underline" onPress={() => open("/terms")}>
+          <Text role="link" className="font-medium text-primary-light underline" onPress={() => open("/terms")}>
             {t("legal.terms")}
           </Text>{" "}
           {t("auth.agreeAnd")}{" "}
-          <Text role="link" className="font-medium text-primary underline" onPress={() => open("/privacy")}>
+          <Text role="link" className="font-medium text-primary-light underline" onPress={() => open("/privacy")}>
             {t("legal.privacy")}
           </Text>
         </Text>
@@ -139,7 +139,7 @@ export function EmailCodeForm({
         </Text>
       </View>
       <FormError message={error} />
-      {notice ? <Text className="text-sm text-primary">{notice}</Text> : null}
+      {notice ? <Text className="text-sm text-primary-light">{notice}</Text> : null}
       <Input
         label={t("auth.code")}
         value={code}
@@ -160,7 +160,7 @@ export function EmailCodeForm({
       </Button>
       <View className="flex-row flex-wrap items-center justify-center gap-x-4 gap-y-2">
         <Pressable onPress={resend} disabled={resending}>
-          <Text className="text-sm font-semibold text-primary">{t("auth.resendCode")}</Text>
+          <Text className="text-sm font-semibold text-primary-light">{t("auth.resendCode")}</Text>
         </Pressable>
         <Pressable onPress={onBack}>
           <Text className="text-sm font-medium text-muted-foreground">{t("auth.changeEmail")}</Text>
@@ -223,7 +223,7 @@ export function SignInForm({ onSwitch }: { onSwitch: (view: AuthView) => void })
           onSubmitEditing={submit}
         />
         <Pressable onPress={() => onSwitch("forgot")} className="self-end">
-          <Text className="text-sm font-medium text-primary">{t("auth.forgotPassword")}</Text>
+          <Text className="text-sm font-medium text-primary-light">{t("auth.forgotPassword")}</Text>
         </Pressable>
       </View>
       <Button size="lg" loading={submitting} onPress={submit}>

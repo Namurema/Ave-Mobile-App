@@ -218,7 +218,7 @@ export default function RosarySessionScreen() {
       {/* Progress through the whole Rosary */}
       <View className="gap-2">
         <View className="flex-row justify-between gap-3">
-          <Text className="text-sm font-semibold text-primary">{sectionLabel}</Text>
+          <Text className="text-sm font-semibold text-primary-light">{sectionLabel}</Text>
           <Text className="text-sm text-muted-foreground">
             {t("rosary.step")} {stepIndex + 1} {t("progress.of")} {STEPS.length}
           </Text>
@@ -245,7 +245,7 @@ export default function RosarySessionScreen() {
             />
           </View>
           <View className="rounded-md bg-muted p-4 gap-1">
-            <Text className="text-xs font-semibold uppercase tracking-widest text-primary">{t("rosary.virtue")}</Text>
+            <Text className="text-xs font-semibold uppercase tracking-widest text-primary-light">{t("rosary.virtue")}</Text>
             <SpokenText
               text={tc(mystery.virtue)}
               chunk={speech.activeChunk?.section === 1 ? speech.activeChunk : null}
@@ -260,7 +260,7 @@ export default function RosarySessionScreen() {
               {prayer.title}
             </Text>
             {repeat > 1 && (
-              <Text className="text-sm font-semibold text-primary">
+              <Text className="text-sm font-semibold text-primary-light">
                 {beads} {t("progress.of")} {repeat}
               </Text>
             )}

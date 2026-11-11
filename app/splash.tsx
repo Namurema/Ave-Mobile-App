@@ -67,7 +67,7 @@ export default function SplashScreen() {
   ];
 
   return (
-    <View className="flex-1 bg-zinc-50">
+    <View className="flex-1 bg-background">
       <StatusBar style="dark" />
       <ScrollView ref={scroll} showsVerticalScrollIndicator={false}>
         {/* Screen 1: the card over the morning light */}
@@ -77,7 +77,7 @@ export default function SplashScreen() {
 
           <View className="w-full max-w-6xl self-center px-4 md:px-8 h-16 md:h-20 flex-row items-center justify-between gap-3">
             <Text className="text-2xl font-black tracking-tight text-zinc-900">
-              Ave<Text className="text-primary">.</Text>
+              Ave<Text className="text-primary-light">.</Text>
             </Text>
             <View role="navigation" className="hidden md:flex flex-row items-center gap-6">
               {[
@@ -153,7 +153,7 @@ export default function SplashScreen() {
 
         {/* Screen 2: what's inside */}
         <View className="w-full max-w-6xl self-center px-4 md:px-8 py-8 md:py-10 gap-4 md:gap-5">
-          <Text role="heading" aria-level={2} className="text-2xl md:text-5xl font-extrabold tracking-tight text-zinc-950">
+          <Text role="heading" aria-level={2} className="text-2xl md:text-5xl font-extrabold tracking-tight text-foreground">
             {t("splash.insideTitle")}
           </Text>
           <View className="flex-row flex-wrap -m-1.5">
@@ -178,7 +178,7 @@ export default function SplashScreen() {
             <View className="gap-6 md:gap-8 md:flex-row">
               <View className="gap-1 md:w-56">
                 <Text className="text-2xl font-black tracking-tight text-white">
-                  Ave<Text className="text-primary">.</Text>
+                  Ave<Text className="text-primary-light">.</Text>
                 </Text>
                 <Text className="text-sm text-white/60">{t("splash.footer")}</Text>
               </View>

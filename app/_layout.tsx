@@ -10,7 +10,6 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { LOGIN_ENABLED } from "../constants/features";
 import { registerServiceWorker, startUpdateChecks } from "../lib/pwa";
 import { UpdateBanner } from "../components/UpdateBanner";
-import { InstallDialog } from "../components/InstallDialog";
 import { startUserDataSync } from "../store/userDataStore";
 import { startRoutineSync } from "../store/routineStore";
 import { startAccessSync } from "../store/accessStore";
@@ -54,17 +53,16 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: "#FAFAFA" },
+          contentStyle: { backgroundColor: "#171717" },
         }}
       />
       <AuthGate />
       <AccessGate />
       <AuthDialog />
-      <InstallDialog />
       <UpdateBanner />
     </SafeAreaProvider>
   );

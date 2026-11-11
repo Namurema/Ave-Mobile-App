@@ -85,7 +85,7 @@ export function PrayedCard({ itemKey: key, label }: { itemKey: string; label?: s
     <Card className="p-5 gap-3">
       {prayed ? (
         <View className="flex-row items-center justify-between gap-3">
-          <Text className="flex-1 text-base font-semibold text-primary">{t("progress.prayedToday")}</Text>
+          <Text className="flex-1 text-base font-semibold text-primary-light">{t("progress.prayedToday")}</Text>
           <Button variant="ghost" size="sm" onPress={() => unmarkPrayed(key)}>
             {t("progress.undo")}
           </Button>
@@ -153,7 +153,7 @@ export function NovenaProgressCard({ novenaId }: { novenaId: string }) {
             </Text>
           ) : null}
         </View>
-        <Text className="text-sm font-semibold text-primary">{badge}</Text>
+        <Text className="text-sm font-semibold text-primary-light">{badge}</Text>
       </View>
 
       <View className="flex-row flex-wrap gap-1.5">
@@ -175,7 +175,7 @@ export function NovenaProgressCard({ novenaId }: { novenaId: string }) {
                 day.state === "prayed"
                   ? "text-primary-foreground"
                   : day.state === "today"
-                    ? "text-primary"
+                    ? "text-primary-light"
                     : day.state === "missed"
                       ? "text-destructive/70"
                       : "text-muted-foreground"

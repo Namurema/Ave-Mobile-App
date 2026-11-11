@@ -63,7 +63,7 @@ export default function ScheduleScreen() {
                   onPress={() => setEditingId(editingId === prayer.id ? null : prayer.id)}
                   className="self-start"
                 >
-                  <Text className="text-sm text-primary">
+                  <Text className="text-sm text-primary-light">
                     {schedule[prayer.id]?.time} {editingId === prayer.id ? "▲" : "▼"}
                   </Text>
                 </Pressable>
@@ -71,7 +71,7 @@ export default function ScheduleScreen() {
               <Switch
                 value={schedule[prayer.id]?.enabled ?? false}
                 onValueChange={() => togglePrayer(prayer.id)}
-                trackColor={{ false: "#E4E4E7", true: "#01758F" }}
+                trackColor={{ false: "#3A3A3A", true: "#01758F" }}
                 thumbColor="white"
               />
             </View>

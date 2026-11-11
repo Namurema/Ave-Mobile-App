@@ -41,7 +41,7 @@ export function Dialog({
           className={cn(
             "w-full max-w-md max-h-full",
             glass
-              ? "rounded-2xl border border-white/60 bg-white/75 shadow-2xl"
+              ? "rounded-2xl border border-white/10 bg-zinc-900/90 shadow-2xl"
               : "rounded-xl border border-border bg-background shadow-lg",
             className
           )}

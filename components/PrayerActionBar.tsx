@@ -15,8 +15,8 @@ import { Button } from "./ui/button";
 import { Chip } from "./ui/chip";
 import { cn } from "../lib/utils";
 
-const PRIMARY = "#01758F";
-const MUTED = "#52525B";
+const PRIMARY = "#5FC4DB";
+const MUTED = "#A3A3A3";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -48,7 +48,7 @@ function Action({
       <Ionicons name={active && activeIcon ? activeIcon : icon} size={22} color={active ? PRIMARY : MUTED} />
       <Text
         numberOfLines={1}
-        className={cn("text-[11px]", active ? "font-semibold text-primary" : "font-medium text-muted-foreground")}
+        className={cn("text-[11px]", active ? "font-semibold text-primary-light" : "font-medium text-muted-foreground")}
       >
         {label}
       </Text>

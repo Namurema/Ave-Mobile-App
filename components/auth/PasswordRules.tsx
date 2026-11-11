@@ -21,7 +21,7 @@ export function PasswordRules({ password }: { password: string }) {
       {RULES.map((rule) => {
         const met = rule.test(password);
         return (
-          <Text key={rule.key} className={cn("text-sm", met ? "font-medium text-primary" : "text-muted-foreground")}>
+          <Text key={rule.key} className={cn("text-sm", met ? "font-medium text-primary-light" : "text-muted-foreground")}>
             {t(rule.key)}
           </Text>
         );

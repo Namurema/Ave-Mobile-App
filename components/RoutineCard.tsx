@@ -55,7 +55,7 @@ export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
         </View>
         {showEdit && (
           <Pressable onPress={() => router.push("/routine")} className="rounded-md px-2 py-1 web:hover:bg-muted">
-            <Text className="text-sm font-semibold text-primary">{t("routine.edit")}</Text>
+            <Text className="text-sm font-semibold text-primary-light">{t("routine.edit")}</Text>
           </Pressable>
         )}
       </View>
@@ -90,12 +90,12 @@ export function TodaysRoutine({ showEdit = false }: { showEdit?: boolean }) {
               {item.info!.title}
             </Text>
             {item.detail || item.done ? (
-              <Text className={cn("text-xs", item.done ? "font-semibold text-primary" : "text-muted-foreground")}>
+              <Text className={cn("text-xs", item.done ? "font-semibold text-primary-light" : "text-muted-foreground")}>
                 {[item.detail, item.done ? t("progress.prayedToday") : null].filter(Boolean).join(" · ")}
               </Text>
             ) : null}
           </View>
-          <Text className="text-lg text-primary">›</Text>
+          <Text className="text-lg text-primary-light">›</Text>
         </Pressable>
       ))}
     </Card>

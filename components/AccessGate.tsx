@@ -10,7 +10,7 @@ import { PAYMENTS_ENABLED } from "../constants/features";
 
 // Pages that stay open when the free trial has ended without a plan: choosing
 // and paying for a plan, account settings, help and the legal pages
-const OPEN_WHEN_LOCKED = ["/subscribe", "/payment/complete", "/profile", "/feedback", "/Language", "/privacy", "/terms", "/splash", "/"];
+const OPEN_WHEN_LOCKED = ["/subscribe", "/payment/complete", "/profile", "/settings", "/feedback", "/Language", "/privacy", "/terms", "/splash", "/"];
 const isOpen = (path: string) => OPEN_WHEN_LOCKED.includes(path) || path.startsWith("/auth/");
 
 // After the 7-day trial, without a plan (or free access), prayers lead to the

@@ -116,7 +116,7 @@ function Plans() {
                 <Text className="text-base font-semibold text-card-foreground">{option.title}</Text>
                 <Text className="text-xs text-muted-foreground">{option.note}</Text>
               </View>
-              <Text className="text-base font-bold text-primary">{formatPrice(currency, PRICES[currency][option.id])}</Text>
+              <Text className="text-base font-bold text-primary-light">{formatPrice(currency, PRICES[currency][option.id])}</Text>
               {option.id === "yearly" && <Badge variant="primary">{t("billing.best")}</Badge>}
             </Pressable>
           );

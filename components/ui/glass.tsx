@@ -13,7 +13,7 @@ const softGlow = (px: number): any => (Platform.OS === "web" ? { filter: `blur($
 export function GlassPanel({ className, style, ...props }: ViewProps & { className?: string }) {
   return (
     <View
-      className={cn("rounded-2xl border border-white/60 bg-white/70 shadow-2xl", className)}
+      className={cn("rounded-2xl border border-white/10 bg-zinc-900/85 shadow-2xl", className)}
       style={style}
       {...glassTag("panel")}
       {...props}

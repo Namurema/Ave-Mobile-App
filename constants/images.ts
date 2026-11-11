@@ -41,3 +41,14 @@ const novenaImages: Record<string, any> = {
   "16": images.silhouette,
 };
 export const novenaImage = (id?: string) => (id && novenaImages[id]) || images.prayingHands;
+
+// A picture for any prayer key (lib/items.ts), for cards on Me and elsewhere
+export function itemImage(key: string) {
+  const [kind, id] = key.split(":");
+  if (kind === "daily") return dailyTiles[id] ?? images.prayingHands;
+  if (kind === "novena") return novenaImage(id);
+  if (kind === "rosary") return images.rosaryHands;
+  if (kind === "chaplet") return images.silhouette;
+  if (kind === "stations") return images.rosaryWall;
+  return images.prayingHands;
+}

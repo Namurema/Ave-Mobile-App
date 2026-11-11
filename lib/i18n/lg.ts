@@ -19,6 +19,7 @@ export default {
     rosary: "Essaala ya Rosari",
     settings: "Ebirungo",
     foryou: "Ku lulwo",
+    me: "Nze",
     openApp: "Ggula app"
   },
   splash: {
@@ -521,6 +522,22 @@ export default {
     androidStep2: "Koona ku \"Ssaako app\" oba \"Gatta ku kisenge ky'awaka\"",
     androidStep3: "Kuba ku \"Install\". Kati Ave eri ku sikuliini yo ey'awaka.",
     gotIt: "Nkitegedde"
+  },
+  me: {
+    guest: "Tukwanirizza",
+    guestTitle: "Kuuma enkulaakulana yo",
+    guestText: "Kola akawunti ey'obwereere okusobola okukuuma obutayosa kwo, enkola yo n'okusaba kw'oyagala ku byuma byo byonna.",
+    streak: "Olukalala",
+    streakEmpty: "Saba leero era otandike okuzimba empisa!",
+    streakToday: "Wasaba leero. Genda mu maaso!",
+    routine: "Enkola eya bulijjo",
+    edit: "Kola ku ky'okukyusa",
+    routineEmpty: "Londa essaala ez'olunaku olumu ku wiiki era ofune okujjukizibwa.",
+    setUp: "Teekawo enkola yange",
+    recent: "Gye buvuddeko nga nsaba",
+    recentEmpty: "Essaala ze wateeka ku kifo eky'okusaba zirabikira wano.",
+    saved: "Okusaba okuwonyezebwa",
+    savedEmpty: "Kakasa okutereka essaala yonna okugikuuma wano."
   },
   foryou: {
     title: "Ku lulwo",

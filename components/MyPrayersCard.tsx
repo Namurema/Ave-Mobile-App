@@ -67,10 +67,10 @@ export function MyPrayersCard() {
     <Card className="overflow-hidden">
       <Row route="/progress" first>
         <View className="h-12 w-12 items-center justify-center rounded-full border-4 border-primary/20">
-          <Text className="text-xs font-bold text-primary">{weekCount}/7</Text>
+          <Text className="text-xs font-bold text-primary-light">{weekCount}/7</Text>
         </View>
         <View className="flex-1 gap-0.5">
-          <Text className="text-[11px] font-semibold uppercase tracking-widest text-primary">{t("progress.title")}</Text>
+          <Text className="text-[11px] font-semibold uppercase tracking-widest text-primary-light">{t("progress.title")}</Text>
           <Text className="text-sm font-semibold text-card-foreground">
             {t("progress.streak")}: {streak}
           </Text>

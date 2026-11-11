@@ -78,7 +78,7 @@ function Step({ number, text, icon }: { number: number; text: string; icon?: key
         <Text className="text-sm font-bold text-white">{number}</Text>
       </View>
       <Text className="flex-1 text-sm leading-5 text-foreground">{text}</Text>
-      {icon ? <Ionicons name={icon} size={22} color="#01758F" /> : null}
+      {icon ? <Ionicons name={icon} size={22} color="#5FC4DB" /> : null}
     </View>
   );
 }
@@ -136,7 +136,7 @@ export function DonateSteps() {
     <View className="gap-3">
       <View className="flex-row items-center justify-between gap-3 rounded-md bg-muted p-3">
         <View className="gap-0.5">
-          <Text className="text-xs font-semibold uppercase tracking-widest text-primary">{t("donate.codeLabel")}</Text>
+          <Text className="text-xs font-semibold uppercase tracking-widest text-primary-light">{t("donate.codeLabel")}</Text>
           <Text className="text-xl font-bold tracking-wider text-foreground">{DONATE.airtelCode}</Text>
           {DONATE.airtelName ? <Text className="text-xs text-muted-foreground">{DONATE.airtelName}</Text> : null}
         </View>

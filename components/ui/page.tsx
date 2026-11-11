@@ -28,8 +28,8 @@ export function Page({
   bottomBar?: ReactNode;
 }) {
   return (
-    <View className="flex-1 bg-zinc-50">
-      <StatusBar style="dark" />
+    <View className="flex-1 bg-background">
+      <StatusBar style="light" />
       <TopNav />
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View
@@ -108,7 +108,7 @@ export function PageHeader({
           </Pressable>
         )}
         {eyebrow ? (
-          <Text className={cn("text-xs font-semibold uppercase tracking-widest", primary ? "text-accent" : "text-primary")}>{eyebrow}</Text>
+          <Text className={cn("text-xs font-semibold uppercase tracking-widest", primary ? "text-accent-light" : "text-primary-light")}>{eyebrow}</Text>
         ) : null}
         <Text role="heading" className={cn("text-2xl md:text-3xl font-bold tracking-tight", primary ? "text-white" : "text-card-foreground")}>
           {title}
@@ -141,7 +141,7 @@ export function PageHeader({
                     "text-sm font-semibold",
                     primary
                       ? active ? "text-white" : "text-white/70"
-                      : active ? "text-primary" : "text-muted-foreground"
+                      : active ? "text-primary-light" : "text-muted-foreground"
                   )}
                 >
                   {tab.label}
@@ -188,7 +188,7 @@ export function Section({
 export function NumberBadge({ value }: { value: string | number }) {
   return (
     <View className="h-8 w-8 rounded-full bg-primary/10 items-center justify-center">
-      <Text className="text-sm font-semibold text-primary">{value}</Text>
+      <Text className="text-sm font-semibold text-primary-light">{value}</Text>
     </View>
   );
 }
@@ -196,7 +196,7 @@ export function NumberBadge({ value }: { value: string | number }) {
 function ValueTile({ value, unit }: { value: string | number; unit?: string }) {
   return (
     <View className="h-14 w-14 rounded-lg bg-accent items-center justify-center">
-      <Text className="text-lg font-bold leading-6 text-primary">{value}</Text>
+      <Text className="text-lg font-bold leading-6 text-primary-light">{value}</Text>
       {unit ? <Text className="text-[11px] font-medium text-primary-dark">{unit}</Text> : null}
     </View>
   );
@@ -249,7 +249,7 @@ function ListRow({ item, last }: { item: ListItem; last: boolean }) {
       </View>
       {item.badge && item.badgeVariant !== "primary" ? <Badge variant={item.badgeVariant}>{item.badge}</Badge> : null}
       {item.onPress ? (
-        <Text className={cn("text-lg", item.tile ? "text-primary" : "text-muted-foreground")}>›</Text>
+        <Text className={cn("text-lg", item.tile ? "text-primary-light" : "text-muted-foreground")}>›</Text>
       ) : null}
     </View>
   );
@@ -291,7 +291,7 @@ export function ReadingCard({
             {section.heading ? (
               <Text
                 className={cn(
-                  "self-start rounded text-xs font-semibold uppercase tracking-widest text-primary",
+                  "self-start rounded text-xs font-semibold uppercase tracking-widest text-primary-light",
                   chunk?.part === "heading" && "bg-accent"
                 )}
               >
@@ -310,7 +310,7 @@ export function LoadingCard({ label }: { label?: string }) {
   const { t } = useTranslation();
   return (
     <Card className="p-8 items-center gap-3">
-      <ActivityIndicator color="#01758F" />
+      <ActivityIndicator color="#FAFAFA" />
       <Text className="text-sm text-muted-foreground">{label ?? t("common.loading")}</Text>
     </Card>
   );

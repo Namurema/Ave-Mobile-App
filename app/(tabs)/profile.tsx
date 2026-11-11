@@ -1,247 +1,163 @@
-import { View, Text, Platform, Pressable } from "react-native";
-import { InstallCard } from "../../components/InstallCard";
-import { buildId } from "../../lib/pwa";
+import { View, Text, Pressable, ScrollView, Image, StyleSheet } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { Page } from "../../components/ui/page";
+import { Button } from "../../components/ui/button";
 import { useAuthStore, displayName } from "../../store/authStore";
 import { useAuthDialog } from "../../store/authDialogStore";
 import { useUserDataStore } from "../../store/userDataStore";
 import { useRoutineStore } from "../../store/routineStore";
-import { useAccessStore } from "../../store/accessStore";
-import { formatDayMonth } from "../../lib/i18n/helpers";
-import { currentStreak, splitLogId } from "../../lib/progress";
-import { useLanguageStore } from "../../store/LanguageStore";
-import { LOGIN_ENABLED, PAYMENTS_ENABLED } from "../../constants/features";
-import { Button } from "../../components/ui/button";
-import { Card } from "../../components/ui/card";
-import { Page, PageHeader, Section, ListCard } from "../../components/ui/page";
-import { Dialog } from "../../components/ui/dialog";
-import { FormError } from "../../components/auth/forms";
-import { deleteAccount } from "../../lib/supabase/account";
-import { languageInfo } from "../../constants/languages";
-import { DonateCard } from "../../components/Popups";
-import { isPrayerKey } from "../../lib/items";
-import { DONATIONS_ENABLED } from "../../constants/donate";
+import { currentStreak, dayString, splitLogId } from "../../lib/progress";
+import { describeItem, isPrayerKey } from "../../lib/items";
+import { useContent } from "../../lib/i18n/content";
+import { itemImage } from "../../constants/images";
 
-export default function ProfileScreen() {
+// Me: your name, streak, routine, recently prayed and saved prayers, with
+// Settings behind the gear (app/settings.tsx). Works for guests too; their
+// progress stays on the device until they create an account.
+
+type Tile = { key: string; title: string; subtitle: string; route: string; badge?: string };
+
+function SectionTitle({ title, onPress, action }: { title: string; onPress: () => void; action?: { label: string; onPress: () => void } }) {
+  return (
+    <View className="flex-row items-center justify-between gap-3">
+      <Pressable onPress={onPress} className="flex-row items-center gap-1">
+        <Text role="heading" aria-level={2} className="text-2xl font-extrabold tracking-tight text-foreground">
+          {title}
+        </Text>
+        <Ionicons name="chevron-forward" size={22} color="#FAFAFA" />
+      </Pressable>
+      {action ? (
+        <Pressable onPress={action.onPress} className="h-10 px-4 justify-center rounded-full border border-border web:hover:bg-muted">
+          <Text className="text-sm font-semibold text-foreground">{action.label}</Text>
+        </Pressable>
+      ) : null}
+    </View>
+  );
+}
+
+// A row of picture cards that scrolls sideways
+function TileRow({ tiles, wide }: { tiles: Tile[]; wide?: boolean }) {
+  const router = useRouter();
+  return (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerClassName="gap-3 pr-4">
+      {tiles.map((tile) => (
+        <Pressable key={tile.key} onPress={() => router.push(tile.route as any)} className={wide ? "w-64" : "w-40"}>
+          <View className="aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
+            <Image source={itemImage(tile.key)} resizeMode="cover" aria-hidden style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]} />
+            {tile.badge ? (
+              <View className="absolute left-3 top-3 rounded-md bg-black/70 px-2 py-1">
+                <Text className="text-xs font-semibold text-white">{tile.badge}</Text>
+              </View>
+            ) : null}
+          </View>
+          <Text numberOfLines={2} className={wide ? "mt-2 text-lg font-bold text-foreground" : "mt-2 text-sm font-bold text-foreground"}>
+            {tile.title}
+          </Text>
+          <Text numberOfLines={1} className="text-sm text-muted-foreground">
+            {tile.subtitle}
+          </Text>
+        </Pressable>
+      ))}
+    </ScrollView>
+  );
+}
+
+export default function MeScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-  const { user, session, signOut, isAdmin } = useAuthStore();
-  const { language } = useLanguageStore();
-  const [signingOut, setSigningOut] = useState(false);
+  const tc = useContent();
+  const user = useAuthStore((state) => state.user);
   const openAuth = useAuthDialog((state) => state.open);
   const log = useUserDataStore((state) => state.log);
-  const favouriteCount = useUserDataStore((state) => state.favourites.filter(isPrayerKey).length);
-  const routineCount = useRoutineStore((state) => state.entries.length);
-  const access = useAccessStore((state) => state.access);
-  const streak = currentStreak(new Set([...log].map((id) => splitLogId(id).day)));
+  const favourites = useUserDataStore((state) => state.favourites);
+  const routine = useRoutineStore((state) => state.entries);
 
-  const [confirmDelete, setConfirmDelete] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-  const [deleteError, setDeleteError] = useState<string | null>(null);
-  const handleDelete = async () => {
-    if (!user) return;
-    setDeleting(true);
-    setDeleteError(null);
-    try {
-      await deleteAccount(user.id);
-      setConfirmDelete(false);
-      router.replace("/splash");
-    } catch {
-      setDeleteError(t("account.deleteFailed"));
-    } finally {
-      setDeleting(false);
-    }
+  const name = displayName(user);
+  const days = new Set([...log].map((id) => splitLogId(id).day));
+  const streak = currentStreak(days);
+  const prayedToday = days.has(dayString());
+
+  const toTile = (key: string, badge?: string): Tile | null => {
+    const info = describeItem(key, t, tc);
+    return info ? { key, title: info.title, subtitle: info.kind, route: info.route, badge } : null;
   };
-
-  const handleSignOut = async () => {
-    setSigningOut(true);
-    await signOut();
-    setSigningOut(false);
-  };
-
-  const isSignedIn = !!session;
+  const routineTiles = routine.map((entry) => toTile(entry.key, entry.time)).filter((tile): tile is Tile => !!tile);
+  // Newest first, each prayer once
+  const recentKeys = [...new Set([...log].sort().reverse().map((id) => splitLogId(id).key))].filter(isPrayerKey).slice(0, 10);
+  const recentTiles = recentKeys.map((key) => toTile(key)).filter((tile): tile is Tile => !!tile);
+  const savedTiles = favourites.filter(isPrayerKey).map((key) => toTile(key)).filter((tile): tile is Tile => !!tile);
 
   return (
     <Page sidebar={false}>
-      <PageHeader back title={t("settings.title")} description={t("settings.description")} />
-
-      <Section title={t("settings.activity")}>
-        <ListCard
-          items={[
-            {
-              key: "progress",
-              title: t("progress.title"),
-              description: `${t("progress.streak")}: ${streak}`,
-              onPress: () => router.push("/progress"),
-            },
-            {
-              key: "favourites",
-              title: t("favourites.title"),
-              description: `${favouriteCount}`,
-              onPress: () => router.push("/favourites"),
-            },
-            {
-              key: "routine",
-              title: t("routine.title"),
-              description: routineCount ? `${routineCount} ${t("routine.prayersCount")}` : t("routine.none"),
-              onPress: () => router.push("/routine"),
-            },
-          ]}
-        />
-      </Section>
-
-      <Section title={t("settings.language")}>
-        <Card className="p-4 flex-row items-center gap-3">
-          <View className="flex-1 gap-0.5">
-            <Text className="text-sm font-semibold text-card-foreground">
-              {languageInfo(language).name}
-            </Text>
-            <Text className="text-sm text-muted-foreground">{t("settings.languageHint")}</Text>
-          </View>
-          <Button variant="outline" size="sm" onPress={() => router.push("/Language")}>
-            {t("common.change")}
-          </Button>
-        </Card>
-      </Section>
-
-      {LOGIN_ENABLED && (
-        <Section title={t("settings.account")}>
-          {isSignedIn ? (
-            <Card className="p-4 flex-row items-center gap-3">
-              <View className="flex-1 gap-0.5">
-                <Text className="text-sm font-semibold text-card-foreground">{displayName(user)}</Text>
-                <Text className="text-sm text-muted-foreground">{user?.email}</Text>
-              </View>
-              <Button variant="outline" size="sm" loading={signingOut} onPress={handleSignOut}>
-                {t("common.signOut")}
-              </Button>
-            </Card>
-          ) : null}
-          {isSignedIn ? (
-            <Pressable onPress={() => setConfirmDelete(true)} className="self-start rounded-md px-1 py-2">
-              <Text className="text-sm font-medium text-destructive">{t("account.delete")}</Text>
-            </Pressable>
+      {/* Name and settings */}
+      <View className="flex-row items-center gap-3">
+        <View className="h-11 w-11 items-center justify-center rounded-full bg-primary">
+          {name ? (
+            <Text className="text-lg font-bold text-white">{name.charAt(0).toUpperCase()}</Text>
           ) : (
-            <Card className="p-4 gap-3">
-              <Text className="text-sm leading-6 text-muted-foreground">{t("settings.signInToSync")}</Text>
-              <View className="flex-row flex-wrap gap-2">
-                <Button size="sm" onPress={() => openAuth("signIn")}>
-                  {t("auth.signIn")}
-                </Button>
-                <Button variant="outline" size="sm" onPress={() => openAuth("signUp")}>
-                  {t("auth.createAccount")}
-                </Button>
-              </View>
-            </Card>
+            <Ionicons name="person" size={20} color="#fff" />
           )}
-        </Section>
-      )}
+        </View>
+        <Text role="heading" aria-level={1} numberOfLines={1} className="flex-1 text-3xl font-extrabold tracking-tight text-foreground">
+          {name ?? t("me.guest")}
+        </Text>
+        <Pressable onPress={() => router.push("/settings")} aria-label={t("nav.settings")} className="h-11 w-11 items-center justify-center rounded-full web:hover:bg-muted">
+          <Ionicons name="settings-outline" size={24} color="#FAFAFA" />
+        </Pressable>
+      </View>
 
-      {isAdmin && (
-        <Section title="Admin">
-          <Card className="p-4 flex-row items-center gap-3">
-            <Text className="flex-1 text-sm text-muted-foreground">See the accounts that have signed up.</Text>
-            <Button variant="outline" size="sm" onPress={() => router.push("/admin")}>
-              View accounts
-            </Button>
-          </Card>
-        </Section>
-      )}
-
-      {/* Only once the server has answered (payments may not be set up yet) */}
-      {PAYMENTS_ENABLED && isSignedIn && access && (
-        <Section title={t("billing.subscription")}>
-          <Card className="p-4 gap-3">
-            <Text className="text-sm leading-5 text-card-foreground">
-              {access.granted
-                ? t("billing.granted")
-                : access?.paidUntil && access.paidUntil > new Date()
-                ? `${t("billing.paidUntil")} ${formatDayMonth(access.paidUntil, language)} ${access.paidUntil.getFullYear()}`
-                : access?.trialEndsAt && access.trialEndsAt > new Date()
-                  ? `${t("billing.trialUntil")} ${formatDayMonth(access.trialEndsAt, language)}`
-                  : t("billing.trialEnded")}
-            </Text>
-            <Button size="sm" className="self-start" onPress={() => router.push("/subscribe")}>
-              {access?.paidUntil && access.paidUntil > new Date() ? t("billing.extend") : t("billing.choosePlan")}
-            </Button>
-          </Card>
-        </Section>
-      )}
-
-      {Platform.OS === "web" && (
-        <Section title={t("settings.app")}>
-          <InstallCard dismissible={false} />
-        </Section>
-      )}
-
-      {DONATIONS_ENABLED && (
-        <Section title={t("donate.settingsTitle")}>
-          <DonateCard />
-        </Section>
-      )}
-
-      <Section title={t("settings.about")}>
-        <Card className="p-4 gap-1">
-          <Text className="text-sm font-semibold text-card-foreground">Ave</Text>
-          <Text className="text-sm leading-6 text-muted-foreground">
-            {t("settings.aboutText")}
-          </Text>
-          <Text className="mt-2 text-xs text-muted-foreground">{t("settings.version")} 1.0.0{buildId() ? ` (${buildId()})` : ""}</Text>
-        </Card>
-      </Section>
-
-      <Section title={t("settings.help")}>
-        <ListCard
-          items={[
-            {
-              key: "feedback",
-              title: t("feedback.title"),
-              description: t("feedback.hint"),
-              onPress: () => router.push("/feedback"),
-            },
-          ]}
-        />
-      </Section>
-
-      <Section title={t("settings.legal")}>
-        <ListCard
-          items={[
-            {
-              key: "privacy",
-              title: t("legal.privacy"),
-              description: t("legal.privacyHint"),
-              onPress: () => router.push("/privacy"),
-            },
-            {
-              key: "terms",
-              title: t("legal.terms"),
-              description: t("legal.termsHint"),
-              onPress: () => router.push("/terms"),
-            },
-          ]}
-        />
-      </Section>
-      <Dialog
-        open={confirmDelete}
-        onClose={() => !deleting && setConfirmDelete(false)}
-        title={t("account.deleteTitle")}
-        description={t("account.deleteText")}
-        closeLabel={t("routine.cancel")}
-      >
-        <View className="gap-3">
-          <FormError message={deleteError} />
+      {/* Guests: what an account adds */}
+      {!user && (
+        <View className="gap-3 rounded-2xl border border-border bg-card p-4">
+          <Text className="text-base font-bold text-card-foreground">{t("me.guestTitle")}</Text>
+          <Text className="text-sm leading-5 text-muted-foreground">{t("me.guestText")}</Text>
           <View className="flex-row flex-wrap gap-2">
-            <Button className="bg-destructive web:hover:bg-destructive/90" loading={deleting} onPress={handleDelete}>
-              {t("account.deleteConfirm")}
+            <Button size="sm" onPress={() => openAuth("signUp")}>
+              {t("auth.createAccount")}
             </Button>
-            <Button variant="outline" disabled={deleting} onPress={() => setConfirmDelete(false)}>
-              {t("routine.cancel")}
+            <Button size="sm" variant="outline" onPress={() => openAuth("signIn")}>
+              {t("auth.signIn")}
             </Button>
           </View>
         </View>
-      </Dialog>
+      )}
+
+      <View className="gap-3">
+        <SectionTitle title={t("me.streak")} onPress={() => router.push("/progress")} />
+        <Pressable onPress={() => router.push("/progress")} className="flex-row items-center gap-4 rounded-2xl border border-border px-5 py-4">
+          <View className="flex-row items-center gap-1.5">
+            <Ionicons name="flash" size={26} color="#FAFAFA" />
+            <Text className="text-4xl font-extrabold text-foreground">{streak}</Text>
+          </View>
+          <Text className="flex-1 text-base leading-6 text-muted-foreground">{t(prayedToday ? "me.streakToday" : "me.streakEmpty")}</Text>
+        </Pressable>
+      </View>
+
+      <View className="gap-3">
+        <SectionTitle title={t("me.routine")} onPress={() => router.push("/routine")} action={{ label: t("me.edit"), onPress: () => router.push("/routine") }} />
+        {routineTiles.length ? (
+          <TileRow tiles={routineTiles} wide />
+        ) : (
+          <View className="gap-3 rounded-2xl border border-border p-4">
+            <Text className="text-sm leading-5 text-muted-foreground">{t("me.routineEmpty")}</Text>
+            <Button size="sm" className="self-start" onPress={() => router.push("/routine")}>
+              {t("me.setUp")}
+            </Button>
+          </View>
+        )}
+      </View>
+
+      <View className="gap-3">
+        <SectionTitle title={t("me.recent")} onPress={() => router.push("/progress")} />
+        {recentTiles.length ? <TileRow tiles={recentTiles} /> : <Text className="text-sm text-muted-foreground">{t("me.recentEmpty")}</Text>}
+      </View>
+
+      <View className="gap-3">
+        <SectionTitle title={t("me.saved")} onPress={() => router.push("/favourites")} />
+        {savedTiles.length ? <TileRow tiles={savedTiles} /> : <Text className="text-sm text-muted-foreground">{t("me.savedEmpty")}</Text>}
+      </View>
     </Page>
   );
 }

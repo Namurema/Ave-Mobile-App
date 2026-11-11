@@ -105,7 +105,7 @@ export default function ProgressScreen() {
         <View className="gap-2 px-4 md:px-5 pt-4">
           <View className="flex-row justify-between">
             <Text className="text-sm font-medium text-card-foreground">{t("progress.weeklyGoal")}</Text>
-            <Text className="text-sm font-semibold text-primary">
+            <Text className="text-sm font-semibold text-primary-light">
               {goalDone}/{WEEKLY_GOAL} {t("common.days")}
             </Text>
           </View>
@@ -113,7 +113,7 @@ export default function ProgressScreen() {
             <View className="h-2 rounded-full bg-primary" style={{ width: `${(goalDone / WEEKLY_GOAL) * 100}%` }} />
           </View>
           {goalDone === WEEKLY_GOAL && (
-            <Text className="text-sm text-primary">{t("progress.weeklyGoalDone")}</Text>
+            <Text className="text-sm text-primary-light">{t("progress.weeklyGoalDone")}</Text>
           )}
         </View>
         <View className="flex-row justify-between gap-1 p-4 md:p-5">

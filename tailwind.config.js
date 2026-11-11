@@ -9,15 +9,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: { DEFAULT: "#01758F", dark: "#016177", foreground: "#FFFFFF" },
-        accent: "#BFE3EC",
-        // shadcn/ui tokens (zinc palette)
-        background: "#FFFFFF",
-        foreground: "#09090B",
-        card: { DEFAULT: "#FFFFFF", foreground: "#09090B" },
-        muted: { DEFAULT: "#F4F4F5", foreground: "#71717A" },
-        border: "#E4E4E7",
-        input: "#E4E4E7",
+        // light: teal for text on the dark background
+        primary: { DEFAULT: "#01758F", dark: "#016177", light: "#5FC4DB", foreground: "#FFFFFF" },
+        // Dark teal for highlights; light teal (accent-light) for small text on photos
+        accent: { DEFAULT: "#1D4F5C", light: "#BFE3EC" },
+        // shadcn/ui tokens, dark (charcoal)
+        background: "#171717",
+        foreground: "#FAFAFA",
+        card: { DEFAULT: "#222222", foreground: "#FAFAFA" },
+        muted: { DEFAULT: "#2A2A2A", foreground: "#A3A3A3" },
+        border: "#303030",
+        input: "#3A3A3A",
         ring: "#01758F",
         destructive: { DEFAULT: "#DC2626", foreground: "#FFFFFF" },
         navy: {

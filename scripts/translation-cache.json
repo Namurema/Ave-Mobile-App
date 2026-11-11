@@ -2079,6 +2079,66 @@
     "splash.getApp": {
       "en": "Get the app",
       "text": "Funa app"
+    },
+    "me.guest": {
+      "en": "Welcome",
+      "text": "Tukwanirizza"
+    },
+    "nav.me": {
+      "en": "Me",
+      "text": "Nze"
+    },
+    "me.guestTitle": {
+      "en": "Keep your progress",
+      "text": "Kuuma enkulaakulana yo"
+    },
+    "me.guestText": {
+      "en": "Create a free account to keep your streak, routine and saved prayers on all your devices.",
+      "text": "Kola akawunti ey'obwereere okusobola okukuuma obutayosa kwo, enkola yo n'okusaba kw'oyagala ku byuma byo byonna."
+    },
+    "me.streakEmpty": {
+      "en": "Pray today and start building a habit!",
+      "text": "Saba leero era otandike okuzimba empisa!"
+    },
+    "me.streak": {
+      "en": "Streak",
+      "text": "Olukalala"
+    },
+    "me.streakToday": {
+      "en": "You prayed today. Keep it going!",
+      "text": "Wasaba leero. Genda mu maaso!"
+    },
+    "me.routine": {
+      "en": "Routine",
+      "text": "Enkola eya bulijjo"
+    },
+    "me.edit": {
+      "en": "Edit",
+      "text": "Kola ku ky'okukyusa"
+    },
+    "me.routineEmpty": {
+      "en": "Choose prayers for each day of the week and get a gentle reminder.",
+      "text": "Londa essaala ez'olunaku olumu ku wiiki era ofune okujjukizibwa."
+    },
+    "me.setUp": {
+      "en": "Set up my routine",
+      "text": "Teekawo enkola yange"
+    },
+    "me.saved": {
+      "en": "Saved prayers",
+      "text": "Okusaba okuwonyezebwa"
+    },
+    "me.savedEmpty": {
+      "en": "Tap Save on any prayer to keep it here.",
+      "text": "Kakasa okutereka essaala yonna okugikuuma wano."
+    },
+    "me.recentEmpty": {
+      "en": "Prayers you mark as prayed appear here.",
+      "text": "Essaala ze wateeka ku kifo eky'okusaba zirabikira wano."
+    },
+    "me.recent": {
+      "en": "Recently prayed",
+      "text": "Gye buvuddeko nga nsaba"
     }
   },
   "rny": {
@@ -4161,6 +4221,66 @@
     "splash.chooseLanguage": {
       "en": "Choose your language",
       "text": "Toorana orurimi rwawe"
+    },
+    "nav.me": {
+      "en": "Me",
+      "text": "Me"
+    },
+    "me.guestTitle": {
+      "en": "Keep your progress",
+      "text": "Guma aha ntunguuka yaawe"
+    },
+    "me.guest": {
+      "en": "Welcome",
+      "text": "Mukama wange"
+    },
+    "me.streakToday": {
+      "en": "You prayed today. Keep it going!",
+      "text": "Okashaba eriizooba. Guma nookikora!"
+    },
+    "me.streakEmpty": {
+      "en": "Pray today and start building a habit!",
+      "text": "Shaba eriizooba kandi otandike okwombeka omucwe!"
+    },
+    "me.streak": {
+      "en": "Streak",
+      "text": "Omurongo"
+    },
+    "me.guestText": {
+      "en": "Create a free account to keep your streak, routine and saved prayers on all your devices.",
+      "text": "Kora akaunti ya busha okuguma oine obuhango bwawe, engyenderwaho hamwe n'okushaba kwawe okubiikiire aha byoma byawe byona."
+    },
+    "me.edit": {
+      "en": "Edit",
+      "text": "Kuhindura"
+    },
+    "me.routine": {
+      "en": "Routine",
+      "text": "Omuringo gw'okukora"
+    },
+    "me.setUp": {
+      "en": "Set up my routine",
+      "text": "Tebeekanisa omuringo gwangye"
+    },
+    "me.routineEmpty": {
+      "en": "Choose prayers for each day of the week and get a gentle reminder.",
+      "text": "Toorana okushaba kwa buri izooba ry'esande kandi otungye okwijusibwa."
+    },
+    "me.recent": {
+      "en": "Recently prayed",
+      "text": "Omu bwire bukye enyima akashaba"
+    },
+    "me.saved": {
+      "en": "Saved prayers",
+      "text": "Okushaba okwahonokire"
+    },
+    "me.recentEmpty": {
+      "en": "Prayers you mark as prayed appear here.",
+      "text": "Okushaba oku orikworeka nk'okushabirwe nikureebeka aha."
+    },
+    "me.savedEmpty": {
+      "en": "Tap Save on any prayer to keep it here.",
+      "text": "Kwata aha kubiika okushaba kwona okukugumya aha."
     }
   },
   "content-lg": {

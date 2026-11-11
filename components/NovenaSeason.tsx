@@ -43,7 +43,7 @@ export function NovenaDatesCard({ novenaId }: { novenaId: string }) {
   if (!season) return null;
   return (
     <Card className="p-4 gap-1 border-primary/30 bg-accent/40">
-      <Text className="text-xs font-semibold uppercase tracking-widest text-primary">{t("seasons.traditionally")}</Text>
+      <Text className="text-xs font-semibold uppercase tracking-widest text-primary-light">{t("seasons.traditionally")}</Text>
       <Text className="text-base font-semibold text-card-foreground">{seasonRange(season, t, language)}</Text>
       {season.feastKey && (
         <Text className="text-sm text-muted-foreground">
@@ -51,7 +51,7 @@ export function NovenaDatesCard({ novenaId }: { novenaId: string }) {
         </Text>
       )}
       {season.status !== "later" && (
-        <Text className="mt-1 text-sm font-semibold text-primary">{seasonStatus(season, t, language)}</Text>
+        <Text className="mt-1 text-sm font-semibold text-primary-light">{seasonStatus(season, t, language)}</Text>
       )}
     </Card>
   );
@@ -132,7 +132,7 @@ function SeasonCard({ novena, season, done }: SeasonItem & { done: number }) {
           />
         </View>
         <View className="flex-1 gap-0.5">
-          <Text className="text-[11px] font-semibold uppercase tracking-widest text-primary">{eyebrow}</Text>
+          <Text className="text-[11px] font-semibold uppercase tracking-widest text-primary-light">{eyebrow}</Text>
           <Text className="text-sm font-semibold text-card-foreground" numberOfLines={2}>
             {tc(novena.title)}
           </Text>
@@ -141,7 +141,7 @@ function SeasonCard({ novena, season, done }: SeasonItem & { done: number }) {
           </Text>
         </View>
         <View className="rounded-full bg-primary/10 px-3 py-1.5">
-          <Text className="text-xs font-semibold text-primary">{action}</Text>
+          <Text className="text-xs font-semibold text-primary-light">{action}</Text>
         </View>
       </Pressable>
     </Card>
