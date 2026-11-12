@@ -11,7 +11,7 @@ import { useLanguageStore } from "../../store/LanguageStore";
 import { useAuthStore } from "../../store/authStore";
 import { useUserDataStore } from "../../store/userDataStore";
 import { useReadAloud } from "../../lib/speech";
-import { images, dailyImages } from "../../constants/images";
+import { images, dailyPhotos } from "../../constants/images";
 import { cn } from "../../lib/utils";
 import {
   MOODS, CARE_MOODS, isMood, loadMood, loadCards, readLikes, writeLikes, savedKey,
@@ -38,8 +38,8 @@ const write = (key: string, value: string) => {
 
 // Photos behind the cards, in turn
 const BACKGROUNDS = [
-  dailyImages.morning, images.prayingHands, images.rosaryFern, dailyImages.midday, images.silhouette,
-  images.rosaryHands, dailyImages.night, images.rosaryWall, images.handsNight,
+  dailyPhotos.morning, images.prayingHands, images.rosaryFern, dailyPhotos.midday, images.silhouette,
+  images.rosaryHands, dailyPhotos.night, images.rosaryWall, images.handsNight,
 ];
 
 type Item = { kind: "card"; card: FeedCard; hidden: boolean } | { kind: "care" } | { kind: "end" };

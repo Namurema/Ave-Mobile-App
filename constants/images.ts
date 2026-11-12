@@ -19,7 +19,11 @@ export const art = {
   stJude: require("../assets/illustrations/st-jude.jpg"),
   stJoseph: require("../assets/illustrations/st-joseph.jpg"),
   fertility: require("../assets/illustrations/fertility.jpg"),
-  ourLady: require("../assets/illustrations/our-lady-angels.jpg"),
+  perpetualHelp: require("../assets/illustrations/perpetual-help.jpg"),
+  stations: require("../assets/illustrations/stations.jpg"),
+  morning: require("../assets/illustrations/morning.jpg"),
+  midday: require("../assets/illustrations/midday.jpg"),
+  night: require("../assets/illustrations/night.jpg"),
   maryChild: require("../assets/illustrations/mary-child.jpg"),
   forYou: require("../assets/illustrations/for-you.jpg"),
   ugandaMartyrs: require("../assets/illustrations/uganda-martyrs.jpg"),
@@ -27,22 +31,20 @@ export const art = {
   familyPrayer: require("../assets/illustrations/family-prayer.jpg"),
 };
 
-// Square tiles for Morning, Midday and Night
-export const dailyTiles: Record<string, any> = {
-  morning: require("../assets/images/tile-morning.jpg"),
-  midday: require("../assets/images/tile-midday.jpg"),
-  night: require("../assets/images/tile-night.jpg"),
-};
+// Morning, Midday and Night: cards (dailyTiles) and page headers (dailyImages)
+export const dailyTiles: Record<string, any> = { morning: art.morning, midday: art.midday, night: art.night };
+export const dailyImages: Record<string, any> = dailyTiles;
 
-// Header photo for each daily prayer and novena
-export const dailyImages: Record<string, any> = {
+// Photos for Morning, Midday and Night, behind the For You cards (text reads
+// better on a photo than on a busy illustration)
+export const dailyPhotos: Record<string, any> = {
   morning: require("../assets/images/header-morning.jpg"),
   midday: require("../assets/images/header-midday.jpg"),
   night: require("../assets/images/header-night.jpg"),
 };
 
 const novenaImages: Record<string, any> = {
-  "2": art.ourLady,
+  "2": art.perpetualHelp,
   "6": art.stJude,
   "7": images.silhouette,
   "8": images.rosaryWall,
@@ -65,6 +67,6 @@ export function itemImage(key: string) {
   if (kind === "novena") return novenaImage(id);
   if (kind === "rosary") return art.rosary;
   if (kind === "chaplet") return art.divineMercy;
-  if (kind === "stations") return images.rosaryWall;
+  if (kind === "stations") return art.stations;
   return images.prayingHands;
 }

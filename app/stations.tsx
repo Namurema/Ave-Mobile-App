@@ -6,7 +6,7 @@ import { useContent } from "../lib/i18n/content";
 import { PrayerActionBar } from "../components/PrayerActionBar";
 import { useReadAloud } from "../lib/speech";
 import { itemKey } from "../lib/items";
-import { images } from "../constants/images";
+import { art } from "../constants/images";
 
 export default function StationsScreen() {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export default function StationsScreen() {
       <PageHeader
         back
         tone="primary"
-        image={images.silhouette}
+        image={art.stations}
         title={t("home.stationsOfCross")}
         description={t("stations.description")}
       />
