@@ -2139,6 +2139,26 @@
     "me.recent": {
       "en": "Recently prayed",
       "text": "Gye buvuddeko nga nsaba"
+    },
+    "home.recents": {
+      "en": "Recents",
+      "text": "Ebyakamala"
+    },
+    "home.verseOfTheDay": {
+      "en": "Verse of the day",
+      "text": "Olunyiriri lw'olunaku"
+    },
+    "home.shareVerse": {
+      "en": "Share verse",
+      "text": "Gabanako olunyiriri"
+    },
+    "home.reminders": {
+      "en": "Reminders",
+      "text": "Okujjukizibwa"
+    },
+    "home.moreWays": {
+      "en": "More ways to pray",
+      "text": "Enkola endala ez'okusaba"
     }
   },
   "rny": {
@@ -4281,6 +4301,26 @@
     "me.savedEmpty": {
       "en": "Tap Save on any prayer to keep it here.",
       "text": "Kwata aha kubiika okushaba kwona okukugumya aha."
+    },
+    "home.reminders": {
+      "en": "Reminders",
+      "text": "Okwijutsya"
+    },
+    "home.verseOfTheDay": {
+      "en": "Verse of the day",
+      "text": "Ekyeshongoro ky'eizooba"
+    },
+    "home.recents": {
+      "en": "Recents",
+      "text": "Ebyahererukireyo"
+    },
+    "home.shareVerse": {
+      "en": "Share verse",
+      "text": "Gabana enyiriri"
+    },
+    "home.moreWays": {
+      "en": "More ways to pray",
+      "text": "Emiringo endiijo y'okushaba"
     }
   },
   "content-lg": {

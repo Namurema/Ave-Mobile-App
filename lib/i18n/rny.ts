@@ -54,6 +54,11 @@ export default {
     subtitle: "Rhonde orurimi rwawe okukoresa omu kusaba n'okwejjusa buri eisho."
   },
   home: {
+    verseOfTheDay: "Ekyeshongoro ky'eizooba",
+    shareVerse: "Gabana enyiriri",
+    recents: "Ebyahererukireyo",
+    reminders: "Okwijutsya",
+    moreWays: "Emiringo endiijo y'okushaba",
     greeting: "Oraire ota",
     greetingSubtitle: "Reka tutandike eizooba ryaitu n'okushaba.",
     greetingAfternoon: "Osiibire ota",

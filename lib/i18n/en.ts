@@ -52,6 +52,11 @@ export default {
     subtitle: "Please select your preferred language for prayers and daily devotionals.",
   },
   home: {
+    verseOfTheDay: "Verse of the day",
+    shareVerse: "Share verse",
+    recents: "Recents",
+    reminders: "Reminders",
+    moreWays: "More ways to pray",
     greeting: "Good Morning",
     greetingSubtitle: "Let us begin our day with prayer.",
     greetingAfternoon: "Good Afternoon",

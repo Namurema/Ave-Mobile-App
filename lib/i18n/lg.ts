@@ -54,6 +54,11 @@ export default {
     subtitle: "Londa olulimi lwo okukolera mu kusaba n'okwejjusa buli lunaku."
   },
   home: {
+    verseOfTheDay: "Olunyiriri lw'olunaku",
+    shareVerse: "Gabanako olunyiriri",
+    recents: "Ebyakamala",
+    reminders: "Okujjukizibwa",
+    moreWays: "Enkola endala ez'okusaba",
     greeting: "Wasuze otya",
     greetingSubtitle: "Ka tutandike olunaku lwaffe n'okusaba.",
     greetingAfternoon: "Osiibye otya",

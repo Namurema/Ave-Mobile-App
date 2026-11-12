@@ -59,9 +59,9 @@ export function NovenaDatesCard({ novenaId }: { novenaId: string }) {
 
 type SeasonItem = { novena: (typeof availableNovenas)[number]; season: NovenaSeason };
 
-// Home: a slim card for the novena running now. Once started it shows how far
-// you've got; once finished (or after the feast) it moves on to the next one.
-export function NovenaSeasonCard() {
+// The novenas to show on Home: those running now (not yet finished), else one
+// with its feast today, else the next one. Shared with the Home slides.
+export function useSeasonNovenas() {
   const log = useUserDataStore((state) => state.log);
   const items = availableNovenas
     .map((novena) => ({ novena, season: novenaSeason(novena.id) }))
@@ -73,8 +73,29 @@ export function NovenaSeasonCard() {
   const running = items.filter((item) => item.season.status === "active" && unfinished(item));
   const feast = items.filter((item) => item.season.status === "feast");
   const next = items.filter((item) => item.season.status === "upcoming" || item.season.status === "later").slice(0, 1);
-  const shown = running.length ? running : feast.length ? feast : next;
+  return running.length ? running : feast.length ? feast : next;
+}
 
+// What to say about a novena on Home, and what its button does
+export function novenaCardText(season: NovenaSeason, done: number, prayedToday: boolean, t: TFunction, language: string) {
+  const of = `${t("progress.of")} ${season.length}`;
+  if (season.status === "active") {
+    const day = `${t("progress.day")} ${season.day} ${of}`;
+    if (prayedToday) return { eyebrow: t("seasons.title"), status: `${day} · ${t("progress.prayedToday")}`, action: t("seasons.open") };
+    if (done === 0)
+      return { eyebrow: t("seasons.title"), status: season.day === 1 ? t("seasons.startsToday") : `${day} ${t("seasons.today")}`, action: t("seasons.begin") };
+    return { eyebrow: t("seasons.title"), status: `${day} · ${t("seasons.prayToday")}`, action: t("seasons.continue") };
+  }
+  if (season.status === "feast") {
+    return { eyebrow: t("seasons.title"), status: season.feastKey ? `${t("seasons.feastToday")}: ${t(season.feastKey)}` : t("seasons.feastToday"), action: t("seasons.open") };
+  }
+  return { eyebrow: t("seasons.next"), status: seasonStatus(season, t, language), action: t("seasons.open") };
+}
+
+// Home: a slim card for the novena running now. Once started it shows how far
+// you've got; once finished (or after the feast) it moves on to the next one.
+export function NovenaSeasonCard() {
+  const shown = useSeasonNovenas();
   return (
     <>
       {shown.map((item) => (
@@ -90,32 +111,7 @@ function SeasonCard({ novena, season, done }: SeasonItem & { done: number }) {
   const tc = useContent();
   const language = useLanguageStore((state) => state.language);
   const prayedToday = usePrayedToday(itemKey.novena(novena.id));
-  const of = `${t("progress.of")} ${season.length}`;
-
-  // What to say, and what the button does
-  let eyebrow = t("seasons.title");
-  let status: string;
-  let action: string;
-  if (season.status === "active") {
-    const day = `${t("progress.day")} ${season.day} ${of}`;
-    if (prayedToday) {
-      status = `${day} · ${t("progress.prayedToday")}`;
-      action = t("seasons.open");
-    } else if (done === 0) {
-      status = season.day === 1 ? t("seasons.startsToday") : `${day} ${t("seasons.today")}`;
-      action = t("seasons.begin");
-    } else {
-      status = `${day} · ${t("seasons.prayToday")}`;
-      action = t("seasons.continue");
-    }
-  } else if (season.status === "feast") {
-    status = season.feastKey ? `${t("seasons.feastToday")}: ${t(season.feastKey)}` : t("seasons.feastToday");
-    action = t("seasons.open");
-  } else {
-    eyebrow = t("seasons.next");
-    status = seasonStatus(season, t, language);
-    action = t("seasons.open");
-  }
+  const { eyebrow, status, action } = novenaCardText(season, done, prayedToday, t, language);
 
   return (
     <Card className="overflow-hidden">
