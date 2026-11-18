@@ -82,7 +82,15 @@ export function toChunks(sections: SpeechSection[]): Chunk[] {
 
 // A voice on the device for a language ("en", "sw"...), preferring voices
 // that work offline, and British English for English
+// iPhones list voices that are silent on web pages (events fire, the text
+// highlights, but nothing is heard), so there we let iOS use its default voice
+const isIOS = () =>
+  typeof navigator !== "undefined" &&
+  (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));
+
 function voiceFor(lang: string) {
+  if (isIOS()) return null;
   const voices = window.speechSynthesis.getVoices();
   const matches = voices.filter((v) => new RegExp(`^${lang}([-_]|$)`, "i").test(v.lang));
   return (
@@ -104,8 +112,19 @@ function useVoicesReady() {
   }, []);
 }
 
+// iPhones put web speech on the ringer channel, so silent mode mutes it.
+// Ask for the media channel instead (Safari 16.4+), like a video.
+function holdMediaChannel() {
+  try {
+    const session = (navigator as any).audioSession;
+    if (session) session.type = "playback";
+  } catch {}
+}
+
 // Only one text reads at a time: starting another stops the previous one
 let speaker: { current: () => void } | null = null;
+// The utterance being spoken (see `current = utterance` below)
+let current: SpeechSynthesisUtterance | null = null;
 
 export type ReadAloudState = "idle" | "playing" | "paused";
 
@@ -136,11 +155,17 @@ export function useReadAloud(sections: SpeechSection[], { onEnd }: { onEnd?: () 
     if (!canSpeak()) return;
     if (speaker && speaker !== stopRef) speaker.current();
     speaker = stopRef;
+    holdMediaChannel();
     const thisRun = ++run.current;
-    window.speechSynthesis.cancel();
+    const synth = window.speechSynthesis;
+    // Chrome sometimes drops an utterance spoken straight after a needless
+    // cancel(), so only cancel when something is actually queued
+    if (synth.speaking || synth.pending) synth.cancel();
     chunks.current = toChunks(sections);
     const lang = speechLang ?? "en";
     const voice = voiceFor(lang);
+    let useVoice = true;
+    let failures = 0;
 
     const say = (index: number) => {
       if (thisRun !== run.current) return;
@@ -154,16 +179,39 @@ export function useReadAloud(sections: SpeechSection[], { onEnd }: { onEnd?: () 
       positionRef.current = index;
       setPosition(index);
       const utterance = new SpeechSynthesisUtterance(chunks.current[index].text);
-      utterance.lang = voice?.lang ?? (lang === "en" ? "en-GB" : lang);
-      if (voice) utterance.voice = voice;
+      // Android reports "en_GB"; browsers expect "en-GB"
+      utterance.lang = (useVoice ? voice?.lang : undefined)?.replace("_", "-") ?? (lang === "en" ? "en-GB" : lang);
+      if (useVoice && voice) utterance.voice = voice;
       utterance.rate = 0.95;
-      utterance.onend = () => say(index + 1);
+      utterance.volume = 1;
+      utterance.onend = () => {
+        failures = 0;
+        say(index + 1);
+      };
       utterance.onerror = (event) => {
         // Cancelled by pause or stop: nothing to do
         if (event.error === "interrupted" || event.error === "canceled") return;
+        if (thisRun !== run.current) return;
+        // The chosen voice can fail (e.g. an online voice with no internet):
+        // retry this piece once with the browser's default voice
+        if (useVoice && voice && event.error !== "not-allowed") {
+          useVoice = false;
+          say(index);
+          return;
+        }
+        // Speech blocked or broken: stop rather than race silently to the end
+        // (which would also skip on to the next prayer of the Rosary)
+        if (event.error === "not-allowed" || ++failures >= 3) {
+          stopSelf();
+          return;
+        }
         say(index + 1);
       };
-      window.speechSynthesis.speak(utterance);
+      // Chrome keeps the utterance only weakly: hold it so onend still fires
+      current = utterance;
+      // Chrome (Android especially) can be left stuck "paused" and speak nothing
+      synth.resume();
+      synth.speak(utterance);
     };
 
     setState("playing");
@@ -191,7 +239,7 @@ export function useReadAloud(sections: SpeechSection[], { onEnd }: { onEnd?: () 
 
   return {
     // English always (every phone reads it); other languages need a voice
-    available: canSpeak() && !!speechLang && (speechLang === "en" || !!voiceFor(speechLang)),
+    available: canSpeak() && !!speechLang && (speechLang === "en" || isIOS() || !!voiceFor(speechLang)),
     state,
     // Index of the section being read, and the exact piece, for highlighting
     activeSection: state === "idle" ? null : chunks.current[position]?.section ?? null,
@@ -201,3 +249,4 @@ export function useReadAloud(sections: SpeechSection[], { onEnd }: { onEnd?: () 
     stop: stopSelf,
   };
 }
+
