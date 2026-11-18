@@ -3,19 +3,14 @@ import { View, Text, Platform } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
 import { useInstallPrompt } from "../lib/pwa";
-import { DONATE, DONATIONS_ENABLED, DONATE_AFTER_DAYS } from "../constants/donate";
 import { Dialog } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
-// Pop-ups on Home: "Add Ave to your phone" for browser visitors, and a
-// donation request once someone has prayed with Ave on a few different days.
-// At most one pop-up per visit.
+// Pop-up on Home: "Add Ave to your phone" for browser visitors, at most once a visit.
 
 const DAY = 24 * 60 * 60 * 1000;
 const INSTALL_KEY = "ave-install-asked";
-const DONATE_KEY = "ave-donate-asked";
-const DAYS_KEY = "ave-active-days";
 
 const read = (key: string) => {
   try {
@@ -31,42 +26,27 @@ const write = (key: string, value: string) => {
 };
 const askedWithin = (key: string, ms: number) => Date.now() - Number(read(key) ?? 0) < ms;
 
-// Records today and returns on how many different days Ave has been opened
-function countActiveDays() {
-  let days: string[] = [];
-  try {
-    days = JSON.parse(read(DAYS_KEY) ?? "[]");
-  } catch {}
-  const today = new Date().toISOString().slice(0, 10);
-  if (!days.includes(today)) days = [...days, today].slice(-30);
-  write(DAYS_KEY, JSON.stringify(days));
-  return days.length;
-}
-
 let shownThisVisit = false;
 
 export function HomePopups() {
   const { isWeb, isStandalone, isIOS, isAndroid, canPrompt } = useInstallPrompt();
-  const [popup, setPopup] = useState<"install" | "donate" | null>(null);
+  const [popup, setPopup] = useState<"install" | null>(null);
 
   useEffect(() => {
     if (Platform.OS !== "web" || shownThisVisit) return;
-    const activeDays = countActiveDays();
     const wantsInstall = isWeb && !isStandalone && (isIOS || isAndroid || canPrompt) && !askedWithin(INSTALL_KEY, 14 * DAY);
-    const wantsDonate = DONATIONS_ENABLED && activeDays >= DONATE_AFTER_DAYS && !askedWithin(DONATE_KEY, 30 * DAY);
-    const next = wantsInstall ? "install" : wantsDonate ? "donate" : null;
+    const next = wantsInstall ? "install" : null;
     if (!next) return;
     // Let Home appear first
     const timer = setTimeout(() => {
       shownThisVisit = true;
-      write(next === "install" ? INSTALL_KEY : DONATE_KEY, String(Date.now()));
+      write(INSTALL_KEY, String(Date.now()));
       setPopup(next);
     }, 2500);
     return () => clearTimeout(timer);
   }, [isStandalone, canPrompt]);
 
   if (popup === "install") return <InstallDialog onClose={() => setPopup(null)} />;
-  if (popup === "donate") return <DonateDialog onClose={() => setPopup(null)} />;
   return null;
 }
 
@@ -117,79 +97,5 @@ export function InstallDialog({ onClose }: { onClose: () => void }) {
         </View>
       </View>
     </Dialog>
-  );
-}
-
-// The Airtel Money steps, with a button to copy the merchant code. Also in
-// Settings, so people can give at any time.
-export function DonateSteps() {
-  const { t } = useTranslation();
-  const [copied, setCopied] = useState(false);
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(DONATE.airtelCode);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {}
-  };
-  return (
-    <View className="gap-3">
-      <View className="flex-row items-center justify-between gap-3 rounded-md bg-muted p-3">
-        <View className="gap-0.5">
-          <Text className="text-xs font-semibold uppercase tracking-widest text-primary-light">{t("donate.codeLabel")}</Text>
-          <Text className="text-xl font-bold tracking-wider text-foreground">{DONATE.airtelCode}</Text>
-          {DONATE.airtelName ? <Text className="text-xs text-muted-foreground">{DONATE.airtelName}</Text> : null}
-        </View>
-        {Platform.OS === "web" && (
-          <Button size="sm" variant="outline" onPress={copy}>
-            {copied ? t("donate.copied") : t("donate.copy")}
-          </Button>
-        )}
-      </View>
-      <Step number={1} text={t("donate.step1")} />
-      <Step number={2} text={`${t("donate.step2")} ${DONATE.airtelCode}`} />
-      <Step number={3} text={t("donate.step3")} />
-      <Step number={4} text={`${t("donate.step4")} “${DONATE.airtelName}”`} />
-      <Step number={5} text={t("donate.step5")} />
-    </View>
-  );
-}
-
-function DonateDialog({ onClose }: { onClose: () => void }) {
-  const { t } = useTranslation();
-  const [later, setLater] = useState(false);
-
-  if (later) {
-    return (
-      <Dialog open onClose={onClose} title={t("donate.laterTitle")} description={t("donate.laterText")} closeLabel={t("common.close")}>
-        <Button onPress={onClose}>{t("install.gotIt")}</Button>
-      </Dialog>
-    );
-  }
-
-  return (
-    <Dialog open onClose={() => setLater(true)} title={t("donate.title")} description={t("donate.text")} closeLabel={t("donate.later")}>
-      <View className="gap-4">
-        <DonateSteps />
-        <View className="flex-row flex-wrap gap-2">
-          <Button onPress={onClose}>{t("donate.done")}</Button>
-          <Button variant="ghost" onPress={() => setLater(true)}>
-            {t("donate.later")}
-          </Button>
-        </View>
-      </View>
-    </Dialog>
-  );
-}
-
-// Settings: "Support Ave"
-export function DonateCard() {
-  const { t } = useTranslation();
-  if (!DONATIONS_ENABLED) return null;
-  return (
-    <Card className="p-4 gap-3">
-      <Text className="text-sm leading-6 text-muted-foreground">{t("donate.text")}</Text>
-      <DonateSteps />
-    </Card>
   );
 }

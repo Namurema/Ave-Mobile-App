@@ -17,6 +17,32 @@ export async function checkIsAdmin(): Promise<boolean> {
   return data === true;
 }
 
+// What each account does: prayers, favourites, routine, reminders, trial and
+// plan (public.admin_activity, supabase/migrations/20261118_admin_activity.sql).
+// Empty for anyone but the admin.
+export type Activity = {
+  user_id: string;
+  prayers_total: number;
+  prayers_7d: number;
+  days_active_7d: number;
+  last_prayed_on: string | null;
+  favourites: number;
+  routine_prayers: number;
+  reminders_on: boolean;
+  trial_ends_at: string;
+  paid_until: string | null;
+  plan: string | null;
+  free_until: string | null;
+  free_access: boolean;
+  payments_completed: number;
+};
+
+export async function getActivity(): Promise<Activity[]> {
+  const { data, error } = await supabase.rpc('admin_activity');
+  if (error) throw error;
+  return (data ?? []) as Activity[];
+}
+
 // Every account, newest first. Only returns all rows for the admin; the
 // database's row-level security limits everyone else to their own.
 export async function getProfiles(): Promise<Profile[]> {

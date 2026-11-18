@@ -4,7 +4,7 @@
 
 export const LEGAL_OPERATOR = "the Ave team";
 export const LEGAL_CONTACT_EMAIL = "stelarlabs@gmail.com";
-export const LEGAL_UPDATED = "12 November 2026";
+export const LEGAL_UPDATED = "18 November 2026";
 
 export const privacyPolicy = [
   {
@@ -13,11 +13,11 @@ export const privacyPolicy = [
   },
   {
     heading: "Information we keep",
-    body: "You can pray with Ave without an account. Your settings, progress and favourites are then kept only on your device. If you create an account, we keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan (once plans are introduced): the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
+    body: "You can try Ave without an account. Your settings, progress and favourites are then kept only on your device. If you create an account, we keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan: the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
   },
   {
-    heading: "Payments and donations",
-    body: "Ave is free for now. When paid plans are introduced, payments will be handled by ObPay, a payment provider. Mobile money payments are approved with your PIN on your own phone, and card details are entered on ObPay's page; Ave never sees or stores your PIN or card details. ObPay tells us whether a payment succeeded, and the reference, amount and method.\n\nDonations are made through Airtel Money, outside the app. Airtel shows us what it shows any merchant, such as the amount, the phone number and the name on the Airtel account, and we use it only for our own records and to thank you. Airtel's and ObPay's own privacy policies apply to the information you give them.",
+    heading: "Payments",
+    body: "Plans are paid through ObPay, a payment provider. Mobile money payments are approved with your PIN on your own phone, and card details are entered on ObPay's page; Ave never sees or stores your PIN or card details. We send ObPay your name, email address and, for mobile money, the phone number you enter, and ObPay tells us whether the payment succeeded, with its reference, amount and currency. ObPay's own privacy policy applies to the information you give them.",
   },
   {
     heading: "Reminders",
@@ -37,7 +37,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Information on your device",
-    body: "Ave saves your settings, your progress and favourites, copies of prayers you have opened, and on which days you opened Ave (so it asks for a donation or shows tips at the right time, at most once a month), on your device. This lets the app work offline. You can remove it at any time by clearing the site data in your browser or uninstalling the app.",
+    body: "Ave saves your settings, your progress and favourites, copies of prayers you have opened, and when you first opened Ave (to count the free trial), on your device. This lets the app work offline. You can remove it at any time by clearing the site data in your browser or uninstalling the app.",
   },
   {
     heading: "How long we keep it",
@@ -72,23 +72,19 @@ export const termsAndConditions = [
   },
   {
     heading: "The service",
-    body: "Ave offers Catholic prayers, the Rosary, novenas and chaplets for personal devotion, in several languages, with read aloud, progress tracking, routines and reminders. We may add, change or remove features and content at any time.",
+    body: "Ave offers Catholic prayers, the Rosary, novenas and chaplets for personal devotion, with read aloud, progress tracking, routines and reminders. We may add, change or remove features and content at any time.",
   },
   {
     heading: "Price",
-    body: "Ave is free to use for now. We plan to introduce paid plans later. Before we do, we will tell you in the app, and every account will get a 7-day free trial. Nothing is ever charged unless you choose a plan and pay for it yourself.",
+    body: "Everyone can use Ave free for 7 days: from when you create your account, or from your first visit if you use Ave without one. After that, a plan is needed to keep praying with Ave. Nothing is ever charged unless you choose a plan and pay for it yourself.",
   },
   {
-    heading: "Paid plans, when introduced",
-    body: "The planned prices are UGX 7,000 a month or UGX 70,000 a year in Uganda, and USD 3.99 a month or USD 29.99 a year elsewhere, including any taxes we must charge. A plan lasts for the month or year you paid for and does not renew automatically: when it ends, you choose whether to pay again. Paying before a plan ends adds the new period to the end of it. Payments are made through ObPay by card or mobile money, and ObPay's terms also apply. A price change never affects a plan you have already paid for.",
+    heading: "Plans",
+    body: "The prices are UGX 7,000 a month or UGX 70,000 a year in Uganda, and USD 3.99 a month or USD 29.99 a year elsewhere, including any taxes we must charge. A plan lasts for the month or year you paid for and does not renew automatically: when it ends, you choose whether to pay again. Paying before a plan ends adds the new period to the end of it. Payments are made through ObPay by card or mobile money, and ObPay's terms also apply. A price change never affects a plan you have already paid for.",
   },
   {
     heading: "Refunds",
     body: `If you were charged by mistake, charged twice, or paid but did not get access, email ${LEGAL_CONTACT_EMAIL} within 14 days with your payment reference and we will put it right or refund you. Otherwise, because you can try Ave free for 7 days first, payments for a plan that has started are not refunded. Nothing in these terms limits rights you have under the law.`,
-  },
-  {
-    heading: "Donations",
-    body: `You can choose to support Ave with a donation through Airtel Money. Donations are voluntary gifts to help keep Ave running. They do not buy any feature, access or service, and Ave works the same whether or not you give. Donations are not refunded, except one made by mistake (for example the wrong amount): email ${LEGAL_CONTACT_EMAIL} within 14 days with the transaction details.`,
   },
   {
     heading: "Prayer texts",
@@ -96,7 +92,7 @@ export const termsAndConditions = [
   },
   {
     heading: "Your account",
-    body: "Accounts are optional; they keep your progress on all your devices. If you create one, give accurate information, keep your password private, and use the account only for yourself; a plan is for one person. You are responsible for activity on your account.",
+    body: "An account keeps your progress on all your devices, and is needed to buy a plan. Give accurate information, keep your password private, and use the account only for yourself; a plan is for one person. You are responsible for activity on your account.",
   },
   {
     heading: "Acceptable use",

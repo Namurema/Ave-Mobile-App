@@ -10,6 +10,7 @@ import { useLanguageStore } from "../store/LanguageStore";
 import { LANGUAGES } from "../constants/languages";
 import { images, dailyTiles } from "../constants/images";
 import { CONTACT_EMAIL, TIKTOK_URL } from "../constants/site";
+import { PAYMENTS_ENABLED } from "../constants/features";
 import { InstallDialog } from "../components/Popups";
 import { describeItem } from "../lib/items";
 import { useContent } from "../lib/i18n/content";
@@ -114,7 +115,7 @@ export default function SplashScreen() {
               <Pressable onPress={() => openAuth("signUp", destination)} className={cn("w-full items-center justify-center rounded-full bg-zinc-800 web:hover:bg-zinc-700", short ? "h-12" : "h-14")}>
                 <Text className="text-base font-bold text-white">{t("splash.createFreeAccount")}</Text>
               </Pressable>
-              <Text className="text-center text-sm text-white/60">{t("splash.accountNoteFree")}</Text>
+              <Text className="text-center text-sm text-white/60">{t(PAYMENTS_ENABLED ? "splash.accountNote" : "splash.accountNoteFree")}</Text>
 
               {/* Language, before anything else (when there is a choice) */}
               {LANGUAGES.length > 1 && (

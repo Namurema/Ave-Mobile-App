@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from "react";
 import { View, Text } from "react-native";
 import { useAuthStore } from "../../store/authStore";
 import { AdminGate, ADMIN_TABS } from "../../components/admin/AdminGate";
-import { getProfiles, type Profile } from "../../lib/supabase/admin";
+import { getActivity, getProfiles, type Activity, type Profile } from "../../lib/supabase/admin";
 import { Page, PageHeader, Section, ListCard, LoadingCard, EmptyState } from "../../components/ui/page";
 import { Card } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 
-// Admin: accounts that have signed up
+// Admin: accounts that have signed up, and what each one does
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 const formatDate = (value: string | null) =>
@@ -38,6 +38,7 @@ export default function AdminScreen() {
 function Accounts() {
   const isAdmin = useAuthStore((state) => state.isAdmin);
   const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [activity, setActivity] = useState<Map<string, Activity> | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState("");
@@ -47,6 +48,9 @@ function Accounts() {
     setError(null);
     try {
       setProfiles(await getProfiles());
+      // Activity needs supabase/migrations/20261118_admin_activity.sql; without
+      // it the accounts still show
+      setActivity(await getActivity().then((rows) => new Map(rows.map((row) => [row.user_id, row]))).catch(() => null));
     } catch (e: any) {
       // Table missing means the setup SQL hasn't been run yet
       setError(
@@ -73,10 +77,36 @@ function Accounts() {
 
   const newThisWeek = profiles.filter((p) => Date.now() - new Date(p.created_at).getTime() < WEEK_MS).length;
   const confirmed = profiles.filter((p) => p.email_confirmed_at).length;
+  const rows = activity ? [...activity.values()] : [];
+  const now = Date.now();
+  const paying = rows.filter((a) => a.paid_until && new Date(a.paid_until).getTime() > now).length;
+  const activeThisWeek = rows.filter((a) => a.days_active_7d > 0).length;
+  const onTrial = rows.filter(
+    (a) => !(a.paid_until && new Date(a.paid_until).getTime() > now) && (a.free_access || new Date(a.trial_ends_at).getTime() > now)
+  ).length;
+  const needPlan = rows.length - paying - onTrial;
+
+  // "Paying until 3 Dec", "Trial until 25 Nov", "Free until 25 Nov" or "Trial ended"
+  const accessLabel = (a: Activity) => {
+    if (a.paid_until && new Date(a.paid_until).getTime() > now) return `Paying (${a.plan}) until ${formatDate(a.paid_until)}`;
+    if (a.free_access) return a.free_until ? `Free until ${formatDate(a.free_until)}` : "Free access";
+    if (new Date(a.trial_ends_at).getTime() > now) return `Trial until ${formatDate(a.trial_ends_at)}`;
+    return "Trial ended";
+  };
+  const activityLine = (a: Activity) =>
+    [
+      `Prayed ${a.prayers_7d} this week (${a.prayers_total} total)`,
+      a.last_prayed_on ? `last ${formatDate(a.last_prayed_on)}` : "never marked a prayer",
+      `${a.favourites} saved`,
+      a.routine_prayers ? `routine of ${a.routine_prayers}` : "no routine",
+      a.reminders_on ? "reminders on" : null,
+    ]
+      .filter(Boolean)
+      .join(" · ");
 
   return (
     <Page sidebar={false}>
-      <PageHeader title="Admin" description="Accounts that have signed up to Ave." tabs={ADMIN_TABS} />
+      <PageHeader title="Admin" description="Accounts that have signed up to Ave, and what each one does." tabs={ADMIN_TABS} />
 
       {loading ? (
         <LoadingCard label="Loading accounts..." />
@@ -92,7 +122,22 @@ function Accounts() {
             <Stat label="Total accounts" value={profiles.length} />
             <Stat label="New this week" value={newThisWeek} />
             <Stat label="Confirmed emails" value={confirmed} />
+            {activity && (
+              <>
+                <Stat label="Prayed this week" value={activeThisWeek} />
+                <Stat label="Paying" value={paying} />
+                <Stat label="On trial or free" value={onTrial} />
+                <Stat label="Trial ended, no plan" value={needPlan} />
+              </>
+            )}
           </View>
+          {!activity && (
+            <Card className="p-4">
+              <Text className="text-sm leading-5 text-muted-foreground">
+                To see what each person does, run supabase/migrations/20261118_admin_activity.sql in the Supabase SQL Editor.
+              </Text>
+            </Card>
+          )}
 
           <Input
             label="Search"
@@ -113,16 +158,22 @@ function Accounts() {
               </Text>
             ) : (
               <ListCard
-                items={filtered.map((p) => ({
-                  key: p.id,
-                  title: p.full_name || "No name",
-                  description: p.email ?? undefined,
-                  meta: [
-                    `Joined ${formatDate(p.created_at)}`,
-                    p.last_sign_in_at ? `Last signed in ${formatDate(p.last_sign_in_at)}` : "Never signed in",
-                  ].join(" · "),
-                  badge: p.email_confirmed_at ? undefined : "Unconfirmed",
-                }))}
+                items={filtered.map((p) => {
+                  const a = activity?.get(p.id);
+                  return {
+                    key: p.id,
+                    title: p.full_name || "No name",
+                    description: [p.email, a ? activityLine(a) : null].filter(Boolean).join("\n") || undefined,
+                    meta: [
+                      `Joined ${formatDate(p.created_at)}`,
+                      p.last_sign_in_at ? `Last signed in ${formatDate(p.last_sign_in_at)}` : "Never signed in",
+                      a ? accessLabel(a) : null,
+                    ]
+                      .filter(Boolean)
+                      .join(" · "),
+                    badge: p.email_confirmed_at ? undefined : "Unconfirmed",
+                  };
+                })}
               />
             )}
           </Section>

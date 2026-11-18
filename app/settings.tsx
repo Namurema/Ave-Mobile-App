@@ -20,9 +20,7 @@ import { Dialog } from "../components/ui/dialog";
 import { FormError } from "../components/auth/forms";
 import { deleteAccount } from "../lib/supabase/account";
 import { LANGUAGES, languageInfo } from "../constants/languages";
-import { DonateCard } from "../components/Popups";
 import { isPrayerKey } from "../lib/items";
-import { DONATIONS_ENABLED } from "../constants/donate";
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -175,12 +173,6 @@ export default function ProfileScreen() {
       {Platform.OS === "web" && (
         <Section title={t("settings.app")}>
           <InstallCard dismissible={false} />
-        </Section>
-      )}
-
-      {DONATIONS_ENABLED && (
-        <Section title={t("donate.settingsTitle")}>
-          <DonateCard />
         </Section>
       )}
 
