@@ -17,7 +17,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Payments and donations",
-    body: "Ave is free for now. When paid plans are introduced, payments will be handled by PesaPal, a licensed payment provider. Your card number, mobile money PIN and other payment details are entered on PesaPal's page and are never seen or stored by Ave. PesaPal tells us whether a payment succeeded, and the reference, amount and method.\n\nDonations are made through Airtel Money, outside the app. Airtel shows us what it shows any merchant, such as the amount, the phone number and the name on the Airtel account, and we use it only for our own records and to thank you. Airtel's and PesaPal's own privacy policies apply to the information you give them.",
+    body: "Ave is free for now. When paid plans are introduced, payments will be handled by ObPay, a payment provider. Mobile money payments are approved with your PIN on your own phone, and card details are entered on ObPay's page; Ave never sees or stores your PIN or card details. ObPay tells us whether a payment succeeded, and the reference, amount and method.\n\nDonations are made through Airtel Money, outside the app. Airtel shows us what it shows any merchant, such as the amount, the phone number and the name on the Airtel account, and we use it only for our own records and to thank you. Airtel's and ObPay's own privacy policies apply to the information you give them.",
   },
   {
     heading: "Reminders",
@@ -33,7 +33,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Who stores your information",
-    body: "Ave uses Supabase to store accounts, prayer data and subscriptions, Cloudflare to host the app, and PesaPal to take payments. They process information only to provide these services. Their servers may be outside Uganda. Like any website, they keep short technical logs (such as IP address and browser type) to keep the service secure and working.",
+    body: "Ave uses Supabase to store accounts, prayer data and subscriptions, Cloudflare to host the app, and ObPay to take payments. They process information only to provide these services. Their servers may be outside Uganda. Like any website, they keep short technical logs (such as IP address and browser type) to keep the service secure and working.",
   },
   {
     heading: "Information on your device",
@@ -80,7 +80,7 @@ export const termsAndConditions = [
   },
   {
     heading: "Paid plans, when introduced",
-    body: "The planned prices are UGX 7,000 a month or UGX 70,000 a year in Uganda, and USD 3.99 a month or USD 29.99 a year elsewhere, including any taxes we must charge. A plan lasts for the month or year you paid for and does not renew automatically: when it ends, you choose whether to pay again. Paying before a plan ends adds the new period to the end of it. Payments are made through PesaPal by card or mobile money, and PesaPal's terms also apply. A price change never affects a plan you have already paid for.",
+    body: "The planned prices are UGX 7,000 a month or UGX 70,000 a year in Uganda, and USD 3.99 a month or USD 29.99 a year elsewhere, including any taxes we must charge. A plan lasts for the month or year you paid for and does not renew automatically: when it ends, you choose whether to pay again. Paying before a plan ends adds the new period to the end of it. Payments are made through ObPay by card or mobile money, and ObPay's terms also apply. A price change never affects a plan you have already paid for.",
   },
   {
     heading: "Refunds",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Redirect } from "expo-router";
+import { Redirect, useRouter } from "expo-router";
 import { PAYMENTS_ENABLED } from "../constants/features";
 import { View, Text, Pressable, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,8 @@ import { useAuthDialog } from "../store/authDialogStore";
 import { useAccessStore } from "../store/accessStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { formatDayMonth } from "../lib/i18n/helpers";
-import { PRICES, formatPrice, guessCurrency, startCheckout, type Currency, type Plan } from "../lib/billing";
+import { PRICES, formatPrice, guessCurrency, isUgandaPhone, startCheckout, type Currency, type Plan } from "../lib/billing";
+import { Input } from "../components/ui/input";
 import { Page, PageHeader } from "../components/ui/page";
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -17,7 +18,8 @@ import { FormError } from "../components/auth/forms";
 import { images } from "../constants/images";
 import { cn } from "../lib/utils";
 
-// Choose a plan and pay with PesaPal (mobile money or card). While payments
+// Choose a plan and pay with ObPay: MTN or Airtel mobile money in Uganda, a card
+// abroad. While payments
 // are off (constants/features.ts) this page leads home.
 export default function SubscribeScreen() {
   return PAYMENTS_ENABLED ? <Plans /> : <Redirect href="/(tabs)/home" />;
@@ -30,8 +32,11 @@ function Plans() {
   const access = useAccessStore((state) => state.access);
   const [currency, setCurrency] = useState<Currency>(guessCurrency());
   const [plan, setPlan] = useState<Plan>("yearly");
+  const router = useRouter();
   const [paying, setPaying] = useState(false);
-  // Coming back from PesaPal with the browser's Back button restores this page
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  // Coming back from the card page with the browser's Back button restores this page
   // as it was (busy button); reset it
   useEffect(() => {
     if (Platform.OS !== "web") return;
@@ -54,12 +59,19 @@ function Plans() {
   const pay = async () => {
     if (!session) return useAuthDialog.getState().open("signUp", "/subscribe");
     setError(null);
+    if (currency === "UGX" && !isUgandaPhone(phone)) return setPhoneError(t("billing.phoneInvalid"));
+    setPhoneError(null);
     setPaying(true);
     try {
-      await startCheckout(plan, currency);
-      // The browser now goes to PesaPal; keep the button busy until it does
-    } catch {
-      setError(t("billing.startFailed"));
+      const { reference, promptSent, checkoutUrl } = await startCheckout(plan, currency, phone);
+      // Card: the browser is going to ObPay's card page; keep the button busy
+      if (checkoutUrl && !promptSent) return;
+      // Mobile money: wait for the PIN on the confirmation page
+      router.replace({ pathname: "/payment/complete", params: { ref: reference, prompt: promptSent ? "1" : "0" } });
+    } catch (failure) {
+      const reason = (failure as Error).message;
+      if (reason === "invalid_phone") setPhoneError(t("billing.phoneInvalid"));
+      else setError(t(reason === "too_many_requests" ? "billing.tooManyRequests" : "billing.startFailed"));
       setPaying(false);
     }
   };
@@ -122,6 +134,25 @@ function Plans() {
           );
         })}
       </View>
+
+      {/* Uganda: the number that gets the PIN prompt */}
+      {currency === "UGX" && session && (
+        <Input
+          label={t("billing.phoneLabel")}
+          value={phone}
+          onChangeText={(value) => {
+            setPhone(value);
+            setPhoneError(null);
+          }}
+          error={phoneError}
+          placeholder="0772 123456"
+          keyboardType="phone-pad"
+          inputMode="tel"
+          autoComplete="tel"
+          textContentType="telephoneNumber"
+          maxLength={16}
+        />
+      )}
 
       <FormError message={error} />
       <Button size="lg" loading={paying} onPress={pay}>
