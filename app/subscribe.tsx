@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Redirect, useRouter } from "expo-router";
+import { Redirect, useLocalSearchParams, useRouter } from "expo-router";
 import { PAYMENTS_ENABLED } from "../constants/features";
 import { View, Text, Pressable, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
@@ -19,10 +19,11 @@ import { images } from "../constants/images";
 import { cn } from "../lib/utils";
 
 // Choose a plan and pay with ObPay: MTN or Airtel mobile money in Uganda, a card
-// abroad. While payments
-// are off (constants/features.ts) this page leads home.
+// abroad. While payments are off (constants/features.ts) this page leads home,
+// except at /subscribe?test=1, for a real test payment before switching them on.
 export default function SubscribeScreen() {
-  return PAYMENTS_ENABLED ? <Plans /> : <Redirect href="/(tabs)/home" />;
+  const { test } = useLocalSearchParams<{ test?: string }>();
+  return PAYMENTS_ENABLED || test === "1" ? <Plans /> : <Redirect href="/(tabs)/home" />;
 }
 
 function Plans() {
