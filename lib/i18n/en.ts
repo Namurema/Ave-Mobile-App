@@ -22,8 +22,8 @@ export default {
   },
   splash: {
     tagline: "Your companion for daily prayers and spiritual devotion",
-    headline: "Pray every day, in your own language",
-    description: "Daily prayers, the Holy Rosary, novenas and chaplets in English, Luganda and Runyankore.",
+    headline: "Pray every day with Ave",
+    description: "Daily prayers, the Holy Rosary, novenas and chaplets, on your phone and offline.",
     dailyTitle: "Daily prayers",
     dailyDescription: "Morning, midday and night prayers",
     rosaryTitle: "The Holy Rosary",
@@ -328,7 +328,7 @@ export default {
   },
   billing: {
     title: "Ave subscription",
-    description: "Every prayer, in English, Luganda and Runyankore, with audio, streaks, sharing and reminders.",
+    description: "Every prayer, with audio, streaks, sharing and reminders.",
     subscription: "Subscription",
     includes: "Your plan includes every prayer in all three languages, audio, streaks, sharing and reminders.",
     signInFirst: "Create a free account to start your 7-day free trial.",

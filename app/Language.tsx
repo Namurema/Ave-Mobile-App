@@ -33,7 +33,7 @@ export default function LanguageScreen() {
 
   return (
     <View className="flex-1 bg-background">
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
 
       {/* Top bar */}
       <View className="border-b border-border">

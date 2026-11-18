@@ -78,7 +78,7 @@ function Step({ number, text, icon }: { number: number; text: string; icon?: key
         <Text className="text-sm font-bold text-white">{number}</Text>
       </View>
       <Text className="flex-1 text-sm leading-5 text-foreground">{text}</Text>
-      {icon ? <Ionicons name={icon} size={22} color="#5FC4DB" /> : null}
+      {icon ? <Ionicons name={icon} size={22} color="#01758F" /> : null}
     </View>
   );
 }

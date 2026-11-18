@@ -15,8 +15,8 @@ import { Button } from "./ui/button";
 import { Chip } from "./ui/chip";
 import { cn } from "../lib/utils";
 
-const PRIMARY = "#5FC4DB";
-const MUTED = "#A3A3A3";
+const PRIMARY = "#01758F";
+const MUTED = "#52525B";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 

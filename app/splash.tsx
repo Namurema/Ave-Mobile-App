@@ -8,7 +8,7 @@ import { useAuthStore } from "../store/authStore";
 import { useAuthDialog } from "../store/authDialogStore";
 import { useLanguageStore } from "../store/LanguageStore";
 import { LANGUAGES } from "../constants/languages";
-import { images, dailyTiles, art } from "../constants/images";
+import { images, dailyTiles } from "../constants/images";
 import { CONTACT_EMAIL, TIKTOK_URL } from "../constants/site";
 import { InstallDialog } from "../components/Popups";
 import { describeItem } from "../lib/items";
@@ -45,9 +45,9 @@ export default function SplashScreen() {
 
   const tiles = [
     { title: t("splash.dailyTitle"), text: t("splash.dailyDescription"), image: dailyTiles.morning, route: "/(tabs)/prayers" },
-    { title: t("splash.rosaryTitle"), text: t("splash.rosaryDescription"), image: art.rosary, route: "/(tabs)/rosary" },
-    { title: t("splash.devotionsTitle"), text: t("splash.devotionsDescription"), image: art.stJude, route: "/novenas" },
-    { title: t("nav.foryou"), text: t("splash.forYouDescription"), image: art.forYou, route: "/(tabs)/foryou" },
+    { title: t("splash.rosaryTitle"), text: t("splash.rosaryDescription"), image: images.rosaryHands, route: "/(tabs)/rosary" },
+    { title: t("splash.devotionsTitle"), text: t("splash.devotionsDescription"), image: images.novenasTile, route: "/novenas" },
+    { title: t("nav.foryou"), text: t("splash.forYouDescription"), image: images.prayingHands, route: "/(tabs)/foryou" },
   ];
 
   // Footer: real prayers by name, so people and search engines can go straight to them
@@ -67,7 +67,7 @@ export default function SplashScreen() {
   ];
 
   return (
-    <View className="flex-1 bg-background">
+    <View className="flex-1 bg-zinc-50">
       <StatusBar style="dark" />
       <ScrollView ref={scroll} showsVerticalScrollIndicator={false}>
         {/* Screen 1: the card over the morning light */}
@@ -116,7 +116,8 @@ export default function SplashScreen() {
               </Pressable>
               <Text className="text-center text-sm text-white/60">{t("splash.accountNoteFree")}</Text>
 
-              {/* Language, before anything else */}
+              {/* Language, before anything else (when there is a choice) */}
+              {LANGUAGES.length > 1 && (
               <View className={cn("w-full border-t border-white/15 gap-3 items-center", short ? "mt-1 pt-3" : "mt-3 pt-5")}>
                 <Text className="text-xs font-semibold uppercase tracking-widest text-white/50">{t("splash.chooseLanguage")}</Text>
                 <View role="radiogroup" aria-label={t("splash.chooseLanguage")} className="flex-row flex-wrap justify-center gap-2">
@@ -136,6 +137,7 @@ export default function SplashScreen() {
                   })}
                 </View>
               </View>
+              )}
 
               <Text className="mt-3 text-center text-xs leading-5 text-white/50">
                 {t("splash.agreeByUsing")}{" "}

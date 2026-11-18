@@ -11,50 +11,32 @@ export const images = {
   heroSunrise: require("../assets/images/hero-sunrise.jpg"),
 };
 
-// Illustrations in the African Catholic style (made from the prompts in
-// design/illustration-prompts.md; assets/illustrations, 1200 px wide)
-export const art = {
-  rosary: require("../assets/illustrations/rosary.jpg"),
-  divineMercy: require("../assets/illustrations/divine-mercy.jpg"),
-  stJude: require("../assets/illustrations/st-jude.jpg"),
-  stJoseph: require("../assets/illustrations/st-joseph.jpg"),
-  fertility: require("../assets/illustrations/fertility.jpg"),
-  perpetualHelp: require("../assets/illustrations/perpetual-help.jpg"),
-  stations: require("../assets/illustrations/stations.jpg"),
-  morning: require("../assets/illustrations/morning.jpg"),
-  midday: require("../assets/illustrations/midday.jpg"),
-  night: require("../assets/illustrations/night.jpg"),
-  maryChild: require("../assets/illustrations/mary-child.jpg"),
-  forYou: require("../assets/illustrations/for-you.jpg"),
-  ugandaMartyrs: require("../assets/illustrations/uganda-martyrs.jpg"),
-  groupPrayer: require("../assets/illustrations/group-prayer.jpg"),
-  familyPrayer: require("../assets/illustrations/family-prayer.jpg"),
+// Square tiles for Morning, Midday and Night
+export const dailyTiles: Record<string, any> = {
+  morning: require("../assets/images/tile-morning.jpg"),
+  midday: require("../assets/images/tile-midday.jpg"),
+  night: require("../assets/images/tile-night.jpg"),
 };
 
-// Morning, Midday and Night: cards (dailyTiles) and page headers (dailyImages)
-export const dailyTiles: Record<string, any> = { morning: art.morning, midday: art.midday, night: art.night };
-export const dailyImages: Record<string, any> = dailyTiles;
-
-// Photos for Morning, Midday and Night, behind the For You cards (text reads
-// better on a photo than on a busy illustration)
-export const dailyPhotos: Record<string, any> = {
+// Header photo for each daily prayer and novena
+export const dailyImages: Record<string, any> = {
   morning: require("../assets/images/header-morning.jpg"),
   midday: require("../assets/images/header-midday.jpg"),
   night: require("../assets/images/header-night.jpg"),
 };
 
 const novenaImages: Record<string, any> = {
-  "2": art.perpetualHelp,
-  "6": art.stJude,
+  "2": images.rosaryFern,
+  "6": images.prayingHands,
   "7": images.silhouette,
   "8": images.rosaryWall,
-  "9": art.maryChild,
+  "9": images.rosaryHands,
   "10": images.handsNight,
-  "11": art.maryChild,
-  "12": art.stJoseph,
-  "13": art.fertility,
-  "5": art.divineMercy,
-  "14": art.rosary,
+  "11": images.rosaryFern,
+  "12": images.rosaryWall,
+  "13": images.prayingHands,
+  "5": images.silhouette,
+  "14": images.rosaryHands,
   "15": images.rosaryWall,
   "16": images.silhouette,
 };
@@ -65,8 +47,8 @@ export function itemImage(key: string) {
   const [kind, id] = key.split(":");
   if (kind === "daily") return dailyTiles[id] ?? images.prayingHands;
   if (kind === "novena") return novenaImage(id);
-  if (kind === "rosary") return art.rosary;
-  if (kind === "chaplet") return art.divineMercy;
-  if (kind === "stations") return art.stations;
+  if (kind === "rosary") return images.rosaryHands;
+  if (kind === "chaplet") return images.silhouette;
+  if (kind === "stations") return images.rosaryWall;
   return images.prayingHands;
 }

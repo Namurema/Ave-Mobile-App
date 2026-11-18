@@ -24,11 +24,11 @@ const REVIEW_FILE = path.join(ROOT, "translations-review.md");
 
 // Ugandan and other African languages come from Sunbird; languages it
 // doesn't have (Spanish, Italian) from DeepL, which needs DEEPL_API_KEY
-const LANGUAGES = [
-  { code: "lg", sunbird: "lug", name: "Luganda" },
-  { code: "rny", sunbird: "nyn", name: "Runyankore" },
-];
-// Paused (their files are kept): add back to LANGUAGES to update them
+// English only for now. Paused (their files are kept): add back to LANGUAGES
+// to update them
+const LANGUAGES = [];
+// { code: "lg", sunbird: "lug", name: "Luganda" },
+// { code: "rny", sunbird: "nyn", name: "Runyankore" },
 // { code: "sw", sunbird: "swa", name: "Swahili" },
 // { code: "es", deepl: "ES", name: "Spanish" },
 // { code: "it", deepl: "IT", name: "Italian" },

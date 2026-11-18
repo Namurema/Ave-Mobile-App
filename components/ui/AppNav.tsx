@@ -79,7 +79,7 @@ export function SettingsButton({ light }: { light?: boolean }) {
       aria-label={t("nav.settings")}
       className={cn("md:hidden h-10 w-10 items-center justify-center rounded-full", light ? "bg-black/30" : "bg-background border border-border")}
     >
-      <Ionicons name="settings-outline" size={20} color={light ? "#fff" : "#E5E5E5"} />
+      <Ionicons name="settings-outline" size={20} color={light ? "#fff" : "#3F3F46"} />
     </Pressable>
   );
 }

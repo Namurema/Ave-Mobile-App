@@ -28,8 +28,8 @@ export function Page({
   bottomBar?: ReactNode;
 }) {
   return (
-    <View className="flex-1 bg-background">
-      <StatusBar style="light" />
+    <View className="flex-1 bg-zinc-50">
+      <StatusBar style="dark" />
       <TopNav />
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View
@@ -197,7 +197,7 @@ function ValueTile({ value, unit }: { value: string | number; unit?: string }) {
   return (
     <View className="h-14 w-14 rounded-lg bg-accent items-center justify-center">
       <Text className="text-lg font-bold leading-6 text-primary-light">{value}</Text>
-      {unit ? <Text className="text-[11px] font-medium text-accent-light/80">{unit}</Text> : null}
+      {unit ? <Text className="text-[11px] font-medium text-primary-dark">{unit}</Text> : null}
     </View>
   );
 }
@@ -310,7 +310,7 @@ export function LoadingCard({ label }: { label?: string }) {
   const { t } = useTranslation();
   return (
     <Card className="p-8 items-center gap-3">
-      <ActivityIndicator color="#FAFAFA" />
+      <ActivityIndicator color="#01758F" />
       <Text className="text-sm text-muted-foreground">{label ?? t("common.loading")}</Text>
     </Card>
   );

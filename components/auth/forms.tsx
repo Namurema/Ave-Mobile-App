@@ -49,7 +49,7 @@ function AgreeToTerms({ checked, onChange, error }: { checked: boolean; onChange
     <View className="gap-1.5">
       <View className="flex-row items-start gap-2.5">
         <Pressable role="checkbox" aria-checked={checked} aria-label={t("auth.agreeLabel")} onPress={() => onChange(!checked)} hitSlop={6}>
-          <Ionicons name={checked ? "checkbox" : "square-outline"} size={22} color={error ? "#DC2626" : "#5FC4DB"} />
+          <Ionicons name={checked ? "checkbox" : "square-outline"} size={22} color={error ? "#DC2626" : "#01758F"} />
         </Pressable>
         <Text className="flex-1 text-sm leading-5 text-muted-foreground" onPress={() => onChange(!checked)}>
           {t("auth.agreeStart")}{" "}

@@ -5,7 +5,7 @@ import { NAV_ITEMS, useActiveSegment } from "./AppNav";
 import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 
-// Bottom tab bar for phones: outline icons, filled and white when active.
+// Bottom tab bar for phones: outline icons, filled and teal when active.
 // On wider screens TopNav takes over.
 export default function Footer() {
   const router = useRouter();
@@ -28,8 +28,8 @@ export default function Footer() {
             onPress={() => router.push(tab.route as any)}
             className="flex-1 items-center gap-1 pt-2.5 pb-3"
           >
-            <Ionicons name={active ? tab.activeIcon : tab.icon} size={24} color={active ? "#FFFFFF" : "#8A8A8A"} />
-            <Text className={cn("px-0.5 text-[11px] text-center", active ? "text-white font-semibold" : "text-[#8A8A8A] font-medium")}>
+            <Ionicons name={active ? tab.activeIcon : tab.icon} size={24} color={active ? "#01758F" : "#71717A"} />
+            <Text className={cn("px-0.5 text-[11px] text-center", active ? "text-primary font-semibold" : "text-muted-foreground font-medium")}>
               {t(tab.labelKey)}
             </Text>
           </Pressable>

@@ -19,7 +19,7 @@ import { Page, PageHeader, Section, ListCard } from "../components/ui/page";
 import { Dialog } from "../components/ui/dialog";
 import { FormError } from "../components/auth/forms";
 import { deleteAccount } from "../lib/supabase/account";
-import { languageInfo } from "../constants/languages";
+import { LANGUAGES, languageInfo } from "../constants/languages";
 import { DonateCard } from "../components/Popups";
 import { isPrayerKey } from "../lib/items";
 import { DONATIONS_ENABLED } from "../constants/donate";
@@ -92,6 +92,7 @@ export default function ProfileScreen() {
         />
       </Section>
 
+      {LANGUAGES.length > 1 && (
       <Section title={t("settings.language")}>
         <Card className="p-4 flex-row items-center gap-3">
           <View className="flex-1 gap-0.5">
@@ -105,6 +106,7 @@ export default function ProfileScreen() {
           </Button>
         </Card>
       </Section>
+      )}
 
       {LOGIN_ENABLED && (
         <Section title={t("settings.account")}>

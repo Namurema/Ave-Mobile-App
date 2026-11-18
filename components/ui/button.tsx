@@ -8,7 +8,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white web:hover:bg-zinc-200 active:bg-zinc-200",
+        default: "bg-primary web:hover:bg-primary-dark active:bg-primary-dark",
         outline: "border border-input bg-background web:hover:bg-muted",
         ghost: "web:hover:bg-muted",
       },
@@ -25,7 +25,7 @@ const buttonVariants = cva(
 const buttonTextVariants = cva("font-medium", {
   variants: {
     variant: {
-      default: "text-zinc-950 font-semibold",
+      default: "text-primary-foreground",
       outline: "text-foreground",
       ghost: "text-foreground",
     },
@@ -67,7 +67,7 @@ export function Button({
       {...props}
     >
       {loading && (
-        <ActivityIndicator size="small" color={variant === "outline" || variant === "ghost" ? "#FAFAFA" : "#09090B"} />
+        <ActivityIndicator size="small" color={variant === "outline" || variant === "ghost" ? "#09090B" : "#FFFFFF"} />
       )}
       <Text className={cn(buttonTextVariants({ variant, size }), textClassName)}>{children}</Text>
     </Pressable>

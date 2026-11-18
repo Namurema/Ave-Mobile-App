@@ -16,20 +16,20 @@ import { scripture } from "../../constants/content/scripture";
 import { useAuthStore, displayName } from "../../store/authStore";
 import { usePrayedToday } from "../../store/userDataStore";
 import { cn } from "../../lib/utils";
-import { art, novenaImage } from "../../constants/images";
+import { images, dailyImages, novenaImage } from "../../constants/images";
 import { useSeasonNovenas, novenaCardText } from "../../components/NovenaSeason";
 import { TrialNotice } from "../../components/AccessGate";
 import { HomePopups } from "../../components/Popups";
 import { itemKey } from "../../lib/items";
 import { MOODS, loadMood, shareCard, type FeedCard } from "../../lib/foryou";
 
-// Home, in the style of the big prayer apps: a featured carousel on navy,
+// Home, in the style of the big prayer apps: a featured carousel on teal,
 // shortcuts, a verse of the day to share, the prayer of the day and more ways
 // to pray, each with its illustration.
 
 // Rosary mysteries by weekday, Sunday first
 const MYSTERY_BY_DAY = ["glorious", "joyful", "sorrowful", "glorious", "luminous", "sorrowful", "joyful"];
-const NAVY = "#0B1E5B";
+const TEAL = "#01758F";
 
 function dayOfYear(date: Date) {
   return Math.floor((date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 86400000);
@@ -59,7 +59,7 @@ function FeaturedCarousel({ slides }: { slides: Slide[] }) {
             <View key={slide.key} style={{ width }}>
               <View style={{ height: imageHeight }} className="overflow-hidden">
                 <Image source={slide.image} resizeMode="cover" aria-hidden style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]} />
-                {/* Fades into the navy below (CSS in public/index.html) */}
+                {/* Fades into the teal below (CSS in public/index.html) */}
                 <View {...({ dataSet: { tint: "fade" } } as any)} className="absolute inset-0" />
                 <View className="absolute bottom-6 left-0 right-0 items-center">
                   <Pressable
@@ -134,7 +134,7 @@ function VerseOfTheDay({ day }: { day: number }) {
       <Text className="text-center font-serif text-2xl leading-9 text-foreground">“{verse.text}”</Text>
       <Pressable onPress={share} className="items-center gap-1.5">
         <View className="h-14 w-14 items-center justify-center rounded-full border border-border web:hover:bg-muted">
-          <Ionicons name="share-outline" size={24} color="#FAFAFA" />
+          <Ionicons name="share-outline" size={24} color="#18181B" />
         </View>
         <Text className="text-sm text-muted-foreground">{copied ? t("foryou.copied") : t("home.shareVerse")}</Text>
       </Pressable>
@@ -183,7 +183,7 @@ export default function HomeScreen() {
   const slides: Slide[] = [
     {
       key: "rosary",
-      image: art.rosary,
+      image: images.rosaryHands,
       label: `${t("home.featuredDaily")} · ${t("rosary.title")}`,
       title: t(`rosary.${MYSTERY_BY_DAY[now.getDay()]}`),
       subtitle: t("rosary.focusVirtues"),
@@ -192,7 +192,7 @@ export default function HomeScreen() {
     },
     {
       key: "daily",
-      image: art[daily],
+      image: dailyImages[daily],
       label: t("home.dailyPrayers"),
       title: dailyTitle,
       subtitle: t(greeting.subtitle),
@@ -214,7 +214,7 @@ export default function HomeScreen() {
       : []),
     {
       key: "foryou",
-      image: art.forYou,
+      image: images.prayingHands,
       label: t("nav.foryou"),
       title: t("foryou.pickTitle"),
       subtitle: t("splash.forYouDescription"),
@@ -231,23 +231,23 @@ export default function HomeScreen() {
   ];
 
   const moreWays = [
-    { title: t("home.novenas"), text: t("home.ninedays"), image: art.stJude, route: "/novenas" },
-    { title: t("home.stationsOfCross"), text: t("home.meditatePassion"), image: art.stations, route: "/stations" },
-    { title: t("home.chaplets"), text: t("home.meditativePrayer"), image: art.divineMercy, route: "/chaplets" },
-    { title: t("home.otherPrayers"), text: t("home.sacredLocations"), image: art.maryChild, route: "/other-prayers" },
+    { title: t("home.novenas"), text: t("home.ninedays"), image: images.rosaryFern, route: "/novenas" },
+    { title: t("home.stationsOfCross"), text: t("home.meditatePassion"), image: images.silhouette, route: "/stations" },
+    { title: t("home.chaplets"), text: t("home.meditativePrayer"), image: images.rosaryWall, route: "/chaplets" },
+    { title: t("home.otherPrayers"), text: t("home.sacredLocations"), image: images.handsNight, route: "/other-prayers" },
   ];
 
   return (
-    <View className="flex-1 bg-background">
+    <View className="flex-1 bg-zinc-50">
       <Head>
-        <title>Ave: Catholic Prayers in English, Luganda and Runyankore</title>
+        <title>Ave: Catholic Prayers, Rosary and Novenas</title>
       </Head>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <TopNav />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Navy top: greeting and the featured carousel */}
-        <View style={{ backgroundColor: NAVY }}>
+        {/* Teal top: greeting and the featured carousel */}
+        <View style={{ backgroundColor: TEAL }}>
           <View className="w-full max-w-3xl self-center">
             <View className="flex-row items-center gap-3 px-5 pt-5 pb-4">
               <View className="flex-1 gap-0.5">
@@ -270,9 +270,9 @@ export default function HomeScreen() {
               <Pressable
                 key={item.route}
                 onPress={() => router.push(item.route as any)}
-                className="flex-1 items-center justify-center gap-2 rounded-2xl bg-card py-4 web:hover:bg-muted"
+                className="flex-1 items-center justify-center gap-2 rounded-2xl border border-border bg-card py-4 web:hover:bg-muted"
               >
-                <Ionicons name={item.icon} size={26} color="#FAFAFA" />
+                <Ionicons name={item.icon} size={26} color="#01758F" />
                 <Text numberOfLines={1} className="px-1 text-sm font-semibold text-foreground">
                   {item.label}
                 </Text>

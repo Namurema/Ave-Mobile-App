@@ -38,7 +38,7 @@ export function AuthCard({
 }) {
   return (
     <View className="flex-1 bg-primary-dark">
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <GlassBackground />
       <TopNav />
       <ScrollView className="flex-1" contentContainerClassName="flex-grow justify-center px-4 py-10 gap-5">

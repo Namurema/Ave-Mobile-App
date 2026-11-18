@@ -26,7 +26,7 @@ function SectionTitle({ title, onPress, action }: { title: string; onPress: () =
         <Text role="heading" aria-level={2} className="text-2xl font-extrabold tracking-tight text-foreground">
           {title}
         </Text>
-        <Ionicons name="chevron-forward" size={22} color="#FAFAFA" />
+        <Ionicons name="chevron-forward" size={22} color="#18181B" />
       </Pressable>
       {action ? (
         <Pressable onPress={action.onPress} className="h-10 px-4 justify-center rounded-full border border-border web:hover:bg-muted">
@@ -104,7 +104,7 @@ export default function MeScreen() {
           {name ?? t("me.guest")}
         </Text>
         <Pressable onPress={() => router.push("/settings")} aria-label={t("nav.settings")} className="h-11 w-11 items-center justify-center rounded-full web:hover:bg-muted">
-          <Ionicons name="settings-outline" size={24} color="#FAFAFA" />
+          <Ionicons name="settings-outline" size={24} color="#18181B" />
         </Pressable>
       </View>
 
@@ -128,7 +128,7 @@ export default function MeScreen() {
         <SectionTitle title={t("me.streak")} onPress={() => router.push("/progress")} />
         <Pressable onPress={() => router.push("/progress")} className="flex-row items-center gap-4 rounded-2xl border border-border px-5 py-4">
           <View className="flex-row items-center gap-1.5">
-            <Ionicons name="flash" size={26} color="#FAFAFA" />
+            <Ionicons name="flash" size={26} color="#01758F" />
             <Text className="text-4xl font-extrabold text-foreground">{streak}</Text>
           </View>
           <Text className="flex-1 text-base leading-6 text-muted-foreground">{t(prayedToday ? "me.streakToday" : "me.streakEmpty")}</Text>

@@ -7,7 +7,7 @@ import { Card } from "./card";
 import { useUserDataStore } from "../../store/userDataStore";
 import { isPrayerKey } from "../../lib/items";
 import { availableNovenas, availableChaplets, otherPrayersCount } from "../../constants/content/available";
-import { languageInfo } from "../../constants/languages";
+import { LANGUAGES, languageInfo } from "../../constants/languages";
 
 
 // Desktop sidebar listing every prayer section, like a "Manage my network" card
@@ -89,6 +89,7 @@ export function BrowseSidebar() {
         })}
       </Card>
 
+      {LANGUAGES.length > 1 && (
       <Card className="p-5 gap-1">
         <Text className="text-sm text-muted-foreground">{t("home.prayingIn")}</Text>
         <View className="flex-row items-center justify-between">
@@ -100,6 +101,7 @@ export function BrowseSidebar() {
           </Pressable>
         </View>
       </Card>
+      )}
     </>
   );
 }

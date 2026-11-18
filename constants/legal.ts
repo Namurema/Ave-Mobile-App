@@ -91,8 +91,8 @@ export const termsAndConditions = [
     body: `You can choose to support Ave with a donation through Airtel Money. Donations are voluntary gifts to help keep Ave running. They do not buy any feature, access or service, and Ave works the same whether or not you give. Donations are not refunded, except one made by mistake (for example the wrong amount): email ${LEGAL_CONTACT_EMAIL} within 14 days with the transaction details.`,
   },
   {
-    heading: "Prayer texts and translations",
-    body: "Prayers are offered for personal prayer. Some translations were made with the help of software and may contain mistakes. Where official Church translations exist, they take priority. Please tell us about any errors.",
+    heading: "Prayer texts",
+    body: "Prayers are offered for personal prayer. Where official Church texts exist, they take priority. Please tell us about any errors.",
   },
   {
     heading: "Your account",

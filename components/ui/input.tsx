@@ -22,7 +22,7 @@ export function Input({
       <View className="relative justify-center">
         <TextInput
           aria-label={label}
-          placeholderTextColor="#737373"
+          placeholderTextColor="#A1A1AA"
           secureTextEntry={secureTextEntry && !visible}
           onFocus={(e) => {
             setFocused(true);
@@ -48,7 +48,7 @@ export function Input({
             hitSlop={8}
             className="absolute right-0 h-11 w-11 items-center justify-center"
           >
-            <Ionicons name={visible ? "eye-off-outline" : "eye-outline"} size={20} color="#A3A3A3" />
+            <Ionicons name={visible ? "eye-off-outline" : "eye-outline"} size={20} color="#71717A" />
           </Pressable>
         ) : null}
       </View>

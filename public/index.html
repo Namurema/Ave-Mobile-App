@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Ave: Catholic Prayers, Rosary and Novenas in English, Luganda and Runyankore</title>
-    <meta name="description" content="Catholic prayer app for Uganda: the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily morning, midday and night prayers in English, Luganda and Runyankore. Read aloud, reminders, works offline." />
+    <title>Ave: Catholic Prayers, Rosary and Novenas</title>
+    <meta name="description" content="Catholic prayer app for Uganda: the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily morning, midday and night prayers. Read aloud, reminders, works offline." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Ave team" />
 
@@ -13,17 +13,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ave" />
     <meta property="og:title" content="Ave: Catholic Prayers for Every Day" />
-    <meta property="og:description" content="The Holy Rosary, novenas, chaplets and daily prayers in English, Luganda and Runyankore. Works offline." />
+    <meta property="og:description" content="The Holy Rosary, novenas, chaplets and daily prayers. Works offline." />
     <meta property="og:url" content="https://aveprayers.com/" />
-    <meta property="og:image" content="https://aveprayers.com/icons/og-image.png?v=3" />
+    <meta property="og:image" content="https://aveprayers.com/icons/og-image.png?v=4" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Ave: Catholic prayers for every day" />
     <meta property="og:locale" content="en_UG" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ave: Catholic Prayers for Every Day" />
-    <meta name="twitter:description" content="The Holy Rosary, novenas, chaplets and daily prayers in English, Luganda and Runyankore." />
-    <meta name="twitter:image" content="https://aveprayers.com/icons/og-image.png?v=3" />
+    <meta name="twitter:description" content="The Holy Rosary, novenas, chaplets and daily prayers." />
+    <meta name="twitter:image" content="https://aveprayers.com/icons/og-image.png?v=4" />
 
     <!-- Structured data for search engines and AI assistants -->
     <script type="application/ld+json">
@@ -36,7 +36,7 @@
             "name": "Ave",
             "alternateName": "Ave Catholic Prayers",
             "url": "https://aveprayers.com/",
-            "inLanguage": ["en", "lg", "nyn"],
+            "inLanguage": ["en"],
             "publisher": { "@id": "https://aveprayers.com/#org" }
           },
           {
@@ -55,12 +55,12 @@
             "applicationCategory": "LifestyleApplication",
             "applicationSubCategory": "Catholic prayer",
             "operatingSystem": "Any (web browser, installable on Android and iPhone)",
-            "description": "A Catholic prayer companion with the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily prayers in English, Luganda and Runyankore. Works offline once installed.",
-            "inLanguage": ["en", "lg", "nyn"],
+            "description": "A Catholic prayer companion with the Holy Rosary, novenas, chaplets, the Stations of the Cross and daily prayers. Works offline once installed.",
+            "inLanguage": ["en"],
             "isAccessibleForFree": true,
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UGX" },
             "areaServed": { "@type": "Country", "name": "Uganda" },
-            "image": "https://aveprayers.com/icons/og-image.png?v=3",
+            "image": "https://aveprayers.com/icons/og-image.png?v=4",
             "publisher": { "@id": "https://aveprayers.com/#org" }
           }
         ]
@@ -69,7 +69,7 @@
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#171717" />
+    <meta name="theme-color" content="#01758F" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -101,7 +101,7 @@
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {
         overflow: hidden;
-        background-color: #171717;
+        background-color: #fafafa;
       }
       /* Glassmorphism (components/ui/glass.tsx) */
       [data-glass="panel"] {
@@ -112,13 +112,13 @@
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
       }
-      /* Navy fade over header pictures (components/ui/page.tsx PhotoBackdrop) */
+      /* Teal tint over header photos (components/ui/page.tsx PhotoBackdrop) */
       [data-tint="photo"] {
-        background-image: linear-gradient(90deg, rgba(8, 20, 60, 0.92) 0%, rgba(8, 20, 60, 0.7) 45%, rgba(8, 20, 60, 0.05) 100%);
+        background-image: linear-gradient(90deg, rgba(1, 117, 143, 0.95) 0%, rgba(1, 117, 143, 0.8) 45%, rgba(1, 117, 143, 0.15) 100%);
       }
-      /* Home carousel: the picture fades into the navy below */
+      /* Home carousel: the photo fades into the teal below */
       [data-tint="fade"] {
-        background-image: linear-gradient(180deg, rgba(11, 30, 91, 0) 45%, rgba(11, 30, 91, 0.85) 85%, #0B1E5B 100%);
+        background-image: linear-gradient(180deg, rgba(1, 117, 143, 0) 40%, rgba(1, 117, 143, 0.85) 85%, #01758F 100%);
       }
       /* Launch screen shown until the app has loaded (React replaces it) */
       #ave-boot {
@@ -182,8 +182,8 @@
     <!-- Read by search engines and AI crawlers that don't run JavaScript -->
     <noscript>
       <main>
-        <h1>Ave: Catholic Prayers, Rosary and Novenas in English, Luganda and Runyankore</h1>
-        <p>Ave is a Catholic prayer app built for Uganda. Pray in English, Luganda (Oluganda) or Runyankore (Orunyankore), on your phone or computer. Listen to prayers read aloud, set a daily prayer routine with reminders, and track your novena days. Install it from your browser and it works offline.</p>
+        <h1>Ave: Catholic Prayers, Rosary and Novenas</h1>
+        <p>Ave is a Catholic prayer app built for Uganda. Pray on your phone or computer. Listen to prayers read aloud, set a daily prayer routine with reminders, and track your novena days. Install it from your browser and it works offline.</p>
         <p>Free to use, and no account is needed to pray. Create a free account to keep your progress on all your devices.</p>
         <h2>What you can pray</h2>
         <ul>
