@@ -3,11 +3,11 @@ import { View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "../store/authStore";
 import { useAuthDialog } from "../store/authDialogStore";
-import { disableReminders, enableReminders, sendTestReminder, useReminders } from "../lib/reminders";
+import { disableReminders, enableReminders, useReminders } from "../lib/reminders";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 
-// Routine page: turn reminders on for this phone, send a test, or turn them off
+// Routine page: turn reminders on for this phone, or off
 export function RemindersCard() {
   const { t } = useTranslation();
   const session = useAuthStore((state) => state.session);
@@ -32,19 +32,6 @@ export function RemindersCard() {
       if (result === "error") setNote(t("reminders.failed"));
       else setStatus(result);
     });
-  };
-
-  const test = async () => {
-    setNote(null);
-    setBusy(true);
-    try {
-      const sent = await sendTestReminder(t("reminders.heading"), t("reminders.testBody"));
-      setNote(sent ? t("reminders.testSent") : t("reminders.failed"));
-    } catch {
-      setNote(t("reminders.failed"));
-    } finally {
-      setBusy(false);
-    }
   };
 
   const turnOff = async () => {
@@ -72,10 +59,7 @@ export function RemindersCard() {
         </Button>
       ) : support === "supported" && status === "on" ? (
         <View className="flex-row flex-wrap gap-2">
-          <Button size="sm" variant="outline" loading={busy} onPress={test}>
-            {t("reminders.test")}
-          </Button>
-          <Button size="sm" variant="ghost" disabled={busy} onPress={turnOff}>
+          <Button size="sm" variant="ghost" loading={busy} onPress={turnOff}>
             {t("reminders.turnOff")}
           </Button>
         </View>

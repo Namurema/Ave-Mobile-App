@@ -13,7 +13,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Information we keep",
-    body: "You can try Ave without an account. Your settings, progress and favourites are then kept only on your device. If you create an account, we keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan: the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
+    body: "You can look at Ave's home page without an account; praying with Ave needs a free account. When you create one, we keep:\nYour name and email address.\nYour password, stored securely by our account provider. We cannot see it.\nWhen you created your account and when you last signed in.\nThe prayers you mark as prayed and the dates, the prayers you save as favourites, and your prayer routine and reminder times.\nIf you pay for a plan: the plan, the amount, the date you paid, how long it lasts and the payment method type (for example card or mobile money).",
   },
   {
     heading: "Payments",
@@ -37,7 +37,7 @@ export const privacyPolicy = [
   },
   {
     heading: "Information on your device",
-    body: "Ave saves your settings, your progress and favourites, copies of prayers you have opened, and when you first opened Ave (to count the free trial), on your device. This lets the app work offline. You can remove it at any time by clearing the site data in your browser or uninstalling the app.",
+    body: "Ave saves your settings, your progress and favourites, copies of prayers you have opened, on your device. This lets the app work offline. You can remove it at any time by clearing the site data in your browser or uninstalling the app.",
   },
   {
     heading: "How long we keep it",
@@ -76,7 +76,7 @@ export const termsAndConditions = [
   },
   {
     heading: "Price",
-    body: "Everyone can use Ave free for 7 days: from when you create your account, or from your first visit if you use Ave without one. After that, a plan is needed to keep praying with Ave. Nothing is ever charged unless you choose a plan and pay for it yourself.",
+    body: "Everyone can use Ave free for 7 days from when they create their account. After that, a plan is needed to keep praying with Ave. Nothing is ever charged unless you choose a plan and pay for it yourself.",
   },
   {
     heading: "Plans",
@@ -92,7 +92,7 @@ export const termsAndConditions = [
   },
   {
     heading: "Your account",
-    body: "An account keeps your progress on all your devices, and is needed to buy a plan. Give accurate information, keep your password private, and use the account only for yourself; a plan is for one person. You are responsible for activity on your account.",
+    body: "You need a free account to pray with Ave; it keeps your progress on all your devices. Give accurate information, keep your password private, and use the account only for yourself; a plan is for one person. You are responsible for activity on your account.",
   },
   {
     heading: "Acceptable use",

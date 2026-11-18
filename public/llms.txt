@@ -7,7 +7,7 @@ Key facts:
 - Price: 7-day free trial, then UGX 7,000 a month or UGX 70,000 a year in Uganda (MTN or Airtel mobile money), USD 3.99 a month or USD 29.99 a year elsewhere (card). No ads. Plans do not renew automatically.
 - Payments: through ObPay
 - Language: English
-- An account saves favourite prayers, routines and prayer progress (day streaks, novena days) across devices
+- A free account is needed to pray; it saves favourite prayers, routines and prayer progress (day streaks, novena days) across devices
 - Contact: stelarlabs@gmail.com
 
 ## Prayers

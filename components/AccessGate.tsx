@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Platform } from "react-native";
+import { useEffect } from "react";
 import { View, Text } from "react-native";
 import { usePathname, useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
@@ -14,37 +13,14 @@ import { PAYMENTS_ENABLED } from "../constants/features";
 const OPEN_WHEN_LOCKED = ["/subscribe", "/payment/complete", "/profile", "/settings", "/feedback", "/Language", "/privacy", "/terms", "/splash", "/"];
 const isOpen = (path: string) => OPEN_WHEN_LOCKED.includes(path) || path.startsWith("/auth/");
 
-const DAY_MS = 24 * 60 * 60 * 1000;
-const FIRST_VISIT_KEY = "ave-first-visit";
-
-// Guests get the same 7 days, counted from their first visit on this device
-function guestTrialOver() {
-  if (Platform.OS !== "web") return false;
-  try {
-    const first = Number(localStorage.getItem(FIRST_VISIT_KEY));
-    if (!first) {
-      localStorage.setItem(FIRST_VISIT_KEY, String(Date.now()));
-      return false;
-    }
-    return Date.now() - first > 7 * DAY_MS;
-  } catch {
-    return false;
-  }
-}
-
 // After the 7-day trial, without a plan (or free access), prayers lead to the
-// plans page; guests are asked there to create an account. If access can't be
-// checked (offline), nothing is locked.
+// plans page. If access can't be checked (offline), nothing is locked.
 export function AccessGate() {
   const router = useRouter();
   const pathname = usePathname();
   const session = useAuthStore((state) => state.session);
-  const authLoading = useAuthStore((state) => state.loading);
   const access = useAccessStore((state) => state.access);
-  const [guestOver] = useState(guestTrialOver);
-  const memberLocked = !!session && !!access && !access.hasAccess;
-  const guestLocked = !session && !authLoading && guestOver;
-  const locked = PAYMENTS_ENABLED && (memberLocked || guestLocked) && !isOpen(pathname);
+  const locked = PAYMENTS_ENABLED && !!session && !!access && !access.hasAccess && !isOpen(pathname);
 
   useEffect(() => {
     if (locked) router.replace("/subscribe");

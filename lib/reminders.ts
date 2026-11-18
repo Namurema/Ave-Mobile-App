@@ -3,8 +3,9 @@ import { Platform } from "react-native";
 import { supabase } from "./supabase/client";
 import { VAPID_PUBLIC_KEY } from "../constants/reminders";
 
-// Prayer reminders on this phone (web push). The server sends them at each
-// routine prayer's time (supabase/functions/send-reminders).
+// Notifications on this phone (web push). The server sends one prayer a day to
+// everyone, plus a reminder at each routine prayer's time
+// (supabase/functions/send-reminders).
 
 // "installFirst": iPhones only allow notifications for apps added to the
 // Home Screen (iOS 16.4 and later)
@@ -71,12 +72,6 @@ export async function disableReminders() {
   if (!subscription) return;
   await supabase.from("push_subscriptions").delete().eq("endpoint", subscription.endpoint);
   await subscription.unsubscribe().catch(() => {});
-}
-
-export async function sendTestReminder(title: string, body: string) {
-  const { data, error } = await supabase.functions.invoke("send-test-reminder", { body: { title, body } });
-  if (error) throw error;
-  return (data?.sent ?? 0) as number;
 }
 
 // This phone's reminder state, for the Routine page

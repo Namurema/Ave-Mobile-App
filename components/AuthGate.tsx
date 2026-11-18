@@ -2,16 +2,17 @@ import { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { usePathname, useRouter } from "expo-router";
 import { useAuthStore } from "../store/authStore";
+import { useAuthDialog } from "../store/authDialogStore";
 import { LOGIN_ENABLED, ACCOUNT_REQUIRED } from "../constants/features";
 
 // Pages anyone can open, even when accounts are required
-const PUBLIC_PAGES = ["/", "/splash", "/Language", "/privacy", "/terms"];
+const PUBLIC_PAGES = ["/", "/splash", "/home", "/Language", "/privacy", "/terms"];
 const isPublic = (path: string) => PUBLIC_PAGES.includes(path) || path.startsWith("/auth/");
 
 // While the saved sign-in loads, the teal launch screen stays up so the page
-// doesn't flash first. When accounts are required (constants/features.ts),
-// guests are sent to the welcome screen, which brings them back here after
-// they sign in (`next`).
+// doesn't flash first. When accounts are required (constants/features.ts), a
+// guest who opens anything but a public page goes back to Home with "Create
+// account" open, and on to where they were going once signed up.
 export function AuthGate() {
   const router = useRouter();
   const pathname = usePathname();
@@ -21,7 +22,8 @@ export function AuthGate() {
 
   useEffect(() => {
     if (!LOGIN_ENABLED || !ACCOUNT_REQUIRED || loading || session || isPublic(pathname)) return;
-    router.replace({ pathname: "/splash", params: { next: pathname } });
+    router.replace("/(tabs)/home");
+    useAuthDialog.getState().open("signUp", pathname);
   }, [loading, session, pathname]);
 
   if (!blocked) return null;
